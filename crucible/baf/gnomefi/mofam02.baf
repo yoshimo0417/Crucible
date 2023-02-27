@@ -1,0 +1,517 @@
+IF
+  OR(6)
+    See(NearestEnemyOfType([GOODCUTOFF.0.0.DRUID_ALL]))
+    See(NearestEnemyOfType([GOODCUTOFF.0.0.CLERIC_ALL]))
+    See(NearestEnemyOfType([GOODCUTOFF.0.0.BARD_ALL]))
+    See(NearestEnemyOfType([GOODCUTOFF.0.0.MAGE_ALL]))
+    See(NearestEnemyOfType([GOODCUTOFF.0.0.SORCERER]))
+    See(NearestEnemyOfType([GOODCUTOFF.0.0.CLERIC_MAGE]))
+  Global("MO_Prep","LOCALS",0)
+  RandomNum(2,1)
+THEN
+  RESPONSE #50
+    DisplayString(Myself,26328)  // ~Chain Contingency~
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    ApplySpell(LastSeenBy(Myself),WIZARD_SUMMON_HAKEASHAR)
+    ApplySpell(LastSeenBy(Myself),WIZARD_DIMENSION_DOOR)
+    ApplySpell(Myself,WIZARD_FIRE_SHIELD_RED)
+    SetGlobal("MO_Prep","LOCALS",1)
+  RESPONSE #50
+    DisplayString(Myself,26328)  // ~Chain Contingency~
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    ApplySpell(LastSeenBy(Myself),WIZARD_SUMMON_NISHRUU)
+    ApplySpell(LastSeenBy(Myself),WIZARD_DIMENSION_DOOR)
+    ApplySpell(Myself,WIZARD_FIRE_SHIELD_RED)
+    SetGlobal("MO_Prep","LOCALS",1)
+END
+
+IF
+  See(NearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Global("MO_Prep","LOCALS",0)
+  RandomNum(2,1)
+THEN
+  RESPONSE #100
+    DisplayString(Myself,26328)  // ~Chain Contingency~
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    ApplySpell(LastSeenBy(Myself),WIZARD_ANIMATE_DEAD)
+    ApplySpell(LastSeenBy(Myself),WIZARD_DIMENSION_DOOR)
+    ApplySpell(Myself,WIZARD_FIRE_SHIELD_RED)
+    SetGlobal("MO_Prep","LOCALS",1)
+END
+
+IF
+  See(NearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  Global("MO_Prep","LOCALS",0)
+THEN
+  RESPONSE #100
+    DisplayString(Myself,26328)  // ~Chain Contingency~
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    ApplySpell(LastSeenBy(Myself),WIZARD_HORROR)
+    ApplySpell(LastSeenBy(Myself),WIZARD_DIMENSION_DOOR)
+    ApplySpell(Myself,WIZARD_FIRE_SHIELD_RED)
+    SetGlobal("MO_Prep","LOCALS",1)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  !GlobalTimerNotExpired("MO_SpellCastSummonKillTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF.0.0.0.0.SUMMONED]))
+  HaveSpell(WIZARD_FINGER_OF_DEATH)
+  HaveSpell(WIZARD_DEATH_SPELL)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_SpellCastSummonKillTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_SpellCastSummonKillTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_FINGER_OF_DEATH)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  !GlobalTimerNotExpired("MO_SpellCastSummonKillTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF.0.0.0.0.SUMMONED]))
+  !HaveSpell(WIZARD_FINGER_OF_DEATH)
+  HaveSpell(WIZARD_DEATH_SPELL)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_SpellCastSummonKillTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  !GlobalTimerNotExpired("MO_SpellCastSummonKillTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF.0.0.0.0.SUMMONED]))
+  HaveSpell(WIZARD_FINGER_OF_DEATH)
+  !HaveSpell(WIZARD_DEATH_SPELL)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_SpellCastSummonKillTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_FINGER_OF_DEATH)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  HaveSpell(WIZARD_ABI_DALZIMS_HORRID_WILTING)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WIZARD_ABI_DALZIMS_HORRID_WILTING)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF.UNDEAD]))
+  HaveSpell(WIZARD_CONTROL_UNDEAD)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_CONTROL_UNDEAD)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  HaveSpell(WIZARD_CONTAGION)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  !StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+  CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckSpellState(LastSeenBy(Myself),SI_NECROMANCY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_CONTAGION)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  Range(LastSeenBy(Myself),4)
+  HaveSpell(WIZARD_VAMPIRIC_TOUCH)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckSpellState(LastSeenBy(Myself),SI_NECROMANCY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_VAMPIRIC_TOUCH)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  Range(LastSeenBy(Myself),4)
+  CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckSpellState(LastSeenBy(Myself),SI_NECROMANCY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_SKULL_TRAP)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  HaveSpell(WIZARD_LIGHTNING_BOLT)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_LIGHTNING_BOLT)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  HaveSpell(WIZARD_STINKING_CLOUD)
+  CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_STINKING_CLOUD)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  HaveSpell(WIZARD_HORROR)
+  !General(LastSeenBy(Myself),UNDEAD)
+  CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckSpellState(LastSeenBy(Myself),SI_NECROMANCY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_HORROR)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  HaveSpell(WIZARD_GHOUL_TOUCH)
+  Range(LastSeenBy(Myself),4)
+  !General(LastSeenBy(Myself),UNDEAD)
+  !Kit(LastSeenBy(Myself),INQUISITOR)
+  !Class(LastSeenBy(Myself),MONK)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckSpellState(LastSeenBy(Myself),SI_NECROMANCY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_GHOUL_TOUCH)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  HaveSpell(WIZARD_LARLOCH_MINOR_DRAIN)
+  Range(LastSeenBy(Myself),4)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckSpellState(LastSeenBy(Myself),SI_NECROMANCY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  HaveSpell(WIZARD_CHILL_TOUCH)
+  Range(LastSeenBy(Myself),4)
+  !CheckStatGT(LastSeenBy(Myself),40,RESISTCOLD)
+  CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckSpellState(LastSeenBy(Myself),SI_NECROMANCY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_CHILL_TOUCH)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
+END
+
+IF
+  ActionListEmpty()
+  See(MostDamagedOf([PC]))
+  CheckSpellState(LastSeenBy(Myself),PRIOR_TARGET)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(WorstAC([PC]))
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(NearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(SecondNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(SecondNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(ThirdNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(ThirdNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(FourthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(FourthNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(FifthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(FifthNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(SixthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(SixthNearestEnemyOf(Myself))
+END

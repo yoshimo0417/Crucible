@@ -1,0 +1,52 @@
+IF
+  Global("MO_LichSpawn","Ar0318",0)
+THEN
+  RESPONSE #100
+    TriggerActivation("Tran0300",FALSE)
+    SetGlobalTimer("MO_SPAWN_MORE","GLOBAL",18)
+    CreateCreature("molich01",[290.378],0)  // molich01
+    CreateCreature("skelwa03",[520.321],0)  // ~Skeleton Warrior~
+    CreateCreature("skelwa03",[632.335],0)  // ~Skeleton Warrior~
+    CreateCreature("skelwa01",[542.512],0)  // ~Skeleton Warrior~
+    CreateCreature("skelwa01",[631.537],0)  // ~Skeleton Warrior~
+    CreateCreature("icbone01",[651.458],0)  // ~Bone Golem~
+    CreateCreatureImpassable("molichob",[320.212],0)
+    SetGlobal("MO_LichSpawn","Ar0318",1)
+END
+
+IF
+  GlobalTimerExpired("MO_SPAWN_MORE","GLOBAL")
+  OR(2)
+    Difficulty(Hard)
+    Difficulty(Hardest)
+  Global("MO_LichIsDead","Ar0318",0)
+THEN
+  RESPONSE #60
+    DisplayStringHead(Myself,@5000)  // ~Rise... rise and listen to what must be said.~
+    CreateCreature("skelwa03",[632.335],0)  // ~Skeleton Warrior~
+    CreateCreature("skelwa01",[542.512],0)  // ~Skeleton Warrior~
+    CreateCreature("skelwa01",[631.537],0)  // ~Skeleton Warrior~
+    CreateCreature("icbone01",[651.458],0)  // ~Bone Golem~
+    Wait(2)
+    DisplayStringHead(Myself,@5001)  // ~Fight! Kill him!~
+    SetGlobalTimer("MO_SPAWN_MORE","GLOBAL",18)
+  RESPONSE #40
+    DisplayStringHead(Myself,@5000)  // ~Rise... rise and listen to what must be said.~
+    CreateCreature("skelwa03",[520.321],0)  // ~Skeleton Warrior~
+    CreateCreature("skelwa03",[632.335],0)  // ~Skeleton Warrior~
+    CreateCreature("skelwa01",[542.512],0)  // ~Skeleton Warrior~
+    CreateCreature("skelwa01",[631.537],0)  // ~Skeleton Warrior~
+    Wait(2)
+    DisplayStringHead(Myself,@5001)  // ~Fight! Kill him!~
+    SetGlobalTimer("MO_SPAWN_MORE","GLOBAL",18)
+END
+
+IF
+  Dead("molich01")  // molich01
+  Global("MO_LichIsDead","Ar0318",0)
+THEN
+  RESPONSE #100
+    TriggerActivation("Tran0300",TRUE)
+    SetGlobal("MO_LichIsDead","Ar0318",1)
+END
+

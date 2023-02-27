@@ -1,0 +1,218 @@
+// Acid Kensai Dialogue
+@101      = ~So, we finally meet. You are just as impressive as I had imagined.~
+@102              = ~Who are you?~
+@103              = ~What do you want with me?~
+@104              = ~Let me guess, you're not even going to listen to what I say.~
+@105      = ~I am Kuroisan, a Kensai and Wu Jen of no small merit. I have come to this land chasing a densetsu no katana. The katana, you see, is my particular specialty and my singular obsession.~
+@106      = ~Of course I will listen to you. Do the people you meet normally ignore you? Trust me, that's probably more of a blessing than a curse.~
+@107      = ~You have a very powerful katana, one that I have been seeking for quite some time.~
+@108      = ~I would very much appreciate it if you would hand over Celestial Fury. I would prefer to settle things peacefully, but I am not above the use of force.~
+@109              = ~OK, sure, you can have it.~
+@110             = ~I think not.~
+@111      = ~I would very much appreciate it if you would hand over Malakar. I would prefer to settle things peacefully, but I am not above the use of force.~
+@112     = ~Very well. Iku yo!~
+@114     = ~What you are doing is wrong! Why are you threatening to rob me?~
+@113     = ~Thank you, friend! May the Kami watch over us both. Your generosity will not be forgotten. Sayonara.~
+
+@115     = ~Wrong? By what standards? Certainly not by my internal sensibilities. Perhaps you speak of the Kami? Some of them would agree, some would disagree. I fail to see one as clearly superior to the others.~
+@116     = ~Why should I not take what I want, here in this barbarian land? The only thing I have to fear is the retribution of your law. Your guards enforce your local rules by threat of violence, inflicting your morals on visitors like me.~ 
+@117     = ~Well, I have bribed the local enforcers. So now the only thing that stands between me and my desire ... is you. And are you so much better? Exactly how did you come by this katana anyway? Legally purchased? I think not: you looted it from a corpse.~ 
+@118     = ~So, will you hand it over peacefully?~
+
+@120     = ~Once again we embark on our twisted dance.~
+
+@121     = ~Ano ... clearly I am mistaken. There is no legendary katana here. Forgive this lowly one for intruding. Farewell.~
+
+// Red Badge Dialog
+@201 = ~Hisss.. Welcome, <CHARNAME>. You thought yourself safe in your ...~
+[SNAKE01]
+// @202 = ~... Pocket Plane, but that is not so. The taint of your Sssire is like ...~
+@203 = ~... a sssiren's ssong, a deliciouss promissse. As you grow sstronger ...~
+@204 = ~... ssso do we, and so does our hunger. Power flowsss like a poison ...~
+@205 = ~... through your veinsss, through your mind. Your weak mortal mind ...~
+@206 = ~... and your frail mortal body ... I ssshudder in anticipation.~
+@207 = ~There will always be those who sseek to kill you, just as you ...~
+[SNAKE03]
+@208 = ~... have ssought the death of othersss. But few others are like usss.~
+@209 = ~Few are avatarss of Poison. Ssome Create ...~ [SNAKE04]
+@210 = ~... but we Destroy. Ssome are Fractiouss in their dessiress ...~
+@211 = ~... but we are as One. Our one heart beatss for your blood.~
+@212 = ~But now isss not the time. You will fatten yourself for ...~ [SNAKE01]
+@213 = ~... the sslaughter. We will wait.~
+
+@214 = ~Sigh. Why do these things always happen to me?~
+@215 = ~You are not the first one to seek my doom, snake, and you won't be the last.~
+@216 = ~You know, I hear that creatures like you are actually quite tasty with a sage marinade.~
+@217 = ~Why wait? Let's do it now!~
+
+@218 = ~Your wordss are nothing to usss. We will wait.~ [SNAKE02]
+
+@219 = ~Now ... issss ... the time. You call to our hunger ...~ [SNAKE01]
+@220 = ~... and we come for the feasst.~
+
+@222 = ~... mortal world, but that is not so. The taint of your Sssire is like ...~
+
+// Ritual Dialog
+@301 = ~Intruders on the most hallowed ground? This is intolerable! I had heard the commotion outside but I was sure that the Defenders and the Manifestation would protect us long enough for The Ritual to be completed. It appears that I shall have to chastise Ira'kiou'dneg. (sigh) That skull defense looked so good on the scroll, too.~
+@302 = ~However, if I am not mistaken, it was HE who sent you in the first place. My lovely betraying Strategos has sent a rag-tag bunch of misfits to disrupt The Ritual. Sounds like something out of a Bard's Tale. I should have been much more careful with that Geas I put on him.~
+@303 = ~But I must ask you, stranger ... why? Why did you barge in here and slaughter my forces? Do you even know what The Ritual is about?~
+@304 = ~Actually, no. The "Pontifex" fellow never explained it in detail, just that it was very important and world-shaking.~
+@305 = ~It's enough to know that I must stop you from performing this vile deed!~
+@306 = ~I don't want to hurt you at all, but I am under a Geas myself and bound to stop the Ritual.~
+
+@307 = ~I'm not surprised. If he had actually told you what was going on you would never had agreed to help him.~
+@308 = ~I am confident that after you hear me out you will realize that our goals are aligned. There is no reason to fight. Why, I can even use the power of the ritual to negate your compulsion.~
+@309 = ~We seek only to eliminate barriers and improve communication. So many things in this world are caused by mistrust and fear, hatred and jealousy. We hope to alleviate that.~
+@310 = ~Unfortunately, since this is truly the eleventh hour, I don't have time to explain it now. We can talk after I fulfil my destiny. Don't worry, this will take a mere minute.~
+
+@311 = ~You are foiled, and so is Ira'kiou'dneg! You have arrived too late, I have already completed The Ritual! Now the unity of the soul will be among us all. I await... Instrumentality!~
+
+// Ender
+@312 = ~Fool! Why are you fighting us? Have you no appreciation for art? Opposing the ritual would silence every song in Faerun.~
+@313 = ~I have heard tales of tribes of wild Elves who call their evil deity the Unsinger because it is his role to unsing the song of creation, the song of life. That is the mantle that you take up by your opposition to our holy task.~
+@314 = ~I hope this is your final dance, intruder! My true name is Tabris, and I shall direct my legions to smite you!~
+
+
+// Li Kao
+@315 = ~Does one grain of mustard seed make a heap?~
+  @316 = ~What?~
+    @317 = ~The question is not complicated, interloper. If I have one grain of mustard seed before me, do I have a heap of mustard seed before me?~
+  @318 = ~Yes.~
+    @319 = ~I think you are making mountains out of molehills, but you may well be correct. Ah, if only we could understand each other better.~
+  @320 = ~No.~
+    @321 = ~Ah, but if one grain does not make a heap, then adding one more grain to my original lonely grain does not make a heap either. So two grains of mustard seed don't make a heap. And similarly with three, and four ... and ten thousand. It seems that no amount of mustard seed can make a heap. Can there be any heaps at all?~
+      @322 = ~Why are you bothering me with semantic quibbles? Shouldn't you be trying to stop me?~
+      @323 = ~Perhaps there is a definite point at which the pile of mustard seed becomes a heap.~
+      @324 = ~Perhaps 'heap' is an ambiguous term that should not be used in a logical conversation.~
+        @325 = ~Perhaps you are right. I merely wanted to see how you think, since you seem so intent on destroying all that I hold dear. Now, however, it is time for me to put a stop to your evil incursion! Draw your weapons!~
+
+// RIT Pont
+@326    = ~Ah, adventurers, and hardy ones at that. Exactly the sort of people I was looking for. Of course, that's why I'm waiting here in front of the Watcher's Keep, a legendary adventurer magnet. Might I trouble you for a moment of your time?~
+@327    = ~Of course.~
+@328    = ~You may, but in my experience people who act nice initially usually end up stabbing me in the back.~
+@329    = ~Actually, now's not a good time. Maybe later.~
+@330    = ~Hmm, it would appear that we've had similar experiences in the past. And I am fully aware that my current understanding attitude makes it even more likely to your eyes that I'm up to some nefarious intent.~
+@331    = ~I have a request to make of you. However, I shall be up-front about things and tell you now that I fully intend to betray you.~
+@332    = ~Why should I trust someone who intends to betray me?~
+@333    = ~Actually, that's pretty standard. Go on.~
+
+@334    = ~Trust me? You should trust me about as far as you could throw me. But you should accept my quest. Surely you've noticed by now that almost everyone who seeks to hire you has an ulterior motive and usually ends up betraying you?~
+@335    = ~I can smell it leagues away. Have you talked to that Odren chap nearby? Reeks of betrayal. How about my cousin, Lord Firkraag? Machinations abound. That Gaal fellow in the sewers? Don't do him any favors. If you ever run into Saemon Havarian you'll have a perfect example of this sort of thing.~
+@336    = ~Have you met any Drow? Turncoats left and right. The Shadow Thieves? Backstabbers, all. Even the Harpers have been known to ask for favors under false pretenses. You may eventually meet a cunning lass by the name of Amel...  well, that's a story for another day. Suffice it to say, almost everyone you encounter who asks a favor is probably hiding something.~
+@337    = ~So you really shouldn't trust me. But you should do what I ask.  If anything, since we've got the whole betrayal thing out in the open, you should trust me a teensy bit more because at least you understand how things will work and you can plan accordingly.~
+@338    = ~Are you always this insane?~
+@339    = ~OK, let's hear your request.~
+@340    = ~No, normally I'm suave and debonair. I freely admit that the Ritual has me at loose ends. Now, about that quest ...~
+
+@341    = ~I wish to engage you and your mensch followers for an important, perilous quest. It is not inconceivable that the fate of the region may hang in the balance. But since the thought of saving countless lives is usually not enough to sway adventurers to a cause, vast but strangely underspecified rewards await you as well.~
+@342    = ~This is not the usual "go across town, pick up some trinket and bring it back to me" sort of idiocy that you are doubtless used to. I want nothing less than to disrupt the Ritual! (a blue thunderbolt cracks across the sky dramatically as he speaks)~
+@343    = ~"The Ritual"?~
+@344    = ~Yes, yes, color me impressed. The details?~
+
+@345    = ~Yes, I see that you understand the significance of what we are facing.~     
+@346    = ~You would do well to pay attention, <RACE>. This isn't your average romp through the Gnoll fortress.~
+
+@347    = ~In a hidden Glade not too far from here with a long and storied magical history, they have already begun work on the Ritual. Tirelessly they toil, convinced that their cause is just and that their actions bear the mark of the righteous.~
+@348    = ~The Ritual must be stopped. The quest is relatively straightforward: infiltrate the Glade, get past the misguided Ritual guards and guardians and interrupt the Ritual without killing the High Priestess. Oh, and then get out.~
+
+@349    = ~What say you, <CHARNAME>? Will you now accept my quest to stop the Ritual?~
+
+@350    = ~Tell me more about the Ritual defenses in general.~
+
+@351    = ~The Ritual itself is being performed by the High Priestess on some sacred ground within the hidden Glade. However, the sacred ground is magically walled and the one gate is guarded by bound spirits of the dead.~
+@352    = ~In a rite much like the transformation from mage to lich, seven young aspirants have allowed their souls to be stripped from their bodies and formed into a powerful Manifestation that guards the gates. Until the last remnants of their bodies, their undead Skulls, have been destroyed, the Manifestation cannot be passed.~
+@353    = ~Both the Skulls and the Manifestation have the power to force you away from the ritual area. They must be destroyed. I hope you're taking notes here. Let me summarize: first the Skulls, then the gate Manifestation.~
+@354    = ~Now, if you merely had to sledgehammer some dusty skulls on a workbench and then waltz through the gate, someone would have done it by now. The Ritual Strategos anticipated an assault on the ritual at the eleventh hour and gathered a squadron of fanatics to defend it.~
+@355    = ~The Skulls are scattered throughout the Glade. Each rests near a large skull carved from stone. A group of about 7 mensch guards each Skull. The Skulls draw power from the faith of these guardians and cannot be defeated while any guardians remain alive nearby. Take no prisoners.~
+@356    = ~The other Guardians contributed some of their own life energies
+to the mages that sacrificed themselves to become the Skulls for The
+Ritual. This in turn had the effect of bonding the lives of the guards to
+the Skulls. It is a bridge between Life and Undeath that protects the Skull
+until all its living minions are slain.~
+@357    = ~You must find each Skull, slay all nearby defenders, and then crush the Skull itself. When you have crushed all of the skulls, enter the gates and disrupt the Ritual.~
+
+// I STILL NEED TO DO THE BELOW, SO PLEASE DO NOT TRANSLATE YET!!!
+@358    = ~Tell me more about the mortal defenders of the Ritual.~
+@359    = ~The Ritual Strategos formed the Ritual Army from the ranks of moderately experienced adventurers. Each is about twice or three times as experienced as you were when you were captured by Irenicus (yes, I know about that: everyone important has been following your career with interest). This means that individually each is little more powerful than you were when you were captured.~
+@360    = ~Aside from a few unique leaders, members in the Ritual Army fall into a few distinct castes:~
+@361    = ~The Shadowstalkers were trained in the Kara-Turan art of armorless combat and the thief's art of backstabbing. They patrol the Glade perimeter unseen and will sound an alarm if they discover you. In combat they favor making invisible, focused strikes from behind and then disappearing.~
+@362    = ~The Theurgeons are skilled foresters and crack shots with their deadly slings. They are also trained priests who will not hesitate to call down divine power to smite you. They play a supporting role, providing ranged attacks and clerical magic.~
+@363    = ~The Battlemages are trained in unarmored combat and magery.  Their magical defenses protect them better than most conventional mail and they can trade blows and disabling spells with equal ease.~
+@364    = ~The Totemists were druids who fell to the lure of the Ritual.  Their spirit guides protect them and their druidic nature magic is well-suited to the defense of the outdoor, forested Glade.~
+@365    = ~The Battleragers are hulking berserkers, front-line shock troops of highest caliber. They are supported by Disruptors, warriors specially trained to slay spellcasters and prevent their arcane incantations. The Battleragers charge to the front and engage the enemy while the Disruptors throw poisoned darts and other missiles from the rear.~
+@366    = ~Finally, there are a handful of Commanders among the ground forces protected the ritual. My latest intelligence indicates that an Inquisitor, a Bard, a Werewolf, a Monk and a Wu Jen have joined their cause. These leaders are probably not any more experienced than the rest of the troops, but they do possess special skills.~
+@367    = ~The troops are outfitted lavishly by army standards, with magical mail, enchanted rings and arcane swords. However, despite its magical nature, all of their equipment would seem "common" to a group such as yours. I don't believe they have a single unique weapon in the entire army.~
+
+@368    = ~What tactics would you recommend?~
+@369    = ~I would suggest that you use stealth or magic to scout the area as much as possible. Do not split up your group without reason, lest you divide yourselves so that they may conquer you. Try to avoid their patrol sweeps.~
+@370    = ~Try not to be discovered in the middle of their camp where you would be surrounded. Fight your battles on the fringes of the Glade if possible.  Aside from the Shadowstalkers, the Ritual guards will be standing around by their lumps of stone and their Skulls.~
+@371    = ~Unfortunately, most of the tactics for taking out small standing groups will be thwarted by the Skulls. Their deathly nature allows them to quickly slay summoned creatures and their etheric qualities make them particularly adept at dispelling certain types of magic. They watch vigilantly for Cloud spells and dissipate them.~
+@372    = ~Try to draw them apart and fight them one by one if possible.  You may be able to trick the more melee-oriented soldiers into chasing after you. It will be much harder to make the archers leave their posts.~
+@373    = ~Remember that you cannot kill a Skull as long as any enemies live nearby, even invisible enemies. From the druids and their woodland protectors you can expect a number of "natural magic" attacks: swarms of insects, lightning strikes. You can expect an array of standard magical attacks, like confusion and acidic arrows, from the Battlemages.~
+@374    = ~Aside from that, I have no particular advice for you. In my biased opinion the ritual defenders are actually quite well-trained and are doing about as well as possible given their materials and circumstances. Their Strategos taught them well. You will need to be very smart or very skilled to defeat them.~
+
+@375    = ~What can you tell me about the Ritual?~
+
+@376    = ~It must be stopped! The Instrumentality Ritual cannot be allowed to continue. Those misguided fools think that they are serving the greater Good by carrying out the Ritual. I see now how naive that is! If we are unable to stop them, they will be surprised and dismayed to find out what horrors their precious Ritual has wrought.~
+@377    = ~Yes, but what does It do?~
+@378    = ~The far-reaching consequences are too terrible to contemplate. Trying to put into words the full effects of the Ritual already has me quaking in my boots. I shudder at the thought of the Ritual unleashed upon Faerun.~
+@379    = ~Right, "Ritual = Bad". I'm clear on that point. Perhaps you could offer a few more details on the makeup and provenance of the Ritual?~
+@380    = ~It is a work of great Evil masquerading as a tool of Goodness. The Ritual is seductive: it appears at first blush, and at second and third as well, to be the realization of many hopes and dreams. It takes a probing eye to see it for what it is: a work of sinuous darkness.~
+@381    = ~Right, I think I've got the picture.~
+@382    = ~You didn't really think I was going to give you any details, did you? I don't even want you to be tempted by the thought of re-creating the Ritual yourself, later. Assuming that you survive the assault on the Glade and then my probable betrayal.~
+
+@383    = ~What's this about you betraying me?~
+@384    = ~Nothing too exciting, really. Probably something along the lines of me taking you by not-quite-surprise and trying to kill you when you report back here for the reward and you being forced to kill me and take my horde of magical treasure instead.~
+@385    = ~You know how that goes, right?~
+
+@386    = ~What reward are you offering for this quest?~
+@387    = ~If you disrupt the Ritual and do not harm the High Priestess, you are welcome to keep any items, magical or otherwise, that you take from the slain defenders. In addition, when you accept the quest I will give you a few protective items to help you in your infiltration of the Glade.~
+@388    = ~It also goes without saying that you will earn a warm place in my heart and the happy memories that come from a righteous job well done. Those memories last forever, you know? Priceless stuff, really.~ 
+@389    = ~On a more practical note, I have an unspecified but powerful magical item here that has been nullified as long as the Ritual remains un-disrupted. Thus you have no particular incentive to pick my pocket for it but every reason to believe my word as a dra--er--Spaniard that I will give it to you if you complete the task and report back to me.~
+
+@390    = ~Who are you, anyway?~
+@391    = ~My given name is difficult for your kind to pronounce, what with the apostrophes and double consonants and all. You may call me Pontifex, which means "bridge-builder". As you have no doubt gathered from my many less-than-subtle hints ...~
+@392    = ~I was once associated with the Ritual. I supported it whole-heartedly, in fact. I was the Strategos of the operation: I planned all of the tactical defenses and tried to prepare for every possible assault while the Ritual was underway.~ 
+@393    = ~This puts me in the unenviable position of having to hire a band of thugs to destroy my own defense network. It feels somewhat like hiring an assassin to take out my own baby. Unfortunately, the other Ritualists are aware of my defection and they have abjured the Sacred Ground against me.~
+@394    = ~Only recently did I see the error of my ways, did I see the true importance of the Ritual. She cannot be allowed to complete it. Please, I implore you: accept my quest. You'll be sorry in the short term, but happy in the limit.~
+
+@395    = ~I need more time to think about this.~
+@396    = ~Very well, take your time. But not too much time! The Ritual preparations are already underway. I need you (or another group of powerful adventurers in the immediate area, so that mostly leaves you) to stop it!~
+
+@397    = ~I accept your quest.~
+@398    = ~Excellent! I just need you to accept a magical Geas, a binding oath, that you will (1) disrupt the Ritual (2) without harming the High Priestess and then (3) report back to me.~
+@399    = ~A Geas? Don't you trust me?~
+@400    = ~No. No more than you trust me. But I need you.~
+@401    = ~I need a little more time to think about this.~
+@402    = ~Very well.~
+@403    = ~Do you accept a magical Geas to disrupt the Ritual without harming the High Priestess and then report back to me?~
+@404    = ~Yes, I accept the Geas.~
+
+@405    = ~And just in the nick of time. I have received intelligence (and one can always use more!) that the Ritual is already underway. It will take me no time at all to teleport us to the hidden Glade. Once there, by my calculations, you will have seven hours before the Ritual is complete. But no pressure, of course.~
+  @406  = ~Seven hours? Can you check your calculations again? That's very little time.~
+    @407 = ~Hmm. Now that you mention it, it would appear that I forgot to carry the two. There are, in fact, fifteen hours before the Ritual will be complete. Sorry about that. Won't happen again.~
+    @408 = ~Whatever.~
+  @409  = ~Fine.~
+  @410  = ~Why do I get the feeling that if I had showed up tomorrow there would still be exactly seven hours left?~
+    @411 = ~Don't be absurd! The timetable for the Ritual is set out quite explicitly in the Mare Mortuus Scrolls. Tabris has recently arrived to join them. With his presence, the final stage of the Ritual will commence.~
+
+@412    = ~There is no time to waste, let us begin the journey! When you have finished, merely walk back to the Watcher's Keep and speak to me again. Only those attuned to the Ritual can enter the Glade from the outside, so don't leave until you have disrupted it.~
+
+@413    = ~We have arrived. Here, take these magical items to help with your assault. Unlike employers who have sent you into the fray effectively naked, I am actually concerned about your success. I'll see you on the other side.~
+
+@414    = ~I see that you have returned.~
+
+@415    = ~You have failed to disrupt the Ritual. In fact, my divinations reveal that you never even made it past the Manifestation before the ritual was completed. As a result, you aren't even aware of the greater tragedy: the High Priestess is dead.~
+@416    = ~Here, take your damned reward. I am true to my word, as you shall soon see. Normally I would merely use the Geas you swore to end your life now ... but since I have little more to live for, we may as well spend our energies battling each other.~
+
+@417    = ~You have failed to disrupt the Ritual, and whether you realize it or not the High Priestess is dead! My divinations reveal that you did, however, make it past the Manifestation before the ritual was completed. You were mere strides away from realizing my dream, and yet you failed. Pity.~
+@418    = ~I am true to my word: take the first part of your damned reward. When you feel that you are strong enough to make good use of it, talk to me again for the second half of your recompense.~
+
+@419    = ~You were able to disrupt the ritual but the High Priestess is dead! You were mere strides away from realizing my dream, and yet you failed. Pity. Could you not stay your bloodlust just this once? Must you destroy everything in your path?~
+
+@420    = ~You were able to disrupt the ritual and the High Priestess yet lives. You have surpassed my highest expectations. I cannot thank you enough: my soul is redeemed. Take your reward and my blessing.~
+@421    = ~I must go now, to seek out Merentha before the Angels reach her. Godspeed, <RACE>!~
+
+@422    = ~Ah, you have returned. As I mentioned when we first met, I fully intend to betray you. Your failure to handle the Ritual correctly has only increased my wrath. With little to live for, I find that my thoughts turn to rending your flesh from your bones.~
+@423    = ~You may even defeat me. I try to convince myself that I will meet up with her on the other side ... but after what has happened, I know that to be impossible. My plans and machinations were all unwittingly foiled by you, <RACE>.~
+@424    = ~Now it is time for you to pay the price.~

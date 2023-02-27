@@ -1,0 +1,167 @@
+/////////////////////////////////////////////////////////////////////
+// Ender, Ritual Bard
+/////////////////////////////////////////////////////////////////////
+// Spells:
+// missile x2
+// invis x3
+// remove magic x1
+// stoneskin x1
+
+
+IF
+  NumTimesTalkedTo(0)
+  See([PC])
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Prep==0      - Diurnal Rhythms
+/////////////////////////////////////////////////////////////////////
+IF
+  Global("Prep","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    SetGlobalTimer("PrepTimer","LOCALS",0)
+END
+
+/////////////////////////////////////////////////////////////////////
+// PrepTimer==0 - Short Spell Protections 
+/////////////////////////////////////////////////////////////////////
+IF
+  GlobalTimerExpired("PrepTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("PrepTimer","LOCALS",3600)
+    GiveItemCreate("potn10",Myself,5,0,0)   // invis
+    GiveItemCreate("potn52",Myself,2,0,0)   // extra healing
+    Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Spell: Stoneskin (if out)
+/////////////////////////////////////////////////////////////////////
+IF
+	!GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  HaveSpell(WIZARD_STONE_SKIN)
+	CheckStatLT(Myself,1,STONESKINS)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+	RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WIZARD_STONE_SKIN)
+    SetInterrupt(TRUE)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Hide!
+/////////////////////////////////////////////////////////////////////
+IF
+  !StateCheck(Myself,STATE_INVISIBLE)
+  HasItem("potn10",Myself)
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("potn10",Myself)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !StateCheck(Myself,STATE_INVISIBLE)
+  HaveSpell(WIZARD_INVISIBILITY)
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WIZARD_INVISIBILITY)
+    SetInterrupt(TRUE)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Find the action!
+/////////////////////////////////////////////////////////////////////
+IF
+  Allegiance(Myself,ENEMY)
+  StateCheck(Myself,STATE_INVISIBLE)
+  !Range([ENEMY],50)
+  !Range([PC],50)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Spells
+/////////////////////////////////////////////////////////////////////
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  !StateCheck(Myself,STATE_INVISIBLE)
+  !HasItem("potn10",Myself)
+  !HaveSpell(WIZARD_INVISIBILITY)
+  HaveSpell(WIZARD_DISPEL_MAGIC)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WIZARD_DISPEL_MAGIC)
+    SetInterrupt(TRUE)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Heal, Minor
+/////////////////////////////////////////////////////////////////////
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  HasItem("potn52",Myself)
+  HPPercentLT(Myself,90)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    UseItem("potn52",Myself)
+    SetInterrupt(TRUE)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Bard Song
+/////////////////////////////////////////////////////////////////////
+IF
+  Delay(6)
+  True()
+THEN
+  RESPONSE #100
+    ReallyForceSpellRES("spcl542a",Myself)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Move to the action 
+/////////////////////////////////////////////////////////////////////
+IF
+  Heard([ENEMY],125)
+  !Detect([ENEMY])
+THEN
+  RESPONSE #100
+    MoveToObject(LastHeardBy(Myself))
+END

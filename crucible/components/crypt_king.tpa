@@ -1,0 +1,21 @@
+// Tactics Remix, Kensai Ryu's Crypt King
+
+///////////////////////////////////////////////////////////////////////////
+// Strengthen the Crypt King                                             //
+///////////////////////////////////////////////////////////////////////////
+COPY ~tactics-remix/itm/MORNG03.ITM~ ~override/MORNG03.ITM~
+
+COPY_EXISTING ~BHCRYPT.CRE~ ~override~
+  WRITE_BYTE 0x234 14 // Level 14
+  WRITE_BYTE 0x24 105 // Current HP
+  WRITE_BYTE 0x26 105 // Max HP
+  WRITE_BYTE 0x53 2   // 2 APR Base
+  REPLACE_CRE_ITEM ~MORNG03~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~RRING~ EQUIP
+  SET_BG2_PROFICIENCY ~PROFICIENCYSINGLEWEAPON~ 2
+  SET_BG2_PROFICIENCY ~PROFICIENCYLONGSWORD~ 5
+
+///////////////////////////////////////////////////////////////////////////
+// Copy .BCS file to override folder                                     //
+///////////////////////////////////////////////////////////////////////////
+COPY ~tactics-remix/baf/crypt_king/bhcrypt.baf~ ~override/bhcrypt.bcs~
+  COMPILE_BAF_TO_BCS

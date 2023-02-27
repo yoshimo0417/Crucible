@@ -1,0 +1,66 @@
+IF
+  See([EVILCUTOFF])
+  HasItem("ring28",LastSeenBy(Myself))  // ~Ring of Air Control~
+  !HasItem("lich",LastSeenBy(Myself))  // <Invalid Strref -1>
+  !Specifics(LastSeenBy(Myself),2001)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(LastSeenBy(Myself),2001)
+    ActionOverride(LastSeenBy(Myself),ChangeAIScript("molich1c",CLASS))
+END
+
+IF
+  See(SecondNearest([EVILCUTOFF]))
+  HasItem("ring28",LastSeenBy(Myself))  // ~Ring of Air Control~
+  !HasItem("lich",LastSeenBy(Myself))  // <Invalid Strref -1>
+  !Specifics(LastSeenBy(Myself),2001)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(LastSeenBy(Myself),2001)
+    ActionOverride(LastSeenBy(Myself),ChangeAIScript("molich1c",CLASS))
+END
+
+IF
+  See(ThirdNearest([EVILCUTOFF]))
+  HasItem("ring28",LastSeenBy(Myself))  // ~Ring of Air Control~
+  !HasItem("lich",LastSeenBy(Myself))  // <Invalid Strref -1>
+  !Specifics(LastSeenBy(Myself),2001)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(LastSeenBy(Myself),2001)
+    ActionOverride(LastSeenBy(Myself),ChangeAIScript("molich1c",CLASS))
+END
+
+IF
+  See(FourthNearest([EVILCUTOFF]))
+  HasItem("ring28",LastSeenBy(Myself))  // ~Ring of Air Control~
+  !HasItem("lich",LastSeenBy(Myself))  // <Invalid Strref -1>
+  !Specifics(LastSeenBy(Myself),2001)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(LastSeenBy(Myself),2001)
+    ActionOverride(LastSeenBy(Myself),ChangeAIScript("molich1c",CLASS))
+END
+
+IF
+  See(FifthNearest([EVILCUTOFF]))
+  HasItem("ring28",LastSeenBy(Myself))  // ~Ring of Air Control~
+  !HasItem("lich",LastSeenBy(Myself))  // <Invalid Strref -1>
+  !Specifics(LastSeenBy(Myself),2001)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(LastSeenBy(Myself),2001)
+    ActionOverride(LastSeenBy(Myself),ChangeAIScript("molich1c",CLASS))
+END
+
+IF
+  See(SixthNearest([EVILCUTOFF]))
+  HasItem("ring28",LastSeenBy(Myself))  // ~Ring of Air Control~
+  !HasItem("lich",LastSeenBy(Myself))  // <Invalid Strref -1>
+  !Specifics(LastSeenBy(Myself),2001)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(LastSeenBy(Myself),2001)
+    ActionOverride(LastSeenBy(Myself),ChangeAIScript("molich1c",CLASS))
+END
+

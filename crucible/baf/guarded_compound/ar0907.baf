@@ -1,0 +1,23 @@
+////////////////////////////////////////////////////////
+// AR0907
+// Improved Guarded Compound Location -- you cannot flee
+// until they are all dead. 
+////////////////////////////////////////////////////////
+IF
+    Global("EnteredAR0907","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("EnteredAR0907","GLOBAL",1)
+        TriggerActivation("Tran0906a",FALSE)
+        TriggerActivation("Tran0906b",FALSE)
+END
+
+IF
+  CombatCounter(0)
+  Global("WW_TrappedGC","AR0907",0)
+THEN 
+    RESPONSE #100
+      TriggerActivation("Tran0906a",TRUE)
+      TriggerActivation("Tran0906b",TRUE)
+      SetGlobal("WW_TrappedGC","AR0907",1)
+END

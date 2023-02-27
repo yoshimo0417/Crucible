@@ -1,0 +1,48 @@
+IF
+  Global("RedBadgePrep","GLOBAL",0)
+THEN
+  RESPONSE #100
+    StartCutSceneMode()
+    SetGlobal("RedBadgePrep","GLOBAL",1)
+    CreateCreature("solasna1",[756.641],0)  // ~Bittersnake~
+    CreateCreature("solasna2",[942.535],8)  // ~Bloodcaster~
+    CreateCreature("solasna3",[712.358],0)  // ~Fallowmist~
+    CreateCreature("solasna4",[458.621],0)  // ~Redspike~
+    CreateCreature("solasna5",[307.491],8)  // ~Bloodspear~
+    TriggerActivation("Tran0404",FALSE)
+    ActionOverride("solasna1",StartDialogNoSet(Player1))
+    EndCutSceneMode()
+END
+
+IF
+  Global("RedBadgeStage","GLOBAL",2)
+  Global("RedBadgeFight","GLOBAL",0)
+  InMyArea(Player1)
+THEN
+  RESPONSE #10
+    ActionOverride("solasna1",StartDialogNoSet(Player1))
+END
+
+IF
+  OR(2)
+    Dead("solasna1")  // ~Bittersnake~
+    !AreaCheckObject("SOLA0002","solasna1")  // ~Bittersnake~
+  OR(2)
+    Dead("solasna2")  // ~Bloodcaster~
+    !AreaCheckObject("SOLA0002","solasna2")  // ~Bloodcaster~
+  OR(2)
+    Dead("solasna3")  // ~Fallowmist~
+    !AreaCheckObject("SOLA0002","solasna3")  // ~Fallowmist~
+  OR(2)
+    Dead("solasna4")  // ~Redspike~
+    !AreaCheckObject("SOLA0002","solasna4")  // ~Redspike~
+  OR(2)
+    Dead("solasna5")  // ~Bloodspear~
+    !AreaCheckObject("SOLA0002","solasna5")  // ~Bloodspear~
+  Global("RedBadgeLeave","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RedBadgeLeave","GLOBAL",1)
+    TriggerActivation("Tran0404",TRUE)
+END
+

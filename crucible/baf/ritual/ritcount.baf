@@ -1,0 +1,83 @@
+// Ritual High Priestess
+
+IF
+  Global("Init","LOCALS",0)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+    DialogInterrupt(FALSE)
+    SetGlobal("Init","LOCALS",1)
+    DisplayString(Myself,@5009) // in nomine!
+    SetGlobalTimer("RitualIsNowOver","GLOBAL",61)
+    DestroyItem("minhp1") // I am mortal big-time!
+    SpellNoDecRES("ritual",Myself)
+END
+
+IF
+  !Allegiance(Myself,ENEMY)
+  OR(5)
+   AttackedBy([ANYTHING],DEFAULT)
+   SpellCast([GOODCUTOFF],0)		// triggers on any spell
+   SpellCastPriest([GOODCUTOFF],0)	// triggers on any spell
+   SpellCastInnate([GOODCUTOFF],0)	// triggers on any ability
+   Heard([ANYTHING],99)
+THEN
+  RESPONSE #100
+    Enemy()
+    Shout(99)
+    Continue()
+END
+
+IF
+  GlobalTimerExpired("RitualIsNowOver","GLOBAL")
+  Global("OutOfTime","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("OutOfTime","LOCALS",1)
+    DisplayString(Myself,42213) // damn you!
+    DisplayStringHead(Myself,@5008) // Strange transformation
+    DestroyAllEquipment()
+    CreateVisualEffectObject("SPPORTAL",Myself)
+    Wait(2)
+    Polymorph(SLIME_MUSTARD)
+    Wait(3)
+    Kill(Myself)
+END
+
+IF
+  ActionListEmpty()
+  Global("Init","LOCALS",1)
+  CheckStatLT(Myself,20,WIS)
+  !GlobalTimerExpired("RitualIsNowOver","GLOBAL")
+  Global("OutOfTime","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("OutOfTime","LOCALS",1)
+    DisplayString(Myself,42213) // damn you!
+    SetGlobalTimer("RitualIsNowOver","GLOBAL",30)
+    Wait(1)
+    DisplayStringHead(Myself,@5008) // Strange transformation
+    DestroyAllEquipment()
+    CreateVisualEffectObject("SPPORTAL",Myself)
+    Wait(1)
+    Polymorph(SLIME_MUSTARD)
+    Wait(1)
+    Kill(Myself)
+END
+
+IF
+  ActionListEmpty()
+  Global("Init","LOCALS",1)
+  !CheckStatLT(Myself,20,WIS)
+  !GlobalTimerExpired("RitualIsNowOver","GLOBAL")
+  Global("OutOfTime","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("OutOfTime","LOCALS",1)
+    DisplayString(Myself,@5010) // yes!
+    SetGlobalTimer("RitualIsNowOver","GLOBAL",0)
+    Wait(3)
+    DestroyAllEquipment()
+    CreateVisualEffectObject("SPPORTAL",Myself)
+    ReallyForceSpell(Myself,DRYAD_TELEPORT)
+END

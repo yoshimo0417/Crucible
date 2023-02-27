@@ -1,0 +1,107 @@
+// Tactics Remix, Improved Twisted Rune
+
+///////////////////////////////////////////////////////////////////////////
+// Import                                                                //
+///////////////////////////////////////////////////////////////////////////
+ACTION_IF !forgot_arm BEGIN
+  ACTION_IF NOT FILE_EXISTS_IN_GAME ~BDSW1H21.SPL~ BEGIN
+      COPY ~tactics-remix/spl/BDSW1H21.SPL~ ~override/BDSW1H21.SPL~
+  END
+
+  // Bloodletter +4
+  COPY ~tactics-remix/itm/MO1H39.ITM~ ~override/MO1H39.ITM~
+      SAY NAME1 @4900
+      SAY NAME2 @4902
+      SAY UNIDENTIFIED_DESC @4901
+      SAY DESC @4903
+      WRITE_ASCII 0x58 csw1h34
+      WRITE_LONG 0x34 10000
+  
+  // Deep Guardian Plate
+  COPY ~tactics-remix/itm/MOPM02.ITM~ ~override/MOPM02.ITM~
+      SAY NAME1 @4804
+      SAY NAME2 @4806
+      SAY UNIDENTIFIED_DESC @4805
+      SAY DESC @4807
+      WRITE_ASCII 0x58 cplat16
+      WRITE_LONG 0x34 10000
+
+  // Uthgardt Holy Shield
+  COPY ~tactics-remix/itm/MOMSH03.ITM~ ~override/MOMSH03.ITM~
+        SAY NAME1 @5000
+        SAY NAME2 @5002
+        SAY UNIDENTIFIED_DESC @5001
+        SAY DESC @5003
+        WRITE_ASCII 0x58 cnpshld
+        WRITE_LONG 0x34 4000
+END
+
+///////////////////////////////////////////////////////////////////////////
+// Update Revanek                                                        //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~hlrevan.CRE~ ~override~
+  WRITE_SHORT 0x246 0x4002       // Wizard Slayer
+  WRITE_ASCII 0x250 ~~        #8 // Clear Class Script
+  WRITE_ASCII 0x258 ~~        #8 // Clear Race Script
+  WRITE_ASCII 0x260 ~~        #8 // Clear General Script
+  WRITE_ASCII 0x268 ~hlrevan~ #8 // Add Default Script
+  WRITE_BYTE 0x54   3            // Save vs. Death
+  WRITE_BYTE 0x55   5            // Save vs. Wand
+  WRITE_BYTE 0x56   4            // Save vs. Polymorph
+  WRITE_BYTE 0x57   4            // Save vs. Breath
+  WRITE_BYTE 0x58   6            // Save vs. Spell
+
+  PATCH_IF !forgot_arm BEGIN
+    SET_BG2_PROFICIENCY ~PROFICIENCYBASTARDSWORD~ 5
+    SET_BG2_PROFICIENCY ~PROFICIENCYSWORDANDSHIELD~ 2
+    REPLACE_CRE_ITEM ~MO1H39~ #0 #0 #0 ~UNSTEALABLE~ ~WEAPON1~ EQUIP
+    REPLACE_CRE_ITEM ~MOPM02~ #0 #0 #0 ~UNSTEALABLE~ ~ARMOR~ EQUIP
+    REPLACE_CRE_ITEM ~MOMSH03~ #0 #0 #0 ~UNSTEALABLE~ ~SHIELD~ EQUIP
+    REPLACE_CRE_ITEM ~HELM06~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~HELMET~ EQUIP
+    REPLACE_CRE_ITEM ~AMUL22~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~AMULET~ EQUIP // Immunity to poison
+  END
+
+///////////////////////////////////////////////////////////////////////////
+// Update Shangalar                                                      //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~hlshang.CRE~ ~override~
+  WRITE_ASCII 0x250 ~~        #8 // Clear Class Script
+  WRITE_ASCII 0x258 ~~        #8 // Clear Race Script
+  WRITE_ASCII 0x260 ~~        #8 // Clear General Script
+  WRITE_ASCII 0x268 ~hlshang~ #8 // Add Default Script
+  WRITE_BYTE 0x54   8            // Save vs. Death
+  WRITE_BYTE 0x55   3            // Save vs. Wand
+  WRITE_BYTE 0x56   5            // Save vs. Polymorph
+  WRITE_BYTE 0x57   7            // Save vs. Breath
+  WRITE_BYTE 0x58   1            // Save vs. Spell
+  REPLACE_CRE_ITEM ~CLCK17~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~ARMOR~ EQUIP
+
+///////////////////////////////////////////////////////////////////////////
+// Update Layene                                                         //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~hllayen.CRE~ ~override~
+  WRITE_ASCII 0x250 ~~        #8 // Clear Class Script
+  WRITE_ASCII 0x258 ~~        #8 // Clear Race Script
+  WRITE_ASCII 0x260 ~~        #8 // Clear General Script
+  WRITE_ASCII 0x268 ~hllayen~ #8 // Add Default Script
+  WRITE_BYTE 0x24   47           // Current HP
+  WRITE_BYTE 0x26   47           // Max HP
+  WRITE_BYTE 0x54   8            // Save vs. Death
+  WRITE_BYTE 0x55   3            // Save vs. Wand
+  WRITE_BYTE 0x56   5            // Save vs. Polymorph
+  WRITE_BYTE 0x57   7            // Save vs. Breath
+  WRITE_BYTE 0x58   4            // Save vs. Spell
+  WRITE_BYTE 0x234  25           // Level
+  PATCH_IF NOT FILE_EXISTS_IN_GAME ~UROBE1A.ITM~ BEGIN
+    REPLACE_CRE_ITEM ~CLCK17~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~ARMOR~ EQUIP
+    REPLACE_CRE_ITEM ~AMUL22~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~AMULET~ EQUIP // Immunity to poison
+  END
+
+///////////////////////////////////////////////////////////////////////////
+// Copy .BCS file to override folder                                     //
+///////////////////////////////////////////////////////////////////////////
+COPY ~tactics-remix/baf/twisted_rune/ar1008.baf~  ~override/ar1008.bcs~
+     ~tactics-remix/baf/twisted_rune/hlrevan.baf~ ~override/hlrevan.bcs~
+     ~tactics-remix/baf/twisted_rune/hlshang.baf~ ~override/hlshang.bcs~
+     ~tactics-remix/baf/twisted_rune/hllayen.baf~ ~override/hllayen.bcs~
+  COMPILE_BAF_TO_BCS

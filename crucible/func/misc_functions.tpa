@@ -1,0 +1,161 @@
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Misc Functions                                                        //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// ADD SPELLSTATE MACRO - TAKEN FROM SUBTLEDOCTOR                        //
+///////////////////////////////////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION d5_resolve_state INT_VAR index=0 delete=0 STR_VAR new_state_id = ~blah~ RET new_state_ind BEGIN
+ OUTER_SET min_new=118
+ COPY_EXISTING ~splstate.ids~ override
+  new_state_ind=0
+  found=0
+  READ_2DA_ENTRIES_NOW stats 2
+  FOR (row=0;row<stats;row+=1) BEGIN
+    READ_2DA_ENTRY_FORMER stats row 0 ind
+    READ_2DA_ENTRY_FORMER stats row 1 str
+    SET $stat("%row%") = ind
+    PATCH_IF index BEGIN
+      PATCH_IF ind=index BEGIN
+        REMOVE_2DA_ROW row 2
+        found=1
+        PATCH_IF delete=0 BEGIN
+          INSERT_2DA_ROW row 2 ~%index% %new_state_id%~
+        END
+        row=stats
+      END
+    END ELSE BEGIN
+      PATCH_IF ~%str%~ STRING_EQUAL_CASE ~%new_state_id%~ BEGIN
+        new_state_ind=ind
+        found=1
+     /* row=stats */ // don't stop looking, the same ID may be assigned to a greater index, which takes priority when compiling
+      END
+    END
+  END
+  PATCH_IF found=0 BEGIN
+    new_state_ind=min_new
+    PHP_EACH stat AS row => ind BEGIN
+      PATCH_IF found=0 && (row+1 < stats) BEGIN // not at the end of file
+        next_row = row+1
+        next_ind = EVAL $stat("%next_row%")
+        PATCH_IF index BEGIN
+          PATCH_IF index<next_ind && index>ind BEGIN
+            INSERT_2DA_ROW next_row 2 ~%index% %new_state_id%~
+            found=1
+          END
+        END ELSE BEGIN
+          PATCH_IF new_state_ind<next_ind BEGIN
+            PATCH_IF ind<new_state_ind BEGIN
+              INSERT_2DA_ROW next_row 2 ~%new_state_ind% %new_state_id%~
+              found=1
+            END ELSE BEGIN
+              new_state_ind+=1
+              PATCH_IF new_state_ind<next_ind BEGIN
+                INSERT_2DA_ROW next_row 2 ~%new_state_ind% %new_state_id%~
+                found=1
+              END
+            END
+          END
+        END
+      END ELSE BEGIN // at the end of file
+        PATCH_IF found=0 BEGIN
+          PATCH_IF index BEGIN
+            INSERT_2DA_ROW stats 2 ~%index% %new_state_id%~
+          END ELSE BEGIN
+            PATCH_IF new_state_ind>ind BEGIN
+              INSERT_2DA_ROW stats 2 ~%new_state_ind% %new_state_id%~
+            END ELSE BEGIN
+              new_state_ind+=1
+              INSERT_2DA_ROW stats 2 ~%new_state_ind% %new_state_id%~
+            END
+          END
+        END
+      END
+    END // PHP_EACH
+  END
+END
+
+///////////////////////////////////////////////////////////////////////////
+// ORGANIZE IDS MACRO - TAKEN FROM SCS                                   //
+///////////////////////////////////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION ds_sort_ids STR_VAR ids="" BEGIN
+   ACTION_CLEAR_ARRAY ids_entries
+   OUTER_SET max=0
+   COPY_EXISTING "%ids%.ids" override
+       READ_2DA_ENTRIES_NOW ids_array 2
+       // top row is either 'IDS V1.0', or a single row entry, or blank
+       PATCH_IF INDEX_BUFFER ("IDS *V1.0")>=0 BEGIN
+          SPRINT top_row "IDS V1.0"
+       END ELSE BEGIN
+          COUNT_2DA_ROWS 1 rowcount_1
+          PATCH_IF rowcount_1=ids_array BEGIN
+             SPRINT top_row " "
+          END ELSE BEGIN
+             READ_2DA_ENTRY 0 0 1 top_row
+          END
+       END
+       FOR (i=0;i<ids_array;i+=1) BEGIN
+          READ_2DA_ENTRY_FORMER ids_array i 0 num
+          PATCH_IF IS_AN_INT num BEGIN
+             SET max= num>max ? num : max
+             READ_2DA_ENTRY_FORMER ids_array i 1 val
+             PATCH_IF "%val%" STRING_COMPARE_CASE DMWW_UNUSED_FOR_DELETION BEGIN
+               PATCH_IF VARIABLE_IS_SET $ids_entries("%num%") BEGIN
+                SPRINT temp $ids_entries("%num%")
+                SPRINT $ids_entries("%num%") "%temp% %val%"
+               END ELSE BEGIN
+                SPRINT $ids_entries("%num%") "%val%"
+               END
+             END
+          END
+       END
+   BUT_ONLY
+   COPY ".../aiscript-inline/blank" "override/%ids%.ids"
+       INSERT_2DA_ROW 0 2 "DW_SORT_IDS_PLACEHOLDER"
+       SET rowcount=0
+       FOR (num=0;num<=max;num+=1) BEGIN
+          PATCH_IF VARIABLE_IS_SET $ids_entries("%num%") BEGIN
+             SPRINT list $ids_entries("%num%")
+             WHILE "%list%" STRING_COMPARE "" BEGIN
+                LPF ds_return_first_entry STR_VAR list RET entry list END
+                SPRINT check "%num%--%entry%"
+                PATCH_IF !VARIABLE_IS_SET EVAL "%check%" BEGIN
+                  INSERT_2DA_ROW rowcount 2 "%num% %entry%"
+                  SET rowcount+=1
+                  SPRINT EVAL "%check%" ""
+                END
+             END
+          END
+       END
+       REPLACE_TEXTUALLY "DW_SORT_IDS_PLACEHOLDER" "%top_row%"
+END
+
+DEFINE_PATCH_FUNCTION ds_return_first_entry
+   STR_VAR list=""
+   RET entry
+       list
+BEGIN
+   PATCH_IF "%list%" STRING_EQUAL "" BEGIN // return nothing if list is empty
+      SPRINT list ""
+      SPRINT entry ""
+   END ELSE
+   PATCH_IF INDEX (" " "%list%")<0 BEGIN // only one entry
+      SPRINT entry "%list%"
+      SPRINT list ""
+   END ELSE BEGIN
+    INNER_PATCH_SAVE list "%list%" BEGIN
+      REPLACE_EVALUATE "\([^ ]*\) \(.*\)"
+      BEGIN
+         SPRINT entry "%MATCH1%"
+      END
+      "%MATCH2%"
+    END
+   END
+END
+
+<<<<<<<< .../aiscript-inline/blank
+>>>>>>>>

@@ -1,0 +1,87 @@
+IF
+  !See(NearestEnemyOf(Myself))
+  Delay(3)
+THEN
+  RESPONSE #100
+    ForceSpell(Myself,WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+  RESPONSE #100
+    DisplayString(Myself,62975)  // I've heard enough! Show yourself, whatever you are, so I might destroy you!
+    DisplayString(Myself,57171)  // I'll kill you for trying to manipulate me!
+    ForceSpellRES("wwundead",Myself)  // Teleport Field
+END
+
+IF
+  OR(7)
+    See(Player1)
+    See(Player2)
+    See(Player3)
+    See(NearestEnemyOf(Myself))
+    See(Player4)
+    See(Player5)
+    See(Player6)
+  Global("DemiCC","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("DemiCC","LOCALS",1)
+    DisplayString(Myself,25951)  // Spell Sequencer
+    ReallyForceSpell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+    ReallyForceSpell(LastSeenBy(Myself),WIZARD_GREATER_MALISON)  // SPWI412.SPL (Greater Malison)
+    ReallyForceSpell(LastSeenBy(Myself),WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+    DisplayString(Myself,26328)  // Chain Contingency
+    ReallyForceSpell(Myself,WIZARD_TELEPORT_FIELD)  // SPWI421.SPL (Teleport Field)
+    ReallyForceSpell(Myself,WIZARD_TELEPORT_FIELD)  // SPWI421.SPL (Teleport Field)
+    ReallyForceSpell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
+    DisplayString(Myself,40252)  // Contingency—Protection From Magical Weapons
+    ReallyForceSpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+    CreateCreatureObject("rat01",Myself,1,1,1)
+    ReallyForceSpell("rat01",WIZARD_GATE)  // SPWI905.SPL (Gate)
+    ReallyForceSpell("rat01",WIZARD_GATE)  // SPWI905.SPL (Gate)
+    ReallyForceSpell("rat01",WIZARD_GATE)  // SPWI905.SPL (Gate)
+    Continue()
+END
+
+IF
+  !GlobalTimerNotExpired("DemiTS","LOCALS")
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    SetGlobalTimer("DemiTS","LOCALS",TEN_ROUNDS)
+    ForceSpell(Myself,WIZARD_TIME_STOP)  // SPWI909.SPL (Time Stop)
+    ForceSpell(Myself,WIZARD_TELEPORT_FIELD)  // SPWI421.SPL (Teleport Field)
+    ForceSpell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
+    ForceSpell(Myself,WIZARD_SPELL_TRAP)  // SPWI902.SPL (Spell Trap)
+END
+
+IF
+  OR(7)
+    See(Player1)
+    See(Player2)
+    See(Player3)
+    See(NearestEnemyOf(Myself))
+    See(Player4)
+    See(Player5)
+    See(Player6)
+  !RandomNum(3,0)
+THEN
+  RESPONSE #300
+    ForceSpell(LastSeenBy(Myself),DEMILICH_TRAP_SOUL)  // SPIN788.SPL (Imprisonment)
+  RESPONSE #100
+    ForceSpell(LastSeenBy(Myself),DEMILICH_DEATH)  // SPIN789.SPL (Demilich Howl)
+END
+
+IF
+  OR(7)
+    See(Player6)
+    See(Player5)
+    See(Player4)
+    See(NearestEnemyOf(Myself))
+    See(Player3)
+    See(Player2)
+    See(Player1)
+THEN
+  RESPONSE #300
+    ForceSpell(LastSeenBy(Myself),DEMILICH_TRAP_SOUL)  // SPIN788.SPL (Imprisonment)
+  RESPONSE #100
+    ForceSpell(LastSeenBy(Myself),DEMILICH_DEATH)  // SPIN789.SPL (Demilich Howl)
+END
+

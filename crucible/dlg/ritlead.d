@@ -1,0 +1,38 @@
+BEGIN RITEND // Ender
+
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN s0
+  SAY @312 = @313 = @314
+  IF ~~ THEN EXIT
+END
+
+BEGIN RITS1 // Li Kao
+
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN s0
+  SAY @315
+  IF ~~ THEN REPLY @316 GOTO what
+  IF ~~ THEN REPLY @318 GOTO yes
+  IF ~~ THEN REPLY @320 GOTO no
+END
+
+IF ~~ THEN BEGIN what
+  SAY @317
+  IF ~~ THEN REPLY @318 GOTO yes
+  IF ~~ THEN REPLY @320 GOTO no
+END
+
+IF ~~ THEN BEGIN yes
+  SAY @319
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN no
+  SAY @321
+  IF ~~ THEN REPLY @322 GOTO why
+  IF ~~ THEN REPLY @323 GOTO why
+  IF ~~ THEN REPLY @324 GOTO why
+END
+
+IF ~~ THEN BEGIN why
+  SAY @325
+  IF ~~ THEN EXIT
+END

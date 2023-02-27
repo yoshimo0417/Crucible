@@ -1,0 +1,24 @@
+COPY ~tactics-remix/baf/solak1.baf~ ~tactics-remix/baf/solak1.baf~
+
+///////////////////////////////////////////////////////////////////////////
+// Update Dispelling Checks                                              //
+///////////////////////////////////////////////////////////////////////////
+  // All Dispels
+  LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~OR(4)
+    CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
+    CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
+    CheckSpellState(LastSeenBy(Myself),IMPROVED_MANTLE)
+    CheckSpellState(LastSeenBy(Myself),MANTLE)~~~~~
+    string = ~~~~~OR(5)
+    CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
+    CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
+    CheckSpellState(LastSeenBy(Myself),IMPROVED_MANTLE)
+    CheckSpellState(LastSeenBy(Myself),MANTLE)
+    CheckSpellState(LastSeenBy(Myself),SHIELD_OF_LATHANDER)
+~~~~~ //"
+  END

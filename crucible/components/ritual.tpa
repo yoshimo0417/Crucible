@@ -1,0 +1,145 @@
+// Tactics Remix, The Ritual
+
+///////////////////////////////////////////////////////////////////////////
+// Import Files                                                          //
+///////////////////////////////////////////////////////////////////////////
+
+// Spell Files
+COPY ~tactics-remix/spl/ritskul1.spl~ ~override~
+COPY ~tactics-remix/spl/ritamul.spl~  ~override~
+COPY ~tactics-remix/spl/ritual.spl~   ~override~
+  SAY NAME1 @5005
+  SAY NAME2 @5005
+COPY ~tactics-remix/spl/ritdrag.spl~  ~override~
+
+// Area Files 
+COPY ~tactics-remix/are/ar0086.are~   ~override~
+
+// Item Files
+COPY ~tactics-remix/itm/ritgol.itm~   ~override~
+// use immunity spellstates, if available (e.g. EE Fixpack)
+OUTER_SET charm_immunity     = IDS_OF_SYMBOL (~splstate~ ~CHARM_IMMUNITY~)  
+OUTER_SET panic_immunity     = IDS_OF_SYMBOL (~splstate~ ~PANIC_IMMUNITY~)    
+OUTER_SET sleep_immunity     = IDS_OF_SYMBOL (~splstate~ ~SLEEP_IMMUNITY~)    
+COPY ~tactics-remix/itm/ritamul.itm~  ~override~ 
+  SAY NAME1 @4700
+  SAY NAME2 @4702
+  SAY UNIDENTIFIED_DESC @4701
+  SAY DESC @4703
+  WRITE_SHORT   0x42 0
+  LPF CLONE_EFFECT INT_VAR multi_match = 1 match_opcode = 101 match_parameter2 =  5 opcode = 328 parameter2 = charm_immunity special = 1 STR_VAR insert = first END // clone immunity to charm into set spell state
+  LPF CLONE_EFFECT INT_VAR multi_match = 1 match_opcode = 101 match_parameter2 = 24 opcode = 328 parameter2 = panic_immunity special = 1 STR_VAR insert = first END // clone immunity to fear into set spell state
+  LPF CLONE_EFFECT INT_VAR multi_match = 1 match_opcode = 101 match_parameter2 = 39 opcode = 328 parameter2 = sleep_immunity special = 1 STR_VAR insert = first END // clone immunity to sleep into set spell state
+  
+COPY ~tactics-remix/itm/mysboot.itm~  ~override~
+  SAY NAME1 @4300
+  SAY NAME2 @4304
+  SAY UNIDENTIFIED_DESC @4301
+  SAY DESC @4305
+  PATCH_IF FILE_EXISTS_IN_GAME ~#curefer.spl~ BEGIN // fear cure from EEFP
+    LPF ALTER_EFFECT INT_VAR match_opcode = 161 opcode = 146 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~#curefer~ END // instead of curing fear, cast fear removal spell
+    LPF DELETE_EFFECT INT_VAR match_opcode = 240 match_parameter2 = 36 END // delete removal of fear icon (handled by spell)
+  END 
+        
+COPY ~tactics-remix/itm/ritdrag.itm~  ~override~
+  SAY NAME1 @4800
+  SAY NAME2 @4802
+  SAY UNIDENTIFIED_DESC @4801
+  SAY DESC @4803
+
+COPY_EXISTING   ~wolfspir.itm~  ~override~
+                ~bearspir.itm~  ~override~
+                ~lionspir.itm~  ~override~
+  WRITE_BYTE 0xbc 0     // no blur -- bugfix
+  BUT_ONLY_IF_IT_CHANGES
+
+// Creature Files
+COPY ~tactics-remix/cre/ritwolf.cre~  ~override~
+COPY ~tactics-remix/cre/ritbear.cre~  ~override~
+COPY ~tactics-remix/cre/ritlion.cre~  ~override~
+COPY ~tactics-remix/cre/ritgol3.cre~  ~override~
+COPY ~tactics-remix/cre/ritkt1.cre~   ~override~
+  SAY NAME1 @2016 
+  SAY NAME2 @2016
+COPY ~tactics-remix/cre/ritac1.cre~   ~override~
+  SAY NAME1 @2017 
+  SAY NAME2 @2017
+COPY ~tactics-remix/cre/ritkm1.cre~   ~override~
+  SAY NAME1 @2018
+  SAY NAME2 @2018
+COPY ~tactics-remix/cre/ritd1.cre~    ~override~
+  SAY NAME1 @2019
+  SAY NAME2 @2019
+COPY ~tactics-remix/cre/ritend.cre~   ~override~
+  SAY NAME1 @2022 
+  SAY NAME2 @2022
+COPY ~tactics-remix/cre/ritb1.cre~    ~override~
+  SAY NAME1 @2023 
+  SAY NAME2 @2023
+COPY ~tactics-remix/cre/ritw1.cre~    ~override~
+  SAY NAME1 @2024 
+  SAY NAME2 @2024
+COPY ~tactics-remix/cre/ritsf1.cre~   ~override~
+  SAY NAME1 @2025 
+  SAY NAME2 @2025
+COPY ~tactics-remix/cre/riti1.cre~    ~override~
+  SAY NAME1 @2026
+  SAY NAME2 @2026
+COPY ~tactics-remix/cre/ritm1.cre~    ~override~
+  SAY NAME1 @2027 
+  SAY NAME2 @2027
+COPY ~tactics-remix/cre/rits1.cre~    ~override~
+  SAY NAME1 @2028 
+  SAY NAME2 @2028
+COPY ~tactics-remix/cre/ritskul1.cre~ ~override~
+  SAY NAME1 @2029
+  SAY NAME2 @2029
+COPY ~tactics-remix/cre/ritpont.cre~  ~override~
+  SAY NAME1 @2030 
+  SAY NAME2 @2030
+COPY ~tactics-remix/cre/ritguard.cre~ ~override~
+  SAY NAME1 @2031 
+  SAY NAME2 @2031
+COPY ~tactics-remix/cre/ritcount.cre~ ~override~
+  SAY NAME1 @2032
+  SAY NAME2 @2032
+COPY ~tactics-remix/cre/ritgol0.cre~  ~override~
+  SAY NAME1 @2033
+  SAY NAME2 @2033
+COPY ~tactics-remix/cre/ritgol1.cre~  ~override~
+  SAY NAME1 @2034
+  SAY NAME2 @2034
+COPY ~tactics-remix/cre/ritgol2.cre~  ~override~
+  SAY NAME1 @2035
+  SAY NAME2 @2035
+COPY ~tactics-remix/cre/ritdrag.cre~  ~override~
+  SAY NAME1 @2036
+  SAY NAME2 @2036
+
+COMPILE EVALUATE_BUFFER ~tactics-remix/dlg/ritpont.d~
+COMPILE EVALUATE_BUFFER ~tactics-remix/dlg/ritcount.d~
+COMPILE EVALUATE_BUFFER ~tactics-remix/dlg/ritlead.d~
+
+///////////////////////////////////////////////////////////////////////////
+// Copy .BCS file to override folder                                     //
+///////////////////////////////////////////////////////////////////////////
+EXTEND_TOP ~AR3000.bcs~ ~tactics-remix/baf/ritual/rit3000.baf~
+
+COPY ~tactics-remix/baf/ritual/ar0086.baf~   ~override/ar0086.bcs~
+     ~tactics-remix/baf/ritual/ritac1.baf~   ~override/ritac1.bcs~
+     ~tactics-remix/baf/ritual/ritkt1.baf~   ~override/ritkt1.bcs~
+     ~tactics-remix/baf/ritual/ritkm1.baf~   ~override/ritkm1.bcs~
+     ~tactics-remix/baf/ritual/ritd1.baf~    ~override/ritd1.bcs~
+     ~tactics-remix/baf/ritual/ritend.baf~   ~override/ritend.bcs~
+     ~tactics-remix/baf/ritual/ritb1.baf~    ~override/ritb1.bcs~
+     ~tactics-remix/baf/ritual/ritw1.baf~    ~override/ritw1.bcs~
+     ~tactics-remix/baf/ritual/riti1.baf~    ~override/riti1.bcs~
+     ~tactics-remix/baf/ritual/rits1.baf~    ~override/rits1.bcs~
+     ~tactics-remix/baf/ritual/ritskul1.baf~ ~override/ritskul1.bcs~
+     ~tactics-remix/baf/ritual/ritpont.baf~  ~override/ritpont.bcs~
+     ~tactics-remix/baf/ritual/ritdrag.baf~  ~override/ritdrag.bcs~
+     ~tactics-remix/baf/ritual/ritual.baf~   ~override/ritual.bcs~
+     ~tactics-remix/baf/ritual/ritcount.baf~ ~override/ritcount.bcs~
+     ~tactics-remix/baf/ritual/ritguard.baf~ ~override/ritguard.bcs~
+  COMPILE_BAF_TO_BCS
+

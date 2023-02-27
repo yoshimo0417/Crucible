@@ -1,0 +1,77 @@
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Things to do only once - Borrowed and modified from SCS               //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
+
+  ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN FAIL @3001 END // Modmerge check
+
+  CLEAR_EVERYTHING            // occasionally, e.g. after installing IWD spells, we call this again. Make sure we get a fresh start.
+  //SILENT
+  OUTER_SET initialise=1
+  OUTER_SET target_tracking=0
+
+///////////////////////////////////////////////////////////////////////////
+// Set up ini system                                                     //
+///////////////////////////////////////////////////////////////////////////
+   INCLUDE ~tactics-remix/lib/lib_ini.tpa~
+    OUTER_SPRINT ini_to_read "tactics-remix/tactics-remix.ini"
+    LAF SFO_read_ini_file RET_ARRAY SFO_reserved_ini_hash END
+
+///////////////////////////////////////////////////////////////////////////
+// EET and BG2EE Chapter Selection courtesy of Jastey                    //
+///////////////////////////////////////////////////////////////////////////
+   ACTION_IF GAME_IS ~eet~ BEGIN
+      OUTER_SET bg2_chapter = 12
+   END ELSE BEGIN
+      OUTER_SET bg2_chapter = 0
+   END
+   OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+      OUTER_SET bg2_chapter = bg2_chapter + 1
+      OUTER_SPRINT name_source ~bg2_chapter_%i%~
+      OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+   END
+
+///////////////////////////////////////////////////////////////////////////
+// General variables, macros and functions                               //
+///////////////////////////////////////////////////////////////////////////
+   INCLUDE ~tactics-remix/sfo/install_sfo.tpa~
+   INCLUDE ~tactics-remix/func/misc_functions.tpa~ //Block of code provided by subtledoctor
+   INCLUDE ~tactics-remix/func/replace_multiline.tpa~ //Block of code in EET
+   INCLUDE ~tactics-remix/lib/ds/ds.tph~ // Detectable Spells
+
+   //SILENT
+
+///////////////////////////////////////////////////////////////////////////
+// Detect third-party mods                                               //
+///////////////////////////////////////////////////////////////////////////
+// Detect IWD Spells - IWDification
+   ACTION_IF MOD_IS_INSTALLED ~iwdification/setup-iwdification.tp2~ 30 && MOD_IS_INSTALLED ~iwdification/setup-iwdification.tp2~ 40 BEGIN
+      OUTER_SET iwdification=1
+   END ELSE BEGIN
+      OUTER_SET iwdification=0
+   END
+
+   // Detect Sword Coast Stratagems - Initialize AI
+   ACTION_IF MOD_IS_INSTALLED ~setup-stratagems.tp2~ ~5900~ BEGIN
+      OUTER_SET scs_ai=1
+   END ELSE BEGIN
+      OUTER_SET scs_ai=0
+   END
+
+   // Detect Sword Coast Stratagems - Breach
+   ACTION_IF MOD_IS_INSTALLED ~setup-stratagems.tp2~ ~6030~ BEGIN
+      OUTER_SET scs_smrt_mgs=1
+   END ELSE BEGIN
+      OUTER_SET scs_smrt_mgs=0
+   END
+
+   // Detect Forgotten Armament
+   ACTION_IF MOD_IS_INSTALLED ~setup-forgotten-armament.tp2~ ~20~ BEGIN
+      OUTER_SET forgot_arm=1
+   END ELSE BEGIN
+      OUTER_SET forgot_arm=0
+   END
+
+END

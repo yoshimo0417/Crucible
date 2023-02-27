@@ -1,0 +1,81 @@
+IF
+  Global("KuroiSpawn","GLOBAL",0)
+  AreaType(OUTDOOR)
+  AreaType(CITY)
+  CombatCounter(0)
+  OR(18)
+    HasItemEquiped("c2sw1h02",Player1)
+    HasItemEquiped("c2sw1h02",Player2)
+    HasItemEquiped("c2sw1h02",Player3)
+    HasItemEquiped("c2sw1h02",Player4)
+    HasItemEquiped("c2sw1h02",Player5)
+    HasItemEquiped("c2sw1h02",Player6)
+    HasItemEquiped("sw1h45",Player1)
+    HasItemEquiped("sw1h45",Player2)
+    HasItemEquiped("sw1h45",Player3)
+    HasItemEquiped("sw1h45",Player4)
+    HasItemEquiped("sw1h45",Player5)
+    HasItemEquiped("sw1h45",Player6)
+    HasItemEquiped("sw1h51",Player1)
+    HasItemEquiped("sw1h51",Player2)
+    HasItemEquiped("sw1h51",Player3)
+    HasItemEquiped("sw1h51",Player4)
+    HasItemEquiped("sw1h51",Player5)
+    HasItemEquiped("sw1h51",Player6)
+  OR(2)
+    GlobalLT("Chapter","GLOBAL",4)
+    GlobalGT("Chapter","GLOBAL",5)
+THEN
+  RESPONSE #100
+    IncrementGlobal("KuroiSpawn","GLOBAL",1)
+    SetGlobalTimer("KuroiSpawnTimer","GLOBAL",ONE_DAY)
+END
+
+IF
+  !Global("KuroiSpawn","GLOBAL",2)
+  OR(6)
+    HasItemEquiped("solak1",Player1)
+    HasItemEquiped("solak1",Player2)
+    HasItemEquiped("solak1",Player3)
+    HasItemEquiped("solak1",Player4)
+    HasItemEquiped("solak1",Player5)
+    HasItemEquiped("solak1",Player6)
+THEN
+  RESPONSE #100
+    SetGlobal("KuroiSpawn","GLOBAL",2)
+END
+
+IF
+  Global("KuroiSpawn","GLOBAL",1)
+  GlobalTimerExpired("KuroiSpawnTimer","GLOBAL")
+  AreaType(OUTDOOR)
+  AreaType(CITY)
+  CombatCounter(0)
+  OR(18)
+    HasItemEquiped("c2sw1h02",Player1)
+    HasItemEquiped("c2sw1h02",Player2)
+    HasItemEquiped("c2sw1h02",Player3)
+    HasItemEquiped("c2sw1h02",Player4)
+    HasItemEquiped("c2sw1h02",Player5)
+    HasItemEquiped("c2sw1h02",Player6)
+    HasItemEquiped("sw1h45",Player1)
+    HasItemEquiped("sw1h45",Player2)
+    HasItemEquiped("sw1h45",Player3)
+    HasItemEquiped("sw1h45",Player4)
+    HasItemEquiped("sw1h45",Player5)
+    HasItemEquiped("sw1h45",Player6)
+    HasItemEquiped("sw1h51",Player1)
+    HasItemEquiped("sw1h51",Player2)
+    HasItemEquiped("sw1h51",Player3)
+    HasItemEquiped("sw1h51",Player4)
+    HasItemEquiped("sw1h51",Player5)
+    HasItemEquiped("sw1h51",Player6)
+  OR(2)
+    GlobalLT("Chapter","GLOBAL",4)
+    GlobalGT("Chapter","GLOBAL",5)
+THEN
+  RESPONSE #100
+    IncrementGlobal("KuroiSpawn","GLOBAL",1)
+    CreateCreatureObjectOffScreen("solak1",Player1,0,0,0)  // solak1
+END
+

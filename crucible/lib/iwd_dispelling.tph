@@ -1,0 +1,105 @@
+COPY ~tactics-remix/baf/mognome.baf~ ~tactics-remix/baf/mognome.baf~
+
+///////////////////////////////////////////////////////////////////////////
+// Update Dispelling Checks                                              //
+///////////////////////////////////////////////////////////////////////////
+  // All Dispels
+  LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~OR(4)
+    CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
+    CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
+    CheckSpellState(LastSeenBy(Myself),IMPROVED_MANTLE)
+    CheckSpellState(LastSeenBy(Myself),MANTLE)~~~~~
+    string = ~~~~~OR(5)
+    CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
+    CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
+    CheckSpellState(LastSeenBy(Myself),IMPROVED_MANTLE)
+    CheckSpellState(LastSeenBy(Myself),MANTLE)
+    CheckSpellState(LastSeenBy(Myself),SHIELD_OF_LATHANDER)
+~~~~~ //"
+  END
+
+///////////////////////////////////////////////////////////////////////////
+// Update Spell Strike for SCS Revisions                                 //
+///////////////////////////////////////////////////////////////////////////
+  LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~OR(8)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
+    CheckSpellState(LastSeenBy(Myself),SI_ABJURATION)
+    CheckSpellState(LastSeenBy(Myself),SI_DIVINATION)
+    CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckSpellState(LastSeenBy(Myself),SCROLL_OF_PROTECTION_FROM_MAGIC)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)~~~~~
+    string = ~~~~~OR(9)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
+    CheckSpellState(LastSeenBy(Myself),SI_ABJURATION)
+    CheckSpellState(LastSeenBy(Myself),SI_DIVINATION)
+    CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+    CheckSpellState(LastSeenBy(Myself),SCROLL_OF_PROTECTION_FROM_MAGIC)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)~~~~~ //"
+  END
+
+///////////////////////////////////////////////////////////////////////////
+// Update Ruby Ray of Reversal for SCS Revisions                         //
+///////////////////////////////////////////////////////////////////////////
+  LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~OR(7)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
+    CheckSpellState(LastSeenBy(Myself),SI_ABJURATION)
+    CheckSpellState(LastSeenBy(Myself),SI_DIVINATION)
+    CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)~~~~~
+    string = ~~~~~OR(8)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
+    CheckSpellState(LastSeenBy(Myself),SI_ABJURATION)
+    CheckSpellState(LastSeenBy(Myself),SI_DIVINATION)
+    CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)~~~~~ //"
+  END
+
+///////////////////////////////////////////////////////////////////////////
+// Update Khelben's Warding Whip for SCS Revisions                       //
+///////////////////////////////////////////////////////////////////////////
+  LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~OR(6)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
+    CheckSpellState(LastSeenBy(Myself),SI_ABJURATION)
+    CheckSpellState(LastSeenBy(Myself),SI_DIVINATION)
+    CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)~~~~~
+    string = ~~~~~OR(7)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
+    CheckSpellState(LastSeenBy(Myself),SI_ABJURATION)
+    CheckSpellState(LastSeenBy(Myself),SI_DIVINATION)
+    CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckSpellState(LastSeenBy(Myself),ENTROPY_SHIELD)~~~~~ //"
+  END

@@ -1,0 +1,346 @@
+/*************************************************************************/
+///////////////////////////////////////////////////////////////////////////
+// Tactics Remix by morpheus562                                          //
+///////////////////////////////////////////////////////////////////////////
+/*************************************************************************/
+
+BACKUP ~tactics-remix/backup~
+AUTHOR ~morpheus562~
+
+VERSION ~v0.2-alpha~
+README ~tactics-remix/readme.%LANGUAGE%.html~ ~tactics-remix/readme.html~
+AUTO_EVAL_STRINGS
+
+ASK_EVERY_COMPONENT
+
+ALWAYS
+	INCLUDE ~tactics-remix/lib/always.tph~
+END
+
+AUTO_TRA ~tactics-remix/languages/%s~
+LANGUAGE ~English~
+         ~english~
+         ~tactics-remix/languages/english/cre_dialog.tra~
+         ~tactics-remix/languages/english/creatures.tra~
+         ~tactics-remix/languages/english/item_descriptions.tra~
+         ~tactics-remix/languages/english/script_dialog.tra~
+         ~tactics-remix/languages/english/setup.tra~
+		 
+LANGUAGE ~Francais (original translation by Ly Meng, Laurent Duvernet et Cocobard)~
+         ~french~
+         ~tactics-remix/languages/english/cre_dialog.tra~
+         ~tactics-remix/languages/english/creatures.tra~
+         ~tactics-remix/languages/english/item_descriptions.tra~
+         ~tactics-remix/languages/english/script_dialog.tra~
+         ~tactics-remix/languages/english/setup.tra~
+         ~tactics-remix/languages/french/cre_dialog.tra~
+         ~tactics-remix/languages/french/creatures.tra~
+         ~tactics-remix/languages/french/item_descriptions.tra~
+         ~tactics-remix/languages/french/script_dialog.tra~
+         ~tactics-remix/languages/french/setup.tra~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Add New Encounters (Group 3010)                                       //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// "Kuroisan", the Acid Kensai                                           //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @2 DESIGNATED 2 GROUP @3010 LABEL TacticsRemix-Kuroisan
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/kuroisan.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// The Ritual                                                            //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @1 DESIGNATED 1 GROUP @3010 LABEL TacticsRemix-Ritual
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/ritual.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// "Red Badge" Poison-Based Encounter                                    //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @3 DESIGNATED 3 GROUP @3010 LABEL TacticsRemix-RedBadge
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/red_badge.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// Gebhard Blucher's Lich in the Docks                                   //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @4 DESIGNATED 4 GROUP @3010 LABEL TacticsRemix-LichDocks
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/lich_docks.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// Kensai Ryu's Gnome Fighter/Illusionist in the Docks                   //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @5 DESIGNATED 5 GROUP @3010 LABEL TacticsRemix-GnomeFI
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/gnomefi.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Update Existing Encounters (Group 3011)                               //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+/* WILL NOT DO SINCE SCS ALREADY DOES THIS
+///////////////////////////////////////////////////////////////////////////
+// Improved TorGal and De'Arnisse Keep                                   //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @7 DESIGNATED 7 GROUP @3011 LABEL TacticsRemix-TorGal
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/torgal.tpa~
+*/
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// Improved Sahuagin City                                                //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @8 DESIGNATED 8 GROUP @3011 LABEL TacticsRemix-Sahuagin
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/sahuagin.tpa~
+*/
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// Improved Bodhi                                                        //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @9 DESIGNATED 9 GROUP @3011 LABEL TacticsRemix-Bodhi
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/bodhi.tpa~
+*/
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// Improved Irenicus                                                     //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @10 DESIGNATED 10 GROUP @3011 LABEL TacticsRemix-Irenicus
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/irenicus.tpa~
+*/
+
+///////////////////////////////////////////////////////////////////////////
+// Improved Guarded Compound in the Temple District                      //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @11 DESIGNATED 11 GROUP @3011 LABEL TacticsRemix-GuardedCompound
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/guarded_compound.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// Improved Twisted Rune                                                 //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @12 DESIGNATED 12 GROUP @3011 LABEL TacticsRemix-TwistedRune
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/twisted_rune.tpa~
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// Gebhard Blucher's Improved Mae'Var                                    //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @13 DESIGNATED 13 GROUP @3011 LABEL TacticsRemix-MaeVar
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/maevar.tpa~
+*/
+
+///////////////////////////////////////////////////////////////////////////
+// Gebhard Blucher's Improved Demon Knights                              //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @14 DESIGNATED 14 GROUP @3011 LABEL TacticsRemix-DemonKnights
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/demon_knights.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// Kensai Ryu's Tougher Kangaxx and Guardians                            //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @15 DESIGNATED 15 GROUP @3011 LABEL TacticsRemix-Kangaxx
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/kangaxx.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// Kensai Ryu's Improved Crypt King                                      //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @6 DESIGNATED 6 GROUP @3011 LABEL TacticsRemix-CryptKing
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/crypt_king.tpa~
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// Smarter Dragons in SoA                                                //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @16 DESIGNATED 16 GROUP @3011 LABEL TacticsRemix-Dragons
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/dragons.tpa~
+*/
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// Kensai Ryu's Improved Copper Coronet                                  //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @17 DESIGNATED 17 GROUP @3011 LABEL TacticsRemix-CopperCoronet
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/copper_coronet.tpa~
+*/
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// SimDing0's Improved Oasis                                             //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @18 DESIGNATED 18 GROUP @3011 LABEL TacticsRemix-Oasis
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/oasis.tpa~
+*/
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// Mike Barnes' Improved Small Teeth Pass                                //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @19 DESIGNATED 19 GROUP @3011 LABEL TacticsRemix-SmallTeethPass
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/small_teeth_pass.tpa~
+*/
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// Mike Barnes' Improved North Forest                                    //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @20 DESIGNATED 20 GROUP @3011 LABEL TacticsRemix-NorthForest
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/north_forest.tpa~
+*/
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// Mike Barnes' Marching Mountains                                       //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @21 DESIGNATED 21 GROUP @3011 LABEL TacticsRemix-MarchingMountains
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/marching_mountains.tpa~
+*/
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// Tougher Druid Grove                                                   //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @22 DESIGNATED 22 GROUP @3011 LABEL TacticsRemix-DruidGrove
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/druid_grove.tpa~
+*/
+
+/*
+///////////////////////////////////////////////////////////////////////////
+// Tougher Fire Giants                                                   //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @23 DESIGNATED 23 GROUP @3011 LABEL TacticsRemix-FireGiants
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~tactics-remix/components/fire_giants.tpa~
+*/
+
+///////////////////////////////////////////////////////////////////////////
+// Morpheus562's Improved Drizzt (BGEE)                                  //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @29 DESIGNATED 29 GROUP @3011 LABEL TacticsRemix-DrizztBGEE
+
+REQUIRE_PREDICATE GAME_IS ~bgee eet~ @3002
+
+INCLUDE ~tactics-remix/components/drizzt_bgee.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Enemy Improvements (Group 3012)                                       //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Improve All Enemies Hit Points                                        //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @25 DESIGNATED 25 SUBCOMPONENT @24 GROUP @3012 LABEL TacticsRemix-HitPoints1 
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3000
+
+OUTER_SET dmg_multiplier = 2 // x2 multiplier
+OUTER_SET dmg_bonus = 0      // Damage bonus +0
+INCLUDE ~tactics-remix/components/hit_points.tpa~
+
+////////////////////////////////////////////////////
+
+BEGIN @26 DESIGNATED 26 SUBCOMPONENT @24 GROUP @3012 LABEL TacticsRemix-HitPoints2 
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3000
+
+OUTER_SET dmg_multiplier = 2 // x2 multiplier
+OUTER_SET dmg_bonus = 20     // Damage bonus +0
+INCLUDE ~tactics-remix/components/hit_points.tpa~
+
+////////////////////////////////////////////////////
+
+BEGIN @27 DESIGNATED 27 SUBCOMPONENT @24 GROUP @3012 LABEL TacticsRemix-HitPoints3 
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3000
+
+OUTER_SET dmg_multiplier = 3 // x2 multiplier
+OUTER_SET dmg_bonus = 0      // Damage bonus +0
+INCLUDE ~tactics-remix/components/hit_points.tpa~
+
+////////////////////////////////////////////////////
+
+BEGIN @28 DESIGNATED 28 SUBCOMPONENT @24 GROUP @3012 LABEL TacticsRemix-HitPoints4 
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3000
+
+OUTER_SET dmg_multiplier = 3 // x2 multiplier
+OUTER_SET dmg_bonus = 30     // Damage bonus +0
+INCLUDE ~tactics-remix/components/hit_points.tpa~
+
+////////////////////////////////////////////////////
+
+BEGIN @30 DESIGNATED 30 SUBCOMPONENT @24 GROUP @3012 LABEL TacticsRemix-HitPoints5 
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @3000
+
+OUTER_SET dmg_multiplier = ini_multiplier // ini multiplier
+OUTER_SET dmg_bonus = ini_set_bonus       // ini bonus
+INCLUDE ~tactics-remix/components/hit_points.tpa~

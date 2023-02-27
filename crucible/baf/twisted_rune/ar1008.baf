@@ -1,0 +1,82 @@
+//////////////////////////////////////////////////////////////////
+// AR1008
+// Smarter Twisted Rune Room. Make life interesting with some
+// initial skull traps and summon some Rune Assassins as well.
+//////////////////////////////////////////////////////////////////
+IF
+    Global("Prep","AR1008",0)
+THEN
+    RESPONSE #100
+      ForceSpellPoint([626.676],WIZARD_SKULL_TRAP)
+      ForceSpellPoint([626.676],WIZARD_SKULL_TRAP)
+      ForceSpellPoint([626.676],WIZARD_SKULL_TRAP)
+      ForceSpellPoint([652.702],WIZARD_SKULL_TRAP)
+      ForceSpellPoint([652.702],WIZARD_SKULL_TRAP)
+      ForceSpellPoint([652.702],WIZARD_SKULL_TRAP)
+      ForceSpellPoint([678.728],WIZARD_SKULL_TRAP)
+      ForceSpellPoint([678.728],WIZARD_SKULL_TRAP)
+      ForceSpellPoint([678.728],WIZARD_SKULL_TRAP)
+      SetGlobal("Prep","AR1008",1)
+END
+
+IF
+    Global("ShangalarMove","AR1008",1)
+THEN
+    RESPONSE #100
+        SetGlobal("ShangalarMove","AR1008",2)
+        CreateVisualEffect("SPROTECT",[825.664])
+        CreateVisualEffect("SPROTECT",[788.590])
+        CreateVisualEffect("SPROTECT",[285.805])
+        CreateVisualEffect("SPROTECT",[641.668])
+        Wait(1)
+        CreateVisualEffect("SPDISPMA",[825.664])
+        CreateVisualEffect("SPDISPMA",[788.590])
+        CreateVisualEffect("SPDISPMA",[285.805])
+        CreateVisualEffect("SPDISPMA",[641.668])
+        SmallWait(7)
+        CreateCreature("TANTHF01",[825.664],10) // rune assassins
+        CreateCreature("TANTHF01",[788.590],6)
+        CreateCreature("TANTHF01",[285.805],2)
+        CreateCreature("TANTHF01",[641.668],12)
+        Wait(2) // soak up traps and contingencies
+        CreateVisualEffect("SPDISPMA",[825.664])
+        CreateVisualEffect("SPDISPMA",[788.590])
+        CreateVisualEffect("SPDISPMA",[285.805])
+        CreateVisualEffect("SPDISPMA",[641.668])
+        CreateCreature("HLREVAN",[825.664],10)
+        CreateCreature("HLVAXAL",[788.590],6)
+        CreateCreature("HLLAYEN",[285.805],2)
+        CreateCreature("HLSHYR",[641.668],12)
+END
+
+IF
+    Dead("HLSHANG") // Shangalar
+    !Exists("HLVAXAL")
+    !Dead("HLVAXAL") // Vaxall
+THEN
+    RESPONSE #100
+        SetGlobal("ShangalarMove","AR1008",2)
+        CreateVisualEffect("SPROTECT",[825.664])
+        CreateVisualEffect("SPROTECT",[788.590])
+        CreateVisualEffect("SPROTECT",[285.805])
+        CreateVisualEffect("SPROTECT",[641.668])
+        Wait(1)
+        CreateVisualEffect("SPDISPMA",[825.664])
+        CreateVisualEffect("SPDISPMA",[788.590])
+        CreateVisualEffect("SPDISPMA",[285.805])
+        CreateVisualEffect("SPDISPMA",[641.668])
+        SmallWait(7)
+        CreateCreature("TANTHF01",[825.664],10) // rune assassins
+        CreateCreature("TANTHF01",[788.590],6)
+        CreateCreature("TANTHF01",[285.805],2)
+        CreateCreature("TANTHF01",[641.668],12)
+        Wait(2) // soak up traps and contingencies
+        CreateVisualEffect("SPDISPMA",[825.664])
+        CreateVisualEffect("SPDISPMA",[788.590])
+        CreateVisualEffect("SPDISPMA",[285.805])
+        CreateVisualEffect("SPDISPMA",[641.668])
+        CreateCreature("HLREVAN",[825.664],10) 
+        CreateCreature("HLVAXAL",[788.590],6) 
+        CreateCreature("HLLAYEN",[285.805],2) 
+        CreateCreature("HLSHYR",[641.668],12)
+END

@@ -1,0 +1,38 @@
+IF 
+    !Allegiance(Myself,ENEMY)
+    OR(12)
+      AttackedBy([GOODCUTOFF.0.0.0.0.SUMMONED],DEFAULT)
+      AttackedBy([PC],DEFAULT)
+      AttackedBy([FAMILIAR],DEFAULT)
+      AttackedBy([ALLY],DEFAULT)
+      AttackedBy([CONTROLLED],DEFAULT)
+      AttackedBy([CHARMED],DEFAULT)
+      SpellCastOnMe([GOODCUTOFF.0.0.0.0.SUMMONED],0)
+      SpellCastOnMe([PC],0)
+      SpellCastOnMe([FAMILIAR],0)
+      SpellCastOnMe([ALLY],0)
+      SpellCastOnMe([CONTROLLED],0)
+      SpellCastOnMe([CHARMED],0)
+THEN
+  RESPONSE #100
+      Enemy()
+      Continue()
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+      StartCutSceneMode()
+      ApplySpell(Myself,WIZARD_INVISIBILITY)
+      CreateVisualEffectObject("SPPORTAL",Myself)
+      CreateCreatureObject("ritgol3",Myself,1,0,0)
+      CreateCreatureOffScreen("ritgol3",0)
+      CreateCreatureOffScreen("ritgol3",2)
+      CreateCreatureOffScreen("ritgol3",4)
+      Wait(1)
+      CreateCreatureObject("ritdrag",Myself,1,0,0)
+      CreateVisualEffectObject("SPPORTAL","ritdrag")
+      DestroySelf()
+      EndCutSceneMode()
+END

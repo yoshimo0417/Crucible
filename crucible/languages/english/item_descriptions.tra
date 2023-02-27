@@ -1,0 +1,542 @@
+// Tactics Remix, Items
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Short Swords                                                          //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Short Sword                                                           //
+///////////////////////////////////////////////////////////////////////////
+@4000 = ~Short Sword~
+@4001 = ~The short sword is the first type of sword to come into existence. In the simplest of terms, a short sword can be considered a dagger with a blade so long that it can no longer be called a dagger. The term short sword does not exist in sword classifications. However, it has come to be used to describe a double-edged blade about two feet in length. The sword tip is usually pointed, ideal for thrusting.
+
+STATISTICS:
+
+Damage: 1d6
+Damage type: Piercing
+Speed Factor: 3
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+///////////////////////////////////////////////////////////////////////////
+// Littlefang                                                            //
+///////////////////////////////////////////////////////////////////////////
+@4002 = ~Littlefang +2~
+@4003 = ~Though the sheen of the sword's blade is metallic, the heft of the weapon seems as if it were carved from the tooth of some great beast, and sheathed in a metal hilt to protect it from the user's hand. A greedy essence seems to inhabit this weapon, pore-like holes in the blade soaking up any blood it touches.
+
+STATISTICS:
+
+Combat abilities:
+– Each hit drains 1 Hit Point from the target and transfers it to the wielder. This will not heal beyond the wielder's maximum.
+
+THAC0: +2
+Damage: 1d6+2
+Damage type: Piercing
+Speed Factor: 1
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+///////////////////////////////////////////////////////////////////////////
+// The Lucky One                                                         //
+///////////////////////////////////////////////////////////////////////////
+@4004 = ~The Lucky One +1~
+@4005 = ~This is a swashbuckler's blade that has seen endless use in grand fights against "big nasties" sent forth by whomever. The Lucky Ones mercenary company commissioned these blades while still flush from their last big score. After their windfall they only adventured for the thrill of it, challenging each other to ever-greater feats of daring-do. Why are these weapons no longer with them? Sometimes the "big nasty" wins.
+
+STATISTICS:
+
+Equipped abilities:
+– Luck: +1
+
+THAC0: +1
+Damage: 1d6+1
+Damage type: Piercing
+Speed Factor: 2
+Proficiency Type: Short Sword
+Type: One-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Katanas                                                               //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Katana                                                                //
+///////////////////////////////////////////////////////////////////////////
+@4100 = ~Katana~
+@4101 = ~The katana is a single-edged, slightly curved sword that ends with a chisel point. The katana is perhaps one of the finest swords ever made, the steps to its creation a long and secret process that is more art form than anything else. This blade is an important facet of Kara-Turan culture. To touch or wield a samurai's katana is to insult the samurai and to incite his wrath. For a gaijin, or foreigner, to own such a blade is a rare occurrence. Either the gaijin is a greatly honored friend of an important minister, or the gaijin has murdered a samurai.
+
+STATISTICS:
+
+Damage: 1d10
+Damage Type: Slashing
+Speed Factor: 4
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 6~
+
+///////////////////////////////////////////////////////////////////////////
+// Sanchuudoku +4                                                        //
+///////////////////////////////////////////////////////////////////////////
+@4102 = ~Sanchuudoku +4~
+/*
+@4103 = ~This green blade was forged by a Kara-Turan Wu Jen as a gift for his paranoid overlord; its name means "Acidic Poisoning". The sword was enchanted using the fresh blood of a Black Dragon and the hilt guard is decorated with Wolfwere bone fragments. The blade heals its user's wounds at an alarming rate and powerful acid seem to fly from it whenever an attack is made on the user. 
+
+STATISTICS:
+
+Equipped abilities:
+– Regeneration (1 hit point every two seconds)
+– Immunity to Acid
+
+Combat abilities:
+– Each hit lowers the target's acid resistance by 25% for 18 seconds and inflicts 2d4 acid damage. 
+
+THAC0: +4
+Damage: 1d10+4
+Damage Type: Slashing
+Speed Factor: 4
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 8~
+*/
+
+@4103 = ~This green blade was forged by a Kara-Turan Wu Jen as a gift for his paranoid overlord; its name means "Acidic Poisoning". The sword was enchanted using the fresh blood of a Black Dragon and the hilt guard is decorated with Wolfwere bone fragments. The blade heals its user's wounds at an alarming rate and powerful acid seem to fly from it whenever an attack is made on the user. 
+
+STATISTICS:
+
+Equipped abilities:
+– Regeneration (1 hit point every two seconds)
+– Immunity to Acid
+– 2 points of acid damage to any who damage the wielder
+
+Combat abilities:
+– Each hit lowers the target's acid resistance by 10% for 18 seconds
+
+THAC0: +4
+Damage: 1d10+4, +1d8 acid damage
+Damage Type: Slashing
+Speed Factor: 0
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 8~
+
+@4104 = ~Acidic Backlash~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Robes                                                                 //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Robe                                                                  //
+///////////////////////////////////////////////////////////////////////////
+@4200 = ~Mage Robe~
+@4201 = ~Since the age of Netheril, mages have learned to bestow a wide variety of magical properties upon the everyday objects that surround them. A favorite item of such enchantment is the common robe. It is lightweight, affordable, and holds its enchantment well, thereby making it ideal equipment for a mage. Due to their magical heritage, however, only single-, dual-, and multi-class mages may wear these enchanted robes.
+
+STATISTICS:
+
+Weight: 3~
+
+///////////////////////////////////////////////////////////////////////////
+// Greater Robe of Eyes                                                  //
+///////////////////////////////////////////////////////////////////////////
+@4202 = ~Greater Robe of Eyes~
+@4203 = ~The greater robe of eyes provides the wearer with improved vision and the ability to detect many things that are hidden. Invisibility and ethereal effects have no power to cloud the wearer's vision.
+
+When not fully armored, the more powerful clerics of Helm often wear such robes to allow them to maintain their vigilance, even when unable to maintain their armament.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: 5
+– Find Traps: +10%
+– Detect Illusion: +10%
+– True Sight
+
+Weight: 3~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Boots                                                                 //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Boot                                                                  //
+///////////////////////////////////////////////////////////////////////////
+@4300 = ~Boots~
+@4301 = ~Boots are normally handmade by cobblers. Common boots are made by using a form, but good boots are designed for the foot of an individual. 
+
+STATISTICS:
+
+Weight: 4~
+
+///////////////////////////////////////////////////////////////////////////
+// Resilient Trodders                                                    //
+///////////////////////////////////////////////////////////////////////////
+@4302 = ~Resilient Trodders~
+@4303 = ~Though bearing an inelegant name, these sturdy boots carry with them a powerful magic. Crafted by a talented young smith, they were to be the masterwork that earned him a right to study under the greatest blacksmith in the city. Instead, he became smitten with a cleric of Helm - and subsequently mocked by his peers, for the cleric was half-orc and ugly to their eyes. Unlike them, the young smith saw the cleric's beauty reflected in her kindness and unwavering devotion, and dedicated himself to the church soon after giving these boots to her. Alas, the smith did not live long in his duities as a Helmite - perishing in the defense of a merchant caravan who had appealed to the church for protection from bandits - but his boots were enchanted to honor his memory and dedication, and the cleric he gifted them to wore them until the day she died.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Constitution: +2
+– Saving Throws: +2
+– Protects against all forms of panic and boosts morale
+
+Weight: 4~
+
+///////////////////////////////////////////////////////////////////////////
+// Dragon Slippers                                                      //
+///////////////////////////////////////////////////////////////////////////
+@4304 = ~Dragon Slippers~
+@4305 = ~Feryl Dragonhunter was a monster of a man who, with four kills to his credit, thought he had perfected the art of dragon slaying. He aided his efforts by creating magical equipment from his previous victories, including several different boots he mockingly called his Dragon Slippers. Amazingly, Feryl was not defeated by his preferred enemy, but was surprised by a small band of goblins on his way to a hunt.
+
+STATISTICS:
+
+Equipped abilities:
+– Dexterity: +2
+– Protects against all forms of panic and boosts morale
+– Immunity to Wing Buffet
+– Magic Resistance: +10%
+
+Weight: 4~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Cloaks                                                                //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Cloak                                                                 //
+///////////////////////////////////////////////////////////////////////////
+@4400 = ~Cloak~
+@4401 = ~The cloak can be made in every possible shape with just about every type of fabric. The most common forms are a circular piece of fabric with a hole in the center for the head, and fabric draped from neck, connected by a chain, brooch, cord, or pins.
+
+STATISTICS:
+
+Weight: 3~
+
+///////////////////////////////////////////////////////////////////////////
+// Shroud of Elder Doom                                                  //
+///////////////////////////////////////////////////////////////////////////
+@4402 = ~Shroud of Elder Doom~
+@4403 = ~Intimidating in size and shape both, cloaks of this nature were only worn by the highest in the Myrkulite clergy, those known by the grim honorific of 'Elder Doom.' Since Myrkul's death, few of these have managed to make it to the outside world, and slip out of the former Death God's grasp... surprising, since many Elder Dooms supposedly burned themselves alive in their own robes, unwilling to let themselves or their artifacts touch the hands of the unworthy.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to all forms of death magic
+
+Charge abilities:
+– Finger of Death two times per day
+
+Weight: 3~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Rings                                                                 //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Ring                                                                  //
+///////////////////////////////////////////////////////////////////////////
+@4500 = ~Ring~
+@4501 = ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession.
+
+STATISTICS:
+
+Weight: 0~
+
+///////////////////////////////////////////////////////////////////////////
+// Ring of Leeched Abjuration                                            //
+///////////////////////////////////////////////////////////////////////////
+@4502 = ~Ring of Leeched Abjuration~
+@4503 = ~This potent ring consumes some of its wearer's stamina to provide an impressive array of defenses from enemy magic.
+
+STATISTICS:
+
+Equipped abilities:
+– Strength: -3
+– Dexterity: -3
+– Constitution -3
+– Hit Points: -20
+– Immunity to spell level 2 or lower
+– Immunity to Spell School: Evocation
+– Magic Resistance: +20%
+– May only be removed with a Remove Curse spell
+
+Charge abilities:
+– Mantle once per day
+  Special: Confers complete invulnerability to all weapons of +2 or lower enchantment.
+  Duration: 4 rounds
+
+– Globe of Invulnerability once per day
+  Special: User is immune to 1st-, 2nd-, 3rd-, and 4th-level spells
+  Duration: 2 turns
+
+Weight: 0~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Spears                                                                //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Spear                                                                 //
+///////////////////////////////////////////////////////////////////////////
+@4600 = ~Spear~
+@4601 = ~One of the earliest weapons, dating back to the most primitive of times, the first spears were simply wooden poles or sticks sharpened at one end. When the civilized races mastered metals, spearheads were made from iron and steel. Having reached this end, weaponsmiths began experimenting with different types of spearheads, thus leading to the development of certain polearm types.
+
+STATISTICS:
+
+Damage: 1d6 (piercing)
+Speed Factor: 6
+Proficiency Type: Spear
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 5~
+
+///////////////////////////////////////////////////////////////////////////
+// Bloodbane +5                                                          //
+///////////////////////////////////////////////////////////////////////////
+@4602 = ~Bloodbane +5~
+@4603 = ~Bloodbane +5: Throwing Spear
+This incarnadine lance was found on the body of one of <CHARNAME>'s assailants, a self-styled "Avatar of Poison." The spear itself is hot to the touch and seems to thrum slightly beneath your fingers, beating out a stacatto rhythm like an irregular pulse. The effect is quite disconcerting, but it is much more comfortable than being on the receiving end. Victims pierced by the spear are often struck with paralytic seizures as its magic tries to coagulate the blood within their veins.  
+
+Unlike many other spears you have encountered, this spear was designed to be thrown. The spear instantly returns to the hands of the wielder after every attack. Bloodbane may also be used as a melee weapon. 
+
+STATISTICS:
+
+Equipped abilities:
+– 1 extra attack per round
+
+Combat abilities:
+– Each successful hit inflicts 6 points of poison damage on the target over the course of 6 seconds (no save) and will stun the target for 10 seconds if a save vs. breath weapons at -4 is failed. 
+
+THAC0: +5
+Damage: 1d6+5
+Damage Type: Piercing
+Speed Factor: 0
+Proficiency Type: Spear
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 5~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Amulets                                                               //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Amulet                                                                //
+///////////////////////////////////////////////////////////////////////////
+@4700 = ~Amulet~
+@4701 = ~Amulets are usually magical devices that are commonly worn around the neck, suspended from a chain. The type of chain that comes with an amulet generally increases the item's aesthetic value, not its magical properties. Only one amulet can be dangled from the neck at a time.
+
+STATISTICS:
+
+Weight: 1~
+
+///////////////////////////////////////////////////////////////////////////
+// Lillith Amulet                                                        //
+///////////////////////////////////////////////////////////////////////////
+@4702 = ~Lillith Amulet~
+@4703 = ~Amulet of the Lillim
+This accursed amulet smells strongly of blood and dust. It came into your possession during your involvement with the Ritual affair. Both the Ritual and this amulet remain shrouded in mystery, but some of the powers of the amulet can be understood. It appears to grant the bearer all of the magical immunities and defenses normally associated with a young vampire: regeneration; resistance to cold and electricity; immunity to poison, fear, sleep, level drain, hold, charm and non-magical weapons. Truly noble hearts cannot bear to don the amulet and it cannot be removed without clerical aid. You feel certain that the powers of the amulet must come with a terrible price, but you cannot detect any such downside. In fact, the amulet feels strangely natural and stirs something deep in your memory.
+
+*CURSED ITEM*
+
+STATISTICS:
+
+Provides Vampiric defenses~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Armor                                                                 //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Studded Leather                                                       //
+///////////////////////////////////////////////////////////////////////////
+@4800 = ~Studded Leather Armor~
+@4801 = ~Studded leather armor has little in common with normal leather armor. Instead of a hardened shell, studded leather offers hundreds of metal rivets affixed to a supple backing. The numerous studs form a flexible coat of metal that helps to turn aside slashing and cutting attacks, while the leather is little more than a means of securing the rivets in place. 
+
+STATISTICS:
+
+Armor Class: 7 (5 vs. slashing, 6 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 25~
+
+///////////////////////////////////////////////////////////////////////////
+// Yellow Dragon Armor                                                   //
+///////////////////////////////////////////////////////////////////////////
+@4802 = ~Yellow Dragon Armor~
+@4803 = ~Amulet of the Lillim
+This suit of armor is formed from interlocking Yellow Dragon scales. Yellow Dragons are known for their fiery sand attacks and resistance to piercing weapons. This particular suit was obtained by <CHARNAME> while <PRO_HESHE> was investigating the Ritual. The armor is magically light and unencumbering. 
+
+STATISTICS:
+
+Equipped abilities:
+– +50% resistance to piercing and missile
+
+Armor Class: -1 (-3 vs. slashing, -2 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 10~
+
+///////////////////////////////////////////////////////////////////////////
+// Plate Mail                                                            //
+///////////////////////////////////////////////////////////////////////////
+@4804 = ~Plate Mail~
+@4805 = ~Plate mail is a combination of chain armor with metal plates covering the vital areas such as the chest, abdomen, and groin. Similar in construction to bronze plate mail, true plate mail comprises chain and leather.
+
+STATISTICS:
+
+Armor Class: 3 (0 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 50~
+
+///////////////////////////////////////////////////////////////////////////
+// Deep Guardian's Plate (NWN2)                                          //
+///////////////////////////////////////////////////////////////////////////
+@4806 = ~Deep Guardian's Plate~
+@4807 = ~In an effort to better protect their soldiers, the artificers of ancient Imaskar set about creating a kind of living symbiote, something that would bond with their user and protect them from harm. Using specimens pulled from the deepest pits of the ocean, the Imaskari spellcasters slowly began to graft these magically-enhanced creatures onto suits of plate mail, weaning them off of salt water and forcing them to rely on magic for nourishment. This technique worked well, allowing the user a far greater resistance to spells than normal... but other magewrights looked upon this creation with a growing fear, worried that a creature that fed on magic might soon grow too hungry and feed upon its masters instead. Because of this, only a few suits of this armor were ever made, and the creatures created by the Imaskari sealed away and forgotten. When Imaskar fell, it is likely they crept back into the silent darkness they'd come from... or possibly changed into something else...
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +10%
+– Immunity to hold and paralysis
+
+Armor Class: 1 (-2 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 20~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Bastard Swords                                                        //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Bastard Sword                                                         //
+///////////////////////////////////////////////////////////////////////////
+@4900 = ~Bastard Sword~
+@4901 = ~Also known as the hand-and-a-half sword, the bastard sword derives its name from the fact that it is halfway between the two-handed sword and the long sword. The bastard sword has a double-edged blade and a long grip, which can accommodate both hands if preferred. The overall length of the bastard sword ranges between four feet and four feet ten inches.
+
+STATISTICS:
+
+Damage: 2d4
+Damage type: Slashing
+Speed Factor: 8
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 10~
+
+///////////////////////////////////////////////////////////////////////////
+// Bloodletter +4 (NWN2) Non-Good ONLY                                   //
+///////////////////////////////////////////////////////////////////////////
+@4902 = ~Bloodletter +4~
+@4903 = ~Forged in smoldering brimstone fires and cooled in the blood of its creator, a Bloodletter blade is a typically evil weapon, the kind of sword that has inspired more than a little diabolical laughter while being waved in the face of one or another virtuous knight. It is possessed of thoroughly heinous life-stealing energies, but if the fates of its previous owners are any indication, its major characteristic could well be the attraction of "comeuppance."
+
+STATISTICS:
+
+Combat abilities:
+– Inflicts 2 points of bleeding damage per hit (one point per round)
+– Each hit drains 1 Hit Point from the target and transfers it to the wielder. This will not heal beyond the wielder's maximum.
+
+THAC0: +4
+Damage: 2d4+4
+Damage type: Slashing
+Speed Factor: 5
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 5~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Medium Shields                                                        //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Medium Shield                                                         //
+///////////////////////////////////////////////////////////////////////////
+@5000 = ~Medium Shield~
+@5001 = ~A medium shield is carried in the same manner as a small shield. Unlike the small shield, however, its weight prevents the character from using <PRO_HISHER> shield hand for anything other than carrying the medium shield. Medium shields are usually made of metal, range from three to four feet in diameter, and can be of any shape, from round to square to a dragon's spread wings. A typical medieval shield resembles a triangle with one point facing downward.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+
+Requires:
+ 12 Strength
+
+Weight: 7~
+
+///////////////////////////////////////////////////////////////////////////
+// Uthgardt Holy Shield +2 (NWN2)                                        //
+///////////////////////////////////////////////////////////////////////////
+@5002 = ~Uthgardt Holy Shield +2~
+@5003 = ~The Uthgardt value strength above all, and these shields provide strength to spare. They also disdain fancy talk and fine words, and the shields do their best to make the wearer as barbaric as the wild men of the north.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3
+– Strength: +2
+– Charisma: -2
+
+Requires:
+ 12 Strength
+
+Weight: 7~
