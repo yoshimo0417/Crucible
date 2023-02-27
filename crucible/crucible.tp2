@@ -1,0 +1,39 @@
+/*************************************************************************/
+///////////////////////////////////////////////////////////////////////////
+// The Crucible by morpheus562                                           //
+///////////////////////////////////////////////////////////////////////////
+/*************************************************************************/
+
+BACKUP ~crucible/backup~
+AUTHOR ~morpheus562~
+
+VERSION ~v0.1-alpha~
+README ~crucible/readme.%LANGUAGE%.html~ ~crucible/readme.html~
+AUTO_EVAL_STRINGS
+
+ASK_EVERY_COMPONENT
+
+ALWAYS
+	INCLUDE ~crucible/lib/always.tph~
+END
+
+AUTO_TRA ~crucible/languages/%s~
+LANGUAGE ~English~
+         ~english~
+         ~crucible/languages/english/setup.tra~
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Main Mod Component                                                    //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Add the Final Assault                                                 //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @1 DESIGNATED 1 GROUP @3010 LABEL Crucible-FinalAssault
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+INCLUDE ~crucible/components/crucible.tpa~
+

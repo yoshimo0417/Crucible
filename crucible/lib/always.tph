@@ -15,31 +15,19 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
 ///////////////////////////////////////////////////////////////////////////
 // Set up ini system                                                     //
 ///////////////////////////////////////////////////////////////////////////
-   INCLUDE ~tactics-remix/lib/lib_ini.tpa~
-    OUTER_SPRINT ini_to_read "tactics-remix/tactics-remix.ini"
+/*
+   INCLUDE ~crucible/lib/lib_ini.tpa~
+    OUTER_SPRINT ini_to_read "crucible/crucible.ini"
     LAF SFO_read_ini_file RET_ARRAY SFO_reserved_ini_hash END
-
-///////////////////////////////////////////////////////////////////////////
-// EET and BG2EE Chapter Selection courtesy of Jastey                    //
-///////////////////////////////////////////////////////////////////////////
-   ACTION_IF GAME_IS ~eet~ BEGIN
-      OUTER_SET bg2_chapter = 12
-   END ELSE BEGIN
-      OUTER_SET bg2_chapter = 0
-   END
-   OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
-      OUTER_SET bg2_chapter = bg2_chapter + 1
-      OUTER_SPRINT name_source ~bg2_chapter_%i%~
-      OUTER_SET EVAL ~%name_source%~ = bg2_chapter
-   END
+*/
 
 ///////////////////////////////////////////////////////////////////////////
 // General variables, macros and functions                               //
 ///////////////////////////////////////////////////////////////////////////
-   INCLUDE ~tactics-remix/sfo/install_sfo.tpa~
-   INCLUDE ~tactics-remix/func/misc_functions.tpa~ //Block of code provided by subtledoctor
-   INCLUDE ~tactics-remix/func/replace_multiline.tpa~ //Block of code in EET
-   INCLUDE ~tactics-remix/lib/ds/ds.tph~ // Detectable Spells
+   INCLUDE ~crucible/sfo/install_sfo.tpa~
+   INCLUDE ~crucible/func/misc_functions.tpa~ //Block of code provided by subtledoctor
+   INCLUDE ~crucible/func/replace_multiline.tpa~ //Block of code in EET
+   INCLUDE ~crucible/lib/ds/ds.tph~ // Detectable Spells
 
    //SILENT
 
