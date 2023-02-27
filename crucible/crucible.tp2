@@ -31,7 +31,7 @@ LANGUAGE ~English~
 ///////////////////////////////////////////////////////////////////////////
 // Add the Final Assault                                                 //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @1 DESIGNATED 1 GROUP @3010 LABEL Crucible-FinalAssault
+BEGIN @1 DESIGNATED 1 LABEL Crucible-FinalAssault
 
 REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
 
