@@ -5,11 +5,10 @@
 ///////////////////////////////////////////////////////////////////////////
 COPY ~crucible/are~ ~override~ // All area files
 
-//COMPILE ~crucible/dlg/update_transition.d~
+COMPILE ~crucible/dlg/update_transition.d~
 
 ///////////////////////////////////////////////////////////////////////////
 // Copy .BCS file to override folder                                     //
 ///////////////////////////////////////////////////////////////////////////
-/*COPY ~crucible/baf/cut248a.baf~ ~override/cut248a.bcs~
+COPY ~crucible/baf/motob01.baf~ ~override/motob01.bcs~
   COMPILE_BAF_TO_BCS
-*/
