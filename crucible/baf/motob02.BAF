@@ -1,0 +1,23 @@
+IF
+  WalkedToTrigger([ANYONE])
+  Dead("Balth")
+THEN
+  RESPONSE #100
+    ClearAllActions()
+    SaveGame(2)
+    SmallWait(5)
+    StartCutSceneMode()
+    StartCutSceneEx("cut248a",FALSE)
+END
+
+IF
+  WalkedToTrigger([ANYONE])
+  Global("BalthazarFights","GLOBAL",1)
+THEN
+  RESPONSE #100
+    ClearAllActions()
+    SaveGame(2)
+    SmallWait(5)
+    StartCutSceneMode()
+    StartCutSceneEx("fin248a",FALSE)
+END

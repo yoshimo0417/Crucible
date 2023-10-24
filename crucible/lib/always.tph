@@ -62,4 +62,10 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
       OUTER_SET forgot_arm=0
    END
 
+   ACTION_IF MOD_IS_INSTALLED ~ascension.tp2~ ~0~ BEGIN
+      OUTER_SET ascension=1
+   END ELSE BEGIN
+      OUTER_SET ascension=0
+   END
+
 END

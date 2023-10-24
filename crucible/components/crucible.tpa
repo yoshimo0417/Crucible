@@ -5,10 +5,19 @@
 ///////////////////////////////////////////////////////////////////////////
 COPY ~crucible/are~ ~override~ // All area files
 
-COMPILE ~crucible/dlg/update_transition.d~
+ACTION_IF ascension BEGIN
+  COMPILE ~crucible/dlg/update_transition2.d~
+END ELSE BEGIN
+  COMPILE ~crucible/dlg/update_transition1.d~
+END
 
 ///////////////////////////////////////////////////////////////////////////
 // Copy .BCS file to override folder                                     //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~crucible/baf/motob01.baf~ ~override/motob01.bcs~
-  COMPILE_BAF_TO_BCS
+ACTION_IF ascension BEGIN
+  COPY ~crucible/baf/motob02.baf~ ~override/motob01.bcs~
+    COMPILE_BAF_TO_BCS
+END ELSE BEGIN
+  COPY ~crucible/baf/motob01.baf~ ~override/motob01.bcs~
+    COMPILE_BAF_TO_BCS
+END
