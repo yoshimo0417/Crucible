@@ -1,0 +1,10 @@
+IF
+  WalkedToTrigger([ANYONE])
+THEN
+  RESPONSE #100
+    ClearAllActions()
+    SaveGame(2)
+    SmallWait(5)
+    StartCutSceneMode()
+    StartCutScene("cut248a")
+END
