@@ -1,5 +1,5 @@
 IF
-  WalkedToTrigger([ANYONE])
+  Clicked([ANYONE])
   Dead("Balth")
 THEN
   RESPONSE #100
@@ -11,7 +11,7 @@ THEN
 END
 
 IF
-  WalkedToTrigger([ANYONE])
+  Clicked([ANYONE])
   Global("BalthazarFights","GLOBAL",1)
 THEN
   RESPONSE #100

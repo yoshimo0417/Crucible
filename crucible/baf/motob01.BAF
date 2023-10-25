@@ -1,5 +1,5 @@
 IF
-  WalkedToTrigger([ANYONE])
+  Clicked([ANYONE])
 THEN
   RESPONSE #100
     ClearAllActions()
