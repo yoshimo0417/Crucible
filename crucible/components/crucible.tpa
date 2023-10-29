@@ -32,5 +32,6 @@ END ELSE BEGIN
     COMPILE_BAF_TO_BCS
 END
 
-COPY ~crucible/baf/mobha01.baf~ ~override/mobha01.bcs~
+COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~
+     ~crucible/baf/mobha01.baf~ ~override/mobha01.bcs~
   COMPILE_BAF_TO_BCS
