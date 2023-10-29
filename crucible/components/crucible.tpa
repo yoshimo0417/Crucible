@@ -11,6 +11,16 @@ END ELSE BEGIN
   COMPILE ~crucible/dlg/update_transition1.d~
 END
 
+// Deathbringer (Halberd)
+COPY ~crucible/cre/mobha01.cre~ ~override/mobha01.cre~
+  SAY NAME1 @2000
+  SAY NAME2 @2000
+
+// Deathbringer (2h Sword)
+COPY ~crucible/cre/mobha02.cre~ ~override/mobha02.cre~
+  SAY NAME1 @2000
+  SAY NAME2 @2000
+
 ///////////////////////////////////////////////////////////////////////////
 // Copy .BCS file to override folder                                     //
 ///////////////////////////////////////////////////////////////////////////
@@ -21,3 +31,6 @@ END ELSE BEGIN
   COPY ~crucible/baf/motob01.baf~ ~override/motob01.bcs~
     COMPILE_BAF_TO_BCS
 END
+
+COPY ~crucible/baf/mobha01.baf~ ~override/mobha01.bcs~
+  COMPILE_BAF_TO_BCS
