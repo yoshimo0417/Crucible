@@ -34,7 +34,7 @@ END
 
 COPY ~crucible/cre/mobha03.cre~ ~override~  // Entropic Reaper
   SAY NAME1 @2001
-  SAY NAME2 @2002
+  SAY NAME2 @2001
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#MERRENOLOTH~))
 
 ACTION_IF ascension BEGIN
