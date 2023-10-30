@@ -3,13 +3,8 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import                                                                //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~crucible/are~ ~override~ // All area files
-
-ACTION_IF ascension BEGIN
-  COMPILE ~crucible/dlg/update_transition2.d~
-END ELSE BEGIN
-  COMPILE ~crucible/dlg/update_transition1.d~
-END
+COPY ~crucible/are~                    ~override~ // All area files
+//COPY ~crucible/animations/merrenoloth~ ~override~ // Merrenoloth animations
 
 // Deathbringer (Halberd)
 COPY ~crucible/cre/mobha01.cre~ ~override/mobha01.cre~
@@ -20,6 +15,33 @@ COPY ~crucible/cre/mobha01.cre~ ~override/mobha01.cre~
 COPY ~crucible/cre/mobha02.cre~ ~override/mobha02.cre~
   SAY NAME1 @2000
   SAY NAME2 @2000
+
+// Entropic Reaper
+LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+ACTION_IF (slot <= 0) BEGIN
+  FAIL ~No free creature animation slot found.~
+END
+
+LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+APPEND ~animate.ids~ ~0x%hexNumber% AC#MERRENOLOTH~ UNLESS ~AC#MERRENOLOTH~
+CLEAR_IDS_MAP
+
+COPY ~crucible/animations/merrenoloth/exxx.ini~ ~override/%hexNumber%.ini~
+
+ACTION_BASH_FOR ~crucible/animations/merrenoloth~ ~^.+\.bam$~ BEGIN
+  COPY ~%BASH_FOR_FILESPEC%~ ~override~
+END
+
+COPY ~crucible/cre/mobha03.cre~ ~override~  // Entropic Reaper
+  SAY NAME1 @2001
+  SAY NAME2 @2002
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#MERRENOLOTH~))
+
+ACTION_IF ascension BEGIN
+  COMPILE ~crucible/dlg/update_transition2.d~
+END ELSE BEGIN
+  COMPILE ~crucible/dlg/update_transition1.d~
+END
 
 ///////////////////////////////////////////////////////////////////////////
 // Copy .BCS file to override folder                                     //
