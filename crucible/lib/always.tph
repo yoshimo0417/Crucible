@@ -27,7 +27,7 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
    //INCLUDE ~crucible/sfo/install_sfo.tpa~
    INCLUDE ~crucible/func/misc_functions.tpa~ //Block of code provided by subtledoctor
    INCLUDE ~crucible/func/replace_multiline.tpa~ //Block of code in EET
-   INCLUDE ~crucible/func/functions.tpa~ //Block of code provided by Acifer
+   INCLUDE ~crucible/func/functions.tph~ //Block of code provided by Acifer
    INCLUDE ~crucible/lib/ds/ds.tph~ // Detectable Spells
 
    //SILENT
