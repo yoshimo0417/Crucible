@@ -16,7 +16,7 @@ COPY ~crucible/cre/mobha02.cre~ ~override/mobha02.cre~
   SAY NAME1 @2000
   SAY NAME2 @2000
 
-// Entropic Reaper
+// Entropic Reaper - All provided by Acifer, THANK YOU!
 LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
 ACTION_IF (slot <= 0) BEGIN
   FAIL ~No free creature animation slot found.~
@@ -56,4 +56,5 @@ END
 
 COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~
      ~crucible/baf/mobha01.baf~ ~override/mobha01.bcs~
+     ~crucible/baf/mobha03.baf~ ~override/mobha03.bcs~
   COMPILE_BAF_TO_BCS
