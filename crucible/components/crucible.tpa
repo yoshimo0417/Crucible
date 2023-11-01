@@ -66,6 +66,8 @@ COPY ~crucible/cre/mobha04.cre~ ~override~  // Bebilith
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#BEBILITH~))
 
 COPY ~crucible/spl/mobha04.spl~  ~override~  // Flaming Web
+  SAY NAME1 @4000
+  SAY NAME2 @4000
 COPY ~crucible/itm/mobha04a.itm~ ~override~  // Claw
 COPY ~crucible/itm/mobha04b.itm~ ~override~  // Bite
 
