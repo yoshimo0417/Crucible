@@ -6,16 +6,19 @@
 COPY ~crucible/are~                    ~override~ // All area files
 //COPY ~crucible/animations/merrenoloth~ ~override~ // Merrenoloth animations
 
+//-------------------------------------------------------------------------
 // Deathbringer (Halberd)
 COPY ~crucible/cre/mobha01.cre~ ~override/mobha01.cre~
   SAY NAME1 @2000
   SAY NAME2 @2000
 
+//-------------------------------------------------------------------------
 // Deathbringer (2h Sword)
 COPY ~crucible/cre/mobha02.cre~ ~override/mobha02.cre~
   SAY NAME1 @2000
   SAY NAME2 @2000
 
+//-------------------------------------------------------------------------
 // Entropic Reaper - Animations provided by Acifer, THANK YOU!
 LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
 ACTION_IF (slot <= 0) BEGIN
@@ -38,7 +41,33 @@ COPY ~crucible/cre/mobha03.cre~ ~override~  // Entropic Reaper
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#MERRENOLOTH~))
 
 COPY ~crucible/spl/mobha03.spl~ ~override~  // Entropic Reaper Crit bonus (x4)
-COPY ~crucible/imt/mobha03.itm~ ~override~  // Entropic Reaper Scythe
+COPY ~crucible/itm/mobha03.itm~ ~override~  // Entropic Reaper Scythe
+
+//-------------------------------------------------------------------------
+// Bebilith - Animations provided by Acifer, THANK YOU!
+LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+ACTION_IF (slot <= 0) BEGIN
+  FAIL ~No free creature animation slot found.~
+END
+
+LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+APPEND ~animate.ids~ ~0x%hexNumber% AC#BEBILITH~ UNLESS ~AC#BEBILITH~
+CLEAR_IDS_MAP
+
+COPY ~crucible/animations/bebilith/exxx.ini~ ~override/%hexNumber%.ini~
+
+ACTION_BASH_FOR ~crucible/animations/bebilith~ ~^.+\.bam$~ BEGIN
+  COPY ~%BASH_FOR_FILESPEC%~ ~override~
+END
+
+COPY ~crucible/cre/mobha04.cre~ ~override~  // Bebilith
+  SAY NAME1 @2002
+  SAY NAME2 @2002
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#BEBILITH~))
+
+COPY ~crucible/spl/mobha04.spl~  ~override~  // Flaming Web
+COPY ~crucible/itm/mobha04a.itm~ ~override~  // Claw
+COPY ~crucible/itm/mobha04b.itm~ ~override~  // Bite
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
@@ -63,4 +92,5 @@ END
 COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~
      ~crucible/baf/mobha01.baf~ ~override/mobha01.bcs~
      ~crucible/baf/mobha03.baf~ ~override/mobha03.bcs~
+     ~crucible/baf/mobha04.baf~ ~override/mobha04.bcs~
   COMPILE_BAF_TO_BCS
