@@ -3,8 +3,10 @@
 ///////////////////////////////////////////////////////////////////////////
 // Import                                                                //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~crucible/are~                    ~override~ // All area files
-//COPY ~crucible/animations/merrenoloth~ ~override~ // Merrenoloth animations
+
+//-------------------------------------------------------------------------
+// All area files
+COPY ~crucible/are~ ~override~ 
 
 //-------------------------------------------------------------------------
 // Deathbringer (Halberd)
@@ -71,6 +73,12 @@ COPY ~crucible/spl/mobha04.spl~  ~override~  // Flaming Web
 COPY ~crucible/itm/mobha04a.itm~ ~override~  // Claw
 COPY ~crucible/itm/mobha04b.itm~ ~override~  // Bite
 
+//-------------------------------------------------------------------------
+// Scout (Ranged)
+COPY ~crucible/cre/mobha05.cre~ ~override/mobha05.cre~
+  SAY NAME1 @2003
+  SAY NAME2 @2003
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -95,4 +103,5 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~
      ~crucible/baf/mobha01.baf~ ~override/mobha01.bcs~
      ~crucible/baf/mobha03.baf~ ~override/mobha03.bcs~
      ~crucible/baf/mobha04.baf~ ~override/mobha04.bcs~
+     ~crucible/baf/mobha05.baf~ ~override/mobha05.bcs~
   COMPILE_BAF_TO_BCS
