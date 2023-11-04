@@ -56,7 +56,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
     SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -77,7 +79,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
     SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -98,7 +102,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
     SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -119,7 +125,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
     SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -140,7 +148,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
     SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -161,7 +171,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
     SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -182,7 +194,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
     SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
 END
 
 IF
@@ -203,7 +217,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
     SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
 END
 
 /////////////////////////////////////////////////////////////////////
