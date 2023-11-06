@@ -1,1 +1,66 @@
-// Check difficulty and update % chance to rest
+IF 
+	DifficultyGT(HARD)
+	!Global()
+
+IF
+	Global("EnteredArea","MOBHA1",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","MOBHA1",1)
+		AmbientActivate("Bloodbowl_left",FALSE)
+		AmbientActivate("Bloodbowl_right",FALSE)
+		AmbientActivate("Bloodtears_left",FALSE)
+		AmbientActivate("Bloodtears_right",FALSE)
+		AmbientActivate("Bloodskull_center",FALSE)
+END
+
+IF
+	Global("Bloodbowl_left","MOBHA1",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Bloodbowl_left","MOBHA1",2)
+		PlaySound("AM0602D2")
+		AmbientActivate("Bloodbowl_left",TRUE)
+		AmbientActivate("Bloodtears_left",TRUE)
+END
+
+IF
+	Global("Bloodbowl_right","MOBHA1",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Bloodbowl_right","MOBHA1",2)
+		PlaySound("AM0602D2")
+		AmbientActivate("Bloodbowl_right",TRUE)
+		AmbientActivate("Bloodtears_right",TRUE)
+END
+
+IF
+	Global("Bloodskull_center","MOBHA1",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Bloodskull_center","MOBHA1",2)
+		PlaySound("AM0602D2")
+		AmbientActivate("Bloodskull_center",TRUE)
+		Wait(1)
+		PlaySound("AM1300D")
+		OpenDoor("Door03")
+		ScreenShake([5.5],5)
+END
+
+IF
+	Global("Open_door_left","MOBHA1",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Open_door_left","MOBHA1",2)
+		CreateVisualEffect("ICMAGICH",[314.1559])
+		OpenDoor("Door01")
+END
+
+IF
+	Global("Open_door_right","MOBHA1",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Open_door_right","MOBHA1",2)
+		OpenDoor("Door02")
+END
+

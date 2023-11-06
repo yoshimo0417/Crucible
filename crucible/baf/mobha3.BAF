@@ -1,0 +1,8 @@
+IF
+	Global("Open_door","MOBHA3",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Open_door","MOBHA3",2)
+		OpenDoor("Door01")
+END
+

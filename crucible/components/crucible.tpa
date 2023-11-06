@@ -5,8 +5,24 @@
 ///////////////////////////////////////////////////////////////////////////
 
 //-------------------------------------------------------------------------
-// All area files
-COPY ~crucible/are~ ~override~ 
+// General Import
+COPY ~crucible/are~ ~override~
+COPY ~crucible/bam~ ~override~
+COPY ~crucible/wav~ ~override~
+
+//-------------------------------------------------------------------------
+// 2da Import
+ACTION_IF NOT (FILE_EXISTS_IN_GAME ~fogarea.2da~) THEN BEGIN
+  COPY ~%MOD_FOLDER%/2da/fogarea.2da~ ~override~
+END
+
+ACTION_IF NOT (FILE_EXISTS_IN_GAME ~fogpt.2da~) THEN BEGIN
+  COPY ~%MOD_FOLDER%/2da/fogpt.2da~ ~override~
+END
+
+APPEND ~MASTAREA.2da~ ~MOBHA1 value~
+APPEND ~FOGAREA.2da~ ~MOBHA1  0.80  75  58  62   95   44  53   75   25~
+UNLESS ~MOBHA1~
 
 //-------------------------------------------------------------------------
 // Deathbringer (Halberd)
@@ -79,6 +95,10 @@ COPY ~crucible/cre/mobha05.cre~ ~override/mobha05.cre~
   SAY NAME1 @2003
   SAY NAME2 @2003
 
+//-------------------------------------------------------------------------
+// Scout (Melee)
+
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -99,9 +119,10 @@ END ELSE BEGIN
     COMPILE_BAF_TO_BCS
 END
 
-COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~
-     ~crucible/baf/mobha01.baf~ ~override/mobha01.bcs~
-     ~crucible/baf/mobha03.baf~ ~override/mobha03.bcs~
-     ~crucible/baf/mobha04.baf~ ~override/mobha04.bcs~
-     ~crucible/baf/mobha05.baf~ ~override/mobha05.bcs~
+COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
+     ~crucible/baf/mobha3.baf~  ~override/mobha3.bcs~   // Area script
+     ~crucible/baf/mobha01.baf~ ~override/mobha01.bcs~  // Creature script
+     ~crucible/baf/mobha03.baf~ ~override/mobha03.bcs~  // Creature script
+     ~crucible/baf/mobha04.baf~ ~override/mobha04.bcs~  // Creature script
+     ~crucible/baf/mobha05.baf~ ~override/mobha05.bcs~  // Creature script
   COMPILE_BAF_TO_BCS
