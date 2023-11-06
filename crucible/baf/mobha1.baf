@@ -1,7 +1,68 @@
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+//            Gehenna (MOBHA1.ARE)
+/////////////////////////////////////////////////////////////////////
+//        Version 1
+// This is the first area the player encounters upon collapsing
+// their pocket plane. Upon entering, the player will encounter a 
+// group of Amelyssan's scouts who will conduct an initial fight with
+// the player. The player will progress through the area fighting
+// more Amelyssan scouts along with Planetars/Devas and Demons 
+// aligned with Amelyssan. The player will come across a bridge and
+// need to drop the respective keys to unlock the demon and planetar
+// towers. Once the towers are cleared and blood fills the respective
+// bloodbowls, the player will need to add their own blood to mix to
+// lower the gates. Once this occurs, Entropic Reapers will spawn
+// attacking the weakened player party.
+//
+/////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+// Set Rest Encounter Probability (tied to difficulty slider)
+/////////////////////////////////////////////////////////////////////
 IF 
 	DifficultyGT(HARD)
-	!Global()
+	!Global("MO_RestEncounter","MOBHA1",1)
+THEN
+	RESPONSE #100
+		SetRestEncounterProbabilityDay(75) 
+		SetRestEncounterProbabilityNight(75)
+		SetGlobal("MO_RestEncounter","MOBHA1",1) 
+END
 
+IF 
+	Difficulty(HARD)
+	!Global("MO_RestEncounter","MOBHA1",2)
+THEN
+	RESPONSE #100
+		SetRestEncounterProbabilityDay(50) 
+		SetRestEncounterProbabilityNight(50)
+		SetGlobal("MO_RestEncounter","MOBHA1",2) 
+END
+
+IF 
+	Difficulty(NORMAL)
+	!Global("MO_RestEncounter","MOBHA1",3)
+THEN
+	RESPONSE #100
+		SetRestEncounterProbabilityDay(25) 
+		SetRestEncounterProbabilityNight(25)
+		SetGlobal("MO_RestEncounter","MOBHA1",3) 
+END
+
+IF 
+	DifficultyLT(NORMAL)
+	!Global("MO_RestEncounter","MOBHA1",4)
+THEN
+	RESPONSE #100
+		SetRestEncounterProbabilityDay(10) 
+		SetRestEncounterProbabilityNight(10)
+		SetGlobal("MO_RestEncounter","MOBHA1",4) 
+END
+
+/////////////////////////////////////////////////////////////////////
+// Set Bloodbowls
+/////////////////////////////////////////////////////////////////////
 IF
 	Global("EnteredArea","MOBHA1",0)
 THEN
