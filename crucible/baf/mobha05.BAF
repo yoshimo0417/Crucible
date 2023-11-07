@@ -23,7 +23,7 @@ END
 /////////////////////////////////////////////////////////////////////
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  HasItemEquiped("POTN52",Myself)
+  HasItemEquiped("POTN55",Myself)
   HPPercentLT(Myself,60)
 THEN
   RESPONSE #100

@@ -96,8 +96,10 @@ COPY ~crucible/cre/mobha05.cre~ ~override/mobha05.cre~
   SAY NAME2 @2003
 
 //-------------------------------------------------------------------------
-// Scout (Melee)
-
+// Skirmisher (Melee)
+COPY ~crucible/cre/mobha06.cre~ ~override/mobha06.cre~
+  SAY NAME1 @2004
+  SAY NAME2 @2004
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
@@ -125,4 +127,5 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha03.baf~ ~override/mobha03.bcs~  // Creature script
      ~crucible/baf/mobha04.baf~ ~override/mobha04.bcs~  // Creature script
      ~crucible/baf/mobha05.baf~ ~override/mobha05.bcs~  // Creature script
+     ~crucible/baf/mobha06.baf~ ~override/mobha06.bcs~  // Creature script
   COMPILE_BAF_TO_BCS

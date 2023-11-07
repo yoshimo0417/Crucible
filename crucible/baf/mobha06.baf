@@ -1,9 +1,9 @@
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
-//            Deathbringer
+//            Skirmisher
 /////////////////////////////////////////////////////////////////////
 //        Version 1
-// Deathbringer, 22nd level Fighter
+// Skirmisher, 21st level Fighter
 //
 // 
 /////////////////////////////////////////////////////////////////////
@@ -16,10 +16,9 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
-    SetGlobal("MO_GWW","LOCALS",2)
-    //GiveItemCreate("POTN55",Myself,5,0,0)     // potn extra healing
-    GiveItemCreate("POTN07",Myself,1,0,0)     // potn storm giant
-    UseItem("POTN07",Myself)
+    SetGlobal("MO_GWW","LOCALS",1)
+    GiveItemCreate("POTN04",Myself,1,0,0)     // potn frost giant
+    UseItem("POTN04",Myself)
 END
 
 /////////////////////////////////////////////////////////////////////
