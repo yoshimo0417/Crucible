@@ -113,6 +113,12 @@ COPY ~crucible/cre/mobha08.cre~ ~override/mobha08.cre~
   SAY NAME1 @2006
   SAY NAME2 @2006
 
+//-------------------------------------------------------------------------
+// Balor
+COPY ~crucible/cre/mobha09.cre~  ~override/mobha09.cre~
+COPY ~crucible/itm/mobha09a.itm~ ~override~  // Claw
+COPY ~crucible/itm/mobha09b.itm~ ~override~  // Bite
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
