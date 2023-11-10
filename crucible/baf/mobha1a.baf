@@ -1,0 +1,9 @@
+IF
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Spawn01","MOBHA1",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Spawn01","MOBHA1",1)
+		CreateCreature("mobha07",[2638.1158],S)  // Ketta
+		CreateCreature("mobha08",[2730.1167],N)  // Ketta
+END

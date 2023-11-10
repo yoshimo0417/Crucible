@@ -5,7 +5,7 @@
 /*************************************************************************/
 
 BACKUP ~crucible/backup~
-AUTHOR ~Acifer morpheus562~
+AUTHOR ~Acifer and morpheus562~
 
 VERSION ~v0.1-alpha~
 README ~crucible/readme.%LANGUAGE%.html~ ~crucible/readme.html~

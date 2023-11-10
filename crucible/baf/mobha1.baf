@@ -18,6 +18,34 @@
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
+// Spawn Enemies
+/////////////////////////////////////////////////////////////////////
+/*
+IF
+	Global("Spawn","MOBHA1",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Spawn","MOBHA1",1)
+		CreateCreature("mobha05",[2520.1357],SW)  // Scout
+	    CreateCreature("mobha05",[2671.1425],SW)  // Scout
+	    //CreateCreature("mobha05",[2512.1534],SW)  // Scout
+	    CreateCreature("mobha05",[2767.273],SE)   // Scout
+	    CreateCreature("mobha05",[2912.242],SE)   // Scout
+	    CreateCreature("mobha06",[2833.507],SW)   // Skirmisher
+	    CreateCreature("mobha06",[2595.1488],SW)  // Skirmisher
+	    CreateCreature("mobha06",[2523.1460],SW)  // Skirmisher
+	    CreateCreature("mobha06",[2595.1488],SW)  // Skirmisher
+	    CreateCreature("mobha07",[2702.1714],NW)  // Shadowdancer
+	    CreateCreature("mobha08",[2297.1569],SE)  // Assassin
+	    CreateCreature("mobha07",[2829.826],SW)   // Shadowdancer
+	    CreateCreature("mobha07",[2721.1189],SW)  // Shadowdancer
+	    CreateCreature("mobha08",[2748.826],SW)   // Assassin
+	    CreateCreature("mobha08",[2647.1171],SW)  // Assassin
+	    Continue()
+END
+*/
+
+/////////////////////////////////////////////////////////////////////
 // Set Rest Encounter Probability (tied to difficulty slider)
 /////////////////////////////////////////////////////////////////////
 IF 

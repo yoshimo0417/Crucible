@@ -101,6 +101,18 @@ COPY ~crucible/cre/mobha06.cre~ ~override/mobha06.cre~
   SAY NAME1 @2004
   SAY NAME2 @2004
 
+//-------------------------------------------------------------------------
+// Shadowdancer
+COPY ~crucible/cre/mobha07.cre~ ~override/mobha07.cre~
+  SAY NAME1 @2005
+  SAY NAME2 @2005
+
+//-------------------------------------------------------------------------
+// Assassin
+COPY ~crucible/cre/mobha08.cre~ ~override/mobha08.cre~
+  SAY NAME1 @2006
+  SAY NAME2 @2006
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -122,10 +134,14 @@ END ELSE BEGIN
 END
 
 COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
+     ~crucible/baf/mobha1a.baf~ ~override/mobha1a.bcs~  // Area script
+     ~crucible/baf/mobha1b.baf~ ~override/mobha1b.bcs~  // Area script
      ~crucible/baf/mobha3.baf~  ~override/mobha3.bcs~   // Area script
      ~crucible/baf/mobha01.baf~ ~override/mobha01.bcs~  // Creature script
      ~crucible/baf/mobha03.baf~ ~override/mobha03.bcs~  // Creature script
      ~crucible/baf/mobha04.baf~ ~override/mobha04.bcs~  // Creature script
      ~crucible/baf/mobha05.baf~ ~override/mobha05.bcs~  // Creature script
      ~crucible/baf/mobha06.baf~ ~override/mobha06.bcs~  // Creature script
+     ~crucible/baf/mobha07.baf~ ~override/mobha07.bcs~  // Creature script
+     ~crucible/baf/mobha08.baf~ ~override/mobha08.bcs~  // Creature script
   COMPILE_BAF_TO_BCS
