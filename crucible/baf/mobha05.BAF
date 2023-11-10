@@ -36,6 +36,7 @@ END
 /////////////////////////////////////////////////////////////////////
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(MostDamagedOf([PC]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -57,6 +58,7 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(WorstAC([PC]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -78,6 +80,7 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -99,6 +102,7 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -120,6 +124,7 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -141,6 +146,7 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -162,6 +168,7 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -183,6 +190,7 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
