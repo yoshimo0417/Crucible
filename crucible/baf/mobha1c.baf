@@ -1,4 +1,4 @@
-/*
+
 IF
 	IsOverMe([GOODCUTOFF])
 	Global("MO_Spawn03","MOBHA1",0)
@@ -12,7 +12,8 @@ THEN
 		CreateCreature("mobha05",[2850.251],S)  // Scout
 		CreateCreature("mobha05",[2966.223],S)  // Scout
 END
-*/
+
+/*
 IF
 	IsOverMe([GOODCUTOFF])
 	Global("MO_Spawn03","MOBHA1",0)
@@ -26,3 +27,4 @@ THEN
 		CreateCreatureObjectDoor("mobha05",[2850.251],0,0,0)  // Scout
 		CreateCreatureObjectDoor("mobha05",[2966.223],0,0,0)  // Scout
 END
+*/
