@@ -1,0 +1,12 @@
+IF
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Spawn04","MOBHA1",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Spawn04","MOBHA1",1)
+		CreateCreature("mobha06",[2435.275],NE)  // Skirmisher
+		CreateCreature("mobha06",[2492.310],N)  // Skirmisher
+		CreateCreature("mobha05",[2278.470],E)  // Scout
+		CreateCreature("mobha05",[2324.561],E)  // Scout
+		CreateCreature("mobha05",[2466.603],E)  // Scout
+END

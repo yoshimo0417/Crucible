@@ -45,6 +45,106 @@ THEN
 END
 */
 
+IF
+	Global("MO_AreaPrep","MOBHA1",0)
+	DifficultyGT(HARD)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_AreaPrep","MOBHA1",1)
+		SetGlobalTimer("MO_Spawn","MOBHA1",60)
+END
+
+IF
+	Global("MO_AreaPrep","MOBHA1",0)
+	Difficulty(HARD)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_AreaPrep","MOBHA1",1)
+		SetGlobalTimer("MO_Spawn","MOBHA1",180)
+END
+
+IF
+	Global("MO_AreaPrep","MOBHA1",0)
+	Difficulty(NORMAL)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_AreaPrep","MOBHA1",1)
+		SetGlobalTimer("MO_Spawn","MOBHA1",300)
+END
+
+IF
+	Global("MO_AreaPrep","MOBHA1",0)
+	Difficulty(EASY)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_AreaPrep","MOBHA1",1)
+		SetGlobalTimer("MO_Spawn","MOBHA1",600)
+END
+
+IF
+	Global("MO_AreaPrep","MOBHA1",0)
+	DifficultyLT(EASY)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_AreaPrep","MOBHA1",1)
+		SetGlobalTimer("MO_Spawn","MOBHA1",6000)
+END
+
+IF
+	!GlobalTimerNotExpired("MO_Spawn","MOBHA1")
+	DifficultyGT(HARD)
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		SetGlobalTimer("MO_Spawn","MOBHA1",60)
+		CreateCreatureObject("mobha07",Player1,0,0,0)  // Shadowdancer
+		CreateCreatureObject("mobha08",Player1,0,0,0)  // Assassin
+END
+
+IF
+	!GlobalTimerNotExpired("MO_Spawn","MOBHA1")
+	Difficulty(HARD)
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		SetGlobalTimer("MO_Spawn","MOBHA1",180)
+		CreateCreatureObject("mobha07",Player1,0,0,0)  // Shadowdancer
+		CreateCreatureObject("mobha08",Player1,0,0,0)  // Assassin
+END
+
+IF
+	!GlobalTimerNotExpired("MO_Spawn","MOBHA1")
+	Difficulty(NORMAL)
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		SetGlobalTimer("MO_Spawn","MOBHA1",300)
+		CreateCreatureObject("mobha07",Player1,0,0,0)  // Shadowdancer
+		CreateCreatureObject("mobha08",Player1,0,0,0)  // Assassin
+END
+
+IF
+	!GlobalTimerNotExpired("MO_Spawn","MOBHA1")
+	Difficulty(EASY)
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		SetGlobalTimer("MO_Spawn","MOBHA1",600)
+		CreateCreatureObject("mobha07",Player1,0,0,0)  // Shadowdancer
+		CreateCreatureObject("mobha08",Player1,0,0,0)  // Assassin
+END
+
+IF
+	!GlobalTimerNotExpired("MO_Spawn","MOBHA1")
+	DifficultyLT(EASY)
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+		SetGlobalTimer("MO_Spawn","MOBHA1",6000)
+		CreateCreatureObject("mobha07",Player1,0,0,0)  // Shadowdancer
+		CreateCreatureObject("mobha08",Player1,0,0,0)  // Assassin
+END
+
 /////////////////////////////////////////////////////////////////////
 // Set Rest Encounter Probability (tied to difficulty slider)
 /////////////////////////////////////////////////////////////////////
