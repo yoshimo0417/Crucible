@@ -5,7 +5,4 @@ THEN
 	RESPONSE #100
 		SetGlobal("MO_Spawn04","MOBHA1",1)
 		CreateCreature("mobha09",[2337.572],NE)  // Balor
-		CreateCreature("mepfir01",[2260.454],N)  // Fire Mephit
-		CreateCreature("mepfir01",[2424.448],N)  // Fire Mephit
-		CreateCreature("mepfir01",[2466.605],N)  // Fire Mephit
 END

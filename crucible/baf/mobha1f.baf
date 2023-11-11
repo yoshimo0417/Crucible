@@ -1,0 +1,24 @@
+/*
+IF
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Spawn06","MOBHA1",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Spawn06","MOBHA1",1)
+		CreateCreatureDoor("mobha06",[1233.450],E)  // Skirmisher
+		CreateCreatureDoor("mobha06",[1464.242],E)  // Skirmisher
+		CreateCreatureDoor("mobha06",[1582.282],E)  // Skirmisher
+		CreateCreatureDoor("mobha06",[1265.443],E)  // Skirmisher
+		CreateCreatureDoor("mobha06",[1392.485],E)  // Skirmisher
+END
+*/
+
+IF 
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Spawn06","MOBHA1",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Spawn06","MOBHA1",1)
+		StartCutSceneMode()
+		StartCutScene("mocut03")
+END

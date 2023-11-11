@@ -119,6 +119,17 @@ COPY ~crucible/cre/mobha09.cre~  ~override/mobha09.cre~
 COPY ~crucible/itm/mobha09a.itm~ ~override~  // Claw
 COPY ~crucible/itm/mobha09b.itm~ ~override~  // Bite
 
+//-------------------------------------------------------------------------
+// Balor w/ heart
+COPY ~crucible/itm/mobha10a.itm~ ~override~  // Demon Heart
+COPY ~crucible/cre/mobha09.cre~  ~override/mobha10.cre~
+  WRITE_ASCII 0x280 ~mobha10~ #8 // Script Name
+  REPLACE_CRE_ITEM ~mobha10a~ #0 #0 #0 ~UNSTEALABLE~ ~INV1~ EQUIP // Demon Heart
+
+//-------------------------------------------------------------------------
+// Glabrezu
+COPY ~crucible/cre/mobha11.cre~  ~override/mobha11.cre~
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -145,6 +156,7 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha1c.baf~ ~override/mobha1c.bcs~  // Area script
      ~crucible/baf/mobha1d.baf~ ~override/mobha1d.bcs~  // Area script
      ~crucible/baf/mobha1e.baf~ ~override/mobha1e.bcs~  // Area script
+     ~crucible/baf/mobha1f.baf~ ~override/mobha1f.bcs~  // Area script
      ~crucible/baf/mobha3.baf~  ~override/mobha3.bcs~   // Area script
      ~crucible/baf/mobha01.baf~ ~override/mobha01.bcs~  // Creature script
      ~crucible/baf/mobha03.baf~ ~override/mobha03.bcs~  // Creature script
@@ -154,4 +166,6 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha07.baf~ ~override/mobha07.bcs~  // Creature script
      ~crucible/baf/mobha08.baf~ ~override/mobha08.bcs~  // Creature script
      ~crucible/baf/mobha09.baf~ ~override/mobha09.bcs~  // Creature script
+     ~crucible/baf/mobha11.baf~ ~override/mobha11.bcs~  // Creature script
+     ~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
   COMPILE_BAF_TO_BCS
