@@ -1,0 +1,451 @@
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+//            Fallen Planetar
+/////////////////////////////////////////////////////////////////////
+//        Version 1
+// Fallen, 25th level Mage
+//
+// 
+/////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+// Initial Set-Up
+/////////////////////////////////////////////////////////////////////
+IF
+  Global("Prep","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    SetGlobal("MO_Dispel","LOCALS",3)
+    SetGlobal("MO_FlameStrike","LOCALS",3)
+    SetGlobal("MO_InsectPlague","LOCALS",3)
+    SetGlobal("MO_Heal","LOCALS",3)
+    SetGlobal("MO_Globe","LOCALS",2)
+    SetGlobal("MO_Earthquake","LOCALS",3)
+    SetGlobal("MO_FlameStorm","LOCALS",3)
+    SetGlobal("MO_UnholyWord","LOCALS",3)
+    SetGlobal("MO_SymbolFear","LOCALS",3)
+    SetGlobal("MO_SymbolDeath","LOCALS",3)
+    SetGlobal("MO_Chaos","LOCALS",1)
+    ApplySpell(Myself,CLERIC_GLOBE_OF_BLADES)
+    ApplySpell(Myself,CLERIC_TRUE_SIGHT)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Spell: Insect Plague
+/////////////////////////////////////////////////////////////////////
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  GlobalGT("MO_InsectPlague","LOCALS",0)
+  See([GOODCUTOFF])
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobal("MO_CastInsectPlague","LOCALS",1)
+    Continue()
+  RESPONSE #50
+    SetGlobal("MO_CastInsectPlague","LOCALS",0)
+    Continue()
+END
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  Global("MO_CastInsectPlague","LOCALS",1)
+  GlobalGT("MO_InsectPlague","LOCALS",0)
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  OR(5)
+    Class(LastSeenBy(Myself),MAGE_ALL)
+    Class(LastSeenBy(Myself),BARD_ALL)
+    Class(LastSeenBy(Myself),CLERIC_ALL)
+    Class(LastSeenBy(Myself),DRUID_ALL)
+    Class(LastSeenBy(Myself),SORCERER)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  !CheckStatGT(LastSeenBy(Myself),99,RESISTMAGIC)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_INSECT_PLAGUE)
+  !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
+  !CheckSpellState(LastSeenBy(Myself),BLUE_FIRESHIELD)
+  !CheckSpellState(LastSeenBy(Myself),RED_FIRESHIELD)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !IfValidForPartyDialog(LastSeenBy(Myself))
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_InsectPlague","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+    SetInterrupt(TRUE)
+END
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  Global("MO_CastInsectPlague","LOCALS",1)
+  GlobalGT("MO_InsectPlague","LOCALS",0)
+  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  OR(5)
+    Class(LastSeenBy(Myself),MAGE_ALL)
+    Class(LastSeenBy(Myself),BARD_ALL)
+    Class(LastSeenBy(Myself),CLERIC_ALL)
+    Class(LastSeenBy(Myself),DRUID_ALL)
+    Class(LastSeenBy(Myself),SORCERER)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  !CheckStatGT(LastSeenBy(Myself),99,RESISTMAGIC)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_INSECT_PLAGUE)
+  !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
+  !CheckSpellState(LastSeenBy(Myself),BLUE_FIRESHIELD)
+  !CheckSpellState(LastSeenBy(Myself),RED_FIRESHIELD)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !IfValidForPartyDialog(LastSeenBy(Myself))
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_InsectPlague","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+    SetInterrupt(TRUE)
+END
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  Global("MO_CastInsectPlague","LOCALS",1)
+  GlobalGT("MO_InsectPlague","LOCALS",0)
+  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  OR(5)
+    Class(LastSeenBy(Myself),MAGE_ALL)
+    Class(LastSeenBy(Myself),BARD_ALL)
+    Class(LastSeenBy(Myself),CLERIC_ALL)
+    Class(LastSeenBy(Myself),DRUID_ALL)
+    Class(LastSeenBy(Myself),SORCERER)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  !CheckStatGT(LastSeenBy(Myself),99,RESISTMAGIC)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_INSECT_PLAGUE)
+  !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
+  !CheckSpellState(LastSeenBy(Myself),BLUE_FIRESHIELD)
+  !CheckSpellState(LastSeenBy(Myself),RED_FIRESHIELD)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !IfValidForPartyDialog(LastSeenBy(Myself))
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_InsectPlague","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+    SetInterrupt(TRUE)
+END
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  Global("MO_CastInsectPlague","LOCALS",1)
+  GlobalGT("MO_InsectPlague","LOCALS",0)
+  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  OR(5)
+    Class(LastSeenBy(Myself),MAGE_ALL)
+    Class(LastSeenBy(Myself),BARD_ALL)
+    Class(LastSeenBy(Myself),CLERIC_ALL)
+    Class(LastSeenBy(Myself),DRUID_ALL)
+    Class(LastSeenBy(Myself),SORCERER)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  !CheckStatGT(LastSeenBy(Myself),99,RESISTMAGIC)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_INSECT_PLAGUE)
+  !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
+  !CheckSpellState(LastSeenBy(Myself),BLUE_FIRESHIELD)
+  !CheckSpellState(LastSeenBy(Myself),RED_FIRESHIELD)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !IfValidForPartyDialog(LastSeenBy(Myself))
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_InsectPlague","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+    SetInterrupt(TRUE)
+END
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  Global("MO_CastInsectPlague","LOCALS",1)
+  GlobalGT("MO_InsectPlague","LOCALS",0)
+  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  OR(5)
+    Class(LastSeenBy(Myself),MAGE_ALL)
+    Class(LastSeenBy(Myself),BARD_ALL)
+    Class(LastSeenBy(Myself),CLERIC_ALL)
+    Class(LastSeenBy(Myself),DRUID_ALL)
+    Class(LastSeenBy(Myself),SORCERER)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  !CheckStatGT(LastSeenBy(Myself),99,RESISTMAGIC)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_INSECT_PLAGUE)
+  !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
+  !CheckSpellState(LastSeenBy(Myself),BLUE_FIRESHIELD)
+  !CheckSpellState(LastSeenBy(Myself),RED_FIRESHIELD)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !IfValidForPartyDialog(LastSeenBy(Myself))
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_InsectPlague","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+    SetInterrupt(TRUE)
+END
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  Global("MO_CastInsectPlague","LOCALS",1)
+  GlobalGT("MO_InsectPlague","LOCALS",0)
+  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  OR(5)
+    Class(LastSeenBy(Myself),MAGE_ALL)
+    Class(LastSeenBy(Myself),BARD_ALL)
+    Class(LastSeenBy(Myself),CLERIC_ALL)
+    Class(LastSeenBy(Myself),DRUID_ALL)
+    Class(LastSeenBy(Myself),SORCERER)
+  !Gender(LastSeenBy(Myself),SUMMONED)
+  !CheckStatGT(LastSeenBy(Myself),99,RESISTMAGIC)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_INSECT_PLAGUE)
+  !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
+  !CheckSpellState(LastSeenBy(Myself),BLUE_FIRESHIELD)
+  !CheckSpellState(LastSeenBy(Myself),RED_FIRESHIELD)
+  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !IfValidForPartyDialog(LastSeenBy(Myself))
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_InsectPlague","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+    SetInterrupt(TRUE)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Attack
+/////////////////////////////////////////////////////////////////////
+IF
+  ActionListEmpty()
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(SecondNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(ThirdNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(FourthNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(FifthNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(SixthNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(SecondNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(ThirdNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(FourthNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(FifthNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(SixthNearestEnemyOf(Myself))
+END
+
+/////////////////////////////////////////////////////////////////////
+// Find them!
+/////////////////////////////////////////////////////////////////////
+IF
+  Heard([ENEMY],125)
+  !Detect([GOODCUTOFF])
+THEN
+  RESPONSE #100
+    MoveToObject(LastHeardBy(Myself))
+END

@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		CreateCreatureDoor("mobha06",[1233.450],E)  // Planetar
+		CreateCreatureDoor("mobha13",[1233.450],E)  // Fallen Planetar
 		CreateCreatureDoor("mobha06",[1464.242],E)  // Deva
 		CreateCreatureDoor("mobha06",[1582.282],E)  // Deva
 		CreateCreatureDoor("mobha06",[1265.443],E)  // Deva

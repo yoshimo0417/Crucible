@@ -130,6 +130,17 @@ COPY ~crucible/cre/mobha09.cre~  ~override/mobha10.cre~
 // Glabrezu
 COPY ~crucible/cre/mobha11.cre~  ~override/mobha11.cre~
 
+//-------------------------------------------------------------------------
+// Fallen Planetar
+COPY ~crucible/cre/mobha12.cre~  ~override/mobha12.cre~
+
+//-------------------------------------------------------------------------
+// Fallen Planetar w/ Feather
+COPY ~crucible/itm/mobha13a.itm~ ~override~  // Angel Feather
+COPY ~crucible/cre/mobha12.cre~  ~override/mobha13.cre~
+  WRITE_ASCII 0x280 ~mobha13~ #8 // Script Name
+  REPLACE_CRE_ITEM ~mobha13a~ #0 #0 #0 ~UNSTEALABLE~ ~INV1~ EQUIP // Angel Feather
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -167,5 +178,6 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha08.baf~ ~override/mobha08.bcs~  // Creature script
      ~crucible/baf/mobha09.baf~ ~override/mobha09.bcs~  // Creature script
      ~crucible/baf/mobha11.baf~ ~override/mobha11.bcs~  // Creature script
+     ~crucible/baf/mobha12.baf~ ~override/mobha12.bcs~  // Creature script
      ~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
   COMPILE_BAF_TO_BCS
