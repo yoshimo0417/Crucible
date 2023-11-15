@@ -145,6 +145,10 @@ COPY ~crucible/cre/mobha12.cre~  ~override/mobha13.cre~
 // Fallen Deva
 COPY ~crucible/cre/mobha14.cre~  ~override/mobha14.cre~
 
+//-------------------------------------------------------------------------
+// Demon Knight
+COPY ~crucible/cre/mobha15.cre~  ~override/mobha15.cre~
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -172,6 +176,8 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha1d.baf~ ~override/mobha1d.bcs~  // Area script
      ~crucible/baf/mobha1e.baf~ ~override/mobha1e.bcs~  // Area script
      ~crucible/baf/mobha1f.baf~ ~override/mobha1f.bcs~  // Area script
+     ~crucible/baf/mobha1g.baf~ ~override/mobha1g.bcs~  // Area script
+     ~crucible/baf/mobha1h.baf~ ~override/mobha1h.bcs~  // Area script
      ~crucible/baf/mobha3.baf~  ~override/mobha3.bcs~   // Area script
      ~crucible/baf/mobha01.baf~ ~override/mobha01.bcs~  // Creature script
      ~crucible/baf/mobha03.baf~ ~override/mobha03.bcs~  // Creature script
@@ -184,5 +190,6 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha11.baf~ ~override/mobha11.bcs~  // Creature script
      ~crucible/baf/mobha12.baf~ ~override/mobha12.bcs~  // Creature script
      ~crucible/baf/mobha14.baf~ ~override/mobha14.bcs~  // Creature script
+     ~crucible/baf/mobha15.baf~ ~override/mobha15.bcs~  // Creature script
      ~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
   COMPILE_BAF_TO_BCS

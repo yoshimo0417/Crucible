@@ -1,0 +1,8 @@
+IF
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Spawn08","MOBHA1",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Spawn08","MOBHA1",1)
+		CreateCreature("mobha10",[2050.1045],NW)  // Balor
+END
