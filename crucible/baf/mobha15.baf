@@ -2119,30 +2119,6 @@ THEN
     AttackOneRound(SixthNearestEnemyOf(Myself))
 END
 
-/*
-IF
-  ActionListEmpty()
-  See(MostDamagedOf([PC]))
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
-THEN
-  RESPONSE #100
-    AttackOneRound(LastSeenBy(Myself))
-END
-
-IF
-  ActionListEmpty()
-  See(WorstAC([PC]))
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
-THEN
-  RESPONSE #100
-    AttackOneRound(LastSeenBy(Myself))
-END
-*/
-
 IF
   ActionListEmpty()
   See(NearestEnemyOf(Myself))

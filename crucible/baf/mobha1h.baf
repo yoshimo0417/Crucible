@@ -4,5 +4,10 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("MO_Spawn08","MOBHA1",1)
-		CreateCreature("mobha10",[2050.1045],NW)  // Balor
+		CreateCreature("mobha10",[2057.1143],N)  // Balor
+		CreateCreature("mobha15",[1963.1075],N)  // Demon Knight
+		CreateCreature("mobha15",[2031.1058],N)  // Demon Knight
+		CreateCreature("mobha15",[2125.1042],NW) // Demon Knight
+		CreateCreature("mobha16",[1958.1123],N)  // Erinyes
+		CreateCreature("mobha16",[2195.1097],NW) // Erinyes	
 END
