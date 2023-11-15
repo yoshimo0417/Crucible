@@ -1,0 +1,23 @@
+IF
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Spawn10","MOBHA1",0)
+	DifficultyGT(NORMAL)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Spawn10","MOBHA1",1)
+		CreateCreature("mobha07",[1480.1574],NE)  // Shadowdancer
+		CreateCreature("mobha08",[1506.1655],NE)  // Assassin
+END
+
+IF
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Spawn10","MOBHA1",0)
+	DifficultyLT(HARD)
+THEN
+	RESPONSE #50
+		SetGlobal("MO_Spawn10","MOBHA1",1)
+		CreateCreature("mobha07",[1480.1574],NE)  // Shadowdancer
+	RESPONSE #50
+		SetGlobal("MO_Spawn10","MOBHA1",1)
+		CreateCreature("mobha08",[1506.1655],NE)  // Assassin
+END
