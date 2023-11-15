@@ -141,6 +141,10 @@ COPY ~crucible/cre/mobha12.cre~  ~override/mobha13.cre~
   WRITE_ASCII 0x280 ~mobha13~ #8 // Script Name
   REPLACE_CRE_ITEM ~mobha13a~ #0 #0 #0 ~UNSTEALABLE~ ~INV1~ EQUIP // Angel Feather
 
+//-------------------------------------------------------------------------
+// Fallen Deva
+COPY ~crucible/cre/mobha14.cre~  ~override/mobha14.cre~
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -179,5 +183,6 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha09.baf~ ~override/mobha09.bcs~  // Creature script
      ~crucible/baf/mobha11.baf~ ~override/mobha11.bcs~  // Creature script
      ~crucible/baf/mobha12.baf~ ~override/mobha12.bcs~  // Creature script
+     ~crucible/baf/mobha14.baf~ ~override/mobha14.bcs~  // Creature script
      ~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
   COMPILE_BAF_TO_BCS

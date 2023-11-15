@@ -1,13 +1,46 @@
 IF
-	True()
+	DifficultyGT(HARD)
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		CreateCreatureDoor("mobha13",[1233.450],E)  // Fallen Planetar
-		CreateCreatureDoor("mobha06",[1464.242],E)  // Deva
-		CreateCreatureDoor("mobha06",[1582.282],E)  // Deva
-		CreateCreatureDoor("mobha06",[1265.443],E)  // Deva
-		CreateCreatureDoor("mobha06",[1392.485],E)  // Deva
+		CreateCreatureDoor("mobha14",[1464.242],E)  // Fallen Deva
+		CreateCreatureDoor("mobha14",[1582.282],E)  // Fallen Deva
+		CreateCreatureDoor("mobha14",[1265.443],E)  // Fallen Deva
+		CreateCreatureDoor("mobha14",[1392.485],E)  // Fallen Deva
+		Wait(4)
+		EndCutSceneMode()
+END
+
+IF
+	Difficulty(HARD)
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		CreateCreatureDoor("mobha13",[1233.450],E)  // Fallen Planetar
+		CreateCreatureDoor("mobha14",[1464.242],E)  // Fallen Deva
+		CreateCreatureDoor("mobha14",[1582.282],E)  // Fallen Deva
+		Wait(4)
+		EndCutSceneMode()
+END
+
+IF
+	Difficulty(NORMAL)
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		CreateCreatureDoor("mobha13",[1233.450],E)  // Fallen Planetar
+		CreateCreatureDoor("mobha14",[1464.242],E)  // Fallen Deva
+		Wait(4)
+		EndCutSceneMode()
+END
+
+IF
+	DifficultyLT(NORMAL)
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		CreateCreatureDoor("mobha13",[1233.450],E)  // Fallen Planetar
 		Wait(4)
 		EndCutSceneMode()
 END

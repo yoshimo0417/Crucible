@@ -9,6 +9,17 @@
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
+// When Dead
+/////////////////////////////////////////////////////////////////////
+IF
+  Die()
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("SPUNHOLY",Myself)
+    DestroySelf()
+END
+
+/////////////////////////////////////////////////////////////////////
 // Initial Set-Up
 /////////////////////////////////////////////////////////////////////
 IF
@@ -28,6 +39,7 @@ THEN
     SetGlobal("MO_SymbolFear","LOCALS",3)
     SetGlobal("MO_SymbolDeath","LOCALS",3)
     SetGlobal("MO_Chaos","LOCALS",1)
+    SetGlobal("MO_CanAttack","LOCALS",0)
     ApplySpell(Myself,CLERIC_GLOBE_OF_BLADES)
     ApplySpell(Myself,CLERIC_TRUE_SIGHT)
 END
@@ -53,7 +65,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Invisibility","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(Myself,WIZARD_IMPROVED_INVISIBILITY)
+    ForceSpell(Myself,WIZARD_IMPROVED_INVISIBILITY)
     SetInterrupt(TRUE)
 END
 
@@ -66,7 +78,6 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   HPPercentLT(Myself,50)
   GlobalGT("MO_Heal","LOCALS",0)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -75,7 +86,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Heal","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heal)
+    ForceSpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heal)
     SetInterrupt(TRUE)
 END
 
@@ -114,7 +125,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    ForceSpell(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -150,7 +161,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    ForceSpell(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -186,7 +197,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    ForceSpell(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -222,7 +233,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    ForceSpell(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -258,7 +269,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    ForceSpell(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -294,7 +305,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    ForceSpell(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -343,7 +354,7 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #50
+  RESPONSE #100
     SetGlobal("MO_CastInsectPlague","LOCALS",1)
     Continue()
   RESPONSE #50
@@ -375,8 +386,6 @@ IF
   !CheckSpellState(LastSeenBy(Myself),RED_FIRESHIELD)
   !CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-  !IfValidForPartyDialog(LastSeenBy(Myself))
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -384,8 +393,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_InsectPlague","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
     SetInterrupt(TRUE)
 END
 
@@ -413,8 +423,6 @@ IF
   !CheckSpellState(LastSeenBy(Myself),RED_FIRESHIELD)
   !CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-  !IfValidForPartyDialog(LastSeenBy(Myself))
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -422,8 +430,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_InsectPlague","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
     SetInterrupt(TRUE)
 END
 
@@ -451,8 +460,6 @@ IF
   !CheckSpellState(LastSeenBy(Myself),RED_FIRESHIELD)
   !CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-  !IfValidForPartyDialog(LastSeenBy(Myself))
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -460,8 +467,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_InsectPlague","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
     SetInterrupt(TRUE)
 END
 
@@ -489,8 +497,6 @@ IF
   !CheckSpellState(LastSeenBy(Myself),RED_FIRESHIELD)
   !CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-  !IfValidForPartyDialog(LastSeenBy(Myself))
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -498,8 +504,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_InsectPlague","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
     SetInterrupt(TRUE)
 END
 
@@ -527,8 +534,6 @@ IF
   !CheckSpellState(LastSeenBy(Myself),RED_FIRESHIELD)
   !CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-  !IfValidForPartyDialog(LastSeenBy(Myself))
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -536,8 +541,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_InsectPlague","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
     SetInterrupt(TRUE)
 END
 
@@ -565,8 +571,6 @@ IF
   !CheckSpellState(LastSeenBy(Myself),RED_FIRESHIELD)
   !CheckStatGT(LastSeenBy(Myself),0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-  !IfValidForPartyDialog(LastSeenBy(Myself))
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -574,8 +578,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_InsectPlague","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
     SetInterrupt(TRUE)
 END
 
@@ -621,7 +626,6 @@ IF
   !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
   !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
   !CheckSpellState(LastSeenBy(Myself),SI_TRANSMUTATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -629,8 +633,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Earthquake","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_EARTHQUAKE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_EARTHQUAKE)
     SetInterrupt(TRUE)
 END
 
@@ -653,7 +658,6 @@ IF
   !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
   !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
   !CheckSpellState(LastSeenBy(Myself),SI_TRANSMUTATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -661,8 +665,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Earthquake","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_EARTHQUAKE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_EARTHQUAKE)
     SetInterrupt(TRUE)
 END
 
@@ -685,7 +690,6 @@ IF
   !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
   !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
   !CheckSpellState(LastSeenBy(Myself),SI_TRANSMUTATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -693,8 +697,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Earthquake","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_EARTHQUAKE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_EARTHQUAKE)
     SetInterrupt(TRUE)
 END
 
@@ -717,7 +722,6 @@ IF
   !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
   !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
   !CheckSpellState(LastSeenBy(Myself),SI_TRANSMUTATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -725,8 +729,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Earthquake","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_EARTHQUAKE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_EARTHQUAKE)
     SetInterrupt(TRUE)
 END
 
@@ -749,7 +754,6 @@ IF
   !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
   !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
   !CheckSpellState(LastSeenBy(Myself),SI_TRANSMUTATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -757,8 +761,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Earthquake","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_EARTHQUAKE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_EARTHQUAKE)
     SetInterrupt(TRUE)
 END
 
@@ -781,7 +786,6 @@ IF
   !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
   !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
   !CheckSpellState(LastSeenBy(Myself),SI_TRANSMUTATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -789,8 +793,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Earthquake","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_EARTHQUAKE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_EARTHQUAKE)
     SetInterrupt(TRUE)
 END
 
@@ -837,7 +842,6 @@ IF
   !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
   !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
   !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -845,8 +849,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FireStorm","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    ForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
     SetInterrupt(TRUE)
 END
 
@@ -871,7 +876,6 @@ IF
   !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
   !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
   !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -879,8 +883,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FireStorm","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    ForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
     SetInterrupt(TRUE)
 END
 
@@ -905,7 +910,6 @@ IF
   !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
   !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
   !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -913,8 +917,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FireStorm","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    ForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
     SetInterrupt(TRUE)
 END
 
@@ -939,7 +944,6 @@ IF
   !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
   !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
   !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -947,8 +951,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FireStorm","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    ForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
     SetInterrupt(TRUE)
 END
 
@@ -973,7 +978,6 @@ IF
   !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
   !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
   !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -981,8 +985,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FireStorm","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    ForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
     SetInterrupt(TRUE)
 END
 
@@ -1007,7 +1012,6 @@ IF
   !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
   !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
   !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -1015,8 +1019,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FireStorm","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    ForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
     SetInterrupt(TRUE)
 END
 
@@ -1063,7 +1068,6 @@ IF
   !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
   !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
   !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -1071,8 +1075,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FlameStrike","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
     SetInterrupt(TRUE)
 END
 
@@ -1097,7 +1102,6 @@ IF
   !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
   !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
   !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -1105,8 +1109,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FlameStrike","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
     SetInterrupt(TRUE)
 END
 
@@ -1131,7 +1136,6 @@ IF
   !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
   !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
   !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -1139,8 +1143,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FlameStrike","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
     SetInterrupt(TRUE)
 END
 
@@ -1165,7 +1170,6 @@ IF
   !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
   !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
   !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -1173,8 +1177,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FlameStrike","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
     SetInterrupt(TRUE)
 END
 
@@ -1199,7 +1204,6 @@ IF
   !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
   !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
   !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -1207,8 +1211,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FlameStrike","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
     SetInterrupt(TRUE)
 END
 
@@ -1233,7 +1238,6 @@ IF
   !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
   !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
   !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -1241,8 +1245,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FlameStrike","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+    ForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
     SetInterrupt(TRUE)
 END
 
@@ -1264,7 +1269,6 @@ IF
   See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
   CheckStatLT(Myself,1,CLERIC_BLADE_BARRIER)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -1272,8 +1276,9 @@ THEN
   RESPONSE #60
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Globe","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(Myself,CLERIC_GLOBE_OF_BLADES)  // SPPR725.SPL (Globe of Blades)
+    ForceSpell(Myself,CLERIC_GLOBE_OF_BLADES)  // SPPR725.SPL (Globe of Blades)
     SetInterrupt(TRUE)
   RESPONSE #40
     Continue()
@@ -1289,7 +1294,6 @@ IF
   Global("MO_Offensive","LOCALS",0)
   See([GOODCUTOFF])
   GlobalGT("MO_Chaos","LOCALS",0)
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1332,7 +1336,6 @@ IF
   !HasItemEquipedReal("SW1H54",LastSeenBy(Myself)) // The Equalizer
   !HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
   !HasItemEquipedReal("SW2H21",LastSeenBy(Myself)) // Psion's Blade +5
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1340,8 +1343,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Chaos","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_CHAOS)
+    ForceSpell(LastSeenBy(Myself),WIZARD_CHAOS)
     SetInterrupt(TRUE)
 END
 
@@ -1375,7 +1379,6 @@ IF
   !HasItemEquipedReal("SW1H54",LastSeenBy(Myself)) // The Equalizer
   !HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
   !HasItemEquipedReal("SW2H21",LastSeenBy(Myself)) // Psion's Blade +5
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1383,8 +1386,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Chaos","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_CHAOS)
+    ForceSpell(LastSeenBy(Myself),WIZARD_CHAOS)
     SetInterrupt(TRUE)
 END
 
@@ -1418,7 +1422,6 @@ IF
   !HasItemEquipedReal("SW1H54",LastSeenBy(Myself)) // The Equalizer
   !HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
   !HasItemEquipedReal("SW2H21",LastSeenBy(Myself)) // Psion's Blade +5
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1426,8 +1429,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Chaos","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_CHAOS)
+    ForceSpell(LastSeenBy(Myself),WIZARD_CHAOS)
     SetInterrupt(TRUE)
 END
 
@@ -1461,7 +1465,6 @@ IF
   !HasItemEquipedReal("SW1H54",LastSeenBy(Myself)) // The Equalizer
   !HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
   !HasItemEquipedReal("SW2H21",LastSeenBy(Myself)) // Psion's Blade +5
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1469,8 +1472,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Chaos","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_CHAOS)
+    ForceSpell(LastSeenBy(Myself),WIZARD_CHAOS)
     SetInterrupt(TRUE)
 END
 
@@ -1504,7 +1508,6 @@ IF
   !HasItemEquipedReal("SW1H54",LastSeenBy(Myself)) // The Equalizer
   !HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
   !HasItemEquipedReal("SW2H21",LastSeenBy(Myself)) // Psion's Blade +5
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1512,8 +1515,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Chaos","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_CHAOS)
+    ForceSpell(LastSeenBy(Myself),WIZARD_CHAOS)
     SetInterrupt(TRUE)
 END
 
@@ -1547,7 +1551,6 @@ IF
   !HasItemEquipedReal("SW1H54",LastSeenBy(Myself)) // The Equalizer
   !HasItemEquipedReal("SW2H14",LastSeenBy(Myself)) // Lilarcor
   !HasItemEquipedReal("SW2H21",LastSeenBy(Myself)) // Psion's Blade +5
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1555,8 +1558,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Chaos","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_CHAOS)
+    ForceSpell(LastSeenBy(Myself),WIZARD_CHAOS)
     SetInterrupt(TRUE)
 END
 
@@ -1570,7 +1574,6 @@ IF
   Global("MO_Offensive","LOCALS",0)
   See([GOODCUTOFF])
   GlobalGT("MO_UnholyWord","LOCALS",0)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1601,7 +1604,6 @@ IF
   !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
   !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
   !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1609,8 +1611,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_UnholyWord","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    ForceSpell(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
     SetInterrupt(TRUE)
 END
 
@@ -1632,7 +1635,6 @@ IF
   !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
   !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
   !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1640,8 +1642,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_UnholyWord","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    ForceSpell(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
     SetInterrupt(TRUE)
 END
 
@@ -1663,7 +1666,6 @@ IF
   !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
   !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
   !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1671,8 +1673,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_UnholyWord","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    ForceSpell(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
     SetInterrupt(TRUE)
 END
 
@@ -1694,7 +1697,6 @@ IF
   !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
   !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
   !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1702,8 +1704,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_UnholyWord","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    ForceSpell(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
     SetInterrupt(TRUE)
 END
 
@@ -1725,7 +1728,6 @@ IF
   !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
   !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
   !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1733,8 +1735,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_UnholyWord","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    ForceSpell(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
     SetInterrupt(TRUE)
 END
 
@@ -1756,7 +1759,6 @@ IF
   !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
   !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
   !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
@@ -1764,8 +1766,9 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_UnholyWord","LOCALS",-1)
+    SetGlobal("MO_CanAttack","LOCALS",1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    ForceSpell(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
     SetInterrupt(TRUE)
 END
 
@@ -1774,6 +1777,7 @@ END
 /////////////////////////////////////////////////////////////////////
 IF
   ActionListEmpty()
+  Global("MO_CanAttack","LOCALS",1)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1789,6 +1793,7 @@ END
 
 IF
   ActionListEmpty()
+  Global("MO_CanAttack","LOCALS",1)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1804,6 +1809,7 @@ END
 
 IF
   ActionListEmpty()
+  Global("MO_CanAttack","LOCALS",1)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1819,6 +1825,7 @@ END
 
 IF
   ActionListEmpty()
+  Global("MO_CanAttack","LOCALS",1)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1834,6 +1841,7 @@ END
 
 IF
   ActionListEmpty()
+  Global("MO_CanAttack","LOCALS",1)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1849,6 +1857,7 @@ END
 
 IF
   ActionListEmpty()
+  Global("MO_CanAttack","LOCALS",1)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1864,6 +1873,7 @@ END
 
 IF
   ActionListEmpty()
+  Global("MO_CanAttack","LOCALS",1)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -1876,6 +1886,7 @@ END
 
 IF
   ActionListEmpty()
+  Global("MO_CanAttack","LOCALS",1)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -1888,6 +1899,7 @@ END
 
 IF
   ActionListEmpty()
+  Global("MO_CanAttack","LOCALS",1)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -1900,6 +1912,7 @@ END
 
 IF
   ActionListEmpty()
+  Global("MO_CanAttack","LOCALS",1)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -1912,6 +1925,7 @@ END
 
 IF
   ActionListEmpty()
+  Global("MO_CanAttack","LOCALS",1)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -1924,6 +1938,7 @@ END
 
 IF
   ActionListEmpty()
+  Global("MO_CanAttack","LOCALS",1)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
