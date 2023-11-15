@@ -4,10 +4,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("MO_Spawn07","MOBHA1",1)
-		CreateCreature("mobha06",[1943.161],E)  // Skirmisher
-		CreateCreature("mobha06",[1954.244],E)  // Skirmisher
-		CreateCreature("mobha05",[1878.157],E)  // Scout
-		CreateCreature("mobha05",[1891.240],E)  // Scout
-		CreateCreature("mobha07",[2251.163],W)  // Ketta
-		CreateCreature("mobha08",[2221.242],W)  // Ketta
+		CreateCreature("mobha15",[1805.666],NW)  // Demon Knight
+		CreateCreature("mobha15",[1851.655],NW)  // Demon Knight
+		CreateCreature("mobha15",[1816.701],NW)  // Demon Knight
 END
