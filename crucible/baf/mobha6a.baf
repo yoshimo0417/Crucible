@@ -1,0 +1,8 @@
+IF
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Spawn01","MOBHA6",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Spawn01","MOBHA6",1)
+		CreateCreature("mobha04",[352.601],SE)  // Bebilith
+END

@@ -18,3 +18,46 @@ THEN
 		SetGlobalTimer("MO_WILD_MAGIC","mobha6",14)
 		Continue()
 END
+
+/////////////////////////////////////////////////////////////////////
+// Set Rest Encounter Probability (tied to difficulty slider)
+/////////////////////////////////////////////////////////////////////
+IF 
+	DifficultyGT(HARD)
+	!Global("MO_RestEncounter","MOBHA6",1)
+THEN
+	RESPONSE #100
+		SetRestEncounterProbabilityDay(75) 
+		SetRestEncounterProbabilityNight(75)
+		SetGlobal("MO_RestEncounter","MOBHA6",1) 
+END
+
+IF 
+	Difficulty(HARD)
+	!Global("MO_RestEncounter","MOBHA6",2)
+THEN
+	RESPONSE #100
+		SetRestEncounterProbabilityDay(50) 
+		SetRestEncounterProbabilityNight(50)
+		SetGlobal("MO_RestEncounter","MOBHA6",2) 
+END
+
+IF 
+	Difficulty(NORMAL)
+	!Global("MO_RestEncounter","MOBHA6",3)
+THEN
+	RESPONSE #100
+		SetRestEncounterProbabilityDay(25) 
+		SetRestEncounterProbabilityNight(25)
+		SetGlobal("MO_RestEncounter","MOBHA6",3) 
+END
+
+IF 
+	DifficultyLT(NORMAL)
+	!Global("MO_RestEncounter","MOBHA6",4)
+THEN
+	RESPONSE #100
+		SetRestEncounterProbabilityDay(10) 
+		SetRestEncounterProbabilityNight(10)
+		SetGlobal("MO_RestEncounter","MOBHA6",4) 
+END

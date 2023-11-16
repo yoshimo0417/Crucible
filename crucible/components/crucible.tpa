@@ -190,6 +190,8 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha1l.baf~ ~override/mobha1l.bcs~  // Area script
      ~crucible/baf/mobha3.baf~  ~override/mobha3.bcs~   // Area script
      ~crucible/baf/mobha6.baf~  ~override/mobha6.bcs~   // Area script
+     ~crucible/baf/mobha6a.baf~ ~override/mobha6a.bcs~  // Area script
+     ~crucible/baf/mobha6b.baf~ ~override/mobha6b.bcs~  // Area script
      ~crucible/baf/mobha01.baf~ ~override/mobha01.bcs~  // Creature script
      ~crucible/baf/mobha03.baf~ ~override/mobha03.bcs~  // Creature script
      ~crucible/baf/mobha04.baf~ ~override/mobha04.bcs~  // Creature script
