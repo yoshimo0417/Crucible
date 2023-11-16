@@ -21,6 +21,7 @@ AUTO_TRA ~crucible/languages/%s~
 LANGUAGE ~English~
          ~english~
          ~crucible/languages/english/creatures.tra~
+         ~crucible/languages/english/dialog.tra~
          ~crucible/languages/english/setup.tra~
          ~crucible/languages/english/spells.tra~
 

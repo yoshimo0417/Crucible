@@ -5,27 +5,6 @@ THEN
     Enemy()
 END
 
-//IF
-//  !Class(Myself,MAGE)
-//THEN
-//  RESPONSE #100
-//    ChangeClass(Myself,MAGE)
-//END
-
-IF
-  !See(Player1)
-  !See(Player2)
-  !See(Player3)
-  !See(Player4)
-  !See(Player5)
-  !See(Player6)
-  !GlobalTimerNotExpired("GB_DimDoor","LOCALS")
-THEN
-  RESPONSE #100
-    ReallyForceSpell(Player1,WIZARD_DIMENSION_DOOR)
-    SetGlobalTimer("GB_DimDoor","LOCALS",6)
-END
-
 IF
   OR(4)
     AreaCheck("ar3004")  // Watcher's Keep
