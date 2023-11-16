@@ -17,7 +17,7 @@ THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     SetGlobal("MO_Assassination","LOCALS",1)
-    GiveItemCreate("potn55",Myself,5,0,0)   // superior healing
+    GiveItemCreate("potn55",Myself,2,0,0)   // superior healing
     EquipMostDamagingMelee()
     Hide()
 END
@@ -28,6 +28,7 @@ IF
 THEN
   RESPONSE #100
     DestroyItem("BELT06")
+    DestroyItem("CLCK06")
     SetGlobal("MO_DifficultyCheck","LOCALS",1)
 END
 
