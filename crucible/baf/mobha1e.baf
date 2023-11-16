@@ -8,6 +8,6 @@ THEN
 		CreateCreature("mobha06",[1954.244],E)  // Skirmisher
 		CreateCreature("mobha05",[1878.157],E)  // Scout
 		CreateCreature("mobha05",[1891.240],E)  // Scout
-		CreateCreature("mobha07",[2251.163],W)  // Shadowdancer
-		CreateCreature("mobha08",[2221.242],W)  // Assassin
+		CreateCreature("mobha07",[2061.172],E)  // Shadowdancer
+		CreateCreature("mobha08",[2063.255],E)  // Assassin
 END
