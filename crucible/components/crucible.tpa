@@ -161,6 +161,8 @@ COPY ~crucible/itm/mobha16b.itm~ ~override~  // Arrows
 COPY ~crucible/cre/mobha17.cre~  ~override/mobha17.cre~
   SAY NAME1 @2007
   SAY NAME2 @2007
+  WRITE_ASCII 0x2cc ~MOBHA17~ #8 // Dialogue
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha17.d~
 
 //-------------------------------------------------------------------------
 // Deathstalker (Initial Discussion)
@@ -170,6 +172,7 @@ COPY ~crucible/cre/mobha17.cre~  ~override/mobha18.cre~
   SAY NAME2 @2007
   WRITE_ASCII 0x268 ~~        #8 // Clear Default Script
   WRITE_ASCII 0x280 ~MOBHA18~ #8 // Script Name
+  WRITE_ASCII 0x2cc ~MOBHA18~ #8 // Dialogue
   REPLACE_CRE_ITEM ~MIN1HP~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~LRING~ EQUIP // Make invincible
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha18.d~
 

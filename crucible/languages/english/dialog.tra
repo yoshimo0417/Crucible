@@ -24,4 +24,11 @@
 @5121 = ~Why do you serve Amelyssan instead of working to assit Bhaal's return?~
 @5122 = ~I was one of many of Bhaal's Deathstalkers. A dutiful but unappreciated one at that. I serve Amelyssan as I will become one of her most favored and should reap the reward of her ascension.~
 
-@5130 = ~Stop <CHARNAME>, I will seal up Bhaal's kingdom and halt <PRO_HISHER> advance.~
+@5130 = ~Hurry <CHARNAME>, before I seal off Bhaal's kingdom and halt your advance. Be seeing you.~
+
+// Deathstalker Second Convo
+@5200 = ~You arrive too late and the path is sealed. Amelyssan shall become a goddess, and I will be the one rewarded with bringing her your head.~
+@5201 = ~You assume much, let us end this.~
+@5202 = ~My head will stay attached to my neck. Yours...not so likely.~
+@5203 = ~Die, bitch!~
+@5210 = ~Attack the Bhaalspawn, bring me <PRO_HISHER> head!~
