@@ -155,6 +155,24 @@ COPY ~crucible/cre/mobha16.cre~  ~override/mobha16.cre~
 COPY ~crucible/itm/mobha16a.itm~ ~override~  // Long Sword
 COPY ~crucible/itm/mobha16b.itm~ ~override~  // Arrows
 
+//-------------------------------------------------------------------------
+// Deathstalker
+// Add dialog
+COPY ~crucible/cre/mobha17.cre~  ~override/mobha17.cre~
+  SAY NAME1 @2007
+  SAY NAME2 @2007
+
+//-------------------------------------------------------------------------
+// Deathstalker (Initial Discussion)
+// Add dialog
+COPY ~crucible/cre/mobha17.cre~  ~override/mobha18.cre~
+  SAY NAME1 @2007
+  SAY NAME2 @2007
+  WRITE_ASCII 0x268 ~~        #8 // Clear Default Script
+  WRITE_ASCII 0x280 ~MOBHA18~ #8 // Script Name
+  REPLACE_CRE_ITEM ~MIN1HP~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~LRING~ EQUIP // Make invincible
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha18.d~
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -205,5 +223,6 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha14.baf~ ~override/mobha14.bcs~  // Creature script
      ~crucible/baf/mobha15.baf~ ~override/mobha15.bcs~  // Creature script
      ~crucible/baf/mobha16.baf~ ~override/mobha16.bcs~  // Creature script
+     ~crucible/baf/mobha17.baf~ ~override/mobha17.bcs~  // Creature script
      //~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
   COMPILE_BAF_TO_BCS

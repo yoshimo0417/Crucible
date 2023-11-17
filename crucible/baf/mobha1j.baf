@@ -11,6 +11,6 @@ THEN
 		CreateCreature("mobha05",[850.1329],SE)  // Scout
 		CreateCreature("mobha07",[738.1418],SE)  // Shadowdancer
 		CreateCreature("mobha08",[874.1359],SE)  // Assassin
-		//CreateCreature("mobha17",[804.1381],SE)  // Deathstalker
+		CreateCreature("mobha17",[804.1381],SE)  // Deathstalker
 END
 
