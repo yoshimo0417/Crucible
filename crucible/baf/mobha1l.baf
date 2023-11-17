@@ -9,8 +9,8 @@ THEN
 		Wait(2)
 		DisplayString(Myself,@5001)  // You feel the eyes of divine wrath upon you and hear a rushing of wings. Off in the distance you can hear the gate to the planetar garrison crashing open.
 		Wait(2)
-		CreateCreatureEffect("mobha13","SPSPEV",[981.1550],NW)  // Fallen Planetar
-		CreateCreatureEffect("mobha13","SPSPEV",[948.1622],NW)  // Fallen Planetar
+		CreateCreatureEffect("mobha12","SPSPEV",[981.1550],NW)  // Fallen Planetar
+		CreateCreatureEffect("mobha12","SPSPEV",[948.1622],NW)  // Fallen Planetar
 		CreateCreatureEffect("mobha14","SPSPEV",[902.1541],NW)  // Fallen Deva
 		CreateCreatureEffect("mobha14","SPSPEV",[878.1606],NW)  // Fallen Deva
 		CreateCreatureEffect("mobha14","SPSPEV",[953.1519],NW)  // Fallen Deva

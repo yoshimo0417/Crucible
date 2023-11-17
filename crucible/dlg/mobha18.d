@@ -51,10 +51,6 @@ IF ~~ THEN BEGIN 4
 CheckStatGT(Player1,50,LORE)
 CheckStatGT(Player1,16,INT)
 CheckStatGT(Player1,16,WIS)~ THEN REPLY @5102 GOTO 2
-  IF ~OR(3)
-CheckStatGT(Player1,50,LORE)
-CheckStatGT(Player1,16,INT)
-CheckStatGT(Player1,16,WIS)~ THEN REPLY @5102 GOTO 2
   IF ~~ THEN REPLY @5115 GOTO 6
   IF ~~ THEN REPLY @5116 GOTO 6
 END
