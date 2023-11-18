@@ -29,10 +29,10 @@
 
 // Deathstalker Second Convo
 @5200 = ~You arrive too late and the path is sealed. Amelyssan shall become a goddess, and I will be the one rewarded with bringing her your head.~ [mobha008]
-@5201 = ~You assume much, let us end this.~ [mobha009]
+@5201 = ~You assume much, let us end this.~ 
 @5202 = ~My head will stay attached to my neck. Yours...not so likely.~
 @5203 = ~Die, bitch!~
-@5210 = ~Attack the Bhaalspawn, bring me <PRO_HISHER> head!~
+@5210 = ~Attack the Bhaalspawn, bring me <PRO_HISHER> head!~ [mobha009]
 
 // Planetar
 @5300 = ~Halt! It has been decreed to stop your advance and end your existence. Prepare thyself for death!~ [mobha010]
