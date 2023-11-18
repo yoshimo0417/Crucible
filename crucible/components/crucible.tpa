@@ -11,6 +11,10 @@ COPY ~crucible/bam~ ~override~
 COPY ~crucible/wav~ ~override~
 
 //-------------------------------------------------------------------------
+// Convert OGG to WAV (Thanks Cam!)
+LAF HANDLE_AUDIO END
+
+//-------------------------------------------------------------------------
 // 2da Import
 ACTION_IF NOT (FILE_EXISTS_IN_GAME ~fogarea.2da~) THEN BEGIN
   COPY ~%MOD_FOLDER%/2da/fogarea.2da~ ~override~

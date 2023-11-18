@@ -5,7 +5,7 @@
 @5001 = ~You feel the eyes of divine wrath upon you and hear a rushing of wings. Off in the distance you can hear the gate to the Planetar Garrison crashing open.~
 
 // Deathstalker Initial Convo
-@5100 = ~I see you decided to finally arrive, <CHARNAME>. The hour is late and Amelyssan will ascend as the new lord of murder.~
+@5100 = ~I see you decided to finally arrive, <CHARNAME>. The hour is late and Amelyssan will ascend as the new lord of murder.~ [mobha000]
 @5101 = ~Where am I?~
 @5102 = ~This is Khalas, isn't it?~
 @5103 = ~Who are you?~
