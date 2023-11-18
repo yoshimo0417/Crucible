@@ -128,7 +128,9 @@ COPY ~crucible/itm/mobha09b.itm~ ~override~  // Bite
 COPY ~crucible/itm/mobha10a.itm~ ~override~  // Demon Heart
 COPY ~crucible/cre/mobha09.cre~  ~override/mobha10.cre~
   WRITE_ASCII 0x280 ~mobha10~ #8 // Script Name
+  WRITE_ASCII 0x2cc ~mobha10~ #8 // Dialogue
   REPLACE_CRE_ITEM ~mobha10a~ #0 #0 #0 ~UNSTEALABLE~ ~INV1~ EQUIP // Demon Heart
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha10.d~
 
 //-------------------------------------------------------------------------
 // Glabrezu
@@ -143,7 +145,9 @@ COPY ~crucible/cre/mobha12.cre~  ~override/mobha12.cre~
 COPY ~crucible/itm/mobha13a.itm~ ~override~  // Angel Feather
 COPY ~crucible/cre/mobha12.cre~  ~override/mobha13.cre~
   WRITE_ASCII 0x280 ~mobha13~ #8 // Script Name
+  WRITE_ASCII 0x2cc ~mobha13~ #8 // Dialogue
   REPLACE_CRE_ITEM ~mobha13a~ #0 #0 #0 ~UNSTEALABLE~ ~INV1~ EQUIP // Angel Feather
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha13.d~
 
 //-------------------------------------------------------------------------
 // Fallen Deva

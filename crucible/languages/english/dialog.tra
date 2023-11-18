@@ -12,23 +12,30 @@
 @5104 = ~Then time is of the essence, draw steel!~
 @5105 = ~You shall fall as all have done before you. Prepare to die!~
 
-@5110 = ~How you made it this far with so little knowledge is a question for the sages. You are in Khalas, the uppermost layer of Gehenna.~
-@5111 = ~Very astute of you. Yes, this is the uppermost layer of Gehenna known as Khalas.~
+@5110 = ~How you made it this far with so little knowledge is a question for the sages. You are in Khalas, the uppermost layer of Gehenna.~ [mobha001]
+@5111 = ~Very astute of you. Yes, this is the uppermost layer of Gehenna known as Khalas.~ [mobha002]
 @5112 = ~Isn't my pocket plane supposed to be connected to Bhaal's realm?~
-@5113 = ~Amelyssan suspected you had such a pocket plane when you first arrived in Saradush. Great effort was made to find and then sever your planes connected from the greater realm of Bhaal. ~
-@5114 = ~The ties are strong between your pocket plane and Bhaal's kingdom, so we could only separate the two so far apart. We have since waited to see if you would make the attempt to come through.~
+@5113 = ~Amelyssan suspected you had such a pocket plane when you first arrived in Saradush. Great effort was made to find and then sever your plane's connection from the greater realm of Bhaal.~ [mobha003]
+@5114 = ~The ties are strong between your pocket plane and Bhaal's kingdom, so we could only separate the two so far apart. We have since waited to see if you would make the attempt to come through.~ [mobha004]
 @5115 = ~Let us end this.~
 @5116 = ~I tire of these questions, it is time for you to die.~
 
-@5120 = ~I am a Deathstalker. Formerly a servant of Bhaal, I have since pledged my service to Amelyssan who shall become the new and rightful Lord of Murder.~
+@5120 = ~I am a Deathstalker. Formerly a servant of Bhaal, I have since pledged my service to Amelyssan who shall become the new and rightful Lord of Murder.~ [mobha005]
 @5121 = ~Why do you serve Amelyssan instead of working to assit Bhaal's return?~
-@5122 = ~I was one of many of Bhaal's Deathstalkers. A dutiful but unappreciated one at that. I serve Amelyssan as I will become one of her most favored and should reap the reward of her ascension.~
+@5122 = ~I was one of many of Bhaal's Deathstalkers. A dutiful but unappreciated one at that. I serve Amelyssan as I will become one of her most favored and should reap the reward of her ascension.~ [mobha006]
 
-@5130 = ~Hurry <CHARNAME>, before I seal off Bhaal's kingdom and halt your advance. Be seeing you.~
+@5130 = ~No, I will move ahead to seal off Bhaal's kingdom and halt your advance. Kill the Bhaalspawn!~ [mobha007]
+//@5130 = ~Hurry <CHARNAME>, before I seal off Bhaal's kingdom and halt your advance. Be seeing you.~
 
 // Deathstalker Second Convo
-@5200 = ~You arrive too late and the path is sealed. Amelyssan shall become a goddess, and I will be the one rewarded with bringing her your head.~
-@5201 = ~You assume much, let us end this.~
+@5200 = ~You arrive too late and the path is sealed. Amelyssan shall become a goddess, and I will be the one rewarded with bringing her your head.~ [mobha008]
+@5201 = ~You assume much, let us end this.~ [mobha009]
 @5202 = ~My head will stay attached to my neck. Yours...not so likely.~
 @5203 = ~Die, bitch!~
 @5210 = ~Attack the Bhaalspawn, bring me <PRO_HISHER> head!~
+
+// Planetar
+@5300 = ~Halt! It has been decreed to stop your advance and end your existence. Prepare thyself for death!~ [mobha010]
+
+// Demon
+@5400 = ~I will rend the flesh from your bones, God child!~ [mobha011]
