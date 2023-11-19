@@ -167,7 +167,6 @@ COPY ~crucible/itm/mobha16b.itm~ ~override~  // Arrows
 
 //-------------------------------------------------------------------------
 // Deathstalker
-// Add dialog
 COPY ~crucible/cre/mobha17.cre~  ~override/mobha17.cre~
   SAY NAME1 @2007
   SAY NAME2 @2007
@@ -176,7 +175,6 @@ COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha17.d~
 
 //-------------------------------------------------------------------------
 // Deathstalker (Initial Discussion)
-// Add dialog
 COPY ~crucible/cre/mobha17.cre~  ~override/mobha18.cre~
   SAY NAME1 @2007
   SAY NAME2 @2007
