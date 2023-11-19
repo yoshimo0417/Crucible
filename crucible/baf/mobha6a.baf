@@ -1,6 +1,18 @@
 IF
 	IsOverMe([GOODCUTOFF])
 	Global("MO_Spawn01","MOBHA6",0)
+	DifficultyGT(NORMAL)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Spawn01","MOBHA6",1)
+		CreateCreature("mobha04",[274.692],SE)  // Bebilith
+		CreateCreature("mobha04",[427.550],S)  // Bebilith
+END
+
+IF
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Spawn01","MOBHA6",0)
+	DifficultyLT(HARD)
 THEN
 	RESPONSE #100
 		SetGlobal("MO_Spawn01","MOBHA6",1)
