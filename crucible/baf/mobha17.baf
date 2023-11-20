@@ -14,6 +14,23 @@
 IF
   See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
+  CanEquipRanged()
+THEN
+  RESPONSE #100
+    ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+    ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
+    ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+    ApplySpell(Myself,WIZARD_HASTE)  // SPWI305.SPL (Haste)
+    ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)
+    SetGlobal("Prep","LOCALS",1)
+    SetGlobal("MO_TimeStop","LOCALS",1)
+    EquipRanged()
+END
+
+IF
+  See([GOODCUTOFF])
+  Global("Prep","LOCALS",0)
+  !CanEquipRanged()
 THEN
   RESPONSE #100
     ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
@@ -119,6 +136,42 @@ THEN
     ForceSpell(Myself,WIZARD_TIME_STOP)
     SetInterrupt(TRUE)
 END
+
+/////////////////////////////////////////////////////////////////////
+// Enemy Distance Check
+/////////////////////////////////////////////////////////////////////
+IF 
+  Range(NearestEnemyOf(Myself),5)
+  IsWeaponRanged(Myself)
+THEN
+  RESPONSE #100
+    EquipMostDamagingMelee()
+    Continue()
+END
+
+IF 
+  !Range(NearestEnemyOf(Myself),5)
+  !IsWeaponRanged(Myself)
+  CanEquipRanged()
+THEN
+  RESPONSE #100
+    EquipRanged()
+    Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Move if damaged and enemy is close
+/////////////////////////////////////////////////////////////////////
+/*
+IF
+  HPPercentLT(Myself,50)
+  Range(NearestEnemyOf(Myself),5)
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    RunAwayFrom(NearestEnemyOf(Myself),15) // One second running away before re-evaluate
+END
+*/
 
 /////////////////////////////////////////////////////////////////////
 // Attack

@@ -74,6 +74,7 @@ END
 
 IF ~~ THEN BEGIN 6
   SAY @5130
-  IF ~~ THEN DO ~ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("MOBHA1_Enemy","GLOBAL",1)
+ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
 END
 
