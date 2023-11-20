@@ -1,35 +1,12 @@
 IF
 	IsOverMe([GOODCUTOFF])
 	Global("MO_Spawn09","MOBHA1",0)
-	DifficultyGT(NORMAL)
 THEN
 	RESPONSE #100
 		SetGlobal("MO_Spawn09","MOBHA1",1)
-		CreateCreature("mobha06",[1539.1569],NE)  // Skirmisher
-		CreateCreature("mobha06",[1569.1644],NE)  // Skirmisher
-		CreateCreature("mobha05",[1436.1615],NE)  // Scout
-		CreateCreature("mobha05",[1445.1696],NE)  // Scout
-		CreateCreature("mobha07",[1779.1379],NE)  // Shadowdancer
-		CreateCreature("mobha08",[1746.1432],NE)  // Assassin
-END
-
-IF
-	IsOverMe([GOODCUTOFF])
-	Global("MO_Spawn09","MOBHA1",0)
-	DifficultyLT(HARD)
-THEN
-	RESPONSE #50
-		SetGlobal("MO_Spawn09","MOBHA1",1)
-		CreateCreature("mobha06",[1539.1569],NE)  // Skirmisher
-		CreateCreature("mobha06",[1569.1644],NE)  // Skirmisher
-		CreateCreature("mobha05",[1436.1615],NE)  // Scout
-		CreateCreature("mobha05",[1445.1696],NE)  // Scout
-		CreateCreature("mobha07",[1779.1379],NE)  // Shadowdancer
-	RESPONSE #50
-		SetGlobal("MO_Spawn09","MOBHA1",1)
-		CreateCreature("mobha06",[1539.1569],NE)  // Skirmisher
-		CreateCreature("mobha06",[1569.1644],NE)  // Skirmisher
-		CreateCreature("mobha05",[1436.1615],NE)  // Scout
-		CreateCreature("mobha05",[1445.1696],NE)  // Scout
-		CreateCreature("mobha08",[1746.1432],NE)  // Assassin
+		CreateCreatureEffect("mobha12","SPSPEV",[1655.1526],NE)  // Fallen Planetar
+		CreateCreatureEffect("mobha14","SPSPEV",[1657.1451],NE)  // Fallen Deva
+		CreateCreatureEffect("mobha14","SPSPEV",[1729.1536],NE)  // Fallen Deva
+		CreateCreatureEffect("mobha14","SPSPEV",[1784.1329],SW)  // Fallen Deva
+		CreateCreatureEffect("mobha14","SPSPEV",[1854.1366],SW)  // Fallen Deva
 END
