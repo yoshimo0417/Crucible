@@ -39,3 +39,18 @@
 
 // Demon
 @5400 = ~I will rend the flesh from your bones, God child!~ [mobha011]
+
+// Statue
+@5500 = ~Your divine blood holds sway here.~ 
+@5501 = ~I am a watcher of stone carved by Bhaal himself. What questions do you have?~
+@5502 = ~How do I enter Bhaal's kingdom?~
+@5503 = ~How do I enter the Demon Tower and Planetar Garrison?~
+@5504 = ~I have no further questions.~
+@5510 = ~To lower the bridge, sacrifices in blood must be made.~
+@5511 = ~You will need to defeat and draw the blood from the master of the Demon Tower to the East and the lord of the Planetar Garrison to the West.~
+@5512 = ~The bowls before the bridge need to be filled with their blood. The final step will be sacrificing your own blood.~ 
+@5513 = ~This will require a substantial amount, so you best ensure you are prepared so the process doesn't kill you.~
+@5520 = ~The Heart of a Demon must be placed within the Eastern skull pile to lower the gate to the Demon Tower.~
+@5521 = ~The Feather of a Fallen Planetar must be placed within the Western skull pile to clear the entrance to the Planetar Garrison.~
+@5522 = ~Beware! These actions will alert the denizens that inhabit these locations and will bring swift condemnation. Prepare yourself accordingly.~
+@5530 = ~I will be waiting if you come back seeking more guidance.~
