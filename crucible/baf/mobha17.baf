@@ -15,9 +15,11 @@ IF
   See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
-  CanEquipRanged()
+  DifficultyGT(NORMAL)
 THEN
   RESPONSE #100
+    CreateCreatureEffect("golcla01","SPPORTAL",[863.1519],S)  // Clay Golem
+    CreateCreatureEffect("golcla01","SPPORTAL",[927.1495],S)  // Clay Golem
     ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
     ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
     ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
@@ -27,22 +29,27 @@ THEN
     SetGlobal("Prep","LOCALS",1)
     SetGlobal("MO_TimeStop","LOCALS",1)
     EquipRanged()
+    Continue()
 END
 
 IF
   See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
-  !CanEquipRanged()
+  DifficultyLT(HARD)
 THEN
   RESPONSE #100
+    CreateCreatureEffect("golsto01","SPPORTAL",[863.1519],S)  // Stone Golem
+    CreateCreatureEffect("golsto01","SPPORTAL",[927.1495],S)  // Stone Golem
     ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
-    ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
+    ApplySpell(Myself,WIZARD_MANTLE)
     ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
     ApplySpell(Myself,WIZARD_HASTE)  // SPWI305.SPL (Haste)
     ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)
     SetGlobal("Prep","LOCALS",1)
     SetGlobal("MO_TimeStop","LOCALS",1)
+    EquipRanged()
+    Continue()
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -52,6 +59,7 @@ IF
   Global("Prep","LOCALS",1)
   Global("MO_Cont","LOCALS",0)
   Allegiance(Myself,ENEMY)
+  DifficultyGT(EASY)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
@@ -64,7 +72,7 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
-// Spell: Mantle
+// Spell: Mantle/PfMW
 /////////////////////////////////////////////////////////////////////
 IF
   OR(2)
@@ -87,6 +95,30 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
     Spell(Myself,WIZARD_MANTLE)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  Range(LastSeenBy(Myself),4)
+  HaveSpell(WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
+  !CheckSpellState(Myself,PROTECTION_FROM_MAGICAL_WEAPONS)
+  !CheckSpellState(Myself,ABSOLUTE_IMMUNITY)
+  !CheckSpellState(Myself,MANTLE)
+  !CheckSpellState(Myself,IMPROVED_MANTLE)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
     SetInterrupt(TRUE)
 END
 
@@ -389,6 +421,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_AbiTimer","LOCALS")
   Global("MO_Offensive","LOCALS",1)
+  DifficultyGT(HARD)
   See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
   HaveSpell(WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
@@ -411,6 +444,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_Offensive","LOCALS",1)
   Global("MO_CastAbiDalzim","LOCALS",1)
+  DifficultyGT(HARD)
   See(NearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -444,6 +478,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_Offensive","LOCALS",1)
   Global("MO_CastAbiDalzim","LOCALS",1)
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -477,6 +512,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_Offensive","LOCALS",1)
   Global("MO_CastAbiDalzim","LOCALS",1)
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -510,6 +546,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_Offensive","LOCALS",1)
   Global("MO_CastAbiDalzim","LOCALS",1)
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -543,6 +580,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_Offensive","LOCALS",1)
   Global("MO_CastAbiDalzim","LOCALS",1)
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -576,6 +614,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_Offensive","LOCALS",1)
   Global("MO_CastAbiDalzim","LOCALS",1)
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)

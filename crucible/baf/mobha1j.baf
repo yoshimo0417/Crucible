@@ -4,13 +4,12 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("MO_Spawn10","MOBHA1",1)
-		CreateCreature("mobha06",[795.1486],SE)  // Skirmisher
-		CreateCreature("mobha06",[865.1486],SE)  // Skirmisher
-		CreateCreature("mobha06",[931.1453],SE)  // Skirmisher
+		CreateCreature("mobha06",[765.1440],SE)  // Skirmisher
+		CreateCreature("mobha06",[878.1405],SE)  // Skirmisher
 		CreateCreature("mobha05",[717.1357],SE)  // Scout
 		CreateCreature("mobha05",[850.1329],SE)  // Scout
-		CreateCreature("mobha07",[738.1418],SE)  // Shadowdancer
-		CreateCreature("mobha08",[874.1359],SE)  // Assassin
-		CreateCreature("mobha17",[804.1381],SE)  // Deathstalker
+		CreateCreature("mobha07",[728.1414],SE)  // Shadowdancer
+		CreateCreature("mobha08",[870.1370],SE)  // Assassin
+		CreateCreature("mobha17",[828.1445],SE)  // Deathstalker
 END
 
