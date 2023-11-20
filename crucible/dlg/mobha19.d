@@ -4,7 +4,7 @@
 ///////////////////////////////////////////////////////////////////
 BEGIN MOBHA19
 
-IF ~~ THEN BEGIN 0
+IF ~True()~ THEN BEGIN 0
   SAY @5500 = @5501
   IF ~~ THEN REPLY @5502 GOTO 1
   IF ~~ THEN REPLY @5503 GOTO 2
