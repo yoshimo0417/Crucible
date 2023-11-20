@@ -41,16 +41,16 @@
 @5400 = ~I will rend the flesh from your bones, God child!~ [mobha011]
 
 // Statue
-@5500 = ~Your divine blood holds sway here.~ 
-@5501 = ~I am a watcher of stone carved by Bhaal himself. What questions do you have?~
+@5500 = ~Your divine blood holds sway here.~ [mobha012]
+@5501 = ~I am a watcher of stone carved by Bhaal himself. What questions do you have?~ [mobha013]
 @5502 = ~How do I enter Bhaal's kingdom?~
 @5503 = ~How do I enter the structures you mention?~
 @5504 = ~I have no further questions.~
-@5510 = ~To lower the bridge, sacrifices in blood must be made.~
-@5511 = ~You will need to defeat and draw the blood from the master of the Towers to the East and the West.~
-@5512 = ~The bowls before the bridge need to be filled with their blood. The final step will be sacrificing your own blood.~ 
-@5513 = ~This will require a substantial amount, so you best ensure you are prepared so the process doesn't kill you.~
-@5520 = ~A heart of the most foul hatred must be placed within the Eastern skull pile while a feather of one fallen from grace needs to be placed within the Western skull pile.~
+@5510 = ~To enter Bhaal's kingdom, sacrifices in blood must be made.~ [mobha014]
+@5511 = ~You will need to defeat and draw the blood from the masters of the Towers to the East and the West.~ [mobha015]
+@5512 = ~The bowls before the bridge need to be filled with their blood. The final step will be sacrificing your own blood.~ [mobha016]
+@5513 = ~This will require a substantial amount, so you best ensure you are prepared so the process doesn't kill you.~ [mobha017]
+@5520 = ~A heart of the most foul hatred must be placed within the Eastern skull pile while a feather of one fallen from grace needs to be placed within the Western skull pile.~ [mobha018]
 //@5521 = ~The Feather of a Fallen Planetar must be placed within the Western skull pile.~
-@5522 = ~Beware! These actions will alert the denizens that inhabit these locations and bring swift condemnation. Prepare yourself accordingly.~
-@5530 = ~I will be waiting if you come back seeking more guidance.~
+@5522 = ~Beware! These actions will alert the denizens that inhabit these locations and bring swift condemnation. Prepare yourself accordingly.~ [mobha019]
+@5530 = ~I will be waiting if you come back seeking more guidance.~ [mobha020]
