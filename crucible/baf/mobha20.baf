@@ -18,12 +18,30 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
-    SetGlobalTimer("MO_SummonTimer","LOCALS",10)
+    SetGlobalTimer("MO_SummonTimer","LOCALS",18)
     ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
     ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
-    CreateCreatureObjectEffect("mobha15","SPMETSWA",LastSeenBy(Myself))
-    CreateCreatureObjectEffect("mobha16","SPMETSWA",Myself)
+    CreateCreatureEffect("mobha15","SPMETSWA",[750.859],S)  // Demon Knight
+    CreateCreatureEffect("mobha15","SPMETSWA",[830.879],S)  // Demon Knight
+    CreateCreatureEffect("mobha16","SPMETSWA",[715.784],S)  // Erinyes
+    CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Erinyes
+END
+
+IF
+  Global("Prep","LOCALS",0)
+  Allegiance(Myself,ENEMY)
+  See([GOODCUTOFF])
+  DifficultyLT(HARD)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    SetGlobalTimer("MO_SummonTimer","LOCALS",30)
+    ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+    ApplySpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
+    ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)
+    CreateCreatureEffect("mobha15","SPMETSWA",[750.859],S)  // Demon Knight
+    CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Erinyes
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -33,19 +51,30 @@ IF
   See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_SummonTimer","LOCALS")
+  DifficultyGT(NORMAL)
 THEN
   RESPONSE #100
-    SetGlobalTimer("MO_SummonTimer","LOCALS",10)
-    CreateCreatureObjectEffect("mobha15","SPMETSWA",LastSeenBy(Myself))
-    CreateCreatureObjectEffect("mobha15","SPMETSWA",LastSeenBy(Myself))
+    SetGlobalTimer("MO_SummonTimer","LOCALS",18)
+    CreateCreatureEffect("mobha15","SPMETSWA",[750.859],S)  // Demon Knight
+    CreateCreatureEffect("mobha15","SPMETSWA",[830.879],S)  // Demon Knight
+    CreateCreatureEffect("mobha16","SPMETSWA",[715.784],S)  // Erinyes
+    CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Erinyes
+END
+
+IF
+  See([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+  !GlobalTimerNotExpired("MO_SummonTimer","LOCALS")
+  DifficultyLT(HARD)
+THEN
   RESPONSE #100
-    SetGlobalTimer("MO_SummonTimer","LOCALS",10)
-    CreateCreatureObjectEffect("mobha16","SPMETSWA",Myself)
-    CreateCreatureObjectEffect("mobha16","SPMETSWA",Myself)
+    SetGlobalTimer("MO_SummonTimer","LOCALS",30)
+    CreateCreatureEffect("mobha15","SPMETSWA",[750.859],S)  // Demon Knight
+    CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Erinyes
   RESPONSE #100
-    SetGlobalTimer("MO_SummonTimer","LOCALS",10)
-    CreateCreatureObjectEffect("mobha15","SPMETSWA",LastSeenBy(Myself))
-    CreateCreatureObjectEffect("mobha16","SPMETSWA",Myself)
+    SetGlobalTimer("MO_SummonTimer","LOCALS",30)
+    CreateCreatureEffect("mobha15","SPMETSWA",[830.879],S)  // Demon Knight
+    CreateCreatureEffect("mobha16","SPMETSWA",[715.784],S)  // Erinyes
 END
 
 /////////////////////////////////////////////////////////////////////
