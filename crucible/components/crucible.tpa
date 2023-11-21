@@ -194,6 +194,14 @@ COPY ~crucible/cre/mobha19.cre~  ~override/mobha19.cre~
   WRITE_ASCII 0x2cc ~MOBHA19~ #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha19.d~
 
+//-------------------------------------------------------------------------
+// Marilith (Sapphira)
+COPY ~crucible/cre/mobha20.cre~  ~override/mobha20.cre~
+  SAY NAME1 @2011
+  SAY NAME2 @2011
+  WRITE_ASCII 0x2cc ~MOBHA20~ #8 // Dialogue
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha20.d~
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -246,5 +254,6 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha15.baf~ ~override/mobha15.bcs~  // Creature script
      ~crucible/baf/mobha16.baf~ ~override/mobha16.bcs~  // Creature script
      ~crucible/baf/mobha17.baf~ ~override/mobha17.bcs~  // Creature script
+     ~crucible/baf/mobha20.baf~ ~override/mobha20.bcs~  // Creature script
      //~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
   COMPILE_BAF_TO_BCS

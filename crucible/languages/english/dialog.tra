@@ -1,8 +1,8 @@
 // The Crucible, Dialog
 
 // Skull Piles
-@5000 = ~Waves of sulfur and carrion fill the air and off in the distance you can hear the entrance to the Demon Tower opening.~
-@5001 = ~You feel the eyes of divine wrath upon you and hear a rushing of wings. Off in the distance you can hear the gate to the Planetar Garrison crashing open.~
+@5000 = ~Waves of sulfur and carrion fill the air and off in the distance you can hear the gate to the Demon Tower crashing open.~
+@5001 = ~You feel the eyes of divine wrath upon you and hear a rushing of wings. Off in the distance you can hear the entrance to the Planetar Garrison opening.~
 
 // Deathstalker Initial Convo
 @5100 = ~I see you decided to finally arrive, <CHARNAME>. The hour is late and Amelyssan will ascend as the new lord of murder.~ [mobha000]
@@ -54,3 +54,7 @@
 //@5521 = ~The Feather of a Fallen Planetar must be placed within the Western skull pile.~
 @5522 = ~Beware! These actions will alert the denizens that inhabit these locations and bring swift condemnation. Prepare yourself accordingly.~ [mobha019]
 @5530 = ~I will be waiting if you come back seeking more guidance.~ [mobha020]
+
+// Marilith
+@5600 = ~You dare breach our sanctum?!~ [mobha021]
+@5601 = ~Foolish mortal. Only slaughter awaits you here.~ [mobha022]
