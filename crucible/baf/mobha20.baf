@@ -19,6 +19,7 @@ THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     SetGlobalTimer("MO_SummonTimer","LOCALS",18)
+    SetGlobalTimer("MO_LarlochTimer","LOCALS",6)
     ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
     ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
@@ -37,6 +38,7 @@ THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     SetGlobalTimer("MO_SummonTimer","LOCALS",30)
+    SetGlobalTimer("MO_LarlochTimer","LOCALS",6)
     ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
     ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)
@@ -78,6 +80,83 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
+// AoE Larlochs (Once Per Round)
+/////////////////////////////////////////////////////////////////////
+IF
+  DifficultyGT(HARD)
+  GlobalTimerExpired("MO_LarlochTimer","LOCALS")
+  See(Player1)
+THEN
+  RESPONSE #100
+    ReallyForceSpell(Player1,WIZARD_LARLOCH_MINOR_DRAIN)
+    Continue()
+END
+
+IF
+  DifficultyGT(HARD)
+  GlobalTimerExpired("MO_LarlochTimer","LOCALS")
+  See(Player2)
+THEN
+  RESPONSE #100
+    ReallyForceSpell(Player2,WIZARD_LARLOCH_MINOR_DRAIN)
+    Continue()
+END
+
+IF
+  DifficultyGT(HARD)
+  GlobalTimerExpired("MO_LarlochTimer","LOCALS")
+  See(Player3)
+THEN
+  RESPONSE #100
+    ReallyForceSpell(Player3,WIZARD_LARLOCH_MINOR_DRAIN)
+    Continue()
+END
+
+IF
+  DifficultyGT(HARD)
+  GlobalTimerExpired("MO_LarlochTimer","LOCALS")
+  See(Player4)
+THEN
+  RESPONSE #100
+    ReallyForceSpell(Player4,WIZARD_LARLOCH_MINOR_DRAIN)
+    Continue()
+END
+
+IF
+  DifficultyGT(HARD)
+  GlobalTimerExpired("MO_LarlochTimer","LOCALS")
+  See(Player5)
+THEN
+  RESPONSE #100
+    ReallyForceSpell(Player5,WIZARD_LARLOCH_MINOR_DRAIN)
+    Continue()
+END
+
+IF
+  DifficultyGT(HARD)
+  GlobalTimerExpired("MO_LarlochTimer","LOCALS")
+  See(Player6)
+THEN
+  RESPONSE #100
+    ReallyForceSpell(Player6,WIZARD_LARLOCH_MINOR_DRAIN)
+    Continue()
+END
+
+IF
+  DifficultyGT(HARD)
+  GlobalTimerExpired("MO_LarlochTimer","LOCALS")
+THEN
+  RESPONSE #50
+    SetGlobalTimer("MO_LarlochTimer","LOCALS",6)
+    DisplayStringHead(Myself,@5002)  // ~Your life essence belongs to me!~
+    Continue()
+  RESPONSE #50
+    SetGlobalTimer("MO_LarlochTimer","LOCALS",6)
+    DisplayStringHead(Myself,@5003)  // ~I will feed on your energy!~
+    Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
 // Contingency
 /////////////////////////////////////////////////////////////////////
 IF
@@ -96,6 +175,7 @@ END
 /////////////////////////////////////////////////////////////////////
 // Planeshift
 /////////////////////////////////////////////////////////////////////
+/*
 IF
   See(NearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
@@ -120,6 +200,7 @@ THEN
     SetGlobalTimer("MO_PhaseTimer","LOCALS",6)
     ForceSpell(Player6,PHASE_SPIDER_TELEPORT)  // SPWI994.SPL (Dimension Door)
 END
+*/
 
 /////////////////////////////////////////////////////////////////////
 // Attack
