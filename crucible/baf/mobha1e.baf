@@ -1,3 +1,4 @@
+/*
 IF
 	IsOverMe([GOODCUTOFF])
 	Global("MO_Spawn05","MOBHA1",0)
@@ -10,4 +11,13 @@ THEN
 		CreateCreature("mobha05",[1891.240],E)  // Scout
 		CreateCreature("mobha07",[2061.172],E)  // Shadowdancer
 		CreateCreature("mobha08",[2063.255],E)  // Assassin
+END
+*/
+
+IF
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Spawn05","MOBHA1",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Spawn05","MOBHA1",1)
 END

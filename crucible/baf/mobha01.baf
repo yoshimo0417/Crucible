@@ -12,7 +12,9 @@
 // Initial Set-Up
 /////////////////////////////////////////////////////////////////////
 IF
+  See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
+  Allegiance(Myself,ENEMY)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)

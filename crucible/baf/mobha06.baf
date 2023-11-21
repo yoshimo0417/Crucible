@@ -25,6 +25,7 @@ END
 /////////////////////////////////////////////////////////////////////
 IF
   Global("Prep","LOCALS",0)
+  See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
 THEN
   RESPONSE #100
