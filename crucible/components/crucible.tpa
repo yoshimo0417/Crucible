@@ -202,6 +202,16 @@ COPY ~crucible/cre/mobha20.cre~  ~override/mobha20.cre~
   WRITE_ASCII 0x2cc ~MOBHA20~ #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha20.d~
 
+//-------------------------------------------------------------------------
+// Succubus
+COPY ~crucible/cre/mobha21.cre~  ~override/mobha21.cre~
+
+//-------------------------------------------------------------------------
+// Kirinhale (Succubus)
+COPY ~crucible/cre/mobha21.cre~  ~override/mobha22.cre~
+  SAY NAME1 @2012
+  SAY NAME2 @2012
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -255,5 +265,6 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha16.baf~ ~override/mobha16.bcs~  // Creature script
      ~crucible/baf/mobha17.baf~ ~override/mobha17.bcs~  // Creature script
      ~crucible/baf/mobha20.baf~ ~override/mobha20.bcs~  // Creature script
+     ~crucible/baf/mobha21.baf~ ~override/mobha21.bcs~  // Creature script
      //~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
   COMPILE_BAF_TO_BCS
