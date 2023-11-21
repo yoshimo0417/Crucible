@@ -148,11 +148,11 @@ IF
 THEN
   RESPONSE #50
     SetGlobalTimer("MO_LarlochTimer","LOCALS",6)
-    DisplayStringHead(Myself,@5002)  // ~Your life essence belongs to me!~
+    DisplayStringHead(Myself,@5602)  // ~I shall feed on your soul!~
     Continue()
   RESPONSE #50
     SetGlobalTimer("MO_LarlochTimer","LOCALS",6)
-    DisplayStringHead(Myself,@5003)  // ~I will feed on your energy!~
+    DisplayStringHead(Myself,@5603)  // ~Suffer! Weaken as I strengthen!~
     Continue()
 END
 
