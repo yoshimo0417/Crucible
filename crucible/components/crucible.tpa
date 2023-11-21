@@ -205,6 +205,7 @@ COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha20.d~
 //-------------------------------------------------------------------------
 // Succubus
 COPY ~crucible/cre/mobha21.cre~  ~override/mobha21.cre~
+COPY ~crucible/itm/mobha21a.itm~ ~override~  // Weapon
 
 //-------------------------------------------------------------------------
 // Kirinhale (Succubus)
