@@ -1,0 +1,72 @@
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+//            Demon Tower, Level 3 (MOBHA7.ARE)
+/////////////////////////////////////////////////////////////////////
+//        Version 1
+// Belchaad the Juggernaut is the ruler of the tower and awaits
+// the player at the top.
+//
+/////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+// Block Exit
+/////////////////////////////////////////////////////////////////////
+IF
+    Global("Enteredmobha7","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Enteredmobha7","GLOBAL",1)
+        TriggerActivation("TrMOBHA6",FALSE)
+END
+
+IF
+  Dead("mobha23")
+  Global("DoorOpenmobha7","mobha7",0)
+THEN 
+    RESPONSE #100
+      TriggerActivation("TrMOBHA6",TRUE)
+      SetGlobal("DoorOpenmobha7","mobha7",1)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Set Rest Encounter Probability (tied to difficulty slider)
+/////////////////////////////////////////////////////////////////////
+IF 
+	DifficultyGT(HARD)
+	!Global("MO_RestEncounter","MOBHA6",1)
+THEN
+	RESPONSE #100
+		SetRestEncounterProbabilityDay(75) 
+		SetRestEncounterProbabilityNight(75)
+		SetGlobal("MO_RestEncounter","MOBHA6",1) 
+END
+
+IF 
+	Difficulty(HARD)
+	!Global("MO_RestEncounter","MOBHA6",2)
+THEN
+	RESPONSE #100
+		SetRestEncounterProbabilityDay(50) 
+		SetRestEncounterProbabilityNight(50)
+		SetGlobal("MO_RestEncounter","MOBHA6",2) 
+END
+
+IF 
+	Difficulty(NORMAL)
+	!Global("MO_RestEncounter","MOBHA6",3)
+THEN
+	RESPONSE #100
+		SetRestEncounterProbabilityDay(25) 
+		SetRestEncounterProbabilityNight(25)
+		SetGlobal("MO_RestEncounter","MOBHA6",3) 
+END
+
+IF 
+	DifficultyLT(NORMAL)
+	!Global("MO_RestEncounter","MOBHA6",4)
+THEN
+	RESPONSE #100
+		SetRestEncounterProbabilityDay(10) 
+		SetRestEncounterProbabilityNight(10)
+		SetGlobal("MO_RestEncounter","MOBHA6",4) 
+END
