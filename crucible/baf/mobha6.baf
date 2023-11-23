@@ -12,6 +12,7 @@
 /////////////////////////////////////////////////////////////////////
 IF
 	!GlobalTimerNotExpired("MO_WILD_MAGIC","mobha6")
+	DifficultyGT(EASY)
 THEN
 	RESPONSE #100
 		ApplySpell(Player1,WILD_MAGIC_AREA)  // SPIN645.SPL (No such index)
