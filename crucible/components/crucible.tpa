@@ -164,8 +164,10 @@ COPY ~crucible/cre/mobha14.cre~  ~override/mobha14.cre~
 COPY ~crucible/cre/mobha15.cre~  ~override/mobha15.cre~
 
 //-------------------------------------------------------------------------
-// Erinyes
+// Lilitu
 COPY ~crucible/cre/mobha16.cre~  ~override/mobha16.cre~
+  SAY NAME1 @2017
+  SAY NAME2 @2017
 COPY ~crucible/itm/mobha16a.itm~ ~override~  // Long Sword
 COPY ~crucible/itm/mobha16b.itm~ ~override~  // Arrows
 
@@ -239,7 +241,7 @@ COPY ~crucible/cre/mobha25.cre~  ~override/mobha25.cre~
   SAY NAME2 @2015
 
 //-------------------------------------------------------------------------
-// Melalas (Erinyes)
+// Melalas (Lilitu)
 COPY ~crucible/cre/mobha26.cre~  ~override/mobha26.cre~
   SAY NAME1 @2016
   SAY NAME2 @2016

@@ -11,8 +11,8 @@ THEN
 		Wait(2)
 		CreateCreatureEffect("mobha15","SPMETSWA",[931.1552],NW)   // Demon Knight
 		CreateCreatureEffect("mobha15","SPMETSWA",[999.1512],NW)   // Demon Knight
-		CreateCreatureEffect("mobha16","SPMETSWA",[977.1604],NW)   // Erinyes
-		CreateCreatureEffect("mobha16","SPMETSWA",[996.1554],NW)   // Erinyes
-		CreateCreatureEffect("mobha16","SPMETSWA",[1069.1552],NW)  // Erinyes
+		CreateCreatureEffect("mobha16","SPMETSWA",[977.1604],NW)   // Lilitu
+		CreateCreatureEffect("mobha16","SPMETSWA",[996.1554],NW)   // Lilitu
+		CreateCreatureEffect("mobha16","SPMETSWA",[1069.1552],NW)  // Lilitu
 END
 

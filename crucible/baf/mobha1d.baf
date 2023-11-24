@@ -6,5 +6,5 @@ THEN
 		SetGlobal("MO_Spawn04","MOBHA1",1)
 		CreateCreature("mobha09",[2337.572],NE)  // Balor
 		CreateCreature("mobha15",[2384.454],NE)  // Demon Knight
-		CreateCreature("mobha16",[2261.444],NE)  // Erinyes
+		CreateCreature("mobha16",[2261.444],NE)  // Lilitu
 END

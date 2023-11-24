@@ -25,8 +25,8 @@ THEN
     ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
     CreateCreatureEffect("mobha15","SPMETSWA",[750.859],S)  // Demon Knight
     CreateCreatureEffect("mobha15","SPMETSWA",[830.879],S)  // Demon Knight
-    CreateCreatureEffect("mobha16","SPMETSWA",[715.784],S)  // Erinyes
-    CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Erinyes
+    CreateCreatureEffect("mobha16","SPMETSWA",[715.784],S)  // Lilitu
+    CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Lilitu
 END
 
 IF
@@ -43,7 +43,7 @@ THEN
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
     ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)
     CreateCreatureEffect("mobha15","SPMETSWA",[750.859],S)  // Demon Knight
-    CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Erinyes
+    CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Lilitu
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -59,8 +59,8 @@ THEN
     SetGlobalTimer("MO_SummonTimer","LOCALS",18)
     CreateCreatureEffect("mobha15","SPMETSWA",[750.859],S)  // Demon Knight
     CreateCreatureEffect("mobha15","SPMETSWA",[830.879],S)  // Demon Knight
-    CreateCreatureEffect("mobha16","SPMETSWA",[715.784],S)  // Erinyes
-    CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Erinyes
+    CreateCreatureEffect("mobha16","SPMETSWA",[715.784],S)  // Lilitu
+    CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Lilitu
 END
 
 IF
@@ -72,11 +72,11 @@ THEN
   RESPONSE #100
     SetGlobalTimer("MO_SummonTimer","LOCALS",30)
     CreateCreatureEffect("mobha15","SPMETSWA",[750.859],S)  // Demon Knight
-    CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Erinyes
+    CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Lilitu
   RESPONSE #100
     SetGlobalTimer("MO_SummonTimer","LOCALS",30)
     CreateCreatureEffect("mobha15","SPMETSWA",[830.879],S)  // Demon Knight
-    CreateCreatureEffect("mobha16","SPMETSWA",[715.784],S)  // Erinyes
+    CreateCreatureEffect("mobha16","SPMETSWA",[715.784],S)  // Lilitu
 END
 
 /////////////////////////////////////////////////////////////////////

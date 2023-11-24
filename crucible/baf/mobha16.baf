@@ -1,9 +1,9 @@
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
-//            Erinyes
+//            Lilitu
 /////////////////////////////////////////////////////////////////////
 //        Version 1
-// Erinyes, 18th level Demon
+// Lilitu, 18th level Demon
 //
 // 
 /////////////////////////////////////////////////////////////////////
@@ -22,7 +22,7 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
-// Ability: Erinyes Charm
+// Ability: Lilitu Charm
 /////////////////////////////////////////////////////////////////////
 IF
   OR(2)
@@ -34,10 +34,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #50
-    SetGlobal("MO_ErinyesCharm","LOCALS",1)
+    SetGlobal("MO_LilituCharm","LOCALS",1)
     Continue()
   RESPONSE #50
-    SetGlobal("MO_ErinyesCharm","LOCALS",0)
+    SetGlobal("MO_LilituCharm","LOCALS",0)
     Continue()
 END
 
@@ -45,7 +45,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  Global("MO_ErinyesCharm","LOCALS",1)
+  Global("MO_LilituCharm","LOCALS",1)
   !Difficulty(EASIEST)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -89,7 +89,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  Global("MO_ErinyesCharm","LOCALS",1)
+  Global("MO_LilituCharm","LOCALS",1)
   !Difficulty(EASIEST)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -133,7 +133,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  Global("MO_ErinyesCharm","LOCALS",1)
+  Global("MO_LilituCharm","LOCALS",1)
   !Difficulty(EASIEST)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -177,7 +177,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  Global("MO_ErinyesCharm","LOCALS",1)
+  Global("MO_LilituCharm","LOCALS",1)
   !Difficulty(EASIEST)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -221,7 +221,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  Global("MO_ErinyesCharm","LOCALS",1)
+  Global("MO_LilituCharm","LOCALS",1)
   !Difficulty(EASIEST)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -265,7 +265,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  Global("MO_ErinyesCharm","LOCALS",1)
+  Global("MO_LilituCharm","LOCALS",1)
   !Difficulty(EASIEST)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
