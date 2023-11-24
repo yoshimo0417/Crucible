@@ -1,13 +1,86 @@
 IF
-	True()
+    True()
 THEN
-	RESPONSE #100
-		CutSceneId(Player1)
-		CreateCreatureDoor("mobha13",[1233.450],E)  // Fallen Planetar
-		CreateCreatureDoor("mobha14",[1464.242],E)  // Fallen Deva
-		CreateCreatureDoor("mobha14",[1582.282],E)  // Fallen Deva
-		CreateCreatureDoor("mobha12",[1265.443],E)  // Fallen Planetar
-		CreateCreatureDoor("mobha12",[1392.485],E)  // Fallen Planetar
-		Wait(4)
-		EndCutSceneMode()
+    RESPONSE #100
+        CutSceneId(Player1)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player1)
+        PlaySound("EFF_M09")
+        Wait(2)
+        MoveViewPoint([796.774],INSTANT)
+        CreateVisualEffect("SPDIMNDR",[796.774])
+        Wait(2)
+        JumpToPoint([796.774])
+        Wait(3)
+        EndCutSceneMode()
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player2)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player2)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[743.787])
+        Wait(2)
+        JumpToPoint([743.787])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player3)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player3)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[852.786])
+        Wait(2)
+        JumpToPoint([852.786])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player4)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player4)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[739.823])
+        Wait(2)
+        JumpToPoint([739.823])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player5)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player5)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[859.827])
+        Wait(2)
+        JumpToPoint([859.827])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player6)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player6)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[794.826])
+        Wait(2)
+        JumpToPoint([794.826])
 END

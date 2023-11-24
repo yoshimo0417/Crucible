@@ -1,0 +1,10 @@
+IF
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Cutscene","MOBHA7",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Cutscene","MOBHA7",1)
+		StartCutSceneMode()
+		StartCutScene("mocut03")
+END
+

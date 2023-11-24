@@ -67,6 +67,9 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)
+    ApplySpell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
+    ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
 END
 
 IF
@@ -77,6 +80,9 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)
+    ApplySpell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
+    ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
     DestroyItem("mobha23e") // +2 STR item
 END
 
