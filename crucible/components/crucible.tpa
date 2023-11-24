@@ -195,7 +195,7 @@ COPY ~crucible/cre/mobha19.cre~  ~override/mobha19.cre~
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha19.d~
 
 //-------------------------------------------------------------------------
-// Marilith (Sapphira)
+// Sapphira (Marilith)
 COPY ~crucible/cre/mobha20.cre~  ~override/mobha20.cre~
   SAY NAME1 @2011
   SAY NAME2 @2011
@@ -231,6 +231,18 @@ COPY ~crucible/itm/mobha23e.itm~ ~override~  // +2STR item (destroyed at less di
 COPY ~crucible/cre/mobha24.cre~  ~override/mobha24.cre~
   SAY NAME1 @2014
   SAY NAME2 @2014
+
+//-------------------------------------------------------------------------
+// Zephaniah (Marilith)
+COPY ~crucible/cre/mobha25.cre~  ~override/mobha25.cre~
+  SAY NAME1 @2015
+  SAY NAME2 @2015
+
+//-------------------------------------------------------------------------
+// Melalas (Erinyes)
+COPY ~crucible/cre/mobha26.cre~  ~override/mobha26.cre~
+  SAY NAME1 @2016
+  SAY NAME2 @2016
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
@@ -290,5 +302,7 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha21.baf~ ~override/mobha21.bcs~  // Creature script
      ~crucible/baf/mobha23.baf~ ~override/mobha23.bcs~  // Creature script
      ~crucible/baf/mobha24.baf~ ~override/mobha24.bcs~  // Creature script
+     ~crucible/baf/mobha25.baf~ ~override/mobha25.bcs~  // Creature script
+     ~crucible/baf/mobha26.baf~ ~override/mobha26.bcs~  // Creature script
      //~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
   COMPILE_BAF_TO_BCS
