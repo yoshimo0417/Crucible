@@ -221,6 +221,16 @@ COPY ~crucible/cre/mobha23.cre~  ~override/mobha23.cre~
   WRITE_ASCII 0x2cc ~MOBHA23~ #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha23.d~
 COPY ~crucible/itm/mobha23a.itm~ ~override~  // Weapon
+COPY ~crucible/itm/mobha23b.itm~ ~override~  // Prot Ring (Status')
+COPY ~crucible/itm/mobha23c.itm~ ~override~  // +40% Physical DR
+COPY ~crucible/itm/mobha23d.itm~ ~override~  // +60% Physical DR
+COPY ~crucible/itm/mobha23e.itm~ ~override~  // +2STR item (destroyed at less difficulty)
+
+//-------------------------------------------------------------------------
+// Galgomach
+COPY ~crucible/cre/mobha24.cre~  ~override/mobha24.cre~
+  SAY NAME1 @2014
+  SAY NAME2 @2014
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
@@ -279,5 +289,6 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha20.baf~ ~override/mobha20.bcs~  // Creature script
      ~crucible/baf/mobha21.baf~ ~override/mobha21.bcs~  // Creature script
      ~crucible/baf/mobha23.baf~ ~override/mobha23.bcs~  // Creature script
+     ~crucible/baf/mobha24.baf~ ~override/mobha24.bcs~  // Creature script
      //~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
   COMPILE_BAF_TO_BCS

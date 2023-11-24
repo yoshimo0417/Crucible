@@ -5,8 +5,56 @@
 //        Version 1
 // Belchaad the Juggernaut, 25th level Quasi-Deity
 //
-// 
+// The player will have to kill the three servants to make Belchaad
+// vulnerable and able to kill. Belchaad is also a Deity and will be
+// able to instant cast spells. Difficulty level will determine the 
+// delay between spell casts.
 /////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+// Make Vulnerable
+/////////////////////////////////////////////////////////////////////
+IF
+  Dead("mobha24")
+  Dead("mobha25")
+  Dead("mobha26")
+  Global("MO_DeadSet","LOCALS",0)
+  DifficultyGT(HARD)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_DeadSet","LOCALS",1)
+    DestroyItem("minhp1")
+    DestroyItem("mobha23c")
+END
+
+IF
+  Dead("mobha24")
+  Dead("mobha25")
+  Dead("mobha26")
+  Global("MO_DeadSet","LOCALS",0)
+  OR(2)
+    Difficulty(HARD)
+    Difficulty(NORMAL)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_DeadSet","LOCALS",1)
+    DestroyItem("minhp1")
+    DestroyItem("mobha23d")
+END
+
+IF
+  Dead("mobha24")
+  Dead("mobha25")
+  Dead("mobha26")
+  Global("MO_DeadSet","LOCALS",0)
+  DifficultyLT(NORMAL)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_DeadSet","LOCALS",1)
+    DestroyItem("minhp1")
+    DestroyItem("mobha23c")
+    DestroyItem("mobha23d")
+END
 
 /////////////////////////////////////////////////////////////////////
 // Initial Set-Up
@@ -15,9 +63,21 @@ IF
   See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
+  DifficultyGT(NORMAL)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+END
+
+IF
+  See([GOODCUTOFF])
+  Global("Prep","LOCALS",0)
+  Allegiance(Myself,ENEMY)
+  DifficultyLT(HARD)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    DestroyItem("mobha23e") // +2 STR item
 END
 
 /////////////////////////////////////////////////////////////////////
