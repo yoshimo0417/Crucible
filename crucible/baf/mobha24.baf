@@ -36,6 +36,7 @@ THEN
     ApplySpell(Myself,WIZARD_FIRE_SHIELD_RED)
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)
     SetGlobal("MO_DeathKnightFireballCast","LOCALS",0)
+    Continue()
 END
 
 IF
@@ -51,6 +52,7 @@ THEN
     ApplySpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)
     SetGlobal("MO_DeathKnightFireballCast","LOCALS",0)
+    Continue()
 END
 
 IF
@@ -65,11 +67,12 @@ THEN
     ApplySpell(Myself,WIZARD_SPELL_SHIELD)
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)
     SetGlobal("MO_DeathKnightFireballCast","LOCALS",0)
+    Continue()
 END
 
 IF 
   Global("Prep","LOCALS",1)
-  DifficultyGT(HARD)
+  DifficultyGT(NORMAL)
   Allegiance(Myself,ENEMY)
 THEN 
   RESPONSE #100
