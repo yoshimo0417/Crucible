@@ -246,6 +246,12 @@ COPY ~crucible/cre/mobha26.cre~  ~override/mobha26.cre~
   SAY NAME1 @2016
   SAY NAME2 @2016
 
+//-------------------------------------------------------------------------
+// Toz'gadath
+COPY ~crucible/cre/mobha27.cre~  ~override/mobha27.cre~
+  SAY NAME1 @2018
+  SAY NAME2 @2018
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -307,5 +313,6 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha24.baf~ ~override/mobha24.bcs~  // Creature script
      ~crucible/baf/mobha25.baf~ ~override/mobha25.bcs~  // Creature script
      ~crucible/baf/mobha26.baf~ ~override/mobha26.bcs~  // Creature script
+     ~crucible/baf/mobha27.baf~ ~override/mobha27.bcs~  // Creature script
      ~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
   COMPILE_BAF_TO_BCS
