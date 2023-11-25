@@ -247,7 +247,7 @@ COPY ~crucible/cre/mobha26.cre~  ~override/mobha26.cre~
   SAY NAME2 @2016
 
 //-------------------------------------------------------------------------
-// Toz'gadath
+// Toz'gadath (Balor)
 COPY ~crucible/cre/mobha27.cre~  ~override/mobha27.cre~
   SAY NAME1 @2018
   SAY NAME2 @2018
