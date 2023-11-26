@@ -37,47 +37,59 @@ END
 
 IF ~~ THEN BEGIN 5
   SAY @5730
-  IF ~~ THEN DO ~AddXPObject(Player1,20000)
+  IF ~~ THEN DO ~SetGlobal("MO_Belchaad_Defeated","GLOBAL",1)
+AddXPObject(Player1,20000)
 AddXPObject(Player2,20000)
 AddXPObject(Player3,20000)
 AddXPObject(Player4,20000)
 AddXPObject(Player5,20000)
 AddXPObject(Player6,20000)
+ChangeEnemyAlly(Myself,NEUTRAL)
+ClearAllActions()
 StartCutSceneMode()
 StartCutScene("mocut04")~ EXIT
 END
 
 IF ~~ THEN BEGIN 6
   SAY @5731
-  IF ~~ THEN DO ~AddXPObject(Player1,20000)
+  IF ~~ THEN DO ~SetGlobal("MO_Belchaad_Defeated","GLOBAL",1)
+AddXPObject(Player1,20000)
 AddXPObject(Player2,20000)
 AddXPObject(Player3,20000)
 AddXPObject(Player4,20000)
 AddXPObject(Player5,20000)
 AddXPObject(Player6,20000)
+ChangeEnemyAlly(Myself,NEUTRAL)
+ClearAllActions()
 StartCutSceneMode()
 StartCutScene("mocut05")~ EXIT
 END
 
 IF ~~ THEN BEGIN 7
   SAY @5731
-  IF ~~ THEN DO ~AddXPObject(Player1,20000)
+  IF ~~ THEN DO ~SetGlobal("MO_Belchaad_Defeated","GLOBAL",1)
+AddXPObject(Player1,20000)
 AddXPObject(Player2,20000)
 AddXPObject(Player3,20000)
 AddXPObject(Player4,20000)
 AddXPObject(Player5,20000)
 AddXPObject(Player6,20000)
+ChangeEnemyAlly(Myself,NEUTRAL)
+ClearAllActions()
 StartCutSceneMode()
 StartCutScene("mocut06")~ EXIT
 END
 
 IF ~~ THEN BEGIN 8
   SAY @5732
-  IF ~~ THEN DO ~AddXPObject(Player1,20000)
+  IF ~~ THEN DO ~SetGlobal("MO_Belchaad_Defeated","GLOBAL",1)
+AddXPObject(Player1,20000)
 AddXPObject(Player2,20000)
 AddXPObject(Player3,20000)
 AddXPObject(Player4,20000)
 AddXPObject(Player5,20000)
 AddXPObject(Player6,20000)
+ChangeEnemyAlly(Myself,NEUTRAL)
+ClearAllActions()
 ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
 END

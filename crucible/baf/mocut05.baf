@@ -5,10 +5,10 @@ THEN
         CutSceneId(Player1)
         Wait(1)
         ReallyForceSpell(Myself,HOLY_LIGHT_FROM_ABOVE)
-        Wait(1)
+        Wait(2)
         ApplySpellRES("mobha23b",Myself)
         DisplayString(Myself,@5741)
-        Wait(1)
+        Wait(2)
         EndCutSceneMode()
 END
 
@@ -19,7 +19,7 @@ THEN
         CutSceneId("MOBHA23")
         MoveViewObject(Myself,INSTANT)
         ReallyForceSpell(Myself,HOLY_LIGHT_FROM_ABOVE)
-        Wait(2)
+        Wait(3)
         DestroyItem("minhp1")
         PlaySound("EFF_P16")
         CreateVisualEffectObject("SPDEATH",Myself)

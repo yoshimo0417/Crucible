@@ -19,6 +19,7 @@ IF
   HPLT(Myself,2)
 THEN 
   RESPONSE #100
+    SetGlobal("MO_DeadSet","LOCALS",2)
     Dialogue([PC])
 END
 
@@ -62,8 +63,8 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("MO_DeadSet","LOCALS",1)
-    DestroyItem("minhp1")
-    //DestroyItem("mobha23c")
+    //DestroyItem("minhp1")
+    DestroyItem("mobha23c")
     DestroyItem("mobha23d")
 END
 

@@ -32,7 +32,7 @@ THEN
 END
 
 IF
-  Dead("mobha23")
+  Global("MO_Belchaad_Defeated","GLOBAL",1)
   Global("DoorOpenmobha7","mobha7",0)
 THEN 
     RESPONSE #100

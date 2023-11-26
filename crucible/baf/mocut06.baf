@@ -2,10 +2,20 @@ IF
     True()
 THEN
     RESPONSE #100
+        CutSceneId(Player1)
+        Wait(4)
+        EndCutSceneMode()
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
         CutSceneId("MOBHA23")
         MoveViewObject(Myself,INSTANT)
+        Wait(1)
         DestroyItem("minhp1")
         PlaySound("EFF_P16")
-        CreateVisualEffectObject("SPDEATH",Myself)
+        CreateVisualEffectObject("SPDEATH3",Myself)
         Kill(Myself)
 END
