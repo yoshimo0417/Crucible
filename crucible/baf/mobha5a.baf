@@ -1,0 +1,8 @@
+IF
+	IsOverMe([ANYONE])
+	Global("Warning","mobha5",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Warning","mobha5",1)
+		DisplayString(Myself,@5002)
+END

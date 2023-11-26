@@ -64,9 +64,26 @@
 @5604 = ~Bhaal's essence, of course.~
 @5605 = ~Enough chatter, demon. Time to die.~
 
-@5601 = ~Foolish mortal. Only slaughter awaits you here.~ [mobha022]
-@5602 = ~I shall feed on your soul!~
-@5603 = ~Suffer! Weaken as I strengthen!~
+@5610 = ~Interesting, you do feel it. Perhaps it resides stronger in you than your kin.~
+@5611 = ~Arrogant and naive you are.~
+@5612 = ~Bhaal was born mortal. How do you think he became a god?~
+@5613 = ~Bhaal, along with Bane and Kyrkul were known as the Dark Three. Together, they assaulted the Castle of Bone and confronted the god Jergal who willingly stepped aside. Bane became the god of hatred, strife, and tyranny, Myrkul took reign over the dead, and Bhaal became the Lord of Murder.~
+@5614 = ~Didn't he take it from Jergal?~
+// Enough chatter, demon. Time to die.
+
+@5620 = ~Very astute of you, but that is only a fraction of it.~
+@5621 = ~Yes, the Dark Three consisting of Bane, Myrkul, and your father Bhaal forged a pact to achieve godhood, or die trying. With their pact, they turned their focus on Jergal, Lord of the End of Everything.~
+@5622 = ~After much strife, their efforts paid off and Jergal willingly stepped aside and granted his powers to the trio.~
+@5623 = ~Before confronting Jergal, the Dark Three first hunted primordials to steal their divine essences for themselves.~
+@5624 = ~Known as the Seven Lost Gods, one after another they fell before the combined might of the Dark Three.~
+@5625 = ~Five of the seven became servants of Bane, and one was supposedly slain.~
+@5626 = ~The seventh became a servant of Bhaal and is the master of this tower. It is his essence you are feeling, and he is sure to want it back.~
+@5627 = ~His essence will remain mine.~
+@5628 = ~A weakened god does not scare me.~
+// Enough chatter, demon. Time to die.
+@5630 = ~Foolish mortal. Only slaughter awaits you here.~ [mobha022]
+@5631 = ~I shall feed on your soul!~
+@5632 = ~Suffer! Weaken as I strengthen!~
 
 // Belchaad the Juggernaut
 @5700 = ~You finally arrive.~
