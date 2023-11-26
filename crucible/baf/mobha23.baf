@@ -12,6 +12,17 @@
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
+// Initiate Defeat Convo
+/////////////////////////////////////////////////////////////////////
+IF
+  Global("MO_DeadSet","LOCALS",1)
+  HPLT(Myself,2)
+THEN 
+  RESPONSE #100
+    Dialogue([PC])
+END
+
+/////////////////////////////////////////////////////////////////////
 // Make Vulnerable
 /////////////////////////////////////////////////////////////////////
 IF
@@ -23,7 +34,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("MO_DeadSet","LOCALS",1)
-    DestroyItem("minhp1")
+    //DestroyItem("minhp1")
     DestroyItem("mobha23c")
 END
 
@@ -38,7 +49,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("MO_DeadSet","LOCALS",1)
-    DestroyItem("minhp1")
+    //DestroyItem("minhp1")
     DestroyItem("mobha23d")
 END
 
@@ -52,7 +63,7 @@ THEN
   RESPONSE #100
     SetGlobal("MO_DeadSet","LOCALS",1)
     DestroyItem("minhp1")
-    DestroyItem("mobha23c")
+    //DestroyItem("mobha23c")
     DestroyItem("mobha23d")
 END
 

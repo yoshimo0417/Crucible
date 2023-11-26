@@ -1,0 +1,11 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("MOBHA23")
+        MoveViewObject(Myself,INSTANT)
+        DestroyItem("minhp1")
+        PlaySound("EFF_P16")
+        CreateVisualEffectObject("SPDEATH",Myself)
+        Kill(Myself)
+END

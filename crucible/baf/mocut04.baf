@@ -1,0 +1,23 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        Wait(1)
+        ReallyForceSpell(Myself,HOLY_LIGHT_FROM_ABOVE)
+        Wait(1)
+        ApplySpellRES("mobha23a",Myself)
+        Wait(1)
+        EndCutSceneMode()
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("MOBHA23")
+        MoveViewObject(Myself,INSTANT)
+        ReallyForceSpell(Myself,HOLY_LIGHT_FROM_ABOVE)
+        Wait(2)
+        ForceSpell(Myself,DRYAD_TELEPORT)
+END

@@ -27,3 +27,57 @@ IF ~~ THEN BEGIN 3
 Enemy()~ EXIT
 END
 
+IF ~HPLT(Myself,2)~ THEN BEGIN 4
+  SAY @5720 = @5721 = @5722
+  IF ~Alignment(Player1,MASK_EVIL)~ THEN REPLY @5723 GOTO 5
+  IF ~~ THEN REPLY @5724 GOTO 6
+  IF ~~ THEN REPLY @5725 GOTO 7
+  IF ~~ THEN REPLY @5726 GOTO 8
+END
+
+IF ~~ THEN BEGIN 5
+  SAY @5730
+  IF ~~ THEN DO ~AddXPObject(Player1,20000)
+AddXPObject(Player2,20000)
+AddXPObject(Player3,20000)
+AddXPObject(Player4,20000)
+AddXPObject(Player5,20000)
+AddXPObject(Player6,20000)
+StartCutSceneMode()
+StartCutScene("mocut04")~ EXIT
+END
+
+IF ~~ THEN BEGIN 6
+  SAY @5731
+  IF ~~ THEN DO ~AddXPObject(Player1,20000)
+AddXPObject(Player2,20000)
+AddXPObject(Player3,20000)
+AddXPObject(Player4,20000)
+AddXPObject(Player5,20000)
+AddXPObject(Player6,20000)
+StartCutSceneMode()
+StartCutScene("mocut05")~ EXIT
+END
+
+IF ~~ THEN BEGIN 7
+  SAY @5731
+  IF ~~ THEN DO ~AddXPObject(Player1,20000)
+AddXPObject(Player2,20000)
+AddXPObject(Player3,20000)
+AddXPObject(Player4,20000)
+AddXPObject(Player5,20000)
+AddXPObject(Player6,20000)
+StartCutSceneMode()
+StartCutScene("mocut06")~ EXIT
+END
+
+IF ~~ THEN BEGIN 8
+  SAY @5732
+  IF ~~ THEN DO ~AddXPObject(Player1,20000)
+AddXPObject(Player2,20000)
+AddXPObject(Player3,20000)
+AddXPObject(Player4,20000)
+AddXPObject(Player5,20000)
+AddXPObject(Player6,20000)
+ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
+END
