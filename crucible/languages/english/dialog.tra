@@ -58,26 +58,26 @@
 
 // Sapphira
 @5600 = ~You dare breach our sanctum?!~ [mobha021]
-@5601 = ~Wait...you are Bhaalspawn.~
-@5602 = ~Do you have the slightest idea of the true power hidden within your blood?~
+@5601 = ~Wait...you are Bhaalspawn.~ [mobha023]
+@5602 = ~Do you have the slightest idea of the true power hidden within your blood?~ [mobha024]
 @5603 = ~I felt something else when I entered this place. What else besides Bhaal would exist?~
 @5604 = ~Bhaal's essence, of course.~
 @5605 = ~Enough chatter, demon. Time to die.~
 
-@5610 = ~Interesting, you do feel it. Perhaps it resides stronger in you than your kin.~
-@5611 = ~Arrogant and naive you are.~
-@5612 = ~Bhaal was born mortal. How do you think he became a god?~
+@5610 = ~Interesting, you do feel it. Perhaps it resides stronger in you than your kin.~ [mobha025]
+@5611 = ~Arrogant and naive you are.~ [mobha026]
+@5612 = ~Bhaal was born mortal. How do you think he became a god?~ [mobha027]
 @5613 = ~Bhaal, along with Bane and Kyrkul were known as the Dark Three. Together, they assaulted the Castle of Bone and confronted the god Jergal who willingly stepped aside. Bane became the god of hatred, strife, and tyranny, Myrkul took reign over the dead, and Bhaal became the Lord of Murder.~
 @5614 = ~Didn't he take it from Jergal?~
 // Enough chatter, demon. Time to die.
 
-@5620 = ~Very astute of you, but that is only a fraction of it.~
-@5621 = ~Yes, the Dark Three consisting of Bane, Myrkul, and your father Bhaal forged a pact to achieve godhood, or die trying. With their pact, they turned their focus on Jergal, Lord of the End of Everything.~
-@5622 = ~After much strife, their efforts paid off and Jergal willingly stepped aside and granted his powers to the trio.~
-@5623 = ~Before confronting Jergal, the Dark Three first hunted primordials to steal their divine essences for themselves.~
-@5624 = ~Known as the Seven Lost Gods, one after another they fell before the combined might of the Dark Three.~
-@5625 = ~Five of the seven became servants of Bane, and one was supposedly slain.~
-@5626 = ~The seventh became a servant of Bhaal and is the master of this tower. It is his essence you are feeling, and he is sure to want it back.~
+@5620 = ~Very astute of you, but that is only a fraction of it.~ [mobha028]
+@5621 = ~Yes, the Dark Three consisting of Bane, Myrkul, and your father Bhaal forged a pact to achieve godhood, or die trying. With their pact, they turned their focus on Jergal, Lord of the End of Everything.~ [mobha029]
+@5622 = ~After much strife, their efforts paid off and Jergal willingly stepped aside and granted his powers to the trio.~ [mobha030]
+@5623 = ~Before confronting Jergal, the Dark Three first hunted primordials to steal their divine essences for themselves.~ [mobha031]
+@5624 = ~Known as the Seven Lost Gods, one after another they fell before the combined might of the Dark Three.~ [mobha032]
+@5625 = ~Five of the seven became servants of Bane, and one was supposedly slain.~ [mobha033]
+@5626 = ~The seventh became a servant of Bhaal and is the master of this tower. It is his essence you are feeling, and he is sure to want it back.~ [mobha034]
 @5627 = ~His essence will remain mine.~
 @5628 = ~A weakened god does not scare me.~
 // Enough chatter, demon. Time to die.
@@ -86,27 +86,27 @@
 @5632 = ~Suffer! Weaken as I strengthen!~
 
 // Belchaad the Juggernaut
-@5700 = ~You finally arrive.~
-@5701 = ~Though Bhaal had many children, you must be first among them. Anything less and you wouldn't be here.~
+@5700 = ~You finally arrive.~ [mobha035]
+@5701 = ~Though Bhaal had many children, you must be first among them. Anything less and you wouldn't be here.~ [mobha036]
 @5702 = ~What are you?~
 @5703 = ~I am not so easily frightened of a defeated god.~
 @5704 = ~I'll do what my father failed to do, end your existence!~
-@5710 = ~How your kind would choose to label me is no concern of mine.~
-@5711 = ~I am divine. Until his defeat at the hands of Cyric, I was a servant of your father.~
-@5712 = ~You, as your father before you, have defeated many a strong opponent prior to facing me.~
-@5713 = ~Bhaal was with his companions, Bane and Myrkul, when we first met. Unlike you, they had an army behind them and had already consumed the divinity from six of ones like me.~
-@5714 = ~Since Bhaal's death, I aligned with Amelyssan. Ending Bhaal's bloodline along with any chance for his resurrection will satiate my vengeance for the humiliation of my defeat.~
-@5715 = ~Now mortal, I will take back my divine essence within you!~
+@5710 = ~How your kind would choose to label me is no concern of mine.~ [mobha037]
+@5711 = ~I am divine. Until his defeat at the hands of Cyric, I was a servant of your father.~ [mobha038]
+@5712 = ~You, as your father before you, have defeated many a strong opponent prior to facing me.~ [mobha039]
+@5713 = ~Bhaal was with his companions, Bane and Myrkul, when we first met. Unlike you, they had an army behind them and had already consumed the divinity from six of ones like me.~ [mobha040]
+@5714 = ~Since Bhaal's death, I aligned with Amelyssan. Ending Bhaal's bloodline along with any chance for his resurrection will satiate my vengeance for the humiliation of my defeat.~ [mobha041]
+@5715 = ~Now mortal, I will take back my divine essence within you!~ [mobha042]
 
-@5720 = ~I yield!~
-@5721 = ~You are stronger than your father was on the day he defeated me.~
-@5722 = ~How do you wish to end this?~
+@5720 = ~I yield!~ [mobha043]
+@5721 = ~You are stronger than your father was on the day he defeated me.~ [mobha044]
+@5722 = ~How do you wish to end this?~ [mobha045]
 @5723 = ~I will make the same choice as my father. I will take some of your divinity and you will serve me as you did him.~
 @5724 = ~I will consume the remainder of your divine essence and end your existence.~
 @5725 = ~I choose to end your existence.~
 @5726 = ~Flee this place and know you are again a defeated being.~
-@5730 = ~So be it. I will take my leave, my lord.~
-@5731 = ~So, this is how it ends.~
-@5732 = ~I do not know what games you play, mortal. I will take my leave.~
+@5730 = ~So be it. I will take my leave, my lord.~ [mobha046]
+@5731 = ~So, this is how it ends.~ [mobha047]
+@5732 = ~I do not know what games you play, mortal. I will take my leave.~ [mobha048]
 @5740 = ~You have been granted +10 to your Hit Points and +5% Physical Damage Resistance.~
 @5741 = ~You have been granted +20 to your Hit Points.~
