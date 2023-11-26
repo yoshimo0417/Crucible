@@ -7,6 +7,7 @@ THEN
         ReallyForceSpell(Myself,HOLY_LIGHT_FROM_ABOVE)
         Wait(1)
         ApplySpellRES("mobha23b",Myself)
+        DisplayString(Myself,@5741)
         Wait(1)
         EndCutSceneMode()
 END
