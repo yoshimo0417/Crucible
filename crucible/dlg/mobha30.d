@@ -6,13 +6,13 @@ BEGIN MOBHA30
 
 IF ~Global("Bloodbowl_left","MOBHA1",0)~ THEN BEGIN 0
   SAY @5800
-  IF ~PartyHasItem("mobhab2")~ THEN REPLY @5801 GOTO 1
+  IF ~PartyHasItem("mobhabl2")~ THEN REPLY @5801 GOTO 1
   IF ~~ THEN REPLY @5802 GOTO 2
 END
 
 IF ~~ THEN BEGIN 1
   SAY @5803
-  IF ~~ THEN DO ~TakePartyItem("mobhab2")
+  IF ~~ THEN DO ~TakePartyItem("mobhabl2")
 SetGlobal("Bloodbowl_left","MOBHA1",1)~ EXIT
 END
 

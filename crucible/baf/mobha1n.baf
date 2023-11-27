@@ -14,7 +14,7 @@ IF
 	Range(LastTrigger,9)
 THEN
 	RESPONSE #100
-		DisplayString(Myself,@5003)  // The blood bowl is filled with the blood of Malchediel.
+		DisplayString(Myself,@5004)  // The blood bowl is filled with the blood Belchaad the Juggernaut.
 END
 
 IF

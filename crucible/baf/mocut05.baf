@@ -22,6 +22,6 @@ THEN
         Wait(3)
         DestroyItem("minhp1")
         PlaySound("EFF_P16")
-        CreateVisualEffectObject("SPDEATH",Myself)
+        CreateVisualEffectObject("SPDEATH3",Myself)
         Kill(Myself)
 END
