@@ -264,6 +264,26 @@ COPY ~crucible/cre/mobha27.cre~  ~override/mobha27.cre~
   SAY NAME1 @2018
   SAY NAME2 @2018
 
+//-------------------------------------------------------------------------
+// Solar - Animations provided by Acifer, THANK YOU!
+LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+ACTION_IF (slot <= 0) BEGIN
+  FAIL ~No free creature animation slot found.~
+END
+
+LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+APPEND ~animate.ids~ ~0x%hexNumber% AC#TRIAS~ UNLESS ~AC#TRIAS~
+CLEAR_IDS_MAP
+
+COPY ~crucible/animations/Trias/exxx.ini~ ~override/%hexNumber%.ini~
+
+ACTION_BASH_FOR ~crucible/animations/Trias~ ~^.+.bam$~ BEGIN
+  COPY ~%BASH_FOR_FILESPEC%~ ~override~
+END
+
+COPY ~crucible/cre/MOSOLAR1.cre~ ~override~  // Solar
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#TRIAS~))
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
