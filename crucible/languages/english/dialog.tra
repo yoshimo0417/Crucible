@@ -4,6 +4,8 @@
 @5000 = ~Waves of sulfur and carrion fill the air and off in the distance you can hear the gate to the Demon Tower crashing open.~
 @5001 = ~You feel the eyes of divine wrath upon you and hear a rushing of wings. Off in the distance you can hear the entrance to the Planetar Garrison opening.~
 @5002 = ~You feel a tingling, like an awakening of a new aspect in your blood, upon entering this tower. Whatever it is, you know you are connected to whatever awaits.~
+@5003 = ~The blood bowl is filled with the blood of Malchediel.~
+@5004 = ~The blood bowl is filled with the blood Belchaad the Juggernaut.~
 
 // Deathstalker Initial Convo
 @5100 = ~I see you decided to finally arrive, <CHARNAME>. The hour is late and Amelyssan will ascend as the new lord of murder.~ [mobha000]
@@ -110,3 +112,17 @@
 @5732 = ~I do not know what games you play, mortal. I will take my leave.~ [mobha048]
 @5740 = ~You have been granted +10 to your Hit Points and +5% Physical Damage Resistance.~
 @5741 = ~You have been granted +20 to your Hit Points.~
+
+// Left Blood Bowl
+@5800 = ~Before you lies an empty bowl with descriptions depicting winged, divine beings.~
+@5801 = ~Pour the blood of Malchediel into the bowl.~
+@5802 = ~Leave the bowl.~
+@5803 = ~The bowl is filled with the blood of Malchediel and accepts your offering.~
+@5804 = ~You walk away from the bowl.~
+
+// Right Blood Bowl
+@5900 = ~Before you lies an empty bowl with descriptions depicting vile, demonic entities and torture.~
+@5901 = ~Pour the blood of Belchaad the Juggernaut into the bowl.~
+@5902 = ~Leave the bowl.~
+@5903 = ~The bowl is filled with the blood of Belchaad the Juggernaut and accepts your offering.~
+@5904 = ~You walk away from the bowl.~

@@ -10,15 +10,15 @@ COPY ~crucible/are~ ~override~
 COPY ~crucible/bam~ ~override~
 COPY ~crucible/wav~ ~override~
 COPY ~crucible/itm/mobhabl1.itm~ ~override~  // Blood of Belchaad the Juggernaught
-  SAY NAME1 @6000
-  SAY NAME2 @6000
-  SAY UNIDENTIFIED_DESC @6001
-  SAY DESC @6001
+  SAY NAME1 @10000
+  SAY NAME2 @10000
+  SAY UNIDENTIFIED_DESC @10001
+  SAY DESC @10001
 COPY ~crucible/itm/mobhabl2.itm~ ~override~  // Blood of Malchediel
-  SAY NAME1 @6002
-  SAY NAME2 @6002
-  SAY UNIDENTIFIED_DESC @6003
-  SAY DESC @6003
+  SAY NAME1 @10002
+  SAY NAME2 @10002
+  SAY UNIDENTIFIED_DESC @10003
+  SAY DESC @10003
 
 //-------------------------------------------------------------------------
 // Convert OGG to WAV (Thanks Cam!)
@@ -292,6 +292,18 @@ END
 COPY ~crucible/cre/mobha28.cre~ ~override~  // Malchediel (Combat)
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#TRIAS~))
 
+//-------------------------------------------------------------------------
+// Left Blood Bowl Conversation
+COPY ~crucible/cre/mobha30.cre~  ~override/mobha30.cre~
+  WRITE_ASCII 0x2cc ~MOBHA30~ #8 // Dialogue
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha30.d~
+
+//-------------------------------------------------------------------------
+// Right Blood Bowl Conversation
+COPY ~crucible/cre/mobha30.cre~  ~override/mobha31.cre~
+  WRITE_ASCII 0x2cc ~MOBHA31~ #8 // Dialogue
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha31.d~
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -325,6 +337,8 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha1j.baf~ ~override/mobha1j.bcs~  // Area script
      ~crucible/baf/mobha1k.baf~ ~override/mobha1k.bcs~  // Area script
      ~crucible/baf/mobha1l.baf~ ~override/mobha1l.bcs~  // Area script
+     ~crucible/baf/mobha1m.baf~ ~override/mobha1m.bcs~  // Area script
+     ~crucible/baf/mobha1n.baf~ ~override/mobha1n.bcs~  // Area script
      ~crucible/baf/mobha3.baf~  ~override/mobha3.bcs~   // Area script
      ~crucible/baf/mobha5.baf~  ~override/mobha5.bcs~   // Area script
      ~crucible/baf/mobha5a.baf~ ~override/mobha5a.bcs~  // Area script

@@ -1,0 +1,26 @@
+IF
+	Clicked([ANYONE])
+	Global("Bloodbowl_right","MOBHA1",0)
+	Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		CreateCreature("mobha31",[811.1298],S)
+END
+
+IF
+	Clicked([ANYONE])
+	GlobalGT("Bloodbowl_right","MOBHA1",0)
+	Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@5003)  // The blood bowl is filled with the blood of Malchediel.
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,23565)  // You are too far away to operate that device.
+END
