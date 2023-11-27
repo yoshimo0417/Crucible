@@ -275,13 +275,13 @@ LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
 APPEND ~animate.ids~ ~0x%hexNumber% AC#TRIAS~ UNLESS ~AC#TRIAS~
 CLEAR_IDS_MAP
 
-COPY ~crucible/animations/Trias/exxx.ini~ ~override/%hexNumber%.ini~
+COPY ~crucible/animations/trias/exxx.ini~ ~override/%hexNumber%.ini~
 
-ACTION_BASH_FOR ~crucible/animations/Trias~ ~^.+.bam$~ BEGIN
+ACTION_BASH_FOR ~crucible/animations/trias~ ~^.+.bam$~ BEGIN
   COPY ~%BASH_FOR_FILESPEC%~ ~override~
 END
 
-COPY ~crucible/cre/MOSOLAR1.cre~ ~override~  // Solar
+COPY ~crucible/cre/mobha28.cre~ ~override~  // Solar
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#TRIAS~))
 
 ///////////////////////////////////////////////////////////////////////////
@@ -347,6 +347,7 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha25.baf~ ~override/mobha25.bcs~  // Creature script
      ~crucible/baf/mobha26.baf~ ~override/mobha26.bcs~  // Creature script
      ~crucible/baf/mobha27.baf~ ~override/mobha27.bcs~  // Creature script
+     ~crucible/baf/mobha28.baf~ ~override/mobha28.bcs~  // Creature script
      ~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
      ~crucible/baf/mocut04.baf~ ~override/mocut04.bcs~  // Cutscene script
      ~crucible/baf/mocut05.baf~ ~override/mocut05.bcs~  // Cutscene script
