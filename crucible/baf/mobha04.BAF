@@ -3,7 +3,9 @@
 /////////////////////////////////////////////////////////////////////
 IF
   !Allegiance(Myself,ENEMY)
-  AttackedBy([ANYTHING],DEFAULT)
+  OR(2)
+    AttackedBy([ANYTHING],DEFAULT)
+    TookDamage()
 THEN
   RESPONSE #100
     Enemy()
