@@ -1,9 +1,9 @@
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
-//            Deathbringer
+//            Guardian
 /////////////////////////////////////////////////////////////////////
 //        Version 1
-// Deathbringer, 22nd level Fighter
+// Guardian, 21st level Fighter
 //
 // 
 /////////////////////////////////////////////////////////////////////
@@ -13,7 +13,6 @@
 /////////////////////////////////////////////////////////////////////
 IF
   !Allegiance(Myself,ENEMY)
-  AreaCheck("mobha3")
   OR(3)
     AttackedBy([ANYTHING],DEFAULT)
     Global("MOBHA3_Enemy","GLOBAL",1)
@@ -21,50 +20,22 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("MOBHA3_Enemy","GLOBAL",1)
-    TriggerActivation("TrMOBHA1",FALSE)
-    TriggerActivation("TrMOBHA2",FALSE)
-    TriggerActivation("TrMOBHA4",FALSE)
     Enemy()
-    Continue()
-END
-
-IF
-  !Allegiance(Myself,ENEMY)
-  Global("MOBHA2_Enemy","GLOBAL",1)
-  AreaCheck("mobha2")
-THEN
-  RESPONSE #100
-    Enemy()
-    Continue()
-END
-
-/////////////////////////////////////////////////////////////////////
-// Shout
-/////////////////////////////////////////////////////////////////////
-IF
-  Global("MO_DeathbringerShout","LOCALS",0)
-  AreaCheck("mobha3")
-  See([PC])
-THEN
-  RESPONSE #100
-    //SetGlobal("MO_DeathbringerShout","LOCALS",1)
-    StartDialogueNoSet([PC])
 END
 
 /////////////////////////////////////////////////////////////////////
 // Initial Set-Up
 /////////////////////////////////////////////////////////////////////
 IF
-  See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
+  See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
-    SetGlobal("MO_GWW","LOCALS",2)
-    //GiveItemCreate("POTN55",Myself,5,0,0)     // potn extra healing
-    GiveItemCreate("POTN07",Myself,1,0,0)     // potn storm giant
-    UseItem("POTN07",Myself)
+    SetGlobal("MO_GWW","LOCALS",1)
+    GiveItemCreate("POTN04",Myself,1,0,0)     // potn frost giant
+    UseItem("POTN04",Myself)
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -74,6 +45,7 @@ IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   HasItemEquiped("POTN55",Myself)
   HPPercentLT(Myself,60)
+  Allegiance(Myself,ENEMY)
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
@@ -85,15 +57,16 @@ END
 /////////////////////////////////////////////////////////////////////
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(MostDamagedOf([PC]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
   Range(LastSeenBy(Myself),5)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
   WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
@@ -108,15 +81,16 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(WorstAC([PC]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
   Range(LastSeenBy(Myself),5)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
   WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
@@ -131,15 +105,16 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
   Range(LastSeenBy(Myself),5)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
   WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
@@ -154,15 +129,16 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
   Range(LastSeenBy(Myself),5)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
   WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
@@ -177,15 +153,16 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
   Range(LastSeenBy(Myself),5)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
   WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
@@ -200,15 +177,16 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
   Range(LastSeenBy(Myself),5)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
   WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
@@ -223,15 +201,16 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
   Range(LastSeenBy(Myself),5)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
   WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
@@ -246,15 +225,16 @@ END
 
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
   Range(LastSeenBy(Myself),5)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
   WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
@@ -274,10 +254,10 @@ IF
   ActionListEmpty()
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
@@ -290,10 +270,10 @@ IF
   ActionListEmpty()
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
@@ -306,10 +286,10 @@ IF
   ActionListEmpty()
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
@@ -322,10 +302,10 @@ IF
   ActionListEmpty()
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
@@ -338,10 +318,10 @@ IF
   ActionListEmpty()
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
@@ -354,10 +334,10 @@ IF
   ActionListEmpty()
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
@@ -370,6 +350,7 @@ IF
   ActionListEmpty()
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
@@ -382,6 +363,7 @@ IF
   ActionListEmpty()
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
@@ -394,6 +376,7 @@ IF
   ActionListEmpty()
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
@@ -406,6 +389,7 @@ IF
   ActionListEmpty()
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
@@ -418,6 +402,7 @@ IF
   ActionListEmpty()
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
@@ -430,6 +415,7 @@ IF
   ActionListEmpty()
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
+  Allegiance(Myself,ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
@@ -444,6 +430,7 @@ END
 IF
   Heard([ENEMY],125)
   !Detect([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
 THEN
   RESPONSE #100
     MoveToObject(LastHeardBy(Myself))
