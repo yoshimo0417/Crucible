@@ -315,9 +315,9 @@ COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha32.d~
 COPY ~crucible/cre/mobha30.cre~  ~override/mobha33.cre~
   WRITE_ASCII 0x2cc ~MOBHA33~ #8 // Dialogue
 ACTION_IF ascension BEGIN
-  COMPILE EVALUATE_BUFFER ~crucible/dlg/ascension/mobha33.d~
+  COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha33a.d~
 END ELSE BEGIN
-  COMPILE EVALUATE_BUFFER ~crucible/dlg/nonascension/mobha33.d~
+  COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha33b.d~
 END
 
 ///////////////////////////////////////////////////////////////////////////
