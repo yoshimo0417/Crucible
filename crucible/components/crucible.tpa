@@ -21,6 +21,10 @@ COPY ~crucible/itm/mobhabl2.itm~ ~override~  // Blood of Malchediel
   SAY DESC @10003
 
 //-------------------------------------------------------------------------
+// Detectable Spells
+LAF detectable_spells END
+
+//-------------------------------------------------------------------------
 // Convert OGG to WAV (Thanks Cam!)
 LAF HANDLE_AUDIO END
 
