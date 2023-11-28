@@ -51,6 +51,8 @@ UNLESS ~MOBHA1~
 COPY ~crucible/cre/mobha01.cre~ ~override/mobha01.cre~
   SAY NAME1 @2000
   SAY NAME2 @2000
+  WRITE_ASCII 0x2cc ~MOBHA01~ #8 // Dialogue
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha01.d~
 
 //-------------------------------------------------------------------------
 // Deathbringer (2h Sword)
