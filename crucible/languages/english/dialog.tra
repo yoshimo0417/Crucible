@@ -8,6 +8,8 @@
 @5004 = ~The blood bowl is filled with the blood Belchaad the Juggernaut.~
 @5005 = ~The skull of Bhaal is filled and the path into the kingdom of Bhaal is opened.~
 @5006 = ~You see what appears to be a sealed compartment in the skull of Bhaal. As of right now, there is nothing you can do to operate it.~
+@5007 = ~Prominently displayed near Bhaal's throne is a lever of sinew, blood, and bone. It looks like you can pull this lever.~
+@5008 = ~You pull the lever and hear the sound of ancient gears, grinding together. Off in the distance you can hear a door opening.~
 
 // Deathstalker Initial Convo
 @5100 = ~I see you decided to finally arrive, <CHARNAME>. The hour is late and Amelyssan will ascend as the new lord of murder.~ [mobha000]
@@ -135,3 +137,8 @@
 @6002 = ~Leave the pedestal.~
 @6003 = ~You can feel your blood flow through you in torrents and the seal of Bhaal at your feet begins to fill.~
 @6004 = ~You walk away from the pedestal.~
+
+// Throne of Blood Transition
+@6100 = ~Your destiny is nearly complete.~
+@6101 = ~I am ready. It is time for the end.~
+@6102 = ~I do not wish to leave at this time.~

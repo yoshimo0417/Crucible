@@ -1,0 +1,26 @@
+IF
+	Clicked([ANYONE])
+	Global("MO_Open_MOBHA3door","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Open_MOBHA3door","GLOBAL",1)
+		DisplayString(Myself,@5007)  // Prominently displayed near Bhaal's throne is a lever of sinew, blood, and bone. It looks like you can pull this lever.
+END
+
+IF
+	Clicked([ANYONE])
+	Global("MO_Open_MOBHA3door","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Open_MOBHA3door","GLOBAL",2)
+		DisplayString(Myself,@5008)  // You pull the lever and hear the sound of ancient gears, grinding together. Off in the distance you can hear a door opening.
+		PlaySound("BDDISARM")
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,23565)  // You are too far away to operate that device.
+END

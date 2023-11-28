@@ -1,0 +1,16 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		CreateCreature("mobha33",[645.357],S)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,23565)  // You are too far away to operate that device.
+END
