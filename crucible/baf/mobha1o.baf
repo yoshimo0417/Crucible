@@ -1,0 +1,40 @@
+IF
+	Clicked([ANYONE])
+	GlobalGT("Bloodbowl_right","MOBHA1",0)
+	GlobalGT("Bloodbowl_left","MOBHA1",0)
+	Global("Bloodskull_center","MOBHA1",0)
+	Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		CreateCreature("mobha32",[798.1373],S)
+END
+
+IF
+	Clicked([ANYONE])
+	GlobalGT("Bloodskull_center","MOBHA1",0)
+	Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@5005)  // The skull of Bhaal is filled and the path into the kingdom of Bhaal is opened.
+END
+
+IF
+	Clicked([ANYONE])
+	OR(2)
+		Global("Bloodbowl_right","MOBHA1",0)
+		Global("Bloodbowl_left","MOBHA1",0)
+	Global("Bloodskull_center","MOBHA1",0)
+	Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@5006)  // You see what appears to be a sealed compartment in the skull of Bhaal. As of right now, there is nothing you can do to operate it.
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,23565)  // You are too far away to operate that device.
+END

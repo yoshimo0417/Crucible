@@ -304,6 +304,12 @@ COPY ~crucible/cre/mobha30.cre~  ~override/mobha31.cre~
   WRITE_ASCII 0x2cc ~MOBHA31~ #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha31.d~
 
+//-------------------------------------------------------------------------
+// Bhaal Skull Pedestal Conversation
+COPY ~crucible/cre/mobha30.cre~  ~override/mobha32.cre~
+  WRITE_ASCII 0x2cc ~MOBHA32~ #8 // Dialogue
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha32.d~
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -339,6 +345,7 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha1l.baf~ ~override/mobha1l.bcs~  // Area script
      ~crucible/baf/mobha1m.baf~ ~override/mobha1m.bcs~  // Area script
      ~crucible/baf/mobha1n.baf~ ~override/mobha1n.bcs~  // Area script
+     ~crucible/baf/mobha1o.baf~ ~override/mobha1o.bcs~  // Area script
      ~crucible/baf/mobha3.baf~  ~override/mobha3.bcs~   // Area script
      ~crucible/baf/mobha5.baf~  ~override/mobha5.bcs~   // Area script
      ~crucible/baf/mobha5a.baf~ ~override/mobha5a.bcs~  // Area script

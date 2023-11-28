@@ -6,6 +6,8 @@
 @5002 = ~You feel a tingling, like an awakening of a new aspect in your blood, upon entering this tower. Whatever it is, you know you are connected to whatever awaits.~
 @5003 = ~The blood bowl is filled with the blood of Malchediel.~
 @5004 = ~The blood bowl is filled with the blood Belchaad the Juggernaut.~
+@5005 = ~The skull of Bhaal is filled and the path into the kingdom of Bhaal is opened.~
+@5006 = ~You see what appears to be a sealed compartment in the skull of Bhaal. As of right now, there is nothing you can do to operate it.~
 
 // Deathstalker Initial Convo
 @5100 = ~I see you decided to finally arrive, <CHARNAME>. The hour is late and Amelyssan will ascend as the new lord of murder.~ [mobha000]
@@ -126,3 +128,10 @@
 @5902 = ~Leave the bowl.~
 @5903 = ~The bowl is filled with the blood of Belchaad the Juggernaut and accepts your offering.~
 @5904 = ~You walk away from the bowl.~
+
+// Floor Symbol of Bhaal
+@6000 = ~You see a pedestal appear before you with a place to put your hand. Instinctively, you know that upon placing your hand in the opening your blood will be drained to fill the remaining skull of Bhaal at your feet. Seeing the blood requirements for both Belchaad the Juggernaut and Malchediel, you know this will take a severe toll on you and you may not survive the process.~
+@6001 = ~You place your hand in the opening.~
+@6002 = ~Leave the pedestal.~
+@6003 = ~You can feel your blood flow through you in torrents and the seal of Bhaal at your feet begins to fill.~
+@6004 = ~You walk away from the pedestal.~

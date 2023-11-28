@@ -243,13 +243,82 @@ THEN
 END
 
 IF
+	GlobalGT("Bloodbowl_right","MOBHA1",0)
+	GlobalGT("Bloodbowl_left","MOBHA1",0)
+	Global("MO_BhaalSkullInitial","MOBHA1",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_BhaalSkullInitial","MOBHA1",1)
+		Wait(2)
+		ClearAllActions()
+		CreateCreature("mobha32",[798.1373],S)
+END
+
+IF
 	Global("Bloodskull_center","MOBHA1",1)
+	DifficultyGT(HARD)
 THEN
 	RESPONSE #100
 		SetGlobal("Bloodskull_center","MOBHA1",2)
+		SetGlobalTimer("MO_Bloodskull_centerTimer","MOBHA1",6)
 		PlaySound("AM0602D2")
 		AmbientActivate("Bloodskull_center",TRUE)
-		Wait(1)
+		Wait(2)
+		CreateCreatureEffect("mobha03","SPSPEV",[743.1353],SE)  // Entropic Reaper
+		CreateCreatureEffect("mobha03","SPSPEV",[830.1329],SW)  // Entropic Reaper
+		CreateCreatureEffect("mobha03","SPSPEV",[892.1425],NW)  // Entropic Reaper
+		CreateCreatureEffect("mobha03","SPSPEV",[778.1458],NE)  // Entropic Reaper
+END
+
+IF
+	Global("Bloodskull_center","MOBHA1",1)
+	Difficulty(HARD)
+THEN
+	RESPONSE #100
+		SetGlobal("Bloodskull_center","MOBHA1",2)
+		SetGlobalTimer("MO_Bloodskull_centerTimer","MOBHA1",6)
+		PlaySound("AM0602D2")
+		AmbientActivate("Bloodskull_center",TRUE)
+		Wait(2)
+		CreateCreatureEffect("mobha03","SPSPEV",[784.1338],S)   // Entropic Reaper
+		CreateCreatureEffect("mobha03","SPSPEV",[892.1425],NW)  // Entropic Reaper
+		CreateCreatureEffect("mobha03","SPSPEV",[778.1458],NE)  // Entropic Reaper
+END
+
+IF
+	Global("Bloodskull_center","MOBHA1",1)
+	Difficulty(NORMAL)
+THEN
+	RESPONSE #100
+		SetGlobal("Bloodskull_center","MOBHA1",2)
+		SetGlobalTimer("MO_Bloodskull_centerTimer","MOBHA1",6)
+		PlaySound("AM0602D2")
+		AmbientActivate("Bloodskull_center",TRUE)
+		Wait(2)
+		CreateCreatureEffect("mobha03","SPSPEV",[743.1353],SE)  // Entropic Reaper
+		CreateCreatureEffect("mobha03","SPSPEV",[830.1329],SW)  // Entropic Reaper
+END
+
+IF
+	Global("Bloodskull_center","MOBHA1",1)
+	DifficultyLT(NORMAL)
+THEN
+	RESPONSE #100
+		SetGlobal("Bloodskull_center","MOBHA1",2)
+		SetGlobalTimer("MO_Bloodskull_centerTimer","MOBHA1",6)
+		PlaySound("AM0602D2")
+		AmbientActivate("Bloodskull_center",TRUE)
+		Wait(2)
+		CreateCreatureEffect("mobha03","SPSPEV",[784.1338],S)   // Entropic Reaper
+END
+
+IF
+	!GlobalTimerNotExpired("MO_Bloodskull_centerTimer","MOBHA1")
+	!ActuallyInCombat()
+	Global("Bloodskull_center","MOBHA1",2)
+THEN
+	RESPONSE #100
+		SetGlobal("Bloodskull_center","MOBHA1",3)
 		PlaySound("AM1300D")
 		OpenDoor("Door03")
 		ScreenShake([5.5],5)
