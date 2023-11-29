@@ -10,6 +10,8 @@ THEN
 		CreateCreatureEffect("GORSKU01","SPRAISED",[903.635],SW)  // Flaming Skull
 		CreateCreatureEffect("GORSKU01","SPRAISED",[976.708],SW)  // Flaming Skull
 		CreateCreatureEffect("MELSUM02","SPRAISED",[490.876],NE)  // Bone Fiend
+		CreateCreatureEffect("MOBHA35","SPRAISED",[992.634],SW)   // Zendrilar
+		CreateCreatureEffect("MOBHA36","SPRAISED",[834.504],SW)   // Tagreloth 
 END
 
 IF
@@ -24,6 +26,7 @@ THEN
 		CreateCreatureEffect("GORSKU01","SPRAISED",[903.635],SW)  // Flaming Skull
 		CreateCreatureEffect("GORSKU01","SPRAISED",[976.708],SW)  // Flaming Skull
 		CreateCreatureEffect("MELSUM02","SPRAISED",[490.876],NE)  // Bone Fiend
+		CreateCreatureEffect("MOBHA35","SPRAISED",[992.634],SW)   // Zendrilar
 END
 
 IF
