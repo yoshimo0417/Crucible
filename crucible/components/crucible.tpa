@@ -360,6 +360,9 @@ END
 ///////////////////////////////////////////////////////////////////////////
 // Copy .BCS file to override folder                                     //
 ///////////////////////////////////////////////////////////////////////////
+
+//-------------------------------------------------------------------------
+// Transition from end of Crucible to the Throne of Blood
 ACTION_IF ascension BEGIN
   COPY ~crucible/baf/motob02.baf~ ~override/motob01.bcs~
     COMPILE_BAF_TO_BCS
@@ -368,6 +371,10 @@ END ELSE BEGIN
     COMPILE_BAF_TO_BCS
 END
 
+//-------------------------------------------------------------------------
+// Remove the "Remove Pocket Plane Ability" from transition cutscene
+// into the Throne of Blood. This is being moved to the beginning of
+// Crucible
 COPY_EXISTING ~CUT248A.BCS~ ~override~
     DECOMPILE_AND_PATCH BEGIN
         REPLACE_TEXTUALLY ~RemoveSpell(ENTER_POCKET_PLANE)~ ~~
