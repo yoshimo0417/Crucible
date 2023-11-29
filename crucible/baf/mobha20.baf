@@ -23,6 +23,7 @@ THEN
     ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
     ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
+    ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
     CreateCreatureEffect("mobha15","SPMETSWA",[750.859],S)  // Demon Knight
     CreateCreatureEffect("mobha15","SPMETSWA",[830.879],S)  // Demon Knight
     CreateCreatureEffect("mobha16","SPMETSWA",[715.784],S)  // Lilitu
@@ -33,7 +34,9 @@ IF
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
   See([GOODCUTOFF])
-  DifficultyLT(HARD)
+  OR(2)
+    Difficulty(HARD)
+    Difficulty(NORMAL)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
@@ -41,7 +44,25 @@ THEN
     SetGlobalTimer("MO_LarlochTimer","LOCALS",6)
     ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
+    ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
     ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)
+    CreateCreatureEffect("mobha15","SPMETSWA",[750.859],S)  // Demon Knight
+    CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Lilitu
+END
+
+IF
+  Global("Prep","LOCALS",0)
+  Allegiance(Myself,ENEMY)
+  See([GOODCUTOFF])
+  DifficultyLT(NORMAL)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    SetGlobalTimer("MO_SummonTimer","LOCALS",30)
+    SetGlobalTimer("MO_LarlochTimer","LOCALS",6)
+    ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+    ApplySpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
+    ApplySpell(Myself,WIZARD_MANTLE)
     CreateCreatureEffect("mobha15","SPMETSWA",[750.859],S)  // Demon Knight
     CreateCreatureEffect("mobha16","SPMETSWA",[902.796],S)  // Lilitu
 END

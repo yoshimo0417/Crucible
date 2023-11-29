@@ -51,7 +51,9 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("MO_AreaPrep","MOBHA1",1)
+		RemoveSpell(ENTER_POCKET_PLANE)  // SPIN649.SPL (Pocket Plane)
 		SetGlobalTimer("MO_Spawn","MOBHA1",60)
+		Continue()
 END
 
 IF
@@ -60,7 +62,9 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("MO_AreaPrep","MOBHA1",1)
+		RemoveSpell(ENTER_POCKET_PLANE)  // SPIN649.SPL (Pocket Plane)
 		SetGlobalTimer("MO_Spawn","MOBHA1",180)
+		Continue()
 END
 
 IF
@@ -69,7 +73,9 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("MO_AreaPrep","MOBHA1",1)
+		RemoveSpell(ENTER_POCKET_PLANE)  // SPIN649.SPL (Pocket Plane)
 		SetGlobalTimer("MO_Spawn","MOBHA1",300)
+		Continue()
 END
 
 IF
@@ -78,7 +84,9 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("MO_AreaPrep","MOBHA1",1)
+		RemoveSpell(ENTER_POCKET_PLANE)  // SPIN649.SPL (Pocket Plane)
 		SetGlobalTimer("MO_Spawn","MOBHA1",600)
+		Continue()
 END
 
 IF
@@ -87,7 +95,9 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("MO_AreaPrep","MOBHA1",1)
+		RemoveSpell(ENTER_POCKET_PLANE)  // SPIN649.SPL (Pocket Plane)
 		SetGlobalTimer("MO_Spawn","MOBHA1",6000)
+		Continue()
 END
 
 IF

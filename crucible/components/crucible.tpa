@@ -368,6 +368,12 @@ END ELSE BEGIN
     COMPILE_BAF_TO_BCS
 END
 
+COPY_EXISTING ~CUT248A.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        REPLACE_TEXTUALLY ~RemoveSpell(ENTER_POCKET_PLANE)  // SPIN649.SPL (Pocket Plane)~ ~~
+    END
+BUT_ONLY
+
 COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha1a.baf~ ~override/mobha1a.bcs~  // Area script
      ~crucible/baf/mobha1b.baf~ ~override/mobha1b.bcs~  // Area script
