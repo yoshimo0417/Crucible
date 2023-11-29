@@ -10,6 +10,7 @@
 @5006 = ~You see what appears to be a sealed compartment in the skull of Bhaal. As of right now, there is nothing you can do to operate it.~
 @5007 = ~Prominently displayed near Bhaal's throne is a lever of sinew, blood, and bone. It looks like you can pull this lever.~
 @5008 = ~You pull the lever and hear the sound of ancient gears, grinding together. Off in the distance you can hear a door opening.~
+@5009 = ~Before you lies the entrance to the Throne of Blood. One last fight awaits before your confrontation with Amelyssan.~
 
 // Deathstalker Initial Convo
 @5100 = ~I see you decided to finally arrive, <CHARNAME>. The hour is late and Amelyssan will ascend as the new lord of murder.~ [mobha000]
