@@ -271,8 +271,93 @@ END
 // Attack
 /////////////////////////////////////////////////////////////////////
 IF
+  Global("MO_IsMoving","LOCALS",1)
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",0)
+    AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+  Global("MO_IsMoving","LOCALS",1)
+  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",0)
+    AttackOneRound(SecondNearestEnemyOf(Myself))
+END
+
+IF
+  Global("MO_IsMoving","LOCALS",1)
+  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",0)
+    AttackOneRound(ThirdNearestEnemyOf(Myself))
+END
+
+IF
+  Global("MO_IsMoving","LOCALS",1)
+  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",0)
+    AttackOneRound(FourthNearestEnemyOf(Myself))
+END
+
+IF
+  Global("MO_IsMoving","LOCALS",1)
+  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",0)
+    AttackOneRound(FifthNearestEnemyOf(Myself))
+END
+
+IF
+  Global("MO_IsMoving","LOCALS",1)
+  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",0)
+    AttackOneRound(SixthNearestEnemyOf(Myself))
+END
+
+IF
   ActionListEmpty()
   See(NearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
@@ -289,6 +374,7 @@ END
 IF
   ActionListEmpty()
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
@@ -305,6 +391,7 @@ END
 IF
   ActionListEmpty()
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
@@ -321,6 +408,7 @@ END
 IF
   ActionListEmpty()
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
@@ -337,6 +425,7 @@ END
 IF
   ActionListEmpty()
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
@@ -353,6 +442,7 @@ END
 IF
   ActionListEmpty()
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
@@ -369,6 +459,7 @@ END
 IF
   ActionListEmpty()
   See(NearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
@@ -381,6 +472,7 @@ END
 IF
   ActionListEmpty()
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
@@ -393,6 +485,7 @@ END
 IF
   ActionListEmpty()
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
@@ -405,6 +498,7 @@ END
 IF
   ActionListEmpty()
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
@@ -417,6 +511,7 @@ END
 IF
   ActionListEmpty()
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
@@ -429,6 +524,7 @@ END
 IF
   ActionListEmpty()
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
@@ -447,6 +543,7 @@ IF
   Allegiance(Myself,ENEMY)
 THEN
   RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",1)
     MoveToObject(LastHeardBy(Myself))
 END
 
@@ -459,6 +556,7 @@ IF
   !WeaponCanDamage(Player1,MAINHAND)
 THEN
   RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",1)
     MoveToObject(Player2)
 END
 
@@ -471,6 +569,7 @@ IF
   !WeaponCanDamage(Player2,MAINHAND)
 THEN
   RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",1)
     MoveToObject(Player3)
 END
 
@@ -483,6 +582,7 @@ IF
   !WeaponCanDamage(Player3,MAINHAND)
 THEN
   RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",1)
     MoveToObject(Player4)
 END
 
@@ -495,6 +595,7 @@ IF
   !WeaponCanDamage(Player4,MAINHAND)
 THEN
   RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",1)
     MoveToObject(Player5)
 END
 
@@ -507,6 +608,7 @@ IF
   !WeaponCanDamage(Player5,MAINHAND)
 THEN
   RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",1)
     MoveToObject(Player6)
 END
 
@@ -519,5 +621,6 @@ IF
   !WeaponCanDamage(Player6,MAINHAND)
 THEN
   RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",1)
     MoveToObject(Player1)
 END
