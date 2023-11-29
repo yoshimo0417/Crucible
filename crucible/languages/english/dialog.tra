@@ -24,7 +24,7 @@
 @5111 = ~Very astute of you. Yes, this is the uppermost layer of Gehenna known as Khalas.~ [mobha002]
 @5112 = ~Isn't my pocket plane supposed to be connected to Bhaal's realm?~
 @5113 = ~Amelyssan suspected you had such a pocket plane when you first arrived in Saradush. Great effort was made to find and then sever your plane's connection from the greater realm of Bhaal.~ [mobha003]
-@5114 = ~The ties are strong between your pocket plane and Bhaal's kingdom, so we could only separate the two so far apart. We have since waited to see if you would make the attempt to come through.~ [mobha004]
+@5114 = ~The ties are strong between your pocket plane and Bhaal's kingdom, so we could only separate them so far apart. We have since waited to see if you would make the attempt to come through.~ [mobha004]
 @5115 = ~Let us end this.~
 @5116 = ~I tire of these questions, it is time for you to die.~
 
@@ -151,4 +151,4 @@
 @6201 = ~Here is my blood to help with the testing. I will face you at a later time at the top of this garrison.~
 
 // Deathbringer
-@6300 = ~<CHARNAME> has invaded Bhaal's kingdom! To arms my brothers!~
+@6300 = ~Gorion's ward has invaded Bhaal's kingdom! To arms my brothers!~ [mobha049]
