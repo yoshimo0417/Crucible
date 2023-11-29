@@ -166,10 +166,12 @@ END
 IF
 	Dead("mobha17")
 	!Global("MO_RestEncounter","MOBHA1",5)
+	!ActuallyInCombat()
 THEN
 	RESPONSE #100
 		SetRestEncounterProbabilityDay(5) 
 		SetRestEncounterProbabilityNight(5)
+		DisplayString(Myself,@5010)  // With Mayithra defeated, you feel like eyes are off you and the attacks upon you in Khalas will lessen.
 		SetGlobal("MO_RestEncounter","MOBHA1",5)
 END
 
