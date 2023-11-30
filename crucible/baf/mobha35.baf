@@ -5,7 +5,75 @@
 //        Version 1
 // Archlich, 31-22 Cleric/Mage
 //
+// Memorized Cleric Spells By Level: 10 9 10 10 9 8 6
+// Memorized Cleric Spells (number, name, spell level): 
+//  5 armor of faith (1)
+//  1 doom (1)
+//  4 protection from evil (1)
+//
+//  3 draw upon holy might (2)
+//  2 flame blade (2)
+//  2 resist fire and cold (2)
+//  2 slow poison (2)
 // 
+//  4 animate dead (3)
+//  3 glyph of warding (3)
+//  2 protection from fire (3)
+//  1 zone of sweat air (3)
+//
+//  4 cure serous wounds (4)
+//  3 free action (4)
+//  1 neutralize poison (4)
+//  2 protection from evil, 10' radius (4)
+//
+//  9 mass cure (5)
+//
+//  2 aerial servant (6)
+//  1 conjure animals (6)
+//  3 heal (6)
+//  2 wondrous recall (6)
+//
+//  3 regeneration (7)
+//  1 globe of blades (7)
+//  2 unholy word (7)
+//
+// Memorized Mage Spells By Level: 5 5 5 7 6 10 6 7 7
+// Memorized Mage Spells (number, name, spell level): 
+//  5 larloch's minor drain (1)
+//
+//  4 melf acid (2)   
+//  1 vocalize (2)
+//
+//  3 remove magic (3)
+//  2 slow (3)
+//
+//  2 greater malison (4)
+//  1 Fireshield Blue (4)
+//  1 Teleport Field (4)
+//  1 improved invisibility (4)
+//  2 contagion (4)
+//
+//  1 Shadow Door (5)
+//  3 spell immunity (5)
+//  2 breach (5)
+//
+//  2 improved haste (6)
+//  4 Death Spell (6)
+//  2 protection from magic energy (6)
+//  2 protection from magical weapons (6)
+//
+//  1 protection from the elements (7)
+//  2 power word, stun (7)
+//  3 ruby ray of reversal (7)
+//
+//  4 Maze (8)
+//  3 Power Word, Blind (8)
+//
+//  1 Time Stop (9)
+//  1 Improved Alacrity (9)
+//  2 energy drain (9)
+//  3 bigby's crushing hand (9)
+//
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
@@ -45,8 +113,31 @@ THEN
     ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
     ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_DIVINATION)  // SPWI592.SPL (Immunity: Divination)
     ApplySpell(Myself,WIZARD_MIRROR_IMAGE)
-    ApplySpell(Myself,WIZARD_FIRE_SHIELD_RED)
+    ApplySpell(Myself,WIZARD_FIRE_SHIELD_BLUE)
     ApplySpell(Myself,CLERIC_GLOBE_OF_BLADES)
+    ApplySpell(Myself,CLERIC_ARMOR_OF_FAITH)
+    SetGlobal("MO_Larloch","LOCALS",5)
+    SetGlobal("MO_SweetAir","LOCALS",1)
+    SetGlobal("MO_Vocalize","LOCALS",1)
+    SetGlobal("MO_RemoveMagic","LOCALS",3)
+    SetGlobal("MO_Slow","LOCALS",2)
+    SetGlobal("MO_Teleport","LOCALS",1)
+    SetGlobal("MO_Malison","LOCALS",2)
+    SetGlobal("MO_Contagion","LOCALS",2)
+    SetGlobal("MO_ShadowDoor","LOCALS",1)
+    SetGlobal("MO_Breach","LOCALS",2)
+    SetGlobal("MO_SpellImmunity","LOCALS",3)
+    SetGlobal("MO_PfMW","LOCALS",2)
+    SetGlobal("MO_ProtElements","LOCALS",1)
+    SetGlobal("MO_WondrousRecall","LOCALS",2)
+    SetGlobal("MO_DeathSpell","LOCALS",4)
+    SetGlobal("MO_RubyRay","LOCALS",3)
+    SetGlobal("MO_Maze","LOCALS",4)
+    SetGlobal("MO_UnholyWord","LOCALS",2)
+    SetGlobal("MO_PowerWordStun","LOCALS",2)
+    SetGlobal("MO_PowerWordBlind","LOCALS",3)
+    SetGlobal("MO_EnergyDrain","LOCALS",2)
+    SetGlobal("MO_BigbysCrushingHand","LOCALS",3)
     SetGlobal("MO_ImprovedAlacrity","LOCALS",1)
     SetGlobal("MO_TimeStop","LOCALS",1)
     SetGlobal("Prep","LOCALS",1)
@@ -173,7 +264,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See(NearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+  GlobalGT("MO_PfMW","LOCALS",0)
   !CheckSpellState(Myself,PROTECTION_FROM_MAGICAL_WEAPONS)
   !CheckSpellState(Myself,ABSOLUTE_IMMUNITY)
   !CheckSpellState(Myself,MANTLE)
@@ -184,9 +275,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_PfMW","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    SpellNoDec(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
     SetInterrupt(TRUE)
 END
 
@@ -195,15 +287,16 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See([GOODCUTOFF])
-  HaveSpell(WIZARD_VOCALIZE)  // SPWI219.SPL (Vocalize)
+  GlobalGT("MO_Vocalize","LOCALS",0)
   StateCheck(Myself,STATE_SILENCED)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Vocalize","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(Myself,WIZARD_VOCALIZE)  // SPWI219.SPL (Vocalize)
+    SpellNoDec(Myself,WIZARD_VOCALIZE)  // SPWI219.SPL (Vocalize)
     SetInterrupt(TRUE)
 END
 
@@ -215,7 +308,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See([GOODCUTOFF])
-  HaveSpell(WIZARD_SPELL_IMMUNITY)  // SPWI510.SPL (Spell Immunity)
+  GlobalGT("MO_SpellImmunity","LOCALS",0)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -234,7 +327,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastSpellImmunity","LOCALS",1)
-  HaveSpell(WIZARD_SPELL_IMMUNITY)  // SPWI510.SPL (Spell Immunity)
+  GlobalGT("MO_SpellImmunity","LOCALS",0)
   See([GOODCUTOFF])
   !CheckSpellState(Myself,SI_ABJURATION)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
@@ -244,9 +337,10 @@ IF
   RandomNum(2,1)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_SpellImmunity","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
+    SpellNoDec(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
     SetInterrupt(TRUE)
 END
 
@@ -255,7 +349,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastSpellImmunity","LOCALS",1)
-  HaveSpell(WIZARD_SPELL_IMMUNITY)  // SPWI510.SPL (Spell Immunity)
+  GlobalGT("MO_SpellImmunity","LOCALS",0)
   See([GOODCUTOFF])
   !CheckSpellState(Myself,SI_DIVINATION)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
@@ -265,9 +359,10 @@ IF
   RandomNum(2,2)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_SpellImmunity","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(Myself,WIZARD_SPELL_IMMUNITY_DIVINATION)  // SPWI592.SPL (Immunity: Divination)
+    SpellNoDec(Myself,WIZARD_SPELL_IMMUNITY_DIVINATION)  // SPWI592.SPL (Immunity: Divination)
     SetInterrupt(TRUE)
 END
 
@@ -276,7 +371,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastSpellImmunity","LOCALS",1)
-  HaveSpell(WIZARD_SPELL_IMMUNITY)  // SPWI510.SPL (Spell Immunity)
+  GlobalGT("MO_SpellImmunity","LOCALS",0)
   See([GOODCUTOFF])
   !CheckSpellState(Myself,SI_DIVINATION)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
@@ -285,9 +380,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_SpellImmunity","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(Myself,WIZARD_SPELL_IMMUNITY_DIVINATION)  // SPWI592.SPL (Immunity: Divination)
+    SpellNoDec(Myself,WIZARD_SPELL_IMMUNITY_DIVINATION)  // SPWI592.SPL (Immunity: Divination)
     SetInterrupt(TRUE)
 END
 
@@ -296,7 +392,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastSpellImmunity","LOCALS",1)
-  HaveSpell(WIZARD_SPELL_IMMUNITY)  // SPWI510.SPL (Spell Immunity)
+  GlobalGT("MO_SpellImmunity","LOCALS",0)
   See([GOODCUTOFF])
   !CheckSpellState(Myself,SI_ABJURATION)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
@@ -305,9 +401,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_SpellImmunity","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
+    SpellNoDec(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
     SetInterrupt(TRUE)
 END
 
@@ -319,7 +416,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See(NearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_PROTECTION_FROM_THE_ELEMENTS)  // SPWI702.SPL (Protection From The Elements)
+  GlobalGT("MO_ProtElements","LOCALS",0)
   !CheckStatGT(Myself,0,WIZARD_PROTECTION_FROM_ENERGY)
   !CheckStatGT(Myself,0,WIZARD_PROTECTION_FROM_THE_ELEMENTS)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
@@ -328,204 +425,13 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #50
+    IncrementGlobal("MO_ProtElements","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(Myself,WIZARD_PROTECTION_FROM_THE_ELEMENTS)  // SPWI702.SPL (Protection From The Elements)
+    SpellNoDec(Myself,WIZARD_PROTECTION_FROM_THE_ELEMENTS)  // SPWI702.SPL (Protection From The Elements)
     SetInterrupt(TRUE)
   RESPONSE #50
     Continue()
-END
-
-/////////////////////////////////////////////////////////////////////
-// Heal/Cure
-/////////////////////////////////////////////////////////////////////
-IF
-  OR(2)
-    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  HPPercentLT(Myself,50)
-  HaveSpell(CLERIC_HEAL)  // SPPR607.SPL (Heal)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
-    Spell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heal)
-    SetInterrupt(TRUE)
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  HaveSpell(CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-  HPPercentLT(SecondNearest([EVILCUTOFF]),80)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    IncrementGlobal("MO_WondrousRecallCounter","LOCALS",1)
-    SetInterrupt(FALSE)
-    Spell(SecondNearest([EVILCUTOFF]),CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-    SetInterrupt(TRUE)
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  HaveSpell(CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-  HPPercentLT(ThirdNearest([EVILCUTOFF]),80)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    IncrementGlobal("MO_WondrousRecallCounter","LOCALS",1)
-    SetInterrupt(FALSE)
-    Spell(ThirdNearest([EVILCUTOFF]),CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-    SetInterrupt(TRUE)
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  HaveSpell(CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-  HPPercentLT(FourthNearest([EVILCUTOFF]),80)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    IncrementGlobal("MO_WondrousRecallCounter","LOCALS",1)
-    SetInterrupt(FALSE)
-    Spell(FourthNearest([EVILCUTOFF]),CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-    SetInterrupt(TRUE)
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  HaveSpell(CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-  HPPercentLT(FifthNearest([EVILCUTOFF]),80)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    IncrementGlobal("MO_WondrousRecallCounter","LOCALS",1)
-    SetInterrupt(FALSE)
-    Spell(FifthNearest([EVILCUTOFF]),CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-    SetInterrupt(TRUE)
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  HaveSpell(CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-  HPPercentLT(SixthNearest([EVILCUTOFF]),60)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    IncrementGlobal("MO_WondrousRecallCounter","LOCALS",1)
-    SetInterrupt(FALSE)
-    Spell(SixthNearest([EVILCUTOFF]),CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-    SetInterrupt(TRUE)
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  HaveSpell(CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-  HPPercentLT(SeventhNearest([EVILCUTOFF]),60)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    IncrementGlobal("MO_WondrousRecallCounter","LOCALS",1)
-    SetInterrupt(FALSE)
-    Spell(SeventhNearest([EVILCUTOFF]),CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-    SetInterrupt(TRUE)
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  HaveSpell(CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-  HPPercentLT(EighthNearest([EVILCUTOFF]),80)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    IncrementGlobal("MO_WondrousRecallCounter","LOCALS",1)
-    SetInterrupt(FALSE)
-    Spell(ThirdNearest([EVILCUTOFF]),CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-    SetInterrupt(TRUE)
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  HaveSpell(CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-  HPPercentLT(NinthNearest([EVILCUTOFF]),80)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    IncrementGlobal("MO_WondrousRecallCounter","LOCALS",1)
-    SetInterrupt(FALSE)
-    Spell(NinthNearest([EVILCUTOFF]),CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-    SetInterrupt(TRUE)
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  HaveSpell(CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-  HPPercentLT(TenthNearest([EVILCUTOFF]),80)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    IncrementGlobal("MO_WondrousRecallCounter","LOCALS",1)
-    SetInterrupt(FALSE)
-    Spell(TenthNearest([EVILCUTOFF]),CLERIC_MASS_CURE)  // SPPR514.SPL (Mass Cure)
-    SetInterrupt(TRUE)
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -535,7 +441,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  HaveSpell(CLERIC_ZONE_OF_SWEET_AIR)  // SPPR318.SPL (Zone of Sweet Air)
+  GlobalGT("MO_SweetAir","LOCALS",0)
   OR(12)
     SpellCast([GOODCUTOFF.0.0.MAGE_ALL],WIZARD_INCENDIARY_CLOUD)  // SPWI810.SPL (Incendiary Cloud)
     SpellCast([GOODCUTOFF.0.0.MAGE_ALL],WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinking Cloud)
@@ -555,10 +461,11 @@ IF
   !StateCheck(Myself,STATE_POISONED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_SweetAir","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_WondrousRecallCounter","LOCALS",1)
     SetInterrupt(FALSE)
-    Spell(Myself,CLERIC_ZONE_OF_SWEET_AIR)  // SPPR318.SPL (Zone of Sweet Air)
+    SpellNoDec(Myself,CLERIC_ZONE_OF_SWEET_AIR)  // SPPR318.SPL (Zone of Sweet Air)
     SetInterrupt(TRUE)
 END
 
@@ -583,7 +490,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_TimeStopTimer","LOCALS",30)
     SetInterrupt(FALSE)
-    ForceSpell(Myself,WIZARD_TIME_STOP)
+    SpellNoDec(Myself,WIZARD_TIME_STOP)
     SetInterrupt(TRUE)
 END
 
@@ -622,7 +529,7 @@ IF
   !GlobalTimerNotExpired("MO_RemoveMagicTimer","LOCALS")
   See(NearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
-  HaveSpell(WIZARD_REMOVE_MAGIC)
+  GlobalGT("MO_RemoveMagic","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -639,11 +546,12 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_RemoveMagic","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_RemoveMagicTimer","LOCALS",18)
     IncrementGlobal("Remove","LOCALS",-1)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -654,7 +562,7 @@ IF
   !GlobalTimerNotExpired("MO_RemoveMagicTimer","LOCALS")
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
-  HaveSpell(WIZARD_REMOVE_MAGIC)
+  GlobalGT("MO_RemoveMagic","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -671,11 +579,12 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_RemoveMagic","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_RemoveMagicTimer","LOCALS",18)
     IncrementGlobal("Remove","LOCALS",-1)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -686,7 +595,7 @@ IF
   !GlobalTimerNotExpired("MO_RemoveMagicTimer","LOCALS")
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
-  HaveSpell(WIZARD_REMOVE_MAGIC)
+  GlobalGT("MO_RemoveMagic","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -703,11 +612,12 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_RemoveMagic","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_RemoveMagicTimer","LOCALS",18)
     IncrementGlobal("Remove","LOCALS",-1)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -718,7 +628,7 @@ IF
   !GlobalTimerNotExpired("MO_RemoveMagicTimer","LOCALS")
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
-  HaveSpell(WIZARD_REMOVE_MAGIC)
+  GlobalGT("MO_RemoveMagic","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -735,11 +645,12 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_RemoveMagic","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_RemoveMagicTimer","LOCALS",18)
     IncrementGlobal("Remove","LOCALS",-1)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -750,7 +661,7 @@ IF
   !GlobalTimerNotExpired("MO_RemoveMagicTimer","LOCALS")
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
-  HaveSpell(WIZARD_REMOVE_MAGIC)
+  GlobalGT("MO_RemoveMagic","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -767,11 +678,12 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_RemoveMagic","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_RemoveMagicTimer","LOCALS",18)
     IncrementGlobal("Remove","LOCALS",-1)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -782,7 +694,7 @@ IF
   !GlobalTimerNotExpired("MO_RemoveMagicTimer","LOCALS")
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
-  HaveSpell(WIZARD_REMOVE_MAGIC)
+  GlobalGT("MO_RemoveMagic","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -799,11 +711,12 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_RemoveMagic","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_RemoveMagicTimer","LOCALS",18)
     IncrementGlobal("Remove","LOCALS",-1)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -815,7 +728,7 @@ IF
   !Global("MO_DamagedTarget","LOCALS",1)
   !GlobalTimerNotExpired("MO_BreachTimer","LOCALS")
   See(NearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_BREACH)  // SPWI513.SPL (Breach)
+  GlobalGT("MO_Breach","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -835,10 +748,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Breach","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_BreachTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_BREACH)  // SPWI513.SPL (Breach)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_BREACH)  // SPWI513.SPL (Breach)
     SetInterrupt(TRUE)
 END
 
@@ -847,7 +761,7 @@ IF
   !Global("MO_DamagedTarget","LOCALS",1)
   !GlobalTimerNotExpired("MO_BreachTimer","LOCALS")
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_BREACH)  // SPWI513.SPL (Breach)
+  GlobalGT("MO_Breach","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -867,10 +781,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Breach","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_BreachTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_BREACH)  // SPWI513.SPL (Breach)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_BREACH)  // SPWI513.SPL (Breach)
     SetInterrupt(TRUE)
 END
 
@@ -879,7 +794,7 @@ IF
   !Global("MO_DamagedTarget","LOCALS",1)
   !GlobalTimerNotExpired("MO_BreachTimer","LOCALS")
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_BREACH)  // SPWI513.SPL (Breach)
+  GlobalGT("MO_Breach","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -899,10 +814,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Breach","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_BreachTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_BREACH)  // SPWI513.SPL (Breach)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_BREACH)  // SPWI513.SPL (Breach)
     SetInterrupt(TRUE)
 END
 
@@ -911,7 +827,7 @@ IF
   !Global("MO_DamagedTarget","LOCALS",1)
   !GlobalTimerNotExpired("MO_BreachTimer","LOCALS")
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_BREACH)  // SPWI513.SPL (Breach)
+  GlobalGT("MO_Breach","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -931,10 +847,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Breach","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_BreachTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_BREACH)  // SPWI513.SPL (Breach)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_BREACH)  // SPWI513.SPL (Breach)
     SetInterrupt(TRUE)
 END
 
@@ -943,7 +860,7 @@ IF
   !Global("MO_DamagedTarget","LOCALS",1)
   !GlobalTimerNotExpired("MO_BreachTimer","LOCALS")
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_BREACH)  // SPWI513.SPL (Breach)
+  GlobalGT("MO_Breach","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -963,10 +880,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Breach","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_BreachTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_BREACH)  // SPWI513.SPL (Breach)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_BREACH)  // SPWI513.SPL (Breach)
     SetInterrupt(TRUE)
 END
 
@@ -975,7 +893,7 @@ IF
   !Global("MO_DamagedTarget","LOCALS",1)
   !GlobalTimerNotExpired("MO_BreachTimer","LOCALS")
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_BREACH)  // SPWI513.SPL (Breach)
+  GlobalGT("MO_Breach","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -995,10 +913,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Breach","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_BreachTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_BREACH)  // SPWI513.SPL (Breach)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_BREACH)  // SPWI513.SPL (Breach)
     SetInterrupt(TRUE)
 END
 
@@ -1011,7 +930,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_RubyRayTimer","LOCALS")
   See(NearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
+  GlobalGT("MO_RubyRay","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -1034,10 +953,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_RubyRay","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_RubyRayTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
     SetInterrupt(TRUE)
 END
 
@@ -1047,7 +967,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_RubyRayTimer","LOCALS")
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
+  GlobalGT("MO_RubyRay","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -1070,10 +990,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_RubyRay","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_RubyRayTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
     SetInterrupt(TRUE)
 END
 
@@ -1083,7 +1004,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_RubyRayTimer","LOCALS")
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
+  GlobalGT("MO_RubyRay","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -1106,10 +1027,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_RubyRay","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_RubyRayTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
     SetInterrupt(TRUE)
 END
 
@@ -1119,7 +1041,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_RubyRayTimer","LOCALS")
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
+  GlobalGT("MO_RubyRay","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -1142,10 +1064,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_RubyRay","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_RubyRayTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
     SetInterrupt(TRUE)
 END
 
@@ -1155,7 +1078,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_RubyRayTimer","LOCALS")
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
+  GlobalGT("MO_RubyRay","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -1178,10 +1101,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_RubyRay","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_RubyRayTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
     SetInterrupt(TRUE)
 END
 
@@ -1191,7 +1115,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_RubyRayTimer","LOCALS")
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
+  GlobalGT("MO_RubyRay","LOCALS",0)
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -1214,10 +1138,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_RubyRay","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_RubyRayTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Ruby Ray of Reversal)
     SetInterrupt(TRUE)
 END
 
@@ -1229,7 +1154,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See([GOODCUTOFF])
-  HaveSpell(WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
+  GlobalGT("MO_BigbysCrushingHand","LOCALS",0)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -1252,7 +1177,7 @@ IF
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Range(LastSeenBy(Myself),5)
-  HaveSpell(WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
+  GlobalGT("MO_BigbysCrushingHand","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !StateCheck(LastSeenBy(Myself),STATE_FEEBLEMINDED)
@@ -1271,9 +1196,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_BigbysCrushingHand","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
     SetInterrupt(TRUE)
 END
 
@@ -1286,7 +1212,7 @@ IF
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Range(LastSeenBy(Myself),5)
-  HaveSpell(WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
+  GlobalGT("MO_BigbysCrushingHand","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !StateCheck(LastSeenBy(Myself),STATE_FEEBLEMINDED)
@@ -1305,9 +1231,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_BigbysCrushingHand","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
     SetInterrupt(TRUE)
 END
 
@@ -1320,7 +1247,7 @@ IF
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Range(LastSeenBy(Myself),5)
-  HaveSpell(WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
+  GlobalGT("MO_BigbysCrushingHand","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !StateCheck(LastSeenBy(Myself),STATE_FEEBLEMINDED)
@@ -1339,9 +1266,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_BigbysCrushingHand","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
     SetInterrupt(TRUE)
 END
 
@@ -1354,7 +1282,7 @@ IF
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Range(LastSeenBy(Myself),5)
-  HaveSpell(WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
+  GlobalGT("MO_BigbysCrushingHand","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !StateCheck(LastSeenBy(Myself),STATE_FEEBLEMINDED)
@@ -1373,9 +1301,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_BigbysCrushingHand","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
     SetInterrupt(TRUE)
 END
 
@@ -1388,7 +1317,7 @@ IF
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Range(LastSeenBy(Myself),5)
-  HaveSpell(WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
+  GlobalGT("MO_BigbysCrushingHand","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !StateCheck(LastSeenBy(Myself),STATE_FEEBLEMINDED)
@@ -1407,9 +1336,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_BigbysCrushingHand","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
     SetInterrupt(TRUE)
 END
 
@@ -1422,7 +1352,7 @@ IF
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Range(LastSeenBy(Myself),5)
-  HaveSpell(WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
+  GlobalGT("MO_BigbysCrushingHand","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !StateCheck(LastSeenBy(Myself),STATE_FEEBLEMINDED)
@@ -1441,9 +1371,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_BigbysCrushingHand","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_BIGBYS_CRUSHING_HAND)  // SPWI918.SPL (Bigby's Crushing Hand)
     SetInterrupt(TRUE)
 END
 
@@ -1455,7 +1386,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See([GOODCUTOFF])
-  HaveSpell(WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+  GlobalGT("MO_EnergyDrain","LOCALS",0)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -1476,7 +1407,7 @@ IF
   Global("MO_CastEnergyDrain","LOCALS",1)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+  GlobalGT("MO_EnergyDrain","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_NECROMANCY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
@@ -1501,9 +1432,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_EnergyDrain","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
     SetInterrupt(TRUE)
 END
 
@@ -1514,7 +1446,7 @@ IF
   Global("MO_CastEnergyDrain","LOCALS",1)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+  GlobalGT("MO_EnergyDrain","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_NECROMANCY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
@@ -1539,9 +1471,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_EnergyDrain","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
     SetInterrupt(TRUE)
 END
 
@@ -1552,7 +1485,7 @@ IF
   Global("MO_CastEnergyDrain","LOCALS",1)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+  GlobalGT("MO_EnergyDrain","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_NECROMANCY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
@@ -1577,9 +1510,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_EnergyDrain","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
     SetInterrupt(TRUE)
 END
 
@@ -1590,7 +1524,7 @@ IF
   Global("MO_CastEnergyDrain","LOCALS",1)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+  GlobalGT("MO_EnergyDrain","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_NECROMANCY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
@@ -1615,9 +1549,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_EnergyDrain","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
     SetInterrupt(TRUE)
 END
 
@@ -1628,7 +1563,7 @@ IF
   Global("MO_CastEnergyDrain","LOCALS",1)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+  GlobalGT("MO_EnergyDrain","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_NECROMANCY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
@@ -1653,9 +1588,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_EnergyDrain","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
     SetInterrupt(TRUE)
 END
 
@@ -1666,7 +1602,7 @@ IF
   Global("MO_CastEnergyDrain","LOCALS",1)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+  GlobalGT("MO_EnergyDrain","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_NECROMANCY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
@@ -1691,9 +1627,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_EnergyDrain","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
     SetInterrupt(TRUE)
 END
 
@@ -1706,7 +1643,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_MalisonTimer","LOCALS")
   See([GOODCUTOFF])
-  HaveSpell(WIZARD_GREATER_MALISON)
+  GlobalGT("MO_Malison","LOCALS",0)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -1726,7 +1663,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_MalisonTimer","LOCALS")
   Global("MO_CastMalison","LOCALS",1)
-  HaveSpell(WIZARD_GREATER_MALISON)
+  GlobalGT("MO_Malison","LOCALS",0)
   See(NearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -1745,10 +1682,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Malison","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_MalisonTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
     SetInterrupt(TRUE)
 END
 
@@ -1758,7 +1696,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_MalisonTimer","LOCALS")
   Global("MO_CastMalison","LOCALS",1)
-  HaveSpell(WIZARD_GREATER_MALISON)
+  GlobalGT("MO_Malison","LOCALS",0)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -1777,10 +1715,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Malison","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_MalisonTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
     SetInterrupt(TRUE)
 END
 
@@ -1790,7 +1729,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_MalisonTimer","LOCALS")
   Global("MO_CastMalison","LOCALS",1)
-  HaveSpell(WIZARD_GREATER_MALISON)
+  GlobalGT("MO_Malison","LOCALS",0)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -1809,10 +1748,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Malison","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_MalisonTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
     SetInterrupt(TRUE)
 END
 
@@ -1822,7 +1762,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_MalisonTimer","LOCALS")
   Global("MO_CastMalison","LOCALS",1)
-  HaveSpell(WIZARD_GREATER_MALISON)
+  GlobalGT("MO_Malison","LOCALS",0)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -1841,10 +1781,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Malison","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_MalisonTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
     SetInterrupt(TRUE)
 END
 
@@ -1854,7 +1795,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_MalisonTimer","LOCALS")
   Global("MO_CastMalison","LOCALS",1)
-  HaveSpell(WIZARD_GREATER_MALISON)
+  GlobalGT("MO_Malison","LOCALS",0)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -1873,10 +1814,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Malison","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_MalisonTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
     SetInterrupt(TRUE)
 END
 
@@ -1886,7 +1828,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_MalisonTimer","LOCALS")
   Global("MO_CastMalison","LOCALS",1)
-  HaveSpell(WIZARD_GREATER_MALISON)
+  GlobalGT("MO_Malison","LOCALS",0)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -1905,10 +1847,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Malison","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_MalisonTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
     SetInterrupt(TRUE)
 END
 
@@ -1922,17 +1865,18 @@ IF
   !GlobalTimerNotExpired("MO_TeleportTimer","LOCALS")
   See(NearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
-  HaveSpell(WIZARD_TELEPORT_FIELD)
+  GlobalGT("MO_Teleport","LOCALS",0)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #50
+    IncrementGlobal("MO_Teleport","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_TeleportTimer","LOCALS",60)
     SetInterrupt(FALSE)
-    Spell(Myself,WIZARD_TELEPORT_FIELD)
+    SpellNoDec(Myself,WIZARD_TELEPORT_FIELD)
     SetInterrupt(TRUE)
   RESPONSE #50
     Continue()
@@ -1948,7 +1892,7 @@ IF
   !GlobalTimerNotExpired("MO_MazeTimer","LOCALS")
   See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
-  HaveSpell(WIZARD_MAZE)
+  GlobalGT("MO_Maze","LOCALS",0)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -1972,7 +1916,7 @@ IF
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   Range(LastSeenBy(Myself),4)
-  HaveSpell(WIZARD_MAZE)
+  GlobalGT("MO_Maze","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   CheckStatLT(LastSeenBy(Myself),18,INT)
   !CheckSpellState(LastSeenBy(Myself),CHAOTIC_COMMANDS)
@@ -1994,10 +1938,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Maze","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_MazeTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_MAZE)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_MAZE)
     SetInterrupt(TRUE)
 END
 
@@ -2011,7 +1956,7 @@ IF
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   Range(LastSeenBy(Myself),4)
-  HaveSpell(WIZARD_MAZE)
+  GlobalGT("MO_Maze","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   CheckStatLT(LastSeenBy(Myself),18,INT)
   !CheckSpellState(LastSeenBy(Myself),CHAOTIC_COMMANDS)
@@ -2033,10 +1978,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Maze","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_MazeTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_MAZE)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_MAZE)
     SetInterrupt(TRUE)
 END
 
@@ -2050,7 +1996,7 @@ IF
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   Range(LastSeenBy(Myself),4)
-  HaveSpell(WIZARD_MAZE)
+  GlobalGT("MO_Maze","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   CheckStatLT(LastSeenBy(Myself),18,INT)
   !CheckSpellState(LastSeenBy(Myself),CHAOTIC_COMMANDS)
@@ -2072,10 +2018,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Maze","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_MazeTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_MAZE)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_MAZE)
     SetInterrupt(TRUE)
 END
 
@@ -2089,7 +2036,7 @@ IF
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   Range(LastSeenBy(Myself),4)
-  HaveSpell(WIZARD_MAZE)
+  GlobalGT("MO_Maze","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   CheckStatLT(LastSeenBy(Myself),18,INT)
   !CheckSpellState(LastSeenBy(Myself),CHAOTIC_COMMANDS)
@@ -2111,10 +2058,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Maze","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_MazeTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_MAZE)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_MAZE)
     SetInterrupt(TRUE)
 END
 
@@ -2128,7 +2076,7 @@ IF
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   Range(LastSeenBy(Myself),4)
-  HaveSpell(WIZARD_MAZE)
+  GlobalGT("MO_Maze","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   CheckStatLT(LastSeenBy(Myself),18,INT)
   !CheckSpellState(LastSeenBy(Myself),CHAOTIC_COMMANDS)
@@ -2150,10 +2098,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Maze","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_MazeTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_MAZE)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_MAZE)
     SetInterrupt(TRUE)
 END
 
@@ -2167,7 +2116,7 @@ IF
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   Range(LastSeenBy(Myself),4)
-  HaveSpell(WIZARD_MAZE)
+  GlobalGT("MO_Maze","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   CheckStatLT(LastSeenBy(Myself),18,INT)
   !CheckSpellState(LastSeenBy(Myself),CHAOTIC_COMMANDS)
@@ -2189,10 +2138,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Maze","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_MazeTimer","LOCALS",18)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_MAZE)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_MAZE)
     SetInterrupt(TRUE)
 END
 
@@ -2204,7 +2154,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See([GOODCUTOFF.0.0.0.0.SUMMONED])
-  HaveSpell(WIZARD_DEATH_SPELL)
+  GlobalGT("MO_DeathSpell","LOCALS",0)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -2226,7 +2176,7 @@ IF
   See(Nearest([GOODCUTOFF.0.0.0.0.SUMMONED]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_DEATH_SPELL)
+  GlobalGT("MO_DeathSpell","LOCALS",0)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
@@ -2235,9 +2185,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_DeathSpell","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
     SetInterrupt(TRUE)
 END
 
@@ -2249,7 +2200,7 @@ IF
   See(SecondNearest([GOODCUTOFF.0.0.0.0.SUMMONED]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_DEATH_SPELL)
+  GlobalGT("MO_DeathSpell","LOCALS",0)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
@@ -2258,9 +2209,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_DeathSpell","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
     SetInterrupt(TRUE)
 END
 
@@ -2272,7 +2224,7 @@ IF
   See(ThirdNearest([GOODCUTOFF.0.0.0.0.SUMMONED]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_DEATH_SPELL)
+  GlobalGT("MO_DeathSpell","LOCALS",0)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
@@ -2281,9 +2233,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_DeathSpell","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
     SetInterrupt(TRUE)
 END
 
@@ -2295,7 +2248,7 @@ IF
   See(FourthNearest([GOODCUTOFF.0.0.0.0.SUMMONED]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_DEATH_SPELL)
+  GlobalGT("MO_DeathSpell","LOCALS",0)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
@@ -2304,9 +2257,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_DeathSpell","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
     SetInterrupt(TRUE)
 END
 
@@ -2318,7 +2272,7 @@ IF
   See(FifthNearest([GOODCUTOFF.0.0.0.0.SUMMONED]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_DEATH_SPELL)
+  GlobalGT("MO_DeathSpell","LOCALS",0)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
@@ -2327,9 +2281,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_DeathSpell","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
     SetInterrupt(TRUE)
 END
 
@@ -2341,7 +2296,7 @@ IF
   See(SixthNearest([GOODCUTOFF.0.0.0.0.SUMMONED]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_DEATH_SPELL)
+  GlobalGT("MO_DeathSpell","LOCALS",0)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
@@ -2350,9 +2305,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_DeathSpell","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
     SetInterrupt(TRUE)
 END
 
@@ -2364,7 +2320,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See([GOODCUTOFF])
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
+  GlobalGT("MO_PowerWordBlind","LOCALS",0)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -2385,7 +2341,7 @@ IF
   Global("MO_CastPowerWordBlind","LOCALS",1)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
+  GlobalGT("MO_PowerWordBlind","LOCALS",0)
   !HasItemEquiped("NPMISC1",LastSeenBy(Myself))
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
@@ -2405,9 +2361,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_PowerWordBlind","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
     SetInterrupt(TRUE)
 END
 
@@ -2418,7 +2375,7 @@ IF
   Global("MO_CastPowerWordBlind","LOCALS",1)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
+  GlobalGT("MO_PowerWordBlind","LOCALS",0)
   !HasItemEquiped("NPMISC1",LastSeenBy(Myself))
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
@@ -2438,9 +2395,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_PowerWordBlind","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
     SetInterrupt(TRUE)
 END
 
@@ -2451,7 +2409,7 @@ IF
   Global("MO_CastPowerWordBlind","LOCALS",1)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
+  GlobalGT("MO_PowerWordBlind","LOCALS",0)
   !HasItemEquiped("NPMISC1",LastSeenBy(Myself))
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
@@ -2471,9 +2429,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_PowerWordBlind","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
     SetInterrupt(TRUE)
 END
 
@@ -2484,7 +2443,7 @@ IF
   Global("MO_CastPowerWordBlind","LOCALS",1)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
+  GlobalGT("MO_PowerWordBlind","LOCALS",0)
   !HasItemEquiped("NPMISC1",LastSeenBy(Myself))
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
@@ -2504,9 +2463,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_PowerWordBlind","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
     SetInterrupt(TRUE)
 END
 
@@ -2517,7 +2477,7 @@ IF
   Global("MO_CastPowerWordBlind","LOCALS",1)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
+  GlobalGT("MO_PowerWordBlind","LOCALS",0)
   !HasItemEquiped("NPMISC1",LastSeenBy(Myself))
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
@@ -2537,9 +2497,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_PowerWordBlind","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
     SetInterrupt(TRUE)
 END
 
@@ -2550,7 +2511,7 @@ IF
   Global("MO_CastPowerWordBlind","LOCALS",1)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
+  GlobalGT("MO_PowerWordBlind","LOCALS",0)
   !HasItemEquiped("NPMISC1",LastSeenBy(Myself))
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
@@ -2570,9 +2531,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_PowerWordBlind","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
     SetInterrupt(TRUE)
 END
 
@@ -2584,7 +2546,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See([GOODCUTOFF])
-  HaveSpell(WIZARD_POWER_WORD_STUN)
+  GlobalGT("MO_PowerWordStun","LOCALS",0)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -2605,7 +2567,7 @@ IF
   Global("MO_CastPowerWordStun","LOCALS",1)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_STUN)
+  GlobalGT("MO_PowerWordStun","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
   !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
@@ -2628,9 +2590,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_PowerWordStun","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)
     SetInterrupt(TRUE)
 END
 
@@ -2641,7 +2604,7 @@ IF
   Global("MO_CastPowerWordStun","LOCALS",1)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_STUN)
+  GlobalGT("MO_PowerWordStun","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
   !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
@@ -2664,9 +2627,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_PowerWordStun","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)
     SetInterrupt(TRUE)
 END
 
@@ -2677,7 +2641,7 @@ IF
   Global("MO_CastPowerWordStun","LOCALS",1)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_STUN)
+  GlobalGT("MO_PowerWordStun","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
   !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
@@ -2700,9 +2664,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_PowerWordStun","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)
     SetInterrupt(TRUE)
 END
 
@@ -2713,7 +2678,7 @@ IF
   Global("MO_CastPowerWordStun","LOCALS",1)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_STUN)
+  GlobalGT("MO_PowerWordStun","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
   !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
@@ -2736,9 +2701,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_PowerWordStun","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)
     SetInterrupt(TRUE)
 END
 
@@ -2749,7 +2715,7 @@ IF
   Global("MO_CastPowerWordStun","LOCALS",1)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_STUN)
+  GlobalGT("MO_PowerWordStun","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
   !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
@@ -2772,9 +2738,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_PowerWordStun","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)
     SetInterrupt(TRUE)
 END
 
@@ -2785,7 +2752,7 @@ IF
   Global("MO_CastPowerWordStun","LOCALS",1)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_STUN)
+  GlobalGT("MO_PowerWordStun","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
   !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
@@ -2808,9 +2775,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_PowerWordStun","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)
     SetInterrupt(TRUE)
 END
 
@@ -2822,7 +2790,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See([GOODCUTOFF])
-  HaveSpell(WIZARD_SLOW)
+  GlobalGT("MO_Slow","LOCALS",0)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -2843,7 +2811,7 @@ IF
   Global("MO_CastSlow","LOCALS",1)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_SLOW)
+  GlobalGT("MO_Slow","LOCALS",0)
   !Class(LastSeenBy(Myself),MONK)
   !HasItemEquiped("ring09",LastSeenBy(Myself))
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
@@ -2860,9 +2828,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Slow","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_SLOW)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_SLOW)
     SetInterrupt(TRUE)
 END
 
@@ -2873,7 +2842,7 @@ IF
   Global("MO_CastSlow","LOCALS",1)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_SLOW)
+  GlobalGT("MO_Slow","LOCALS",0)
   !Class(LastSeenBy(Myself),MONK)
   !HasItemEquiped("ring09",LastSeenBy(Myself))
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
@@ -2890,9 +2859,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Slow","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_SLOW)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_SLOW)
     SetInterrupt(TRUE)
 END
 
@@ -2903,7 +2873,7 @@ IF
   Global("MO_CastSlow","LOCALS",1)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_SLOW)
+  GlobalGT("MO_Slow","LOCALS",0)
   !Class(LastSeenBy(Myself),MONK)
   !HasItemEquiped("ring09",LastSeenBy(Myself))
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
@@ -2920,9 +2890,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Slow","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_SLOW)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_SLOW)
     SetInterrupt(TRUE)
 END
 
@@ -2933,7 +2904,7 @@ IF
   Global("MO_CastSlow","LOCALS",1)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_SLOW)
+  GlobalGT("MO_Slow","LOCALS",0)
   !Class(LastSeenBy(Myself),MONK)
   !HasItemEquiped("ring09",LastSeenBy(Myself))
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
@@ -2950,9 +2921,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Slow","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_SLOW)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_SLOW)
     SetInterrupt(TRUE)
 END
 
@@ -2963,7 +2935,7 @@ IF
   Global("MO_CastSlow","LOCALS",1)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_SLOW)
+  GlobalGT("MO_Slow","LOCALS",0)
   !Class(LastSeenBy(Myself),MONK)
   !HasItemEquiped("ring09",LastSeenBy(Myself))
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
@@ -2980,9 +2952,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Slow","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_SLOW)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_SLOW)
     SetInterrupt(TRUE)
 END
 
@@ -2993,7 +2966,7 @@ IF
   Global("MO_CastSlow","LOCALS",1)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_SLOW)
+  GlobalGT("MO_Slow","LOCALS",0)
   !Class(LastSeenBy(Myself),MONK)
   !HasItemEquiped("ring09",LastSeenBy(Myself))
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
@@ -3010,9 +2983,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Slow","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_SLOW)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_SLOW)
     SetInterrupt(TRUE)
 END
 
@@ -3024,7 +2998,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See([GOODCUTOFF])
-  HaveSpell(WIZARD_CONTAGION)
+  GlobalGT("MO_Contagion","LOCALS",0)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -3044,7 +3018,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastContagion","LOCALS",1)
   See(NearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_CONTAGION)
+  GlobalGT("MO_Contagion","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !StateCheck(LastSeenBy(Myself),STATE_SLOWED)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
@@ -3063,9 +3037,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Contagion","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_CONTAGION)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_CONTAGION)
     SetInterrupt(TRUE)
 END
 
@@ -3075,7 +3050,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastContagion","LOCALS",1)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_CONTAGION)
+  GlobalGT("MO_Contagion","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !StateCheck(LastSeenBy(Myself),STATE_SLOWED)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
@@ -3094,9 +3069,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Contagion","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_CONTAGION)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_CONTAGION)
     SetInterrupt(TRUE)
 END
 
@@ -3106,7 +3082,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastContagion","LOCALS",1)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_CONTAGION)
+  GlobalGT("MO_Contagion","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !StateCheck(LastSeenBy(Myself),STATE_SLOWED)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
@@ -3125,9 +3101,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Contagion","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_CONTAGION)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_CONTAGION)
     SetInterrupt(TRUE)
 END
 
@@ -3137,7 +3114,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastContagion","LOCALS",1)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_CONTAGION)
+  GlobalGT("MO_Contagion","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !StateCheck(LastSeenBy(Myself),STATE_SLOWED)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
@@ -3156,9 +3133,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Contagion","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_CONTAGION)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_CONTAGION)
     SetInterrupt(TRUE)
 END
 
@@ -3168,7 +3146,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastContagion","LOCALS",1)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_CONTAGION)
+  GlobalGT("MO_Contagion","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !StateCheck(LastSeenBy(Myself),STATE_SLOWED)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
@@ -3187,9 +3165,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Contagion","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_CONTAGION)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_CONTAGION)
     SetInterrupt(TRUE)
 END
 
@@ -3199,7 +3178,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastContagion","LOCALS",1)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_CONTAGION)
+  GlobalGT("MO_Contagion","LOCALS",0)
   !Gender(LastSeenBy(Myself),SUMMONED)
   !StateCheck(LastSeenBy(Myself),STATE_SLOWED)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
@@ -3218,9 +3197,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Contagion","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_CONTAGION)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_CONTAGION)
     SetInterrupt(TRUE)
 END
 
@@ -3232,7 +3212,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See([GOODCUTOFF])
-  HaveSpell(CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+  GlobalGT("MO_UnholyWord","LOCALS",0)
   CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -3253,7 +3233,7 @@ IF
   Global("MO_CastUnholyWord","LOCALS",1)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+  GlobalGT("MO_UnholyWord","LOCALS",0)
   Alignment(LastSeenBy(Myself),MASK_GOOD)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
@@ -3270,9 +3250,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_UnholyWord","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    SpellNoDec(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
     SetInterrupt(TRUE)
 END
 
@@ -3283,7 +3264,7 @@ IF
   Global("MO_CastUnholyWord","LOCALS",1)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+  GlobalGT("MO_UnholyWord","LOCALS",0)
   Alignment(LastSeenBy(Myself),MASK_GOOD)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
@@ -3300,9 +3281,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_UnholyWord","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    SpellNoDec(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
     SetInterrupt(TRUE)
 END
 
@@ -3313,7 +3295,7 @@ IF
   Global("MO_CastUnholyWord","LOCALS",1)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+  GlobalGT("MO_UnholyWord","LOCALS",0)
   Alignment(LastSeenBy(Myself),MASK_GOOD)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
@@ -3330,9 +3312,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_UnholyWord","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    SpellNoDec(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
     SetInterrupt(TRUE)
 END
 
@@ -3343,7 +3326,7 @@ IF
   Global("MO_CastUnholyWord","LOCALS",1)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+  GlobalGT("MO_UnholyWord","LOCALS",0)
   Alignment(LastSeenBy(Myself),MASK_GOOD)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
@@ -3360,9 +3343,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_UnholyWord","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    SpellNoDec(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
     SetInterrupt(TRUE)
 END
 
@@ -3373,7 +3357,7 @@ IF
   Global("MO_CastUnholyWord","LOCALS",1)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+  GlobalGT("MO_UnholyWord","LOCALS",0)
   Alignment(LastSeenBy(Myself),MASK_GOOD)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
@@ -3390,9 +3374,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_UnholyWord","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    SpellNoDec(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
     SetInterrupt(TRUE)
 END
 
@@ -3403,7 +3388,7 @@ IF
   Global("MO_CastUnholyWord","LOCALS",1)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+  GlobalGT("MO_UnholyWord","LOCALS",0)
   Alignment(LastSeenBy(Myself),MASK_GOOD)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
@@ -3420,9 +3405,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_UnholyWord","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
+    SpellNoDec(LastSeenBy(Myself),CLERIC_UNHOLY_WORD)  // SPPR715.SPL (Unholy Word)
     SetInterrupt(TRUE)
 END
 
@@ -3435,7 +3421,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_SHADOW_DOOR)
+  GlobalGT("MO_ShadowDoor","LOCALS",0)
   CheckSpellState(Myself,SI_DIVINATION)
   !StateCheck(Myself,STATE_INVISIBLE)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
@@ -3444,35 +3430,11 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_ShadowDoor","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(Myself,WIZARD_SHADOW_DOOR)
+    SpellNoDec(Myself,WIZARD_SHADOW_DOOR)
     SetInterrupt(TRUE)
-END
-
-/////////////////////////////////////////////////////////////////////
-// Spell: Fire Shield (Blue)
-/////////////////////////////////////////////////////////////////////
-IF
-  OR(2)
-    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  See(NearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_FIRE_SHIELD_BLUE)  // SPWI403.SPL (Fire Shield (Blue))
-  !CheckSpellState(Myself,RED_FIRESHIELD)
-  !CheckSpellState(Myself,BLUE_FIRESHIELD)
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-THEN
-  RESPONSE #50
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
-    Spell(Myself,WIZARD_FIRE_SHIELD_BLUE)  // SPWI403.SPL (Fire Shield (Blue))
-    SetInterrupt(TRUE)
-  RESPONSE #50
-    Continue()
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -3484,42 +3446,17 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   GlobalGT("MO_WondrousRecallCounter","LOCALS",1)
   See(NearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(CLERIC_WONDROUS_RECALL)  // SPPR611.SPL (Wondrous Recall)
+  GlobalGT("MO_WondrousRecall","LOCALS",0)
   CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #50
+    IncrementGlobal("MO_WondrousRecall","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(Myself,CLERIC_WONDROUS_RECALL)  // SPPR611.SPL (Wondrous Recall)
-    SetInterrupt(TRUE)
-  RESPONSE #50
-    Continue()
-END
-
-/////////////////////////////////////////////////////////////////////
-// Spell: Armor of Faith
-/////////////////////////////////////////////////////////////////////
-IF
-  OR(2)
-    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  See(NearestEnemyOfType([GOODCUTOFF]))
-  Range(LastSeenBy(Myself),4)
-  HaveSpell(CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
-  !CheckSpellState(Myself,ARMOR_OF_FAITH)
-  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-THEN
-  RESPONSE #50
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
-    IncrementGlobal("MO_WondrousRecallCounter","LOCALS",1)
-    Spell(Myself,CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+    SpellNoDec(Myself,CLERIC_WONDROUS_RECALL)  // SPPR611.SPL (Wondrous Recall)
     SetInterrupt(TRUE)
   RESPONSE #50
     Continue()
@@ -3533,7 +3470,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See(NearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_LARLOCH_MINOR_DRAIN)
+  GlobalGT("MO_Larloch","LOCALS",0)
   Range(LastSeenBy(Myself),4)
   !Gender(LastSeenBy(Myself),SUMMONED)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
@@ -3552,9 +3489,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Larloch","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
     SetInterrupt(TRUE)
 END
 
@@ -3563,7 +3501,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_LARLOCH_MINOR_DRAIN)
+  GlobalGT("MO_Larloch","LOCALS",0)
   Range(LastSeenBy(Myself),4)
   !Gender(LastSeenBy(Myself),SUMMONED)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
@@ -3582,9 +3520,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Larloch","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
     SetInterrupt(TRUE)
 END
 
@@ -3593,7 +3532,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_LARLOCH_MINOR_DRAIN)
+  GlobalGT("MO_Larloch","LOCALS",0)
   Range(LastSeenBy(Myself),4)
   !Gender(LastSeenBy(Myself),SUMMONED)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
@@ -3612,9 +3551,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Larloch","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
     SetInterrupt(TRUE)
 END
 
@@ -3623,7 +3563,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_LARLOCH_MINOR_DRAIN)
+  GlobalGT("MO_Larloch","LOCALS",0)
   Range(LastSeenBy(Myself),4)
   !Gender(LastSeenBy(Myself),SUMMONED)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
@@ -3642,9 +3582,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Larloch","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
     SetInterrupt(TRUE)
 END
 
@@ -3653,7 +3594,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_LARLOCH_MINOR_DRAIN)
+  GlobalGT("MO_Larloch","LOCALS",0)
   Range(LastSeenBy(Myself),4)
   !Gender(LastSeenBy(Myself),SUMMONED)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
@@ -3672,9 +3613,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Larloch","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
     SetInterrupt(TRUE)
 END
 
@@ -3683,7 +3625,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
-  HaveSpell(WIZARD_LARLOCH_MINOR_DRAIN)
+  GlobalGT("MO_Larloch","LOCALS",0)
   Range(LastSeenBy(Myself),4)
   !Gender(LastSeenBy(Myself),SUMMONED)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
@@ -3702,9 +3644,10 @@ IF
   !StateCheck(Myself,STATE_SILENCED)
 THEN
   RESPONSE #100
+    IncrementGlobal("MO_Larloch","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
     SetInterrupt(TRUE)
 END
 

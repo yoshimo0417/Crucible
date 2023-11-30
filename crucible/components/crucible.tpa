@@ -337,13 +337,13 @@ COPY ~crucible/cre/mobha34.cre~ ~override/mobha34.cre~
   SAY NAME2 @2021
 
 //-------------------------------------------------------------------------
-// Zendrilar (Archlich)
+// Zendrilar (Lich - Cleric/Mage Disabling)
 COPY ~crucible/cre/mobha35.cre~ ~override/mobha35.cre~
   SAY NAME1 @2022
   SAY NAME2 @2022
 
 //-------------------------------------------------------------------------
-// Tagreloth (Lich)
+// Tagreloth (Lich - Mage Offensive)
 COPY ~crucible/cre/mobha36.cre~ ~override/mobha36.cre~
   SAY NAME1 @2023
   SAY NAME2 @2023  
