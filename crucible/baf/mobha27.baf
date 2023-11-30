@@ -85,7 +85,6 @@ THEN
     IncrementGlobal("Remove","LOCALS",-1)
     SetInterrupt(FALSE)
     SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
-    ApplySpell(Myself,WIZARD_INVISIBILITY)
     SetInterrupt(TRUE)
 END
 
@@ -117,7 +116,6 @@ THEN
     IncrementGlobal("Remove","LOCALS",-1)
     SetInterrupt(FALSE)
     SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
-    ApplySpell(Myself,WIZARD_INVISIBILITY)
     SetInterrupt(TRUE)
 END
 
@@ -149,7 +147,6 @@ THEN
     IncrementGlobal("Remove","LOCALS",-1)
     SetInterrupt(FALSE)
     SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
-    ApplySpell(Myself,WIZARD_INVISIBILITY)
     SetInterrupt(TRUE)
 END
 
@@ -181,7 +178,6 @@ THEN
     IncrementGlobal("Remove","LOCALS",-1)
     SetInterrupt(FALSE)
     SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
-    ApplySpell(Myself,WIZARD_INVISIBILITY)
     SetInterrupt(TRUE)
 END
 
@@ -213,7 +209,6 @@ THEN
     IncrementGlobal("Remove","LOCALS",-1)
     SetInterrupt(FALSE)
     SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
-    ApplySpell(Myself,WIZARD_INVISIBILITY)
     SetInterrupt(TRUE)
 END
 
@@ -245,7 +240,6 @@ THEN
     IncrementGlobal("Remove","LOCALS",-1)
     SetInterrupt(FALSE)
     SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
-    ApplySpell(Myself,WIZARD_INVISIBILITY)
     SetInterrupt(TRUE)
 END
 
