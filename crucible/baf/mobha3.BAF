@@ -58,8 +58,10 @@ END
 IF
 	CombatCounter(0)
 	Global("MOBHA3_Enemy","GLOBAL",1)
+	Global("MO_DefeatInitial","MOBHA3",0)
 THEN
 	RESPONSE #100
+		SetGlobal("MO_DefeatInitial","MOBHA3",1)
 		TriggerActivation("TrMOBHA1",TRUE)
 	    TriggerActivation("TrMOBHA2",TRUE)
 	    TriggerActivation("TrMOBHA4",TRUE)
