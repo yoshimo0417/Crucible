@@ -40,7 +40,8 @@ THEN
     ApplySpell(Myself,WIZARD_SPELL_SHIELD)  // SPWI519.SPL (Spell Shield)
     ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
     ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
-    ApplySpell(Myself,WIZARD_PROTECTION_FROM_THE_ELEMENTS)  // SPWI702.SPL (Protection From The Elements))
+    ApplySpell(Myself,WIZARD_PROTECTION_FROM_THE_ELEMENTS)  // SPWI702.SPL (Protection From The Elements)
+    ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
     ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
     ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_DIVINATION)  // SPWI592.SPL (Immunity: Divination)
     ApplySpell(Myself,WIZARD_MIRROR_IMAGE)
@@ -3708,6 +3709,19 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
+// Moving Check
+/////////////////////////////////////////////////////////////////////
+IF
+  Global("MO_IsMoving","LOCALS",1)
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",0)
+END
+
+/////////////////////////////////////////////////////////////////////
 // Find them! (Experimental)
 /////////////////////////////////////////////////////////////////////
 IF
@@ -3716,5 +3730,6 @@ IF
   Allegiance(Myself,ENEMY)
 THEN
   RESPONSE #100
+    SetGlobal("MO_IsMoving","LOCALS",1)
     MoveToObject(LastHeardBy(Myself))
 END
