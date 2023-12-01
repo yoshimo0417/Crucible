@@ -196,7 +196,7 @@ COPY ~crucible/itm/mobha16a.itm~ ~override~  // Long Sword
 COPY ~crucible/itm/mobha16b.itm~ ~override~  // Arrows
 
 //-------------------------------------------------------------------------
-// Deathstalker
+// Mayithra (Deathstalker)
 COPY ~crucible/cre/mobha17.cre~  ~override/mobha17.cre~
   SAY NAME1 @2010
   SAY NAME2 @2010
@@ -204,7 +204,7 @@ COPY ~crucible/cre/mobha17.cre~  ~override/mobha17.cre~
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha17.d~
 
 //-------------------------------------------------------------------------
-// Deathstalker (Initial Discussion)
+// Mayithra (Deathstalker - Initial Discussion)
 COPY ~crucible/cre/mobha17.cre~  ~override/mobha18.cre~
   SAY NAME1 @2010
   SAY NAME2 @2010
@@ -348,6 +348,14 @@ COPY ~crucible/cre/mobha36.cre~ ~override/mobha36.cre~
   SAY NAME1 @2023
   SAY NAME2 @2023  
 
+//-------------------------------------------------------------------------
+// Culdus Aghurath (Deathstalker)
+COPY ~crucible/cre/mobha37.cre~  ~override/mobha37.cre~
+  SAY NAME1 @2024
+  SAY NAME2 @2024
+  WRITE_ASCII 0x2cc ~MOBHA37~ #8 // Dialogue
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha37.d~
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -434,6 +442,7 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha34.baf~ ~override/mobha34.bcs~  // Creature script
      ~crucible/baf/mobha35.baf~ ~override/mobha35.bcs~  // Creature script
      ~crucible/baf/mobha36.baf~ ~override/mobha36.bcs~  // Creature script
+     ~crucible/baf/mobha37.baf~ ~override/mobha37.bcs~  // Creature script
      ~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
      ~crucible/baf/mocut04.baf~ ~override/mocut04.bcs~  // Cutscene script
      ~crucible/baf/mocut05.baf~ ~override/mocut05.bcs~  // Cutscene script
