@@ -30,8 +30,11 @@ END
 
 IF
   !Allegiance(Myself,ENEMY)
-  Global("MOBHA2_Enemy","GLOBAL",1)
   AreaCheck("mobha2")
+  OR(3)
+    AttackedBy([ANYTHING],DEFAULT)
+    Global("MOBHA2_Enemy","GLOBAL",1)
+    TookDamage()
 THEN
   RESPONSE #100
     Enemy()

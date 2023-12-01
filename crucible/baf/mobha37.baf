@@ -13,6 +13,22 @@
 /////////////////////////////////////////////////////////////////////
 IF
   !Allegiance(Myself,ENEMY)
+  AreaCheck("mobha2")
+  OR(3)
+    AttackedBy([ANYTHING],DEFAULT)
+    Global("MOBHA2_Enemy","GLOBAL",1)
+    TookDamage()
+THEN
+  RESPONSE #100
+    Enemy()
+    Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Change Allegiance
+/////////////////////////////////////////////////////////////////////
+IF
+  !Allegiance(Myself,ENEMY)
   Global("MOBHA2_Enemy","GLOBAL",1)
   AreaCheck("mobha2")
 THEN
@@ -47,6 +63,7 @@ THEN
     ApplySpell(Myself,CLERIC_AURA_OF_FLAMING_DEATH)  // SPPR730.SPL (Aura of Flaming Death)
     ApplySpell(Myself,CLERIC_RESIST_FIRE)  // SPPR210.SPL (Resist Fire and Cold)
     ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
+    ApplySpell(Myself,CLERIC_GREATER_SHIELD_OF_LATHANDER)
     ApplySpell(Myself,BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
     SetGlobal("MO_Enrage","LOCALS",1)
 END
