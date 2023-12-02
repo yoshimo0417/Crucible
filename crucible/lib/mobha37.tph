@@ -12,6 +12,5 @@ COPY ~crucible/baf/mobha37.baf~ ~crucible/baf/mobha37.baf~
     string = ~~~~~ApplySpell(Myself,CLERIC_GREATER_SHIELD_OF_LATHANDER)
     ApplySpell(Myself,CLERIC_RECITATION)
     ApplySpell(Myself,CLERIC_PRAYER)
-    ApplySpell(Myself,CLERIC_ENTROPY_SHIELD)
-    ApplySpell(Myself,CLERIC_IMPERVIOUS_SANCTITY_OF_MIND)~~~~~ //"
+    ApplySpell(Myself,CLERIC_ENTROPY_SHIELD)~~~~~ //"
   END

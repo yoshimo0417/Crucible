@@ -18,7 +18,7 @@ IF
   See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
   Global("Prep","LOCALS",0)
-  DifficultyGT(HARD)
+  DifficultyGT(NORMAL)
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_WebCast","LOCALS",60)
@@ -31,12 +31,13 @@ IF
   See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
   Global("Prep","LOCALS",0)
-  DifficultyGT(NORMAL)
+  DifficultyLT(HARD)
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_WebCast","LOCALS",60)
     ReallyForceSpell(Myself,WIZARD_WEB)
     SetGlobal("Prep","LOCALS",1)
+    DestroyItem("mobha23d")
 END
 
 /////////////////////////////////////////////////////////////////////

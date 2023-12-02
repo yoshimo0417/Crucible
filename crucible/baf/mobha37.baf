@@ -5,7 +5,34 @@
 //        Version 1
 // Culdus Aghurath, Fighter(7)->Cleric(26)
 //
-// 
+// Memorized Spells By Level: 12 12 11 12 10 8 3
+// Memorized Spells (number, name, spell level): 
+//
+//  10 armor of faith (1)
+//  1 bless (1)
+//  1 remove fear (1)
+//
+//  11 draw upon holy might (2)
+//  1 resist fire and cold (2)
+//
+//  1 prayer (3)
+//
+//  1 defensive harmony (4)
+//  1 protection from lightning (4)
+//  1 death ward (4)
+//  1 recitation (4)
+//
+//  6 righteous magic (5)
+//  4 true seeing (5)
+//
+//  1 aerial servant (6)
+//  1 entropy shield (6)
+//  1 physical mirror (6)
+//
+//  1 globe of blades (7)
+//  1 shield of the archons (7)
+//  1 greater shield of lathander (7)
+//
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
@@ -60,12 +87,35 @@ THEN
     ApplySpell(Myself,CLERIC_GLOBE_OF_BLADES)
     ApplySpell(Myself,CLERIC_ARMOR_OF_FAITH)
     ApplySpell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
-    ApplySpell(Myself,CLERIC_AURA_OF_FLAMING_DEATH)  // SPPR730.SPL (Aura of Flaming Death)
     ApplySpell(Myself,CLERIC_RESIST_FIRE)  // SPPR210.SPL (Resist Fire and Cold)
     ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
     // IWD Prebuffs
     ApplySpell(Myself,BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
     SetGlobal("MO_Enrage","LOCALS",1)
+    SetGlobal("MO_ArmorFaith","LOCALS",9)
+    SetGlobal("MO_DUHM","LOCALS",10)
+    SetGlobal("MO_TrueSight","LOCALS",3)
+    SetGlobal("MO_RighteousMagic","LOCALS",5)
+END
+
+/////////////////////////////////////////////////////////////////////
+// True Sight Check
+/////////////////////////////////////////////////////////////////////
+IF
+  !GlobalTimerNotExpired("MO_EnemyTrueSightTimer","GLOBAL")
+  Global("MO_EnemyTrueSight","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_EnemyTrueSight","GLOBAL",0)
+END
+
+IF
+  Global("MO_TrueSightActive","LOCALS",1)
+  CheckStat(Myself,0,TRUE_SIGHT)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_TrueSightActive","LOCALS",0)
+    SetGlobal("MO_EnemyTrueSight","GLOBAL",0)
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -98,6 +148,296 @@ THEN
     SetInterrupt(FALSE)
     SpellNoDec(Myself,BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
     SetInterrupt(TRUE)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Spell: Armor of Faith
+/////////////////////////////////////////////////////////////////////
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  Global("MO_Offensive","LOCALS",0)
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  Range(LastSeenBy(Myself),4)
+  GlobalGT("MO_ArmorFaith","LOCALS",0)
+  !CheckSpellState(Myself,ARMOR_OF_FAITH)
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    IncrementGlobal("MO_ArmorFaith","LOCALS",-1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// True Sight
+/////////////////////////////////////////////////////////////////////
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  GlobalGT("MO_TrueSight","LOCALS",0)
+  OR(6)
+    SpellCast([GOODCUTOFF],WIZARD_PROJECT_IMAGE)  // SPWI703.SPL (Project Image)
+    SpellCast([GOODCUTOFF],WIZARD_SIMULACRUM)  // SPWI804.SPL (Simulacrum)
+    SpellCast([GOODCUTOFF],WIZARD_MISLEAD)  // SPWI607.SPL (Mislead)
+    SpellCast([GOODCUTOFF],WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Shadow Door)
+    SpellCast([GOODCUTOFF],WIZARD_IMPROVED_INVISIBILITY)  // SPWI405.SPL (Improved Invisibility)
+    SpellCast([GOODCUTOFF],WIZARD_INVISIBILITY)  // SPWI206.SPL (Invisibility)
+  !CheckSpellState([GOODCUTOFF],SI_DIVINATION)
+  Global("MO_EnemyTrueSight","GLOBAL",0)
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_TrueSight","LOCALS",-1)
+    SetGlobal("MO_TrueSightActive","LOCALS",1)
+    SetGlobal("MO_EnemyTrueSight","GLOBAL",1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EnemyTrueSightTimer","GLOBAL",60)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  GlobalGT("MO_TrueSight","LOCALS",0)
+  Detect([GOODCUTOFF])
+  OR(4)
+    StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+    StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+    CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+    Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !CheckSpellState([GOODCUTOFF],SI_DIVINATION)
+  Global("MO_EnemyTrueSight","GLOBAL",0)
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_TrueSight","LOCALS",-1)
+    SetGlobal("MO_TrueSightActive","LOCALS",1)
+    SetGlobal("MO_EnemyTrueSight","GLOBAL",1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EnemyTrueSightTimer","GLOBAL",60)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  GlobalGT("MO_TrueSight","LOCALS",0)
+  Detect(NearestEnemyOf(Myself))
+  OR(4)
+    StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+    StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+    CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+    Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !CheckSpellState([GOODCUTOFF],SI_DIVINATION)
+  Global("MO_EnemyTrueSight","GLOBAL",0)
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_TrueSight","LOCALS",-1)
+    SetGlobal("MO_TrueSightActive","LOCALS",1)
+    SetGlobal("MO_EnemyTrueSight","GLOBAL",1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EnemyTrueSightTimer","GLOBAL",60)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  GlobalGT("MO_TrueSight","LOCALS",0)
+  Detect(SecondNearestEnemyOf(Myself))
+  OR(4)
+    StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+    StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+    CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+    Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !CheckSpellState([GOODCUTOFF],SI_DIVINATION)
+  Global("MO_EnemyTrueSight","GLOBAL",0)
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_TrueSight","LOCALS",-1)
+    SetGlobal("MO_TrueSightActive","LOCALS",1)
+    SetGlobal("MO_EnemyTrueSight","GLOBAL",1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EnemyTrueSightTimer","GLOBAL",60)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  GlobalGT("MO_TrueSight","LOCALS",0)
+  Detect(ThirdNearestEnemyOf(Myself))
+  OR(4)
+    StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+    StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+    CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+    Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !CheckSpellState([GOODCUTOFF],SI_DIVINATION)
+  Global("MO_EnemyTrueSight","GLOBAL",0)
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_TrueSight","LOCALS",-1)
+    SetGlobal("MO_TrueSightActive","LOCALS",1)
+    SetGlobal("MO_EnemyTrueSight","GLOBAL",1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EnemyTrueSightTimer","GLOBAL",60)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  GlobalGT("MO_TrueSight","LOCALS",0)
+  Detect(FourthNearestEnemyOf(Myself))
+  OR(4)
+    StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+    StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+    CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+    Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !CheckSpellState([GOODCUTOFF],SI_DIVINATION)
+  Global("MO_EnemyTrueSight","GLOBAL",0)
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_TrueSight","LOCALS",-1)
+    SetGlobal("MO_TrueSightActive","LOCALS",1)
+    SetGlobal("MO_EnemyTrueSight","GLOBAL",1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EnemyTrueSightTimer","GLOBAL",60)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  GlobalGT("MO_TrueSight","LOCALS",0)
+  Detect(FifthNearestEnemyOf(Myself))
+  OR(4)
+    StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+    StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+    CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+    Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !CheckSpellState([GOODCUTOFF],SI_DIVINATION)
+  Global("MO_EnemyTrueSight","GLOBAL",0)
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_TrueSight","LOCALS",-1)
+    SetGlobal("MO_TrueSightActive","LOCALS",1)
+    SetGlobal("MO_EnemyTrueSight","GLOBAL",1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EnemyTrueSightTimer","GLOBAL",60)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  GlobalGT("MO_TrueSight","LOCALS",0)
+  Detect(SixthNearestEnemyOf(Myself))
+  OR(4)
+    StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+    StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
+    CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+    Gender(LastSeenBy(Myself),ILLUSIONARY)
+  !CheckSpellState([GOODCUTOFF],SI_DIVINATION)
+  Global("MO_EnemyTrueSight","GLOBAL",0)
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_TrueSight","LOCALS",-1)
+    SetGlobal("MO_TrueSightActive","LOCALS",1)
+    SetGlobal("MO_EnemyTrueSight","GLOBAL",1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EnemyTrueSightTimer","GLOBAL",60)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (True Seeing)
+    SetInterrupt(TRUE)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Spell: Draw Upon Holy Might
+/////////////////////////////////////////////////////////////////////
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  Global("MO_Offensive","LOCALS",0)
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  Range(LastSeenBy(Myself),4)
+  GlobalGT("MO_DUHM","LOCALS",0)
+  !StateCheck(Myself,STATE_DRAWUPONHOLYMIGHT)
+  CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    IncrementGlobal("MO_DUHM","LOCALS",-1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
 END
 
 /////////////////////////////////////////////////////////////////////
