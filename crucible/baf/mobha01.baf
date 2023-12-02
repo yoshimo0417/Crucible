@@ -64,7 +64,8 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
-    SetGlobal("MO_GWW","LOCALS",2)
+    ApplySpell(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetGlobal("MO_GWW","LOCALS",1)
     //GiveItemCreate("POTN55",Myself,5,0,0)     // potn extra healing
     GiveItemCreate("POTN07",Myself,1,0,0)     // potn storm giant
     UseItem("POTN07",Myself)
