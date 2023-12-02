@@ -63,7 +63,7 @@ THEN
     ApplySpell(Myself,CLERIC_AURA_OF_FLAMING_DEATH)  // SPPR730.SPL (Aura of Flaming Death)
     ApplySpell(Myself,CLERIC_RESIST_FIRE)  // SPPR210.SPL (Resist Fire and Cold)
     ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
-    //ApplySpell(Myself,CLERIC_GREATER_SHIELD_OF_LATHANDER)
+    // IWD Prebuffs
     ApplySpell(Myself,BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
     SetGlobal("MO_Enrage","LOCALS",1)
 END

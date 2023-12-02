@@ -28,6 +28,7 @@ THEN
     ApplySpell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
     ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
     RemoveSpell(WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
+    // IWD Prebuffs
     SetGlobal("Prep","LOCALS",1)
     SetGlobal("MO_TimeStop","LOCALS",1)
     EquipRanged()
@@ -49,6 +50,7 @@ THEN
     ApplySpell(Myself,WIZARD_HASTE)  // SPWI305.SPL (Haste)
     ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)
     RemoveSpell(WIZARD_MANTLE)
+    // IWD Prebuffs
     SetGlobal("Prep","LOCALS",1)
     SetGlobal("MO_TimeStop","LOCALS",1)
     EquipRanged()

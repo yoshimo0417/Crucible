@@ -81,6 +81,7 @@ THEN
     SetGlobal("Prep","LOCALS",1)
     SetGlobalTimer("MO_VengeanceStormTimer","LOCALS",12)
     ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)
+    // IWD Prebuffs
     ApplySpell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
     ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
 END
@@ -94,6 +95,7 @@ THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     ApplySpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+    // IWD Prebuffs
     ApplySpell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
     ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
 END
@@ -140,6 +142,8 @@ THEN
     SetGlobal("MO_SpellCast","LOCALS",0)
     Continue()
 END
+
+// IWD Casting
 
 /////////////////////////////////////////////////////////////////////
 // Spell: Shield of the Archons

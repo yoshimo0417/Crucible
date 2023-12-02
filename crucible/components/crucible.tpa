@@ -389,6 +389,14 @@ COPY_EXISTING ~CUT248A.BCS~ ~override~
     END
 BUT_ONLY
 
+//-------------------------------------------------------------------------
+// Add in IWD spells to scripts
+ACTION_IF iwd_divine BEGIN
+  INCLUDE ~crucible/lib/mobha17.tph~  // Mayithra
+  INCLUDE ~crucible/lib/mobha23.tph~  // Belchaad
+  INCLUDE ~crucible/lib/mobha37.tph~  // Culdus Aghurath
+END
+
 COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha1a.baf~ ~override/mobha1a.bcs~  // Area script
      ~crucible/baf/mobha1b.baf~ ~override/mobha1b.bcs~  // Area script

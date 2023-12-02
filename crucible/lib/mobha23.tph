@@ -1,0 +1,48 @@
+COPY ~crucible/baf/mobha23.baf~ ~crucible/baf/mobha23.baf~
+
+///////////////////////////////////////////////////////////////////////////
+// Update Prebuffs                                                       //
+///////////////////////////////////////////////////////////////////////////
+  LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~// IWD Prebuffs~~~~~
+    string = ~~~~~ApplySpell(Myself,CLERIC_RECITATION)
+    ApplySpell(Myself,CLERIC_PRAYER)
+    ApplySpell(Myself,CLERIC_ENTROPY_SHIELD)
+    ApplySpell(Myself,CLERIC_IMPERVIOUS_SANCTITY_OF_MIND)~~~~~ //"
+  END
+
+///////////////////////////////////////////////////////////////////////////
+// Update Casting                                                        //
+///////////////////////////////////////////////////////////////////////////
+  LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~// IWD Casting~~~~~
+    string = ~~~~~IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_LathanderTimer","LOCALS")
+  See([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+  TookDamage()
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #80
+    SetGlobal("MO_SpellCast","LOCALS",1)
+    SetGlobalTimer("MO_LathanderTimer","LOCALS",12)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(Myself,CLERIC_GREATER_SHIELD_OF_LATHANDER)
+    SetInterrupt(TRUE)
+  RESPONSE #20
+    Continue()
+END~~~~~ //"
+  END

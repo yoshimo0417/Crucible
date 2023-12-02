@@ -36,10 +36,10 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
 // Detect third-party mods                                               //
 ///////////////////////////////////////////////////////////////////////////
 // Detect IWD Spells - IWDification
-   ACTION_IF MOD_IS_INSTALLED ~iwdification/setup-iwdification.tp2~ 30 && MOD_IS_INSTALLED ~iwdification/setup-iwdification.tp2~ 40 BEGIN
-      OUTER_SET iwdification=1
+   ACTION_IF MOD_IS_INSTALLED MOD_IS_INSTALLED ~iwdification/setup-iwdification.tp2~ 40 OR MOD_IS_INSTALLED ~setup-stratagems.tp2~ ~1510~ BEGIN
+      OUTER_SET iwd_divine=1
    END ELSE BEGIN
-      OUTER_SET iwdification=0
+      OUTER_SET iwd_divine=0
    END
 
    // Detect Sword Coast Stratagems - Initialize AI
