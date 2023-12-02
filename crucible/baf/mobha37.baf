@@ -159,7 +159,6 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_Offensive","LOCALS",0)
   See(NearestEnemyOfType([GOODCUTOFF]))
-  Range(LastSeenBy(Myself),4)
   GlobalGT("MO_ArmorFaith","LOCALS",0)
   !CheckSpellState(Myself,ARMOR_OF_FAITH)
   CheckStatLT(Myself,20,SPELLFAILUREPRIEST)
@@ -167,13 +166,13 @@ IF
   !StateCheck(Myself,STATE_POISONED)
   !StateCheck(Myself,STATE_SILENCED)
 THEN
-  RESPONSE #50
+  RESPONSE #70
     IncrementGlobal("MO_ArmorFaith","LOCALS",-1)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
     SpellNoDec(Myself,CLERIC_ARMOR_OF_FAITH)  // SPPR111.SPL (Armor of Faith)
     SetInterrupt(TRUE)
-  RESPONSE #50
+  RESPONSE #30
     Continue()
 END
 
