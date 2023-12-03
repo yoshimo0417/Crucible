@@ -51,18 +51,18 @@ APPEND ~FOGAREA.2da~ ~MOBHA1  0.80  75  58  62   95   44  53   75   25~
 UNLESS ~MOBHA1~
 
 //-------------------------------------------------------------------------
-// Deathbringer (Halberd)
+// Kedron (Deathbringer - Halberd)
 COPY ~crucible/cre/mobha01.cre~ ~override/mobha01.cre~
-  SAY NAME1 @2000
-  SAY NAME2 @2000
-  WRITE_ASCII 0x2cc ~MOBHA01~ #8 // Dialogue
-COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha01.d~
+  SAY NAME1 @2026
+  SAY NAME2 @2026
 
 //-------------------------------------------------------------------------
-// Deathbringer (2h Sword)
+// Ferrante (Deathbringer - 2h Sword)
 COPY ~crucible/cre/mobha02.cre~ ~override/mobha02.cre~
-  SAY NAME1 @2000
-  SAY NAME2 @2000
+  SAY NAME1 @2025
+  SAY NAME2 @2025
+  WRITE_ASCII 0x2cc ~MOBHA01~ #8 // Dialogue (was originally for Halberd version but switching for diversification)
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha01.d~
 
 //-------------------------------------------------------------------------
 // Entropic Reaper - Animations provided by Acifer, THANK YOU!
@@ -331,7 +331,7 @@ END ELSE BEGIN
 END
 
 //-------------------------------------------------------------------------
-// Guardian (Melee)
+// Zealot (Melee)
 COPY ~crucible/cre/mobha34.cre~ ~override/mobha34.cre~
   SAY NAME1 @2021
   SAY NAME2 @2021
@@ -355,6 +355,13 @@ COPY ~crucible/cre/mobha37.cre~  ~override/mobha37.cre~
   SAY NAME2 @2024
   WRITE_ASCII 0x2cc ~MOBHA37~ #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha37.d~
+
+//-------------------------------------------------------------------------
+// Adrielle (Archer)
+COPY ~crucible/cre/mobha38.cre~  ~override/mobha38.cre~
+  SAY NAME1 @2027
+  SAY NAME2 @2027
+COPY ~crucible/itm/mobha38a.itm~ ~override~  // Quiver of Plenty +3
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
@@ -451,6 +458,7 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha35.baf~ ~override/mobha35.bcs~  // Creature script
      ~crucible/baf/mobha36.baf~ ~override/mobha36.bcs~  // Creature script
      ~crucible/baf/mobha37.baf~ ~override/mobha37.bcs~  // Creature script
+     ~crucible/baf/mobha38.baf~ ~override/mobha38.bcs~  // Creature script
      ~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
      ~crucible/baf/mocut04.baf~ ~override/mocut04.bcs~  // Cutscene script
      ~crucible/baf/mocut05.baf~ ~override/mocut05.bcs~  // Cutscene script

@@ -27,12 +27,40 @@ IF
   Global("Prep","LOCALS",0)
   See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
+  DifficultyGT(HARD)
+THEN
+  RESPONSE #100
+    ApplySpell(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetGlobal("Prep","LOCALS",1)
+    SetGlobal("MO_GWW","LOCALS",1)
+    GiveItemCreate("POTN04",Myself,1,0,0)     // potn frost giant
+    UseItem("POTN04",Myself)
+END
+
+IF
+  Global("Prep","LOCALS",0)
+  See([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+  OR(2)
+    Difficulty(HARD)
+    Difficulty(NORMAL)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     SetGlobal("MO_GWW","LOCALS",1)
     GiveItemCreate("POTN04",Myself,1,0,0)     // potn frost giant
     UseItem("POTN04",Myself)
+END
+
+IF
+  Global("Prep","LOCALS",0)
+  See([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+  DifficultyLT(NORMAL)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    SetGlobal("MO_GWW","LOCALS",1)
 END
 
 /////////////////////////////////////////////////////////////////////
