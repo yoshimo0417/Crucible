@@ -90,6 +90,8 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(MostDamagedOf([PC]))
+  DifficultyGT(NORMAL)
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
@@ -113,6 +115,8 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(WorstAC([PC]))
+  DifficultyGT(NORMAL)
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
@@ -136,6 +140,8 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(NearestEnemyOfType([GOODCUTOFF]))
+  DifficultyGT(NORMAL)
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
@@ -159,6 +165,8 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  DifficultyGT(NORMAL)
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
@@ -182,6 +190,8 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  DifficultyGT(NORMAL)
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
@@ -205,6 +215,8 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  DifficultyGT(NORMAL)
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
@@ -228,6 +240,8 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  DifficultyGT(NORMAL)
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
@@ -251,6 +265,8 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  DifficultyGT(NORMAL)
+  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
   !CheckStat(Myself,5,NUMBEROFATTACKS)
