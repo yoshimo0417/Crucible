@@ -33,7 +33,8 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
-    ApplySpell(Myself,WIZARD_MISLEAD) 
+    SetGlobalTimer("MO_MisleadTimer","LOCALS",10)
+    ApplySpell(Myself,WIZARD_MISLEAD)
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -55,7 +56,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_MisleadTimer","LOCALS",10)
     SetInterrupt(FALSE)
-    ReallyForceSpell(Myself,WIZARD_MISLEAD)
+    ApplySpell(Myself,WIZARD_MISLEAD)
     SetInterrupt(TRUE)
 END
 
