@@ -29,6 +29,10 @@ LAF detectable_spells END
 LAF HANDLE_AUDIO END
 
 //-------------------------------------------------------------------------
+// Add music into the game
+INCLUDE ~crucible/lib/add_area_music.tph~
+
+//-------------------------------------------------------------------------
 // Awesome BAM images courtesy of Acifer
 COPY ~crucible/bam_desc/MOBHABLD.bam~ ~override~
  LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
