@@ -362,6 +362,8 @@ COPY ~crucible/cre/mobha38.cre~  ~override/mobha38.cre~
   SAY NAME1 @2027
   SAY NAME2 @2027
 COPY ~crucible/itm/mobha38a.itm~ ~override~  // Quiver of Plenty +3
+  SAY NAME2 @10004
+  SAY DESC  @10005
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
