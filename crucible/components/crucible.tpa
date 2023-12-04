@@ -452,6 +452,7 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha1m.baf~ ~override/mobha1m.bcs~  // Area script
      ~crucible/baf/mobha1n.baf~ ~override/mobha1n.bcs~  // Area script
      ~crucible/baf/mobha1o.baf~ ~override/mobha1o.bcs~  // Area script
+     ~crucible/baf/mobha2.baf~  ~override/mobha2.bcs~   // Area script
      ~crucible/baf/mobha2a.baf~ ~override/mobha2a.bcs~  // Area script
      ~crucible/baf/mobha2b.baf~ ~override/mobha2b.bcs~  // Area script
      ~crucible/baf/mobha3.baf~  ~override/mobha3.bcs~   // Area script
@@ -491,6 +492,7 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha36.baf~ ~override/mobha36.bcs~  // Creature script
      ~crucible/baf/mobha37.baf~ ~override/mobha37.bcs~  // Creature script
      ~crucible/baf/mobha38.baf~ ~override/mobha38.bcs~  // Creature script
+     ~crucible/baf/mobha39.baf~ ~override/mobha39.bcs~  // Creature script
      ~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
      ~crucible/baf/mocut04.baf~ ~override/mocut04.bcs~  // Cutscene script
      ~crucible/baf/mocut05.baf~ ~override/mocut05.bcs~  // Cutscene script

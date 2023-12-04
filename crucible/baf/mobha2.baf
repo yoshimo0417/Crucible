@@ -1,0 +1,20 @@
+IF
+	OR(2)
+		!CombatCounter(0)
+		Global("MOBHA2_Enemy","GLOBAL",1)
+	Global("MO_LockDoors","MOBHA2",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_LockDoors","MOBHA2",1)
+		TriggerActivation("TrMOBHA3",FALSE)
+END
+
+IF
+	CombatCounter(0)
+	Global("MOBHA2_Enemy","GLOBAL",1)
+	Global("MO_DefeatInitial","MOBHA2",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_DefeatInitial","MOBHA2",1)
+		TriggerActivation("TrMOBHA3",TRUE)
+END

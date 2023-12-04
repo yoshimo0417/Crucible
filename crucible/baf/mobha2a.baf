@@ -1,10 +1,20 @@
 IF
 	Clicked([ANYONE])
+	CombatCounter(0)
 	Range(LastTrigger,9)
 THEN
 	RESPONSE #100
 		ClearAllActions()
 		CreateCreature("mobha33",[645.357],S)
+END
+
+IF
+	Clicked([ANYONE])
+	!CombatCounter(0)
+	Range(LastTrigger,9)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@5011)  // You cannot use this while in combat.
 END
 
 IF
