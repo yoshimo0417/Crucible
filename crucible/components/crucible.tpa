@@ -394,6 +394,7 @@ COPY ~crucible/cre/mobha39.cre~ ~override~  // Displacer Beast
   SAY NAME1 @2028
   SAY NAME2 @2028
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DISPLACER_BEAST~))
+COPY ~crucible/itm/mobha39a.itm~ ~override~  // Claws
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
