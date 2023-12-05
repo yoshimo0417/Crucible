@@ -397,6 +397,12 @@ COPY ~crucible/cre/mobha39.cre~ ~override~  // Displacer Beast
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DISPLACER_BEAST~))
 COPY ~crucible/itm/mobha39a.itm~ ~override~  // Claws
 
+//-------------------------------------------------------------------------
+// Seskel Lynx (Blade)
+COPY ~crucible/cre/mobha40.cre~  ~override/mobha40.cre~
+  SAY NAME1 @2029
+  SAY NAME2 @2029
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////

@@ -1,11 +1,13 @@
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
-//            Macula
+//            Seskel Lynx
 /////////////////////////////////////////////////////////////////////
 //        Version 1
-// Macula, xth level Displacer Beast
+// Seskel Lynx, 34th level Blade
 //
-// 
+// Memorized Mage Spells By Level: 5 5 5 5 5 4
+// Memorized Mage Spells (number, name, spell level): 
+//  5 magic missile (1)
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
@@ -33,30 +35,8 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
-    ApplySpell(Myself,WIZARD_MISLEAD) 
-END
-
-/////////////////////////////////////////////////////////////////////
-// Spell: Wizard Mislead
-/////////////////////////////////////////////////////////////////////
-IF
-  OR(2)
-    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING) 
-  !GlobalTimerNotExpired("MO_MisleadTimer","LOCALS")
-  See([GOODCUTOFF])
-  !CheckStatGT(Myself,0,WIZARD_MISLEAD)
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetGlobalTimer("MO_MisleadTimer","LOCALS",10)
-    SetInterrupt(FALSE)
-    ReallyForceSpell(Myself,WIZARD_MISLEAD)
-    SetInterrupt(TRUE)
+    // Lvl 1
+    SetGlobal("Missile","LOCALS",6)
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -153,7 +133,7 @@ IF
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
@@ -170,7 +150,7 @@ IF
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
@@ -187,7 +167,7 @@ IF
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
@@ -204,7 +184,7 @@ IF
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
@@ -221,7 +201,7 @@ IF
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
@@ -238,7 +218,7 @@ IF
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)

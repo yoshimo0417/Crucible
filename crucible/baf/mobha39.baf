@@ -3,7 +3,7 @@
 //            Macula
 /////////////////////////////////////////////////////////////////////
 //        Version 1
-// Macula, xth level Displacer Beast
+// Macula, 12th level Displacer Beast
 //
 // 
 /////////////////////////////////////////////////////////////////////
@@ -46,6 +46,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING) 
   !GlobalTimerNotExpired("MO_MisleadTimer","LOCALS")
   See([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
   !CheckStatGT(Myself,0,WIZARD_MISLEAD)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
