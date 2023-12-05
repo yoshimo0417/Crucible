@@ -553,7 +553,9 @@ END
 IF
   !Detect([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
-  Global("Prep","LOCALS",1)
+  OR(2)
+    Global("Prep","LOCALS",1)
+    TookDamage()
   Global("MO_IsMoving","LOCALS",0)
 THEN
   RESPONSE #100
