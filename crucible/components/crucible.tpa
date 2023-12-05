@@ -363,6 +363,7 @@ COPY ~crucible/cre/mobha37.cre~  ~override/mobha37.cre~
   SAY NAME2 @2024
   WRITE_ASCII 0x2cc ~MOBHA37~ #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha37.d~
+COPY ~crucible/itm/mobha37a.itm~ ~override~  // Warhammer +5
 
 //-------------------------------------------------------------------------
 // Adrielle (Archer)
