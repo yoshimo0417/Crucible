@@ -24,6 +24,7 @@ END
 /////////////////////////////////////////////////////////////////////
 IF
   Global("Prep","LOCALS",0)
+  See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
   DifficultyGT(HARD)
 THEN
@@ -35,6 +36,7 @@ END
 
 IF
   Global("Prep","LOCALS",0)
+  See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
   DifficultyLT(HARDEST)
 THEN
@@ -809,6 +811,8 @@ END
 IF
   !Detect([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
+  Global("Prep","LOCALS",1)
+  Global("MO_IsMoving","LOCALS",0)
 THEN
   RESPONSE #100
     SetGlobal("MO_IsMoving","LOCALS",1)
