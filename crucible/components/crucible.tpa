@@ -403,6 +403,12 @@ COPY ~crucible/cre/mobha40.cre~  ~override/mobha40.cre~
   SAY NAME1 @2029
   SAY NAME2 @2029
 
+//-------------------------------------------------------------------------
+// Hebkya Nox (Blackguard)
+COPY ~crucible/cre/mobha41.cre~  ~override/mobha41.cre~
+  SAY NAME1 @2030
+  SAY NAME2 @2030
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -502,6 +508,7 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha38.baf~ ~override/mobha38.bcs~  // Creature script
      ~crucible/baf/mobha39.baf~ ~override/mobha39.bcs~  // Creature script
      ~crucible/baf/mobha40.baf~ ~override/mobha40.bcs~  // Creature script
+     ~crucible/baf/mobha41.baf~ ~override/mobha41.bcs~  // Creature script
      ~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
      ~crucible/baf/mocut04.baf~ ~override/mocut04.bcs~  // Cutscene script
      ~crucible/baf/mocut05.baf~ ~override/mocut05.bcs~  // Cutscene script
