@@ -1,3 +1,4 @@
+/*
 IF
 	OR(2)
 		!CombatCounter(0)
@@ -17,4 +18,26 @@ THEN
 	RESPONSE #100
 		SetGlobal("MO_DefeatInitial","MOBHA2",1)
 		TriggerActivation("TrMOBHA3",TRUE)
+END
+*/
+
+/////////////////////////////////////////////////////////////////////
+// Block Exit
+/////////////////////////////////////////////////////////////////////
+IF
+    Global("Enteredmobha2","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Enteredmobha2","GLOBAL",1)
+        TriggerActivation("TrMOBHA3",FALSE)
+END
+
+IF
+  Dead("mobha37")
+  CombatCounter(0)
+  Global("DoorOpenmobha2","mobha2",0)
+THEN 
+    RESPONSE #100
+      TriggerActivation("TrMOBHA3",TRUE)
+      SetGlobal("DoorOpenmobha2","mobha2",1)
 END

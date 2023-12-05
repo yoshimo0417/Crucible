@@ -20,6 +20,7 @@ IF
 THEN
   RESPONSE #100
     Enemy()
+    SetGlobal("MOBHA2_Enemy","GLOBAL",1)
     Continue()
 END
 

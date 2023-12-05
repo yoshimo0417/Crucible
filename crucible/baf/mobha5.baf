@@ -50,3 +50,26 @@ THEN
 		SetRestEncounterProbabilityNight(10)
 		SetGlobal("MO_RestEncounter","MOBHA5",4) 
 END
+
+/////////////////////////////////////////////////////////////////////
+// Block Exit
+/////////////////////////////////////////////////////////////////////
+IF
+    Global("Enteredmobha5","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Enteredmobha5","GLOBAL",1)
+        TriggerActivation("TrMOBHA1",FALSE)
+        TriggerActivation("TrMOBHA6",FALSE)
+END
+
+IF
+  Dead("mobha20")
+  CombatCounter(0)
+  Global("DoorOpenmobha5","mobha5",0)
+THEN 
+    RESPONSE #100
+      TriggerActivation("TrMOBHA1",TRUE)
+        TriggerActivation("TrMOBHA6",TRUE)
+      SetGlobal("DoorOpenmobha5","mobha5",1)
+END

@@ -48,6 +48,7 @@ IF
 THEN
   RESPONSE #100
     Enemy()
+    SetGlobal("MOBHA2_Enemy","GLOBAL",1)
     Continue()
 END
 
@@ -710,13 +711,12 @@ END
 // Find them! (Experimental)
 /////////////////////////////////////////////////////////////////////
 IF
-  Heard([ENEMY],125)
   !Detect([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
 THEN
   RESPONSE #100
     SetGlobal("MO_IsMoving","LOCALS",1)
-    MoveToObject(LastHeardBy(Myself))
+    MoveToObject(Player1)
 END
 
 IF
