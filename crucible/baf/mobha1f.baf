@@ -28,7 +28,7 @@ END
 IF
 	IsOverMe([GOODCUTOFF])
 	Global("MO_Spawn06","MOBHA1",0)
-	GlobalGT(HARD)
+	DifficultyGT(HARD)
 THEN
 	RESPONSE #100
 		SetGlobal("MO_Spawn06","MOBHA1",1)
@@ -42,7 +42,7 @@ END
 IF
 	IsOverMe([GOODCUTOFF])
 	Global("MO_Spawn06","MOBHA1",0)
-	GlobalLT(HARDEST)
+	DifficultyLT(HARDEST)
 THEN
 	RESPONSE #100
 		SetGlobal("MO_Spawn06","MOBHA1",1)
