@@ -151,6 +151,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(NearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -168,6 +169,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -185,6 +187,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -202,6 +205,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -219,6 +223,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -236,6 +241,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)

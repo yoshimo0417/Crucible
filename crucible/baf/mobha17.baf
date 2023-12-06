@@ -15,7 +15,7 @@ IF
   See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
     CreateCreatureEffect("MELSUM02","SPRAISED",[863.1519],S)  // Bone Fiend
@@ -39,18 +39,17 @@ IF
   See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
-  DifficultyLT(HARD)
+  DifficultyLT(HARDEST)
 THEN
   RESPONSE #100
-    CreateCreatureEffect("skelwa01","SPRAISED",[863.1519],S)  // Stone Golem
-    CreateCreatureEffect("skelwa01","SPRAISED",[927.1495],S)  // Stone Golem
+    CreateCreatureEffect("skelwa01","SPRAISED",[863.1519],S)  // Skeleton Warrior
+    CreateCreatureEffect("skelwa01","SPRAISED",[927.1495],S)  // Skeleton Warrior
     ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
     ApplySpell(Myself,WIZARD_MANTLE)
     ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
     ApplySpell(Myself,WIZARD_HASTE)  // SPWI305.SPL (Haste)
     ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)
     RemoveSpell(WIZARD_MANTLE)
-    // IWD Prebuffs
     SetGlobal("Prep","LOCALS",1)
     SetGlobal("MO_TimeStop","LOCALS",1)
     EquipRanged()
@@ -64,7 +63,7 @@ IF
   Global("Prep","LOCALS",1)
   Global("MO_Cont","LOCALS",0)
   Allegiance(Myself,ENEMY)
-  DifficultyGT(EASY)
+  DifficultyGT(NORMAL)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
@@ -3133,6 +3132,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(MostDamagedOf([PC]))
   Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -3150,6 +3150,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(WorstAC([PC]))
   Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -3167,6 +3168,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(NearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -3185,6 +3187,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -3203,6 +3206,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -3221,6 +3225,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -3239,6 +3244,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -3257,6 +3263,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)

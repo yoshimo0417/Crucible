@@ -340,6 +340,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(NearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -356,6 +357,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -372,6 +374,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -388,6 +391,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -404,6 +408,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -420,6 +425,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)

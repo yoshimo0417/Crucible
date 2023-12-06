@@ -27,46 +27,7 @@ IF
   Global("Prep","LOCALS",0)
   See(NearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
-  RandomNum(3,1)
-THEN
-  RESPONSE #100
-    SetGlobal("Prep","LOCALS",1)
-    ApplySpell(Myself,WIZARD_STONE_SKIN)
-    ApplySpell(Myself,WIZARD_MIRROR_IMAGE)
-    ApplySpell(Myself,WIZARD_FIRE_SHIELD_RED)
-    ApplySpell(Myself,WIZARD_TRUE_SIGHT)
-    ApplySpell(Myself,WIZARD_IMPROVED_HASTE)
-    ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-    ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
-    ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)
-    SetGlobal("MO_DeathKnightFireballCast","LOCALS",0)
-    Continue()
-END
-
-IF
-  Global("Prep","LOCALS",0)
-  See(NearestEnemyOfType([GOODCUTOFF]))
-  Allegiance(Myself,ENEMY)
-  RandomNum(3,2)
-THEN
-  RESPONSE #100
-    SetGlobal("Prep","LOCALS",1)
-    ApplySpell(Myself,WIZARD_STONE_SKIN)
-    ApplySpell(Myself,WIZARD_MIRROR_IMAGE)
-    ApplySpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
-    ApplySpell(Myself,WIZARD_TRUE_SIGHT)
-    ApplySpell(Myself,WIZARD_IMPROVED_HASTE)
-    ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
-    ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
-    ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)
-    SetGlobal("MO_DeathKnightFireballCast","LOCALS",0)
-    Continue()
-END
-
-IF
-  Global("Prep","LOCALS",0)
-  See(NearestEnemyOfType([GOODCUTOFF]))
-  Allegiance(Myself,ENEMY)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
@@ -79,6 +40,27 @@ THEN
     ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
     ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)
     SetGlobal("MO_DeathKnightFireballCast","LOCALS",0)
+    XEquipItem("SW2H18",Myself,SLOT_WEAPON0,EQUIP)
+    Continue()
+END
+
+IF
+  Global("Prep","LOCALS",0)
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  DifficultyLT(HARDEST)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    ApplySpell(Myself,WIZARD_STONE_SKIN)
+    ApplySpell(Myself,WIZARD_MIRROR_IMAGE)
+    ApplySpell(Myself,WIZARD_FIRE_SHIELD_RED)
+    ApplySpell(Myself,WIZARD_TRUE_SIGHT)
+    ApplySpell(Myself,WIZARD_IMPROVED_HASTE)
+    ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)
+    ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)
+    SetGlobal("MO_DeathKnightFireballCast","LOCALS",0)
+    XEquipItem("SW2H17",Myself,SLOT_WEAPON1,EQUIP)
     Continue()
 END
 
@@ -1834,6 +1816,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(NearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -1850,6 +1833,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -1866,6 +1850,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -1882,6 +1867,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -1898,6 +1884,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -1914,6 +1901,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)

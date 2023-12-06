@@ -250,9 +250,10 @@ END
 /////////////////////////////////////////////////////////////////////
 // Dispelling Arrows
 /////////////////////////////////////////////////////////////////////
+/*
 IF
   HasItem("AROW07",Myself)  // Arrow of Dispelling
-  DifficultyGT(EASY)
+  DifficultyGT(HARD)
   !Range(NearestEnemyOf(Myself),5)
   See(Player1)
   Allegiance(Myself,ENEMY)
@@ -287,7 +288,7 @@ END
 
 IF
   HasItem("AROW07",Myself)  // Arrow of Dispelling
-  DifficultyGT(EASY)
+  DifficultyGT(HARD)
   !Range(NearestEnemyOf(Myself),5)
   See(Player2)
   Allegiance(Myself,ENEMY)
@@ -322,7 +323,7 @@ END
 
 IF
   HasItem("AROW07",Myself)  // Arrow of Dispelling
-  DifficultyGT(EASY)
+  DifficultyGT(HARD)
   !Range(NearestEnemyOf(Myself),5)
   See(Player3)
   Allegiance(Myself,ENEMY)
@@ -357,7 +358,7 @@ END
 
 IF
   HasItem("AROW07",Myself)  // Arrow of Dispelling
-  DifficultyGT(EASY)
+  DifficultyGT(HARD)
   !Range(NearestEnemyOf(Myself),5)
   See(Player4)
   Allegiance(Myself,ENEMY)
@@ -392,7 +393,7 @@ END
 
 IF
   HasItem("AROW07",Myself)  // Arrow of Dispelling
-  DifficultyGT(EASY)
+  DifficultyGT(HARD)
   !Range(NearestEnemyOf(Myself),5)
   See(Player5)
   Allegiance(Myself,ENEMY)
@@ -427,7 +428,7 @@ END
 
 IF
   HasItem("AROW07",Myself)  // Arrow of Dispelling
-  DifficultyGT(EASY)
+  DifficultyGT(HARD)
   !Range(NearestEnemyOf(Myself),5)
   See(Player6)
   Allegiance(Myself,ENEMY)
@@ -459,6 +460,7 @@ THEN
     SelectWeaponAbility(SLOT_AMMO2,0)
     AttackReevaluate(LastSeenBy(Myself),15)
 END
+*/
 
 /////////////////////////////////////////////////////////////////////
 // Enemy Distance Check
@@ -579,6 +581,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(MostDamagedOf([PC]))
   Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -597,6 +600,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(WorstAC([PC]))
   Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -615,6 +619,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(NearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -634,6 +639,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -653,6 +659,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -672,6 +679,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -691,6 +699,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -710,6 +719,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)

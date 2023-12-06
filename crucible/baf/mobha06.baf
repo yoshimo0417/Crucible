@@ -41,26 +41,10 @@ IF
   Global("Prep","LOCALS",0)
   See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
-  OR(2)
-    Difficulty(HARD)
-    Difficulty(NORMAL)
+  DifficultyLT(HARDEST)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
-    SetGlobal("MO_GWW","LOCALS",1)
-    GiveItemCreate("POTN04",Myself,1,0,0)     // potn frost giant
-    UseItem("POTN04",Myself)
-END
-
-IF
-  Global("Prep","LOCALS",0)
-  See([GOODCUTOFF])
-  Allegiance(Myself,ENEMY)
-  DifficultyLT(NORMAL)
-THEN
-  RESPONSE #100
-    SetGlobal("Prep","LOCALS",1)
-    SetGlobal("MO_GWW","LOCALS",1)
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -369,6 +353,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -386,6 +371,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -403,6 +389,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -420,6 +407,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -437,6 +425,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
@@ -454,6 +443,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)

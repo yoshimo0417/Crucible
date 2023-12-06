@@ -26,7 +26,7 @@ IF
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
   See([GOODCUTOFF])
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
@@ -40,7 +40,7 @@ IF
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
   See([GOODCUTOFF])
-  DifficultyLT(HARD)
+  DifficultyLT(HARDEST)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
@@ -67,40 +67,11 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
-// Planeshift
-/////////////////////////////////////////////////////////////////////
-/*
-IF
-  See(NearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
-  !GlobalTimerNotExpired("MO_PhaseTimer","LOCALS")
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_PhaseTimer","LOCALS",6)
-    ForceSpell(Player1,PHASE_SPIDER_TELEPORT)  // SPWI994.SPL (Dimension Door)
-  RESPONSE #100
-    SetGlobalTimer("MO_PhaseTimer","LOCALS",6)
-    ForceSpell(Player2,PHASE_SPIDER_TELEPORT)  // SPWI994.SPL (Dimension Door)
-  RESPONSE #100
-    SetGlobalTimer("MO_PhaseTimer","LOCALS",6)
-    ForceSpell(Player3,PHASE_SPIDER_TELEPORT)  // SPWI994.SPL (Dimension Door)
-  RESPONSE #100
-    SetGlobalTimer("MO_PhaseTimer","LOCALS",6)
-    ForceSpell(Player4,PHASE_SPIDER_TELEPORT)  // SPWI994.SPL (Dimension Door)
-  RESPONSE #100
-    SetGlobalTimer("MO_PhaseTimer","LOCALS",6)
-    ForceSpell(Player5,PHASE_SPIDER_TELEPORT)  // SPWI994.SPL (Dimension Door)
-  RESPONSE #100
-    SetGlobalTimer("MO_PhaseTimer","LOCALS",6)
-    ForceSpell(Player6,PHASE_SPIDER_TELEPORT)  // SPWI994.SPL (Dimension Door)
-END
-*/
-
-/////////////////////////////////////////////////////////////////////
 // Attack
 /////////////////////////////////////////////////////////////////////
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(MostDamagedOf([PC]))
   HPPercentLT(LastSeenBy(Myself),81)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -116,6 +87,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(NearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -132,6 +104,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -148,6 +121,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -164,6 +138,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -180,6 +155,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -196,6 +172,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)

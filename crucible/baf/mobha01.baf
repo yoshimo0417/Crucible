@@ -90,7 +90,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(MostDamagedOf([PC]))
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -115,7 +115,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(WorstAC([PC]))
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -140,7 +140,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(NearestEnemyOfType([GOODCUTOFF]))
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -165,7 +165,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -190,7 +190,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -215,7 +215,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -240,7 +240,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -265,7 +265,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -376,6 +376,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(NearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -393,6 +394,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -410,6 +412,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -427,6 +430,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -444,6 +448,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -461,6 +466,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)

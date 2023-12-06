@@ -40,15 +40,40 @@ IF
   //See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
+    // Lvl 4
     ApplySpell(Myself,CLERIC_DEATH_WARD)
     ApplySpell(Myself,CLERIC_PROTECTION_FROM_LIGHTNING)
+    // Lvl 3
+    ApplySpell(Myself,CLERIC_PROTECTION_FROM_FIRE)
+    // Lvl 2
+    ApplySpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)
+    ApplySpell(Myself,CLERIC_RESIST_FIRE)
+    SetGlobal("MO_DUHM","LOCALS",1)
+    // Lvl 1
+    ApplySpell(Myself,CLERIC_ARMOR_OF_FAITH)
+    SetGlobal("MO_ArmorFaith","LOCALS",2)
+    // Blackguard Abilities
+    ApplySpell(Myself,ASSASSIN_POISON)
+    ApplySpell(Myself,AURA_OF_DESPAIR)
+    ApplySpell(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetGlobal("MO_GWW","LOCALS",4)
+    SetGlobal("MO_Poison","LOCALS",4)
+    SetGlobalTimer("MO_PoisonTimer","LOCALS",30)
+END
+
+IF
+  //See([GOODCUTOFF])
+  Global("Prep","LOCALS",0)
+  Allegiance(Myself,ENEMY)
+  DifficultyLT(HARDEST)
+THEN
+  RESPONSE #100
     // Lvl 4
-    ApplySpell(Myself,WIZARD_STONE_SKIN)
-    ApplySpell(Myself,WIZARD_FIRE_SHIELD_RED)
-    SetGlobal("Stoneskin","LOCALS",2)
-    SetGlobal("Malison","LOCALS",1)
+    ApplySpell(Myself,CLERIC_DEATH_WARD)
+    ApplySpell(Myself,CLERIC_PROTECTION_FROM_LIGHTNING)
     // Lvl 3
     ApplySpell(Myself,CLERIC_PROTECTION_FROM_FIRE)
     // Lvl 2
@@ -63,6 +88,209 @@ THEN
     ApplySpell(Myself,AURA_OF_DESPAIR)
     SetGlobal("MO_Poison","LOCALS",4)
     SetGlobalTimer("MO_PoisonTimer","LOCALS",30)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Whirlwind
+/////////////////////////////////////////////////////////////////////
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(MostDamagedOf([PC]))
+  DifficultyGT(HARD)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_GWW","LOCALS",0)
+  !CheckStat(Myself,5,NUMBEROFATTACKS)
+  Range(LastSeenBy(Myself),5)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(WorstAC([PC]))
+  DifficultyGT(HARD)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_GWW","LOCALS",0)
+  !CheckStat(Myself,5,NUMBEROFATTACKS)
+  Range(LastSeenBy(Myself),5)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  DifficultyGT(HARD)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_GWW","LOCALS",0)
+  !CheckStat(Myself,5,NUMBEROFATTACKS)
+  Range(LastSeenBy(Myself),5)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  DifficultyGT(HARD)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_GWW","LOCALS",0)
+  !CheckStat(Myself,5,NUMBEROFATTACKS)
+  Range(LastSeenBy(Myself),5)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  DifficultyGT(HARD)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_GWW","LOCALS",0)
+  !CheckStat(Myself,5,NUMBEROFATTACKS)
+  Range(LastSeenBy(Myself),5)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  DifficultyGT(HARD)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_GWW","LOCALS",0)
+  !CheckStat(Myself,5,NUMBEROFATTACKS)
+  Range(LastSeenBy(Myself),5)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  DifficultyGT(HARD)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_GWW","LOCALS",0)
+  !CheckStat(Myself,5,NUMBEROFATTACKS)
+  Range(LastSeenBy(Myself),5)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  DifficultyGT(HARD)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_GWW","LOCALS",0)
+  !CheckStat(Myself,5,NUMBEROFATTACKS)
+  Range(LastSeenBy(Myself),5)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
+  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    IncrementGlobal("MO_GWW","LOCALS",-1)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetInterrupt(TRUE)
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -232,6 +460,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(NearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -248,6 +477,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -264,6 +494,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -280,6 +511,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -296,6 +528,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -312,6 +545,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)

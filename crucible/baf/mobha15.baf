@@ -1149,217 +1149,6 @@ IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   Global("MO_Offensive","LOCALS",1)
   See([GOODCUTOFF])
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-  Global("MO_WildMagicArea","LOCALS",0)
-THEN
-  RESPONSE #50
-    SetGlobal("MO_CastPowerWordBlind","LOCALS",1)
-    Continue()
-  RESPONSE #50
-    SetGlobal("MO_CastPowerWordBlind","LOCALS",0)
-    Continue()
-END
-
-IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  Global("MO_Offensive","LOCALS",1)
-  Global("MO_CastPowerWordBlind","LOCALS",1)
-  See(NearestEnemyOfType([GOODCUTOFF]))
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
-  !HasItemEquiped("NPMISC1",LastSeenBy(Myself))
-  !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
-  !StateCheck(LastSeenBy(Myself),STATE_BLIND)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
-  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
-  !CheckStatGT(LastSeenBy(Myself),25,RESISTMAGIC)
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-  Global("MO_WildMagicArea","LOCALS",0)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
-    SetInterrupt(TRUE)
-END
-
-IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  Global("MO_Offensive","LOCALS",1)
-  Global("MO_CastPowerWordBlind","LOCALS",1)
-  See(SecondNearestEnemyOfType([GOODCUTOFF]))
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
-  !HasItemEquiped("NPMISC1",LastSeenBy(Myself))
-  !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
-  !StateCheck(LastSeenBy(Myself),STATE_BLIND)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
-  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
-  !CheckStatGT(LastSeenBy(Myself),25,RESISTMAGIC)
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-  Global("MO_WildMagicArea","LOCALS",0)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
-    SetInterrupt(TRUE)
-END
-
-IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  Global("MO_Offensive","LOCALS",1)
-  Global("MO_CastPowerWordBlind","LOCALS",1)
-  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
-  !HasItemEquiped("NPMISC1",LastSeenBy(Myself))
-  !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
-  !StateCheck(LastSeenBy(Myself),STATE_BLIND)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
-  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
-  !CheckStatGT(LastSeenBy(Myself),25,RESISTMAGIC)
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-  Global("MO_WildMagicArea","LOCALS",0)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
-    SetInterrupt(TRUE)
-END
-
-IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  Global("MO_Offensive","LOCALS",1)
-  Global("MO_CastPowerWordBlind","LOCALS",1)
-  See(FourthNearestEnemyOfType([GOODCUTOFF]))
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
-  !HasItemEquiped("NPMISC1",LastSeenBy(Myself))
-  !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
-  !StateCheck(LastSeenBy(Myself),STATE_BLIND)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
-  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
-  !CheckStatGT(LastSeenBy(Myself),25,RESISTMAGIC)
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-  Global("MO_WildMagicArea","LOCALS",0)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
-    SetInterrupt(TRUE)
-END
-
-IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  Global("MO_Offensive","LOCALS",1)
-  Global("MO_CastPowerWordBlind","LOCALS",1)
-  See(FifthNearestEnemyOfType([GOODCUTOFF]))
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
-  !HasItemEquiped("NPMISC1",LastSeenBy(Myself))
-  !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
-  !StateCheck(LastSeenBy(Myself),STATE_BLIND)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
-  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
-  !CheckStatGT(LastSeenBy(Myself),25,RESISTMAGIC)
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-  Global("MO_WildMagicArea","LOCALS",0)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
-    SetInterrupt(TRUE)
-END
-
-IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  Global("MO_Offensive","LOCALS",1)
-  Global("MO_CastPowerWordBlind","LOCALS",1)
-  See(SixthNearestEnemyOfType([GOODCUTOFF]))
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  HaveSpell(WIZARD_POWER_WORD_BLIND)
-  !HasItemEquiped("NPMISC1",LastSeenBy(Myself))
-  !CheckSpellState(LastSeenBy(Myself),SI_CONJURATION)
-  !StateCheck(LastSeenBy(Myself),STATE_BLIND)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
-  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
-  !StateCheck(LastSeenBy(Myself),STATE_HARMLESS)
-  !CheckStatGT(LastSeenBy(Myself),25,RESISTMAGIC)
-  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_POISONED)
-  !StateCheck(Myself,STATE_SILENCED)
-  Global("MO_WildMagicArea","LOCALS",0)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
-    Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_BLIND)
-    SetInterrupt(TRUE)
-END
-
-IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  Global("MO_Offensive","LOCALS",1)
-  See([GOODCUTOFF])
   HaveSpell(WIZARD_SYMBOL_FEAR)
   CheckStatLT(Myself,20,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
@@ -1801,38 +1590,9 @@ THEN
     AttackOneRound(SixthNearestEnemyOf(Myself))
 END
 
-/*
 IF
   ActionListEmpty()
-  See(MostDamagedOf([PC]))
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
-THEN
-  RESPONSE #100
-    AttackOneRound(LastSeenBy(Myself))
-END
-
-IF
-  ActionListEmpty()
-  See(WorstAC([PC]))
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
-THEN
-  RESPONSE #100
-    AttackOneRound(LastSeenBy(Myself))
-END
-*/
-
-IF
-  ActionListEmpty()
+  DifficultyGT(HARD)
   See(NearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1848,6 +1608,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1863,6 +1624,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1878,6 +1640,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1893,6 +1656,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1908,6 +1672,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)

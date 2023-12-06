@@ -96,7 +96,6 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  NumCreatureLT([GOODCUTOFF],3)
   See(NearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Dispel","LOCALS",0)
   OR(4)
@@ -124,7 +123,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -132,7 +131,6 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  NumCreatureLT([GOODCUTOFF],3)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Dispel","LOCALS",0)
   OR(4)
@@ -160,7 +158,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -168,7 +166,6 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  NumCreatureLT([GOODCUTOFF],3)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Dispel","LOCALS",0)
   OR(4)
@@ -196,7 +193,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -204,7 +201,6 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  NumCreatureLT([GOODCUTOFF],3)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Dispel","LOCALS",0)
   OR(4)
@@ -232,7 +228,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -240,7 +236,6 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  NumCreatureLT([GOODCUTOFF],3)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Dispel","LOCALS",0)
   OR(4)
@@ -268,7 +263,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -276,7 +271,6 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  NumCreatureLT([GOODCUTOFF],3)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Dispel","LOCALS",0)
   OR(4)
@@ -304,7 +298,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -591,7 +585,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_EarthquakeTimer","LOCALS")
   GlobalGT("MO_Earthquake","LOCALS",0)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See([GOODCUTOFF])
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -612,7 +606,7 @@ IF
   !GlobalTimerNotExpired("MO_EarthquakeTimer","LOCALS")
   GlobalGT("MO_Earthquake","LOCALS",0)
   Global("MO_CastEarthquake","LOCALS",1)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See(NearestEnemyOfType([GOODCUTOFF]))
   NumCreatureGT([GOODCUTOFF],3)
   Allegiance(Myself,ENEMY)
@@ -645,7 +639,7 @@ IF
   !GlobalTimerNotExpired("MO_EarthquakeTimer","LOCALS")
   GlobalGT("MO_Earthquake","LOCALS",0)
   Global("MO_CastEarthquake","LOCALS",1)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   NumCreatureGT([GOODCUTOFF],3)
   Allegiance(Myself,ENEMY)
@@ -678,7 +672,7 @@ IF
   !GlobalTimerNotExpired("MO_EarthquakeTimer","LOCALS")
   GlobalGT("MO_Earthquake","LOCALS",0)
   Global("MO_CastEarthquake","LOCALS",1)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   NumCreatureGT([GOODCUTOFF],3)
   Allegiance(Myself,ENEMY)
@@ -711,7 +705,7 @@ IF
   !GlobalTimerNotExpired("MO_EarthquakeTimer","LOCALS")
   GlobalGT("MO_Earthquake","LOCALS",0)
   Global("MO_CastEarthquake","LOCALS",1)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   NumCreatureGT([GOODCUTOFF],3)
   Allegiance(Myself,ENEMY)
@@ -744,7 +738,7 @@ IF
   !GlobalTimerNotExpired("MO_EarthquakeTimer","LOCALS")
   GlobalGT("MO_Earthquake","LOCALS",0)
   Global("MO_CastEarthquake","LOCALS",1)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   NumCreatureGT([GOODCUTOFF],3)
   Allegiance(Myself,ENEMY)
@@ -777,7 +771,7 @@ IF
   !GlobalTimerNotExpired("MO_EarthquakeTimer","LOCALS")
   GlobalGT("MO_Earthquake","LOCALS",0)
   Global("MO_CastEarthquake","LOCALS",1)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   NumCreatureGT([GOODCUTOFF],3)
   Allegiance(Myself,ENEMY)
@@ -812,7 +806,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
   GlobalGT("MO_FireStorm","LOCALS",0)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See([GOODCUTOFF])
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_POISONED)
@@ -833,7 +827,7 @@ IF
   !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
   GlobalGT("MO_FireStorm","LOCALS",0)
   Global("MO_CastFireStorm","LOCALS",1)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See(NearestEnemyOfType([GOODCUTOFF]))
   NumCreatureGT([GOODCUTOFF],3)
   Allegiance(Myself,ENEMY)
@@ -868,7 +862,7 @@ IF
   !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
   GlobalGT("MO_FireStorm","LOCALS",0)
   Global("MO_CastFireStorm","LOCALS",1)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   NumCreatureGT([GOODCUTOFF],3)
   Allegiance(Myself,ENEMY)
@@ -903,7 +897,7 @@ IF
   !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
   GlobalGT("MO_FireStorm","LOCALS",0)
   Global("MO_CastFireStorm","LOCALS",1)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   NumCreatureGT([GOODCUTOFF],3)
   Allegiance(Myself,ENEMY)
@@ -938,7 +932,7 @@ IF
   !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
   GlobalGT("MO_FireStorm","LOCALS",0)
   Global("MO_CastFireStorm","LOCALS",1)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   NumCreatureGT([GOODCUTOFF],3)
   Allegiance(Myself,ENEMY)
@@ -973,7 +967,7 @@ IF
   !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
   GlobalGT("MO_FireStorm","LOCALS",0)
   Global("MO_CastFireStorm","LOCALS",1)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   NumCreatureGT([GOODCUTOFF],3)
   Allegiance(Myself,ENEMY)
@@ -1008,7 +1002,7 @@ IF
   !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
   GlobalGT("MO_FireStorm","LOCALS",0)
   Global("MO_CastFireStorm","LOCALS",1)
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   NumCreatureGT([GOODCUTOFF],3)
   Allegiance(Myself,ENEMY)
@@ -1806,7 +1800,7 @@ END
 
 IF
   ActionListEmpty()
-  Global("MO_CanAttack","LOCALS",1)
+  DifficultyGT(HARD)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1822,7 +1816,7 @@ END
 
 IF
   ActionListEmpty()
-  Global("MO_CanAttack","LOCALS",1)
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1838,7 +1832,7 @@ END
 
 IF
   ActionListEmpty()
-  Global("MO_CanAttack","LOCALS",1)
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1854,7 +1848,7 @@ END
 
 IF
   ActionListEmpty()
-  Global("MO_CanAttack","LOCALS",1)
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1870,7 +1864,7 @@ END
 
 IF
   ActionListEmpty()
-  Global("MO_CanAttack","LOCALS",1)
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1886,7 +1880,7 @@ END
 
 IF
   ActionListEmpty()
-  Global("MO_CanAttack","LOCALS",1)
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -1902,7 +1896,6 @@ END
 
 IF
   ActionListEmpty()
-  Global("MO_CanAttack","LOCALS",1)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -1915,7 +1908,6 @@ END
 
 IF
   ActionListEmpty()
-  Global("MO_CanAttack","LOCALS",1)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -1928,7 +1920,6 @@ END
 
 IF
   ActionListEmpty()
-  Global("MO_CanAttack","LOCALS",1)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -1941,7 +1932,6 @@ END
 
 IF
   ActionListEmpty()
-  Global("MO_CanAttack","LOCALS",1)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -1954,7 +1944,6 @@ END
 
 IF
   ActionListEmpty()
-  Global("MO_CanAttack","LOCALS",1)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -1967,7 +1956,6 @@ END
 
 IF
   ActionListEmpty()
-  Global("MO_CanAttack","LOCALS",1)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)

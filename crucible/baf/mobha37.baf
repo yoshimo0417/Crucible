@@ -72,6 +72,7 @@ IF
   See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
@@ -97,6 +98,37 @@ THEN
     SetGlobal("MO_DUHM","LOCALS",10)
     SetGlobal("MO_TrueSight","LOCALS",3)
     SetGlobal("MO_RighteousMagic","LOCALS",5)
+    Wait(2)
+END
+
+IF
+  See([GOODCUTOFF])
+  Global("Prep","LOCALS",0)
+  Allegiance(Myself,ENEMY)
+  DifficultyLT(HARDEST)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    ReallyForceSpell(Myself,CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Aerial Servant)
+    ApplySpell(Myself,CLERIC_BLESS)  // SPPR101.SPL (Bless)
+    ApplySpell(Myself,CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
+    ApplySpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
+    ApplySpell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+    ApplySpell(Myself,CLERIC_PROTECTION_FROM_LIGHTNING)  // SPPR407.SPL (Protection from Lightning)
+    ApplySpell(Myself,CLERIC_DEATH_WARD)  // SPPR409.SPL (Death Ward)
+    ApplySpell(Myself,CLERIC_TRUE_SIGHT)
+    ApplySpell(Myself,WIZARD_IMPROVED_HASTE)  // Granted from Amulet of the Cheetah
+    ApplySpell(Myself,CLERIC_GLOBE_OF_BLADES)
+    ApplySpell(Myself,CLERIC_ARMOR_OF_FAITH)
+    ApplySpell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
+    ApplySpell(Myself,CLERIC_RESIST_FIRE)  // SPPR210.SPL (Resist Fire and Cold)
+    ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)    
+    ApplySpell(Myself,BERSERKER_RAGE)  // SPCL321.SPL (Enrage)
+    SetGlobal("MO_Enrage","LOCALS",1)
+    SetGlobal("MO_ArmorFaith","LOCALS",9)
+    SetGlobal("MO_DUHM","LOCALS",10)
+    SetGlobal("MO_TrueSight","LOCALS",3)
+    SetGlobal("MO_RighteousMagic","LOCALS",0)
     Wait(2)
 END
 
@@ -528,6 +560,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(NearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -545,6 +578,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -562,6 +596,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -579,6 +614,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -596,6 +632,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
@@ -613,6 +650,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)

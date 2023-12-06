@@ -40,7 +40,6 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  NumCreatureLT([GOODCUTOFF],3)
   See(NearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Dispel","LOCALS",0)
   OR(4)
@@ -68,7 +67,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -76,7 +75,6 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  NumCreatureLT([GOODCUTOFF],3)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Dispel","LOCALS",0)
   OR(4)
@@ -104,7 +102,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -112,7 +110,6 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  NumCreatureLT([GOODCUTOFF],3)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Dispel","LOCALS",0)
   OR(4)
@@ -140,7 +137,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -148,7 +145,6 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  NumCreatureLT([GOODCUTOFF],3)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Dispel","LOCALS",0)
   OR(4)
@@ -176,7 +172,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -184,7 +180,6 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  NumCreatureLT([GOODCUTOFF],3)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Dispel","LOCALS",0)
   OR(4)
@@ -212,7 +207,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -220,7 +215,6 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
-  NumCreatureLT([GOODCUTOFF],3)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Dispel","LOCALS",0)
   OR(4)
@@ -248,7 +242,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -614,6 +608,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(NearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -629,6 +624,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -644,6 +640,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -659,6 +656,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -674,6 +672,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -689,6 +688,7 @@ END
 
 IF
   ActionListEmpty()
+  DifficultyGT(HARD)
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
