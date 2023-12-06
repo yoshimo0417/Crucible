@@ -13,6 +13,8 @@ END
 
 IF ~~ THEN BEGIN 1
   SAY @5210
-  IF ~~ THEN DO ~Enemy()~ EXIT
+  IF ~~ THEN DO ~CreateCreature("mobha07",[728.1414],SE)
+CreateCreature("mobha08",[870.1370],SE)
+Enemy()~ EXIT
 END
 

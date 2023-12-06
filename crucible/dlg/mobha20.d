@@ -57,7 +57,8 @@ CreateCreatureEffect("mobha15","SPMETSWA",[696.438],SW)  // Demon Knight
 CreateCreatureEffect("mobha15","SPMETSWA",[1101.422],W)  // Demon Knight
 CreateCreatureEffect("mobha15","SPMETSWA",[1214.683],N)  // Demon Knight
 CreateCreatureEffect("mobha16","SPMETSWA",[1230.784],N)  // Lilitu
-CreateCreatureEffect("mobha16","SPMETSWA",[443.680],SE)  // Lilitu
+CreateCreatureEffect("mobha16","SPMETSWA",[1184.747],N)  // Lilitu
+CreateCreatureEffect("mobha21","SPMETSWA",[527.667],SE)  // Succubus
 Enemy()~ EXIT
 END
 
