@@ -27,6 +27,7 @@ IF
   See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_Spawn","LOCALS",10)

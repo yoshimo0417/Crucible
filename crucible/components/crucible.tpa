@@ -249,10 +249,26 @@ COPY ~crucible/cre/mobha21.cre~  ~override/mobha22.cre~
 
 //-------------------------------------------------------------------------
 // Belchaad the Juggernaut
-COPY ~crucible/cre/mobha23.cre~  ~override/mobha23.cre~
+LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+ACTION_IF (slot <= 0) BEGIN
+  FAIL ~No free creature animation slot found.~
+END
+
+LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+APPEND ~animate.ids~ ~0x%hexNumber% AC#TRUE_SHADOW~ UNLESS ~AC#TRUE_SHADOW~
+CLEAR_IDS_MAP
+
+COPY ~crucible/animations/true_shadow/exxx.ini~ ~override/%hexNumber%.ini~
+
+ACTION_BASH_FOR ~crucible/animations/true_shadow~ ~^.+.bam$~ BEGIN
+  COPY ~%BASH_FOR_FILESPEC%~ ~override~
+END
+
+COPY ~crucible/cre/mobha23.cre~  ~override/mobha23.cre~ // Belchaad
   SAY NAME1 @2013
   SAY NAME2 @2013
   WRITE_ASCII 0x2cc ~MOBHA23~ #8 // Dialogue
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#TRUE_SHADOW~))
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha23.d~
 COPY ~crucible/itm/mobha23a.itm~ ~override~  // Weapon
 COPY ~crucible/itm/mobha23b.itm~ ~override~  // Prot Ring (Status')
@@ -409,6 +425,18 @@ COPY ~crucible/cre/mobha41.cre~  ~override/mobha41.cre~
   SAY NAME1 @2030
   SAY NAME2 @2030
 
+//-------------------------------------------------------------------------
+// Azzeth (Lich - Sorcerer)
+COPY ~crucible/cre/mobha42.cre~ ~override/mobha42.cre~
+  SAY NAME1 @2031
+  SAY NAME2 @2031 
+
+//-------------------------------------------------------------------------
+// Phiuhl 
+COPY ~crucible/cre/mobha43.cre~ ~override/mobha43.cre~
+  SAY NAME1 @2032
+  SAY NAME2 @2032  
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -509,6 +537,8 @@ COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
      ~crucible/baf/mobha39.baf~ ~override/mobha39.bcs~  // Creature script
      ~crucible/baf/mobha40.baf~ ~override/mobha40.bcs~  // Creature script
      ~crucible/baf/mobha41.baf~ ~override/mobha41.bcs~  // Creature script
+     ~crucible/baf/mobha42.baf~ ~override/mobha42.bcs~  // Creature script
+     ~crucible/baf/mobha43.baf~ ~override/mobha43.bcs~  // Creature script
      ~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
      ~crucible/baf/mocut04.baf~ ~override/mocut04.bcs~  // Cutscene script
      ~crucible/baf/mocut05.baf~ ~override/mocut05.bcs~  // Cutscene script
