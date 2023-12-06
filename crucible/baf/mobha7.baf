@@ -9,7 +9,7 @@
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
-// Create Toz'gadath (Hardest Difficulties)
+// Create Melalas and Toz'gadath (Hardest Difficulties)
 /////////////////////////////////////////////////////////////////////
 IF
 	Global("MO_Spawn01","MOBHA7",0)
@@ -17,6 +17,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("MO_Spawn01","MOBHA7",1)
+		CreateCreature("mobha26",[866.531],S)  // Melalas
 		CreateCreature("mobha27",[974.742],SW)  // Toz'gadath
 END
 

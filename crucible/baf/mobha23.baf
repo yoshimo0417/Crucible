@@ -42,7 +42,7 @@ END
 IF
   Dead("mobha24")
   Dead("mobha25")
-  Dead("mobha26")
+  //Dead("mobha26")
   Global("MO_DeadSet","LOCALS",0)
   OR(2)
     Difficulty(HARD)
@@ -57,7 +57,7 @@ END
 IF
   Dead("mobha24")
   Dead("mobha25")
-  Dead("mobha26")
+  //Dead("mobha26")
   Global("MO_DeadSet","LOCALS",0)
   DifficultyLT(NORMAL)
 THEN
