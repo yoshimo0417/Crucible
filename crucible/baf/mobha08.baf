@@ -18,6 +18,7 @@ THEN
     SetGlobal("Prep","LOCALS",1)
     SetGlobal("MO_Assassination","LOCALS",1)
     GiveItemCreate("potn55",Myself,2,0,0)   // superior healing
+    GiveItemCreate("potn10",Myself,5,0,0)   // potion of invisibility
     ReallyForceSpell(Myself,WIZARD_INVISIBILITY)  
     EquipMostDamagingMelee()
     Hide()
@@ -30,6 +31,7 @@ THEN
   RESPONSE #100
     DestroyItem("BELT06")
     DestroyItem("CLCK06")
+    GiveItemCreate("potn10",Myself,2,0,0)   // potion of invisibility
     SetGlobal("MO_DifficultyCheck","LOCALS",1)
 END
 
