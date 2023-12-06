@@ -1,5 +1,6 @@
 IF
 	Contains("mobha13a",Myself)  // Planetar Feather
+	DifficultyGT(HARD)
 THEN
 	RESPONSE #100
 		DestroyItem("mobha13a")  // Planetar Feather
@@ -16,3 +17,19 @@ THEN
 		CreateCreatureEffect("mobha14","SPSPEV",[953.1519],NW)  // Fallen Deva
 END
 
+IF
+	Contains("mobha13a",Myself)  // Planetar Feather
+	DifficultyLT(HARDEST)
+THEN
+	RESPONSE #100
+		DestroyItem("mobha13a")  // Planetar Feather
+		SetGlobal("Open_door_left","MOBHA1",1)
+		PlaySound("EFF_P92")
+		ScreenShake([20.45],15)
+		Wait(2)
+		DisplayString(Myself,@5001)  // You feel the eyes of divine wrath upon you and hear a rushing of wings. Off in the distance you can hear the gate to the planetar garrison crashing open.
+		Wait(2)
+		CreateCreatureEffect("mobha12","SPSPEV",[981.1550],NW)  // Fallen Planetar
+		CreateCreatureEffect("mobha14","SPSPEV",[878.1606],NW)  // Fallen Deva
+		CreateCreatureEffect("mobha14","SPSPEV",[953.1519],NW)  // Fallen Deva
+END

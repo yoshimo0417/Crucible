@@ -4,7 +4,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("MO_Spawn04","MOBHA1",1)
-		CreateCreature("mobha09",[2337.572],NE)  // Balor
-		CreateCreature("mobha15",[2377.443],NE)  // Demon Knight
-		CreateCreature("mobha16",[2261.444],NE)  // Lilitu
+		//CreateCreature("mobha09",[2337.572],NE)  // Balor (tanari)
+		//CreateCreature("mobha15",[2377.443],NE)  // Demon Knight (death_knight)
+		//CreateCreature("mobha16",[2261.444],NE)  // Lilitu (fighter_female_elf)
 END

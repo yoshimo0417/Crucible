@@ -50,7 +50,14 @@ END
 
 IF ~~ THEN BEGIN 7
   SAY @5630
-  IF ~~ THEN DO ~SetGlobal("MOBHA5_Enemy","GLOBAL",1)
+  IF ~DifficultyLT(HARDEST)~ THEN DO ~SetGlobal("MOBHA5_Enemy","GLOBAL",1)
+Enemy()~ EXIT
+IF ~DifficultyGT(HARD)~ THEN DO ~SetGlobal("MOBHA5_Enemy","GLOBAL",1)
+CreateCreatureEffect("mobha15","SPMETSWA",[696.438],SW)  // Demon Knight
+CreateCreatureEffect("mobha15","SPMETSWA",[1101.422],W)  // Demon Knight
+CreateCreatureEffect("mobha15","SPMETSWA",[1214.683],N)  // Demon Knight
+CreateCreatureEffect("mobha16","SPMETSWA",[1230.784],N)  // Lilitu
+CreateCreatureEffect("mobha16","SPMETSWA",[443.680],SE)  // Lilitu
 Enemy()~ EXIT
 END
 

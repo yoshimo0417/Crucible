@@ -28,6 +28,7 @@ END
 IF
 	IsOverMe([GOODCUTOFF])
 	Global("MO_Spawn06","MOBHA1",0)
+	GlobalGT(HARD)
 THEN
 	RESPONSE #100
 		SetGlobal("MO_Spawn06","MOBHA1",1)
@@ -36,4 +37,16 @@ THEN
 		CreateCreatureEffect("mobha14","SPSPEV",[1582.282],E)  // Fallen Deva
 		CreateCreatureEffect("mobha12","SPSPEV",[1265.443],E)  // Fallen Planetar
 		CreateCreatureEffect("mobha12","SPSPEV",[1392.485],E)  // Fallen Planetar
+END
+
+IF
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Spawn06","MOBHA1",0)
+	GlobalLT(HARDEST)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Spawn06","MOBHA1",1)
+		CreateCreatureEffect("mobha13","SPSPEV",[1233.450],E)  // Fallen Planetar
+		CreateCreatureEffect("mobha14","SPSPEV",[1464.242],E)  // Fallen Deva
+		CreateCreatureEffect("mobha14","SPSPEV",[1582.282],E)  // Fallen Deva
 END

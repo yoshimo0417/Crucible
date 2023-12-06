@@ -1,3 +1,4 @@
+/*
 IF
 	IsOverMe([GOODCUTOFF])
 	Global("MO_Spawn02","MOBHA1",0)
@@ -20,4 +21,13 @@ THEN
 	RESPONSE #50
 		SetGlobal("MO_Spawn02","MOBHA1",1)
 		CreateCreature("mobha08",[2822.881],N)  // Assassin
+END
+*/
+
+IF
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Spawn02","MOBHA1",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Spawn02","MOBHA1",1)
 END

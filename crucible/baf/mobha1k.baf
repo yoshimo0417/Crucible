@@ -1,5 +1,6 @@
 IF
 	Contains("mobha10a",Myself)  // Demon Heart
+	DifficultyGT(HARD)
 THEN
 	RESPONSE #100
 		DestroyItem("mobha10a")  // Demon Heart
@@ -12,6 +13,23 @@ THEN
 		CreateCreatureEffect("mobha15","SPMETSWA",[931.1552],NW)   // Demon Knight
 		CreateCreatureEffect("mobha15","SPMETSWA",[999.1512],NW)   // Demon Knight
 		CreateCreatureEffect("mobha16","SPMETSWA",[977.1604],NW)   // Lilitu
+		CreateCreatureEffect("mobha16","SPMETSWA",[996.1554],NW)   // Lilitu
+		CreateCreatureEffect("mobha16","SPMETSWA",[1069.1552],NW)  // Lilitu
+END
+
+IF
+	Contains("mobha10a",Myself)  // Demon Heart
+	DifficultyLT(HARDEST)
+THEN
+	RESPONSE #100
+		DestroyItem("mobha10a")  // Demon Heart
+		SetGlobal("Open_door_right","MOBHA1",1)
+		PlaySound("EFF_P92")
+		ScreenShake([20.45],15)
+		Wait(2)
+		DisplayString(Myself,@5000)  // Waves of sulfur and carrion fill the air and off in the distance you can hear the entrance to the demon tower opening.
+		Wait(2)
+		CreateCreatureEffect("mobha15","SPMETSWA",[931.1552],NW)   // Demon Knight
 		CreateCreatureEffect("mobha16","SPMETSWA",[996.1554],NW)   // Lilitu
 		CreateCreatureEffect("mobha16","SPMETSWA",[1069.1552],NW)  // Lilitu
 END
