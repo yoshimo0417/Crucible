@@ -270,11 +270,12 @@ COPY ~crucible/cre/mobha23.cre~  ~override/mobha23.cre~ // Belchaad
   WRITE_ASCII 0x2cc ~MOBHA23~ #8 // Dialogue
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#TRUE_SHADOW~))
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha23.d~
-COPY ~crucible/itm/mobha23a.itm~ ~override~  // Weapon
+COPY ~crucible/itm/mobha23a.itm~ ~override~  // Weapon (Insane)
 COPY ~crucible/itm/mobha23b.itm~ ~override~  // Prot Ring (Status')
 COPY ~crucible/itm/mobha23c.itm~ ~override~  // +40% Physical DR
 COPY ~crucible/itm/mobha23d.itm~ ~override~  // +60% Physical DR
 COPY ~crucible/itm/mobha23e.itm~ ~override~  // +2STR item (destroyed at less difficulty)
+COPY ~crucible/itm/mobha23f.itm~ ~override~  // Weapon (Less than Insane)
 COPY ~crucible/spl/mobha23a.spl~ ~override~  // +10 HP, +5% Physical DR
 COPY ~crucible/spl/mobha23b.spl~ ~override~  // +20 HP
 

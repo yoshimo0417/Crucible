@@ -84,6 +84,7 @@ THEN
     // IWD Prebuffs
     ApplySpell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
     ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
+    XEquipItem("mobha23a",Myself,SLOT_WEAPON0,EQUIP)
 END
 
 IF
@@ -97,6 +98,7 @@ THEN
     ApplySpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
     ApplySpell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
     ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
+    XEquipItem("mobha23f",Myself,SLOT_WEAPON1,EQUIP)
 END
 
 /////////////////////////////////////////////////////////////////////
