@@ -436,6 +436,7 @@ COPY ~crucible/cre/mobha42.cre~ ~override/mobha42.cre~
 COPY ~crucible/cre/mobha43.cre~ ~override/mobha43.cre~
   SAY NAME1 @2032
   SAY NAME2 @2032  
+COPY ~crucible/itm/mobha43a.itm~ ~override~  // Weapon
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
