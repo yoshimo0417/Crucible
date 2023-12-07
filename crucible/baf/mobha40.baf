@@ -68,6 +68,28 @@ THEN
     SetGlobal("Mirror","LOCALS",2)
     // Lvl 1
     SetGlobal("Missile","LOCALS",5)
+    Continue()
+END
+
+IF
+  DifficultyLT(HARDEST)
+  Global("MO_CheckDifficulty","LOCALS",0) 
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    DestroyItem("BRAC21")
+    DestroyItem("BELT07")
+    DestroyItem("RING31")
+    Continue()
+END
+
+IF
+  DifficultyGT(HARD)
+  Global("MO_CheckDifficulty","LOCALS",0) 
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    Continue()
 END
 
 /////////////////////////////////////////////////////////////////////

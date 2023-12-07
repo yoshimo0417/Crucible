@@ -30,6 +30,7 @@ THEN
     DestroyItem("BELT06")
     DestroyItem("CLCK06")
     SetGlobal("MO_DifficultyCheck","LOCALS",1)
+    Continue()
 END
 
 /////////////////////////////////////////////////////////////////////

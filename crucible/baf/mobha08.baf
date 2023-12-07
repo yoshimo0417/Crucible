@@ -33,6 +33,7 @@ THEN
     DestroyItem("CLCK06")
     GiveItemCreate("potn10",Myself,2,0,0)   // potion of invisibility
     SetGlobal("MO_DifficultyCheck","LOCALS",1)
+    Continue()
 END
 
 /////////////////////////////////////////////////////////////////////

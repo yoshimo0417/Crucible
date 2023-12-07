@@ -41,6 +41,26 @@ THEN
     SetGlobal("MO_Chaos","LOCALS",1)
     ApplySpell(Myself,CLERIC_GLOBE_OF_BLADES)
     ApplySpell(Myself,CLERIC_TRUE_SIGHT)
+    Continue()
+END
+
+IF
+  DifficultyLT(HARDEST)
+  Global("MO_CheckDifficulty","LOCALS",0) 
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    DestroyItem("AMUL21")
+    Continue()
+END
+
+IF
+  DifficultyGT(HARD)
+  Global("MO_CheckDifficulty","LOCALS",0) 
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    Continue()
 END
 
 /////////////////////////////////////////////////////////////////////

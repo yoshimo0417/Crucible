@@ -35,6 +35,7 @@ THEN
     SetGlobal("MO_GWW","LOCALS",1)
     GiveItemCreate("POTN04",Myself,1,0,0)     // potn frost giant
     UseItem("POTN04",Myself)
+    Continue()
 END
 
 IF
@@ -45,6 +46,11 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    DestroyItem("BRAC09")
+    DestroyItem("RING31")
+    DestroyItem("BELT02")
+    DestroyItem("HELM19")
+    Continue()
 END
 
 /////////////////////////////////////////////////////////////////////

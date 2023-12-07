@@ -99,6 +99,7 @@ THEN
     SetGlobal("MO_TrueSight","LOCALS",3)
     SetGlobal("MO_RighteousMagic","LOCALS",5)
     Wait(2)
+    Continue()
 END
 
 IF
@@ -129,7 +130,11 @@ THEN
     SetGlobal("MO_DUHM","LOCALS",10)
     SetGlobal("MO_TrueSight","LOCALS",3)
     SetGlobal("MO_RighteousMagic","LOCALS",0)
+    DestroyItem("BRAC21")
+    DestroyItem("BELT10")
+    DestroyItem("CLCK02")
     Wait(2)
+    Continue()
 END
 
 /////////////////////////////////////////////////////////////////////

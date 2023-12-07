@@ -62,6 +62,7 @@ THEN
     SetGlobal("MO_GWW","LOCALS",4)
     SetGlobal("MO_Poison","LOCALS",4)
     SetGlobalTimer("MO_PoisonTimer","LOCALS",30)
+    Continue()
 END
 
 IF
@@ -88,6 +89,12 @@ THEN
     ApplySpell(Myself,AURA_OF_DESPAIR)
     SetGlobal("MO_Poison","LOCALS",4)
     SetGlobalTimer("MO_PoisonTimer","LOCALS",30)
+    DestroyItem("BRAC10")
+    DestroyItem("RING31")
+    DestroyItem("RING02")
+    DestroyItem("AMUL20")
+    DestroyItem("BELT07")
+    Continue()
 END
 
 /////////////////////////////////////////////////////////////////////

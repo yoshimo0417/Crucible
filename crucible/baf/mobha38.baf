@@ -47,6 +47,7 @@ THEN
     SetGlobal("MO_SweetAir","LOCALS",1)
     SetGlobal("MO_CalledShot","LOCALS",5)
     EquipRanged()
+    Continue()
 END
 
 IF
@@ -67,6 +68,9 @@ THEN
     SetGlobal("MO_SweetAir","LOCALS",1)
     SetGlobal("MO_CalledShot","LOCALS",6)
     EquipRanged()
+    DestroyItem("HELM20")
+    DestroyItem("BDAMUL02")
+    Continue()
 END
 
 /////////////////////////////////////////////////////////////////////

@@ -48,6 +48,9 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    DestroyItem("BRAC09")
+    DestroyItem("RING32")
+    DestroyItem("BELT02")
 END
 
 

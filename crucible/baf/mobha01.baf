@@ -69,6 +69,28 @@ THEN
     //GiveItemCreate("POTN55",Myself,5,0,0)     // potn extra healing
     GiveItemCreate("POTN07",Myself,1,0,0)     // potn storm giant
     UseItem("POTN07",Myself)
+    Continue()
+END
+
+IF
+  DifficultyLT(HARDEST)
+  Global("MO_CheckDifficulty","LOCALS",0) 
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    DestroyItem("BRAC21")
+    DestroyItem("BELT10")
+    DestroyItem("CLCK02")
+    Continue()
+END
+
+IF
+  DifficultyGT(HARD)
+  Global("MO_CheckDifficulty","LOCALS",0) 
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    Continue()
 END
 
 /////////////////////////////////////////////////////////////////////

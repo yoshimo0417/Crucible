@@ -18,6 +18,7 @@ THEN
     ApplySpell(Myself,WIZARD_FIRE_SHIELD_RED)
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)
     SetGlobal("MO_DeathKnightFireballCast","LOCALS",0)
+    Continue()
 END
 
 IF
@@ -33,6 +34,7 @@ THEN
     ApplySpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)
     SetGlobal("MO_DeathKnightFireballCast","LOCALS",0)
+    Continue()
 END
 
 IF
@@ -47,6 +49,7 @@ THEN
     ApplySpell(Myself,WIZARD_SPELL_SHIELD)
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)
     SetGlobal("MO_DeathKnightFireballCast","LOCALS",0)
+    Continue()
 END
 
 IF 
@@ -58,6 +61,27 @@ THEN
     ApplySpell(Myself,WIZARD_IMPROVED_HASTE)
     ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
     ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)
+    Continue()
+END
+
+IF
+  DifficultyLT(HARDEST)
+  Global("MO_CheckDifficulty","LOCALS",0) 
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    DestroyItem("BRAC10")
+    DestroyItem("AMUL21")
+    Continue()
+END
+
+IF
+  DifficultyGT(HARD)
+  Global("MO_CheckDifficulty","LOCALS",0) 
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    Continue()
 END
 
 IF

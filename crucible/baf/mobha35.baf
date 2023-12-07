@@ -144,6 +144,27 @@ THEN
     SetGlobal("MO_ImprovedAlacrity","LOCALS",1)
     SetGlobal("MO_TimeStop","LOCALS",1)
     SetGlobal("Prep","LOCALS",1)
+    Continue()
+END
+
+IF
+  DifficultyLT(HARDEST)
+  Global("MO_CheckDifficulty","LOCALS",0) 
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    DestroyItem("WA2ROBE")
+    DestroyItem("AMUL21")
+    Continue()
+END
+
+IF
+  DifficultyGT(HARD)
+  Global("MO_CheckDifficulty","LOCALS",0) 
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    Continue()
 END
 
 /////////////////////////////////////////////////////////////////////

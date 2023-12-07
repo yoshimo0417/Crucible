@@ -61,6 +61,8 @@ THEN
     ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)
     SetGlobal("MO_DeathKnightFireballCast","LOCALS",0)
     XEquipItem("SW2H17",Myself,SLOT_WEAPON1,EQUIP)
+    DestroyItem("BRAC10")
+    DestroyItem("AMUL21")
     Continue()
 END
 
