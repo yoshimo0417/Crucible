@@ -47,6 +47,16 @@ END
 
 IF
 	Global("MO_AreaPrep","MOBHA1",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_AreaPrep","MOBHA1",1)
+		ActionOverride(Player1,RemoveSpell(ENTER_POCKET_PLANE))  // SPIN649.SPL (Pocket Plane)
+		Continue()
+END
+
+/*
+IF
+	Global("MO_AreaPrep","MOBHA1",0)
 	DifficultyGT(HARD)
 THEN
 	RESPONSE #100
@@ -99,7 +109,8 @@ THEN
 		SetGlobalTimer("MO_Spawn","MOBHA1",6000)
 		Continue()
 END
-
+*/
+/*
 IF
 	!GlobalTimerNotExpired("MO_Spawn","MOBHA1")
 	DifficultyGT(HARD)
@@ -159,7 +170,7 @@ THEN
 		CreateCreatureObject("mobha07",Player1,0,0,0)  // Shadowdancer
 		CreateCreatureObject("mobha08",Player1,0,0,0)  // Assassin
 END
-
+*/
 /////////////////////////////////////////////////////////////////////
 // Set Rest Encounter Probability (tied to difficulty slider)
 /////////////////////////////////////////////////////////////////////

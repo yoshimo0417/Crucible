@@ -73,9 +73,10 @@ IF
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(NearestEnemyOfType([GOODCUTOFF])) 
+  DifficultyGT(HARD)
   !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
   CheckStat(LastSeenBy(Myself),0,WEB)
-  CheckStatGT(LastSeenBy(Myself),-2,SAVEVSDEATH)
+  //CheckStatGT(LastSeenBy(Myself),-2,SAVEVSDEATH)
   !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
   !HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
 THEN
@@ -90,9 +91,10 @@ IF
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(SecondNearestEnemyOfType([GOODCUTOFF])) 
+  DifficultyGT(HARD)
   !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
   CheckStat(LastSeenBy(Myself),0,WEB)
-  CheckStatGT(LastSeenBy(Myself),-2,SAVEVSDEATH)
+  //CheckStatGT(LastSeenBy(Myself),-2,SAVEVSDEATH)
   !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
   !HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
 THEN
@@ -107,9 +109,10 @@ IF
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(ThirdNearestEnemyOfType([GOODCUTOFF])) 
+  DifficultyGT(HARD)
   !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
   CheckStat(LastSeenBy(Myself),0,WEB)
-  CheckStatGT(LastSeenBy(Myself),-2,SAVEVSDEATH)
+  //CheckStatGT(LastSeenBy(Myself),-2,SAVEVSDEATH)
   !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
   !HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
 THEN
@@ -124,9 +127,10 @@ IF
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(FourthNearestEnemyOfType([GOODCUTOFF])) 
+  DifficultyGT(HARD)
   !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
   CheckStat(LastSeenBy(Myself),0,WEB)
-  CheckStatGT(LastSeenBy(Myself),-2,SAVEVSDEATH)
+  //CheckStatGT(LastSeenBy(Myself),-2,SAVEVSDEATH)
   !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
   !HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
 THEN
@@ -141,9 +145,10 @@ IF
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(FifthNearestEnemyOfType([GOODCUTOFF])) 
+  DifficultyGT(HARD)
   !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
   CheckStat(LastSeenBy(Myself),0,WEB)
-  CheckStatGT(LastSeenBy(Myself),-2,SAVEVSDEATH)
+  //CheckStatGT(LastSeenBy(Myself),-2,SAVEVSDEATH)
   !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
   !HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
 THEN
@@ -158,9 +163,10 @@ IF
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   See(SixthNearestEnemyOfType([GOODCUTOFF])) 
+  DifficultyGT(HARD)
   !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
   CheckStat(LastSeenBy(Myself),0,WEB)
-  CheckStatGT(LastSeenBy(Myself),-2,SAVEVSDEATH)
+  //CheckStatGT(LastSeenBy(Myself),-2,SAVEVSDEATH)
   !CheckStatGT(LastSeenBy(Myself),0,CLERIC_FREE_ACTION)
   !HasItemEquiped("RING09",LastSeenBy(Myself)) // Ring of Free Action
 THEN

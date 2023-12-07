@@ -13,11 +13,42 @@
 /////////////////////////////////////////////////////////////////////
 IF
   See([GOODCUTOFF])
-  Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
+  Global("Prep","LOCALS",0)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    SetGlobalTimer("MO_MistTimer","LOCALS",6)
+    ForceSpellRES("mobha43a",Myself)
+END
+
+IF
+  See([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+  Global("Prep","LOCALS",0)
+  DifficultyLT(HARDEST)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    DestroyItem("mobha23d")
+    SetGlobalTimer("MO_MistTimer","LOCALS",6)
+    ForceSpellRES("mobha43a",Myself)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Ability: Searing Mist
+/////////////////////////////////////////////////////////////////////
+IF
+  !GlobalTimerNotExpired("MO_MistTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
+  Global("Prep","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_MistTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    ForceSpellRES("mobha43a",Myself)
+    SetInterrupt(TRUE)
 END
 
 /////////////////////////////////////////////////////////////////////

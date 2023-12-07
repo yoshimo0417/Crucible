@@ -445,6 +445,9 @@ COPY ~crucible/cre/mobha43.cre~ ~override/mobha43.cre~
   SAY NAME1 @2032
   SAY NAME2 @2032  
 COPY ~crucible/itm/mobha43a.itm~ ~override~  // Weapon
+COPY ~crucible/spl/mobha43a.spl~ ~override~  // Searing Mist
+  SAY NAME1 @4002
+  SAY NAME2 @4002
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
