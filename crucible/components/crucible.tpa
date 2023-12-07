@@ -380,7 +380,14 @@ COPY ~crucible/cre/mobha37.cre~  ~override/mobha37.cre~
   SAY NAME2 @2024
   WRITE_ASCII 0x2cc ~MOBHA37~ #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha37.d~
-COPY ~crucible/itm/mobha37a.itm~ ~override~  // Warhammer +5
+COPY ~crucible/itm/mobha37a.itm~ ~override~  // Flail of Suffering
+  SAY NAME2 @10006
+  SAY DESC  @10007
+
+COPY ~crucible/spl/mobha37a.spl~ ~override~  // Absorb Life Essence
+  SAY NAME1 @4001
+  SAY NAME2 @4001
+  //LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4001) STR_VAR END
 
 //-------------------------------------------------------------------------
 // Adrielle (Archer)

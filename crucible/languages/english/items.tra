@@ -23,3 +23,23 @@ Equipped abilities:
 – Unlimited +3 arrows
 
 Weight: 0~
+
+@10006 = ~Flail of Suffering~
+@10007 = ~Seething rage and malice emanates from this flail, and you can faintly hear the sounds of wailing and screams as it is swung through the air. Only the foulest sort of individual would dare hold such a vile and evil weapon.
+
+STATISTICS:
+
+Combat abilities:
+– Hit target suffers 2 points of additional bleeding damage per second for 15 seconds.
+– Any death caused by this weapon drains the soul of the victim and heals the wielder 20 hit points. This will not heal beyond the wielder's maximum.
+
+THAC0: +5
+Damage: 1d6+6
+Damage type: Crushing
+Speed Factor: 2
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+ 13 Strength
+
+Weight: 8~
