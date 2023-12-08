@@ -1,0 +1,47 @@
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+//            Call for Help Amelyssan Forces
+/////////////////////////////////////////////////////////////////////
+//        Version 1
+// This is a call for help used by Amelyssan's forces. This will
+// not trigger other enemies who may not be aligned with Amelyssan.
+// 
+/////////////////////////////////////////////////////////////////////
+
+IF
+  Allegiance(Myself,NEUTRAL)
+  OR(6)
+    AttackedBy([ANYTHING],DEFAULT)
+    SpellCast([GOODCUTOFF],0)    // triggers on any spell
+    SpellCastPriest([GOODCUTOFF],0)  // triggers on any spell
+    SpellCastInnate([GOODCUTOFF],0)  // triggers on any ability
+    Detect([GOODCUTOFF.0.0.0.0.SUMMONED])
+    TookDamage()
+THEN
+  RESPONSE #100
+    Enemy()
+    Shout(40)
+    Continue()
+END
+
+IF
+  !GlobalTimerNotExpired("MO_Shout","LOCALS")
+  Allegiance(Myself,ENEMY)
+  OR(2)
+    See([GOODCUTOFF])
+    TookDamage()
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_Shout","LOCALS",18)
+    Shout(40)
+    Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  !See([GOODCUTOFF])
+  Heard([ANYONE],40)
+THEN
+  RESPONSE #100
+    MoveToObject(LastHeardBy(Myself))
+END

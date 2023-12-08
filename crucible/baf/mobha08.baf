@@ -13,6 +13,7 @@
 IF
   Detect(NearestEnemyOf(Myself))
   Global("Prep","LOCALS",0)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
