@@ -14,7 +14,7 @@ IF
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
   See([GOODCUTOFF])
-  DifficultyGT(NORMAL)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)

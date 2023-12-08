@@ -86,7 +86,7 @@ THEN
     SetGlobal("MO_ArmorFaith","LOCALS",2)
     // Blackguard Abilities
     ApplySpell(Myself,ASSASSIN_POISON)
-    ApplySpell(Myself,AURA_OF_DESPAIR)
+    //ApplySpell(Myself,AURA_OF_DESPAIR)
     SetGlobal("MO_Poison","LOCALS",4)
     SetGlobalTimer("MO_PoisonTimer","LOCALS",30)
     DestroyItem("BRAC10")

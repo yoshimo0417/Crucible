@@ -61,6 +61,7 @@ IF
   See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
@@ -73,23 +74,18 @@ THEN
 END
 
 IF
+  See([GOODCUTOFF])
+  Global("Prep","LOCALS",0)
+  Allegiance(Myself,ENEMY)
   DifficultyLT(HARDEST)
-  Global("MO_CheckDifficulty","LOCALS",0) 
-THEN 
+THEN
   RESPONSE #100
-    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    SetGlobal("Prep","LOCALS",1)
+    ApplySpell(Myself,WARRIOR_GREATER_WHIRLWIND)
+    SetGlobal("MO_GWW","LOCALS",1)
     DestroyItem("BRAC21")
     DestroyItem("BELT10")
     DestroyItem("CLCK02")
-    Continue()
-END
-
-IF
-  DifficultyGT(HARD)
-  Global("MO_CheckDifficulty","LOCALS",0) 
-THEN 
-  RESPONSE #100
-    SetGlobal("MO_CheckDifficulty","LOCALS",1)
     Continue()
 END
 

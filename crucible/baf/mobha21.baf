@@ -72,6 +72,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_CharmTimer","LOCALS")
   See(NearestEnemyOfType([GOODCUTOFF.0.0.0.0.MALE]))
   !Difficulty(EASIEST)
   Range(LastSeenBy(Myself),30)
@@ -106,6 +107,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_CharmTimer","LOCALS",18)
     SetInterrupt(FALSE)
     SpellNoDec([GOODCUTOFF.0.0.0.0.MALE],SUCCUBUS_CHARM_MALE)  // SPWI930.SPL (Charm Person)
     SetInterrupt(TRUE)
@@ -115,6 +117,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_CharmTimer","LOCALS")
   See(SecondNearestEnemyOfType([GOODCUTOFF.0.0.0.0.MALE]))
   !Difficulty(EASIEST)
   Range(LastSeenBy(Myself),30)
@@ -149,6 +152,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_CharmTimer","LOCALS",18)
     SetInterrupt(FALSE)
     SpellNoDec([GOODCUTOFF.0.0.0.0.MALE],SUCCUBUS_CHARM_MALE)  // SPWI930.SPL (Charm Person)
     SetInterrupt(TRUE)
@@ -158,6 +162,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_CharmTimer","LOCALS")
   See(ThirdNearestEnemyOfType([GOODCUTOFF.0.0.0.0.MALE]))
   !Difficulty(EASIEST)
   Range(LastSeenBy(Myself),30)
@@ -192,6 +197,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_CharmTimer","LOCALS",18)
     SetInterrupt(FALSE)
     SpellNoDec([GOODCUTOFF.0.0.0.0.MALE],SUCCUBUS_CHARM_MALE)  // SPWI930.SPL (Charm Person)
     SetInterrupt(TRUE)
@@ -201,6 +207,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_CharmTimer","LOCALS")
   See(FourthNearestEnemyOfType([GOODCUTOFF.0.0.0.0.MALE]))
   !Difficulty(EASIEST)
   Range(LastSeenBy(Myself),30)
@@ -235,6 +242,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_CharmTimer","LOCALS",18)
     SetInterrupt(FALSE)
     SpellNoDec([GOODCUTOFF.0.0.0.0.MALE],SUCCUBUS_CHARM_MALE)  // SPWI930.SPL (Charm Person)
     SetInterrupt(TRUE)
@@ -244,6 +252,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_CharmTimer","LOCALS")
   See(FifthNearestEnemyOfType([GOODCUTOFF.0.0.0.0.MALE]))
   !Difficulty(EASIEST)
   Range(LastSeenBy(Myself),30)
@@ -278,6 +287,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_CharmTimer","LOCALS",18)
     SetInterrupt(FALSE)
     SpellNoDec([GOODCUTOFF.0.0.0.0.MALE],SUCCUBUS_CHARM_MALE)  // SPWI930.SPL (Charm Person)
     SetInterrupt(TRUE)
@@ -287,6 +297,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_CharmTimer","LOCALS")
   See(SixthNearestEnemyOfType([GOODCUTOFF.0.0.0.0.MALE]))
   !Difficulty(EASIEST)
   Range(LastSeenBy(Myself),30)
@@ -321,6 +332,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_CharmTimer","LOCALS",18)
     SetInterrupt(FALSE)
     SpellNoDec([GOODCUTOFF.0.0.0.0.MALE],SUCCUBUS_CHARM_MALE)  // SPWI930.SPL (Charm Person)
     SetInterrupt(TRUE)

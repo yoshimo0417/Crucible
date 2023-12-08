@@ -17,41 +17,12 @@ END
 IF
 	Global("MOBHA3_Enemy","GLOBAL",1)
 	Global("MOBHA3_Spawn","MOBHA3",0)
-	Difficulty(HARD)
+	DifficultyLT(HARDEST)
 THEN
 	RESPONSE #100
 		SetGlobal("MOBHA3_Spawn","MOBHA3",1)
-		CreateCreatureEffect("GORSKU01","SPRAISED",[653.962],NE)  // Flaming Skull
-		CreateCreatureEffect("GORSKU01","SPRAISED",[784.962],N)   // Flaming Skull
-		CreateCreatureEffect("GORSKU01","SPRAISED",[903.635],SW)  // Flaming Skull
-		CreateCreatureEffect("GORSKU01","SPRAISED",[976.708],SW)  // Flaming Skull
-		CreateCreatureEffect("MELSUM02","SPRAISED",[490.876],NE)  // Bone Fiend
-		CreateCreatureEffect("MOBHA35","SPRAISED",[992.634],SW)   // Zendrilar
-END
-
-IF
-	Global("MOBHA3_Enemy","GLOBAL",1)
-	Global("MOBHA3_Spawn","MOBHA3",0)
-	Difficulty(NORMAL)
-THEN
-	RESPONSE #100
-		SetGlobal("MOBHA3_Spawn","MOBHA3",1)
-		CreateCreatureEffect("GORSKU01","SPRAISED",[653.962],NE)  // Flaming Skull
-		CreateCreatureEffect("GORSKU01","SPRAISED",[784.962],N)   // Flaming Skull
-		CreateCreatureEffect("GORSKU01","SPRAISED",[903.635],SW)  // Flaming Skull
-		CreateCreatureEffect("GORSKU01","SPRAISED",[976.708],SW)  // Flaming Skull
-		CreateCreatureEffect("MELSUM02","SPRAISED",[490.876],NE)  // Bone Fiend
-END
-
-IF
-	Global("MOBHA3_Enemy","GLOBAL",1)
-	Global("MOBHA3_Spawn","MOBHA3",0)
-	DifficultyLT(NORMAL)
-THEN
-	RESPONSE #100
-		SetGlobal("MOBHA3_Spawn","MOBHA3",1)
-		CreateCreatureEffect("GORSKU01","SPRAISED",[784.962],N)   // Flaming Skull
-		CreateCreatureEffect("GORSKU01","SPRAISED",[903.635],SW)  // Flaming Skull
+		CreateCreatureEffect("MELSUM02","SPRAISED",[784.962],N)   // Bone Fiend
+		CreateCreatureEffect("MELSUM02","SPRAISED",[903.635],SW)  // Bone Fiend
 		CreateCreatureEffect("MELSUM02","SPRAISED",[490.876],NE)  // Bone Fiend
 END
 

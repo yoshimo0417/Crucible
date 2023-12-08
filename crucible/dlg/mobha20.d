@@ -60,6 +60,7 @@ CreateCreatureEffect("mobha16","SPMETSWA",[1230.784],N)  // Lilitu
 CreateCreatureEffect("mobha16","SPMETSWA",[1184.747],N)  // Lilitu
 CreateCreatureEffect("mobha21","SPMETSWA",[527.667],SE)  // Succubus
 CreateCreatureEffect("mobha21","SPMETSWA",[1001.441],W)  // Succubus
+CreateCreatureEffect("mobha09","SPMETSWA",[1332.757],NW) // Balor
 Enemy()~ EXIT
 END
 

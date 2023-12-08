@@ -110,15 +110,15 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
-    ReallyForceSpell(Myself,CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Aerial Servant)
-    ApplySpell(Myself,CLERIC_BLESS)  // SPPR101.SPL (Bless)
+    //ReallyForceSpell(Myself,CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Aerial Servant)
+    //ApplySpell(Myself,CLERIC_BLESS)  // SPPR101.SPL (Bless)
     ApplySpell(Myself,CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
     ApplySpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
-    ApplySpell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
+    //ApplySpell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Defensive Harmony)
     ApplySpell(Myself,CLERIC_PROTECTION_FROM_LIGHTNING)  // SPPR407.SPL (Protection from Lightning)
     ApplySpell(Myself,CLERIC_DEATH_WARD)  // SPPR409.SPL (Death Ward)
     ApplySpell(Myself,CLERIC_TRUE_SIGHT)
-    ApplySpell(Myself,WIZARD_IMPROVED_HASTE)  // Granted from Amulet of the Cheetah
+    //ApplySpell(Myself,WIZARD_IMPROVED_HASTE)  // Granted from Amulet of the Cheetah
     ApplySpell(Myself,CLERIC_GLOBE_OF_BLADES)
     ApplySpell(Myself,CLERIC_ARMOR_OF_FAITH)
     ApplySpell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)

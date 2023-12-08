@@ -14,10 +14,19 @@
 IF
   See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
-    SetGlobalTimer("MO_Spawn","LOCALS",10)
     ApplySpell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Mirror Image)
+    SetGlobal("Prep","LOCALS",1)
+END
+
+IF
+  See([GOODCUTOFF])
+  Global("Prep","LOCALS",0)
+  DifficultyLT(HARDEST)
+THEN
+  RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
 END
 

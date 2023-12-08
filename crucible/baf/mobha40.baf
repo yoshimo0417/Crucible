@@ -40,6 +40,7 @@ IF
   //See([GOODCUTOFF])
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
@@ -72,23 +73,41 @@ THEN
 END
 
 IF
+  //See([GOODCUTOFF])
+  Global("Prep","LOCALS",0)
+  Allegiance(Myself,ENEMY)
   DifficultyLT(HARDEST)
-  Global("MO_CheckDifficulty","LOCALS",0) 
-THEN 
+THEN
   RESPONSE #100
-    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    SetGlobal("Prep","LOCALS",1)
+    // Lvl 6
+    ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    ApplySpell(Myself,WIZARD_IMPROVED_HASTE)
+    //ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_ENERGY)
+    //ApplySpell(Myself,WIZARD_SPELL_DEFLECTION)
+    // Lvl 5
+    ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)
+    //ApplySpell(Myself,WIZARD_SPELL_SHIELD)
+    ApplySpell(Myself,WIZARD_PROTECTION_FROM_ELECTRICITY)
+    ApplySpell(Myself,WIZARD_PROTECTION_FROM_ACID)
+    //ApplySpell(Myself,WIZARD_MINOR_SPELL_TURNING)
+    // Lvl 4
+    ApplySpell(Myself,WIZARD_STONE_SKIN)
+    ApplySpell(Myself,WIZARD_FIRE_SHIELD_RED)
+    SetGlobal("Stoneskin","LOCALS",2)
+    SetGlobal("Malison","LOCALS",1)
+    // Lvl 3
+    SetGlobal("Remove","LOCALS",5)
+    // Lvl 2
+    //ApplySpell(Myself,WIZARD_BLUR)
+    ApplySpell(Myself,WIZARD_MIRROR_IMAGE)
+    ApplySpell(Myself,WIZARD_VOCALIZE)
+    SetGlobal("Mirror","LOCALS",2)
+    // Lvl 1
+    SetGlobal("Missile","LOCALS",5)
     DestroyItem("BRAC21")
     DestroyItem("BELT07")
     DestroyItem("RING31")
-    Continue()
-END
-
-IF
-  DifficultyGT(HARD)
-  Global("MO_CheckDifficulty","LOCALS",0) 
-THEN 
-  RESPONSE #100
-    SetGlobal("MO_CheckDifficulty","LOCALS",1)
     Continue()
 END
 
