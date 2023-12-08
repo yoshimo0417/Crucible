@@ -38,10 +38,12 @@ THEN
 END
 
 IF
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
   Allegiance(Myself,ENEMY)
   !See([GOODCUTOFF])
   Heard([ANYONE],40)
 THEN
   RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",18)
     MoveToObject(LastHeardBy(Myself))
 END

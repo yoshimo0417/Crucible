@@ -61,6 +61,14 @@ COPY ~crucible/cre/mobha01.cre~ ~override/mobha01.cre~
   SAY NAME2 @2026
 
 //-------------------------------------------------------------------------
+// Horkos (Deathbringer - Dying)
+COPY ~crucible/cre/mobha01d.cre~ ~override/mobha01d.cre~
+  SAY NAME1 @2033
+  SAY NAME2 @2033
+  WRITE_ASCII 0x2cc ~MOBHA01d~ #8 
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha01d.d~
+
+//-------------------------------------------------------------------------
 // Ferrante (Deathbringer - 2h Sword)
 COPY ~crucible/cre/mobha02.cre~ ~override/mobha02.cre~
   SAY NAME1 @2025
@@ -364,6 +372,12 @@ COPY ~crucible/cre/mobha34.cre~ ~override/mobha34.cre~
   SAY NAME2 @2021
 
 //-------------------------------------------------------------------------
+// Zealot (Dead - Melee)
+COPY ~crucible/cre/mobha34d.cre~ ~override/mobha34d.cre~
+  SAY NAME1 @2021
+  SAY NAME2 @2021
+
+//-------------------------------------------------------------------------
 // Zendrilar (Lich - Cleric/Mage Disabling)
 COPY ~crucible/cre/mobha35.cre~ ~override/mobha35.cre~
   SAY NAME1 @2022
@@ -492,72 +506,73 @@ ACTION_IF iwd_divine BEGIN
   INCLUDE ~crucible/lib/mobha37.tph~  // Culdus Aghurath
 END
 
-COPY ~crucible/baf/mobha1.baf~  ~override/mobha1.bcs~   // Area script
-     ~crucible/baf/mobha1a.baf~ ~override/mobha1a.bcs~  // Area script
-     ~crucible/baf/mobha1b.baf~ ~override/mobha1b.bcs~  // Area script
-     ~crucible/baf/mobha1c.baf~ ~override/mobha1c.bcs~  // Area script
-     ~crucible/baf/mobha1d.baf~ ~override/mobha1d.bcs~  // Area script
-     ~crucible/baf/mobha1e.baf~ ~override/mobha1e.bcs~  // Area script
-     ~crucible/baf/mobha1f.baf~ ~override/mobha1f.bcs~  // Area script
-     ~crucible/baf/mobha1g.baf~ ~override/mobha1g.bcs~  // Area script
-     ~crucible/baf/mobha1h.baf~ ~override/mobha1h.bcs~  // Area script
-     ~crucible/baf/mobha1i.baf~ ~override/mobha1i.bcs~  // Area script
-     ~crucible/baf/mobha1j.baf~ ~override/mobha1j.bcs~  // Area script
-     ~crucible/baf/mobha1k.baf~ ~override/mobha1k.bcs~  // Area script
-     ~crucible/baf/mobha1l.baf~ ~override/mobha1l.bcs~  // Area script
-     ~crucible/baf/mobha1m.baf~ ~override/mobha1m.bcs~  // Area script
-     ~crucible/baf/mobha1n.baf~ ~override/mobha1n.bcs~  // Area script
-     ~crucible/baf/mobha1o.baf~ ~override/mobha1o.bcs~  // Area script
-     ~crucible/baf/mobha2.baf~  ~override/mobha2.bcs~   // Area script
-     ~crucible/baf/mobha2a.baf~ ~override/mobha2a.bcs~  // Area script
-     ~crucible/baf/mobha2b.baf~ ~override/mobha2b.bcs~  // Area script
-     ~crucible/baf/mobha3.baf~  ~override/mobha3.bcs~   // Area script
-     ~crucible/baf/mobha4a.baf~ ~override/mobha4a.bcs~  // Area script
-     ~crucible/baf/mobha5.baf~  ~override/mobha5.bcs~   // Area script
-     ~crucible/baf/mobha5a.baf~ ~override/mobha5a.bcs~  // Area script
-     ~crucible/baf/mobha6.baf~  ~override/mobha6.bcs~   // Area script
-     ~crucible/baf/mobha6a.baf~ ~override/mobha6a.bcs~  // Area script
-     ~crucible/baf/mobha6b.baf~ ~override/mobha6b.bcs~  // Area script
-     ~crucible/baf/mobha6c.baf~ ~override/mobha6c.bcs~  // Area script
-     ~crucible/baf/mobha7.baf~  ~override/mobha7.bcs~   // Area script
-     ~crucible/baf/mobha7a.baf~ ~override/mobha7a.bcs~  // Area script
-     ~crucible/baf/mobha01.baf~ ~override/mobha01.bcs~  // Creature script
-     ~crucible/baf/mobha03.baf~ ~override/mobha03.bcs~  // Creature script
-     ~crucible/baf/mobha04.baf~ ~override/mobha04.bcs~  // Creature script
-     ~crucible/baf/mobha05.baf~ ~override/mobha05.bcs~  // Creature script
-     ~crucible/baf/mobha06.baf~ ~override/mobha06.bcs~  // Creature script
-     ~crucible/baf/mobha07.baf~ ~override/mobha07.bcs~  // Creature script
-     ~crucible/baf/mobha08.baf~ ~override/mobha08.bcs~  // Creature script
-     ~crucible/baf/mobha09.baf~ ~override/mobha09.bcs~  // Creature script
-     ~crucible/baf/mobha11.baf~ ~override/mobha11.bcs~  // Creature script
-     ~crucible/baf/mobha12.baf~ ~override/mobha12.bcs~  // Creature script
-     ~crucible/baf/mobha14.baf~ ~override/mobha14.bcs~  // Creature script
-     ~crucible/baf/mobha15.baf~ ~override/mobha15.bcs~  // Creature script
-     ~crucible/baf/mobha16.baf~ ~override/mobha16.bcs~  // Creature script
-     ~crucible/baf/mobha17.baf~ ~override/mobha17.bcs~  // Creature script
-     ~crucible/baf/mobha20.baf~ ~override/mobha20.bcs~  // Creature script
-     ~crucible/baf/mobha21.baf~ ~override/mobha21.bcs~  // Creature script
-     ~crucible/baf/mobha23.baf~ ~override/mobha23.bcs~  // Creature script
-     ~crucible/baf/mobha24.baf~ ~override/mobha24.bcs~  // Creature script
-     ~crucible/baf/mobha25.baf~ ~override/mobha25.bcs~  // Creature script
-     ~crucible/baf/mobha26.baf~ ~override/mobha26.bcs~  // Creature script
-     ~crucible/baf/mobha27.baf~ ~override/mobha27.bcs~  // Creature script
-     ~crucible/baf/mobha28.baf~ ~override/mobha28.bcs~  // Creature script
-     ~crucible/baf/mobha34.baf~ ~override/mobha34.bcs~  // Creature script
-     ~crucible/baf/mobha35.baf~ ~override/mobha35.bcs~  // Creature script
-     ~crucible/baf/mobha36.baf~ ~override/mobha36.bcs~  // Creature script
-     ~crucible/baf/mobha37.baf~ ~override/mobha37.bcs~  // Creature script
-     ~crucible/baf/mobha38.baf~ ~override/mobha38.bcs~  // Creature script
-     ~crucible/baf/mobha39.baf~ ~override/mobha39.bcs~  // Creature script
-     ~crucible/baf/mobha40.baf~ ~override/mobha40.bcs~  // Creature script
-     ~crucible/baf/mobha41.baf~ ~override/mobha41.bcs~  // Creature script
-     ~crucible/baf/mobha42.baf~ ~override/mobha42.bcs~  // Creature script
-     ~crucible/baf/mobha43.baf~ ~override/mobha43.bcs~  // Creature script
-     ~crucible/baf/mocut03.baf~ ~override/mocut03.bcs~  // Cutscene script
-     ~crucible/baf/mocut04.baf~ ~override/mocut04.bcs~  // Cutscene script
-     ~crucible/baf/mocut05.baf~ ~override/mocut05.bcs~  // Cutscene script
-     ~crucible/baf/mocut06.baf~ ~override/mocut06.bcs~  // Cutscene script
-     ~crucible/baf/mocall1.baf~ ~override/mocall1.bcs~  // Call for help - Amelyssan Forces
-     ~crucible/baf/mocall2.baf~ ~override/mocall2.bcs~  // Call for help - Phiuhls
-     ~crucible/baf/mocall3.baf~ ~override/mocall3.bcs~  // Call for help - Demons&Angels
+COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
+     ~crucible/baf/mobha1a.baf~  ~override/mobha1a.bcs~   // Area script
+     ~crucible/baf/mobha1b.baf~  ~override/mobha1b.bcs~   // Area script
+     ~crucible/baf/mobha1c.baf~  ~override/mobha1c.bcs~   // Area script
+     ~crucible/baf/mobha1d.baf~  ~override/mobha1d.bcs~   // Area script
+     ~crucible/baf/mobha1e.baf~  ~override/mobha1e.bcs~   // Area script
+     ~crucible/baf/mobha1f.baf~  ~override/mobha1f.bcs~   // Area script
+     ~crucible/baf/mobha1g.baf~  ~override/mobha1g.bcs~   // Area script
+     ~crucible/baf/mobha1h.baf~  ~override/mobha1h.bcs~   // Area script
+     ~crucible/baf/mobha1i.baf~  ~override/mobha1i.bcs~   // Area script
+     ~crucible/baf/mobha1j.baf~  ~override/mobha1j.bcs~   // Area script
+     ~crucible/baf/mobha1k.baf~  ~override/mobha1k.bcs~   // Area script
+     ~crucible/baf/mobha1l.baf~  ~override/mobha1l.bcs~   // Area script
+     ~crucible/baf/mobha1m.baf~  ~override/mobha1m.bcs~   // Area script
+     ~crucible/baf/mobha1n.baf~  ~override/mobha1n.bcs~   // Area script
+     ~crucible/baf/mobha1o.baf~  ~override/mobha1o.bcs~   // Area script
+     ~crucible/baf/mobha2.baf~   ~override/mobha2.bcs~    // Area script
+     ~crucible/baf/mobha2a.baf~  ~override/mobha2a.bcs~   // Area script
+     ~crucible/baf/mobha2b.baf~  ~override/mobha2b.bcs~   // Area script
+     ~crucible/baf/mobha3.baf~   ~override/mobha3.bcs~    // Area script
+     ~crucible/baf/mobha4a.baf~  ~override/mobha4a.bcs~   // Area script
+     ~crucible/baf/mobha5.baf~   ~override/mobha5.bcs~    // Area script
+     ~crucible/baf/mobha5a.baf~  ~override/mobha5a.bcs~   // Area script
+     ~crucible/baf/mobha6.baf~   ~override/mobha6.bcs~    // Area script
+     ~crucible/baf/mobha6a.baf~  ~override/mobha6a.bcs~   // Area script
+     ~crucible/baf/mobha6b.baf~  ~override/mobha6b.bcs~   // Area script
+     ~crucible/baf/mobha6c.baf~  ~override/mobha6c.bcs~   // Area script
+     ~crucible/baf/mobha7.baf~   ~override/mobha7.bcs~    // Area script
+     ~crucible/baf/mobha7a.baf~  ~override/mobha7a.bcs~   // Area script
+     ~crucible/baf/mobha01.baf~  ~override/mobha01.bcs~   // Creature script
+     ~crucible/baf/mobha01d.baf~ ~override/mobha01d.bcs~  // Creature script
+     ~crucible/baf/mobha03.baf~  ~override/mobha03.bcs~   // Creature script
+     ~crucible/baf/mobha04.baf~  ~override/mobha04.bcs~   // Creature script
+     ~crucible/baf/mobha05.baf~  ~override/mobha05.bcs~   // Creature script
+     ~crucible/baf/mobha06.baf~  ~override/mobha06.bcs~   // Creature script
+     ~crucible/baf/mobha07.baf~  ~override/mobha07.bcs~   // Creature script
+     ~crucible/baf/mobha08.baf~  ~override/mobha08.bcs~   // Creature script
+     ~crucible/baf/mobha09.baf~  ~override/mobha09.bcs~   // Creature script
+     ~crucible/baf/mobha11.baf~  ~override/mobha11.bcs~   // Creature script
+     ~crucible/baf/mobha12.baf~  ~override/mobha12.bcs~   // Creature script
+     ~crucible/baf/mobha14.baf~  ~override/mobha14.bcs~   // Creature script
+     ~crucible/baf/mobha15.baf~  ~override/mobha15.bcs~   // Creature script
+     ~crucible/baf/mobha16.baf~  ~override/mobha16.bcs~   // Creature script
+     ~crucible/baf/mobha17.baf~  ~override/mobha17.bcs~   // Creature script
+     ~crucible/baf/mobha20.baf~  ~override/mobha20.bcs~   // Creature script
+     ~crucible/baf/mobha21.baf~  ~override/mobha21.bcs~   // Creature script
+     ~crucible/baf/mobha23.baf~  ~override/mobha23.bcs~   // Creature script
+     ~crucible/baf/mobha24.baf~  ~override/mobha24.bcs~   // Creature script
+     ~crucible/baf/mobha25.baf~  ~override/mobha25.bcs~   // Creature script
+     ~crucible/baf/mobha26.baf~  ~override/mobha26.bcs~   // Creature script
+     ~crucible/baf/mobha27.baf~  ~override/mobha27.bcs~   // Creature script
+     ~crucible/baf/mobha28.baf~  ~override/mobha28.bcs~   // Creature script
+     ~crucible/baf/mobha34.baf~  ~override/mobha34.bcs~   // Creature script
+     ~crucible/baf/mobha35.baf~  ~override/mobha35.bcs~   // Creature script
+     ~crucible/baf/mobha36.baf~  ~override/mobha36.bcs~   // Creature script
+     ~crucible/baf/mobha37.baf~  ~override/mobha37.bcs~   // Creature script
+     ~crucible/baf/mobha38.baf~  ~override/mobha38.bcs~   // Creature script
+     ~crucible/baf/mobha39.baf~  ~override/mobha39.bcs~   // Creature script
+     ~crucible/baf/mobha40.baf~  ~override/mobha40.bcs~   // Creature script
+     ~crucible/baf/mobha41.baf~  ~override/mobha41.bcs~   // Creature script
+     ~crucible/baf/mobha42.baf~  ~override/mobha42.bcs~   // Creature script
+     ~crucible/baf/mobha43.baf~  ~override/mobha43.bcs~   // Creature script
+     ~crucible/baf/mocut03.baf~  ~override/mocut03.bcs~   // Cutscene script
+     ~crucible/baf/mocut04.baf~  ~override/mocut04.bcs~   // Cutscene script
+     ~crucible/baf/mocut05.baf~  ~override/mocut05.bcs~   // Cutscene script
+     ~crucible/baf/mocut06.baf~  ~override/mocut06.bcs~   // Cutscene script
+     ~crucible/baf/mocall1.baf~  ~override/mocall1.bcs~   // Call for help - Amelyssan Forces
+     ~crucible/baf/mocall2.baf~  ~override/mocall2.bcs~   // Call for help - Phiuhls
+     ~crucible/baf/mocall3.baf~  ~override/mocall3.bcs~   // Call for help - Demons&Angels
   COMPILE_BAF_TO_BCS
