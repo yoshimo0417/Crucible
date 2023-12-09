@@ -162,7 +162,7 @@
 @6500 = ~Pity I finally find you when I'm in such a weakened state.~ [mobha050]
 @6501 = ~I would use my last breath to kill you, <CHARNAME>; however, it could be put to better use as you are now the best chance at killing that traitorous bitch, Amelyssan.~ [mobha051]
 @6502 = ~What questions do you have of me before I succumb to these injuries?~ [mobha052]
-@6503 = ~Be at peace.~ //player
+@6503 = ~I see your time is at an end.~ //player
 @6504 = ~I'll end your existence!~ //player
 @6505 = ~Can I aid you?~ //player
 @6506 = ~Who are you?~ //player

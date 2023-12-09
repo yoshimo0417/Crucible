@@ -42,10 +42,10 @@ IF
   DifficultyLT(HARDEST)
 THEN
   RESPONSE #100
-    ApplySpell(Myself,WARRIOR_GREATER_WHIRLWIND)
+    //ApplySpell(Myself,WARRIOR_GREATER_WHIRLWIND)
     DestroyItem("BRAC04")
     SetGlobal("Prep","LOCALS",1)
-    SetGlobal("MO_GWW","LOCALS",1)
+    SetGlobal("MO_GWW","LOCALS",0)
     Continue()
 END
 
