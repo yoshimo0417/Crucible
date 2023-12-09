@@ -52,12 +52,7 @@ END
 
 IF ~~ THEN BEGIN 50
   SAY @6531
-  IF ~~ THEN EXTERN SAREVOK 51
-END
-
-IF ~~ THEN BEGIN 51
-  SAY @6532
-  IF ~~ THEN EXTERN MOBHA01D 52
+  IF ~~ THEN EXTERN SAREV25A 51
 END
 
 IF ~~ THEN BEGIN 52
@@ -85,3 +80,11 @@ IF ~~ THEN BEGIN 8
   SAY @6560 = @6561 = @6562 = @6563
   IF ~~ THEN GOTO 3
 END
+
+//-------------------------------------------------------------------------
+// Sarevok External
+BEGIN SAREV25A
+  IF ~~ THEN BEGIN 51
+    SAY @6532
+    IF ~~ THEN EXTERN MOBHA01D 52
+  END
