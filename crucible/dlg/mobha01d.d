@@ -42,22 +42,46 @@ IF ~~ THEN BEGIN 4
   IF ~~ THEN DO ~SetGlobal("MO_AidDeathbringer","GLOBAL",1)~ GOTO 3
 END
 
+//-------------------------------------------------------------------------
+// Who are you?
 IF ~~ THEN BEGIN 5
   SAY @6530
+  IF ~IsValidForPartyDialog("SAREVOK")~ THEN GOTO 50
+  IF ~!IsValidForPartyDialog("SAREVOK")~ THEN GOTO 52
+END
+
+IF ~~ THEN BEGIN 50
+  SAY @6531
+  IF ~~ THEN EXTERN SAREVOK 51
+END
+
+IF ~~ THEN BEGIN 51
+  SAY @6532
+  IF ~~ THEN EXTERN MOBHA01D 52
+END
+
+IF ~~ THEN BEGIN 52
+  SAY @6533 = @6534 = @6535
   IF ~~ THEN GOTO 3
 END
 
+//-------------------------------------------------------------------------
+// There are bodies everywhere, what happened here?
 IF ~~ THEN BEGIN 6
-  SAY @6540
+  SAY @6540 = @6541 = @6542
   IF ~~ THEN GOTO 3
 END
 
+//-------------------------------------------------------------------------
+// Where is Bhaal's kingdom and how do I enter it?
 IF ~~ THEN BEGIN 7
   SAY @6550
   IF ~~ THEN GOTO 3
 END
 
+//-------------------------------------------------------------------------
+// What threats do I face here?
 IF ~~ THEN BEGIN 8
-  SAY @6560
+  SAY @6560 = @6561 = @6562 = @6563
   IF ~~ THEN GOTO 3
 END
