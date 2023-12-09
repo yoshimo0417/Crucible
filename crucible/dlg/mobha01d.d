@@ -5,14 +5,8 @@
 BEGIN MOBHA01D
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
-  SAY @6500 = @6501 = @6502
-  IF ~Global("MO_AidDeathbringer","GLOBAL",0)~ THEN REPLY @6505 GOTO 4  // Can I aid you?
-  IF ~~ THEN REPLY @6506 GOTO 5  // Who are you?
-  IF ~~ THEN REPLY @6507 GOTO 6  // There are bodies everywhere, what happened here?
-  IF ~~ THEN REPLY @6508 GOTO 7  // Where is Bhaal's kingdom and how do I enter it?
-  IF ~~ THEN REPLY @6509 GOTO 8  // What threats do I face here?
-  IF ~~ THEN REPLY @6503 GOTO 1  // Be at peace.
-  IF ~~ THEN REPLY @6504 GOTO 2  // I'll end your existence!
+  SAY @6500 = @6501
+  IF ~~ THEN GOTO 3
 END
 
 IF ~~ THEN BEGIN 1
