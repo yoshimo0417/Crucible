@@ -136,8 +136,20 @@ COPY ~crucible/cre/mobha05.cre~ ~override/mobha05.cre~
   SAY NAME2 @2003
 
 //-------------------------------------------------------------------------
+// Scout (Dead - Ranged)
+COPY ~crucible/cre/mobha05d.cre~ ~override/mobha05d.cre~
+  SAY NAME1 @2003
+  SAY NAME2 @2003
+
+//-------------------------------------------------------------------------
 // Skirmisher (Melee)
 COPY ~crucible/cre/mobha06.cre~ ~override/mobha06.cre~
+  SAY NAME1 @2004
+  SAY NAME2 @2004
+
+//-------------------------------------------------------------------------
+// Skirmisher (Dead - Melee)
+COPY ~crucible/cre/mobha06d.cre~ ~override/mobha06d.cre~
   SAY NAME1 @2004
   SAY NAME2 @2004
 
