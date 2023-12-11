@@ -59,7 +59,7 @@ THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",2)
     ApplySpell(Myself,WIZARD_IMPROVED_HASTE)
-    ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)
     ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)
     Continue()
 END

@@ -21,7 +21,7 @@ THEN
     CreateCreatureEffect("MELSUM02","SPRAISED",[863.1519],S)  // Bone Fiend
     CreateCreatureEffect("MELSUM02","SPRAISED",[927.1495],S)  // Bone Fiend
     ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
-    ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
+    ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)
     ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
     ApplySpell(Myself,WIZARD_HASTE)  // SPWI305.SPL (Haste)
     ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)

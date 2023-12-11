@@ -36,7 +36,7 @@ THEN
     ApplySpell(Myself,WIZARD_SPELL_SHIELD)
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)
     ApplySpell(Myself,WIZARD_IMPROVED_HASTE)
-    ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    ApplySpell(Myself,WIZARD_ABSOLUTE_IMMUNITY)
     ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
     ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)
     SetGlobal("MO_DeathKnightFireballCast","LOCALS",0)

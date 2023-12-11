@@ -793,8 +793,9 @@ END
 // Spell: Breach
 /////////////////////////////////////////////////////////////////////
 IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  !Global("MO_DamagedTarget","LOCALS",1)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_BreachTimer","LOCALS")
   See(NearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Breach","LOCALS",0)
@@ -826,8 +827,9 @@ THEN
 END
 
 IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  !Global("MO_DamagedTarget","LOCALS",1)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_BreachTimer","LOCALS")
   See(SecondNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Breach","LOCALS",0)
@@ -859,8 +861,9 @@ THEN
 END
 
 IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  !Global("MO_DamagedTarget","LOCALS",1)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_BreachTimer","LOCALS")
   See(ThirdNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Breach","LOCALS",0)
@@ -892,8 +895,9 @@ THEN
 END
 
 IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  !Global("MO_DamagedTarget","LOCALS",1)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_BreachTimer","LOCALS")
   See(FourthNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Breach","LOCALS",0)
@@ -925,8 +929,9 @@ THEN
 END
 
 IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  !Global("MO_DamagedTarget","LOCALS",1)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_BreachTimer","LOCALS")
   See(FifthNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Breach","LOCALS",0)
@@ -958,8 +963,9 @@ THEN
 END
 
 IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  !Global("MO_DamagedTarget","LOCALS",1)
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_BreachTimer","LOCALS")
   See(SixthNearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_Breach","LOCALS",0)

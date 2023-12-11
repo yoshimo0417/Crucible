@@ -43,6 +43,7 @@ IF
   DifficultyGT(HARD)
 THEN
   RESPONSE #100
+    XEquipItem("mobha13b",Myself,SLOT_WEAPON0,EQUIP)
     // Lvl 4
     ApplySpell(Myself,CLERIC_DEATH_WARD)
     ApplySpell(Myself,CLERIC_PROTECTION_FROM_LIGHTNING)
@@ -72,6 +73,7 @@ IF
   DifficultyLT(HARDEST)
 THEN
   RESPONSE #100
+    XEquipItem("sw2h09",Myself,SLOT_WEAPON1,EQUIP)
     // Lvl 4
     ApplySpell(Myself,CLERIC_DEATH_WARD)
     ApplySpell(Myself,CLERIC_PROTECTION_FROM_LIGHTNING)

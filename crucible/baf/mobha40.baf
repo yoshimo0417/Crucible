@@ -44,6 +44,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    XEquipItem("sw1h77",Myself,SLOT_WEAPON0,EQUIP)  // Answerer +4
     // Lvl 6
     ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
     ApplySpell(Myself,WIZARD_IMPROVED_HASTE)
@@ -80,6 +81,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    XEquipItem("sw1h73",Myself,SLOT_WEAPON1,EQUIP)  // Longsword +3
     // Lvl 6
     ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
     ApplySpell(Myself,WIZARD_IMPROVED_HASTE)

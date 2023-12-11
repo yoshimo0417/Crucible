@@ -32,7 +32,7 @@ THEN
     SetGlobal("Prep","LOCALS",1)
     ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
     ApplySpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
-    ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
+    ApplySpell(Myself,WIZARD_ABSOLUTE_IMMUNITY)
     ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
     XEquipItem("SW1H68",Myself,SLOT_WEAPON0,EQUIP)
 END
