@@ -156,7 +156,18 @@
 @6300 = ~Gorion's ward has invaded Bhaal's kingdom! To arms my brothers!~ [mobha049]
 
 // Culdus Aghurath
-@6400 = ~Welcome to the final fight. This is still in progress and I look forward to testing your mettle. In the mean time, we can practice!~
+@6400 = ~<CHARNAME>, first among the children of Bhaal.~
+@6401 = ~Or perhaps your sister Imoen holds that distinction?~
+@6402 = ~No, pal! <CHARNAME> can be the first.~
+@6403 = ~Long have I and the others been watching you. Honestly, I thought we would collect your essence after your confrontation with Sarevok and again during your Irenicus ordeal. Yet here you are. You have quite the penchant for survival.~
+@6404 = ~Speaking of survival. At first I didn't believe the reports you were traveling with Sarevok, yet here he is. How did you manage to do it?~
+@6405 = ~It required an unconquerable resolve I doubt you are capable of understanding.~
+@6406 = ~Says the man who died and is a shell of his former self.~
+@6407 = ~Behind me lies the entrance to the Throne of Blood where Amelyssan is gathering the collected essences of Bhaal, and we will not allow you to disturb her plans.~
+@6408 = ~Step aside and you can serve me when I become the new Lord of Murder.~
+@6409 = ~~
+@6410 = ~~
+@6499 = ~~
 
 // Horkos (Dying Deathbringer) (Ranger - Bitterness Voice)
 @6500 = ~Pity I finally find you when I'm in such a weakened state.~ [mobha050]
