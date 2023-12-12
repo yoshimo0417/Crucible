@@ -156,21 +156,21 @@
 @6300 = ~Gorion's ward has invaded Bhaal's kingdom! To arms my brothers!~ [mobha049]
 
 // Culdus Aghurath
-@6400 = ~<CHARNAME>, first among the children of Bhaal.~
-@6401 = ~Or perhaps your sister Imoen holds that distinction?~
+@6400 = ~<CHARNAME>, first among the children of Bhaal.~ [mobha071]
+@6401 = ~Or perhaps your sister Imoen holds that distinction?~ [mobha072]
 @6402 = ~No, pal! <CHARNAME> can be the first.~
-@6403 = ~Long have I and the others been watching you. Honestly, I thought we would collect your essence after your confrontation with Sarevok and again during your Irenicus ordeal. Yet here you are. You have quite the penchant for survival.~
-@6404 = ~Speaking of survival. At first I didn't believe the reports you were traveling with Sarevok, yet here he is. How did you manage to do it?~
+@6403 = ~Long have I and the others been watching you. Honestly, I thought we would collect your essence after your confrontation with Sarevok and again during your Irenicus ordeal. Yet here you are. You have quite the penchant for survival.~ [mobha073]
+@6404 = ~Speaking of survival. At first I didn't believe the reports you were traveling with Sarevok, yet here he is. How did you manage to do it?~ [mobha074]
 @6405 = ~It required an unconquerable resolve I doubt you are capable of understanding.~
-@6406 = ~Says the man who died and is a shell of his former self.~
-@6407 = ~Behind me lies the entrance to the Throne of Blood where Amelyssan is gathering the collected essences of Bhaal, and we will not allow you to disturb her plans.~
+@6406 = ~Says the man who died and is a shell of his former self.~ [mobha075]
+@6407 = ~Behind me lies the entrance to the Throne of Blood where Amelyssan is gathering the collected essences of Bhaal, and we will not allow you to disturb her plans.~ [mobha076]
 @6408 = ~Step aside and you can serve me when I become the new Lord of Murder.~
 @6409 = ~I have crushed all who have challenged me before. Step aside and spare yourself.~
 @6410 = ~Do you think you are capable of stopping me?~
 @6411 = ~Enough chatter, my destiny awaits!~
-@6412 = ~Let us finish this. For Amelyssan!~
-@6413 = ~You must be a fool if you think I would serve you over Amelyssan!~
-@6414 = ~Even by delaying you, I buy Amelyssan time to finish her preparations. There is no victory for you here.~
+@6412 = ~Let's finish this. For Amelyssan!~ [mobha077]
+@6413 = ~You must be a fool if you think I would serve you over Amelyssan!~ [mobha078]
+@6414 = ~Even by delaying you, I buy Amelyssan time to finish her preparations. There is no victory for you here.~ [mobha079]
 
 // Horkos (Dying Deathbringer) (Ranger - Bitterness Voice)
 @6500 = ~Pity I finally find you when I'm in such a weakened state.~ [mobha050]
