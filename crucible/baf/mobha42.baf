@@ -128,6 +128,7 @@ THEN
     SetGlobal("MO_LevelSeven","LOCALS",5)
     SetGlobal("MO_LevelEight","LOCALS",7)
     SetGlobal("MO_LevelNine","LOCALS",4)
+    SetGlobal("MO_PfMW","LOCALS",1)
     SetGlobal("MO_Mordenkainens","LOCALS",1)
     SetGlobal("Prep","LOCALS",1)
     Continue()
@@ -297,6 +298,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   See(NearestEnemyOfType([GOODCUTOFF]))
+  DifficultyGT(HARD)
   Range(LastSeenBy(Myself),5)
   GlobalGT("MO_LevelNine","LOCALS",0)
   !CheckSpellState(Myself,PROTECTION_FROM_MAGICAL_WEAPONS)
@@ -322,6 +324,9 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   See(NearestEnemyOfType([GOODCUTOFF]))
   GlobalGT("MO_LevelSix","LOCALS",0)
+  OR(2)
+    GlobalGT("MO_PfMW","LOCALS",0)
+    DifficultyGT(HARD)
   !CheckSpellState(Myself,PROTECTION_FROM_MAGICAL_WEAPONS)
   !CheckSpellState(Myself,ABSOLUTE_IMMUNITY)
   !CheckSpellState(Myself,MANTLE)
@@ -333,6 +338,7 @@ IF
 THEN
   RESPONSE #100
     IncrementGlobal("MO_LevelSix","LOCALS",-1)
+    SetGlobal("MO_PfMW","LOCALS",0)
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
     SpellNoDec(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
