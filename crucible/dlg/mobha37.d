@@ -12,7 +12,7 @@ END
 
 IF ~~ THEN BEGIN 1
   SAY @6401
-  IF ~~ THEN EXTERN IMOEN25J 2
+  IF ~~ THEN EXTERN IMOEN25J MOIMOEN1
 END 
 
 IF ~~ THEN BEGIN 3
@@ -23,7 +23,7 @@ END
 
 IF ~~ THEN BEGIN 4
   SAY @6404
-  IF ~~ EXTERN SAREV25J 5
+  IF ~~ EXTERN SAREV25J MOSAREVOK1
 END
 
 IF ~~ THEN BEGIN 6
@@ -60,7 +60,7 @@ END
 //-------------------------------------------------------------------------
 // Imoen External
 APPEND IMOEN25J
-  IF ~~ THEN BEGIN 2
+  IF ~~ THEN BEGIN MOIMOEN1
     SAY @6402
     IF ~~ THEN EXTERN MOBHA37 3
   END
@@ -69,7 +69,7 @@ END
 //-------------------------------------------------------------------------
 // Sarevok External
 APPEND SAREV25J
-  IF ~~ THEN BEGIN 5
+  IF ~~ THEN BEGIN MOSAREVOK1
     SAY @6405
     IF ~~ THEN EXTERN MOBHA37 6
   END

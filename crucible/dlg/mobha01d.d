@@ -40,7 +40,7 @@ END
 // Who are you?
 IF ~~ THEN BEGIN 5
   SAY @6530
-  IF ~IsValidForPartyDialog("SAREVOK")~ THEN GOTO 50
+  IF ~IsValidForPartyDialog("SAREVOK")~ THEN GOTO MOSAREVOK2
   IF ~!IsValidForPartyDialog("SAREVOK")~ THEN GOTO 52
 END
 
@@ -78,7 +78,7 @@ END
 //-------------------------------------------------------------------------
 // Sarevok External
 APPEND SAREV25J
-  IF ~~ THEN BEGIN 51
+  IF ~~ THEN BEGIN MOSAREVOK2
     SAY @6532
     IF ~~ THEN EXTERN MOBHA01D 52
   END
