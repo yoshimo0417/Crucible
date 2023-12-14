@@ -1,0 +1,11 @@
+///////////////////////////////////////////////////////////////////
+// Dialogue for Uthaedeol the Blood-drenched
+// Summoned forth in Planar Garrison
+///////////////////////////////////////////////////////////////////
+BEGIN MOBHA44
+
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
+  SAY @6600
+  IF ~~ THEN DO ~~ EXIT
+END
+

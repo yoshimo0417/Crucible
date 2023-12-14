@@ -477,6 +477,17 @@ COPY ~crucible/spl/mobha43a.spl~ ~override~  // Searing Mist
   SAY NAME1 @4002
   SAY NAME2 @4002
 
+//-------------------------------------------------------------------------
+// Uthaedeol the Blood-drenched (F(13)->Mage(20))
+COPY ~crucible/cre/mobha44.cre~  ~override/mobha44.cre~
+  SAY NAME1 @2034
+  SAY NAME2 @2034
+  WRITE_ASCII 0x2cc ~MOBHA44~ #8 // Dialogue
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha44.d~
+COPY ~crucible/itm/mobha44a.itm~ ~override~  // Weapon
+  SAY NAME2 @10008
+  SAY DESC  @10009
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -580,6 +591,7 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobha41.baf~  ~override/mobha41.bcs~   // Creature script
      ~crucible/baf/mobha42.baf~  ~override/mobha42.bcs~   // Creature script
      ~crucible/baf/mobha43.baf~  ~override/mobha43.bcs~   // Creature script
+     ~crucible/baf/mobha44.baf~  ~override/mobha44.bcs~   // Creature script
      ~crucible/baf/mocut03.baf~  ~override/mocut03.bcs~   // Cutscene script
      ~crucible/baf/mocut04.baf~  ~override/mocut04.bcs~   // Cutscene script
      ~crucible/baf/mocut05.baf~  ~override/mocut05.bcs~   // Cutscene script
