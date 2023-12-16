@@ -46,6 +46,7 @@
 
 // Planetar
 @5300 = ~Halt! It has been decreed to stop your advance and end your existence. Prepare thyself for death!~ [mobha010]
+@5301 = ~Raise the alarms, we're under attack from the Bhaalspawn!~ [mobha080]
 
 // Demon
 @5400 = ~I will rend the flesh from your bones, God child!~ [mobha011]

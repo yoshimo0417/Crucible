@@ -484,9 +484,17 @@ COPY ~crucible/cre/mobha44.cre~  ~override/mobha44.cre~
   SAY NAME2 @2034
   WRITE_ASCII 0x2cc ~MOBHA44~ #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha44.d~
-COPY ~crucible/itm/mobha44a.itm~ ~override~  // Weapon
+COPY ~crucible/itm/mobha44a.itm~ ~override~  // Dagger
   SAY NAME2 @10008
   SAY DESC  @10009
+
+//-------------------------------------------------------------------------
+// Osmadiel
+COPY ~crucible/cre/mobha45.cre~  ~override/mobha45.cre~
+  SAY NAME1 @2035
+  SAY NAME2 @2035
+  WRITE_ASCII 0x2cc ~mobha45~  #8 // Dialogue
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha45.d~
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //

@@ -45,4 +45,16 @@ Requires:
 Weight: 8~
 
 @10008 = ~~
-@10009 = ~~
+@10009 = ~The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter. This particular dagger is magical, having special bonuses to its speed, accuracy, and damage. Also, since it is magical, it is capable of striking opponents that are immune to normal weapons, such as vampires, elementals, and mummies.
+
+STATISTICS:
+
+THAC0: +5
+Damage: 1d4+5 (piercing)
+Speed Factor: 0
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 0~
