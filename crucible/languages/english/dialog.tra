@@ -46,7 +46,7 @@
 
 // Planetar
 @5300 = ~Halt! It has been decreed to stop your advance and end your existence. Prepare thyself for death!~ [mobha010]
-@5301 = ~Raise the alarms, we're under attack from the Bhaalspawn!~ [mobha080]
+@5301 = ~Raise the alarms, we are under attack from the Bhaalspawn!~ [mobha080]
 
 // Demon
 @5400 = ~I will rend the flesh from your bones, God child!~ [mobha011]
@@ -152,6 +152,19 @@
 // Malchediel
 @6200 = ~This is placeholder dialog.~
 @6201 = ~Here is my blood to help with the testing. I will face you at a later time once I am given a proper fight sequence and script.~
+
+@6210 = ~Impressive. Regardless of the odds you insist on pressing ever forward.~ 
+@6211 = ~I have no choice but to press forward.~ // Player
+@6212 = ~I am not a gambler and care little for odds.~ // Player
+@6213 = ~Nothing will stop me from my destiny.~ // Player
+@6214 = ~I shall crush any who stand in my way.~ // Player
+@6215 = ~Yet, you have no idea where you are.~
+@6216 = ~This is the great armory of Bhaal which was known to house great and terrible weapons. In the years since his fall the armory has fallen in disrepair, so Amelyssan has assigned us to return it to it's former glory.~
+@6217 = ~Much has since been looted and spread amongst the realms, but some artifacts remain. Some of the most potent weapons are not made of steel, but flesh and blood.~
+@6218 = ~Awaken, Blood-drenched. It is time to arise and serve your master.~
+@6219 = ~Who are you to awaken me, Solar? Where is my lord, Bhaal?~
+@6220 = ~Dead. Amelyssan commands you to awaken and stop the intruders.~
+@6221 = ~Dead?! Has Alaundo's prophecy come to pass? Wait, you are Bhaalspawn! I see my lord's taint on you.~
 
 // Deathbringer
 @6300 = ~Gorion's ward has invaded Bhaal's kingdom! To arms my brothers!~ [mobha049]
