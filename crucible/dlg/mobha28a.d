@@ -15,6 +15,7 @@ END
 IF ~~ THEN BEGIN 1
   SAY @6215 = @6216 = @6217 = @6218
   IF ~~ THEN DO ~ClearAllActions()
+RevealAreaOnMap("MOBHA8")
 SmallWait(5)
 StartCutSceneMode()
 StartCutScene("mocut07")~ EXIT

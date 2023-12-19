@@ -353,6 +353,7 @@ COPY ~crucible/cre/mobha28.cre~ ~override/mobha28a.cre~  // Malchediel (Dialog)
   SAY NAME1 @2020
   SAY NAME2 @2020
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#TRIAS~))
+  WRITE_ASCII 0x280 ~MOBHA28a~ #8 // Script Name
   WRITE_ASCII 0x2cc ~MOBHA28a~ #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha28a.d~
 
