@@ -349,7 +349,7 @@ COPY ~crucible/cre/mobha28.cre~ ~override~  // Malchediel (Combat)
   WRITE_ASCII 0x2cc ~MOBHA28~ #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha28.d~
 
-COPY ~crucible/cre/mobha28.cre~ ~override/mobha28a.cre~  // Malchediel (Combat)
+COPY ~crucible/cre/mobha28.cre~ ~override/mobha28a.cre~  // Malchediel (Dialog)
   SAY NAME1 @2020
   SAY NAME2 @2020
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#TRIAS~))
@@ -611,6 +611,8 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mocut04.baf~  ~override/mocut04.bcs~   // Cutscene script
      ~crucible/baf/mocut05.baf~  ~override/mocut05.bcs~   // Cutscene script
      ~crucible/baf/mocut06.baf~  ~override/mocut06.bcs~   // Cutscene script
+     ~crucible/baf/mocut07.baf~  ~override/mocut07.bcs~   // Cutscene script
+     ~crucible/baf/mocut08.baf~  ~override/mocut08.bcs~   // Cutscene script
      ~crucible/baf/mocall1.baf~  ~override/mocall1.bcs~   // Call for help - Amelyssan Forces
      ~crucible/baf/mocall2.baf~  ~override/mocall2.bcs~   // Call for help - Phiuhls
      ~crucible/baf/mocall3.baf~  ~override/mocall3.bcs~   // Call for help - Demons&Angels

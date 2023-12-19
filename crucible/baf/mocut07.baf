@@ -1,0 +1,17 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("MOBHA28a")
+        MoveViewObject(Myself,INSTANT)
+        SmallWait(2)
+        CreateVisualEffect("CALLLIGH",[917.483])
+        PlaySound("EFF_P19")
+        SmallWait(7)
+        ScreenShake([5.5],30)
+        CreateVisualEffect("spcallli",[917.483])
+        PlaySound("EFF_P35a")
+        SmallWait(2)
+        CreateCreature("MOBHA44",[917.483],W)
+        EndCutSceneMode()
+END
