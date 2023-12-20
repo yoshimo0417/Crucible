@@ -8,11 +8,12 @@ THEN
         Wait(1)
         CreateVisualEffect("CALLLIGH",[917.483])
         PlaySound("EFF_P19")
-        Wait(3)
+        Wait(2)
         ScreenShake([5.5],30)
         CreateVisualEffect("spcallli",[917.483])
         PlaySound("EFF_P35a")
-        Wait(1)
+        Wait(2)
         CreateCreature("MOBHA44",[917.483],W)  // Uthaedeol the Blood-drenched
+        Wait(1)
         EndCutSceneMode()
 END
