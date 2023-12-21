@@ -58,7 +58,9 @@ THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     SetGlobal("MO_UthaedeolMove","LOCALS",1)
+    SetGlobal("MO_UthaedeolFirstMove","LOCALS",0)
     SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",4)
+    SetGlobalTimer("MO_SummonTimer","LOCALS",2)
     ReallyForceSpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
     ReallyForceSpell(Myself,WIZARD_ABSOLUTE_IMMUNITY)  // SPWI907.SPL (Absolute Immunity)
     ReallyForceSpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
@@ -112,6 +114,7 @@ THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     SetGlobal("MO_UthaedeolMove","LOCALS",1)
+    SetGlobal("MO_UthaedeolFirstMove","LOCALS",0)
     SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",4)
     ReallyForceSpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
     ReallyForceSpell(Myself,WIZARD_ABSOLUTE_IMMUNITY)  // SPWI907.SPL (Absolute Immunity)
@@ -158,8 +161,26 @@ END
 // Teleport (Once every 3 rounds)
 /////////////////////////////////////////////////////////////////////
 IF 
+  Global("MO_UthaedeolFirstMove","LOCALS",0)
+  !GlobalTimerNotExpired("MO_UthaedeolMoveTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_UthaedeolFirstMove","LOCALS",1)
+    SetGlobal("MO_UthaedeolMove","LOCALS",3)
+    SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
+    ForceSpellPoint([1332.736],WIZARD_DIMENSION_DOOR)
+  RESPONSE #100
+    SetGlobal("MO_UthaedeolFirstMove","LOCALS",1)
+    SetGlobal("MO_UthaedeolMove","LOCALS",4)
+    SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
+    ForceSpellPoint([586.1025],WIZARD_DIMENSION_DOOR)
+END 
+
+IF 
   Global("MO_UthaedeolMove","LOCALS",1)
   !GlobalTimerNotExpired("MO_UthaedeolMoveTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
 THEN 
   RESPONSE #100
     SetGlobal("MO_UthaedeolMove","LOCALS",2)
@@ -178,6 +199,7 @@ END
 IF 
   Global("MO_UthaedeolMove","LOCALS",2)
   !GlobalTimerNotExpired("MO_UthaedeolMoveTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
 THEN 
   RESPONSE #100
     SetGlobal("MO_UthaedeolMove","LOCALS",1)
@@ -196,6 +218,7 @@ END
 IF 
   Global("MO_UthaedeolMove","LOCALS",3)
   !GlobalTimerNotExpired("MO_UthaedeolMoveTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
 THEN 
   RESPONSE #100
     SetGlobal("MO_UthaedeolMove","LOCALS",1)
@@ -214,6 +237,7 @@ END
 IF 
   Global("MO_UthaedeolMove","LOCALS",4)
   !GlobalTimerNotExpired("MO_UthaedeolMoveTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
 THEN 
   RESPONSE #100
     SetGlobal("MO_UthaedeolMove","LOCALS",1)
@@ -232,7 +256,28 @@ END
 /////////////////////////////////////////////////////////////////////
 // Summons (once a round)
 /////////////////////////////////////////////////////////////////////
-
+IF 
+  !GlobalTimerNotExpired("MO_SummonTimer","LOCALS")
+  DifficultyGT(HARD)
+  Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SummonTimer","LOCALS",6)
+    CreateCreatureEffect("mobha14","SPSPEV",[661.941],NW)
+    Continue()
+  RESPONSE #100
+    SetGlobalTimer("MO_SummonTimer","LOCALS",6)
+    CreateCreatureEffect("mobha14","SPSPEV",[558.629],SE)
+    Continue()
+  RESPONSE #100
+    SetGlobalTimer("MO_SummonTimer","LOCALS",6)
+    CreateCreatureEffect("mobha14","SPSPEV",[892.553],N)
+    Continue()
+  RESPONSE #100
+    SetGlobalTimer("MO_SummonTimer","LOCALS",6)
+    CreateCreatureEffect("mobha14","SPSPEV",[1199.740],NW)
+    Continue()
+END
 
 /////////////////////////////////////////////////////////////////////
 // Defensive
@@ -3532,6 +3577,7 @@ END
 /////////////////////////////////////////////////////////////////////
 // Find them! (Experimental)
 /////////////////////////////////////////////////////////////////////
+/*
 IF
   !Detect([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
@@ -3544,6 +3590,7 @@ THEN
     SetGlobal("MO_IsMoving","LOCALS",1)
     MoveToObject(Player1)
 END
+*/
 
 IF
   ActionListEmpty()

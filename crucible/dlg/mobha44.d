@@ -24,6 +24,8 @@ END
 IF ~~ THEN BEGIN 3
   SAY @6617
   IF ~~ THEN DO ~SetGlobal("MO_UthaedeolChat","MOBHA8",2)
+TriggerActivation("TrMOBHA0",FALSE)
+TriggerActivation("TrMOBHA1",FALSE)
 ENEMY()~ EXIT
 END
 
