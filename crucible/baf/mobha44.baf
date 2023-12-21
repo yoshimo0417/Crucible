@@ -53,10 +53,12 @@
 IF
   Global("Prep","LOCALS",0)
   Allegiance(Myself,ENEMY)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     SetGlobal("MO_UthaedeolMove","LOCALS",1)
+    SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",4)
     ReallyForceSpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
     ReallyForceSpell(Myself,WIZARD_ABSOLUTE_IMMUNITY)  // SPWI907.SPL (Absolute Immunity)
     ReallyForceSpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
@@ -102,6 +104,56 @@ THEN
     Continue()
 END
 
+IF
+  Global("Prep","LOCALS",0)
+  Allegiance(Myself,ENEMY)
+  DifficultyLT(HARDEST)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    SetGlobal("MO_UthaedeolMove","LOCALS",1)
+    SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",4)
+    ReallyForceSpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+    ReallyForceSpell(Myself,WIZARD_ABSOLUTE_IMMUNITY)  // SPWI907.SPL (Absolute Immunity)
+    ReallyForceSpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+    ReallyForceSpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
+    ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+    ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)
+    ReallyForceSpell(Myself,WIZARD_SPELL_SHIELD)  // SPWI519.SPL (Spell Shield)
+    ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_ENERGY)
+    ReallyForceSpell(Myself,WIZARD_IMPROVED_HASTE)
+    ReallyForceSpell(Myself,WIZARD_TRUE_SIGHT)
+    ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_THE_ELEMENTS)
+    // Lvl 9
+    SetGlobal("MO_Comet","LOCALS",1)
+    // Lvl 8
+    SetGlobal("MO_AbiDalzims","LOCALS",1)
+    SetGlobal("MO_Incendiary","LOCALS",3)
+    SetGlobal("MO_Maze","LOCALS",1)
+    // Lvl 7
+    SetGlobal("MO_RubyRay","LOCALS",1)
+    SetGlobal("MO_FingerDeath","LOCALS",2)
+    // Lvl 6
+    SetGlobal("MO_ImprovedHaste","LOCALS",1)
+    SetGlobal("MO_PfMW","LOCALS",0)
+    SetGlobal("MO_Disintegrate","LOCALS",1)
+    // Lvl 5
+    SetGlobal("MO_Breach","LOCALS",2)
+    // Lvl 4
+    SetGlobal("MO_Stoneskin","LOCALS",2)
+    SetGlobal("MO_Malison","LOCALS",1)
+    SetGlobal("MO_Confusion","LOCALS",1)
+    // Lvl 3
+    SetGlobal("MO_RemoveMagic","LOCALS",3)
+    SetGlobal("MO_SkullTrap","LOCALS",3)
+    // Lvl 2
+    SetGlobal("MO_Blur","LOCALS",1)
+    SetGlobal("MO_MirrorImage","LOCALS",3)
+    // Lvl 1
+    SetGlobal("MO_MagicMissile","LOCALS",6)
+    Continue()
+END
+
 /////////////////////////////////////////////////////////////////////
 // Teleport (Once every 3 rounds)
 /////////////////////////////////////////////////////////////////////
@@ -109,43 +161,78 @@ IF
   Global("MO_UthaedeolMove","LOCALS",1)
   !GlobalTimerNotExpired("MO_UthaedeolMoveTimer","LOCALS")
 THEN 
-  RESPONSE #50
+  RESPONSE #100
     SetGlobal("MO_UthaedeolMove","LOCALS",2)
     SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
     ForceSpellPoint([481.548],WIZARD_DIMENSION_DOOR)
-  RESPONSE #50
+  RESPONSE #100
     SetGlobal("MO_UthaedeolMove","LOCALS",3)
     SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
     ForceSpellPoint([1332.736],WIZARD_DIMENSION_DOOR)
+  RESPONSE #100
+    SetGlobal("MO_UthaedeolMove","LOCALS",4)
+    SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
+    ForceSpellPoint([586.1025],WIZARD_DIMENSION_DOOR)
 END
 
 IF 
   Global("MO_UthaedeolMove","LOCALS",2)
   !GlobalTimerNotExpired("MO_UthaedeolMoveTimer","LOCALS")
 THEN 
-  RESPONSE #50
+  RESPONSE #100
     SetGlobal("MO_UthaedeolMove","LOCALS",1)
     SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
     ForceSpellPoint([903.484],WIZARD_DIMENSION_DOOR)
-  RESPONSE #50
+  RESPONSE #100
     SetGlobal("MO_UthaedeolMove","LOCALS",3)
     SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
     ForceSpellPoint([1332.736],WIZARD_DIMENSION_DOOR)
+  RESPONSE #100
+    SetGlobal("MO_UthaedeolMove","LOCALS",4)
+    SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
+    ForceSpellPoint([586.1025],WIZARD_DIMENSION_DOOR)
 END
 
 IF 
   Global("MO_UthaedeolMove","LOCALS",3)
   !GlobalTimerNotExpired("MO_UthaedeolMoveTimer","LOCALS")
 THEN 
-  RESPONSE #50
+  RESPONSE #100
     SetGlobal("MO_UthaedeolMove","LOCALS",1)
     SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
     ForceSpellPoint([903.484],WIZARD_DIMENSION_DOOR)
-  RESPONSE #50
+  RESPONSE #100
     SetGlobal("MO_UthaedeolMove","LOCALS",2)
     SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
     ForceSpellPoint([481.548],WIZARD_DIMENSION_DOOR)
+  RESPONSE #100
+    SetGlobal("MO_UthaedeolMove","LOCALS",4)
+    SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
+    ForceSpellPoint([586.1025],WIZARD_DIMENSION_DOOR)
 END
+
+IF 
+  Global("MO_UthaedeolMove","LOCALS",4)
+  !GlobalTimerNotExpired("MO_UthaedeolMoveTimer","LOCALS")
+THEN 
+  RESPONSE #100
+    SetGlobal("MO_UthaedeolMove","LOCALS",1)
+    SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
+    ForceSpellPoint([903.484],WIZARD_DIMENSION_DOOR)
+  RESPONSE #100
+    SetGlobal("MO_UthaedeolMove","LOCALS",2)
+    SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
+    ForceSpellPoint([481.548],WIZARD_DIMENSION_DOOR)
+  RESPONSE #100
+    SetGlobal("MO_UthaedeolMove","LOCALS",3)
+    SetGlobalTimer("MO_UthaedeolMoveTimer","LOCALS",12)
+    ForceSpellPoint([1332.736],WIZARD_DIMENSION_DOOR)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Summons (once a round)
+/////////////////////////////////////////////////////////////////////
+
 
 /////////////////////////////////////////////////////////////////////
 // Defensive
