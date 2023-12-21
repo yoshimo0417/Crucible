@@ -24,7 +24,6 @@ END
 IF ~~ THEN BEGIN 3
   SAY @6617
   IF ~~ THEN DO ~SetGlobal("MO_UthaedeolChat","MOBHA8",2)
-UndoExplore() 
 ENEMY()~ EXIT
 END
 
@@ -94,7 +93,6 @@ END
 IF ~~ THEN BEGIN 13
   SAY @6642 
   IF ~~ THEN DO ~SetGlobal("MO_UthaedeolChat","MOBHA8",3)
-UndoExplore() 
 ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
 END
 
