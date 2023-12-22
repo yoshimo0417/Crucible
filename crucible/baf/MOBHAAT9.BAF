@@ -1,0 +1,9 @@
+IF
+	IsOverMe([ANYONE])
+	!GlobalTimerNotExpired("FearTimer","MOBHAA")
+THEN
+	RESPONSE #50
+		ForceSpellRES("MOBHAAF",LastTrigger)  // No such index
+		SetGlobalTimer("FearTimer","MOBHAA",ONE_MINUTE)
+END
+
