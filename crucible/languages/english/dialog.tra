@@ -153,15 +153,15 @@
 @6200 = ~This is placeholder dialog.~
 @6201 = ~Here is my blood to help with the testing. I will face you at a later time once I am given a proper fight sequence and script.~
 
-@6210 = ~Impressive. Regardless of the odds you insist on pressing ever forward.~
+@6210 = ~Impressive. Regardless of the odds you insist on pressing ever forward.~ [mobha081]
 @6211 = ~I have no choice but to press forward.~ // Player
 @6212 = ~I am not a gambler and care little for odds.~ // Player
 @6213 = ~Nothing will stop me from my destiny.~ // Player
 @6214 = ~I shall crush any who stand in my way.~ // Player
-@6215 = ~Yet, you have no idea where you are.~
-@6216 = ~This is the great armory of Bhaal which was known to house great and terrible weapons. In the years since his demise the armory has fallen in disrepair, so Amelyssan has assigned us to return it to it's former glory.~
-@6217 = ~Much has since been looted and spread amongst the realms, but some artifacts remain. Some of the most potent weapons are not made of steel, but instead are flesh and bone.~
-@6218 = ~Awaken, Blood-drenched. It is time to arise and serve your master.~
+@6215 = ~Yet, you have no idea where you are.~ [mobha082]
+@6216 = ~This is the great armory of Bhaal which was known to house great and terrible weapons. In the years since his demise the armory has fallen in disrepair, so Amelyssan has assigned us to return it to it's former glory.~ [mobha083]
+@6217 = ~Much has since been looted and spread amongst the realms, but some artifacts remain. Some of the most potent weapons are not made of steel, but instead are flesh and bone.~ [mobha084]
+@6218 = ~Awaken, Blood-drenched. It is time to arise and serve your master.~ [mobha085]
 // Cutscene summoning Uthaedeol
 
 // Deathbringer
@@ -216,46 +216,46 @@
 @6563 = ~West of Bhaal's kingdom is Bhaal's old armory. It has been taken over by Fallen Planetar aligned with Amelyssan and converted into a makeshift garrison. Bhaal's most dangerous weapons are created and kept here.~ [mobha070]
 
 // Uthaedeol the Blood-drenched
-@6600 = ~Who are you to awaken me, Solar? Where is my lord, Bhaal?~  // Uthaedeol
-@6601 = ~Dead. Amelyssan commands you to awaken and stop the intruders.~  // Malchediel
-@6602 = ~Dead?! Has Alaundo's prophecy come to pass? Wait, you are Bhaalspawn! I see my lord's taint in you.~  // Uthaedeol
-@6603 = ~Begone Solar, go back to whichever master you falsely claim to serve.~  // Uthaedeol
-@6604 = ~Watch your tongue, dog. You are a tool of murder, nothing more and nothing less. If it was not at Amelyssan's command, I would have kept you locked in slumber and dealt with the Bhaalspawn myself.~ // Malchediel
-@6605 = ~Report to me when the deed is done. If you are lucky and perform well, you can witness the ritual before we put you back in stasis.~ // Malchediel
+@6600 = ~Who are you to awaken me, Solar? Where is my lord, Bhaal?~  [mobha089] // Uthaedeol
+@6601 = ~Dead. Amelyssan commands you to awaken and stop the intruders.~  [mobha086] // Malchediel
+@6602 = ~Dead?! Has Alaundo's prophecy come to pass? Wait, you are Bhaalspawn! I see my lord's taint in you.~  [mobha090] // Uthaedeol
+@6603 = ~Begone Solar, go back to whichever master you falsely claim to serve.~  [mobha091] // Uthaedeol
+@6604 = ~Watch your tongue, dog. You are a tool of murder, nothing more and nothing less. If it was not at Amelyssan's command, I would have kept you locked in slumber and dealt with the Bhaalspawn myself.~ [mobha087] // Malchediel
+@6605 = ~Report to me when the deed is done. If you are lucky and perform well, you can witness the ritual before we put you back in stasis.~ [mobha088] // Malchediel
 // Cutscene with Malchediel leaving
-@6606 = ~Tell me, how does it feel?~
+@6606 = ~Tell me, how does it feel?~ [mobha092] 
 @6607 = ~Excuse me?~  // Player
 @6608 = ~How does what feel?~  // Player
 @6609 = ~You'll be feeling my blade!~  // Player
-@6610 = ~The blood of lord Bhaal, of course!~
-@6611 = ~Do you feel the rage, the fury, the hunger? Don't hold back, what is it like?~
+@6610 = ~The blood of lord Bhaal, of course!~ [mobha093] 
+@6611 = ~Do you feel the rage, the fury, the hunger? Don't hold back, what is it like?~ [mobha094]
 @6612 = ~It is awful, and I wish I could be rid of this evil.~  // Player
 @6613 = ~I keep it at bay and have found a way to suppress the dark urges.~  // Player
 @6614 = ~I have learned to co-exist with it and keep it in check.~  // Player
 @6615 = ~I relish the power it brings me!~  // Player
 @6616 = ~Stop yapping, peon. I've a Solar to kill.~  // Player
-@6617 = ~I look forward to spilling your blood!~
-@6618 = ~Ungrateful! Weak! How dare you not hold sacred the honor of having his blood flow through you!~
-@6619 = ~Were I so lucky to feel his dark grace flowing within my veins.~
-@6620 = ~I feel I have slept long this last time. What has come to pass to bring you here?~
+@6617 = ~I look forward to spilling your blood!~ [mobha095]
+@6618 = ~Ungrateful! Weak! How dare you not hold sacred the honor of having his blood flow through you!~ [mobha096]
+@6619 = ~Were I so lucky to feel his dark grace flowing within my veins.~ [mobha097]
+@6620 = ~I feel I have slept long this last time. What has come to pass to bring you here?~ [mobha098]
 @6621 = ~What do you mean by slept long?~  // Player
 @6622 = ~Amelyssan is going to use Bhaal's divine essence so she can ascend as a god.~  // Player
 @6623 = ~I'm going to become the new Lord of Murder.~  // Player
 @6624 = ~I don't have time to give you a history lesson. Prepare to die!~  // Player
-@6625 = ~I am Bhaal's most favored assassin.~
-@6626 = ~Over the centuries in his service, I was called forth by Bhaal to perform the most important of missions. Once completed, he had me enter an eternal rest until I was needed again.~
-@6627 = ~Heh, I still remember that Tethyrian king dancing to his death as the blood drained from each of the cuts I inflicted upon him.~
-@6628 = ~What has happened during my last rest?~
-@6629 = ~NO! You must lie!~
-@6630 = ~Amelyssan was but a newly appointed Deathdealer within the church when I last met her.~
-@6631 = ~Ambitious and headstrong, yes. But to attempt to usurp our Lord?!~
-@6632 = ~I doubt that. Your essence will be collected and Bhaal will rise again.~
+@6625 = ~I am Bhaal's most favored assassin.~ [mobha099]
+@6626 = ~Over the centuries in his service, I was called forth by Bhaal to perform the most important of missions. Once completed, he had me enter an eternal rest until I was needed again.~ [mobha100]
+@6627 = ~I still remember that Tethyrian king dancing to his death as the blood drained from each of the cuts I inflicted upon him.~ [mobha101]
+@6628 = ~What has happened during my last rest?~ [mobha102]
+@6629 = ~NO! You must lie!~ [mobha103]
+@6630 = ~Amelyssan was but a newly appointed Deathdealer within the church when I last met her.~ [mobha104]
+@6631 = ~Ambitious and headstrong, yes. But to attempt to usurp our Lord?!~ [mobha105]
+@6632 = ~I doubt that. Your essence will be collected and Bhaal will rise again.~ [mobha106]
 @6633 = ~How about you join with me and we can defeat her together?~  // Player
 @6634 = ~As his high priestess, she was entrusted by Bhaal with the ritual for his resurrection. She intends to use the same ritual for herself.~  // Player
 @6635 = ~I plan to stop her, but I first must end you!~  // Player
-@6636 = ~Such betrayal must not go unpunished! I will kill her after dealing with you!~
+@6636 = ~Such betrayal must not go unpunished! I will kill her after dealing with you!~ [mobha107]
 @6637 = ~Let us end this!~  // Player
-@6638 = ~Do you plan to replace your father as the new Lord of Murder?~
+@6638 = ~Do you plan to replace your father as the new Lord of Murder?~ [mobha108]
 @6639 = ~Yes, I will rise in his place!~  // Player
 @6640 = ~No, I plan to walk my own path of destruction on the mortal plane.~  // Player
 @6641 = ~I don't have time for this. Prepare to die!~  // Player
