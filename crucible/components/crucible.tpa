@@ -19,7 +19,7 @@ COPY ~crucible/itm/mobhabl2.itm~ ~override~  // Blood of Malchediel
   SAY NAME2 @10002
   SAY UNIDENTIFIED_DESC @10003
   SAY DESC @10003
-
+COPY ~crucible/spl/mobhaaf.spl~  ~override~  // custom fear
 //-------------------------------------------------------------------------
 // Detectable Spells
 LAF detectable_spells END
@@ -575,6 +575,10 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobha7.baf~   ~override/mobha7.bcs~    // Area script
      ~crucible/baf/mobha7a.baf~  ~override/mobha7a.bcs~   // Area script
      ~crucible/baf/mobha8.baf~   ~override/mobha8.bcs~    // Area script
+     ~crucible/baf/mobhaat1.baf~ ~override/mobhaat1.bcs~  // Area script
+     ~crucible/baf/mobhaat2.baf~ ~override/mobhaat2.bcs~  // Area script
+     ~crucible/baf/mobhaat3.baf~ ~override/mobhaat3.bcs~  // Area script
+     ~crucible/baf/mobhaat9.baf~ ~override/mobhaat9.bcs~  // Area script
      ~crucible/baf/mobha01.baf~  ~override/mobha01.bcs~   // Creature script
      ~crucible/baf/mobha01d.baf~ ~override/mobha01d.bcs~  // Creature script
      ~crucible/baf/mobha03.baf~  ~override/mobha03.bcs~   // Creature script
