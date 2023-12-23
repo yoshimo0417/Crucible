@@ -149,7 +149,7 @@
 @6103 = ~You step forward and embrace your destiny.~
 @6104 = ~You take a step back to further prepare.~
 
-// Malchediel
+// Malchediel (Rusty)
 @6200 = ~This is placeholder dialog.~
 @6201 = ~Here is my blood to help with the testing. I will face you at a later time once I am given a proper fight sequence and script.~
 
@@ -158,8 +158,8 @@
 @6212 = ~I am not a gambler and care little for odds.~ // Player
 @6213 = ~Nothing will stop me from my destiny.~ // Player
 @6214 = ~I shall crush any who stand in my way.~ // Player
-@6215 = ~Yet, you have no idea where you are.~ [mobha082]
-@6216 = ~This is the great armory of Bhaal which was known to house great and terrible weapons. In the years since his demise the armory has fallen in disrepair, so Amelyssan has assigned us to return it to it's former glory.~ [mobha083]
+@6215 = ~Yet, you blindly do so.~ [mobha082]
+@6216 = ~This is the great armory of Bhaal, known to house great and terrible weapons. In the years since his demise the armory has fallen in disrepair, so Amelyssan has assigned us to return it to it's former glory.~ [mobha083]
 @6217 = ~Much has since been looted and spread amongst the realms, but some artifacts remain. Some of the most potent weapons are not made of steel, but instead are flesh and bone.~ [mobha084]
 @6218 = ~Awaken, Blood-drenched. It is time to arise and serve your master.~ [mobha085]
 // Cutscene summoning Uthaedeol
@@ -215,7 +215,7 @@
 @6562 = ~There is a tower East of Bhaal's kingdom filled with demons and other unknown horrors. They are said to follow a powerful entity.~ [mobha069]
 @6563 = ~West of Bhaal's kingdom is Bhaal's old armory. It has been taken over by Fallen Planetar aligned with Amelyssan and converted into a makeshift garrison. Bhaal's most dangerous weapons are created and kept here.~ [mobha070]
 
-// Uthaedeol the Blood-drenched
+// Uthaedeol the Blood-drenched (Viktor)
 @6600 = ~Who are you to awaken me, Solar? Where is my lord, Bhaal?~  [mobha089] // Uthaedeol
 @6601 = ~Dead. Amelyssan commands you to awaken and stop the intruders.~  [mobha086] // Malchediel
 @6602 = ~Dead?! Has Alaundo's prophecy come to pass? Wait, you are Bhaalspawn! I see my lord's taint in you.~  [mobha090] // Uthaedeol
