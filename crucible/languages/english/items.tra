@@ -58,14 +58,14 @@ Equipped abilities:
 – Save vs. Death: +2
 
 Combat abilities:
-– Strikes as a +5 weapon vs. Clerics and Paladins
 – When a target is killed with this blade, the wielder heals 10 Hit Points
-– If a Cleric or Paladin is succesfuly hit with this weapon, they suffer -1 penaly to Wisdom for 3 rounds, as well as they suffer additional 1 Acid Damage 
+– If a Cleric or Paladin is hit with this weapon, they suffer -1 penaly to Wisdom for 3 rounds
 
 STATISTICS:
 
-THAC0: +4
-Damage: 1d4+4 (piercing)
+THAC0: +5
+Damage: 1d4+5, +5 extra vs. clerics and paladins
+Damage type: Piercing
 Speed Factor: 0
 Proficiency Type: Dagger
 Type: One-handed
