@@ -44,13 +44,28 @@ Requires:
 
 Weight: 8~
 
-@10008 = ~~
-@10009 = ~The typical dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter. This particular dagger is magical, having special bonuses to its speed, accuracy, and damage. Also, since it is magical, it is capable of striking opponents that are immune to normal weapons, such as vampires, elementals, and mummies.
+@10008 = ~Spiraling Murder~
+@10009 = ~While it may be difficult to say if the blade was named after a group of ravens or the domain of Bhaal, the Spiraling Murder is a truly powerful dagger aimed at swiftly killing those of faith. Considering the blade's power, it doesn't surprise where the blade has been found. 
+
+It may be the right weapon to use against all clerics, paladins, and blackguards. 
+
+Charge abilities: 
+– Invisibility twice per day
+  Duration: 12 hours
+  Area of Effect: The wearer
+
+Equipped abilities:
+– Save vs. Death: +2
+
+Combat abilities:
+– Strikes as a +5 weapon vs. Clerics and Paladins
+– When a target is killed with this blade, the wielder heals 10 Hit Points
+– If a Cleric or Paladin is succesfuly hit with this weapon, they suffer -1 penaly to Wisdom for 3 rounds, as well as they suffer additional 1 Acid Damage 
 
 STATISTICS:
 
-THAC0: +5
-Damage: 1d4+5 (piercing)
+THAC0: +4
+Damage: 1d4+4 (piercing)
 Speed Factor: 0
 Proficiency Type: Dagger
 Type: One-handed

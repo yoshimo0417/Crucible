@@ -492,9 +492,12 @@ COPY ~crucible/cre/mobha44.cre~  ~override/mobha44.cre~
   SAY NAME2 @2034
   WRITE_ASCII 0x2cc ~MOBHA44~ #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha44.d~
-COPY ~crucible/itm/mobha44a.itm~ ~override~  // Dagger
+COPY ~crucible/itm/mobha44a.itm~ ~override~  // Spiraling Murder (Dagger)
   SAY NAME2 @10008
   SAY DESC  @10009
+COPY ~crucible/eff/mobha44a.eff~ ~override~ // Damage EFF for dagger
+COPY ~crucible/eff/mobha44b.eff~ ~override~ // Wisdom Loss EFF for dagger
+COPY ~crucible/spl/mobha44a.spl~ ~override~ // Heal on kill
 
 //-------------------------------------------------------------------------
 // Osmadiel
