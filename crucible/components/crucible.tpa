@@ -355,6 +355,7 @@ COPY ~crucible/cre/mobha28.cre~ ~override/mobha28a.cre~  // Malchediel (Dialog)
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#TRIAS~))
   WRITE_ASCII 0x280 ~MOBHA28a~ #8 // Script Name
   WRITE_ASCII 0x2cc ~MOBHA28a~ #8 // Dialogue
+  REPLACE_CRE_ITEM ~MIN1HP~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~LRING~ EQUIP // Make invincible
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha28a.d~
 
 //-------------------------------------------------------------------------
@@ -578,6 +579,7 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobha7.baf~   ~override/mobha7.bcs~    // Area script
      ~crucible/baf/mobha7a.baf~  ~override/mobha7a.bcs~   // Area script
      ~crucible/baf/mobha8.baf~   ~override/mobha8.bcs~    // Area script
+     ~crucible/baf/mobha8a.baf~  ~override/mobha8a.bcs~   // Area script
      ~crucible/baf/mobhaat1.baf~ ~override/mobhaat1.bcs~  // Area script
      ~crucible/baf/mobhaat2.baf~ ~override/mobhaat2.bcs~  // Area script
      ~crucible/baf/mobhaat3.baf~ ~override/mobhaat3.bcs~  // Area script

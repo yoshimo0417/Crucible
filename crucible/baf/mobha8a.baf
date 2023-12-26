@@ -1,0 +1,8 @@
+IF
+	IsOverMe([GOODCUTOFF])
+	Global("MO_Spawn01","MOBHA8",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MO_Spawn01","MOBHA8",1)
+		CreateCreatureEffect("mobha28a","SPSPEV",[960.533],W)  // Malchediel
+END
