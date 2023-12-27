@@ -11,7 +11,20 @@
 IF
   Global("MO_FightPitProgression","MOBHA0",0)
   !ActuallyInCombat()
-  Dead("MOBHA47")  // Mutant Fomorian Giant
+  DifficultyGT(HARD)
+  NumDead("MOBHA47",2)  // Mutant Fomorian Giant
+THEN
+  RESPONSE #100
+    SetGlobal("MO_FightPitProgression","MOBHA0",1)
+    StartCutSceneMode()
+    StartCutScene("mocut10")
+END
+
+IF
+  Global("MO_FightPitProgression","MOBHA0",0)
+  !ActuallyInCombat()
+  DifficultyLT(HARDEST)
+  NumDead("MOBHA47",1)  // Mutant Fomorian Giant
 THEN
   RESPONSE #100
     SetGlobal("MO_FightPitProgression","MOBHA0",1)

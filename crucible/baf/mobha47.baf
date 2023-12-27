@@ -19,6 +19,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    SetGlobalTimer("MO_EvilEye","LOCALS",3)
     ApplySpell(Myself,WARRIOR_GREATER_WHIRLWIND)
     ReallyForceSpell(Myself,CLERIC_INSECT_PLAGUE)
     ReallyForceSpell(Myself,WIZARD_EMOTION_HOPELESSNESS)
@@ -34,10 +35,194 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    SetGlobalTimer("MO_EvilEye","LOCALS",3)
     ReallyForceSpell(Myself,WIZARD_EMOTION_HOPELESSNESS)
     ApplySpell(Myself,WIZARD_IMPROVED_HASTE)
     SetGlobal("MO_GWW","LOCALS",0)
     Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Ability: Evil Eye
+/////////////////////////////////////////////////////////////////////
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_EvilEye","LOCALS")
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !HasItemEquiped("clck26",LastSeenBy(Myself))  // Cloak of Mirroring
+  !CheckSpellState(LastSeenBy(Myself),SI_TRANSMUTATION)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStatLT(LastSeenBy(Myself),40,RESISTMAGIC)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EvilEye","LOCALS",12)
+    SetInterrupt(FALSE)
+    ForceSpellRES("mobha47a",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_EvilEye","LOCALS")
+  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !HasItemEquiped("clck26",LastSeenBy(Myself))  // Cloak of Mirroring
+  !CheckSpellState(LastSeenBy(Myself),SI_TRANSMUTATION)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStatLT(LastSeenBy(Myself),40,RESISTMAGIC)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EvilEye","LOCALS",12)
+    SetInterrupt(FALSE)
+    ForceSpellRES("mobha47a",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_EvilEye","LOCALS")
+  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !HasItemEquiped("clck26",LastSeenBy(Myself))  // Cloak of Mirroring
+  !CheckSpellState(LastSeenBy(Myself),SI_TRANSMUTATION)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStatLT(LastSeenBy(Myself),40,RESISTMAGIC)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EvilEye","LOCALS",12)
+    SetInterrupt(FALSE)
+    ForceSpellRES("mobha47a",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_EvilEye","LOCALS")
+  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !HasItemEquiped("clck26",LastSeenBy(Myself))  // Cloak of Mirroring
+  !CheckSpellState(LastSeenBy(Myself),SI_TRANSMUTATION)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStatLT(LastSeenBy(Myself),40,RESISTMAGIC)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EvilEye","LOCALS",12)
+    SetInterrupt(FALSE)
+    ForceSpellRES("mobha47a",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_EvilEye","LOCALS")
+  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !HasItemEquiped("clck26",LastSeenBy(Myself))  // Cloak of Mirroring
+  !CheckSpellState(LastSeenBy(Myself),SI_TRANSMUTATION)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStatLT(LastSeenBy(Myself),40,RESISTMAGIC)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EvilEye","LOCALS",12)
+    SetInterrupt(FALSE)
+    ForceSpellRES("mobha47a",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_EvilEye","LOCALS")
+  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !HasItemEquiped("clck26",LastSeenBy(Myself))  // Cloak of Mirroring
+  !CheckSpellState(LastSeenBy(Myself),SI_TRANSMUTATION)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  CheckStatLT(LastSeenBy(Myself),40,RESISTMAGIC)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_EvilEye","LOCALS",12)
+    SetInterrupt(FALSE)
+    ForceSpellRES("mobha47a",LastSeenBy(Myself))
+    SetInterrupt(TRUE)
 END
 
 /////////////////////////////////////////////////////////////////////
