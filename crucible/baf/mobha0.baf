@@ -1,0 +1,20 @@
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+//            Planetar Garrison - 2nd Floor (MOBHA0.ARE)
+/////////////////////////////////////////////////////////////////////
+//        Version 1
+// Lich will test multiple fights on the party and leave on good
+// terms.
+//
+// 
+/////////////////////////////////////////////////////////////////////
+
+IF
+  Global("MO_FightPitProgression","MOBHA0",0)
+  Dead("MOBHA47")
+THEN
+  RESPONSE #100
+    SetGlobal("MO_FightPitProgression","MOBHA0",1)
+    ActionOverride(Player1,RemoveSpell(ENTER_POCKET_PLANE))  // SPIN649.SPL (Pocket Plane)
+    Continue()
+END

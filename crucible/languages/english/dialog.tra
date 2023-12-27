@@ -263,5 +263,13 @@
 @6643 = ~Fool! I would rather face Amelyssan alone and become a god myself!~ [mobha110]
 
 // Gaohan Ralahr
-@6700 = ~Greetings! This is temporary dialog which will be replaced.~
-@6701 = ~Ouch! That wasn't nice at all and I'll be leaving.~
+@6700 = ~Greetings! The Solar just informed me you might be coming, and I am eager for your assistance!~
+@6701 = ~Ouch, that wasn't nice at all! I'm outta here!~
+@6702 = ~Excuse me?~  // Player
+@6703 = ~What assistance do you need?~  // Player
+@6704 = ~I am not here to assist you.~  // Player
+@6705 = ~I'll only assist you by ending your existence!~  // Player
+@6706 = ~No need to fuss, well, maybe a little. I'll be plopping you into that there battle arena for the first round of testing. Good luck!~
+@6707 = ~That did not go as well as I hoped. Either you are really powerful or I'm doing really bad with my creations.~
+@6708 = ~Perhaps another test to confirm the hypothesis is in order. Are you ready? No? Well you're going back into the arena anyway. (Dialog is stopping here as this is a placeholder for more testing. Please move up in the tower).~
+@6709 = ~I am still building this out. Please continue up the tower to progress.~

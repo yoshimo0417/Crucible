@@ -599,6 +599,7 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobhaat2.baf~ ~override/mobhaat2.bcs~  // Area script
      ~crucible/baf/mobhaat3.baf~ ~override/mobhaat3.bcs~  // Area script
      ~crucible/baf/mobhaat9.baf~ ~override/mobhaat9.bcs~  // Area script
+     ~crucible/baf/mobha0.baf~   ~override/mobha0.bcs~    // Area script
      ~crucible/baf/mobha01.baf~  ~override/mobha01.bcs~   // Creature script
      ~crucible/baf/mobha01d.baf~ ~override/mobha01d.bcs~  // Creature script
      ~crucible/baf/mobha03.baf~  ~override/mobha03.bcs~   // Creature script
@@ -641,6 +642,8 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mocut06.baf~  ~override/mocut06.bcs~   // Cutscene script
      ~crucible/baf/mocut07.baf~  ~override/mocut07.bcs~   // Cutscene script
      ~crucible/baf/mocut08.baf~  ~override/mocut08.bcs~   // Cutscene script
+     ~crucible/baf/mocut09.baf~  ~override/mocut09.bcs~   // Cutscene script
+     ~crucible/baf/mocut10.baf~  ~override/mocut10.bcs~   // Cutscene script
      ~crucible/baf/mocall1.baf~  ~override/mocall1.bcs~   // Call for help - Amelyssan Forces
      ~crucible/baf/mocall2.baf~  ~override/mocall2.bcs~   // Call for help - Phiuhls
      ~crucible/baf/mocall3.baf~  ~override/mocall3.bcs~   // Call for help - Demons&Angels

@@ -11,7 +11,7 @@
 
 IF
   TookDamage()
-  See([PC])
+  Detect([PC])
 THEN
   RESPONSE #100
     StartDialogueNoSet([PC])
@@ -25,4 +25,13 @@ THEN
   RESPONSE #100
     SetGlobal("MO_TookDamage","LOCALS",1)
     ForceSpell(Myself,DRYAD_TELEPORT)
+END
+
+IF
+  Global("MO_FightPitProgression","MOBHA0",1)
+  Global("MO_LichConvo","MOBHA0",0)
+  Detect([PC])
+THEN
+  RESPONSE #100
+    StartDialogueNoSet([PC])
 END

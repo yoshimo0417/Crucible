@@ -3,23 +3,39 @@
 //            Mutant Fomorian Giant
 /////////////////////////////////////////////////////////////////////
 //        Version 1
-// Mutant Fomorian Giant, 20th level Fighter
+// Mutant Fomorian Giant, 25th level Fighter
 //
 //
 /////////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////////
+// Initial Set-Up
+/////////////////////////////////////////////////////////////////////
 IF
-  TookDamage()
-  See([PC])
+  See([GOODCUTOFF])
+  Global("Prep","LOCALS",0)
+  Allegiance(Myself,ENEMY)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
-    StartDialogueNoSet([PC])
+    SetGlobal("Prep","LOCALS",1)
+    ApplySpell(Myself,WARRIOR_GREATER_WHIRLWIND)
+    ReallyForceSpell(Myself,CLERIC_INSECT_PLAGUE)
+    ReallyForceSpell(Myself,WIZARD_EMOTION_HOPELESSNESS)
+    SetGlobal("MO_GWW","LOCALS",2)
+    Continue()
 END
 
 IF
-  TookDamage()
-  !See([PC])
+  See([GOODCUTOFF])
+  Global("Prep","LOCALS",0)
+  Allegiance(Myself,ENEMY)
+  DifficultyLT(HARDEST)
 THEN
   RESPONSE #100
-    ForceSpell(Myself,DRYAD_TELEPORT)
+    SetGlobal("Prep","LOCALS",1)
+    ReallyForceSpell(Myself,WIZARD_EMOTION_HOPELESSNESS)
+    ReallyForceSpell(Myself,WIZARD_IMPROVED_HASTE)
+    SetGlobal("MO_GWW","LOCALS",0)
+    Continue()
 END
