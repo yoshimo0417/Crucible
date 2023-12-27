@@ -7,7 +7,6 @@
 // not trigger other enemies who may not be aligned with Amelyssan.
 // 
 /////////////////////////////////////////////////////////////////////
-
 IF
   Allegiance(Myself,NEUTRAL)
   OR(6)
@@ -38,12 +37,103 @@ THEN
 END
 
 IF
+  !See([GOODCUTOFF])
+  Heard([ANYONE],60)
+  Range(LastHeardBy(Myself),20)
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  !GlobalGT("MO_HelpShout","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_HelpShout","LOCALS",1)
+    Continue()
+END
+
+IF
   !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
   Allegiance(Myself,ENEMY)
   !See([GOODCUTOFF])
-  Heard([ANYONE],60)
+  !Detect(Player1)
+  !StateCheck(Player1,STATE_INVISIBLE)
+  !CheckStatGT(Player1,0,SANCTUARY)
+  ActionListEmpty()
+  Global("MO_HelpShout","LOCALS",1)
 THEN
   RESPONSE #100
     SetGlobalTimer("MO_IsMovingTimer","LOCALS",18)
-    MoveToObject(LastHeardBy(Myself))
+    MoveToObject(Player1)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
+  !See([GOODCUTOFF])
+  !Detect(Player2)
+  !StateCheck(Player2,STATE_INVISIBLE)
+  !CheckStatGT(Player2,0,SANCTUARY)
+  ActionListEmpty()
+  Global("MO_HelpShout","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",18)
+    MoveToObject(Player2)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
+  !See([GOODCUTOFF])
+  !Detect(Player3)
+  !StateCheck(Player3,STATE_INVISIBLE)
+  !CheckStatGT(Player3,0,SANCTUARY)
+  ActionListEmpty()
+  Global("MO_HelpShout","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",18)
+    MoveToObject(Player3)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
+  !See([GOODCUTOFF])
+  !Detect(Player4)
+  !StateCheck(Player4,STATE_INVISIBLE)
+  !CheckStatGT(Player4,0,SANCTUARY)
+  ActionListEmpty()
+  Global("MO_HelpShout","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",18)
+    MoveToObject(Player4)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
+  !See([GOODCUTOFF])
+  !Detect(Player5)
+  !StateCheck(Player5,STATE_INVISIBLE)
+  !CheckStatGT(Player5,0,SANCTUARY)
+  ActionListEmpty()
+  Global("MO_HelpShout","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",18)
+    MoveToObject(Player5)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_IsMovingTimer","LOCALS")
+  Allegiance(Myself,ENEMY)
+  !See([GOODCUTOFF])
+  !Detect(Player6)
+  !StateCheck(Player6,STATE_INVISIBLE)
+  !CheckStatGT(Player6,0,SANCTUARY)
+  ActionListEmpty()
+  Global("MO_HelpShout","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_IsMovingTimer","LOCALS",18)
+    MoveToObject(Player6)
 END
