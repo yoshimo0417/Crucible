@@ -10,7 +10,7 @@
 /////////////////////////////////////////////////////////////////////
 IF
   Global("MO_FightPitProgression","MOBHA0",0)
-  ActuallyInCombat()
+  !ActuallyInCombat()
   Dead("MOBHA47")  // Mutant Fomorian Giant
 THEN
   RESPONSE #100
