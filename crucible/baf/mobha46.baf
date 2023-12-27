@@ -12,8 +12,10 @@
 IF
   TookDamage()
   Detect([PC])
+  Global("MO_TookDamage","LOCALS",0)
 THEN
   RESPONSE #100
+    SetGlobal("MO_TookDamage","LOCALS",1)
     StartDialogueNoSet([PC])
 END
 
@@ -30,6 +32,7 @@ END
 IF
   Global("MO_FightPitProgression","MOBHA0",1)
   Global("MO_LichConvo","MOBHA0",0)
+  Dead("MOBHA47")  // Mutant Fomorian Giant
   Detect([PC])
 THEN
   RESPONSE #100

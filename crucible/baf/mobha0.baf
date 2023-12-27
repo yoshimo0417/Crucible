@@ -8,13 +8,12 @@
 //
 // 
 /////////////////////////////////////////////////////////////////////
-
 IF
   Global("MO_FightPitProgression","MOBHA0",0)
-  Dead("MOBHA47")
+  Dead("MOBHA47")  // Mutant Fomorian Giant
 THEN
   RESPONSE #100
     SetGlobal("MO_FightPitProgression","MOBHA0",1)
-    ActionOverride(Player1,RemoveSpell(ENTER_POCKET_PLANE))  // SPIN649.SPL (Pocket Plane)
-    Continue()
+    StartCutSceneMode()
+    StartCutScene("mocut10")
 END

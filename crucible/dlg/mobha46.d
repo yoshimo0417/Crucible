@@ -24,7 +24,8 @@ IF ~Global("MO_LichConvo","MOBHA0",0)~ THEN BEGIN 2
   IF ~~ THEN DO ~SetGlobal("MO_LichConvo","MOBHA0",1)~ EXIT
 END
 
-IF ~Global("MO_LichConvo","MOBHA0",1)~ THEN BEGIN 3
+IF ~Global("MO_LichConvo","MOBHA0",1)
+HPPercent(Myself,100)~ THEN BEGIN 3
   SAY @6709 
   IF ~~ THEN DO ~~ EXIT
 END
