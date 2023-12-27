@@ -20,7 +20,9 @@ END
 IF
   TookDamage()
   !See([PC])
+  Global("MO_TookDamage","LOCALS",0)
 THEN
   RESPONSE #100
+    SetGlobal("MO_TookDamage","LOCALS",1)
     ForceSpell(Myself,DRYAD_TELEPORT)
 END

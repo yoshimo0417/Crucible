@@ -521,6 +521,7 @@ COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha46.d~
 COPY ~crucible/cre/mobha47.cre~  ~override/mobha47.cre~
   SAY NAME1 @2037
   SAY NAME2 @2037
+COPY ~crucible/itm/mobha47a.itm~ ~override~  // Fist Attack
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
