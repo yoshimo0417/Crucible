@@ -35,8 +35,8 @@ THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     ReallyForceSpell(Myself,WIZARD_EMOTION_HOPELESSNESS)
-    ApplySpell(Myself,WARRIOR_GREATER_WHIRLWIND)
-    SetGlobal("MO_GWW","LOCALS",2)
+    ApplySpell(Myself,WIZARD_IMPROVED_HASTE)
+    SetGlobal("MO_GWW","LOCALS",0)
     Continue()
 END
 

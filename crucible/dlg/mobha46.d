@@ -14,9 +14,8 @@ END
 
 IF ~~ THEN BEGIN 1
   SAY @6706
-  IF ~~ THEN DO ~ClearAllActions()
-StartCutSceneMode()
-StartCutScene("mocut09")~ EXIT
+  IF ~DifficultyLT(HARDEST)~ THEN GOTO 4
+  IF ~DifficultyGT(HARD)~ THEN GOTO 5
 END
 
 IF ~Global("MO_LichConvo","MOBHA0",0)~ THEN BEGIN 2
@@ -28,6 +27,20 @@ IF ~Global("MO_LichConvo","MOBHA0",1)
 HPPercent(Myself,100)~ THEN BEGIN 3
   SAY @6709 
   IF ~~ THEN DO ~~ EXIT
+END
+
+IF ~~ THEN BEGIN 4
+  SAY @6710
+  IF ~~ THEN DO ~ClearAllActions()
+StartCutSceneMode()
+StartCutScene("mocut09a")~ EXIT
+END
+
+IF ~~ THEN BEGIN 5
+  SAY @6710
+  IF ~~ THEN DO ~ClearAllActions()
+StartCutSceneMode()
+StartCutScene("mocut09b")~ EXIT
 END
 
 IF ~HPPercentLT(Myself,100)~ THEN BEGIN 100
