@@ -516,6 +516,12 @@ COPY ~crucible/cre/mobha46.cre~  ~override/mobha46.cre~
   WRITE_ASCII 0x2cc ~mobha46~  #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha46.d~
 
+//-------------------------------------------------------------------------
+// Mutant Fomorian Giant
+COPY ~crucible/cre/mobha47.cre~  ~override/mobha47.cre~
+  SAY NAME1 @2037
+  SAY NAME2 @2037
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -627,6 +633,7 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobha43.baf~  ~override/mobha43.bcs~   // Creature script
      ~crucible/baf/mobha44.baf~  ~override/mobha44.bcs~   // Creature script
      ~crucible/baf/mobha46.baf~  ~override/mobha46.bcs~   // Creature script
+     ~crucible/baf/mobha47.baf~  ~override/mobha47.bcs~   // Creature script
      ~crucible/baf/mocut03.baf~  ~override/mocut03.bcs~   // Cutscene script
      ~crucible/baf/mocut04.baf~  ~override/mocut04.bcs~   // Cutscene script
      ~crucible/baf/mocut05.baf~  ~override/mocut05.bcs~   // Cutscene script
