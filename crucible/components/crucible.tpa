@@ -527,6 +527,14 @@ COPY ~crucible/spl/mobha47a.spl~ ~override~  // Evil Eye
   SAY NAME1 @4003
   SAY NAME2 @4003
 
+//-------------------------------------------------------------------------
+// Hellfire Werewolf
+COPY ~crucible/cre/mobha48.cre~  ~override/mobha48.cre~
+  SAY NAME1 @2038
+  SAY NAME2 @2038
+COPY ~crucible/itm/mobha48a.itm~ ~override~  // claw
+COPY ~crucible/itm/mobha48b.itm~ ~override~  // bite
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
