@@ -8,6 +8,10 @@
 //
 // 
 /////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+// First Fight - Mutant Fomorian Giant
+/////////////////////////////////////////////////////////////////////
 IF
   Global("MO_FightPitProgression","MOBHA0",0)
   !ActuallyInCombat()
@@ -30,4 +34,31 @@ THEN
     SetGlobal("MO_FightPitProgression","MOBHA0",1)
     StartCutSceneMode()
     StartCutScene("mocut10")
+END
+
+/////////////////////////////////////////////////////////////////////
+// Second Fight - Hellfire Werewolves
+/////////////////////////////////////////////////////////////////////
+IF
+  Global("MO_FightPitProgression","MOBHA0",1)
+  !ActuallyInCombat()
+  DifficultyGT(HARD)
+  NumDead("MOBHA48",5)  // Hellfire Werewolf
+THEN
+  RESPONSE #100
+    SetGlobal("MO_FightPitProgression","MOBHA0",2)
+    StartCutSceneMode()
+    StartCutScene("mocut12")
+END
+
+IF
+  Global("MO_FightPitProgression","MOBHA0",1)
+  !ActuallyInCombat()
+  DifficultyLT(HARDEST)
+  NumDead("MOBHA48",3)  // Hellfire Werewolf
+THEN
+  RESPONSE #100
+    SetGlobal("MO_FightPitProgression","MOBHA0",2)
+    StartCutSceneMode()
+    StartCutScene("mocut12")
 END

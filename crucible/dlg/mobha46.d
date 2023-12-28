@@ -18,12 +18,14 @@ IF ~~ THEN BEGIN 1
   IF ~DifficultyGT(HARD)~ THEN GOTO 5
 END
 
-IF ~Global("MO_LichConvo","MOBHA0",0)~ THEN BEGIN 2
+IF ~Global("MO_LichConvo1","MOBHA0",0)
+HPPercent(Myself,100)~ THEN BEGIN 2
   SAY @6707 = @6708
-  IF ~~ THEN DO ~SetGlobal("MO_LichConvo","MOBHA0",1)~ EXIT
+  IF ~DifficultyLT(HARDEST)~ THEN GOTO 6
+  IF ~DifficultyGT(HARD)~ THEN GOTO 7
 END
 
-IF ~Global("MO_LichConvo","MOBHA0",1)
+IF ~Global("MO_LichConvo2","MOBHA0",1)
 HPPercent(Myself,100)~ THEN BEGIN 3
   SAY @6709 
   IF ~~ THEN DO ~~ EXIT
@@ -41,6 +43,29 @@ IF ~~ THEN BEGIN 5
   IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 StartCutScene("mocut09b")~ EXIT
+END
+
+IF ~~ THEN BEGIN 6
+  SAY @6711
+  IF ~~ THEN DO ~SetGlobal("MO_LichConvo1","MOBHA0",1)
+ClearAllActions()
+StartCutSceneMode()
+StartCutScene("mocut11a")~ EXIT
+END
+
+IF ~~ THEN BEGIN 7
+  SAY @6711
+  IF ~~ THEN DO ~SetGlobal("MO_LichConvo1","MOBHA0",1)
+ClearAllActions()
+StartCutSceneMode()
+StartCutScene("mocut11b")~ EXIT
+END
+
+IF ~Global("MO_LichConvo2","MOBHA0",0)
+Global("MO_LichConvo1","MOBHA0",1)
+HPPercent(Myself,100)~ THEN BEGIN 8
+  SAY @6709
+  IF ~~ THEN DO ~SetGlobal("MO_LichConvo2","MOBHA0",1)~ EXIT
 END
 
 IF ~HPPercentLT(Myself,100)~ THEN BEGIN 100

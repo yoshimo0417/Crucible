@@ -31,8 +31,17 @@ END
 
 IF
   Global("MO_FightPitProgression","MOBHA0",1)
-  Global("MO_LichConvo","MOBHA0",0)
+  Global("MO_LichConvo1","MOBHA0",0)
   Dead("MOBHA47")  // Mutant Fomorian Giant
+  Detect([PC])
+THEN
+  RESPONSE #100
+    StartDialogueNoSet([PC])
+END
+
+IF
+  Global("MO_FightPitProgression","MOBHA0",2)
+  Global("MO_LichConvo2","MOBHA0",0)
   Detect([PC])
 THEN
   RESPONSE #100
