@@ -571,7 +571,7 @@ END ELSE BEGIN
 END
 
 // Cespenar chats
-COMPILE ~crucible/dlg/update_botsmith.d~
+COMPILE EVALUATE_BUFFER ~crucible/dlg/update_botsmith.d~
 COMPILE EVALUATE_BUFFER ~crucible/dlg/botsmith.d~
 
 ///////////////////////////////////////////////////////////////////////////
