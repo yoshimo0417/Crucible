@@ -594,8 +594,15 @@ END
 // Crucible.
 COPY_EXISTING ~CUT248A.BCS~ ~override~
     DECOMPILE_AND_PATCH BEGIN
-        REPLACE_TEXTUALLY ~RemoveSpell(ENTER_POCKET_PLANE)~ ~~
+      REPLACE_TEXTUALLY ~RemoveSpell(ENTER_POCKET_PLANE)~ ~~
     END
+BUT_ONLY
+
+COPY_EXISTING ~CESPEN.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      REPLACE_TEXTUALLY ~OnScreen(Myself)~ ~OnScreen(Myself)
+      !AreaCheck("mobha0")~
+    END 
 BUT_ONLY
 
 //-------------------------------------------------------------------------
