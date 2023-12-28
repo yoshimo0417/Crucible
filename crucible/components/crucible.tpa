@@ -570,6 +570,10 @@ END ELSE BEGIN
   COMPILE ~crucible/dlg/update_transition1.d~
 END
 
+// Cespenar chats
+COMPILE ~crucible/dlg/update_botsmith.d~
+COMPILE EVALUATE_BUFFER ~crucible/dlg/botsmith.d~
+
 ///////////////////////////////////////////////////////////////////////////
 // Copy .BCS file to override folder                                     //
 ///////////////////////////////////////////////////////////////////////////
