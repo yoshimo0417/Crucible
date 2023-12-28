@@ -534,6 +534,32 @@ COPY ~crucible/cre/mobha48.cre~  ~override/mobha48.cre~
   SAY NAME2 @2038
 COPY ~crucible/itm/mobha48a.itm~ ~override~  // claw
 COPY ~crucible/itm/mobha48b.itm~ ~override~  // bite
+COPY ~crucible/spl/mobha48a.spl~ ~override~  // Lower Fire Resist (on-hit)
+COPY ~crucible/spl/mobha48b.spl~ ~override~  // Hellfire Backlash
+  SAY NAME1 @4004 
+  SAY NAME2 @4004
+  // This is to prevent fireshields from entering a repeating loop of damaging one another
+  PATCH_FOR_EACH fireshield IN
+    balshld2
+    bdbarbde
+    bdsha12a
+    bdshld02
+    keldorn
+    leat23a
+    spcl237d
+    spimixd
+    sppr730d
+    sppr951d
+    sppr952d
+    spwi403d
+    spwi418d
+    mobtr22
+    solak1
+  BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~%fireshield%.SPL~ THEN BEGIN
+      LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 10 resist_dispel = 0 duration = 2 probability1 = 100 STR_VAR resource = ~%fireshield%~ END
+    END
+  END
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
