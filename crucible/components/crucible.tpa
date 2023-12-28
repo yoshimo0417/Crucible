@@ -20,6 +20,7 @@ COPY ~crucible/itm/mobhabl2.itm~ ~override~  // Blood of Malchediel
   SAY UNIDENTIFIED_DESC @10003
   SAY DESC @10003
 COPY ~crucible/spl/mobhaaf.spl~  ~override~  // custom fear
+
 //-------------------------------------------------------------------------
 // Detectable Spells
 LAF detectable_spells END
@@ -552,7 +553,7 @@ END
 //-------------------------------------------------------------------------
 // Remove the "Remove Pocket Plane Ability" from transition cutscene
 // into the Throne of Blood. This is being moved to the beginning of
-// Crucible
+// Crucible.
 COPY_EXISTING ~CUT248A.BCS~ ~override~
     DECOMPILE_AND_PATCH BEGIN
         REPLACE_TEXTUALLY ~RemoveSpell(ENTER_POCKET_PLANE)~ ~~
@@ -567,6 +568,8 @@ ACTION_IF iwd_divine BEGIN
   INCLUDE ~crucible/lib/mobha37.tph~  // Culdus Aghurath
 END
 
+//-------------------------------------------------------------------------
+// Add in the actual scripts
 COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobha1a.baf~  ~override/mobha1a.bcs~   // Area script
      ~crucible/baf/mobha1b.baf~  ~override/mobha1b.bcs~   // Area script
