@@ -55,7 +55,7 @@ IF
   Global("MO_FightPitProgression","MOBHA0",1)
   !ActuallyInCombat()
   DifficultyLT(HARDEST)
-  NumDead("MOBHA48",3)  // Hellfire Werewolf
+  NumDead("MOBHA48",2)  // Hellfire Werewolf
 THEN
   RESPONSE #100
     SetGlobal("MO_FightPitProgression","MOBHA0",2)
