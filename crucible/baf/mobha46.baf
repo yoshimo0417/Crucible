@@ -47,3 +47,12 @@ THEN
   RESPONSE #100
     StartDialogueNoSet([PC])
 END
+
+IF
+  Global("MO_FightPitProgression","MOBHA0",3)
+  Global("MO_LichConvo3","MOBHA0",0)
+  Detect([PC])
+THEN
+  RESPONSE #100
+    StartDialogueNoSet([PC])
+END

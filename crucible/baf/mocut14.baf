@@ -1,0 +1,95 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player1)
+        PlaySound("EFF_M09")
+        Wait(2)
+        MoveViewPoint([1238.787],INSTANT)
+        CreateVisualEffect("SPDIMNDR",[1238.787])
+        Wait(2)
+        JumpToPoint([1238.787])
+        Wait(3)
+        EndCutSceneMode()
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player2)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player2)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[1199.759])
+        Wait(2)
+        JumpToPoint([1199.759])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player3)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player3)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[1270.836])
+        Wait(2)
+        JumpToPoint([1270.836])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player4)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player4)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[1156.799])
+        Wait(2)
+        JumpToPoint([1156.799])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player5)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player5)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[1239.875])
+        Wait(2)
+        JumpToPoint([1239.875])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player6)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player6)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[1204.840])
+        Wait(2)
+        JumpToPoint([1204.840])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("mobha46")
+        JumpToPoint([1325.745])
+        Wait(2)
+END

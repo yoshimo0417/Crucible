@@ -62,3 +62,30 @@ THEN
     StartCutSceneMode()
     StartCutScene("mocut12")
 END
+
+/////////////////////////////////////////////////////////////////////
+// Third Fight - Twisted Abyssal Hulks
+/////////////////////////////////////////////////////////////////////
+IF
+  Global("MO_FightPitProgression","MOBHA0",2)
+  !ActuallyInCombat()
+  DifficultyGT(HARD)
+  NumDead("MOBHA49",3)  // Twisted Abyssal Hulks
+THEN
+  RESPONSE #100
+    SetGlobal("MO_FightPitProgression","MOBHA0",3)
+    StartCutSceneMode()
+    StartCutScene("mocut14")
+END
+
+IF
+  Global("MO_FightPitProgression","MOBHA0",2)
+  !ActuallyInCombat()
+  DifficultyLT(HARDEST)
+  NumDead("MOBHA49",1)  // Twisted Abyssal Hulks
+THEN
+  RESPONSE #100
+    SetGlobal("MO_FightPitProgression","MOBHA0",3)
+    StartCutSceneMode()
+    StartCutScene("mocut14")
+END

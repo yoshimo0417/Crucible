@@ -1,0 +1,437 @@
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+//            Twisted Abyssal Hulk
+/////////////////////////////////////////////////////////////////////
+//        Version 1
+// Twisted Abyssal Hulk, 14th level Umber Hulk
+//
+//
+/////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+// Death Explosion
+/////////////////////////////////////////////////////////////////////
+IF
+  Die()
+THEN
+  RESPONSE #50
+    ReallyForceSpellDeadRES("MOBHA49c",Myself)  // MOBHA49C.SPL (Acidic Explosion)
+    DestroySelf()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Initial Set-Up
+/////////////////////////////////////////////////////////////////////
+IF
+  See([GOODCUTOFF])
+  Global("Prep","LOCALS",0)
+  Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    ApplySpell(Myself,WIZARD_HASTE)
+    Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
+// Umber Hulk Confusion
+/////////////////////////////////////////////////////////////////////
+IF
+  !GlobalTimerNotExpired("MO_ConfusionTimer","LOCALS")
+  See(NearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+  !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !HasItemEquiped("LEAT20",LastSeenBy(Myself))
+  !HasItemEquiped("OHRHELM1",LastSeenBy(Myself))
+  !HasItemEquiped("OHDMASK",LastSeenBy(Myself))
+  !HasItemEquiped("SHLD25",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H14",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H21",LastSeenBy(Myself))
+  !HasItemEquiped("SW1H54",LastSeenBy(Myself))
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_ConfusionTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_ConfusionTimer","LOCALS")
+  See(SecondNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+  !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !HasItemEquiped("LEAT20",LastSeenBy(Myself))
+  !HasItemEquiped("OHRHELM1",LastSeenBy(Myself))
+  !HasItemEquiped("OHDMASK",LastSeenBy(Myself))
+  !HasItemEquiped("SHLD25",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H14",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H21",LastSeenBy(Myself))
+  !HasItemEquiped("SW1H54",LastSeenBy(Myself))
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_ConfusionTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_ConfusionTimer","LOCALS")
+  See(ThirdNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+  !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !HasItemEquiped("LEAT20",LastSeenBy(Myself))
+  !HasItemEquiped("OHRHELM1",LastSeenBy(Myself))
+  !HasItemEquiped("OHDMASK",LastSeenBy(Myself))
+  !HasItemEquiped("SHLD25",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H14",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H21",LastSeenBy(Myself))
+  !HasItemEquiped("SW1H54",LastSeenBy(Myself))
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_ConfusionTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_ConfusionTimer","LOCALS")
+  See(FourthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+  !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !HasItemEquiped("LEAT20",LastSeenBy(Myself))
+  !HasItemEquiped("OHRHELM1",LastSeenBy(Myself))
+  !HasItemEquiped("OHDMASK",LastSeenBy(Myself))
+  !HasItemEquiped("SHLD25",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H14",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H21",LastSeenBy(Myself))
+  !HasItemEquiped("SW1H54",LastSeenBy(Myself))
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_ConfusionTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_ConfusionTimer","LOCALS")
+  See(FifthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+  !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !HasItemEquiped("LEAT20",LastSeenBy(Myself))
+  !HasItemEquiped("OHRHELM1",LastSeenBy(Myself))
+  !HasItemEquiped("OHDMASK",LastSeenBy(Myself))
+  !HasItemEquiped("SHLD25",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H14",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H21",LastSeenBy(Myself))
+  !HasItemEquiped("SW1H54",LastSeenBy(Myself))
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_ConfusionTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
+    SetInterrupt(TRUE)
+END
+
+IF
+  !GlobalTimerNotExpired("MO_ConfusionTimer","LOCALS")
+  See(SixthNearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+  !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !HasItemEquiped("LEAT20",LastSeenBy(Myself))
+  !HasItemEquiped("OHRHELM1",LastSeenBy(Myself))
+  !HasItemEquiped("OHDMASK",LastSeenBy(Myself))
+  !HasItemEquiped("SHLD25",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H14",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H21",LastSeenBy(Myself))
+  !HasItemEquiped("SW1H54",LastSeenBy(Myself))
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_ConfusionTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    ForceSpell(LastSeenBy(Myself),HULK_CONFUSION)  // SPIN839.SPL (Confusion)
+    SetInterrupt(TRUE)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Attack
+/////////////////////////////////////////////////////////////////////
+IF
+  ActionListEmpty()
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+  !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !HasItemEquiped("LEAT20",LastSeenBy(Myself))
+  !HasItemEquiped("OHRHELM1",LastSeenBy(Myself))
+  !HasItemEquiped("OHDMASK",LastSeenBy(Myself))
+  !HasItemEquiped("SHLD25",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H14",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H21",LastSeenBy(Myself))
+  !HasItemEquiped("SW1H54",LastSeenBy(Myself))
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+  !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !HasItemEquiped("LEAT20",LastSeenBy(Myself))
+  !HasItemEquiped("OHRHELM1",LastSeenBy(Myself))
+  !HasItemEquiped("OHDMASK",LastSeenBy(Myself))
+  !HasItemEquiped("SHLD25",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H14",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H21",LastSeenBy(Myself))
+  !HasItemEquiped("SW1H54",LastSeenBy(Myself))
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(SecondNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+  !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !HasItemEquiped("LEAT20",LastSeenBy(Myself))
+  !HasItemEquiped("OHRHELM1",LastSeenBy(Myself))
+  !HasItemEquiped("OHDMASK",LastSeenBy(Myself))
+  !HasItemEquiped("SHLD25",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H14",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H21",LastSeenBy(Myself))
+  !HasItemEquiped("SW1H54",LastSeenBy(Myself))
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(ThirdNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+  !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !HasItemEquiped("LEAT20",LastSeenBy(Myself))
+  !HasItemEquiped("OHRHELM1",LastSeenBy(Myself))
+  !HasItemEquiped("OHDMASK",LastSeenBy(Myself))
+  !HasItemEquiped("SHLD25",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H14",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H21",LastSeenBy(Myself))
+  !HasItemEquiped("SW1H54",LastSeenBy(Myself))
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(FourthNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+  !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !HasItemEquiped("LEAT20",LastSeenBy(Myself))
+  !HasItemEquiped("OHRHELM1",LastSeenBy(Myself))
+  !HasItemEquiped("OHDMASK",LastSeenBy(Myself))
+  !HasItemEquiped("SHLD25",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H14",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H21",LastSeenBy(Myself))
+  !HasItemEquiped("SW1H54",LastSeenBy(Myself))
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(FifthNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
+  CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+  !CheckSpellState(LastSeenBy(Myself),BARBARIAN_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),BERSERKER_RAGE)
+  !CheckSpellState(LastSeenBy(Myself),POTION_OF_CLARITY)
+  !CheckStatGT(LastSeenBy(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !HasItemEquiped("LEAT20",LastSeenBy(Myself))
+  !HasItemEquiped("OHRHELM1",LastSeenBy(Myself))
+  !HasItemEquiped("OHDMASK",LastSeenBy(Myself))
+  !HasItemEquiped("SHLD25",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H14",LastSeenBy(Myself))
+  !HasItemEquiped("SW2H21",LastSeenBy(Myself))
+  !HasItemEquiped("SW1H54",LastSeenBy(Myself))
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(SixthNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(SecondNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(ThirdNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(FourthNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(FifthNearestEnemyOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound(SixthNearestEnemyOf(Myself))
+END
+

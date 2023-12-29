@@ -561,6 +561,46 @@ COPY ~crucible/spl/mobha48b.spl~ ~override~  // Hellfire Backlash
     END
   END
 
+//-------------------------------------------------------------------------
+// Twisted Abyssal Hulk
+COPY ~crucible/cre/mobha49.cre~  ~override/mobha49.cre~
+  SAY NAME1 @2039
+  SAY NAME2 @2039
+COPY ~crucible/itm/mobha49a.itm~ ~override~  // claw
+COPY ~crucible/itm/mobha49b.itm~ ~override~  // bite
+COPY ~crucible/spl/mobha49a.spl~ ~override~  // Lower Acid Resist (on-hit)
+  SAY NAME1 @4005 
+  SAY NAME2 @4005
+COPY ~crucible/spl/mobha49b.spl~ ~override~  // Acidic Backlash
+  SAY NAME1 @4006 
+  SAY NAME2 @4006
+  // This is to prevent fireshields from entering a repeating loop of damaging one another
+  PATCH_FOR_EACH fireshield IN
+    balshld2
+    bdbarbde
+    bdsha12a
+    bdshld02
+    keldorn
+    leat23a
+    spcl237d
+    spimixd
+    sppr730d
+    sppr951d
+    sppr952d
+    spwi403d
+    spwi418d
+    mobtr22
+    solak1
+    mobha49a
+  BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~%fireshield%.SPL~ THEN BEGIN
+      LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 10 resist_dispel = 0 duration = 2 probability1 = 100 STR_VAR resource = ~%fireshield%~ END
+    END
+  END
+COPY ~crucible/spl/mobha49c.spl~ ~override~  // Acidic Explosion
+  SAY NAME1 @4007
+  SAY NAME2 @4007
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -687,6 +727,8 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobha44.baf~  ~override/mobha44.bcs~   // Creature script
      ~crucible/baf/mobha46.baf~  ~override/mobha46.bcs~   // Creature script
      ~crucible/baf/mobha47.baf~  ~override/mobha47.bcs~   // Creature script
+     ~crucible/baf/mobha48.baf~  ~override/mobha48.bcs~   // Creature script
+     ~crucible/baf/mobha49.baf~  ~override/mobha49.bcs~   // Creature script
      ~crucible/baf/mocut03.baf~  ~override/mocut03.bcs~   // Cutscene script
      ~crucible/baf/mocut04.baf~  ~override/mocut04.bcs~   // Cutscene script
      ~crucible/baf/mocut05.baf~  ~override/mocut05.bcs~   // Cutscene script
@@ -699,6 +741,9 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mocut11a.baf~ ~override/mocut11a.bcs~  // Cutscene script
      ~crucible/baf/mocut11b.baf~ ~override/mocut11b.bcs~  // Cutscene script
      ~crucible/baf/mocut12.baf~  ~override/mocut12.bcs~   // Cutscene script
+     ~crucible/baf/mocut13a.baf~ ~override/mocut13a.bcs~  // Cutscene script
+     ~crucible/baf/mocut13b.baf~ ~override/mocut13b.bcs~  // Cutscene script
+     ~crucible/baf/mocut14.baf~  ~override/mocut14.bcs~   // Cutscene script
      ~crucible/baf/mocall1.baf~  ~override/mocall1.bcs~   // Call for help - Amelyssan Forces
      ~crucible/baf/mocall2.baf~  ~override/mocall2.bcs~   // Call for help - Phiuhls
      ~crucible/baf/mocall3.baf~  ~override/mocall3.bcs~   // Call for help - Demons&Angels
