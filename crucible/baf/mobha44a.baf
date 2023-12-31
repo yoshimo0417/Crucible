@@ -74,6 +74,7 @@ IF
   Dead("mobha42")
   Dead("mobha01")
   !Allegiance(Myself,ENEMY)
+  !ActuallyInCombat()
 THEN 
   RESPONSE #100
     StartDialogueNoSet([PC])
