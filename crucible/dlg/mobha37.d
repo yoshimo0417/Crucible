@@ -55,9 +55,7 @@ IF ~~ THEN BEGIN 10
   SAY @6412
   IF ~Global("MO_UthaedeolAlly","GLOBAL",0)~ THEN DO ~SetGlobal("MOBHA2_Enemy","GLOBAL",1)
 Enemy()~ EXIT
-  IF ~Global("MO_UthaedeolAlly","GLOBAL",1)~ THEN DO ~SetGlobal("MOBHA2_Enemy","GLOBAL",1)
-Enemy()
-ClearAllActions()
+  IF ~Global("MO_UthaedeolAlly","GLOBAL",1)~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 StartCutScene("mocut15")~ EXIT
 END

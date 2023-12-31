@@ -11,7 +11,7 @@ END
 
 IF ~~ THEN BEGIN 1
   SAY @6902
-  IF ~~ THEN DO ~~ EXIT
+  IF ~~ THEN DO ~SetGlobal("MOBHA2_Enemy","GLOBAL",1)~ EXIT
 END
 
 IF ~!NumTimesTalkedTo(0)
