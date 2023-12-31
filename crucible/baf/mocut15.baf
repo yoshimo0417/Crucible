@@ -4,6 +4,7 @@ THEN
     RESPONSE #100
         CutSceneId("mobha37")
         Wait(2)
+        PlaySound("EFF_M09")
         CreateCreatureEffect("MOBHA44a","SPDIMNDR",[807.740],N)  // Uthaedeol the Blood-drenched
         Wait(2)
         EndCutSceneMode()

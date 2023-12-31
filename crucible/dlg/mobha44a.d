@@ -18,8 +18,8 @@ IF ~!NumTimesTalkedTo(0)
 !Allegiance(Myself,ENEMY)~ THEN BEGIN 2
   SAY @6903 = @6904
   IF ~~ THEN REPLY @6905 GOTO 3  // Reconsider, I can promise you great rewards once we see this through.
-  IF ~~ THEN REPLY @6606 GOTO 3  // I should have expected as much from a servant of Bhaal.
-  IF ~~ THEN REPLY @6607 GOTO 3  // Good, I've been looking forward to gutting you!
+  IF ~~ THEN REPLY @6906 GOTO 3  // I should have expected as much from a servant of Bhaal.
+  IF ~~ THEN REPLY @6907 GOTO 3  // Good, I've been looking forward to gutting you!
 END
 
 IF ~~ THEN BEGIN 3
