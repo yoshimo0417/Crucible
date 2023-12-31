@@ -65,6 +65,20 @@ THEN
     Enemy()
 END
 
+IF
+  Dead("mobha37")
+  Dead("mobha38")
+  Dead("mobha39")
+  Dead("mobha40")
+  Dead("mobha41")
+  Dead("mobha42")
+  Dead("mobha01")
+  !Allegiance(Myself,ENEMY)
+THEN 
+  RESPONSE #100
+    StartDialogueNoSet([PC])
+END
+
 /////////////////////////////////////////////////////////////////////
 // Prep
 /////////////////////////////////////////////////////////////////////

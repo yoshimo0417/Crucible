@@ -289,6 +289,11 @@
 @6804 = ~Back home and back to work for rattlebones over there. See, I have my work bench!~
 
 // Uthaedeol & Culdus 
-@6900 = ~Traitor! You should suffer a thousand deaths for betraying Bhaal.~
+@6900 = ~Traitor! You should suffer a thousand deaths for betraying Bhaal.~ [mobha112] 
 @6901 = ~Blood-drenched?! You are supposed to be in stasis!~  [mobha111] // Culdus
-@6902 = ~Were you so lucky. No, I am awake and will avenge my lord Bhaal. Die like the maggot you are.~
+@6902 = ~Were you so lucky. I am very much awake and will avenge my lord Bhaal. Die like the pathetic maggot you are.~ [mobha113] 
+@6903 = ~With them out of the way, it is only us and Amelyssan. Sadly, my lord Bhaal remains dead regardless of what happens next.~ [mobha114] 
+@6904 = ~Your capabilities are impressive, but I would prefer to make the attempt at divinity for myself.~ [mobha115] 
+@6905 = ~Reconsider, I can promise you great rewards once we see this through.~  // Player
+@6906 = ~I should have expected as much from a servant of Bhaal.~  // Player
+@6907 = ~Good, I've been looking forward to gutting you!~  // Player

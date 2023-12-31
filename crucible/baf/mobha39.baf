@@ -335,6 +335,18 @@ THEN
     AttackOneRound(SixthNearestEnemyOf(Myself))
 END
 
+IF
+  ActionListEmpty()
+  See("MOBHA44A")
+  Allegiance(Myself,ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  WeaponEffectiveVs("MOBHA44A",MAINHAND)
+  WeaponCanDamage("MOBHA44A",MAINHAND)
+THEN
+  RESPONSE #100
+    AttackOneRound("MOBHA44A")
+END
+
 /////////////////////////////////////////////////////////////////////
 // Find them! (Experimental)
 /////////////////////////////////////////////////////////////////////
