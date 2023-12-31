@@ -6,4 +6,5 @@ THEN
         Wait(2)
         CreateCreatureEffect("MOBHA44a","SPDIMNDR",[807.740],N)  // Uthaedeol the Blood-drenched
         Wait(2)
+        EndCutSceneMode()
 END

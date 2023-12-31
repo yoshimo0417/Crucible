@@ -87,8 +87,8 @@ END
 
 IF ~~ THEN BEGIN 12
   SAY @6638
-  IF ~CheckStatGT(Myself,18,CHR)~ THEN REPLY @6639 GOTO 13  // Yes, I will rise in his place! (Success)
-  IF ~CheckStatLT(Myself,19,CHR)~ THEN REPLY @6639 GOTO 14  // Yes, I will rise in his place! (Fail)
+  IF ~CheckStatGT(Player1,18,CHR)~ THEN REPLY @6639 GOTO 13  // Yes, I will rise in his place! (Success)
+  IF ~CheckStatLT(Player1,19,CHR)~ THEN REPLY @6639 GOTO 14  // Yes, I will rise in his place! (Fail)
   IF ~~ THEN REPLY @6640 GOTO 14  //No, I plan to walk my own path of destruction on the mortal plane.
   IF ~~ THEN REPLY @6641 GOTO 3  // I don't have time for this. Prepare to die!
 END 
