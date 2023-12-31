@@ -502,6 +502,16 @@ COPY ~crucible/eff/mobha44b.eff~ ~override~ // Wisdom Loss EFF for dagger
 COPY ~crucible/spl/mobha44a.spl~ ~override~ // Heal on kill
 
 //-------------------------------------------------------------------------
+// Uthaedeol the Blood-drenched (F(13)->Mage(20))
+COPY ~crucible/cre/mobha44.cre~  ~override/mobha44a.cre~
+  SAY NAME1 @2034
+  SAY NAME2 @2034
+  WRITE_ASCII 0x268 ~MOBHA44a~ #8 // Default Script
+  WRITE_ASCII 0x280 ~MOBHA44a~ #8 // Script Name
+  WRITE_ASCII 0x2cc ~MOBHA44a~ #8 // Dialogue
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha44a.d~
+
+//-------------------------------------------------------------------------
 // Osmadiel
 COPY ~crucible/cre/mobha45.cre~  ~override/mobha45.cre~
   SAY NAME1 @2035
@@ -743,6 +753,7 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobha42.baf~  ~override/mobha42.bcs~   // Creature script
      ~crucible/baf/mobha43.baf~  ~override/mobha43.bcs~   // Creature script
      ~crucible/baf/mobha44.baf~  ~override/mobha44.bcs~   // Creature script
+     ~crucible/baf/mobha44a.baf~ ~override/mobha44a.bcs~  // Creature script
      ~crucible/baf/mobha46.baf~  ~override/mobha46.bcs~   // Creature script
      ~crucible/baf/mobha47.baf~  ~override/mobha47.bcs~   // Creature script
      ~crucible/baf/mobha48.baf~  ~override/mobha48.bcs~   // Creature script
@@ -762,6 +773,7 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mocut13a.baf~ ~override/mocut13a.bcs~  // Cutscene script
      ~crucible/baf/mocut13b.baf~ ~override/mocut13b.bcs~  // Cutscene script
      ~crucible/baf/mocut14.baf~  ~override/mocut14.bcs~   // Cutscene script
+     ~crucible/baf/mocut15.baf~  ~override/mocut15.bcs~   // Cutscene script
      ~crucible/baf/mocall1.baf~  ~override/mocall1.bcs~   // Call for help - Amelyssan Forces
      ~crucible/baf/mocall2.baf~  ~override/mocall2.bcs~   // Call for help - Phiuhls
      ~crucible/baf/mocall3.baf~  ~override/mocall3.bcs~   // Call for help - Demons&Angels

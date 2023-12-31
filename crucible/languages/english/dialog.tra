@@ -167,7 +167,7 @@
 // Deathbringer
 @6300 = ~Gorion's ward has invaded Bhaal's kingdom! To arms my brothers!~ [mobha049]
 
-// Culdus Aghurath
+// Culdus Aghurath (Deckard - Fury)
 @6400 = ~<CHARNAME>, first among the children of Bhaal.~ [mobha071]
 @6401 = ~Or perhaps your sister Imoen holds that distinction?~ [mobha072]
 @6402 = ~No, pal! <CHARNAME> can be the first.~
@@ -287,3 +287,8 @@
 @6802 = ~I did not expect to see you again.~  // Player
 @6803 = ~I see you are serving the enemy now.~  // Player
 @6804 = ~Back home and back to work for rattlebones over there. See, I have my work bench!~
+
+// Uthaedeol & Culdus 
+@6900 = ~Traitor! You should suffer a thousand deaths for betraying Bhaal.~
+@6901 = ~Blood-drenched?! You are supposed to be in stasis!~  [mobha111] // Culdus
+@6902 = ~Were you so lucky. No, I am awake and will avenge my lord Bhaal. Die like the maggot you are.~
