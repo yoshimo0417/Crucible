@@ -36,6 +36,7 @@ IF
   Detect([PC])
 THEN
   RESPONSE #100
+    SetGlobal("MO_LichConvo1","MOBHA0",1)
     StartDialogueNoSet([PC])
 END
 
@@ -45,6 +46,7 @@ IF
   Detect([PC])
 THEN
   RESPONSE #100
+    SetGlobal("MO_LichConvo2","MOBHA0",1)
     StartDialogueNoSet([PC])
 END
 
@@ -54,5 +56,6 @@ IF
   Detect([PC])
 THEN
   RESPONSE #100
+    SetGlobal("MO_LichConvo3","MOBHA0",1)
     StartDialogueNoSet([PC])
 END
