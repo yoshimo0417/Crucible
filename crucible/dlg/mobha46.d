@@ -44,7 +44,7 @@ Global("MO_LichFight2","MOBHA0",1)
 Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 16  // Fought 2 fights
   IF ~Global("MO_LichFight3","MOBHA0",1)
 Global("MO_LichFight2","MOBHA0",1)
-Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO Z  // Fought 3 fights
+Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 99  // Fought 3 fights
 END
 
 // No Fights Completed
@@ -78,7 +78,7 @@ Global("MO_LichFight2","MOBHA0",1)
 Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 16  // Fought 2 fights
   IF ~Global("MO_LichFight3","MOBHA0",1)
 Global("MO_LichFight2","MOBHA0",1)
-Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO Z  // Fought 3 fights
+Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 99  // Fought 3 fights
 END
 
 IF ~~ THEN BEGIN 8
@@ -91,7 +91,7 @@ Global("MO_LichFight2","MOBHA0",1)
 Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 16  // Fought 2 fights
   IF ~Global("MO_LichFight3","MOBHA0",1)
 Global("MO_LichFight2","MOBHA0",1)
-Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO Z  // Fought 3 fights
+Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 99  // Fought 3 fights
 END
 
 // First Fight
