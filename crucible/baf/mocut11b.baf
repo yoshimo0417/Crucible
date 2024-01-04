@@ -89,10 +89,9 @@ IF
     True()
 THEN
     RESPONSE #100
-        CutSceneId("mobha46")
+        CutSceneId("mobha46")  // Gaohan Ralahr
         Wait(2)
-        CreateCreatureEffect("MOBHA49","SPDIMNDR",[903.805],S)  // Twisted Abyssal Hulk
-        CreateCreatureEffect("MOBHA49","SPDIMNDR",[776.815],S)  // Twisted Abyssal Hulk
-        CreateCreatureEffect("MOBHA49","SPDIMNDR",[975.888],S)  // Twisted Abyssal Hulk
+        CreateCreatureEffect("MOBHA47","SPDIMNDR",[840.800],S)  // Mutant Fomorian Giant
+        CreateCreatureEffect("MOBHA47","SPDIMNDR",[940.831],S)  // Mutant Fomorian Giant
         Wait(2)
 END

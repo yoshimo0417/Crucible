@@ -91,6 +91,6 @@ THEN
     RESPONSE #100
         CutSceneId("mobha46")
         Wait(2)
-        CreateCreatureEffect("MOBHA49","SPDIMNDR",[903.805],S)  // Twisted Abyssal Hulk
+        CreateCreatureEffect("MOBHA47","SPDIMNDR",[899.804],S)  // Mutant Fomorian Giant
         Wait(2)
 END
