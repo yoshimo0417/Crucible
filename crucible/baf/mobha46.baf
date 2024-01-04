@@ -32,7 +32,6 @@ END
 IF
   Global("MO_FightPitProgression","MOBHA0",1)
   Global("MO_LichConvo1","MOBHA0",0)
-  Dead("MOBHA47")  // Mutant Fomorian Giant
   Detect([PC])
 THEN
   RESPONSE #100
