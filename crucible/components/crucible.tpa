@@ -631,7 +631,7 @@ COPY ~crucible/spl/mobha49c.spl~ ~override~  // Acidic Explosion
 
 //-------------------------------------------------------------------------
 // Corrupted Orog Shaman
-COPY ~crucible/cre/mobha50.cre~  ~override/mobha50.cre~
+COPY ~crucible/cre/mobha50.cre~ ~override/mobha50.cre~
   SAY NAME1 @2040
   SAY NAME2 @2040
 
