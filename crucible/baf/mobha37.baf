@@ -451,6 +451,32 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
+// Spell: Righteous Magic
+/////////////////////////////////////////////////////////////////////
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  See([GOODCUTOFF])
+  GlobalGT("MO_RighteousMagic","LOCALS",0)
+  Allegiance(Myself,ENEMY)
+  DifficultyGT(HARD)
+  CheckStatLT(Myself,25,STR)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    IncrementGlobal("MO_RighteousMagic","LOCALS",-1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    SpellNoDec(Myself,CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)
+    SetInterrupt(TRUE)
+  RESPONSE #50
+    Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
 // Spell: Draw Upon Holy Might
 /////////////////////////////////////////////////////////////////////
 IF

@@ -58,3 +58,13 @@ THEN
     SetGlobal("MO_LichConvo3","MOBHA0",1)
     StartDialogueNoSet([PC])
 END
+
+IF
+  Global("MO_FightPitProgression","MOBHA0",4)
+  Global("MO_LichConvo4","MOBHA0",0)
+  Detect([PC])
+THEN
+  RESPONSE #100
+    SetGlobal("MO_LichConvo4","MOBHA0",1)
+    StartDialogueNoSet([PC])
+END
