@@ -22,13 +22,6 @@ IF ~~ THEN BEGIN 1
   IF ~~ THEN REPLY @6705 DO ~SetGlobal("MO_LichExit","MOBHA0",1)~ GOTO 100  // I'll only assist you by ending your existence!
 END
 
-/*
-IF ~~ THEN BEGIN 2
-  SAY @6714
-  IF ~~ THEN DO ~SetGlobal("MO_LichInitialConvo","MOBHA0",1)~ EXIT
-END
-*/
-
 IF ~~ THEN BEGIN 2
   SAY @6714
   IF ~~ THEN DO ~~ EXIT

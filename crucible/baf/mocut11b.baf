@@ -91,10 +91,8 @@ THEN
     RESPONSE #100
         CutSceneId("mobha46")
         Wait(2)
-        CreateCreatureEffect("MOBHA48","SPDIMNDR",[903.805],S)  // Hellfire Werewolf
-        CreateCreatureEffect("MOBHA48","SPDIMNDR",[847.794],S)  // Hellfire Werewolf
-        CreateCreatureEffect("MOBHA48","SPDIMNDR",[776.815],S)  // Hellfire Werewolf
-        CreateCreatureEffect("MOBHA48","SPDIMNDR",[949.831],S)  // Hellfire Werewolf
-        CreateCreatureEffect("MOBHA48","SPDIMNDR",[975.888],S)  // Hellfire Werewolf
+        CreateCreatureEffect("MOBHA49","SPDIMNDR",[903.805],S)  // Twisted Abyssal Hulk
+        CreateCreatureEffect("MOBHA49","SPDIMNDR",[776.815],S)  // Twisted Abyssal Hulk
+        CreateCreatureEffect("MOBHA49","SPDIMNDR",[975.888],S)  // Twisted Abyssal Hulk
         Wait(2)
 END

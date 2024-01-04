@@ -40,52 +40,52 @@ END
 // Second Fight - Hellfire Werewolves
 /////////////////////////////////////////////////////////////////////
 IF
-  Global("MO_FightPitProgression","MOBHA0",1)
+  Global("MO_FightPitProgression","MOBHA0",2)
   !ActuallyInCombat()
   DifficultyGT(HARD)
   NumDead("MOBHA48",5)  // Hellfire Werewolf
 THEN
   RESPONSE #100
-    SetGlobal("MO_FightPitProgression","MOBHA0",2)
+    SetGlobal("MO_FightPitProgression","MOBHA0",3)
     StartCutSceneMode()
-    StartCutScene("mocut12")
+    StartCutScene("mocut14")
 END
 
 IF
-  Global("MO_FightPitProgression","MOBHA0",1)
+  Global("MO_FightPitProgression","MOBHA0",2)
   !ActuallyInCombat()
   DifficultyLT(HARDEST)
   NumDead("MOBHA48",2)  // Hellfire Werewolf
 THEN
   RESPONSE #100
-    SetGlobal("MO_FightPitProgression","MOBHA0",2)
+    SetGlobal("MO_FightPitProgression","MOBHA0",3)
     StartCutSceneMode()
-    StartCutScene("mocut12")
+    StartCutScene("mocut14")
 END
 
 /////////////////////////////////////////////////////////////////////
 // Third Fight - Twisted Abyssal Hulks
 /////////////////////////////////////////////////////////////////////
 IF
-  Global("MO_FightPitProgression","MOBHA0",2)
+  Global("MO_FightPitProgression","MOBHA0",1)
   !ActuallyInCombat()
   DifficultyGT(HARD)
   NumDead("MOBHA49",3)  // Twisted Abyssal Hulks
 THEN
   RESPONSE #100
-    SetGlobal("MO_FightPitProgression","MOBHA0",3)
+    SetGlobal("MO_FightPitProgression","MOBHA0",2)
     StartCutSceneMode()
-    StartCutScene("mocut14")
+    StartCutScene("mocut12")
 END
 
 IF
-  Global("MO_FightPitProgression","MOBHA0",2)
+  Global("MO_FightPitProgression","MOBHA0",1)
   !ActuallyInCombat()
   DifficultyLT(HARDEST)
   NumDead("MOBHA49",1)  // Twisted Abyssal Hulks
 THEN
   RESPONSE #100
-    SetGlobal("MO_FightPitProgression","MOBHA0",3)
+    SetGlobal("MO_FightPitProgression","MOBHA0",2)
     StartCutSceneMode()
-    StartCutScene("mocut14")
+    StartCutScene("mocut12")
 END
