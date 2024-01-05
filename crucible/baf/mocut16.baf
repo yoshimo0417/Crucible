@@ -1,0 +1,96 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player1)
+        PlaySound("EFF_M09")
+        Wait(2)
+        MoveViewPoint([820.928],INSTANT)
+        CreateVisualEffect("SPDIMNDR",[820.928])
+        Wait(2)
+        JumpToPoint([820.928])
+        Wait(3)
+        EndCutSceneMode()
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player2)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player2)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[765.901])
+        Wait(2)
+        JumpToPoint([765.901])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player3)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player3)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[864.965])
+        Wait(2)
+        JumpToPoint([864.965])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player4)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player4)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[724.947])
+        Wait(2)
+        JumpToPoint([724.947])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player5)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player5)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[832.1021])
+        Wait(2)
+        JumpToPoint([832.1021])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player6)
+        Wait(1)
+        CreateVisualEffectObject("SPDIMNDR",Player6)
+        PlaySound("EFF_M09")
+        Wait(2)
+        CreateVisualEffect("SPDIMNDR",[768.980])
+        Wait(2)
+        JumpToPoint([768.980])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("mobha46")
+        Wait(2)
+        CreateCreatureEffect("MOBHA50","SPDIMNDR",[899.804],S)  // Corrupted Orog Shaman
+        Wait(2)
+END

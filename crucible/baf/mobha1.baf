@@ -272,7 +272,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("MO_BhaalSkullInitial","MOBHA1",1)
-		Wait(2)
+		//Wait(2)
 		ClearAllActions()
 		CreateCreature("mobha32",[798.1373],S)
 END

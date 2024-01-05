@@ -35,9 +35,14 @@ Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 12  // Fought 1 fight
   IF ~Global("MO_LichFight3","MOBHA0",0)
 Global("MO_LichFight2","MOBHA0",1)
 Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 16  // Fought 2 fights
-  IF ~Global("MO_LichFight3","MOBHA0",1)
+  IF ~Global("MO_LichFight4","MOBHA0",0)
+Global("MO_LichFight3","MOBHA0",1)
 Global("MO_LichFight2","MOBHA0",1)
-Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 99  // Fought 3 fights
+Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 20  // Fought 3 fights
+  IF ~Global("MO_LichFight4","MOBHA0",1)
+Global("MO_LichFight3","MOBHA0",1)
+Global("MO_LichFight2","MOBHA0",1)
+Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 99  // Fought 4 fights
 END
 
 // No Fights Completed
@@ -69,9 +74,14 @@ Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 12  // Fought 1 fight
   IF ~Global("MO_LichFight3","MOBHA0",0)
 Global("MO_LichFight2","MOBHA0",1)
 Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 16  // Fought 2 fights
-  IF ~Global("MO_LichFight3","MOBHA0",1)
+  IF ~Global("MO_LichFight4","MOBHA0",0)
+Global("MO_LichFight3","MOBHA0",1)
 Global("MO_LichFight2","MOBHA0",1)
-Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 99  // Fought 3 fights
+Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 20  // Fought 3 fights
+  IF ~Global("MO_LichFight4","MOBHA0",1)
+Global("MO_LichFight3","MOBHA0",1)
+Global("MO_LichFight2","MOBHA0",1)
+Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 99  // Fought 4 fights
 END
 
 IF ~~ THEN BEGIN 8
@@ -82,9 +92,14 @@ Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 12  // Fought 1 fight
   IF ~Global("MO_LichFight3","MOBHA0",0)
 Global("MO_LichFight2","MOBHA0",1)
 Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 16  // Fought 2 fights
-  IF ~Global("MO_LichFight3","MOBHA0",1)
+  IF ~Global("MO_LichFight4","MOBHA0",0)
+Global("MO_LichFight3","MOBHA0",1)
 Global("MO_LichFight2","MOBHA0",1)
-Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 99  // Fought 3 fights
+Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 20  // Fought 3 fights
+  IF ~Global("MO_LichFight4","MOBHA0",1)
+Global("MO_LichFight3","MOBHA0",1)
+Global("MO_LichFight2","MOBHA0",1)
+Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 99  // Fought 4 fights
 END
 
 // First Fight
@@ -181,8 +196,31 @@ StartCutSceneMode()
 StartCutScene("mocut13b")~ EXIT
 END
 
+// 3 Fights Completed
+IF ~Global("MO_LichFight1","MOBHA0",1)
+Global("MO_LichFight2","MOBHA0",1)
+Global("MO_LichFight3","MOBHA0",1)
+Global("MO_LichFight4","MOBHA0",0)~ THEN BEGIN 20
+  SAY @6731 = @6732
+  IF ~~ THEN REPLY @6709 GOTO 21  // Sure, I'll be happy to fight some monsters.
+  IF ~~ THEN REPLY @6710 GOTO 3  // What types of monsters have you created?
+  IF ~~ THEN REPLY @6711 GOTO 6  // Why exactly are you making all of these monsters?
+  IF ~~ THEN REPLY @6712 GOTO 8  // Who are you?
+  IF ~~ THEN REPLY @6713 GOTO 2  // Sorry, but I have more pressing matters that require my attention.
+  IF ~~ THEN REPLY @6705 DO ~SetGlobal("MO_LichExit","MOBHA0",1)~ GOTO 100  // I'll only assist you by ending your existence!
+END
+
+// Fourth Fight
+IF ~~ THEN BEGIN 21
+  SAY @6733
+  IF ~~ THEN DO ~SetGlobal("MO_LichFight4","MOBHA0",1)
+ClearAllActions()
+StartCutSceneMode()
+StartCutScene("mocut16")~ EXIT
+END
+
 // END/Final Dialog Dialog
-IF ~Global("MO_LichFight3","MOBHA0",1)
+IF ~Global("MO_LichFight4","MOBHA0",1)
 HPPercent(Myself,100)~ THEN BEGIN 99
   SAY @6799 
   IF ~~ THEN DO ~~ EXIT

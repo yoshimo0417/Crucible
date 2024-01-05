@@ -89,3 +89,17 @@ THEN
     StartCutSceneMode()
     StartCutScene("mocut14")
 END
+
+/////////////////////////////////////////////////////////////////////
+// Fourth Fight - Corrupted Orog Shaman
+/////////////////////////////////////////////////////////////////////
+IF
+  Global("MO_FightPitProgression","MOBHA0",3)
+  !ActuallyInCombat()
+  NumDead("MOBHA50",1)  // Corrupted Orog Shaman
+THEN
+  RESPONSE #100
+    SetGlobal("MO_FightPitProgression","MOBHA0",4)
+    StartCutSceneMode()
+    StartCutScene("mocut14")
+END
