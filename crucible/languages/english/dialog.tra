@@ -16,19 +16,19 @@
 
 // Deathstalker Initial Convo
 @5100 = ~I see you decided to finally arrive, <CHARNAME>. The hour is late and Amelyssan will ascend as the new lord of murder.~ [mobha000]
-@5101 = ~Where am I?~
-@5102 = ~This is Khalas, isn't it?~
-@5103 = ~Who are you?~
-@5104 = ~Then time is of the essence, draw steel!~
-@5105 = ~You shall fall as all have done before you. Prepare to die!~
+@5101 = ~Where am I?~  // Player
+@5102 = ~This is Khalas, isn't it?~  // Player
+@5103 = ~Who are you?~  // Player
+@5104 = ~Then time is of the essence, draw steel!~  // Player
+@5105 = ~You shall fall as all have done before you. Prepare to die!~  // Player
 
 @5110 = ~How you made it this far with so little knowledge is a question for the sages. You are in Khalas, the uppermost layer of Gehenna.~ [mobha001]
 @5111 = ~Very astute of you. Yes, this is the uppermost layer of Gehenna known as Khalas.~ [mobha002]
-@5112 = ~Isn't my pocket plane supposed to be connected to Bhaal's realm?~
+@5112 = ~Isn't my pocket plane supposed to be connected to Bhaal's realm?~  // Player
 @5113 = ~Amelyssan suspected you had such a pocket plane when you first arrived in Saradush. Great effort was made to find and then sever your plane's connection from the greater realm of Bhaal.~ [mobha003]
 @5114 = ~The ties are strong between your pocket plane and Bhaal's kingdom, so we could only separate them so far apart. We have since waited to see if you would make the attempt to come through.~ [mobha004]
-@5115 = ~Let us end this.~
-@5116 = ~I tire of these questions, it is time for you to die.~
+@5115 = ~Let us end this.~  // Player
+@5116 = ~I tire of these questions, it is time for you to die.~  // Player
 
 @5120 = ~I am a Deathstalker. Formerly a servant of Bhaal, I have since pledged my service to Amelyssan who shall become the new and rightful Lord of Murder.~ [mobha005]
 @5121 = ~Why do you serve Amelyssan instead of working to assit Bhaal's return?~
