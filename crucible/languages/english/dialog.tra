@@ -31,7 +31,7 @@
 @5116 = ~I tire of these questions, it is time for you to die.~  // Player
 
 @5120 = ~I am a Deathstalker. Formerly a servant of Bhaal, I have since pledged my service to Amelyssan who shall become the new and rightful Lord of Murder.~ [mobha005]
-@5121 = ~Why do you serve Amelyssan instead of working to assit Bhaal's return?~
+@5121 = ~Why do you serve Amelyssan instead of working to assit Bhaal's return?~  // Player
 @5122 = ~I was one of many of Bhaal's Deathstalkers. A dutiful but unappreciated one at that. I serve Amelyssan as I will become one of her most favored and should reap the reward of her ascension.~ [mobha006]
 
 @5130 = ~No, I will move ahead to seal off Bhaal's kingdom and halt your advance. Kill the Bhaalspawn!~ [mobha007]
@@ -39,9 +39,9 @@
 
 // Deathstalker Second Convo
 @5200 = ~You arrive too late and the path is sealed. Amelyssan shall become a goddess, and I will be the one rewarded with bringing her your head.~ [mobha008]
-@5201 = ~You assume much, let us end this.~ 
-@5202 = ~My head will stay attached to my neck. Yours...not so likely.~
-@5203 = ~Die, bitch!~
+@5201 = ~You assume much, let us end this.~  // Player
+@5202 = ~My head will stay attached to my neck. Yours...not so likely.~  // Player
+@5203 = ~Die, bitch!~  // Player
 @5210 = ~Attack the Bhaalspawn, bring me <PRO_HISHER> head!~ [mobha009]
 
 // Planetar
@@ -111,10 +111,10 @@
 @5720 = ~I yield!~ [mobha043]
 @5721 = ~You are stronger than your father was on the day he defeated me.~ [mobha044]
 @5722 = ~How do you wish to end this?~ [mobha045]
-@5723 = ~I will make the same choice as my father. I will take some of your divinity and you will serve me as you did him.~
-@5724 = ~I will consume the remainder of your divine essence and end your existence.~
-@5725 = ~I choose to end your existence.~
-@5726 = ~Flee this place and know you are again a defeated being.~
+@5723 = ~I will make the same choice as my father. I will take some of your divinity and you will serve me as you did him.~  // Player
+@5724 = ~I will consume the remainder of your divine essence and end your existence.~  // Player
+@5725 = ~I choose to end your existence.~  // Player
+@5726 = ~Flee this place and know you are again a defeated being.~  // Player
 @5730 = ~So be it. I will take my leave, my lord.~ [mobha046]
 @5731 = ~So, this is how it ends.~ [mobha047]
 @5732 = ~I do not know what games you play, mortal. I will take my leave.~ [mobha048]
@@ -176,10 +176,10 @@
 @6405 = ~It required an unconquerable resolve I doubt you are capable of understanding.~
 @6406 = ~Says the man who died and is a shell of his former self.~ [mobha075]
 @6407 = ~Behind me lies the entrance to the Throne of Blood where Amelyssan is gathering the collected essences of Bhaal, and we will not allow you to disturb her plans.~ [mobha076]
-@6408 = ~Step aside and you can serve me when I become the new Lord of Murder.~
-@6409 = ~I have crushed all who have challenged me before. Step aside and spare yourself.~
-@6410 = ~Do you think you are capable of stopping me?~
-@6411 = ~Enough chatter, my destiny awaits!~
+@6408 = ~Step aside and you can serve me when I become the new Lord of Murder.~  // Player
+@6409 = ~I have crushed all who have challenged me before. Step aside and spare yourself.~  // Player
+@6410 = ~Do you think you are capable of stopping me?~  // Player
+@6411 = ~Enough chatter, my destiny awaits!~  // Player
 @6412 = ~Let's finish this. For Amelyssan!~ [mobha077]
 @6413 = ~You must be a fool if you think I would serve you over Amelyssan!~ [mobha078]
 @6414 = ~Even by delaying you, I buy Amelyssan time to finish her preparations. There is no victory for you here.~ [mobha079]
