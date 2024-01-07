@@ -16,7 +16,7 @@ IF ~~ THEN BEGIN 1
   SAY @6706 = @6707 = @6708
   IF ~~ THEN REPLY @6709 GOTO 9  // Sure, I'll be happy to fight some monsters.
   IF ~~ THEN REPLY @6710 GOTO 3  // What types of monsters have you created?
-  IF ~~ THEN REPLY @6711 GOTO 6  // Why exactly are you making all of these monsters?
+  IF ~~ THEN REPLY @6711 GOTO 6  // Why are you making all of these monsters?
   IF ~~ THEN REPLY @6712 GOTO 8  // Who are you?
   IF ~~ THEN REPLY @6713 GOTO 2  // Sorry, but I have more pressing matters that require my attention.
   IF ~~ THEN REPLY @6705 DO ~SetGlobal("MO_LichExit","MOBHA0",1)~ GOTO 100  // I'll only assist you by ending your existence!
@@ -50,7 +50,7 @@ IF ~Global("MO_LichFight1","MOBHA0",0)~ THEN BEGIN 4
   SAY @6708
   IF ~~ THEN REPLY @6709 GOTO 9  // Sure, I'll be happy to fight some monsters.
   IF ~~ THEN REPLY @6710 GOTO 3  // What types of monsters have you created?
-  IF ~~ THEN REPLY @6711 GOTO 6  // Why exactly are you making all of these monsters?
+  IF ~~ THEN REPLY @6711 GOTO 6  // Why are you making all of these monsters?
   IF ~~ THEN REPLY @6712 GOTO 8  // Who are you?
   IF ~~ THEN REPLY @6713 GOTO 2  // Sorry, but I have more pressing matters that require my attention.
   IF ~~ THEN REPLY @6705 DO ~SetGlobal("MO_LichExit","MOBHA0",1)~ GOTO 100  // I'll only assist you by ending your existence!
@@ -131,7 +131,7 @@ Global("MO_LichFight2","MOBHA0",0)~ THEN BEGIN 12
   SAY @6724
   IF ~~ THEN REPLY @6709 GOTO 13  // Sure, I'll be happy to fight some monsters.
   IF ~~ THEN REPLY @6710 GOTO 3  // What types of monsters have you created?
-  IF ~~ THEN REPLY @6711 GOTO 6  // Why exactly are you making all of these monsters?
+  IF ~~ THEN REPLY @6711 GOTO 6  // Why are you making all of these monsters?
   IF ~~ THEN REPLY @6712 GOTO 8  // Who are you?
   IF ~~ THEN REPLY @6713 GOTO 2  // Sorry, but I have more pressing matters that require my attention.
   IF ~~ THEN REPLY @6705 DO ~SetGlobal("MO_LichExit","MOBHA0",1)~ GOTO 100  // I'll only assist you by ending your existence!
@@ -167,7 +167,7 @@ Global("MO_LichFight3","MOBHA0",0)~ THEN BEGIN 16
   SAY @6727 = @6728
   IF ~~ THEN REPLY @6709 GOTO 17  // Sure, I'll be happy to fight some monsters.
   IF ~~ THEN REPLY @6710 GOTO 3  // What types of monsters have you created?
-  IF ~~ THEN REPLY @6711 GOTO 6  // Why exactly are you making all of these monsters?
+  IF ~~ THEN REPLY @6711 GOTO 6  // Why are you making all of these monsters?
   IF ~~ THEN REPLY @6712 GOTO 8  // Who are you?
   IF ~~ THEN REPLY @6713 GOTO 2  // Sorry, but I have more pressing matters that require my attention.
   IF ~~ THEN REPLY @6705 DO ~SetGlobal("MO_LichExit","MOBHA0",1)~ GOTO 100  // I'll only assist you by ending your existence!
@@ -204,7 +204,7 @@ Global("MO_LichFight4","MOBHA0",0)~ THEN BEGIN 20
   SAY @6731 = @6732
   IF ~~ THEN REPLY @6709 GOTO 21  // Sure, I'll be happy to fight some monsters.
   IF ~~ THEN REPLY @6710 GOTO 3  // What types of monsters have you created?
-  IF ~~ THEN REPLY @6711 GOTO 6  // Why exactly are you making all of these monsters?
+  IF ~~ THEN REPLY @6711 GOTO 6  // Why are you making all of these monsters?
   IF ~~ THEN REPLY @6712 GOTO 8  // Who are you?
   IF ~~ THEN REPLY @6713 GOTO 2  // Sorry, but I have more pressing matters that require my attention.
   IF ~~ THEN REPLY @6705 DO ~SetGlobal("MO_LichExit","MOBHA0",1)~ GOTO 100  // I'll only assist you by ending your existence!
@@ -222,7 +222,7 @@ END
 IF ~Global("MO_LichFight4","MOBHA0",1)
 Global("MO_LichFightFinal","MOBHA0",0)
 HPPercent(Myself,100)~ BEGIN 22
-  SAY @6734
+  SAY @6734 = @6735
   IF ~~ THEN DO ~SetGlobal("MO_LichFightFinal","MOBHA0",1)~ GOTO 99
 END
 
@@ -230,13 +230,16 @@ END
 IF ~Global("MO_LichFight4","MOBHA0",1)
 Global("MO_LichFightFinal","MOBHA0",1)
 HPPercent(Myself,100)~ THEN BEGIN 99
-  SAY @6731 = @6732
-  IF ~~ THEN REPLY @6709 GOTO 21  // Sure, I'll be happy to fight some monsters.
-  IF ~~ THEN REPLY @6710 GOTO 3  // What types of monsters have you created?
-  IF ~~ THEN REPLY @6711 GOTO 6  // Why exactly are you making all of these monsters?
-  IF ~~ THEN REPLY @6712 GOTO 8  // Who are you?
+  SAY @6736
+  IF ~~ THEN REPLY @6712 GOTO 23  // Who are you?
+  IF ~~ THEN REPLY @6711 GOTO 6  // Why are you making all of these monsters?
   IF ~~ THEN REPLY @6713 GOTO 2  // Sorry, but I have more pressing matters that require my attention.
-  IF ~~ THEN REPLY @6705 DO ~SetGlobal("MO_LichExit","MOBHA0",1)~ GOTO 100  // I'll only assist you by ending your existence!
+  IF ~~ THEN REPLY @6737 DO ~SetGlobal("MO_LichExit","MOBHA0",1)~ GOTO 100  // This was a waste of my time, and I will kill you for this!
+END
+
+IF ~~ BEGIN 23
+  SAY @6738 = @6739 = @6740
+  IF ~~ THEN GOTO 99
 END
 
 // Lich attacked or threatened

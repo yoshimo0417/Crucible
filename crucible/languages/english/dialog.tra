@@ -274,7 +274,7 @@
 @6708 = ~What say you? Are you interested in putting your mettle to the test?~
 @6709 = ~Sure, I'll be happy to fight some monsters.~  // Player
 @6710 = ~What types of monsters have you created?~  // Player
-@6711 = ~Why exactly are you making all of these monsters?~  // Player
+@6711 = ~Why are you making all of these monsters?~  // Player
 @6712 = ~Who are you?~  // Player
 @6713 = ~Sorry, but I have more pressing matters that require my attention.~  // Player
 @6714 = ~Pity. Well, please come back if you change your mind.~
@@ -297,6 +297,14 @@
 @6731 = ~You look barely singed from that last fight!~
 @6732 = ~Well, I got one more I can throw at you, but it's a nasty thing.~
 @6733 = ~You're either brave or stupid to go against this creation. I'm eager to see the results.~
+@6734 = ~And just like that, my most powerful creation is ended.~
+@6735 = ~You have done as I asked, which is appreciated. Please, take this necklace.~
+@6736 = ~You have prevailed against my creations, and I am left but a humbled lich.~
+@6737 = ~This was a waste of my time, and I will kill you for this!~  // Player
+@6738 = ~Yes, I am a lich, but before my embrace of undeath I was a great spellcaster of the Netherese.~
+@6739 = ~At this time, I was one of the Crown-Sorcerers of Rdiuz. Your father, a mortal known as Arabhal, was our chief assassin and spymaster. He was among the best spymasters in the empire and none, even as a mortal, matched his bloodlust.~
+@6740 = ~We Crown-Sorcerers were as powerful as any within the empire; however, news brought by Arabhal of Karsus's Avatar was alarming. We pushed magic, perhaps even too far ourselves, but even we saw the dangers in Karsus's arrogance.~
+@6741 = ~~
 
 @6799 = ~I am still building this out. Please continue up the tower to progress.~
 
