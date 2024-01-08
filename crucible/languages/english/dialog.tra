@@ -279,7 +279,7 @@
 @6713 = ~Sorry, but I have more pressing matters that require my attention.~  // Player
 @6714 = ~Pity. Well, please come back if you change your mind.~
 @6715 = ~Powerful monsters. Dangerous monsters. I take some of the strongest in the realms and twist them into something even greater.~
-@6716 = ~Amelyssan has commanded it. With Bhaal set to be reborn, Amelyssan wanted him to have powerful entities at his side to dissuade other deities from interfering or outright attacking him while he is in such a weakened state.~ 
+@6716 = ~It was commanded. With Bhaal set to be reborn, he was to have powerful entities at his side to dissuade other deities from interfering or outright attacking him while he is in such a weakened state.~ 
 @6717 = ~I also suspect these to be the shock troops needed by Bhaal to assault Cyric's kingdom and take back some of his portfolio.~
 @6718 = ~Haven't you heard? Amelyssan is seeking to ascend as the new Lord of Murder.~  // Player
 @6719 = ~That would explain the commotion. We all play dark games, and I prefer to focus on my work.~
@@ -303,8 +303,21 @@
 @6737 = ~This was a waste of my time, and I will kill you for this!~  // Player
 @6738 = ~Yes, I am a lich, but before my embrace of undeath I was a great spellcaster of the Netherese.~
 @6739 = ~At this time, I was one of the Crown-Sorcerers of Rdiuz. Your father, a mortal known as Arabhal, was our chief assassin and spymaster. He was among the best spymasters in the empire and none, even as a mortal, matched his bloodlust.~
-@6740 = ~We Crown-Sorcerers were as powerful as any within the empire; however, news brought by Arabhal of Karsus's Avatar was alarming. We pushed magic, perhaps even too far ourselves, but even we saw the dangers in Karsus's arrogance.~
-@6741 = ~~
+@6740 = ~We Crown-Sorcerers were as powerful as any within the empire; however, news brought by Arabhal of Karsus's Avatar was alarming. We pushed the magical limits within Rdiuz, perhaps even too far ourselves, but even we saw the dangers in Karsus's arrogance.~
+@6741 = ~The decision was made. Arabhal and I secreted ourselves away as we planned to assassinate Karsus before he could bring his spell to fruition. Reports indicated Karsus could use his spell to strip the divinity from one of the gods, but it was to our horror he chose Mystryl as his target.~
+@6742 = ~What happened next?~  // Player
+@6743 = ~Please continue.~  // Player
+@6744 = ~Didn't this cause Mystryl to sacrifice herself and cease all magic which resulted in your cities falling from the sky?~  // Player
+@6745 = ~Enough with the history lessons, I have more important things to do.~  // Player
+@6746 = ~Yes, that is correct.~
+@6747 = ~Mystryl did what Karsus could not predict, sacrifice herself to protect the weave. All magic ceased and our cities fell from the sky.~
+@6748 = ~Arabhal and myself watched in horror as our home plummeted to the earth. In an instant, our empire came to an end.~
+@6749 = ~After watching our city, our nation, our empire collapse before our eyes, we searated to pursue immortality in our own terms. Arabhal joined with Bane and Myrkul while I pursued lichdom. In the end, we both found what we were looking for.~
+@6750 = ~An interesting story.~  // Player
+@6751 = ~What brought you back here and into the service of Bhaal?~  // Player
+@6752 = ~Bhaal found me. He was a new deity, and I was a fresh lich. He knew he needed protection having assumed the portfolio of the Lord of Murder and sought me out for my expertise in crafting magical items and weapons of terrible power.~
+@6753 = ~This tower was erected along with the rest of his kingdom. Cespenar, a being willed into existence by Bhaal, was put in charge of the more mundane task of assembling items of power based on old recipes I created. My focus and endeavors was on creatures like the ones you fought.~
+@6754 = ~Bhaal knew of the Time of Troubles. Instead of having me prepare to prevent his death, which he knew was inevitable, he wanted me to focus on preparing for his return. He wanted forces ready to keep him safe while he was vulnerable.~
 
 @6799 = ~I am still building this out. Please continue up the tower to progress.~
 
