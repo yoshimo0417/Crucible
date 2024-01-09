@@ -46,7 +46,8 @@ Global("MO_LichFight1","MOBHA0",1)~ THEN GOTO 99  // Fought 4 fights
 END
 
 // No Fights Completed
-IF ~Global("MO_LichFight1","MOBHA0",0)~ THEN BEGIN 4
+IF ~Global("MO_LichFight1","MOBHA0",0)
+HPPercent(Myself,100)~ THEN BEGIN 4
   SAY @6708
   IF ~~ THEN REPLY @6709 GOTO 9  // Sure, I'll be happy to fight some monsters.
   IF ~~ THEN REPLY @6710 GOTO 3  // What types of monsters have you created?
@@ -127,7 +128,8 @@ END
 
 // 1 Fight Completed
 IF ~Global("MO_LichFight1","MOBHA0",1)
-Global("MO_LichFight2","MOBHA0",0)~ THEN BEGIN 12
+Global("MO_LichFight2","MOBHA0",0)
+HPPercent(Myself,100)~ THEN BEGIN 12
   SAY @6724
   IF ~~ THEN REPLY @6709 GOTO 13  // Sure, I'll be happy to fight some monsters.
   IF ~~ THEN REPLY @6710 GOTO 3  // What types of monsters have you created?
@@ -163,7 +165,8 @@ END
 // 2 Fights Completed
 IF ~Global("MO_LichFight1","MOBHA0",1)
 Global("MO_LichFight2","MOBHA0",1)
-Global("MO_LichFight3","MOBHA0",0)~ THEN BEGIN 16
+Global("MO_LichFight3","MOBHA0",0)
+HPPercent(Myself,100)~ THEN BEGIN 16
   SAY @6727 = @6728
   IF ~~ THEN REPLY @6709 GOTO 17  // Sure, I'll be happy to fight some monsters.
   IF ~~ THEN REPLY @6710 GOTO 3  // What types of monsters have you created?
@@ -200,7 +203,8 @@ END
 IF ~Global("MO_LichFight1","MOBHA0",1)
 Global("MO_LichFight2","MOBHA0",1)
 Global("MO_LichFight3","MOBHA0",1)
-Global("MO_LichFight4","MOBHA0",0)~ THEN BEGIN 20
+Global("MO_LichFight4","MOBHA0",0)
+HPPercent(Myself,100)~ THEN BEGIN 20
   SAY @6731 = @6732
   IF ~~ THEN REPLY @6709 GOTO 21  // Sure, I'll be happy to fight some monsters.
   IF ~~ THEN REPLY @6710 GOTO 3  // What types of monsters have you created?
