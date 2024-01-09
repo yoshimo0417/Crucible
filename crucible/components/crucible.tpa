@@ -529,6 +529,9 @@ COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha46.d~
 COPY ~crucible/itm/mobha46a.itm~ ~override~  // Blood Mage's Last Regret
   SAY NAME2 @10010
   SAY DESC  @10011
+COPY ~crucible/spl/mobha46a.spl~ ~override~  // Bloodpact
+  SAY NAME1 @4008
+  SAY NAME2 @4008
 
 //-------------------------------------------------------------------------
 // Mutant Fomorian Giant

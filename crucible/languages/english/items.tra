@@ -80,14 +80,12 @@ Weight: 0~
 STATISTICS:
 
 Equipped abilities:
-– 
+– Constitution: -1
+– Caster Level: +3
 – May only be removed with a Remove Curse spell
 
 Charge abilities:
-– Shield
-  Armor Class: 4, +2 bonus vs. missile
-  Immunity to Magic Missile
+– Permamently sacrifice 10% of user's maximum Hit Points and regain all lost spells once per day
   Area of Effect: The wearer
-  Duration: 1 hour
 
 Weight: 0~

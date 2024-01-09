@@ -223,7 +223,8 @@ IF ~Global("MO_LichFight4","MOBHA0",1)
 Global("MO_LichFightFinal","MOBHA0",0)
 HPPercent(Myself,100)~ BEGIN 22
   SAY @6734 = @6735
-  IF ~~ THEN DO ~SetGlobal("MO_LichFightFinal","MOBHA0",1)~ GOTO 99
+  IF ~~ THEN DO ~SetGlobal("MO_LichFightFinal","MOBHA0",1)
+GiveItemCreate("mobha46a",Player1,1,0,0)~ GOTO 99
 END
 
 // END/Final Dialog Dialog
