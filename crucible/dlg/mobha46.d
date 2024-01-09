@@ -238,7 +238,7 @@ HPPercent(Myself,100)~ THEN BEGIN 99
   SAY @6736
   IF ~~ THEN REPLY @6712 GOTO 23  // Who are you?
   IF ~~ THEN REPLY @6711 GOTO 6  // Why are you making all of these monsters?
-  IF ~~ THEN REPLY @6713 GOTO 2  // Sorry, but I have more pressing matters that require my attention.
+  IF ~~ THEN REPLY @6713 GOTO 28  // Sorry, but I have more pressing matters that require my attention.
   IF ~~ THEN REPLY @6737 DO ~SetGlobal("MO_LichExit","MOBHA0",1)~ GOTO 100  // This was a waste of my time, and I will kill you for this!
 END
 
@@ -250,7 +250,7 @@ IF ~~ BEGIN 23
 CheckStatGT(Player1,50,LORE)
 CheckStatGT(Player1,16,INT)
 CheckStatGT(Player1,16,WIS)~ THEN REPLY @6744 GOTO 25  // Didn't this cause Mystryl to sacrifice herself and cease all magic which resulted in your cities falling from the sky?
-  IF ~~ THEN REPLY @6745 GOTO 2  // Enough with the history lessons, I have more important things to do.
+  IF ~~ THEN REPLY @6745 GOTO 28  // Enough with the history lessons, I have more important things to do.
 END
 
 IF ~~ BEGIN 24
@@ -267,14 +267,19 @@ IF ~~ BEGIN 26
   SAY @6748 = @6749
   IF ~~ THEN REPLY @6751 GOTO 27 // What brought you back here and into the service of Bhaal?
   IF ~~ THEN REPLY @6750 GOTO 99 // An interesting story.
-  IF ~~ THEN REPLY @6745 GOTO 2  // Enough with the history lessons, I have more important things to do.
+  IF ~~ THEN REPLY @6745 GOTO 28  // Enough with the history lessons, I have more important things to do.
 END
 
 IF ~~ BEGIN 27
   SAY @6752 = @6753 = @6754
   IF ~~ THEN REPLY @6750 GOTO 99 // An interesting story.
-  IF ~~ THEN REPLY @6745 GOTO 2  // Enough with the history lessons, I have more important things to do.
+  IF ~~ THEN REPLY @6745 GOTO 28  // Enough with the history lessons, I have more important things to do.
   IF ~~ THEN REPLY @6737 DO ~SetGlobal("MO_LichExit","MOBHA0",1)~ GOTO 100  // This was a waste of my time, and I will kill you for this!
+END
+
+IF ~~ BEGIN 28
+  SAY @6755
+  IF ~~ THEN DO ~~ EXIT
 END
 
 // Lich attacked or threatened
