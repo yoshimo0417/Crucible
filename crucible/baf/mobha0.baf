@@ -103,3 +103,17 @@ THEN
     StartCutSceneMode()
     StartCutScene("mocut14")
 END
+
+/////////////////////////////////////////////////////////////////////
+// Lava - Hephernaan Check
+/////////////////////////////////////////////////////////////////////
+IF
+  InParty("L#HPH")
+  !Dead("L#HPH")
+  PartyHasItem("MOBHA46A")
+  Global("MO_HephCheck","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_HephCheck","GLOBAL",1)
+    DisplayStringHead("L#HPH",@5012)
+END 
