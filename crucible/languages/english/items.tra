@@ -73,3 +73,21 @@ Requires:
  3 Strength
 
 Weight: 0~
+
+@10010 = ~Blood Mage's Last Regret~
+@10011 = ~This amulet was invented by a mage that used blood rituals in order to win his battle with Belhifet. It is said, that his amulet, The Last Regret, helped him to truly hurt the devil; however, the mage's enemy was way more powerful than the caster could have ever anticipated. He failed and died that day. The amulet got lost the very same moment, most likely taken by one of the lesser diabolical creatures after the battle. 
+
+STATISTICS:
+
+Equipped abilities:
+– 
+– May only be removed with a Remove Curse spell
+
+Charge abilities:
+– Shield
+  Armor Class: 4, +2 bonus vs. missile
+  Immunity to Magic Missile
+  Area of Effect: The wearer
+  Duration: 1 hour
+
+Weight: 0~
