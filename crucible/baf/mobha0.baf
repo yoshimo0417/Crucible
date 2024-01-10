@@ -10,6 +10,48 @@
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
+// Spawn Bone Fiends
+/////////////////////////////////////////////////////////////////////
+IF 
+  Global("MO_OrogFight","MOBHA0",1)
+  !Dead("mobha50")  // Corrupted Orog Shaman
+  !GlobalTimerNotExpired("MO_SpellCastTimer","MOBHA0")
+  DifficultyGT(HARD)
+THEN 
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","MOBHA0",6)
+    CreateCreatureEffect("MELSUM02","SPRAISED",[798.812],S)  // Bone Fiend
+    CreateCreatureEffect("MELSUM02","SPRAISED",[950.841],S)  // Bone Fiend
+    Continue()
+END
+
+IF 
+  Global("MO_OrogFight","MOBHA0",1)
+  !Dead("mobha50")  // Corrupted Orog Shaman
+  !GlobalTimerNotExpired("MO_SpellCastTimer","MOBHA0")
+  DifficultyLT(HARDEST)
+  RandomNum(2,1)
+THEN 
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","MOBHA0",12)
+    CreateCreatureEffect("MELSUM02","SPRAISED",[798.812],S)  // Bone Fiend
+    Continue()
+END
+
+IF 
+  Global("MO_OrogFight","MOBHA0",1)
+  !Dead("mobha50")  // Corrupted Orog Shaman
+  !GlobalTimerNotExpired("MO_SpellCastTimer","MOBHA0")
+  DifficultyLT(HARDEST)
+  RandomNum(2,2)
+THEN 
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","MOBHA0",12)
+    CreateCreatureEffect("MELSUM02","SPRAISED",[950.841],S)  // Bone Fiend
+    Continue()
+END
+
+/////////////////////////////////////////////////////////////////////
 // First Fight - Twisted Abyssal Hulks
 /////////////////////////////////////////////////////////////////////
 IF

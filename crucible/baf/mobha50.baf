@@ -21,6 +21,7 @@ THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     SetGlobalTimer("MO_VengeanceStormTimer","LOCALS",12)
+    SetGlobal("MO_OrogFight","MOBHA0",1)
     ApplySpell(Myself,CLERIC_BLESS)  // SPPR101.SPL (Bless)
     ApplySpell(Myself,CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
     ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)
@@ -52,6 +53,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
+    SetGlobal("MO_OrogFight","MOBHA0",1)
     ApplySpell(Myself,CLERIC_BLESS)  // SPPR101.SPL (Bless)
     ApplySpell(Myself,CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Remove Fear)
     ApplySpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
