@@ -1,0 +1,30 @@
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+//            Planetar Garrison, Level 3 (MOBHA9.ARE)
+/////////////////////////////////////////////////////////////////////
+//        Version 1
+// Malchediel is the ruler of the tower and awaits the player at 
+// the top. Viekang is also present and captured by Malchediel.
+//
+/////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+// Block Exit
+/////////////////////////////////////////////////////////////////////
+IF
+    Global("Enteredmobha9","mobha9",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Enteredmobha9","mobha9",1)
+        TriggerActivation("TrMOBHA0",FALSE)
+END
+
+IF
+  Global("MO_Malchediel_Defeated","GLOBAL",1)
+  Global("DoorOpenmobha9","mobha9",0)
+THEN 
+    RESPONSE #100
+      TriggerActivation("TrMOBHA0",TRUE)
+      SetGlobal("DoorOpenmobha9","mobha9",1)
+END
+
