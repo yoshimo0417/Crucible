@@ -33,7 +33,7 @@ IF
   RandomNum(2,1)
 THEN 
   RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","MOBHA0",12)
+    SetGlobalTimer("MO_SpellCastTimer","MOBHA0",18)
     CreateCreatureEffect("MELSUM02","SPRAISED",[798.812],S)  // Bone Fiend
     Continue()
 END
@@ -46,7 +46,7 @@ IF
   RandomNum(2,2)
 THEN 
   RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","MOBHA0",12)
+    SetGlobalTimer("MO_SpellCastTimer","MOBHA0",18)
     CreateCreatureEffect("MELSUM02","SPRAISED",[950.841],S)  // Bone Fiend
     Continue()
 END
