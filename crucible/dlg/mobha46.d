@@ -13,7 +13,7 @@ IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
 END
 
 IF ~~ THEN BEGIN 1
-  SAY @6706 = @6707 = @6708
+  SAY @6706 = @6707 = @6756 = @6757 = @6708
   IF ~~ THEN REPLY @6709 GOTO 9  // Sure, I'll be happy to fight some monsters.
   IF ~~ THEN REPLY @6710 GOTO 3  // What types of monsters have you created?
   IF ~~ THEN REPLY @6711 GOTO 6  // Why are you making all of these monsters?
