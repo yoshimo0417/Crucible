@@ -70,7 +70,7 @@ COPY ~crucible/cre/mobha01d.cre~ ~override/mobha01d.cre~
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha01d.d~
 
 //-------------------------------------------------------------------------
-// Ferrante (Deathbringer - 2h Sword)
+// Ferrante (Deathbringer - 2h Sword) - Name of my Deathknight MC in WoW
 COPY ~crucible/cre/mobha02.cre~ ~override/mobha02.cre~
   SAY NAME1 @2025
   SAY NAME2 @2025
@@ -641,6 +641,10 @@ COPY ~crucible/cre/mobha50.cre~ ~override/mobha50.cre~
   SAY NAME1 @2040
   SAY NAME2 @2040
 COPY ~crucible/itm/mobha50a.itm~ ~override~  // Amulet of Power on Steroids
+
+//-------------------------------------------------------------------------
+// Viekang
+COPY ~crucible/cre/mobha51.cre~ ~override/mobha51.cre~
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
