@@ -30,3 +30,33 @@ THEN
       SetGlobal("DoorOpenmobha9","mobha9",1)
 END
 
+/////////////////////////////////////////////////////////////////////
+// Spawn Planetars
+/////////////////////////////////////////////////////////////////////
+IF
+  Global("MO_PhaseOneComplete","MOBHA9",1)
+  DifficultyGT(HARD)
+  !GlobalTimerNotExpired("MO_SpawnTimer","MOBHA9")
+  !Dead("MOBHA28")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpawnTimer","MOBHA9",12)
+    CreateCreatureEffect("mobha12","SPSPEV",[671.649],SW)  // Fallen Planetar
+    CreateCreatureEffect("mobha12","SPSPEV",[820.717],SW)  // Fallen Planetar
+    Continue()
+  RESPONSE #100
+    SetGlobalTimer("MO_SpawnTimer","MOBHA9",12)
+    CreateCreatureEffect("mobha12","SPSPEV",[546.626],SW)  // Fallen Planetar
+    CreateCreatureEffect("mobha12","SPSPEV",[907.797],SW)  // Fallen Planetar
+    Continue()
+  RESPONSE #100
+    SetGlobalTimer("MO_SpawnTimer","MOBHA9",12)
+    CreateCreatureEffect("mobha12","SPSPEV",[671.649],SW)  // Fallen Planetar
+    CreateCreatureEffect("mobha12","SPSPEV",[907.797],SW)  // Fallen Planetar
+    Continue()
+  RESPONSE #100
+    SetGlobalTimer("MO_SpawnTimer","MOBHA9",12)
+    CreateCreatureEffect("mobha12","SPSPEV",[546.626],SW)  // Fallen Planetar
+    CreateCreatureEffect("mobha12","SPSPEV",[820.717],SW)  // Fallen Planetar
+    Continue()
+END
