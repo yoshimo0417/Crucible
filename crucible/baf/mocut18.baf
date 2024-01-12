@@ -19,7 +19,7 @@ THEN
         Wait(1)
         PlaySound("MISC_01C")
         CreateVisualEffect("SPFIREPI",[718.722])
-        CreateCreature("mobha52",[718.722],SW)
+        CreateCreature("mobha52",[718.722],SW)  // Magical Sword
 END
 
 IF
