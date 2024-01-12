@@ -150,7 +150,7 @@
 @6103 = ~You step forward and embrace your destiny.~
 @6104 = ~You take a step back to further prepare.~
 
-// Malchediel (Rusty)
+// Malchediel (Rusty - Hatred)
 @6200 = ~This is placeholder dialog.~
 @6201 = ~Here is my blood to help with the testing. I will face you at a later time once I am given a proper fight sequence and script.~
 
@@ -164,6 +164,8 @@
 @6217 = ~Much has since been looted and spread amongst the realms, but some artifacts remain. Some of the most potent weapons are not made of steel, but instead are flesh and bone.~ [mobha084]
 @6218 = ~Awaken, Blood-drenched. It is time to arise and serve your master.~ [mobha085]
 // Cutscene summoning Uthaedeol
+
+@6219 = ~I will not be defeated by you! Come to me, my servants!~ [mobha157]
 
 // Deathbringer
 @6300 = ~Gorion's ward has invaded Bhaal's kingdom! To arms my brothers!~ [mobha049]

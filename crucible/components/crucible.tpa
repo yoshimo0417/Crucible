@@ -356,7 +356,7 @@ COPY ~crucible/cre/mobha28.cre~ ~override/mobha28a.cre~  // Malchediel (Dialog)
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#TRIAS~))
   WRITE_ASCII 0x280 ~MOBHA28a~ #8 // Script Name
   WRITE_ASCII 0x2cc ~MOBHA28a~ #8 // Dialogue
-  REPLACE_CRE_ITEM ~MIN1HP~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~LRING~ EQUIP // Make invincible
+  //REPLACE_CRE_ITEM ~MIN1HP~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~LRING~ EQUIP // Make invincible
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha28a.d~
 
 //-------------------------------------------------------------------------
@@ -643,6 +643,10 @@ COPY ~crucible/cre/mobha50.cre~ ~override/mobha50.cre~
 COPY ~crucible/itm/mobha50a.itm~ ~override~  // Amulet of Power on Steroids
 
 //-------------------------------------------------------------------------
+// Magical Sword
+COPY ~crucible/cre/mobha52.cre~ ~override/mobha52.cre~
+
+//-------------------------------------------------------------------------
 // Viekang
 COPY ~crucible/cre/mobha51.cre~ ~override/mobha51.cre~
 
@@ -695,6 +699,7 @@ BUT_ONLY
 ACTION_IF iwd_divine BEGIN
   INCLUDE ~crucible/lib/mobha17.tph~  // Mayithra
   INCLUDE ~crucible/lib/mobha23.tph~  // Belchaad
+  INCLUDE ~crucible/lib/mobha28.tph~  // Malchediel
   INCLUDE ~crucible/lib/mobha37.tph~  // Culdus Aghurath
   INCLUDE ~crucible/lib/mobha50.tph~  // Corrupted Orog Shaman
 END
@@ -779,6 +784,7 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobha48.baf~  ~override/mobha48.bcs~   // Creature script
      ~crucible/baf/mobha49.baf~  ~override/mobha49.bcs~   // Creature script
      ~crucible/baf/mobha50.baf~  ~override/mobha50.bcs~   // Creature script
+     ~crucible/baf/mobha52.baf~  ~override/mobha52.bcs~   // Creature script
      ~crucible/baf/mocut03.baf~  ~override/mocut03.bcs~   // Cutscene script
      ~crucible/baf/mocut04.baf~  ~override/mocut04.bcs~   // Cutscene script
      ~crucible/baf/mocut05.baf~  ~override/mocut05.bcs~   // Cutscene script
@@ -797,6 +803,8 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mocut15.baf~  ~override/mocut15.bcs~   // Cutscene script
      ~crucible/baf/mocut16.baf~  ~override/mocut16.bcs~   // Cutscene script
      ~crucible/baf/mocut17.baf~  ~override/mocut17.bcs~   // Cutscene script
+     ~crucible/baf/mocut18.baf~  ~override/mocut18.bcs~   // Cutscene script
+     ~crucible/baf/mocut19.baf~  ~override/mocut19.bcs~   // Cutscene script
      ~crucible/baf/mocall1.baf~  ~override/mocall1.bcs~   // Call for help - Amelyssan Forces
      ~crucible/baf/mocall2.baf~  ~override/mocall2.bcs~   // Call for help - Phiuhls
      ~crucible/baf/mocall3.baf~  ~override/mocall3.bcs~   // Call for help - Demons&Angels

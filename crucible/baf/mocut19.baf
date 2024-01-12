@@ -1,0 +1,76 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("mobha28")
+        MoveViewPoint([785.639],INSTANT)
+        ScreenShake([5.5],30)
+        CreateVisualEffect("SPFIREPI",[785.639])
+        Wait(1)
+        JumpToPoint([785.639])
+        Wait(1)
+        DisplayStringHead(Myself,@6219)
+        Wait(1)
+        CreateCreatureEffect("mobha12","SPSPEV",[671.649],SW)  // Fallen Planetar
+        CreateCreatureEffect("mobha12","SPSPEV",[820.717],SW)  // Fallen Planetar
+        Wait(1)
+        CreateCreatureEffect("mobha14","SPSPEV",[546.626],SW)  // Fallen Deva
+        CreateCreatureEffect("mobha14","SPSPEV",[907.797],SW)  // Fallen Deva
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        Wait(1)
+        JumpToPoint([564.879])
+        Wait(5)
+        EndCutSceneMode()
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player2)
+        Wait(1)
+        JumpToPoint([480.849])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player3)
+        Wait(1)
+        JumpToPoint([611.941])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player4)
+        Wait(1)
+        JumpToPoint([700.956])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player5)
+        Wait(1)
+        JumpToPoint([438.792])
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player6)
+        Wait(1)
+        JumpToPoint([768.952])
+END
+
