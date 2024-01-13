@@ -5,8 +5,7 @@
 BEGIN MOBHA28
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
-  SAY @6200 = @6201
-  IF ~~ THEN DO ~GiveItemCreate("mobhabl2",Player1,1,0,0)
-SetGlobal("MOBHA8_Enemy","GLOBAL",1)
-ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
+  SAY @6200
+  IF ~~ THEN DO ~SetGlobal("MOBHA9_Enemy","GLOBAL",1)
+Enemy()~ EXIT
 END
