@@ -6,7 +6,7 @@ THEN
         MoveViewPoint([785.639],INSTANT)
         ScreenShake([5.5],30)
         CreateVisualEffect("SPFIREPI",[785.639])
-        Wait(1)
+        //Wait(1)
         JumpToPoint([785.639])
         Wait(1)
         DisplayStringHead(Myself,@6219)
