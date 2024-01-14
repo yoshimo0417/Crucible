@@ -5,6 +5,25 @@
 BEGIN MOBHA28
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
+  SAY @6221
+  IF ~Global("MO_UthaedeolAlly","GLOBAL",0)~ THEN REPLY @6222 GOTO 3
+  IF ~Global("MO_UthaedeolAlly","GLOBAL",1)~ THEN REPLY @6223 GOTO 2
+  IF ~~ THEN REPLY @6224 GOTO 3
+END
+
+IF ~~ THEN BEGIN 2
+  SAY @6225
+  IF ~~ THEN GOTO 3
+END 
+
+/*
+IF ~~ THEN BEGIN 3
+  SAY @6226
+  IF ~~ THEN REPLY GOTO
+END 
+*/
+
+IF ~~ THEN BEGIN 3
   SAY @6200
   IF ~~ THEN DO ~SetGlobal("MOBHA9_Enemy","GLOBAL",1)
 Enemy()~ EXIT
