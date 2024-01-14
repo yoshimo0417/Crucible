@@ -12,11 +12,13 @@ THEN
         DisplayStringHead(Myself,@6219)
         Wait(1)
         CreateCreatureEffect("mobha12","SPSPEV",[671.649],SW)  // Fallen Planetar
+        SmallWait(10)
         CreateCreatureEffect("mobha12","SPSPEV",[820.717],SW)  // Fallen Planetar
-        Wait(1)
+        SmallWait(10)
         CreateCreatureEffect("mobha12","SPSPEV",[546.626],SW)  // Fallen Planetar
+        SmallWait(10)
         CreateCreatureEffect("mobha12","SPSPEV",[907.797],SW)  // Fallen Planetar
-        Wait(1)
+        SmallWait(10)
         PlaySound("MISC_01C")
         CreateVisualEffect("SPFIREPI",[718.722])
         CreateCreature("mobha52",[718.722],SW)  // Magical Sword

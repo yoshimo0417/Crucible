@@ -1,6 +1,6 @@
 IF
 	Clicked([ANYONE])
-	CombatCounter(0)
+	!ActuallyInCombat()
 	Range(LastTrigger,9)
 THEN
 	RESPONSE #100
@@ -10,7 +10,7 @@ END
 
 IF
 	Clicked([ANYONE])
-	!CombatCounter(0)
+	ActuallyInCombat()
 	Range(LastTrigger,9)
 THEN
 	RESPONSE #100

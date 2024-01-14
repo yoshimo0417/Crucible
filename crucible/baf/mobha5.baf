@@ -65,7 +65,7 @@ END
 
 IF
   Dead("mobha20")
-  CombatCounter(0)
+  !ActuallyInCombat()
   Global("DoorOpenmobha5","mobha5",0)
 THEN 
     RESPONSE #100

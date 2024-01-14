@@ -31,6 +31,7 @@ THEN
     SetGlobal("MO_PhaseOneComplete","MOBHA9",1)
     ApplySpell(Myself,CLERIC_HEAL)
     DestroyItem("MINHP1")
+    ClearAllActions()
     StartCutSceneMode()
     StartCutScene("mocut18")
 END
@@ -44,6 +45,7 @@ THEN
     SetGlobal("MO_PhaseOneComplete","MOBHA9",1)
     ApplySpell(Myself,CLERIC_HEAL)
     DestroyItem("MINHP1")
+    ClearAllActions()
     StartCutSceneMode()
     StartCutScene("mocut19")
 END
@@ -159,7 +161,7 @@ THEN
     SetGlobalTimer("SolarHeal","LOCALS",30)
     IncrementGlobal("MO_Heal","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heal)
+    ReallyForceSpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heal)
     SetInterrupt(TRUE)
 END
 
@@ -199,7 +201,7 @@ THEN
     SetGlobalTimer("MO_DispelTimer","LOCALS",12)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
+    ReallyForceSpell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -236,7 +238,7 @@ THEN
     SetGlobalTimer("MO_DispelTimer","LOCALS",12)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
+    ReallyForceSpell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -273,7 +275,7 @@ THEN
     SetGlobalTimer("MO_DispelTimer","LOCALS",12)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
+    ReallyForceSpell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -310,7 +312,7 @@ THEN
     SetGlobalTimer("MO_DispelTimer","LOCALS",12)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
+    ReallyForceSpell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -347,7 +349,7 @@ THEN
     SetGlobalTimer("MO_DispelTimer","LOCALS",12)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
+    ReallyForceSpell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -384,7 +386,7 @@ THEN
     SetGlobalTimer("MO_DispelTimer","LOCALS",12)
     IncrementGlobal("MO_Dispel","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
+    ReallyForceSpell(LastSeenBy(Myself),WIZARD_REMOVE_MAGIC)
     SetInterrupt(TRUE)
 END
 
@@ -442,7 +444,7 @@ THEN
     SetGlobalTimer("MO_FireStormTimer","LOCALS",18)
     IncrementGlobal("MO_FireStorm","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
     SetInterrupt(TRUE)
 END
 
@@ -477,7 +479,7 @@ THEN
     SetGlobalTimer("MO_FireStormTimer","LOCALS",18)
     IncrementGlobal("MO_FireStorm","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
     SetInterrupt(TRUE)
 END
 
@@ -512,7 +514,7 @@ THEN
     SetGlobalTimer("MO_FireStormTimer","LOCALS",18)
     IncrementGlobal("MO_FireStorm","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
     SetInterrupt(TRUE)
 END
 
@@ -547,7 +549,7 @@ THEN
     SetGlobalTimer("MO_FireStormTimer","LOCALS",18)
     IncrementGlobal("MO_FireStorm","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
     SetInterrupt(TRUE)
 END
 
@@ -582,7 +584,7 @@ THEN
     SetGlobalTimer("MO_FireStormTimer","LOCALS",18)
     IncrementGlobal("MO_FireStorm","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
     SetInterrupt(TRUE)
 END
 
@@ -617,7 +619,7 @@ THEN
     SetGlobalTimer("MO_FireStormTimer","LOCALS",18)
     IncrementGlobal("MO_FireStorm","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
     SetInterrupt(TRUE)
 END
 
@@ -674,7 +676,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_ImplosionTimer","LOCALS",12)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_IMPLOSION)  // SPPR728.SPL (Implosion)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_IMPLOSION)  // SPPR728.SPL (Implosion)
     SetInterrupt(TRUE)
 END
 
@@ -708,7 +710,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_ImplosionTimer","LOCALS",12)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_IMPLOSION)  // SPPR728.SPL (Implosion)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_IMPLOSION)  // SPPR728.SPL (Implosion)
     SetInterrupt(TRUE)
 END
 
@@ -742,7 +744,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_ImplosionTimer","LOCALS",12)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_IMPLOSION)  // SPPR728.SPL (Implosion)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_IMPLOSION)  // SPPR728.SPL (Implosion)
     SetInterrupt(TRUE)
 END
 
@@ -776,7 +778,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_ImplosionTimer","LOCALS",12)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_IMPLOSION)  // SPPR728.SPL (Implosion)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_IMPLOSION)  // SPPR728.SPL (Implosion)
     SetInterrupt(TRUE)
 END
 
@@ -810,7 +812,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_ImplosionTimer","LOCALS",12)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_IMPLOSION)  // SPPR728.SPL (Implosion)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_IMPLOSION)  // SPPR728.SPL (Implosion)
     SetInterrupt(TRUE)
 END
 
@@ -844,7 +846,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetGlobalTimer("MO_ImplosionTimer","LOCALS",12)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_IMPLOSION)  // SPPR728.SPL (Implosion)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_IMPLOSION)  // SPPR728.SPL (Implosion)
     SetInterrupt(TRUE)
 END
 
@@ -897,7 +899,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FlameStrike","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
     SetInterrupt(TRUE)
 END
 
@@ -929,7 +931,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FlameStrike","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
     SetInterrupt(TRUE)
 END
 
@@ -961,7 +963,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FlameStrike","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
     SetInterrupt(TRUE)
 END
 
@@ -993,7 +995,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FlameStrike","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
     SetInterrupt(TRUE)
 END
 
@@ -1025,7 +1027,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FlameStrike","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
     SetInterrupt(TRUE)
 END
 
@@ -1057,7 +1059,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_FlameStrike","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
     SetInterrupt(TRUE)
 END
 
@@ -1080,7 +1082,7 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     IncrementGlobal("MO_Globe","LOCALS",-1)
     SetInterrupt(FALSE)
-    SpellNoDec(Myself,CLERIC_GLOBE_OF_BLADES)  // SPPR725.SPL (Globe of Blades)
+    ReallyForceSpell(Myself,CLERIC_GLOBE_OF_BLADES)  // SPPR725.SPL (Globe of Blades)
     SetInterrupt(TRUE)
 END
 

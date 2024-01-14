@@ -27,7 +27,7 @@ THEN
 END
 
 IF
-	CombatCounter(0)
+	!ActuallyInCombat()
 	Global("MOBHA3_Enemy","GLOBAL",1)
 	Global("MO_DefeatInitial","MOBHA3",0)
 THEN
