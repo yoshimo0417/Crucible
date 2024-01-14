@@ -12,11 +12,11 @@
 // Initiate Defeat Convo
 /////////////////////////////////////////////////////////////////////
 IF
-  Global("MO_DeadSet","LOCALS",0)
+  Global("MO_PhaseOneComplete","MOBHA9",1)
   HPLT(Myself,2)
 THEN 
   RESPONSE #100
-    SetGlobal("MO_DeadSet","LOCALS",1)
+    SetGlobal("MO_PhaseOneComplete","MOBHA9",2)
     Dialogue([PC])
 END
 
