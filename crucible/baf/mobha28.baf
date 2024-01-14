@@ -15,6 +15,8 @@ IF
   Die()
 THEN
   RESPONSE #100
+    DisplayStringHead(Myself,@6220)
+    Wait(1)
     CreateVisualEffectObject("SPUNHOLY",Myself)
     DestroySelf()
 END
