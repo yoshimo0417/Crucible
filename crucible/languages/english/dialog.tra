@@ -165,8 +165,20 @@
 @6218 = ~Awaken, Blood-drenched. It is time to arise and serve your master.~ [mobha085]
 // Cutscene summoning Uthaedeol
 
+// Top of the Planetar Garrison
 @6219 = ~I will not be defeated by you! Come to me, my servants!~ [mobha157]
 @6220 = ~Forgive me Jergul for I have failed!~ [mobha158]
+@6221 = ~You defeated the Blood-drenched?!~
+@6222 = ~He posed a challenge, but was no match for me.~  // Player 1
+@6223 = ~Fool, he joined me and will assist me in defeating Amelyssan.~  // Player 1
+@6224 = ~Enough talk, I'm here for your blood!~  // Player 1
+@6225 = ~I see, he was a true follower of Bhaal. He will be dealt with once I am finished with you.~
+@6226 = ~I suppose you must be dealt with. You have exceeded the expectations I've set for you and must be dealt with.~
+@6227 = ~I even collected one of your siblings to see what all the fuss was about. The chaos surrounding Saradush allowed my Planetar to swoop in unnoticed and collect your brother.~
+@6228 = ~Tell me Viekang, should I worry about your brother?~
+@6229 = ~He must've defeated Yaga-Shura and his army to make it here. If he could overcome that, then he can kill you!~  // Viekang
+@6230 = ~A false equivalency. There is a vast difference between thinking one has power and actually having power.~
+//@622x = ~What did Uthaedeol mean when he said you falsely claim to serve a master?~
 
 // Deathbringer
 @6300 = ~Gorion's ward has invaded Bhaal's kingdom! To arms my brothers!~ [mobha049]
