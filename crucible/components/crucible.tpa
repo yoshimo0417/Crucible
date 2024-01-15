@@ -650,7 +650,7 @@ COPY ~crucible/cre/mobha52.cre~ ~override/mobha52.cre~
 //-------------------------------------------------------------------------
 // Viekang
 COPY ~crucible/cre/mobha51.cre~ ~override/mobha51.cre~
-  WRITE_ASCII 0x2cc ~MOBHA28~ #8 // Dialogue
+  WRITE_ASCII 0x2cc ~MOBHA51~ #8 // Dialogue
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
