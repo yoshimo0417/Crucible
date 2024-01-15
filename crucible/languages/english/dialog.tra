@@ -78,7 +78,7 @@
 @5610 = ~Interesting, you do feel it. Perhaps it resides stronger in you than your kin.~ [mobha025]
 @5611 = ~Arrogant and naive you are.~ [mobha026]
 @5612 = ~Bhaal was born mortal. How do you think he became a god?~ [mobha027]
-@5613 = ~Bhaal, along with Bane and Kyrkul were known as the Dark Three. Together, they assaulted the Castle of Bone and confronted the god Jergal who willingly stepped aside. Bane became the god of hatred, strife, and tyranny, Myrkul took reign over the dead, and Bhaal became the Lord of Murder.~
+@5613 = ~Bhaal, along with Bane and Myrkul were known as the Dark Three. Together, they assaulted the Castle of Bone and confronted the god Jergal who willingly stepped aside. Bane became the god of hatred, strife, and tyranny, Myrkul took reign over the dead, and Bhaal became the Lord of Murder.~  // Player 1
 @5614 = ~Didn't he take it from Jergal?~
 // Enough chatter, demon. Time to die.
 
@@ -173,12 +173,37 @@
 @6223 = ~Fool, he joined me and will assist me in defeating Amelyssan.~  // Player 1
 @6224 = ~Enough talk, I'm here for your blood!~  // Player 1
 @6225 = ~I see, he was a true follower of Bhaal. He will be dealt with once I am finished with you.~
-@6226 = ~I suppose you must be dealt with. You have exceeded the expectations I've set for you and must be dealt with.~
-@6227 = ~I even collected one of your siblings to see what all the fuss was about. The chaos surrounding Saradush allowed my Planetar to swoop in unnoticed and collect your brother.~
+@6226 = ~You have exceeded the expectations I've set for you and must be dealt with.~
+@6227 = ~I even collected one of your siblings to see what all the fascination with your kind was about. The chaos surrounding Saradush allowed my Planetar to swoop in unnoticed and collect your brother.~
 @6228 = ~Tell me Viekang, should I worry about your brother?~
 @6229 = ~He must've defeated Yaga-Shura and his army to make it here. If he could overcome that, then he can kill you!~  // Viekang
-@6230 = ~A false equivalency. There is a vast difference between thinking one has power and actually having power.~
-//@622x = ~What did Uthaedeol mean when he said you falsely claim to serve a master?~
+@6230 = ~A false equivalency. There is a vast difference between thinking one has power, like Yaga-Shura did, and actually having power.~
+@6231 = ~Looking at your siblings, Viekang, you hold a marginal amount of Bhaal's essence. So little I don't think Amelyssan will notice it missing as she completes her ritual to ascend.~
+@6232 = ~I have not been impressed by the amount and power of the essence within you.~
+@6233 = ~<CHARNAME>, do you think your essence would be something of note over your sibling's here?~
+@6234 = ~Power or not, I do not want the taint of Bhaal within me.~  // Player 1
+@6235 = ~I have overcome much, and risen stronger for it. I do not know how much can be attributed to Bhaal and how much is from myself.~  // Player 1
+@6236 = ~The amount of Bhaal's essence bestowed upon me is great, and I am first of my kin.~  // Player 1
+@6237 = ~Then let us put your essence to the test and see how much power you truly wield.~
+@6238 = ~Wait. What did Uthaedeol mean when he said you falsely claim to serve a master?~  // Player 1
+@6239 = ~I suppose there is no reasoning and we must come to blows.~  // Player 1
+@6240 = ~You know nothing of true power.~  // Player 1
+@6241 = ~Gladly, I was ready for a fight as soon as I saw you.~  // Player 1
+@6242 = ~May thy blade chip and shatter!~
+@6243 = ~I was assigned to serve Bhaal shortly after he took Jergal's portfolio for murder. Jergal, rightly so, saw Bhaal as the most bloodthirsty and reckless of the Dark Three who replaced him.~
+@6244 = ~Jergal directed me to serve Bhaal and keep his portfolio in check. All things need the proper balance, which is not something Bhaal chose to care about.~
+@6245 = ~Jergal told you to serve Bhaal?~  // Player 1
+@6246 = ~Did you serve Bhaal or Jergal?~  // Player 1
+@6247 = ~Go on.~  // Player 1
+@6248 = ~Only powerful deities can command Solar, like myself. Jergal is ancient, older than most gods in all the realms. He commanded, and I obeyed.~
+@6249 = ~I sense the aura of one of my kind on you. A powerful one at that.~
+@6250 = ~Who do you think commanded the Solar to guide you from within your pocket plane? There are very few in existence who can make such a command, and Solarsq do not offer aid unless directed by a greater being.~
+@6251 = ~I do not know who would command it.~  // Player 1
+@6252 = ~How would I find out who commanded the Solar?~  // Player 1
+@6253 = ~It doesn't matter who directed the Solar.~  // Player 1
+@6254 = ~The Solar was as equally worthless to me as you must have been to Bhaal.~  // Player 1
+@6255 = ~Either ask your Solar and hope for an honest answer or wait to see if the deity approaches you.~
+@6256 = ~I grow tired of these delays, and wish to report your defeat to Amelyssan.~
 
 // Deathbringer
 @6300 = ~Gorion's ward has invaded Bhaal's kingdom! To arms my brothers!~ [mobha049]
@@ -370,3 +395,6 @@
 @6905 = ~Reconsider, I can promise you great rewards once we see this through.~  // Player
 @6906 = ~I should have expected as much from a servant of Bhaal.~  // Player
 @6907 = ~Good, I've been looking forward to gutting you!~  // Player
+
+// Viekang
+@7000 = ~This is placeholder dialog.~
