@@ -20,6 +20,8 @@ COPY ~crucible/itm/mobhabl2.itm~ ~override~  // Blood of Malchediel
   SAY UNIDENTIFIED_DESC @10003
   SAY DESC @10003
 COPY ~crucible/spl/mobhaaf.spl~  ~override~  // custom fear
+COPY ~crucible/2da/mobhatx1.2da~ ~override~  // Intro cutscene
+COPY ~crucible/mos/mobhatx1.mos~ ~override~  // Intro cutscene
 
 //-------------------------------------------------------------------------
 // Detectable Spells
@@ -741,6 +743,7 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobha8a.baf~  ~override/mobha8a.bcs~   // Area script
      ~crucible/baf/mobha9.baf~   ~override/mobha9.bcs~    // Area script
      ~crucible/baf/mobha9a.baf~  ~override/mobha9a.bcs~   // Area script
+     ~crucible/baf/mobhaa.baf~   ~override/mobhaa.bcs~    // Area script
      ~crucible/baf/mobhaat1.baf~ ~override/mobhaat1.bcs~  // Area script
      ~crucible/baf/mobhaat2.baf~ ~override/mobhaat2.bcs~  // Area script
      ~crucible/baf/mobhaat3.baf~ ~override/mobhaat3.bcs~  // Area script

@@ -1,0 +1,8 @@
+IF
+    Global("PlayTextScreen","MOBHAA",0)
+THEN
+    RESPONSE #100
+        TextScreen("MOBHATX1")
+        SetGlobal("PlayTextScreen","MOBHAA",1)
+END
+
