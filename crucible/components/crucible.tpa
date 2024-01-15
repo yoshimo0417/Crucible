@@ -23,6 +23,11 @@ COPY ~crucible/spl/mobhaaf.spl~  ~override~  // custom fear
 COPY ~crucible/2da/mobhatx1.2da~ ~override~  // Intro cutscene
 COPY ~crucible/mos/mobhatx1.mos~ ~override~  // Intro cutscene
 
+COPY_EXISTING ~mobhatx1.2DA~ ~override~
+REPLACE ~mobhadef1~ @5014
+REPLACE ~mobhadef2~ @5013
+PRETTY_PRINT_2DA
+
 //-------------------------------------------------------------------------
 // Detectable Spells
 LAF detectable_spells END
