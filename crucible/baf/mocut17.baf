@@ -8,6 +8,7 @@ THEN
         PlaySound("EFF_M09")
         Wait(2)
         MoveViewPoint([637.786],INSTANT)
+        Explore()
         CreateVisualEffect("SPDIMNDR",[637.786])
         Wait(2)
         JumpToPoint([637.786])
