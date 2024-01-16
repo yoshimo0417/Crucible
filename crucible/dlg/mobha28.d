@@ -22,7 +22,7 @@ IF ~~ THEN BEGIN 3
 END
 
 IF ~~ THEN BEGIN 4
-  SAY @6230 = @6231 = @6232 = @6233
+  SAY @6230 = @6231 = @6233
   IF ~~ THEN REPLY @6234 GOTO 5  // Power or not, I do not want the taint of Bhaal within me.
   IF ~~ THEN REPLY @6235 GOTO 5  // I have overcome much, and risen stronger for it. I do not know how much can be attributed to Bhaal and how much is from myself.
   IF ~~ THEN REPLY @6236 GOTO 5  // The amount of Bhaal's essence bestowed upon me is great, and I am first of my kin.
