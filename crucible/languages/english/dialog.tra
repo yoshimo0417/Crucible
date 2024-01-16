@@ -14,7 +14,11 @@
 @5010 = ~With Mayithra defeated, you feel like eyes are off you and the attacks upon you in Khalas will lessen.~
 @5011 = ~You cannot use this while in combat.~
 @5012 = ~Well, it's been a while since I saw that amulet. Annoying as it can be, we should keep it. It may prove to be quite useful after all... Especially here.~
-@5013 = ~Stepping out from your pocket plane, you see a vast and desolate landscape before you.~
+@5013 = ~Stepping out from your pocket plane, you see a vast and desolate landscape before you. The air is thick with ash and smoke, and the sky is blacked out. Peering forward, you see a rugged mountainscape blanketed in a red glowing mist conveying an eerie beauty.
+
+Suddenly, the realization hits you. This is not Bhaal's kingdom, but instead another plane of existence. Somehow your pocket plane was moved from where it was first created. You feel something tugging you forward as if Bhaal's essence within you knows where you are and where you must go.
+
+You notice a symbol of Bhaal before you, reassuring you of your surroundings, and off in the distance you can faintly make out a giant skull in the mountain face. The essence within you confirms this is where you must go, and you feel an urging time is short as Amelyssan quickly prepares to ascend as the new Lord of Murder.~ [mobha176]
 @5014 = ~Crucible~
 
 // Deathstalker Initial Convo
