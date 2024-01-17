@@ -58,7 +58,7 @@ IF ~~ THEN BEGIN 8
 END 
 
 // Escape
-IF ~~ THEN GOTO 9
+IF ~~ THEN BEGIN 9
   SAY @7013
   IF ~~ THEN DO ~DestroyItem("chains")
 ReallyForceSpell(Myself,VIEKANG_LIGHTNING)~ EXIT
