@@ -23,7 +23,8 @@ IF ~~ THEN BEGIN 3
   IF ~~ THEN GOTO 4
 END
 
-IF ~Global("MO_ViekangEscape","MOBHA9",0)~ BEGIN 4
+IF ~Global("MO_ViekangEscape","MOBHA9",0)
+!Allegiance("mobha51",ENEMY)~ BEGIN 4
   SAY @7004
   IF ~~ THEN REPLY @7005 GOTO 9  // I will set you free at once, flee this place.
   IF ~~ THEN REPLY @7006 GOTO 8  // Swear an oath to me to never attempt to rise up and take the mantle of our father. In this place an oath will have power, like a geas. I will then give you your freedom.

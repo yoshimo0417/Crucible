@@ -10,7 +10,7 @@
 /////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////
-// Viekang
+// Viekang Shout Criteria
 /////////////////////////////////////////////////////////////////////
 IF
   Allegiance(Myself,NEUTRAL)
@@ -20,6 +20,16 @@ THEN
   RESPONSE #100
     SetGlobal("MO_TookDamage","LOCALS",1)
     Enemy()
+    StartDialogueNoSet([PC])
+END
+
+IF
+  NumberOfTimesTalkedTo(0)
+  Dead("mobha28")
+  !ActuallyInCombat()
+  See([PC])
+THEN
+  RESPONSE #100
     StartDialogueNoSet([PC])
 END
 
