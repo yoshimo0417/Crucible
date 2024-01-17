@@ -5,7 +5,23 @@
 //        Version 1
 // Viekang, 14th level Thief
 // 
+// If Viekang becomes hostile, he is bound and unable to move to 
+// engage the player.
 /////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+// Viekang
+/////////////////////////////////////////////////////////////////////
+IF
+  Allegiance(Myself,NEUTRAL)
+  AttackedBy([ANYTHING],DEFAULT)
+  Global("MO_TookDamage","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("MO_TookDamage","LOCALS",1)
+    Enemy()
+    StartDialogueNoSet([PC])
+END
 
 /////////////////////////////////////////////////////////////////////
 // Battle Prep
@@ -20,8 +36,8 @@ THEN
     SetGlobal("Prep","LOCALS",1)
     SetGlobal("MO_Assassination","LOCALS",1)
     GiveItemCreate("potn55",Myself,2,0,0)   // superior healing
-    GiveItemCreate("potn10",Myself,5,0,0)   // potion of invisibility
-    ReallyForceSpell(Myself,WIZARD_INVISIBILITY)  
+    //GiveItemCreate("potn10",Myself,5,0,0)   // potion of invisibility
+    //ReallyForceSpell(Myself,WIZARD_INVISIBILITY)  
     EquipMostDamagingMelee()
     Hide()
 END
@@ -34,23 +50,9 @@ THEN
   RESPONSE #100
     DestroyItem("BELT06")
     DestroyItem("CLCK06")
-    GiveItemCreate("potn10",Myself,2,0,0)   // potion of invisibility
+    //GiveItemCreate("potn10",Myself,2,0,0)   // potion of invisibility
     SetGlobal("MO_DifficultyCheck","LOCALS",1)
     Continue()
-END
-
-/////////////////////////////////////////////////////////////////////
-// Get Closer to Attack
-/////////////////////////////////////////////////////////////////////
-IF
-  Allegiance(Myself,ENEMY)
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  !Range(NearestEnemyOf(Myself),4)
-THEN
-  RESPONSE #100
-    MoveToObject(NearestEnemyOf(Myself)) // move in to position
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -66,201 +68,6 @@ THEN
     SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
     SetInterrupt(FALSE)
     UseItem("potn55",Myself)
-    SetInterrupt(TRUE)
-END
-
-/////////////////////////////////////////////////////////////////////
-// Backstab Attacks 
-/////////////////////////////////////////////////////////////////////
-IF
-  ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.MAGE_ALL])
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
-THEN
-  RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
-END
-
-IF
-  ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.DRUID_ALL])
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
-THEN
-  RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
-END
-
-IF
-  ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.CLERIC_ALL])
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
-THEN
-  RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
-END
-
-IF
-  ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.THIEF_ALL])
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
-THEN
-  RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
-END
-
-IF
-  ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.BARD_ALL])
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
-THEN
-  RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
-END
-
-IF
-  ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.RANGER_ALL])
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
-THEN
-  RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
-END
-
-IF
-  ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.PALADIN_ALL])
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
-THEN
-  RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
-END
-
-IF
-  ActionListEmpty()
-  OR(2)
-    StateCheck(Myself,STATE_INVISIBLE)
-    StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  See([GOODCUTOFF.0.0.FIGHTER_ALL])
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
-  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
-  !StateCheck(LastSeenBy(Myself),STATE_INVISIBLE)
-  !StateCheck(LastSeenBy(Myself),STATE_MIRRORIMAGE)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
-  WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
-THEN
-  RESPONSE #100
-    AttackReevaluate(LastSeenBy(Myself),45)
-END
-
-/////////////////////////////////////////////////////////////////////
-// Run Away!
-/////////////////////////////////////////////////////////////////////
-IF
-  GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  Allegiance(Myself,ENEMY)
-  !StateCheck(Myself,STATE_INVISIBLE)
-  !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  HasItem("potn10",Myself)
-THEN
-  RESPONSE #100
-    RunAwayFrom(NearestEnemyOf(Myself),3)
-END
-
-/////////////////////////////////////////////////////////////////////
-// Drink!
-/////////////////////////////////////////////////////////////////////
-IF
-  !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  Allegiance(Myself,ENEMY)
-  !StateCheck(Myself,STATE_INVISIBLE)
-  !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-  HasItem("potn10",Myself)
-THEN
-  RESPONSE #100
-    RunAwayFrom(NearestEnemyOf(Myself),3)
-    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
-    SetInterrupt(FALSE)
-    UseItem("potn10",Myself)
     SetInterrupt(TRUE)
 END
 
@@ -535,98 +342,4 @@ IF
 THEN
   RESPONSE #100
     AttackOneRound(SixthNearestEnemyOf(Myself))
-END
-
-/////////////////////////////////////////////////////////////////////
-// Find them! (Experimental)
-/////////////////////////////////////////////////////////////////////
-IF
-  !Detect([GOODCUTOFF])
-  Allegiance(Myself,ENEMY)
-  OR(2)
-    Global("Prep","LOCALS",1)
-    TookDamage()
-  Global("MO_IsMoving","LOCALS",0)
-THEN
-  RESPONSE #100
-    SetGlobal("MO_IsMoving","LOCALS",1)
-    MoveToObject(Player1)
-END
-
-IF
-  ActionListEmpty()
-  See(Player1)
-  !See(Player2)
-  Allegiance(Myself,ENEMY)
-  !WeaponEffectiveVs(Player1,MAINHAND)
-  !WeaponCanDamage(Player1,MAINHAND)
-THEN
-  RESPONSE #100
-    SetGlobal("MO_IsMoving","LOCALS",1)
-    MoveToObject(Player2)
-END
-
-IF
-  ActionListEmpty()
-  See(Player2)
-  !See(Player3)
-  Allegiance(Myself,ENEMY)
-  !WeaponEffectiveVs(Player2,MAINHAND)
-  !WeaponCanDamage(Player2,MAINHAND)
-THEN
-  RESPONSE #100
-    SetGlobal("MO_IsMoving","LOCALS",1)
-    MoveToObject(Player3)
-END
-
-IF
-  ActionListEmpty()
-  See(Player3)
-  !See(Player4)
-  Allegiance(Myself,ENEMY)
-  !WeaponEffectiveVs(Player3,MAINHAND)
-  !WeaponCanDamage(Player3,MAINHAND)
-THEN
-  RESPONSE #100
-    SetGlobal("MO_IsMoving","LOCALS",1)
-    MoveToObject(Player4)
-END
-
-IF
-  ActionListEmpty()
-  See(Player4)
-  !See(Player5)
-  Allegiance(Myself,ENEMY)
-  !WeaponEffectiveVs(Player4,MAINHAND)
-  !WeaponCanDamage(Player4,MAINHAND)
-THEN
-  RESPONSE #100
-    SetGlobal("MO_IsMoving","LOCALS",1)
-    MoveToObject(Player5)
-END
-
-IF
-  ActionListEmpty()
-  See(Player5)
-  !See(Player6)
-  Allegiance(Myself,ENEMY)
-  !WeaponEffectiveVs(Player5,MAINHAND)
-  !WeaponCanDamage(Player5,MAINHAND)
-THEN
-  RESPONSE #100
-    SetGlobal("MO_IsMoving","LOCALS",1)
-    MoveToObject(Player6)
-END
-
-IF
-  ActionListEmpty()
-  See(Player6)
-  !See(Player1)
-  Allegiance(Myself,ENEMY)
-  !WeaponEffectiveVs(Player6,MAINHAND)
-  !WeaponCanDamage(Player6,MAINHAND)
-THEN
-  RESPONSE #100
-    SetGlobal("MO_IsMoving","LOCALS",1)
-    MoveToObject(Player1)
 END
