@@ -80,7 +80,7 @@ AddXPObject(Player4,20000)
 AddXPObject(Player5,20000)
 AddXPObject(Player6,20000)
 ChangeEnemyAlly(Myself,NEUTRAL)
-GiveItemCreate("mobhabl2",Player1,1,0,0)
+//GiveItemCreate("mobhabl2",Player1,1,0,0)
 ClearAllActions()
 StartCutSceneMode()
 StartCutScene("mocut20")~ EXIT
