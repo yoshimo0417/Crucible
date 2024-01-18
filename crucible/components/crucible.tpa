@@ -670,7 +670,7 @@ LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
 APPEND ~animate.ids~ ~0x%hexNumber% AC#FELL~ UNLESS ~AC#FELL~
 CLEAR_IDS_MAP
 
-COPY ~%MOD_FOLDER%/animations/fell/exxx.ini~ ~override/%hexNumber%.ini~
+COPY ~%MOD_FOLDER%/animations/fell/e000.ini~ ~override/%hexNumber%.ini~
 
 ACTION_BASH_FOR ~%MOD_FOLDER%/animations/fell~ ~^.+.bam$~ BEGIN
   COPY ~%BASH_FOR_FILESPEC%~ ~override~
