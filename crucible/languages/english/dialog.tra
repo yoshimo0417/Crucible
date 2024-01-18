@@ -31,8 +31,8 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 
 @5110 = ~How you made it this far with so little knowledge is a question for the sages. You are in Khalas, the uppermost layer of Gehenna.~ [mobha001]
 @5111 = ~Very astute of you. Yes, this is the uppermost layer of Gehenna known as Khalas.~ [mobha002]
-@5112 = ~Isn't my pocket plane supposed to be connected to Bhaal's realm?~  // Player
-@5113 = ~Amelyssan suspected you had such a pocket plane when you first arrived in Saradush. Great effort was made to find and then sever your plane's connection from the greater realm of Bhaal.~ [mobha003]
+@5112 = ~Isn't my pocket plane supposed to be connected to Bhaal's Realm?~  // Player
+@5113 = ~Amelyssan suspected you had such a pocket plane when you first arrived in Saradush. Great effort was made to find and then sever your plane's connection from the greater Realm of Bhaal.~ [mobha003]
 @5114 = ~The ties are strong between your pocket plane and Bhaal's kingdom, so we could only separate them so far apart. We have since waited to see if you would make the attempt to come through.~ [mobha004]
 @5115 = ~Let us end this.~  // Player
 @5116 = ~I tire of these questions, it is time for you to die.~  // Player
@@ -167,13 +167,13 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @6214 = ~I shall crush any who stand in my way.~ // Player
 @6215 = ~Yet, you blindly do so.~ [mobha082]
 @6216 = ~This is the great armory of Bhaal, known to house great and terrible weapons. In the years since his demise the armory has fallen in disrepair, so Amelyssan has assigned us to return it to it's former glory.~ [mobha083]
-@6217 = ~Much has since been looted and spread amongst the realms, but some artifacts remain. Some of the most potent weapons are not made of steel, but instead are flesh and bone.~ [mobha084]
+@6217 = ~Much has since been looted and spread amongst the Realms, but some artifacts remain. Some of the most potent weapons are not made of steel, but instead are flesh and bone.~ [mobha084]
 @6218 = ~Awaken, Blood-drenched. It is time to arise and serve your master.~ [mobha085]
 // Cutscene summoning Uthaedeol
 
 // Top of the Planetar Garrison
 @6219 = ~I will not be defeated by you! Come to me, my servants!~ [mobha157]
-@6220 = ~Forgive me Jergul for I have failed!~ [mobha158]
+@6220 = ~Forgive me Jergal for I have failed!~ [mobha158]
 @6221 = ~You defeated the Uthaedeol?!~ [mobha159]
 @6222 = ~He posed a challenge, but was no match for me.~  // Player 1
 @6223 = ~Fool, he joined me and will assist me in defeating Amelyssan.~  // Player 1
@@ -201,7 +201,7 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @6245 = ~Jergal told you to serve Bhaal?~  // Player 1
 @6246 = ~Did you serve Bhaal or Jergal?~  // Player 1
 @6247 = ~Go on.~  // Player 1
-@6248 = ~Only powerful deities can command Solar, like myself. Jergal is ancient, older than most beings in all the realms. He commanded, and I obeyed.~ [mobha171]
+@6248 = ~Only powerful deities can command Solar, like myself. Jergal is ancient, older than most beings in all the Realms. He commanded, and I obeyed.~ [mobha171]
 @6249 = ~I sense an aura around you from one of my kind. A powerful one at that.~ [mobha172]
 @6250 = ~Who do you think commanded the Solar to guide you from within your pocket plane? There are very few in existence who can make such a command, and Solar do not offer aid unless directed by a greater being.~ [mobha173]
 @6251 = ~I do not know who would command it.~  // Player 1
@@ -325,7 +325,7 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @6712 = ~Who are you?~  // Player
 @6713 = ~Sorry, but I have more pressing matters that require my attention.~  // Player
 @6714 = ~Pity. Well, please come back if you change your mind.~ [mobha121]
-@6715 = ~Powerful monsters. Dangerous monsters. I take some of the strongest in the realms and twist them into something even greater.~ [mobha122]
+@6715 = ~Powerful monsters. Dangerous monsters. I take some of the strongest in the Realms and twist them into something even greater.~ [mobha122]
 @6716 = ~It was commanded. With Bhaal set to be reborn, he was to have powerful entities at his side to dissuade other deities from interfering or outright attacking him while he is in such a weakened state.~ [mobha123]
 @6717 = ~I also suspect these to be the shock troops needed by Bhaal to assault Cyric's kingdom and take back some of his portfolio.~ [mobha124]
 @6718 = ~Haven't you heard? Amelyssan is seeking to ascend as the new Lord of Murder.~  // Player
@@ -367,7 +367,7 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @6754 = ~Bhaal knew of the Time of Troubles. Instead of having me prepare to prevent his death, which he knew was inevitable, he wanted me to focus on preparing for his return. He wanted forces ready to keep him safe while he was vulnerable.~ [mobha153]
 @6755 = ~Not the results I wanted, but thank you for testing my creations.~ [mobha154]
 @6756 = ~You won't leave empty handed if you choose to test yourself against my creations, and you'll be rewarded with an expertly crafted item of power.~ [mobha155]
-@6757 = ~I'm old. I have known your father longer than most in the realms. If you help with my testing, I can discuss our history.~ [mobha156]
+@6757 = ~I'm old. I have known your father longer than most in the Realms. If you help with my testing, I can discuss our history.~ [mobha156]
 
 @6799 = ~I am still building this out. Please continue up the tower to progress.~
 
