@@ -686,6 +686,12 @@ COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha53.d~
 COPY ~crucible/sto/mobha53.sto~ ~override/mobha53.sto~
   SAY NAME1 @2041
 
+COPY ~crucible/itm/mobha53a.itm~ ~override~  // Bhaal's Medallion
+  SAY NAME1 @10012
+  SAY NAME2 @10012
+  SAY UNIDENTIFIED_DESC @10013
+
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
