@@ -651,13 +651,40 @@ COPY ~crucible/cre/mobha50.cre~ ~override/mobha50.cre~
 COPY ~crucible/itm/mobha50a.itm~ ~override~  // Amulet of Power on Steroids
 
 //-------------------------------------------------------------------------
+// Viekang
+COPY ~crucible/cre/mobha51.cre~ ~override/mobha51.cre~
+  WRITE_ASCII 0x2cc ~MOBHA51~ #8 // Dialogue
+
+//-------------------------------------------------------------------------
 // Magical Sword
 COPY ~crucible/cre/mobha52.cre~ ~override/mobha52.cre~
 
 //-------------------------------------------------------------------------
-// Viekang
-COPY ~crucible/cre/mobha51.cre~ ~override/mobha51.cre~
-  WRITE_ASCII 0x2cc ~MOBHA51~ #8 // Dialogue
+// Mercane - Animations provided by Acifer, THANK YOU!
+LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7F3D slotMax = slotMin + 0xff RET slot END
+ACTION_IF (slot <= 0) BEGIN
+  FAIL ~No free creature animation slot found.~
+END
+
+LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+APPEND ~animate.ids~ ~0x%hexNumber% AC#FELL~ UNLESS ~AC#FELL~
+CLEAR_IDS_MAP
+
+COPY ~%MOD_FOLDER%/animations/fell/exxx.ini~ ~override/%hexNumber%.ini~
+
+ACTION_BASH_FOR ~%MOD_FOLDER%/animations/fell~ ~^.+.bam$~ BEGIN
+  COPY ~%BASH_FOR_FILESPEC%~ ~override~
+END
+
+COPY ~crucible/cre/mobha53.cre~ ~override/mobha53.cre~
+  SAY NAME1 @2041
+  SAY NAME2 @2041
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#FELL~))
+  WRITE_ASCII 0x2cc ~mobha53~  #8 // Dialogue
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha53.d~
+
+COPY ~crucible/sto/mobha53.sto~ ~override/mobha53.sto~
+  SAY NAME1 @2041
 
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
