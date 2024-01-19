@@ -15,6 +15,7 @@ THEN
 END
 */
 
+/*
 IF
 	IsOverMe([GOODCUTOFF])
 	Global("MO_Spawn10","MOBHA1",0)
@@ -22,4 +23,14 @@ THEN
 	RESPONSE #100
 		SetGlobal("MO_Spawn10","MOBHA1",1)
 END
+*/
 
+IF
+	Entered([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		DisplayString(LastTrigger,14381)  // Trap Sprung
+		PlaySound("SKELW03")
+		ForceSpell(LastTrigger,WIZARD_WAIL_OF_THE_BANSHEE)  // SPWI913.SPL (Wail of the Banshee)
+		ForceSpell(LastTrigger,WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger of Death)
+END

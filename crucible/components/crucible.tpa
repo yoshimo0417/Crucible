@@ -64,12 +64,10 @@ UNLESS ~MOBHA1~
 
 //-------------------------------------------------------------------------
 // Add Map Notes
-/*
 COPY_EXISTING ~mobha1.are~ ~override~  // Bhaal's Kingdom (Exterior)
   ADD_MAP_NOTE #1300 #1451 ~violet~ @2043 // Demon Tower
   ADD_MAP_NOTE #321  #1547 ~blue~   @2044 // Planetar Garrison
   ADD_MAP_NOTE #557  #612  ~red~    @2045 // Bhaal's Palace
-*/
 
 //-------------------------------------------------------------------------
 // Kedron (Deathbringer - Halberd)

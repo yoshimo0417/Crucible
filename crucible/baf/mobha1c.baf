@@ -1,4 +1,4 @@
-
+/*
 IF
 	IsOverMe([GOODCUTOFF])
 	Global("MO_Spawn03","MOBHA1",0)
@@ -12,6 +12,7 @@ THEN
 		//CreateCreature("mobha05",[2850.251],S)  // Scout
 		//CreateCreature("mobha05",[2966.223],S)  // Scout
 END
+*/
 
 /*
 IF
@@ -28,3 +29,12 @@ THEN
 		CreateCreatureObjectDoor("mobha05",[2966.223],0,0,0)  // Scout
 END
 */
+
+IF
+	Entered([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		DisplayString(LastTrigger,14381)  // Trap Sprung
+		PlaySound("SKELW03")
+		ForceSpell(LastTrigger,WIZARD_GREATER_MALISON)  // SPWI412.SPL (Greater Malison)
+END

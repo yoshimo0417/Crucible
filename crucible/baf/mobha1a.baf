@@ -23,11 +23,19 @@ THEN
 		CreateCreature("mobha08",[2730.1167],N)  // Assassin
 END
 */
-
+/*
 IF
 	IsOverMe([GOODCUTOFF])
 	Global("MO_Spawn01","MOBHA1",0)
 THEN
 	RESPONSE #100
 		SetGlobal("MO_Spawn01","MOBHA1",1)
+END
+*/
+IF
+	Entered([GOODCUTOFF])
+THEN
+	RESPONSE #100
+		DisplayString(LastTrigger,14381)  // Trap Sprung
+		ForceSpell(LastTrigger,WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger of Death)
 END
