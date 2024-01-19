@@ -424,3 +424,6 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @7101 = ~Yes~
 @7102 = ~No~
 @7103 = ~Thanks for stopping by.~
+
+// Kirinhale
+@7200 = ~This is placeholder dialog.~

@@ -64,10 +64,10 @@ UNLESS ~MOBHA1~
 
 //-------------------------------------------------------------------------
 // Add Map Notes
-COPY_EXISTING ~mobha1.are~ ~override~
-  ADD_MAP_NOTE #1300 #1451 @2043 // Demon Tower
-  ADD_MAP_NOTE #321  #1547 @2044 // Planetar Garrison
-  ADD_MAP_NOTE #557  #612  @2045 // Bhaal's Palace
+COPY_EXISTING ~mobha1.are~ ~override~  // Bhaal's Kingdom (Exterior)
+  ADD_MAP_NOTE #1300 #1451 ~violet~ @2043 // Demon Tower
+  ADD_MAP_NOTE #321  #1547 ~blue~   @2044 // Planetar Garrison
+  ADD_MAP_NOTE #557  #612  ~red~    @2045 // Bhaal's Palace
 
 //-------------------------------------------------------------------------
 // Kedron (Deathbringer - Halberd)
@@ -283,6 +283,11 @@ COPY ~crucible/itm/mobha21a.itm~ ~override~  // Weapon
 COPY ~crucible/cre/mobha21.cre~  ~override/mobha22.cre~
   SAY NAME1 @2012
   SAY NAME2 @2012
+  WRITE_ASCII 0x248 ~~        #8 // Clear Override Script
+  WRITE_ASCII 0x268 ~MOBHA22~ #8 // Default Script
+  WRITE_ASCII 0x280 ~MOBHA22~ #8 // Script Name
+  WRITE_ASCII 0x2cc ~MOBHA22~ #8 // Dialogue
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha22.d~
 
 //-------------------------------------------------------------------------
 // Belchaad the Juggernaut
@@ -821,6 +826,7 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobha17.baf~  ~override/mobha17.bcs~   // Creature script
      ~crucible/baf/mobha20.baf~  ~override/mobha20.bcs~   // Creature script
      ~crucible/baf/mobha21.baf~  ~override/mobha21.bcs~   // Creature script
+     ~crucible/baf/mobha22.baf~  ~override/mobha22.bcs~   // Creature script
      ~crucible/baf/mobha23.baf~  ~override/mobha23.bcs~   // Creature script
      ~crucible/baf/mobha24.baf~  ~override/mobha24.bcs~   // Creature script
      ~crucible/baf/mobha25.baf~  ~override/mobha25.bcs~   // Creature script
