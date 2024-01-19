@@ -14,6 +14,7 @@
 @5010 = ~With Mayithra defeated, you feel like eyes are off you and the attacks upon you in Khalas will lessen.~
 @5011 = ~You cannot use this while in combat.~
 @5012 = ~Well, it's been a while since I saw that amulet. Annoying as it can be, we should keep it. It may prove to be quite useful after all... Especially here.~
+// Eleven Labs
 @5013 = ~Stepping out from your pocket plane, you see a vast and desolate landscape. The air is thick with ash and smoke, and the sky above is blacked out. Peering forward, you see a rugged mountainscape blanketed in a red glowing mist conveying an eerie beauty.
 
 Suddenly, the realization hits you. This is not Bhaal's kingdom, but instead another plane of existence. Somehow your pocket plane was moved from where it was first created. You feel something tugging you forward as if Bhaal's essence within you knows where you are.
@@ -21,7 +22,7 @@ Suddenly, the realization hits you. This is not Bhaal's kingdom, but instead ano
 Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in the distance you can faintly identify a giant skull, and the essence within you confirms this is your destination. You feel an urging time is short, and you sense your essence stirring in the distance as Amelyssan prepares to ascend as the new Lord of Murder.~ [mobha178]
 @5014 = ~Crucible~
 
-// Deathstalker Initial Convo
+// Deathstalker Initial Convo (Eleven Labs)
 @5100 = ~I see you decided to finally arrive, <CHARNAME>. The hour is late and Amelyssan will ascend as the new lord of murder.~ [mobha000]
 @5101 = ~Where am I?~  // Player
 @5102 = ~This is Khalas, isn't it?~  // Player
@@ -44,21 +45,21 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @5130 = ~No, I will move ahead to seal off Bhaal's kingdom and halt your advance. Kill the Bhaalspawn!~ [mobha007]
 //@5130 = ~Hurry <CHARNAME>, before I seal off Bhaal's kingdom and halt your advance. Be seeing you.~
 
-// Deathstalker Second Convo
+// Deathstalker Second Convo (Eleven Labs)
 @5200 = ~You arrive too late and the path is sealed. Amelyssan shall become a goddess, and I will be the one rewarded with bringing her your head.~ [mobha008]
 @5201 = ~You assume much, let us end this.~  // Player
 @5202 = ~My head will stay attached to my neck. Yours...not so likely.~  // Player
 @5203 = ~Die, bitch!~  // Player
 @5210 = ~Attack the Bhaalspawn, bring me <PRO_HISHER> head!~ [mobha009]
 
-// Planetar
+// Planetar (Nick - Authoritative)
 @5300 = ~Halt! It has been decreed to stop your advance and end your existence. Prepare thyself for death!~ [mobha010]
 @5301 = ~Raise the alarms, we are under attack from the Bhaalspawn!~ [mobha080]
 
-// Demon
+// Demon (Axorian - Hatred)
 @5400 = ~I will rend the flesh from your bones, God child!~ [mobha011]
 
-// Statue
+// Statue (Atlas - Wise)
 @5500 = ~Your divine blood holds sway here.~ [mobha012]
 @5501 = ~I am a watcher of stone carved by Bhaal himself. What questions do you have?~ [mobha013]
 @5502 = ~How do I enter Bhaal's kingdom?~
@@ -73,7 +74,7 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @5522 = ~Beware! These actions will alert the denizens that inhabit these locations and bring swift condemnation. Prepare yourself accordingly.~ [mobha019]
 @5530 = ~I will be waiting if you come back seeking more guidance.~ [mobha020]
 
-// Sapphira
+// Sapphira (Lilith - Angry)
 @5600 = ~You dare breach our sanctum?!~ [mobha021]
 @5601 = ~Wait...you are Bhaalspawn.~ [mobha023]
 @5602 = ~Do you have the slightest idea of the true power hidden within your blood?~ [mobha024]
@@ -102,7 +103,7 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @5631 = ~I shall feed on your soul!~
 @5632 = ~Suffer! Weaken as I strengthen!~
 
-// Belchaad the Juggernaut
+// Belchaad the Juggernaut (Axorian - Menacing)
 @5700 = ~You arrive.~ [mobha035]
 @5701 = ~Though Bhaal had many children, you must be first among them. Anything less and you wouldn't be here.~ [mobha036]
 @5702 = ~What are you?~
@@ -211,7 +212,7 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @6255 = ~Simple. Either ask your Solar and hope for an honest answer or wait to see if the deity approaches you.~ [mobha174]
 @6256 = ~I grow tired of these delays, and wish to report your defeat to Amelyssan.~ [mobha175]
 
-// Deathbringer
+// Deathbringer (Nick - Authoritative)
 @6300 = ~Gorion's ward has invaded Bhaal's kingdom! To arms my brothers!~ [mobha049]
 
 // Culdus Aghurath (Deckard - Fury)
@@ -425,5 +426,5 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @7102 = ~No~
 @7103 = ~Thanks for stopping by.~
 
-// Kirinhale
+// Kirinhale (Minerva)
 @7200 = ~This is placeholder dialog.~
