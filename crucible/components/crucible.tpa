@@ -691,6 +691,17 @@ COPY ~crucible/itm/mobha53a.itm~ ~override~  // Bhaal's Medallion
   SAY NAME2 @10012
   SAY UNIDENTIFIED_DESC @10013
 
+//-------------------------------------------------------------------------
+// Barghest - Animations provided by Acifer, THANK YOU!
+COPY ~crucible/animations/worg_iwd_ee~  ~override~
+
+COPY ~crucible/cre/mobha54.cre~ ~override/mobha54.cre~  // Barghest
+  SAY NAME1 @2042
+  SAY NAME2 @2042
+
+COPY ~crucible/itm/mobha54a.itm~ ~override~  // claw
+COPY ~crucible/itm/mobha54b.itm~ ~override~  // bite
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -828,6 +839,7 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobha50.baf~  ~override/mobha50.bcs~   // Creature script
      ~crucible/baf/mobha51.baf~  ~override/mobha51.bcs~   // Creature script
      ~crucible/baf/mobha52.baf~  ~override/mobha52.bcs~   // Creature script
+     ~crucible/baf/mobha54.baf~  ~override/mobha54.bcs~   // Creature script
      ~crucible/baf/mocut03.baf~  ~override/mocut03.bcs~   // Cutscene script
      ~crucible/baf/mocut04.baf~  ~override/mocut04.bcs~   // Cutscene script
      ~crucible/baf/mocut05.baf~  ~override/mocut05.bcs~   // Cutscene script
