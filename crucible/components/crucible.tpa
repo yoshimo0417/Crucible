@@ -63,6 +63,13 @@ APPEND ~FOGAREA.2da~ ~MOBHA1  0.80  75  58  62   95   44  53   75   25~
 UNLESS ~MOBHA1~
 
 //-------------------------------------------------------------------------
+// Add Map Notes
+COPY_EXISTING ~mobha1.are~ ~override~
+  ADD_MAP_NOTE #1300 #1451 @2043 // Demon Tower
+  ADD_MAP_NOTE #321  #1547 @2044 // Planetar Garrison
+  ADD_MAP_NOTE #557  #612  @2045 // Bhaal's Palace
+
+//-------------------------------------------------------------------------
 // Kedron (Deathbringer - Halberd)
 COPY ~crucible/cre/mobha01.cre~ ~override/mobha01.cre~
   SAY NAME1 @2026
