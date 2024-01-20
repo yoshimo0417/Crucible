@@ -35,10 +35,15 @@ END
 
 IF ~!NumTimesTalkedTo(0)~ THEN BEGIN 5
   SAY @7119
-  IF ~~ THEN REPLY @7121 DO ~StartStore("mobha53",LastTalkedToBy())~ EXIT // I need a safe place to lay my head.
-  IF ~~ THEN REPLY @7122 DO ~StartStore("mobha53",LastTalkedToBy())~ EXIT // Let me see your store.
+  IF ~~ THEN REPLY @7121 GOTO 6  // I need a safe place to lay my head.
+  IF ~~ THEN REPLY @7122 GOTO 6  // Let me see your store.
   IF ~~ THEN REPLY @7112 GOTO 4  // What is this place?
   IF ~~ THEN REPLY @7113 GOTO 3  // Who are you?
   IF ~~ THEN REPLY @7114 GOTO 4  // Why is your sanctuary out here?
   IF ~~ THEN REPLY @7123 GOTO 2  // I'm good for now.
+END
+
+IF ~~ THEN BEGIN 6
+  SAY @7100
+  IF ~~ THEN DO ~StartStore("mobha53",LastTalkedToBy())~ EXIT
 END

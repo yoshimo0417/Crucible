@@ -421,7 +421,7 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @7014 = ~I can't risk it. Die, fool!~  // Player 1
 
 // Jambi (Jean-Pierre - Arrogant)
-@7100 = ~This is placeholder dialog. Do you want store items/rest?~
+@7100 = ~Please, see what I have to offer.~ [mobha200]
 @7101 = ~Yes~
 @7102 = ~No~
 @7103 = ~Adieu. Thanks for stopping by.~ [mobha193]
