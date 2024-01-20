@@ -420,11 +420,29 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @7013 = ~No offense, but I hope this is the last time I see you. Good luck against Amelyssan.~ [mobha188]
 @7014 = ~I can't risk it. Die, fool!~  // Player 1
 
-// Mercane
+// Jambi (Jean-Pierre - Arrogant)
 @7100 = ~This is placeholder dialog. Do you want store items/rest?~
 @7101 = ~Yes~
 @7102 = ~No~
-@7103 = ~Thanks for stopping by.~
+@7103 = ~Adieu. Thanks for stopping by.~ [mobha193]
+
+@7110 = ~Welcome! It is not everyday we see a Prime walk into our sanctuary.~ [mobha192]
+@7111 = ~We are an odd accompaniment of assorted beings, but all are welcome.~ [mobha196]
+@7112 = ~What is this place?~  // Player1
+@7113 = ~Who are you?~  // Player 1
+@7114 = ~Why is your sanctuary out here?~  // Player 1
+@7115 = ~I have no desire to speak with you.~  // Player 1
+@7116 = ~Why of course. I am a merchant and innkeep, so please feel free to speak with me if you are in need of my services.~ [mobha194]
+@7117 = ~You'd refer to my kind as "Mercane". Like most of my people, I am a merchant and happy to trade and do business with you.~ [mobha195]
+@7118 = ~I also manage an inn. It isn't much, but it will be a safe place for you to rest.~ [mobha197]
+@7119 = ~Are there any services of interest to you?~ [mobha198]
+@7120 = ~Good question! I would refer you to Malik to better assist you. We do not have a leader here, but he is our representative in dealing with matters concerning the community.~ [mobha199]
+@7121 = ~I need a safe place to lay my head.~  // Player 1
+@7122 = ~Let me see your store.~  // Player 1
+@7123 = ~I'm good for now.~  // Player 1
+
 
 // Kirinhale (Minerva)
 @7200 = ~This is placeholder dialog.~
+
+// Malik
