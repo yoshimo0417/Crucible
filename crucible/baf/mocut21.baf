@@ -1,0 +1,23 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        Wait(6)
+        EndCutSceneMode()
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("MOBHA55")
+        MoveViewObject(Myself,INSTANT)
+        Wait(1)
+        ScreenShake([5.5],30)
+        Wait(1)
+        PlaySound("EFF_P70")
+        CreateVisualEffectObject("ABJURH",Myself)
+        SmallWait(2)
+        ChangeAnimation("MOBHA56")
+END
