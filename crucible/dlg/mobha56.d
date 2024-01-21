@@ -5,6 +5,6 @@
 BEGIN MOBHA56
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
-  SAY @7405 = @7506
+  SAY @7405 = @7406
   IF ~~ THEN DO ~~ EXIT
 END
