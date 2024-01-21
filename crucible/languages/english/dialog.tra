@@ -59,20 +59,20 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 // Demon (Axorian - Hatred)
 @5400 = ~I will rend the flesh from your bones, God child!~ [mobha011]
 
-// Statue (Atlas - Wise)
-@5500 = ~Your divine blood holds sway here.~ [mobha012]
-@5501 = ~I am a watcher of stone carved by Bhaal himself. What questions do you have?~ [mobha013]
-@5502 = ~How do I enter Bhaal's kingdom?~
-@5503 = ~How do I enter the structures you mention?~
-@5504 = ~I have no further questions.~
-@5510 = ~To enter Bhaal's kingdom, sacrifices in blood must be made.~ [mobha014]
-@5511 = ~You will need to defeat and draw the blood from the masters of the Towers to the East and the West.~ [mobha015]
-@5512 = ~The bowls before the bridge need to be filled with their blood. The final step will be sacrificing your own blood.~ [mobha016]
-@5513 = ~This will require a substantial amount, so you best ensure you are prepared so the process doesn't kill you.~ [mobha017]
-@5520 = ~A heart of the most foul hatred must be placed within the Eastern skull pile while a feather of one fallen from grace needs to be placed within the Western skull pile.~ [mobha018]
+// Statue (Asmodeus - Scheming)
+@5500 = ~Your divine blood holds sway here.~ [mobha212]
+@5501 = ~I am a watcher of stone carved by Bhaal himself. What questions do you have?~ [mobha213]
+@5502 = ~How do I enter Bhaal's kingdom?~  // Player 1
+@5503 = ~How do I enter the structures you mention?~  // Player 1
+@5504 = ~I have no further questions.~  // Player 1
+@5510 = ~To enter Bhaal's palace, sacrifices in blood must be made.~ [mobha214]
+@5511 = ~You will need to defeat and draw the blood from the masters of the Towers to the East and the West.~ [mobha215]
+@5512 = ~The bowls before the bridge need to be filled with their blood. The final step will be sacrificing your own blood.~ [mobha216]
+@5513 = ~This will require a substantial amount, so you best ensure you prepare so the process doesn't kill you.~ [mobha217]
+@5520 = ~A heart of the most foul hatred must be placed within the Eastern skull pile while a feather of one fallen from grace needs to be placed within the Western skull pile.~ [mobha218]
 //@5521 = ~The Feather of a Fallen Planetar must be placed within the Western skull pile.~
-@5522 = ~Beware! These actions will alert the denizens that inhabit these locations and bring swift condemnation. Prepare yourself accordingly.~ [mobha019]
-@5530 = ~I will be waiting if you come back seeking more guidance.~ [mobha020]
+@5522 = ~Beware! These actions will alert the denizens that inhabit these locations and bring swift condemnation. Prepare yourself accordingly.~ [mobha219]
+@5530 = ~I will be waiting if you come back seeking more guidance.~ [mobha220]
 
 // Sapphira (Lilith - Angry)
 @5600 = ~You dare breach our sanctum?!~ [mobha021]
@@ -448,26 +448,26 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 // Malik
 @7300 = ~~
 
-// Noober
+// Noober (Atlas - Light-hearted)
 @7400 = ~Hi, I'm Noober. Nice place, huh?~
 @7401 = ~What...~  // Player 1
 @7402 = ~How...~  // Player 1
 @7403 = ~Who...~  // Player 1
 @7404 = ~It is time to reveal my true face.~
-@7405 = ~I am Ao, the Overfather.~
-@7406 = ~Cyric was correct in his meeting with you, and I have watched your progress with interest. Noober, and his various offshoots, were a cloak allowing me to observe and interact with you on your journey, without drawing undue attention.~
+@7405 = ~I am Ao, the Overfather.~ [mobha202]
+@7406 = ~Cyric was correct in his meeting with you, and I have watched your progress with interest. Noober, and his various offshoots, were a cloak allowing me to observe and interact with you on your journey, without drawing undue attention.~ [mobha203]
 @7407 = ~How could you not help me?~  // Player 1
 @7408 = ~Why did you not make your presence known?~  // Player 1
-@7409 = ~And rob you of the chance to prove yourself?~
-@7410 = ~This journey is your crucible. As steel is forged under the hottest flames, so too you have been strengthened by the adversity you faced. What would you have done in the absence of such challenges? Continued your existence in Candlekeep? You would have wasted your life away and never developed into who you are today.~
-@7411 = ~Tymora, Lady Luck, picked up an interest in you and provided aid early in your journey with diamonds in trees, magical rings in rocks, and such. I had to intervene in Nashkel after the ankheg plate. You piqued my interest then, and Noober was born.~
+@7409 = ~And rob you of the chance to prove yourself?~ [mobha205]
+@7410 = ~This journey is your crucible. As steel is forged under the hottest flames, so too you have been strengthened by the adversity you faced. What would you have done in the absence of such challenges? Continued your existence in Candlekeep? You would have wasted your life away and never developed into who you are today.~ [mobha204]
+@7411 = ~Tymora, Lady Luck, picked up an interest in you and provided aid early in your journey. Such thinks like diamonds in trees, magical rings in rocks, and so on. After the ankheg plate in Nashkel, I had to intervene. You piqued my interest then, and Noober was born.~ [mobha206]
 @7412 = ~Why are you revealing yourself to me now?~  // Player 1
-@7413 = ~This has been a most interesting series of events, and little of mortal affairs has caught my attention quite like this. Of course I wanted the opportunity to present myself at the end.~
+@7413 = ~This has been a most interesting series of events, and little of mortal affairs has caught my attention quite like this. Of course I wanted the opportunity to present myself at the end.~ [mobha207]
 @7414 = ~Any advice on the way ahead?~  // Player 1
 @7415 = ~My life is not a plaything for greater beings.~  // Player 1
 @7416 = ~I don't want this. Remove my divine blood and make me a mortal, so I can walk away from this.~  // Player 1
 @7417 = ~You have the power, make me a god here and now. Crush Amelyssan!~  // Player 1
-@7418 = ~No. What comes next is for you to face.~
-@7419 = ~I shall neither provide support nor oppose your ascension. You must succeed on your own merit, skill, and ability. The pantheon of gods is diverse and covers both good and evil. All have their place and purpose.~
-@7420 = ~I will leave you with this, Bhaal's throne holds a secret lever that will open the way to the Mana Forge. Bhaal's essence is collected there and it is where Amelyssan awaits you for your inevitable confrontation. Whomever rises as the victor I will grant godhood, if they so choose.~
-@7421 = ~The rest is in your hands, and I look forward to the finale.~
+@7418 = ~No. What comes next is for you to face.~ [mobha208]
+@7419 = ~I shall neither provide support nor oppose your ascension. You must succeed on your own merit, skill, and ability. The pantheon of gods is diverse and covers both good and evil. All have their place and purpose.~ [mobha209]
+@7420 = ~I will leave you with this, Bhaal's throne holds a lever that will open the way to the Mana Forge. It is within the Mana Forge where Bhaal's essence is collected and where Amelyssan awaits you. Whomever rises as the victor I will grant godhood, if they so choose.~ [mobha210]
+@7421 = ~The rest is in your hands, and I look forward to the finale.~ [mobha211]
