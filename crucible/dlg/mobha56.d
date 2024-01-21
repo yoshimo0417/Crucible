@@ -17,10 +17,10 @@ END
 
 IF ~~ THEN BEGIN 2
   SAY @7413
-  IF ~~ THEN REPLY 7414 GOTO 4 // Any advice on the way ahead?
-  IF ~~ THEN REPLY 7415 GOTO 4 // My life is not a plaything for greater beings.
-  IF ~~ THEN REPLY 7416 GOTO 3 // I don't want this. Remove my divine blood and make me a mortal, so I can walk away from this.
-  IF ~~ THEN REPLY 7417 GOTO 3 // You have the power, make me a god here and now. Crush Amelyssan!
+  IF ~~ THEN REPLY @7414 GOTO 4 // Any advice on the way ahead?
+  IF ~~ THEN REPLY @7415 GOTO 4 // My life is not a plaything for greater beings.
+  IF ~~ THEN REPLY @7416 GOTO 3 // I don't want this. Remove my divine blood and make me a mortal, so I can walk away from this.
+  IF ~~ THEN REPLY @7417 GOTO 3 // You have the power, make me a god here and now. Crush Amelyssan!
 END
 
 IF ~~ THEN BEGIN 3
