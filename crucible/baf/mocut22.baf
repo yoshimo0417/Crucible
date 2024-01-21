@@ -1,0 +1,13 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        Wait(1)
+        ActionOverride("mobha56",ForceSpell(Myself,DO_NOTHING))  // SPIN905.SPL (No such index)
+        Wait(1)
+        CreateVisualEffectObject("SPPORTAL","mobha56")  // Ao
+        ActionOverride("mobha56",DestroySelf())
+        Wait(1)
+        EndCutSceneMode()
+END

@@ -30,5 +30,7 @@ END
 
 IF ~~ THEN BEGIN 4
   SAY @7419 = @7420 = @7421
-  IF ~~ THEN DO ~ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
+  IF ~~ THEN DO ~ClearAllActions()
+StartCutSceneMode()
+StartCutScene("mocut22")~ EXIT
 END
