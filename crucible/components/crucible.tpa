@@ -726,6 +726,15 @@ COPY ~crucible/cre/mobha56.cre~ ~override/mobha56.cre~
   WRITE_ASCII 0x2cc ~mobha56~  #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha56.d~
 
+//-------------------------------------------------------------------------
+// Pyroclastic Dragon
+COPY ~crucible/cre/mobha57.cre~ ~override/mobha57.cre~
+  SAY NAME1 @2047
+  SAY NAME2 @2047
+COPY ~crucible/itm/mobha57a.itm~ ~override~  // claw
+COPY ~crucible/itm/mobha57b.itm~ ~override~  // bite
+COPY ~crucible/itm/mobha57c.itm~ ~override~  // +40% Physical Damage Resist
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -866,6 +875,7 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobha52.baf~  ~override/mobha52.bcs~   // Creature script
      ~crucible/baf/mobha54.baf~  ~override/mobha54.bcs~   // Creature script
      ~crucible/baf/mobha55.baf~  ~override/mobha55.bcs~   // Creature script
+     ~crucible/baf/mobha57.baf~  ~override/mobha57.bcs~   // Creature script
      ~crucible/baf/mocut03.baf~  ~override/mocut03.bcs~   // Cutscene script
      ~crucible/baf/mocut04.baf~  ~override/mocut04.bcs~   // Cutscene script
      ~crucible/baf/mocut05.baf~  ~override/mocut05.bcs~   // Cutscene script
