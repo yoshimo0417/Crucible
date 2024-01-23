@@ -25,13 +25,19 @@ END
 
 IF ~~ THEN BEGIN 3
   SAY @7117 = @7118
-  IF ~~ THEN GOTO 5
+  IF ~~ THEN DO ~SetGlobal("MO_JambiIntro","GLOBAL",1)~ GOTO 5
 END 
 
 IF ~~ THEN BEGIN 4
   SAY @7120
-  IF ~~ THEN GOTO 5
+  IF ~Global("MO_JambiIntro","GLOBAL",0)~ THEN GOTO 7 // Jambi needs to mention he is a shopkeep
+  IF ~Global("MO_JambiIntro","GLOBAL",1)~ THEN GOTO 5
 END 
+
+IF ~~ THEN BEGIN 7
+  SAY @7118
+  IF ~~ THEN DO ~SetGlobal("MO_JambiIntro","GLOBAL",1)~ GOTO 5 
+END
 
 IF ~!NumTimesTalkedTo(0)~ THEN BEGIN 5
   SAY @7119
