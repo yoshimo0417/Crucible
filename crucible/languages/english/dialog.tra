@@ -473,5 +473,6 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @7421 = ~The rest is in your hands, and I look forward to the finale.~ [mobha230]//[mobha211]
 
 // Golem (Jelawur)
-@7500 = ~Halt traveler! We are a neutral outpost and all are welcome to enter. Violence will not be tolerated.~
-@7501 = ~You look capable. Please seek out Malik as we can use your assistance.~
+@7500 = ~Halt traveler!~
+@7501 = ~We are a neutral outpost and all are welcome to enter. Violence will not be tolerated.~
+@7502 = ~You look capable. Please seek out Malik as we can use your assistance.~
