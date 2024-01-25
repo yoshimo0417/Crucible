@@ -13,6 +13,7 @@
 /////////////////////////////////////////////////////////////////////
 IF
   Global("Prep","LOCALS",0)
+  Detect([PC])
   Allegiance(Myself,ENEMY)
   DifficultyGT(HARD)
 THEN
@@ -23,6 +24,7 @@ END
 
 IF
   Global("Prep","LOCALS",0)
+  Detect([PC])
   Allegiance(Myself,ENEMY)
   DifficultyLT(HARDEST)
 THEN
@@ -49,6 +51,7 @@ END
 /////////////////////////////////////////////////////////////////////
 IF
   Allegiance(Myself,ENEMY)
+  Global("Prep","LOCALS",1)
   !GlobalTimerNotExpired("MO_REDDRAGONBREATH","LOCALS")
   Exists(StrongestOf)
 THEN
@@ -71,6 +74,7 @@ END
 /////////////////////////////////////////////////////////////////////
 IF
   Allegiance(Myself,ENEMY)
+  Global("Prep","LOCALS",1)
   Range(NearestEnemyOf(Myself),25)
   !GlobalTimerNotExpired("Buffet","LOCALS")
 THEN
