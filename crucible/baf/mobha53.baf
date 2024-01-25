@@ -6,11 +6,36 @@
 // Jambi, Mercane
 // 
 /////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+// Change Alignment
+/////////////////////////////////////////////////////////////////////
 IF
-  NumberOfTimesTalkedTo(0)
-  See([PC])
-  Range([PC],20)
+  StealFailed([ANYONE])
+  !Allegiance(Myself,ENEMY)
 THEN
   RESPONSE #100
-    StartDialogueNoSet([PC])
+    StartDialog("stolen",LastTrigger)
+    SetGlobal("MOBHAA_Enemy","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Allegiance(Myself,NEUTRAL)
+  AttackedBy([ANYTHING],DEFAULT)
+  Global("MOBHAA_Enemy","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("MOBHAA_Enemy","GLOBAL",1)
+    Enemy()
+    Continue()
+END
+
+IF
+  !Allegiance(Myself,ENEMY)
+  Global("MOBHAA_Enemy","GLOBAL",1)
+THEN
+  RESPONSE #100
+    Enemy()
+    Continue()
 END
