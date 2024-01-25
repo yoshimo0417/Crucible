@@ -1,6 +1,6 @@
 // The Crucible, Dialog
 
-// Skull Piles
+// Environmental
 @5000 = ~Waves of sulfur and carrion fill the air and off in the distance you can hear the gate to the Demon Tower crashing open.~
 @5001 = ~You feel the eyes of divine wrath upon you and hear a rushing of wings. Off in the distance you can hear the entrance to the Planetar Garrison opening.~
 @5002 = ~You feel a tingling, like an awakening of a new aspect in your blood, upon entering this tower. Whatever it is, you know you are connected to whatever awaits.~
@@ -21,6 +21,7 @@ Suddenly, the realization hits you. This is not Bhaal's kingdom, but instead ano
 
 Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in the distance you can faintly identify a giant skull, and the essence within you confirms this is your destination. You feel an urging time is short, and you sense your essence stirring in the distance as Amelyssan prepares to ascend as the new Lord of Murder.~ [mobha178]
 @5014 = ~Crucible~
+@5015 = ~The statue intones: Any who dare cross the rune barrier shall be struck down.~
 
 // Deathstalker Initial Convo (Eleven Labs)
 @5100 = ~I see you decided to finally arrive, <CHARNAME>. The hour is late and Amelyssan will ascend as the new lord of murder.~ [mobha000]
@@ -473,6 +474,9 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @7421 = ~The rest is in your hands, and I look forward to the finale.~ [mobha230]//[mobha211]
 
 // Golem (Jelawur)
-@7500 = ~Halt traveler!~
+@7500 = ~Halt traveler!~ //[mobha240]
 @7501 = ~We are a neutral outpost and all are welcome to enter. Violence will not be tolerated.~
 @7502 = ~You look capable. Please seek out Malik as we can use your assistance.~
+
+// Malik
+@7600 = ~This is placeholder dialog.~
