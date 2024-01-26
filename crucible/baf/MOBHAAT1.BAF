@@ -1,5 +1,6 @@
 IF
 	Entered([ANYONE])
+	!PartyHasItem("mobha53a")
 THEN
 	RESPONSE #100
 		DisplayString(LastTrigger,14381)  // Trap Sprung
