@@ -70,6 +70,12 @@ COPY_EXISTING ~mobha1.are~ ~override~  // Bhaal's Kingdom (Exterior)
   ADD_MAP_NOTE #557  #612  ~red~    @2045 // Bhaal's Palace
 
 //-------------------------------------------------------------------------
+// Update Info Text
+COPY_EXISTING ~mobhaa.are~ ~override~
+  LPF ALTER_AREA_REGION INT_VAR info_point = RESOLVE_STR_REF (@5015) STR_VAR region_name=LeftReaperLantern END
+  LPF ALTER_AREA_REGION INT_VAR info_point = RESOLVE_STR_REF (@5015) STR_VAR region_name=RightReaperLantern END
+
+//-------------------------------------------------------------------------
 // Kedron (Deathbringer - Halberd)
 COPY ~crucible/cre/mobha01.cre~ ~override/mobha01.cre~
   SAY NAME1 @2026
