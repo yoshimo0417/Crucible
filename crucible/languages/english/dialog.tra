@@ -473,10 +473,10 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @7420 = ~I will leave you with this, Bhaal's throne holds a lever that will open the way to the Mana Forge. It is within the Mana Forge where Bhaal's essence is collected and where Amelyssan awaits you. Whomever rises as the victor I will grant godhood, if they so choose.~ [mobha229]//[mobha210]
 @7421 = ~The rest is in your hands, and I look forward to the finale.~ [mobha230]//[mobha211]
 
-// Golem (Jelawur)
-@7500 = ~Halt traveler!~ //[mobha240]
-@7501 = ~We are a neutral outpost and all are welcome to enter. Violence will not be tolerated.~
-@7502 = ~You look capable. Please seek out Malik as we can use your assistance.~
+// Nekri (Casey - Lit)
+@7500 = ~Halt traveler!~ [mobha242]
+@7501 = ~We are a neutral outpost and all are welcome to enter. Violence will not be tolerated.~ [mobha244]
+@7502 = ~You look capable. Please seek Malik as we can use your help.~ [mobha243]
 
 // Malik
 @7600 = ~This is placeholder dialog.~

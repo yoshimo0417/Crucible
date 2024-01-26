@@ -743,6 +743,18 @@ COPY ~crucible/cre/mobha58.cre~ ~override/mobha58.cre~
   WRITE_ASCII 0x2cc ~mobha58~  #8 // Dialogue
 COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha58.d~
 
+//-------------------------------------------------------------------------
+// Clay Golem
+COPY ~crucible/cre/mobha59.cre~ ~override/mobha59.cre~
+
+//-------------------------------------------------------------------------
+// Nekri
+COPY ~crucible/cre/mobha60.cre~ ~override/mobha60.cre~
+  SAY NAME1 @2049
+  SAY NAME2 @2049
+  WRITE_ASCII 0x2cc ~mobha60~  #8 // Dialogue
+COMPILE EVALUATE_BUFFER ~crucible/dlg/mobha60.d~
+
 ///////////////////////////////////////////////////////////////////////////
 // Dialog                                                                //
 ///////////////////////////////////////////////////////////////////////////
@@ -751,9 +763,6 @@ ACTION_IF ascension BEGIN
 END ELSE BEGIN
   COMPILE ~crucible/dlg/update_transition1.d~
 END
-
-// Jelawur Golem
-COMPILE ~crucible/dlg/mobhaaa.d~
 
 // Cespenar chats
 COMPILE EVALUATE_BUFFER ~crucible/dlg/update_botsmith.d~
@@ -889,8 +898,8 @@ COPY ~crucible/baf/mobha1.baf~   ~override/mobha1.bcs~    // Area script
      ~crucible/baf/mobha55.baf~  ~override/mobha55.bcs~   // Creature script
      ~crucible/baf/mobha57.baf~  ~override/mobha57.bcs~   // Creature script
      ~crucible/baf/mobha58.baf~  ~override/mobha58.bcs~   // Creature script
-     ~crucible/baf/mobhaaa.baf~  ~override/mobhaaa.bcs~   // Creature script
-     ~crucible/baf/mobhaab.baf~  ~override/mobhaab.bcs~   // Creature script
+     ~crucible/baf/mobha59.baf~  ~override/mobha59.bcs~   // Creature script
+     ~crucible/baf/mobha60.baf~  ~override/mobha60.bcs~   // Creature script
      ~crucible/baf/mocut03.baf~  ~override/mocut03.bcs~   // Cutscene script
      ~crucible/baf/mocut04.baf~  ~override/mocut04.bcs~   // Cutscene script
      ~crucible/baf/mocut05.baf~  ~override/mocut05.bcs~   // Cutscene script
