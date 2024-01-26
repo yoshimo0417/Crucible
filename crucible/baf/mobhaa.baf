@@ -17,5 +17,7 @@ IF
 THEN
     RESPONSE #100
         SetGlobal("Enteredmobhaa","mobhaa",1)
+        AmbientActivate("amb_door01",FALSE)
         AmbientActivate("amb_door02",FALSE)
+        AmbientActivate("amb_door03",FALSE)
 END
