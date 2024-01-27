@@ -2,6 +2,7 @@ IF
   IsOverMe([ANYONE])
   //Global("Warning3","mobhaa",0)
   !GlobalTimerNotExpired("MO_RuneWarning","mobhaa")
+  !PartyHasItem("mobha53a")
 THEN
   RESPONSE #100
     //SetGlobal("Warning3","mobhaa",1)

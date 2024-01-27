@@ -1,6 +1,7 @@
 IF
 	IsOverMe([ANYONE])
 	!GlobalTimerNotExpired("FearTimer","MOBHAA")
+	!PartyHasItem("mobha53a")
 THEN
 	RESPONSE #50
 		ForceSpellRES("MOBHAAF",LastTrigger)  // No such index
