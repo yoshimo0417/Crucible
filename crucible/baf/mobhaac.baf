@@ -1,0 +1,10 @@
+IF
+  IsOverMe([ANYONE])
+  //Global("Warning3","mobhaa",0)
+  !GlobalTimerNotExpired("MO_RuneWarning","mobhaa")
+THEN
+  RESPONSE #100
+    //SetGlobal("Warning3","mobhaa",1)
+    SetGlobalTimer("MO_RuneWarning","mobhaa",18)
+    DisplayString(Myself,@5018)
+END

@@ -21,3 +21,21 @@ THEN
         AmbientActivate("amb_door02",FALSE)
         AmbientActivate("amb_door03",FALSE)
 END
+
+IF
+    Global("DoorOpenmobhaa","mobhaa",0)
+    PartyHasItem("mobha53a")
+THEN
+    RESPONSE #100
+        OpenDoor("Door01")
+        SetGlobal("DoorOpenmobhaa","mobhaa",1)
+END
+
+IF
+    Global("DoorOpenmobhaa","mobhaa",1)
+    !PartyHasItem("mobha53a")
+THEN
+    RESPONSE #100
+        CloseDoor("Door01")
+        SetGlobal("DoorOpenmobhaa","mobhaa",0)
+END

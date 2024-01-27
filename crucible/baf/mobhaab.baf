@@ -5,4 +5,8 @@ THEN
   RESPONSE #100
     SetGlobal("Warning2","mobhaa",1)
     DisplayString(Myself,@5017)
+    Wait(1)
+    CreateCreatureEffect("mobha03","SPSPEV",[2898.1495],S)  // Entropic Reaper
+    SmallWait(2)
+    CreateCreatureEffect("mobha03","SPSPEV",[3129.1576],SW)  // Entropic Reaper
 END

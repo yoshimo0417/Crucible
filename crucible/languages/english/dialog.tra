@@ -23,7 +23,8 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @5014 = ~Crucible~
 @5015 = ~The statue intones: Any who dare cross the rune barrier shall be struck down.~
 @5016 = ~You sense a great feeling of unease and danger. Something is not right.~
-@5017 = ~Your eyes fall upon magic runes inscribed upon the ground, and you feel latent magical energy emanating from them. This area is heavily warded to ensure only those who are welcome can safely pass.~
+@5017 = ~You feel eyes upon you and know you are not welcome.~
+@5018 = ~The runes at your feet are preventing you from progressing further. You will need to find a way to bypass them.~
 
 // Deathstalker Initial Convo (Eleven Labs)
 @5100 = ~I see you decided to finally arrive, <CHARNAME>. The hour is late and Amelyssan will ascend as the new lord of murder.~ [mobha000]
