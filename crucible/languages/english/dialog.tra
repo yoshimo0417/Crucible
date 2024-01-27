@@ -449,8 +449,20 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 // Kirinhale (Minerva)
 @7200 = ~This is placeholder dialog.~
 
-// Malik
-@7300 = ~~
+// Jambi - Rescue (Eleven Labs Giovanni) 
+@7300 = ~Blessings to you! You saved me from the dragon!~ [mobha245]
+@7301 = ~I was traveling through the area and was beset by that creature. Without your intervention, I fear my demise would have been most swift and painful.~ [mobha246]
+@7302 = ~Who are you?~  // Player 1
+@7303 = ~What is this place?~  // Player 1
+@7304 = ~I have no desire to speak with you.~  // Player 1
+@7305 = ~Of course! Please take this necklace as a token of my appreciation. I am a merchant, so feel free to speak with me if you are interested in trade.~ [mobha247]
+@7306 = ~Good day, and thanks for stopping by.~ [mobha233]
+@7307 = ~We are in Khalas which is the first layer of the Outer Plane known as Gehenna.~ [mobha249]
+@7308 = ~You'd refer to my kind as "Mercane". Like most of my people, I am a merchant and happy to trade and do business with you.~ [mobha236]
+@7309 = ~Do you wish to trade?~ [mobha248]
+@7310 = ~Please, see what I have to offer.~ [mobha232]
+@7311 = ~Let me see your store.~  // Player 1
+@7312 = ~I'm good for now.~  // Player 1
 
 // Noober (Elevenlabs Callum) - OLD (Atlas - Light-hearted)
 @7400 = ~Hi, I'm Noober. Nice place, huh?~
