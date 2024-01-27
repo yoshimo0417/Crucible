@@ -1,4 +1,4 @@
-// The Crucible, Dialog
+// The Crucible, Dialog/Text
 
 // Environmental
 @5000 = ~Waves of sulfur and carrion fill the air and off in the distance you can hear the gate to the Demon Tower crashing open.~
@@ -22,6 +22,8 @@ Suddenly, the realization hits you. This is not Bhaal's kingdom, but instead ano
 Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in the distance you can faintly identify a giant skull, and the essence within you confirms this is your destination. You feel an urging time is short, and you sense your essence stirring in the distance as Amelyssan prepares to ascend as the new Lord of Murder.~ [mobha178]
 @5014 = ~Crucible~
 @5015 = ~The statue intones: Any who dare cross the rune barrier shall be struck down.~
+@5016 = ~You sense a great feeling of unease and danger. Something is not right.~
+@5017 = ~Your eyes fall upon magic runes inscribed upon the ground, and you feel latent magical energy emanating from them. This area is heavily warded to ensure only those who are welcome can safely pass.~
 
 // Deathstalker Initial Convo (Eleven Labs)
 @5100 = ~I see you decided to finally arrive, <CHARNAME>. The hour is late and Amelyssan will ascend as the new lord of murder.~ [mobha000]
