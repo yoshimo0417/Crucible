@@ -38,6 +38,8 @@
 /////////////////////////////////////////////////////////////////////
 IF
   Global("Prep","LOCALS",0)
+  DifficultyGT(HARD)
+  See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
 THEN
   RESPONSE #100
@@ -45,7 +47,6 @@ THEN
     ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
     ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
     ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
-    ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_DIVINATION)  // SPWI592.SPL (Immunity: Divination)
     ApplySpell(Myself,WIZARD_FIRE_SHIELD_RED)
     ApplySpell(Myself,WIZARD_SPELL_SHIELD)  // SPWI519.SPL (Spell Shield)
     ApplySpell(Myself,WIZARD_SPELL_TRAP)  // SPWI902.SPL (Spell Trap)
@@ -67,12 +68,45 @@ THEN
     Continue()
 END
 
+IF
+  Global("Prep","LOCALS",0)
+  DifficultyLT(HARDEST)
+  See([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+    ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+    ApplySpell(Myself,WIZARD_MANTLE)
+    ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+    ApplySpell(Myself,WIZARD_SPELL_IMMUNITY_ABJURATION)  // SPWI590.SPL (Immunity: Abjuration)
+    ApplySpell(Myself,WIZARD_FIRE_SHIELD_RED)
+    ApplySpell(Myself,WIZARD_SPELL_SHIELD)  // SPWI519.SPL (Spell Shield)
+    SetGlobal("MO_Larloch","LOCALS",10)
+    SetGlobal("MO_MelfAcid","LOCALS",5)
+    SetGlobal("MO_FlameArrow","LOCALS",10)
+    SetGlobal("MO_Stoneskin","LOCALS",7)
+    SetGlobal("MO_SpellShield","LOCALS",1)
+    SetGlobal("MO_SpellImmunity","LOCALS",6)
+    SetGlobal("MO_PfMW","LOCALS",0)
+    SetGlobal("MO_DeathSpell","LOCALS",5)
+    SetGlobal("MO_FingerDeath","LOCALS",5)
+    SetGlobal("MO_SpellTurning","LOCALS",3)
+    SetGlobal("MO_AbiDalzims","LOCALS",6)
+    SetGlobal("MO_DragonsBreath","LOCALS",1)
+    SetGlobal("MO_BansheeWail","LOCALS",3)
+    SetGlobal("Prep","LOCALS",1)
+    SetGlobalTimer("MO_SpawnTimer","LOCALS",6)
+    Continue()
+END
+
 /////////////////////////////////////////////////////////////////////
 // Spawns (18s)
 /////////////////////////////////////////////////////////////////////
 IF 
   !GlobalTimerNotExpired("MO_SpawnTimer","LOCALS")
+  Global("Prep","LOCALS",1)
   DifficultyGT(HARD)
+  False()
 THEN 
   RESPONSE #100
     SetGlobalTimer("MO_SpawnTimer","LOCALS",12)
@@ -84,7 +118,8 @@ END
 
 IF 
   !GlobalTimerNotExpired("MO_SpawnTimer","LOCALS")
-  DifficultyLT(HARDEST)
+  Global("Prep","LOCALS",1)
+  DifficultyGT(HARD)
 THEN 
   RESPONSE #100
     SetGlobalTimer("MO_SpawnTimer","LOCALS",18)
