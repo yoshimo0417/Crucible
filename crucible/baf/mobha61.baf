@@ -75,9 +75,28 @@ IF
   DifficultyGT(HARD)
 THEN 
   RESPONSE #100
+    SetGlobalTimer("MO_SpawnTimer","LOCALS",12)
+    CreateCreatureObjectEffect("DBONEF01","SPRAISED",Myself)  // Bone Fiend
+    CreateCreatureObjectEffect("DBONEF01","SPRAISED",Myself)  // Bone Fiend
+    CreateCreatureObjectEffect("DBONEF01","SPRAISED",Myself)  // Bone Fiend
+    Continue()
+END
+
+IF 
+  !GlobalTimerNotExpired("MO_SpawnTimer","LOCALS")
+  DifficultyLT(HARDEST)
+THEN 
+  RESPONSE #100
     SetGlobalTimer("MO_SpawnTimer","LOCALS",18)
-    CreateCreatureObjectEffect("MELSUM02","SPRAISED",Myself)  // Bone Fiend
-    CreateCreatureObjectEffect("MELSUM02","SPRAISED",Myself)  // Bone Fiend
+    CreateCreatureObjectEffect("SKELWA02","SPRAISED",Myself)  // Skeleton Warrior
+    CreateCreatureObjectEffect("SKELWA02","SPRAISED",Myself)  // Skeleton Warrior
+    CreateCreatureObjectEffect("SKELWA03","SPRAISED",Myself)  // Skeleton Warrior
+    Continue()
+  RESPONSE #100
+    SetGlobalTimer("MO_SpawnTimer","LOCALS",18)
+    CreateCreatureObjectEffect("SKELWA02","SPRAISED",Myself)  // Skeleton Warrior
+    CreateCreatureObjectEffect("SKELWA03","SPRAISED",Myself)  // Skeleton Warrior
+    CreateCreatureObjectEffect("SKELWA03","SPRAISED",Myself)  // Skeleton Warrior
     Continue()
 END
 
