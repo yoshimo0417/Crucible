@@ -5,9 +5,9 @@
 BEGIN MOBHA53
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
-  SAY @7300 = @7301 = @7313
-  IF ~~ THEN REPLY @7302 DO ~GiveItemCreate("mobha53a",Player1,1,0,0)~ GOTO 3  // Who are you?
-  IF ~~ THEN REPLY @7304 DO ~GiveItemCreate("mobha53a",Player1,1,0,0)~ GOTO 1  // I have no desire to speak with you.
+  SAY @7300 = @7301
+  IF ~~ THEN REPLY @7302 DO ~~ GOTO 3  // Who are you?
+  IF ~~ THEN REPLY @7304 DO ~~ GOTO 1  // I have no desire to speak with you.
 END
 
 IF ~~ THEN BEGIN 1
