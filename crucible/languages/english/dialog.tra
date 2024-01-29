@@ -447,9 +447,24 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @7122 = ~Let me see your store.~  // Player 1
 @7123 = ~I'm good for now.~  // Player 1
 
-
 // Kirinhale (Minerva)
-@7200 = ~This is placeholder dialog.~
+@7200 = ~Who are you to be in a place such as this?~
+@7201 = ~Wait, you look familiar. Have we crossed paths before?~
+@7202 = ~I set you free in Durlag's Tower.~  // Player 1
+@7203 = ~We met in Durlag's Tower, and I left you to rot.~  // Player 1
+@7204 = ~I killed you in Durlag's Tower.~  // Player 1
+@7205 = ~No, I don't think we have.~  // Player 1
+@7206 = ~The irony. When we parted I told you your type is destined to meet mine, yet here we are again face to face.~
+@7207 = ~You have little reason to trust me as I've already failed to honor past bargains we've made, but do hear me out.~
+@7208 = ~That's right, I remember you. Lucky for me another fool adventuring party came in shortly after you cleared the Tower. They took me up on my deal, and I managed to escape.~
+@7209 = ~Most unfortunate that was, but it did grant me my freedom in the end. I'm willing to put that behind us if you hear me out.~
+@7210 = ~Perhaps I've been in the Abyss too long as I don't frequently mistake a face.~
+@7211 = ~As punishment for my absence due to Durlag's imprisonment, I must atone by providing a great many souls to my master.~
+@7212 = ~What better place to harvest souls than those belonging unattended to a dead god?~
+@7213 = ~I feel a thin veil here where they will be ripe for the taking; however, despite being dead Bhaal has enacted safeguards to keep his souls safe from thieves such as me.~
+@7214 = ~It is within my power to give you delights unearthly if you assist me in this manner.~  // MALE PC
+@7215 = ~If you want to help a fellow vixen atone, I could use your aid.~  // FEMALE PC
+@7216 = ~This quest is not yet completed and this is placeholder text.~ 
 
 // Jambi - Rescue (Eleven Labs Giovanni) 
 @7300 = ~Blessings to you! You saved me from the dragon!~ [mobha245]
