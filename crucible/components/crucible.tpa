@@ -651,7 +651,7 @@ COPY ~crucible/spl/mobha49b.spl~ ~override~  // Acidic Backlash
     spwi418d
     mobtr22
     solak1
-    mobha49a
+    //mobha49a
   BEGIN
     PATCH_IF FILE_EXISTS_IN_GAME ~%fireshield%.SPL~ THEN BEGIN
       LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 10 resist_dispel = 0 duration = 2 probability1 = 100 STR_VAR resource = ~%fireshield%~ END
@@ -740,6 +740,38 @@ COPY ~crucible/cre/mobha57.cre~ ~override/mobha57.cre~
 COPY ~crucible/itm/mobha57a.itm~ ~override~  // claw
 COPY ~crucible/itm/mobha57b.itm~ ~override~  // bite
 COPY ~crucible/itm/mobha57c.itm~ ~override~  // +40% Physical Damage Resist
+COPY ~crucible/itm/mobha57d.itm~ ~override~  // Pyroclastic Dragon Scale
+  SAY NAME1 @10014
+  SAY NAME2 @10014
+  SAY DESC  @10015
+COPY ~crucible/itm/mobha57e.itm~ ~override~  // Pyroclastic Dragon Plate
+  SAY NAME2 @10016
+  SAY DESC  @10017
+COPY ~crucible/spl/mobha57a.spl~ ~override~  // Flame Bite
+  SAY NAME1 @4009
+  SAY NAME2 @4009
+  // This is to prevent fireshields from entering a repeating loop of damaging one another
+  PATCH_FOR_EACH fireshield IN
+    balshld2
+    bdbarbde
+    bdsha12a
+    bdshld02
+    keldorn
+    leat23a
+    spcl237d
+    spimixd
+    sppr730d
+    sppr951d
+    sppr952d
+    spwi403d
+    spwi418d
+    mobtr22
+    solak1
+  BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~%fireshield%.SPL~ THEN BEGIN
+      LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 10 resist_dispel = 0 duration = 2 probability1 = 100 STR_VAR resource = ~%fireshield%~ END
+    END
+  END
 
 //-------------------------------------------------------------------------
 // Malik
@@ -777,6 +809,7 @@ END ELSE BEGIN
 END
 
 // Cespenar chats
+COMPILE ~crucible/dlg/mobha57e.d~
 COMPILE EVALUATE_BUFFER ~crucible/dlg/update_botsmith.d~
 COMPILE EVALUATE_BUFFER ~crucible/dlg/botsmith.d~
 
@@ -793,6 +826,10 @@ END ELSE BEGIN
   COPY ~crucible/baf/motob01.baf~ ~override/motob01.bcs~
     COMPILE_BAF_TO_BCS
 END
+
+//-------------------------------------------------------------------------
+// New items from Cespenar
+EXTEND_BOTTOM ~BOTSMITH.BCS~ ~crucible/baf/BOTSMITH.baf~
 
 //-------------------------------------------------------------------------
 // Remove the "Remove Pocket Plane Ability" from transition cutscene

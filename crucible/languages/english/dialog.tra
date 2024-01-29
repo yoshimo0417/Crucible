@@ -396,6 +396,8 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @6802 = ~I did not expect to see you again.~  // Player
 @6803 = ~I see you are serving the enemy now.~  // Player
 @6804 = ~Back home and back to work for rattlebones over there. See, I have my work bench!~
+@6805 = ~Oh, is pyroclastic dragon scales. It hurts touching! I make good plate armor, though...ouch... gotsa be careful. 10,000 gp... you wants?~
+@6806 = ~Kinda happy you said no...those scales hurt to touch!~
 
 // Uthaedeol & Culdus 
 @6900 = ~Traitor! You should suffer a thousand deaths for betraying Bhaal.~ [mobha112] 

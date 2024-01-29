@@ -98,3 +98,25 @@ Weight: 0~
 STATISTICS:
 
 Weight: 1~
+
+@10014 = ~Pyroclastic Dragon Scale~
+@10015 = ~A number of scales were salvaged from the pyroclastic dragon. Legend has it they can be magically forged into powerful armor.
+
+STATISTICS:
+
+Weight: 15~
+
+@10016 = ~Pyroclastic Dragon Plate~
+@10017 = ~The durable scales of the pyroclastic dragon provide excellent protection against weapons and fire.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +40%
+– 2 points of fire damage to any who damage the wielder
+
+Armor Class: -2 (-5 vs. slashing, -3 vs. piercing and missile)
+Requires:
+ 15 Strength
+
+Weight: 40~
