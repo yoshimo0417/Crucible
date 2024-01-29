@@ -6,5 +6,6 @@ THEN
     SetGlobal("MOBHA#TOBItemUp","GLOBAL",0)
     SetGlobal("ImpForgeStuff","GLOBAL",0)
     GiveItemCreate("mobha57e",Player1,0,0,0)
+    SetGlobal("ItemMaker","GLOBAL",1)
     StartDialogueNoSet(Player1)
 END
