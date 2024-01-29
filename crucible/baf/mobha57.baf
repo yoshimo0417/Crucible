@@ -19,6 +19,7 @@ IF
 THEN
   RESPONSE #100
     EquipMostDamagingMelee() // use those claws!
+    SetGlobal("MO_FireStorm","LOCALS",10)
     SetGlobal("Prep","LOCALS",1)
 END
 
@@ -30,6 +31,7 @@ IF
 THEN
   RESPONSE #100
     DestroyItem("MOBHA57C")
+    SetGlobal("MO_FireStorm","LOCALS",0)
     EquipMostDamagingMelee() // use those claws!
     SetGlobal("Prep","LOCALS",1)
 END
@@ -81,6 +83,239 @@ THEN
   RESPONSE #100
     SetGlobalTimer("Buffet","LOCALS",12)
     ForceSpell(NearestEnemyOf(Myself),DRAGON_WING_BUFFET)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Spell: Fire Storm
+/////////////////////////////////////////////////////////////////////
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
+  GlobalGT("MO_FireStorm","LOCALS",0)
+  DifficultyGT(HARD)
+  See([GOODCUTOFF])
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #50
+    SetGlobal("MO_CastFireStorm","LOCALS",1)
+    Continue()
+  RESPONSE #50
+    SetGlobal("MO_CastFireStorm","LOCALS",0)
+    Continue()
+END 
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
+  GlobalGT("MO_FireStorm","LOCALS",0)
+  Global("MO_CastFireStorm","LOCALS",1)
+  DifficultyGT(HARD)
+  See(NearestEnemyOfType([GOODCUTOFF]))
+  NumCreatureGT([GOODCUTOFF],3)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
+  !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_FireStormTimer","LOCALS",18)
+    IncrementGlobal("MO_FireStorm","LOCALS",-1)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    SetInterrupt(TRUE)
+END
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
+  GlobalGT("MO_FireStorm","LOCALS",0)
+  Global("MO_CastFireStorm","LOCALS",1)
+  DifficultyGT(HARD)
+  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  NumCreatureGT([GOODCUTOFF],3)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
+  !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_FireStormTimer","LOCALS",18)
+    IncrementGlobal("MO_FireStorm","LOCALS",-1)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    SetInterrupt(TRUE)
+END
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
+  GlobalGT("MO_FireStorm","LOCALS",0)
+  Global("MO_CastFireStorm","LOCALS",1)
+  DifficultyGT(HARD)
+  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  NumCreatureGT([GOODCUTOFF],3)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
+  !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_FireStormTimer","LOCALS",18)
+    IncrementGlobal("MO_FireStorm","LOCALS",-1)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    SetInterrupt(TRUE)
+END
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
+  GlobalGT("MO_FireStorm","LOCALS",0)
+  Global("MO_CastFireStorm","LOCALS",1)
+  DifficultyGT(HARD)
+  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  NumCreatureGT([GOODCUTOFF],3)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
+  !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_FireStormTimer","LOCALS",18)
+    IncrementGlobal("MO_FireStorm","LOCALS",-1)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    SetInterrupt(TRUE)
+END
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
+  GlobalGT("MO_FireStorm","LOCALS",0)
+  Global("MO_CastFireStorm","LOCALS",1)
+  DifficultyGT(HARD)
+  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  NumCreatureGT([GOODCUTOFF],3)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
+  !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_FireStormTimer","LOCALS",18)
+    IncrementGlobal("MO_FireStorm","LOCALS",-1)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    SetInterrupt(TRUE)
+END
+
+IF 
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  !GlobalTimerNotExpired("MO_FireStormTimer","LOCALS")
+  GlobalGT("MO_FireStorm","LOCALS",0)
+  Global("MO_CastFireStorm","LOCALS",1)
+  DifficultyGT(HARD)
+  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  NumCreatureGT([GOODCUTOFF],3)
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !CheckStatGT(LastSeenBy(Myself),0,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_DEFLECTION)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TURNING)
+  !CheckStat(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  !CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStatGT(LastSeenBy(Myself),50,RESISTMAGIC)
+  !CheckStatGT(LastSeenBy(Myself),70,RESISTFIRE)
+  !CheckSpellState(LastSeenBy(Myself),SI_EVOCATION)
+  !StateCheck(Myself,STATE_SILENCED)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetGlobalTimer("MO_FireStormTimer","LOCALS",18)
+    IncrementGlobal("MO_FireStorm","LOCALS",-1)
+    SetInterrupt(FALSE)
+    ReallyForceSpell(LastSeenBy(Myself),CLERIC_FIRE_STORM)
+    SetInterrupt(TRUE)
 END
 
 /////////////////////////////////////////////////////////////////////
