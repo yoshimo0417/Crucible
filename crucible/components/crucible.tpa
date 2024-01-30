@@ -122,7 +122,7 @@ COPY ~crucible/cre/mobha03.cre~ ~override~  // Entropic Reaper
 COPY ~crucible/spl/mobha03.spl~ ~override~  // Entropic Reaper Crit bonus (x4)
 COPY ~crucible/itm/mobha03.itm~ ~override~  // Entropic Reaper Scythe
 
-COPY ~crucible/cre/mobha03.cre~ ~override/mobha03k~  // Entropic Reaper
+COPY ~crucible/cre/mobha03.cre~ ~override/mobha03k.cre~  // Entropic Reaper
   SAY NAME1 @2001
   SAY NAME2 @2001
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#MERRENOLOTH~))
