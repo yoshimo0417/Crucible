@@ -81,7 +81,6 @@ IF ~Global("MO_KirinQuest","GLOBAL",2)~ THEN BEGIN 12
   SAY @7225
   IF ~~ THEN DO ~ForceSpell(Myself,FLASHY_2)
 SetGlobal("MO_KirinQuest","GLOBAL",3)
-SetGlobalTimer("MO_KirinQuest","GLOBAL",THREE_ROUNDS)
 CreateVisualEffectObject("SPPLANAR","mobha22")
 Deactivate(Myself)~ EXIT
 END
