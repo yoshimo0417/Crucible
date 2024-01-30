@@ -44,12 +44,20 @@ END
 // Kirinhale's Quest
 /////////////////////////////////////////////////////////////////////
 IF
-    GlobalTimerExpired("MO_KirinQuest","GLOBAL")
     Global("MO_KirinQuest","GLOBAL",3)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("MO_KirinQuest","mobhaa",12)
+        SetGlobal("MO_KirinQuest","GLOBAL",4)
+END
+
+IF
+    GlobalTimerExpired("MO_KirinQuest","mobhaa")
+    Global("MO_KirinQuest","GLOBAL",4)
 THEN
     RESPONSE #100
         CreateVisualEffectObject("SPPLANAR","mobha22")  // Kirinhale
         Wait(2)
         Activate("mobha22")  // Kirinhale
-        SetGlobal("MO_KirinQuest","GLOBAL",4)
+        SetGlobal("MO_KirinQuest","GLOBAL",5)
 END

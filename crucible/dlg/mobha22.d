@@ -86,7 +86,7 @@ CreateVisualEffectObject("SPPLANAR","mobha22")
 Deactivate(Myself)~ EXIT
 END
 
-IF ~Global("MO_KirinQuest","GLOBAL",5)~ THEN BEGIN 13
+IF ~Global("MO_KirinQuest","GLOBAL",6)~ THEN BEGIN 13
   SAY @7226
   IF ~Gender(Player1,MALE)~ THEN DO ~GiveItemCreate("mobha53a",Player1,1,0,0)~ GOTO 14
   IF ~Gender(Player1,FEMALE)~ THEN DO ~GiveItemCreate("mobha53a",Player1,1,0,0)~ GOTO 15

@@ -29,10 +29,10 @@ END
 IF
   See([PC])
   !Allegiance(Myself,ENEMY)
-  Global("MO_KirinQuest","GLOBAL",4)
+  Global("MO_KirinQuest","GLOBAL",5)
 THEN
   RESPONSE #100
-    SetGlobal("MO_KirinQuest","GLOBAL",5)
+    SetGlobal("MO_KirinQuest","GLOBAL",6)
     Wait(2)
     StartDialogueNoSet(LastSeenBy(Myself))
 END
