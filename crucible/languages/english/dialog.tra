@@ -482,6 +482,8 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @7312 = ~I'm good for now.~  // Player 1
 @7313 = ~Please, take this necklace as a token of my appreciation.~ [mobha250]
 @7314 = ~Of course! I am a merchant, so feel free to speak with me if you are interested in trade.~ [mobha251]
+@7315 = ~Greetings! I am Jambi, a traveling merchant making my way through this most inhospitable Plane. A "gentle land" this is not.~
+@7316 = ~A traveling merchant? I'd like to see your wares.~  // Player 1
 
 // Noober (Elevenlabs Callum) - OLD (Atlas - Light-hearted)
 @7400 = ~Hi, I'm Noober. Nice place, huh?~
