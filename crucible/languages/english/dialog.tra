@@ -464,7 +464,19 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @7213 = ~I feel a thin veil here where they will be ripe for the taking; however, despite being dead Bhaal has enacted safeguards to keep his souls safe from thieves such as me.~
 @7214 = ~It is within my power to give you delights unearthly if you assist me in this manner.~  // MALE PC
 @7215 = ~If you want to help a fellow vixen atone, I could use your aid.~  // FEMALE PC
-@7216 = ~This quest is not yet completed and this is placeholder text.~ 
+@7216 = ~I don't know why, but I suspect you are attempting to get into Bhaal's realm. I don't have much time, so I'll even give you this medallion I found off one of his followers. It looks like it will allow you to bypass the protective warding.~ 
+@7217 = ~I see I don't have a choice in the matter. I'll aid you.~  // Player 1
+@7218 = ~As the souls are of a foul nature, I will help you.~  // Player 1
+@7219 = ~What do you plan on using the souls for?~  // Player 1
+@7220 = ~Evil souls or not, I cannot allow you to do this.~  // Player 1
+@7221 = ~I plan on becoming the new Lord of Murder and won't allow you to pre-emptively steal from me.~  // Player 1
+@7222 = ~Same as any would do in the Abyss. Both devils and demons harvest souls as yet more fodder for the eternal blood war.~
+@7223 = ~Worthless mortal! I will go elsewhere to hunt for souls.~
+@7224 = ~Splendid! Prepare yourself as I suspect we will be attacked as soon as I begin the attempt.~
+@7225 = ~With that unpleasantry out of the way, I will quickly pierce the vale to collect my souls and return in short order.~
+@7226 = ~And it is done! As promised, here is Bhaal's Medallion.~
+@7227 = ~As for the unearthly delights and all that, I have no intention of honoring that bargain. I have places to be, male, and will waste no more time on this Plane.~
+@7228 = ~I have places to be and souls to deliver. Perhaps our paths will cross again.~
 
 // Jambi - Rescue (Eleven Labs Giovanni) 
 @7300 = ~Blessings to you! You saved me from the dragon!~ [mobha245]

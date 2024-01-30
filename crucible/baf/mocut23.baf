@@ -1,0 +1,16 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("mobha22")  // Kirinhale
+        ForceSpell(Myself,DO_NOTHING)  // SPIN905.SPL (No such index)
+        Wait(1)
+        CreateCreatureEffect("mobha03k","SPSPEV",[3552.1475],NE)  // Entropic Reaper
+        SmallWait(5)
+        CreateCreatureEffect("mobha03k","SPSPEV",[3276.1605],NE)  // Entropic Reaper
+        SmallWait(5)
+        CreateCreatureEffect("mobha03k","SPSPEV",[3597.1573],NE)  // Entropic Reaper
+        Wait(1)
+        SetGlobal("MO_KirinQuest","GLOBAL",1)
+        EndCutSceneMode()
+END

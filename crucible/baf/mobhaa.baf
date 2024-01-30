@@ -39,3 +39,17 @@ THEN
         CloseDoor("Door01")
         SetGlobal("DoorOpenmobhaa","mobhaa",0)
 END
+
+/////////////////////////////////////////////////////////////////////
+// Kirinhale's Quest
+/////////////////////////////////////////////////////////////////////
+IF
+    GlobalTimerExpired("MO_KirinQuest","GLOBAL")
+    Global("MO_KirinQuest","GLOBAL",3)
+THEN
+    RESPONSE #100
+        CreateVisualEffectObject("SPPLANAR","mobha22")  // Kirinhale
+        Wait(2)
+        Activate("mobha22")  // Kirinhale
+        SetGlobal("MO_KirinQuest","GLOBAL",4)
+END
