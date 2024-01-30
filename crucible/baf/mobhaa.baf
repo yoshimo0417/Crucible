@@ -47,12 +47,12 @@ IF
     Global("MO_KirinQuest","GLOBAL",3)
 THEN
     RESPONSE #100
-        SetGlobalTimer("MO_KirinQuest","mobhaa",12)
+        SetGlobalTimer("MO_KirinQuestTimer","mobhaa",12)
         SetGlobal("MO_KirinQuest","GLOBAL",4)
 END
 
 IF
-    GlobalTimerExpired("MO_KirinQuest","mobhaa")
+    GlobalTimerExpired("MO_KirinQuestTimer","mobhaa")
     Global("MO_KirinQuest","GLOBAL",4)
 THEN
     RESPONSE #100
