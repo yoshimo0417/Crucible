@@ -70,7 +70,7 @@ IF ~~ THEN BEGIN 100
 Enemy()~ EXIT
 END
 
-IF ~HPLT(Myself,2)~ THEN BEGIN 1
+IF ~Global("MO_PhaseOneComplete","MOBHA9",2)~ THEN BEGIN 1
   SAY @6220
   IF ~~ THEN DO ~SetGlobal("MO_Malchediel_Defeated","GLOBAL",1)
 AddXPObject(Player1,20000)
