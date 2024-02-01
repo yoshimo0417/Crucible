@@ -119,7 +119,7 @@ THEN
     ApplySpell(Myself,CLERIC_DEATH_WARD)  // SPPR409.SPL (Death Ward)
     ApplySpell(Myself,CLERIC_TRUE_SIGHT)
     //ApplySpell(Myself,WIZARD_IMPROVED_HASTE)  // Granted from Amulet of the Cheetah
-    ApplySpell(Myself,CLERIC_GLOBE_OF_BLADES)
+    //ApplySpell(Myself,CLERIC_GLOBE_OF_BLADES)
     ApplySpell(Myself,CLERIC_ARMOR_OF_FAITH)
     ApplySpell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
     ApplySpell(Myself,CLERIC_RESIST_FIRE)  // SPPR210.SPL (Resist Fire and Cold)

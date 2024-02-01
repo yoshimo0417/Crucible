@@ -24,6 +24,7 @@ END
 /////////////////////////////////////////////////////////////////////
 IF
   Global("Prep","LOCALS",0)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
@@ -31,6 +32,17 @@ THEN
     SetGlobal("MO_Globe","LOCALS",2)
     SetGlobal("MO_Chaos","LOCALS",1)
     ApplySpell(Myself,CLERIC_GLOBE_OF_BLADES)
+END
+
+IF
+  Global("Prep","LOCALS",0)
+  DifficultyLT(HARDEST)
+THEN
+  RESPONSE #100
+    SetGlobal("Prep","LOCALS",1)
+    SetGlobal("MO_Dispel","LOCALS",3)
+    SetGlobal("MO_Globe","LOCALS",2)
+    SetGlobal("MO_Chaos","LOCALS",1)
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -254,6 +266,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   GlobalGT("MO_Globe","LOCALS",0)
+  DifficultyGT(HARD)
   See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
   CheckStatLT(Myself,1,CLERIC_BLADE_BARRIER)

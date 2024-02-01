@@ -82,7 +82,7 @@ THEN
     SetGlobalTimer("MO_VengeanceStormTimer","LOCALS",12)
     ApplySpell(Myself,CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Righteous Magic)
     // IWD Prebuffs
-    ApplySpell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
+    ApplySpell(Myself,CLERIC_GLOBE_OF_BLADES)  // SPPR7xx.SPL (Globe of Blades)
     ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
     XEquipItem("mobha23a",Myself,SLOT_WEAPON0,EQUIP)
 END
@@ -96,7 +96,7 @@ THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
     ApplySpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)  // SPPR214.SPL (Draw Upon Holy Might)
-    ApplySpell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
+    //ApplySpell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
     ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)  // SPPR701.SPL (Shield of the Archons)
     XEquipItem("mobha23f",Myself,SLOT_WEAPON1,EQUIP)
 END
@@ -224,6 +224,7 @@ IF
   OR(2)
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
+  DifficultyGT(HARD)
   See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
   CheckStatLT(Myself,1,CLERIC_BLADE_BARRIER)

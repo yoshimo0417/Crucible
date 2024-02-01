@@ -26,6 +26,7 @@ END
 /////////////////////////////////////////////////////////////////////
 IF
   Global("Prep","LOCALS",0)
+  DifficultyGT(HARD)
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
@@ -47,21 +48,25 @@ THEN
 END
 
 IF
+  Global("Prep","LOCALS",0)
   DifficultyLT(HARDEST)
-  Global("MO_CheckDifficulty","LOCALS",0) 
-THEN 
+THEN
   RESPONSE #100
-    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    SetGlobal("Prep","LOCALS",1)
+    SetGlobal("MO_Dispel","LOCALS",3)
+    SetGlobal("MO_FlameStrike","LOCALS",3)
+    SetGlobal("MO_InsectPlague","LOCALS",3)
+    SetGlobal("MO_Invisibility","LOCALS",3)
+    SetGlobal("MO_Heal","LOCALS",3)
+    SetGlobal("MO_Globe","LOCALS",2)
+    SetGlobal("MO_Earthquake","LOCALS",3)
+    SetGlobal("MO_FireStorm","LOCALS",3)
+    SetGlobal("MO_UnholyWord","LOCALS",3)
+    SetGlobal("MO_SymbolFear","LOCALS",3)
+    SetGlobal("MO_SymbolDeath","LOCALS",3)
+    SetGlobal("MO_Chaos","LOCALS",1)
     DestroyItem("AMUL21")
-    Continue()
-END
-
-IF
-  DifficultyGT(HARD)
-  Global("MO_CheckDifficulty","LOCALS",0) 
-THEN 
-  RESPONSE #100
-    SetGlobal("MO_CheckDifficulty","LOCALS",1)
+    ApplySpell(Myself,CLERIC_TRUE_SIGHT)
     Continue()
 END
 
@@ -332,6 +337,7 @@ IF
     !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
     CheckStatGT(Myself,0,AURACLEANSING)
   GlobalGT("MO_Globe","LOCALS",0)
+  DifficultyGT(HARD)
   See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
   CheckStatLT(Myself,1,CLERIC_BLADE_BARRIER)

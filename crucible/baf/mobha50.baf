@@ -62,7 +62,7 @@ THEN
     ApplySpell(Myself,CLERIC_DEATH_WARD)  // SPPR409.SPL (Death Ward)
     ApplySpell(Myself,CLERIC_TRUE_SIGHT)
     // IWD Prebuffs
-    ApplySpell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
+    //ApplySpell(Myself,CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Blade Barrier)
     ApplySpell(Myself,CLERIC_ARMOR_OF_FAITH)
     ApplySpell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Physical Mirror)
     ApplySpell(Myself,CLERIC_RESIST_FIRE)  // SPPR210.SPL (Resist Fire and Cold)

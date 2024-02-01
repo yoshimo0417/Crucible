@@ -49,6 +49,8 @@ Weight: 8~
 
 It may be the right weapon to use against all clerics, paladins, and blackguards. 
 
+STATISTICS:
+
 Charge abilities: 
 – Invisibility twice per day
   Duration: 12 hours
@@ -60,8 +62,6 @@ Equipped abilities:
 Combat abilities:
 – When a target is killed with this blade, the wielder heals 10 Hit Points
 – If a Cleric or Paladin is hit with this weapon, they suffer -1 penalty to Wisdom for 3 rounds
-
-STATISTICS:
 
 THAC0: +5
 Damage: 1d4+5, +5 extra vs. clerics and paladins

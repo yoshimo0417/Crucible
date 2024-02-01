@@ -187,7 +187,7 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @6226 = ~You exceeded the expectations I've set for you and must be killed.~ [mobha161]
 @6227 = ~I even collected one of your siblings to see what all the fascination with your kind was about. The chaos surrounding Saradush allowed my Planetar to swoop in unnoticed and collect your brother.~ [mobha162]
 @6228 = ~Tell me Viekang, should I worry about your brother?~ [mobha163]
-@6229 = ~He must've defeated Yaga-Shura and his army to make it here. If he could survive that, then he can kill you!~   [mobha179] // Viekang
+@6229 = ~He must've defeated Yaga-Shura and his army to make it here. If he could survive that, then he can kill you!~   //[mobha179] // Viekang
 @6230 = ~A false equivalency. There is a vast difference between thinking one has power, like Yaga-Shura did, and actually having power.~ [mobha164]
 @6231 = ~Looking at your siblings, Viekang, you hold a marginal amount of Bhaal's essence. So little I don't think Amelyssan will notice it missing as she completes her ritual to ascend.~ [mobha165]
 @6232 = ~I have not been impressed by the amount and power of the essence within you.~
@@ -410,20 +410,20 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @6907 = ~Good, I've been looking forward to gutting you!~  // Player
 
 // Viekang (Sal - Pleading)
-@7000 = ~Given your reputation, I would rather be left with the Solar.~ [mobha180] 
-@7001 = ~You're a sight for sore eyes. You couldn't have arrived quickly enough.~ [mobha181] 
-@7002 = ~As I was escaping Saradush, the Planetar must have sensed me. They swooped in out of nowhere and all quickly faded to black.~ [mobha182] 
-@7003 = ~I don't know how long I was out for, but I awaken here to be tortured and experimented on by this twisted Solar. He even has me bound to chains that prevent me from teleporting away.~ [mobha183]
-@7004 = ~Please, I beg of you, set me free from this place. I barely have any of Bhaal's essence to matter.~ [mobha184]
+@7000 = ~Given your reputation, I would rather be left with the Solar.~ //[mobha180] 
+@7001 = ~You're a sight for sore eyes. You couldn't have arrived quickly enough.~ //[mobha181] 
+@7002 = ~As I was escaping Saradush, the Planetar must have sensed me. They swooped in out of nowhere and all quickly faded to black.~ //[mobha182] 
+@7003 = ~I don't know how long I was out for, but I awaken here to be tortured and experimented on by this twisted Solar. He even has me bound to chains that prevent me from teleporting away.~ //[mobha183]
+@7004 = ~Please, I beg of you, set me free from this place. I barely have any of Bhaal's essence to matter.~ //[mobha184]
 @7005 = ~I will set you free at once, flee this place.~  // Player 1
 @7006 = ~Swear an oath to me to never attempt to rise up and take the mantle of our father. In this place an oath will have power, like a geas. I will then give you your freedom.~  // Player 1
 @7007 = ~Little or not, I cannot have any loose ends running around. It's nothing personal, but you have to die.~  // Player 1
 @7008 = ~Die like the trapped animal that you are.~  // Player 1
 @7009 = ~I need a moment to think on this.~  // Player 1
-@7010 = ~Please, don't think on it for too long!~ [mobha185]
-@7011 = ~Coward! I hope Amelyssan kills you!~ [mobha186]
-@7012 = ~I swear. I will swear it here. You have my oath I will not try to become the Lord of Murder.~ [mobha187]
-@7013 = ~No offense, but I hope this is the last time I see you. Good luck against Amelyssan.~ [mobha188]
+@7010 = ~Please, don't think on it for too long!~ //[mobha185]
+@7011 = ~Coward! I hope Amelyssan kills you!~ //[mobha186]
+@7012 = ~I swear. I will swear it here. You have my oath I will not try to become the Lord of Murder.~ //[mobha187]
+@7013 = ~No offense, but I hope this is the last time I see you. Good luck against Amelyssan.~ //[mobha188]
 @7014 = ~I can't risk it. Die, fool!~  // Player 1
 
 // Jambi (Eleven Labs Giovanni) - OLD (Jean-Pierre - Arrogant)
