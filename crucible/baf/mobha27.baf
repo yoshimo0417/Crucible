@@ -34,6 +34,7 @@ THEN
     SetGlobal("Remove","LOCALS",1)
     SetGlobal("Confusion","LOCALS",1)
     SetGlobal("Stun","LOCALS",1)
+    SetGlobal("MO_SpawnCounter",0)
     SetGlobalTimer("MO_Spawn","LOCALS",3)
     ApplySpell(Myself,BALOR_FIRE_SHIELD)  // SPIN644.SPL (No such index)
 END
@@ -45,9 +46,11 @@ IF
   See([GOODCUTOFF])
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_Spawn","LOCALS")
+  GlobalLT("MO_SpawnCounter","LOCALS",10)
 THEN
   RESPONSE #100
-    SetGlobalTimer("MO_Spawn","LOCALS",12)
+    SetGlobalTimer("MO_Spawn","LOCALS",30)
+    IncrementGlobal("MO_SpawnCounter","LOCALS",1)
     CreateCreatureEffect("mobha11","SPMETSWA",[720.830],NE)  // Glabrezu
     CreateCreatureEffect("mobha11","SPMETSWA",[746.748],SE)  // Glabrezu
     CreateCreatureEffect("mobha11","SPMETSWA",[877.782],SW)  // Glabrezu

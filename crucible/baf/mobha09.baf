@@ -25,7 +25,8 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
-    SetGlobalTimer("MO_Spawn","LOCALS",18)
+    SetGlobal("MO_SpawnCounter",0)
+    SetGlobalTimer("MO_Spawn","LOCALS",30)
     ApplySpell(Myself,BALOR_FIRE_SHIELD)  // SPIN644.SPL (No such index)
     CreateCreatureObjectEffect("mobha11","SPMETSWA",LastSeenBy(Myself))
     CreateCreatureObjectEffect("mobha11","SPMETSWA",LastSeenBy(Myself))
@@ -40,7 +41,8 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
-    SetGlobalTimer("MO_Spawn","LOCALS",24)
+    SetGlobal("MO_SpawnCounter",0)
+    SetGlobalTimer("MO_Spawn","LOCALS",45)
     ApplySpell(Myself,BALOR_FIRE_SHIELD)  // SPIN644.SPL (No such index)
     CreateCreatureObjectEffect("mobha11","SPMETSWA",LastSeenBy(Myself))
     CreateCreatureObjectEffect("mobha11","SPMETSWA",LastSeenBy(Myself))
@@ -54,7 +56,8 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Prep","LOCALS",1)
-    SetGlobalTimer("MO_Spawn","LOCALS",30)
+    SetGlobal("MO_SpawnCounter",0)
+    SetGlobalTimer("MO_Spawn","LOCALS",60)
     ApplySpell(Myself,BALOR_FIRE_SHIELD)  // SPIN644.SPL (No such index)
     CreateCreatureObjectEffect("mobha11","SPMETSWA",LastSeenBy(Myself))
 END
@@ -66,9 +69,11 @@ IF
   See([GOODCUTOFF])
   !GlobalTimerNotExpired("MO_Spawn","LOCALS")
   DifficultyGT(HARD)
+  GlobalLT("MO_SpawnCounter","LOCALS",10)
 THEN
   RESPONSE #100
-    SetGlobalTimer("MO_Spawn","LOCALS",18)
+    SetGlobalTimer("MO_Spawn","LOCALS",30)
+    IncrementGlobal("MO_SpawnCounter","LOCALS",1)
     CreateCreatureObjectEffect("mobha11","SPMETSWA",LastSeenBy(Myself))
     CreateCreatureObjectEffect("mobha11","SPMETSWA",LastSeenBy(Myself))
     CreateCreatureObjectEffect("mobha11","SPMETSWA",LastSeenBy(Myself))
@@ -78,9 +83,11 @@ IF
   See([GOODCUTOFF])
   !GlobalTimerNotExpired("MO_Spawn","LOCALS")
   Difficulty(HARD)
+  GlobalLT("MO_SpawnCounter","LOCALS",8)
 THEN
   RESPONSE #100
-    SetGlobalTimer("MO_Spawn","LOCALS",24)
+    SetGlobalTimer("MO_Spawn","LOCALS",45)
+    IncrementGlobal("MO_SpawnCounter","LOCALS",1)
     CreateCreatureObjectEffect("mobha11","SPMETSWA",LastSeenBy(Myself))
     CreateCreatureObjectEffect("mobha11","SPMETSWA",LastSeenBy(Myself))
 END
@@ -89,9 +96,11 @@ IF
   See([GOODCUTOFF])
   !GlobalTimerNotExpired("MO_Spawn","LOCALS")
   DifficultyLT(HARD)
+  GlobalLT("MO_SpawnCounter","LOCALS",5)
 THEN
   RESPONSE #100
-    SetGlobalTimer("MO_Spawn","LOCALS",30)
+    SetGlobalTimer("MO_Spawn","LOCALS",60)
+    IncrementGlobal("MO_SpawnCounter","LOCALS",1)
     CreateCreatureObjectEffect("mobha11","SPMETSWA",LastSeenBy(Myself))
 END
 
