@@ -34,7 +34,7 @@ THEN
     SetGlobal("Remove","LOCALS",1)
     SetGlobal("Confusion","LOCALS",1)
     SetGlobal("Stun","LOCALS",1)
-    SetGlobal("MO_SpawnCounter",0)
+    SetGlobal("MO_SpawnCounter","LOCALS",0)
     SetGlobalTimer("MO_Spawn","LOCALS",3)
     ApplySpell(Myself,BALOR_FIRE_SHIELD)  // SPIN644.SPL (No such index)
 END
