@@ -35,14 +35,3 @@ IF ~True()~ THEN BEGIN 0
   IF ~~ THEN REPLY @6102 DO ~DestroySelf()~ EXIT
 END
 
-IF
-  Clicked([ANYONE])
-  Dead("Balth")
-THEN
-  RESPONSE #100
-    ClearAllActions()
-    SaveGame(2)
-    SmallWait(5)
-    StartCutSceneMode()
-    StartCutSceneEx("cut248a",FALSE)
-END
