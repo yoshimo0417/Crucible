@@ -4,6 +4,7 @@
 ///////////////////////////////////////////////////////////////////
 BEGIN MOBHA33
 
+/*
 IF ~True()~ THEN BEGIN 0
   SAY @6100
   IF ~~ THEN REPLY @6101 DO ~ClearAllActions()
@@ -15,4 +16,33 @@ ActionOverride(Player4,LeaveAreaLUA("MOBHA1","",[2400.1567],12))
 ActionOverride(Player5,LeaveAreaLUA("MOBHA1","",[2527.1696],12))
 ActionOverride(Player6,LeaveAreaLUA("MOBHA1","",[2464.1622],12))~ EXIT
   IF ~~ THEN REPLY @6102 DO ~DestroySelf()~ EXIT
+END
+*/
+
+
+IF ~True()~ THEN BEGIN 0
+  SAY @6100
+  IF ~Dead("Balth")~ THEN REPLY @6101 DO ~ClearAllActions()
+    SaveGame(2)
+    SmallWait(5)
+    StartCutSceneMode()
+    StartCutScene("cut248a")~ EXIT
+  IF ~Global("BalthazarFights","GLOBAL",1)~ THEN REPLY @6101 DO ~ClearAllActions()
+    SaveGame(2)
+    SmallWait(5)
+    StartCutSceneMode()
+    StartCutScene("fin248a")~ EXIT
+  IF ~~ THEN REPLY @6102 DO ~DestroySelf()~ EXIT
+END
+
+IF
+  Clicked([ANYONE])
+  Dead("Balth")
+THEN
+  RESPONSE #100
+    ClearAllActions()
+    SaveGame(2)
+    SmallWait(5)
+    StartCutSceneMode()
+    StartCutSceneEx("cut248a",FALSE)
 END
