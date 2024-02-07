@@ -77,11 +77,13 @@ END
 IF ~~ THEN BEGIN 6
   SAY @5130
   IF ~DifficultyLT(HARDEST)~ THEN DO ~SetGlobal("MOBHA1_Enemy","GLOBAL",1)
-ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
+ForceSpell(Myself,DRYAD_TELEPORT)
+AddJournalEntry(@20003,INFO)~ EXIT
   IF ~DifficultyGT(HARD)~ THEN DO ~SetGlobal("MOBHA1_Enemy","GLOBAL",1)
 CreateCreatureEffect("mobha06","SPDIMNDR",[2520.1491],SSW)  // Skirmisher
 CreateCreatureEffect("mobha06","SPDIMNDR",[2571.1506],SSW)  // Skirmisher
 SmallWait(10)
-ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
+ForceSpell(Myself,DRYAD_TELEPORT)
+AddJournalEntry(@20003,INFO)~ EXIT
 END
 

@@ -183,6 +183,7 @@ THEN
 		SetRestEncounterProbabilityDay(5) 
 		SetRestEncounterProbabilityNight(5)
 		DisplayStringHead(Player1,@5010)  // With Mayithra defeated, you feel like eyes are off you and the attacks upon you in Khalas will lessen.
+		AddJournalEntry(@20004,INFO)
 		SetGlobal("MO_RestEncounter","MOBHA1",5)
 END
 
