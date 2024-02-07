@@ -72,7 +72,7 @@ END
 IF
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  See(NearestEnemyOfType([GOODCUTOFF])) 
+  See(NearestEnemyOf(Myself)) 
   DifficultyGT(HARD)
   !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
   CheckStat(LastSeenBy(Myself),0,WEB)
@@ -90,7 +90,7 @@ END
 IF
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  See(SecondNearestEnemyOfType([GOODCUTOFF])) 
+  See(SecondNearestEnemyOf(Myself)) 
   DifficultyGT(HARD)
   !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
   CheckStat(LastSeenBy(Myself),0,WEB)
@@ -108,7 +108,7 @@ END
 IF
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  See(ThirdNearestEnemyOfType([GOODCUTOFF])) 
+  See(ThirdNearestEnemyOf(Myself)) 
   DifficultyGT(HARD)
   !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
   CheckStat(LastSeenBy(Myself),0,WEB)
@@ -126,7 +126,7 @@ END
 IF
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  See(FourthNearestEnemyOfType([GOODCUTOFF])) 
+  See(FourthNearestEnemyOf(Myself)) 
   DifficultyGT(HARD)
   !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
   CheckStat(LastSeenBy(Myself),0,WEB)
@@ -144,7 +144,7 @@ END
 IF
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  See(FifthNearestEnemyOfType([GOODCUTOFF])) 
+  See(FifthNearestEnemyOf(Myself)) 
   DifficultyGT(HARD)
   !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
   CheckStat(LastSeenBy(Myself),0,WEB)
@@ -162,7 +162,7 @@ END
 IF
   Allegiance(Myself,ENEMY)
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
-  See(SixthNearestEnemyOfType([GOODCUTOFF])) 
+  See(SixthNearestEnemyOf(Myself)) 
   DifficultyGT(HARD)
   !StateCheck(LastSeenBy(Myself),STATE_IMMOBILE)
   CheckStat(LastSeenBy(Myself),0,WEB)

@@ -123,7 +123,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   DifficultyGT(HARD)
-  See(NearestEnemyOfType([GOODCUTOFF]))
+  See(NearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -148,7 +148,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   DifficultyGT(HARD)
-  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  See(SecondNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -173,7 +173,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   DifficultyGT(HARD)
-  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  See(ThirdNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -198,7 +198,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   DifficultyGT(HARD)
-  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  See(FourthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -223,7 +223,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   DifficultyGT(HARD)
-  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  See(FifthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -248,7 +248,7 @@ END
 IF
   !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
   DifficultyGT(HARD)
-  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  See(SixthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   GlobalGT("MO_GWW","LOCALS",0)
@@ -275,7 +275,7 @@ END
 /////////////////////////////////////////////////////////////////////
 IF
   Global("MO_IsMoving","LOCALS",1)
-  See(NearestEnemyOfType([GOODCUTOFF]))
+  See(NearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -289,7 +289,7 @@ END
 
 IF
   Global("MO_IsMoving","LOCALS",1)
-  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  See(SecondNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -303,7 +303,7 @@ END
 
 IF
   Global("MO_IsMoving","LOCALS",1)
-  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  See(ThirdNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -317,7 +317,7 @@ END
 
 IF
   Global("MO_IsMoving","LOCALS",1)
-  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  See(FourthNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -331,7 +331,7 @@ END
 
 IF
   Global("MO_IsMoving","LOCALS",1)
-  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  See(FifthNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -345,7 +345,7 @@ END
 
 IF
   Global("MO_IsMoving","LOCALS",1)
-  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  See(SixthNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -360,7 +360,7 @@ END
 IF
   ActionListEmpty()
   DifficultyGT(HARD)
-  See(NearestEnemyOfType([GOODCUTOFF]))
+  See(NearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -378,7 +378,7 @@ END
 IF
   ActionListEmpty()
   DifficultyGT(HARD)
-  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  See(SecondNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -396,7 +396,7 @@ END
 IF
   ActionListEmpty()
   DifficultyGT(HARD)
-  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  See(ThirdNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -414,7 +414,7 @@ END
 IF
   ActionListEmpty()
   DifficultyGT(HARD)
-  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  See(FourthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -432,7 +432,7 @@ END
 IF
   ActionListEmpty()
   DifficultyGT(HARD)
-  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  See(FifthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -450,7 +450,7 @@ END
 IF
   ActionListEmpty()
   DifficultyGT(HARD)
-  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  See(SixthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
@@ -467,7 +467,7 @@ END
 
 IF
   ActionListEmpty()
-  See(NearestEnemyOfType([GOODCUTOFF]))
+  See(NearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -480,7 +480,7 @@ END
 
 IF
   ActionListEmpty()
-  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  See(SecondNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -493,7 +493,7 @@ END
 
 IF
   ActionListEmpty()
-  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  See(ThirdNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -506,7 +506,7 @@ END
 
 IF
   ActionListEmpty()
-  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  See(FourthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -519,7 +519,7 @@ END
 
 IF
   ActionListEmpty()
-  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  See(FifthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -532,7 +532,7 @@ END
 
 IF
   ActionListEmpty()
-  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  See(SixthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   Allegiance(Myself,ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)

@@ -47,7 +47,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_RemoveMagicTimer","LOCALS")
   Global("MO_CastRemoveMagic","LOCALS",1)
-  See(NearestEnemyOfType([GOODCUTOFF]))
+  See(NearestEnemyOf(Myself))
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -82,7 +82,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_RemoveMagicTimer","LOCALS")
   Global("MO_CastRemoveMagic","LOCALS",1)
-  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  See(SecondNearestEnemyOf(Myself))
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -117,7 +117,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_RemoveMagicTimer","LOCALS")
   Global("MO_CastRemoveMagic","LOCALS",1)
-  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  See(ThirdNearestEnemyOf(Myself))
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -152,7 +152,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_RemoveMagicTimer","LOCALS")
   Global("MO_CastRemoveMagic","LOCALS",1)
-  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  See(FourthNearestEnemyOf(Myself))
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -187,7 +187,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_RemoveMagicTimer","LOCALS")
   Global("MO_CastRemoveMagic","LOCALS",1)
-  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  See(FifthNearestEnemyOf(Myself))
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -222,7 +222,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("MO_RemoveMagicTimer","LOCALS")
   Global("MO_CastRemoveMagic","LOCALS",1)
-  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  See(SixthNearestEnemyOf(Myself))
   OR(4)
     CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
     CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
@@ -278,7 +278,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastConfusion","LOCALS",1)
   GlobalGT("MO_Confusion","LOCALS",0)
-  See(NearestEnemyOfType([GOODCUTOFF]))
+  See(NearestEnemyOf(Myself))
   !General(LastSeenBy(Myself),UNDEAD)
   !General(LastSeenBy(Myself),PLANT)
   !Race(LastSeenBy(Myself),DEMONIC)
@@ -327,7 +327,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastConfusion","LOCALS",1)
   GlobalGT("MO_Confusion","LOCALS",0)
-  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  See(SecondNearestEnemyOf(Myself))
   !General(LastSeenBy(Myself),UNDEAD)
   !General(LastSeenBy(Myself),PLANT)
   !Race(LastSeenBy(Myself),DEMONIC)
@@ -376,7 +376,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastConfusion","LOCALS",1)
   GlobalGT("MO_Confusion","LOCALS",0)
-  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  See(ThirdNearestEnemyOf(Myself))
   !General(LastSeenBy(Myself),UNDEAD)
   !General(LastSeenBy(Myself),PLANT)
   !Race(LastSeenBy(Myself),DEMONIC)
@@ -425,7 +425,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastConfusion","LOCALS",1)
   GlobalGT("MO_Confusion","LOCALS",0)
-  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  See(FourthNearestEnemyOf(Myself))
   !General(LastSeenBy(Myself),UNDEAD)
   !General(LastSeenBy(Myself),PLANT)
   !Race(LastSeenBy(Myself),DEMONIC)
@@ -474,7 +474,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastConfusion","LOCALS",1)
   GlobalGT("MO_Confusion","LOCALS",0)
-  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  See(FifthNearestEnemyOf(Myself))
   !General(LastSeenBy(Myself),UNDEAD)
   !General(LastSeenBy(Myself),PLANT)
   !Race(LastSeenBy(Myself),DEMONIC)
@@ -523,7 +523,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   Global("MO_CastConfusion","LOCALS",1)
   GlobalGT("MO_Confusion","LOCALS",0)
-  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  See(SixthNearestEnemyOf(Myself))
   !General(LastSeenBy(Myself),UNDEAD)
   !General(LastSeenBy(Myself),PLANT)
   !Race(LastSeenBy(Myself),DEMONIC)
@@ -593,7 +593,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   GlobalGT("MO_Paralyze","LOCALS",0)
   Global("MO_CastParalyze","LOCALS",1)
-  See(NearestEnemyOfType([GOODCUTOFF]))
+  See(NearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   OR(5)
     Class(LastSeenBy(Myself),RANGER_ALL)
@@ -641,7 +641,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   GlobalGT("MO_Paralyze","LOCALS",0)
   Global("MO_CastParalyze","LOCALS",1)
-  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  See(SecondNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   OR(5)
     Class(LastSeenBy(Myself),RANGER_ALL)
@@ -880,7 +880,7 @@ END
 /////////////////////////////////////////////////////////////////////
 IF
   Global("MO_IsMoving","LOCALS",1)
-  See(NearestEnemyOfType([GOODCUTOFF]))
+  See(NearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -894,7 +894,7 @@ END
 
 IF
   Global("MO_IsMoving","LOCALS",1)
-  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  See(SecondNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -908,7 +908,7 @@ END
 
 IF
   Global("MO_IsMoving","LOCALS",1)
-  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  See(ThirdNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -922,7 +922,7 @@ END
 
 IF
   Global("MO_IsMoving","LOCALS",1)
-  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  See(FourthNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -936,7 +936,7 @@ END
 
 IF
   Global("MO_IsMoving","LOCALS",1)
-  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  See(FifthNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -950,7 +950,7 @@ END
 
 IF
   Global("MO_IsMoving","LOCALS",1)
-  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  See(SixthNearestEnemyOf(Myself))
   Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
@@ -965,7 +965,7 @@ END
 IF
   ActionListEmpty()
   DifficultyGT(HARD)
-  See(NearestEnemyOfType([GOODCUTOFF]))
+  See(NearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
@@ -981,7 +981,7 @@ END
 IF
   ActionListEmpty()
   DifficultyGT(HARD)
-  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  See(SecondNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
@@ -997,7 +997,7 @@ END
 IF
   ActionListEmpty()
   DifficultyGT(HARD)
-  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  See(ThirdNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
@@ -1013,7 +1013,7 @@ END
 IF
   ActionListEmpty()
   DifficultyGT(HARD)
-  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  See(FourthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
@@ -1029,7 +1029,7 @@ END
 IF
   ActionListEmpty()
   DifficultyGT(HARD)
-  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  See(FifthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
@@ -1045,7 +1045,7 @@ END
 IF
   ActionListEmpty()
   DifficultyGT(HARD)
-  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  See(SixthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
@@ -1060,7 +1060,7 @@ END
 
 IF
   ActionListEmpty()
-  See(NearestEnemyOfType([GOODCUTOFF]))
+  See(NearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
@@ -1072,7 +1072,7 @@ END
 
 IF
   ActionListEmpty()
-  See(SecondNearestEnemyOfType([GOODCUTOFF]))
+  See(SecondNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
@@ -1084,7 +1084,7 @@ END
 
 IF
   ActionListEmpty()
-  See(ThirdNearestEnemyOfType([GOODCUTOFF]))
+  See(ThirdNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
@@ -1096,7 +1096,7 @@ END
 
 IF
   ActionListEmpty()
-  See(FourthNearestEnemyOfType([GOODCUTOFF]))
+  See(FourthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
@@ -1108,7 +1108,7 @@ END
 
 IF
   ActionListEmpty()
-  See(FifthNearestEnemyOfType([GOODCUTOFF]))
+  See(FifthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
@@ -1120,7 +1120,7 @@ END
 
 IF
   ActionListEmpty()
-  See(SixthNearestEnemyOfType([GOODCUTOFF]))
+  See(SixthNearestEnemyOf(Myself))
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
