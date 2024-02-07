@@ -58,7 +58,7 @@ END
 // There are bodies everywhere, what happened here?
 IF ~~ THEN BEGIN 6
   SAY @6540 = @6541 = @6542
-  IF ~~ THEN GOTO 3
+  IF ~~ THEN DO ~AddJournalEntry(@20005,INFO)~ GOTO 3
 END
 
 //-------------------------------------------------------------------------
