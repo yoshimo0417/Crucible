@@ -435,3 +435,13 @@ THEN
     AttackOneRound(SixthNearestEnemyOf(Myself))
 END
 
+IF
+  ActionListEmpty()
+  See(NearestEnemyOf(Myself))
+  Allegiance(Myself,ENEMY)
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+THEN 
+  RESPONSE #100
+    AttackOneRound(NearestEnemyOf(Myself))
+END
