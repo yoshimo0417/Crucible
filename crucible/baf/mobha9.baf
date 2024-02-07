@@ -32,6 +32,7 @@ END
 /////////////////////////////////////////////////////////////////////
 // Spawn Planetars
 /////////////////////////////////////////////////////////////////////
+/*
 IF
   Global("MO_PhaseOneComplete","MOBHA9",1)
   Global("MO_SpawnTimerStart","MOBHA9",0)
@@ -72,3 +73,4 @@ THEN
     CreateCreatureEffect("mobha12","SPSPEV",[820.717],SW)  // Fallen Planetar
     Continue()
 END
+*/
