@@ -19,7 +19,7 @@ IF
   DifficultyGT(HARD)
 THEN 
   RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","MOBHA0",6)
+    SetGlobalTimer("MO_SpellCastTimer","MOBHA0",18)
     CreateCreatureEffect("MELSUM02","SPRAISED",[798.812],S)  // Bone Fiend
     CreateCreatureEffect("MELSUM02","SPRAISED",[950.841],S)  // Bone Fiend
     Continue()
@@ -33,7 +33,7 @@ IF
   RandomNum(2,1)
 THEN 
   RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","MOBHA0",18)
+    SetGlobalTimer("MO_SpellCastTimer","MOBHA0",30)
     CreateCreatureEffect("MELSUM02","SPRAISED",[798.812],S)  // Bone Fiend
     Continue()
 END
@@ -46,7 +46,7 @@ IF
   RandomNum(2,2)
 THEN 
   RESPONSE #100
-    SetGlobalTimer("MO_SpellCastTimer","MOBHA0",18)
+    SetGlobalTimer("MO_SpellCastTimer","MOBHA0",30)
     CreateCreatureEffect("MELSUM02","SPRAISED",[950.841],S)  // Bone Fiend
     Continue()
 END
