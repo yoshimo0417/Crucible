@@ -496,6 +496,10 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @7314 = ~Of course! I am a merchant, so feel free to speak with me if you are interested in trade.~ [mobha251]
 @7315 = ~Greetings! I am Jambi, a traveling merchant making my way through this most inhospitable Plane.~ [mobha252]
 @7316 = ~A traveling merchant? I'd like to see your wares.~  // Player 1
+@7317 = ~Why are you traveling here? I can't imagine you'd find many customers in these parts.~  // Player 1
+@7318 = ~You are certainly correct, and I don't like spending more time here than I have to.~ [mobha273]
+@7319 = ~Khalas is a necessary pathway as this is the only layer of Gehenna that touches the Astral Plane and has connections to the planes of Hades, Baator, and the Concordant Opposition.~ [mobha274]
+@7320 = ~As a neutral merchant, I can ply my trade across the denizens of these realms.~ [mobha275]
 
 // Noober (Elevenlabs Callum) - OLD (Atlas - Light-hearted)
 @7400 = ~Hi, I'm Noober. Nice place, huh?~

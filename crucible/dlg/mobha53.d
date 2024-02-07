@@ -15,6 +15,7 @@ END
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
   SAY @7315  
   IF ~~ THEN REPLY @7316 GOTO 6  // A traveling merchant? I'd like to see your wares.
+  IF ~~ THEN REPLY @7303 GOTO 7  // What is this place?
   IF ~~ THEN REPLY @7302 GOTO 3  // Who are you?
   IF ~~ THEN REPLY @7304 GOTO 1  // I have no desire to speak with you.
 END
@@ -49,5 +50,10 @@ END
 
 IF ~~ THEN BEGIN 7
   SAY @7307
+  IF ~~ THEN REPLY @7317 GOTO 8  // Why are you traveling here? I can't imagine you'd find many customers in these parts.
+END
+
+IF ~~ THEN BEGIN 8
+  SAY @7318 = @7319 = @7320
   IF ~~ THEN DO ~SetGlobal("MO_IdentifyKhalas","GLOBAL",1)~ GOTO 5
 END
