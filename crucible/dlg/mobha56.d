@@ -30,7 +30,8 @@ END
 
 IF ~~ THEN BEGIN 4
   SAY @7419 = @7420 = @7421
-  IF ~~ THEN DO ~ClearAllActions()
+  IF ~~ THEN DO ~AddJournalEntry(@20016,INFO)
+ClearAllActions()
 StartCutSceneMode()
 StartCutScene("mocut22")~ EXIT
 END

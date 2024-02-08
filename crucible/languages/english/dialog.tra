@@ -82,15 +82,15 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @5600 = ~You dare breach our sanctum?!~ [mobha021]
 @5601 = ~Wait...you are Bhaalspawn.~ [mobha023]
 @5602 = ~Do you have the slightest idea of the true power hidden within your blood?~ [mobha024]
-@5603 = ~I felt something else when I entered this place. What else besides Bhaal would exist?~
-@5604 = ~Bhaal's essence, of course.~
-@5605 = ~Enough chatter, demon. Time to die.~
+@5603 = ~I felt something else when I entered this place. What else besides Bhaal would exist?~  // Player1
+@5604 = ~Bhaal's essence, of course.~  // Player1
+@5605 = ~Enough chatter, demon. Time to die.~  // Player1
 
 @5610 = ~Interesting, you do feel it. Perhaps it resides stronger in you than your kin.~ [mobha025]
 @5611 = ~Arrogant and naive you are.~ [mobha026]
 @5612 = ~Bhaal was born mortal. How do you think he became a god?~ [mobha027]
 @5613 = ~Bhaal, along with Bane and Myrkul were known as the Dark Three. Together, they assaulted the Castle of Bone and confronted the god Jergal who willingly stepped aside. Bane became the god of hatred, strife, and tyranny, Myrkul took reign over the dead, and Bhaal became the Lord of Murder.~  // Player 1
-@5614 = ~Didn't he take it from Jergal?~
+@5614 = ~Didn't he take it from Jergal?~  // Player1
 // Enough chatter, demon. Time to die.
 
 @5620 = ~Very astute of you, but that is only a fraction of it.~ [mobha028]
@@ -100,8 +100,8 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @5624 = ~Known as the Seven Lost Gods, one after another they fell before the combined might of the Dark Three.~ [mobha032]
 @5625 = ~Five of the seven became servants of Bane, and one was supposedly slain.~ [mobha033]
 @5626 = ~The seventh became a servant of Bhaal and is the master of this tower. It is his essence you are feeling, and he is sure to want it back.~ [mobha034]
-@5627 = ~His essence will remain mine.~
-@5628 = ~A weakened god does not scare me.~
+@5627 = ~His essence will remain mine.~  // Player1
+@5628 = ~A weakened god does not scare me.~  // Player1
 // Enough chatter, demon. Time to die.
 @5630 = ~Foolish mortal. Only slaughter awaits you here.~ [mobha022]
 @5631 = ~I shall feed on your soul!~
@@ -110,9 +110,9 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 // Belchaad the Juggernaut (Axorian - Menacing)
 @5700 = ~You arrive.~ [mobha035]
 @5701 = ~Though Bhaal had many children, you must be first among them. Anything less and you wouldn't be here.~ [mobha036]
-@5702 = ~What are you?~
-@5703 = ~I am not so easily frightened of a defeated god.~
-@5704 = ~I'll do what my father failed to do, end your existence!~
+@5702 = ~What are you?~  // Player 1
+@5703 = ~I am not so easily frightened of a defeated god.~  // Player 1
+@5704 = ~I'll do what my father failed to do, end your existence!~  // Player 1
 @5710 = ~How your kind would choose to label me is no concern of mine.~ [mobha037]
 @5711 = ~I am divine. Until his defeat at the hands of Cyric, I was a servant of your father.~ [mobha038]
 @5712 = ~You, as your father before you, have defeated many a strong opponent prior to facing me.~ [mobha039]
@@ -123,10 +123,10 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @5720 = ~I yield!~ [mobha043]
 @5721 = ~You are stronger than your father was on the day he defeated me.~ [mobha044]
 @5722 = ~How do you wish to end this?~ [mobha045]
-@5723 = ~I will make the same choice as my father. I will take some of your divinity and you will serve me as you did him.~  // Player
-@5724 = ~I will consume the remainder of your divine essence and end your existence.~  // Player
-@5725 = ~I choose to end your existence.~  // Player
-@5726 = ~Flee this place and know you are again a defeated being.~  // Player
+@5723 = ~I will make the same choice as my father. I will take some of your divinity and you will serve me as you did him.~  // Player 1
+@5724 = ~I will consume the remainder of your divine essence and end your existence.~  // Player 1
+@5725 = ~I choose to end your existence.~  // Player 1
+@5726 = ~Flee this place and know you are again a defeated being.~  // Player 1
 @5730 = ~So be it. I will take my leave, my lord.~ [mobha046]
 @5731 = ~So, this is how it ends.~ [mobha047]
 @5732 = ~I do not know what games you play, mortal. I will take my leave.~ [mobha048]
@@ -355,7 +355,7 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @6737 = ~This was a waste of my time, and I will kill you for this!~  // Player
 @6738 = ~Yes, I am a lich, but before my embrace of undeath I was a great spellcaster of the Netherese.~ [mobha143]
 @6739 = ~At this time, I was one of the Crown-Sorcerers of Rdiuz. Your father, a mortal known as Arabhal, was our chief assassin and spymaster. He was among the best spymasters in the empire and none, even as a mortal, matched his bloodlust.~ [mobha144]
-@6740 = ~We Crown-Sorcerers were as powerful as any within the empire; however, news brought by Arabhal of Karsus's Avatar was alarming. We pushed the magical limits within Rdiuz, perhaps even too far ourselves, but even we saw the dangers in Karsus's arrogance.~ [mobha145]
+@6740 = ~We Crown-Sorcerers were as powerful as any within the empire; however, news brought by Arabhal of Karsus's Avatar was alarming. We pushed the magical limits within Rdiuz, perhaps even too far ourselves, but even we saw the dangers in Karsus' arrogance.~ [mobha145]
 @6741 = ~The decision was made. Arabhal and I secreted ourselves away as we planned to assassinate Karsus before he could bring his spell to fruition. Reports indicated Karsus could use his spell to strip the divinity from one of the gods, but it was to our horror he chose Mystryl as his target.~ [mobha146]
 @6742 = ~What happened next?~  // Player
 @6743 = ~Please continue.~  // Player
@@ -516,7 +516,7 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @7411 = ~Tymora, Lady Luck, picked up an interest in you and provided aid early in your journey. Such things like diamonds in trees, magical rings in rocks, and so on. After the ankheg plate in Nashkel, I had to intervene. You piqued my interest then, and Noober was born.~ [mobha225]//[mobha206]
 @7412 = ~Why are you revealing yourself to me now?~  // Player 1
 @7413 = ~This has been a most interesting series of events, and little of mortal affairs has caught my attention quite like this. Of course I wanted the opportunity to present myself at the end.~ [mobha226]//[mobha207]
-@7414 = ~Any advice on the way ahead?~  // Player 1
+@7414 = ~Will you assist me in defeating Amelyssan?~  // Player 1
 @7415 = ~My life is not a plaything for greater beings.~  // Player 1
 @7416 = ~I don't want this. Remove my divine blood and make me a mortal, so I can walk away from this.~  // Player 1
 @7417 = ~You have the power, make me a god here and now. Crush Amelyssan!~  // Player 1
