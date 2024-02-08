@@ -6,9 +6,9 @@ BEGIN MOBHA20
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
   SAY @5600 = @5601 = @5602 
-  IF ~~ THEN REPLY @5603 GOTO 1
-  IF ~~ THEN REPLY @5604 GOTO 2
-  IF ~~ THEN REPLY @5605 GOTO 7
+  IF ~~ THEN REPLY @5603 GOTO 1  // I felt something else when I entered this place. What else besides Bhaal would exist?
+  IF ~~ THEN REPLY @5604 GOTO 2  // Bhaal's essence, of course.
+  IF ~~ THEN REPLY @5605 GOTO 7  // Enough chatter, demon. Time to die.
 END
 
 IF ~~ THEN BEGIN 1
@@ -26,9 +26,9 @@ IF ~~ THEN BEGIN 3
   IF ~OR(3)
 CheckStatGT(Player1,50,LORE)
 CheckStatGT(Player1,16,INT)
-CheckStatGT(Player1,16,WIS)~ THEN REPLY @5613 GOTO 4
-  IF ~~ THEN REPLY @5614 GOTO 5
-  IF ~~ THEN REPLY @5605 GOTO 7
+CheckStatGT(Player1,16,WIS)~ THEN REPLY @5613 GOTO 4  // Bhaal, along with Bane and Myrkul were known as the Dark Three. Together, they assaulted the Castle of Bone and confronted the god Jergal who willingly stepped aside. Bane became the god of hatred, strife, and tyranny, Myrkul took reign over the dead, and Bhaal became the Lord of Murder.
+  IF ~~ THEN REPLY @5614 GOTO 5  // Didn't he take it from Jergal?
+  IF ~~ THEN REPLY @5605 GOTO 7  // Enough chatter, demon. Time to die.
 END
 
 IF ~~ THEN BEGIN 4
@@ -43,9 +43,9 @@ END
 
 IF ~~ THEN BEGIN 6
   SAY @5623 = @5624 = @5625 = @5626
-  IF ~~ THEN REPLY @5627 GOTO 7
-  IF ~~ THEN REPLY @5628 GOTO 7
-  IF ~~ THEN REPLY @5605 GOTO 7
+  IF ~~ THEN REPLY @5627 DO ~AddJournalEntry(@20006,INFO)~ GOTO 7  // His essence will remain mine.
+  IF ~~ THEN REPLY @5628 DO ~AddJournalEntry(@20006,INFO)~ GOTO 7  // A weakened god does not scare me.
+  IF ~~ THEN REPLY @5605 DO ~AddJournalEntry(@20006,INFO)~ GOTO 7  // Enough chatter, demon. Time to die.
 END
 
 IF ~~ THEN BEGIN 7
