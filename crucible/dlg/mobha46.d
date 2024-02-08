@@ -14,12 +14,13 @@ END
 
 IF ~~ THEN BEGIN 1
   SAY @6706 = @6707 = @6756 = @6757 = @6708
-  IF ~~ THEN REPLY @6709 GOTO 9  // Sure, I'll be happy to fight some monsters.
-  IF ~~ THEN REPLY @6710 GOTO 3  // What types of monsters have you created?
-  IF ~~ THEN REPLY @6711 GOTO 6  // Why are you making all of these monsters?
-  IF ~~ THEN REPLY @6712 GOTO 8  // Who are you?
-  IF ~~ THEN REPLY @6713 GOTO 2  // Sorry, but I have more pressing matters that require my attention.
-  IF ~~ THEN REPLY @6705 DO ~SetGlobal("MO_LichExit","MOBHA0",1)~ GOTO 100  // I'll only assist you by ending your existence!
+  IF ~~ THEN REPLY @6709 DO ~AddJournalEntry(@20012,INFO)~ GOTO 9  // Sure, I'll be happy to fight some monsters.
+  IF ~~ THEN REPLY @6710 DO ~AddJournalEntry(@20012,INFO)~ GOTO 3  // What types of monsters have you created?
+  IF ~~ THEN REPLY @6711 DO ~AddJournalEntry(@20012,INFO)~ GOTO 6  // Why are you making all of these monsters?
+  IF ~~ THEN REPLY @6712 DO ~AddJournalEntry(@20012,INFO)~ GOTO 8  // Who are you?
+  IF ~~ THEN REPLY @6713 DO ~AddJournalEntry(@20012,INFO)~ GOTO 2  // Sorry, but I have more pressing matters that require my attention.
+  IF ~~ THEN REPLY @6705 DO ~SetGlobal("MO_LichExit","MOBHA0",1)
+AddJournalEntry(@20012,INFO)~ GOTO 100  // I'll only assist you by ending your existence!
 END
 
 IF ~~ THEN BEGIN 2
@@ -272,8 +273,8 @@ END
 
 IF ~~ BEGIN 27
   SAY @6752 = @6753 = @6754
-  IF ~~ THEN REPLY @6750 GOTO 99 // An interesting story.
-  IF ~~ THEN REPLY @6745 GOTO 28  // Enough with the history lessons, I have more important things to do.
+  IF ~~ THEN REPLY @6750 DO ~SetGlobal("MO_LichStory","MOBHA0",1)~ GOTO 99 // An interesting story.
+  IF ~~ THEN REPLY @6745 DO ~SetGlobal("MO_LichStory","MOBHA0",1)~ GOTO 28  // Enough with the history lessons, I have more important things to do.
   IF ~~ THEN REPLY @6737 DO ~SetGlobal("MO_LichExit","MOBHA0",1)~ GOTO 100  // This was a waste of my time, and I will kill you for this!
 END
 

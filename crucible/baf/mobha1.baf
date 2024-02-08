@@ -346,6 +346,7 @@ THEN
 		PlaySound("AM1300D")
 		OpenDoor("Door03")
 		ScreenShake([5.5],5)
+		AddJournalEntry(@20015,INFO)
 END
 
 IF
