@@ -97,6 +97,7 @@ IF ~~ THEN BEGIN 13
   SAY @6642 
   IF ~~ THEN DO ~SetGlobal("MO_UthaedeolChat","MOBHA8",3)
 SetGlobal("MO_UthaedeolAlly","GLOBAL",1)
+AddJournalEntry(@20011,INFO)
 ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
 END
 
