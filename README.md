@@ -9,7 +9,7 @@
 
 ## Introduction
 
-A continuation of the story once the player closes their pocket plane in ToB. Instead of immediately beginning the final fight at the Throne of Blood, the player will find themself in Gehenna outside of Bhaal's kingdom. From here, the player will need to assault Bhaal's kingdom and fight to the Throne. This mod includes about a dozen new areas, created by Acifer and offers delves into the lore surrounding Bhaal while offering many new and challenging opponents and tactical encounters.
+Crucible features a continuation of the story once the player closes their pocket plane in ToB. Instead of immediately beginning the final fight at the Throne of Blood, the player will find themself in Gehenna outside of Bhaal's kingdom. From here, the player will need to assault Bhaal's kingdom and fight to the Throne. This mod includes about a dozen new areas, created by Acifer and offers delves into the lore surrounding Bhaal while offering many new and challenging opponents and tactical encounters.
 
 ## Compatibility
 
