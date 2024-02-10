@@ -63,7 +63,7 @@ THEN
     // this spell (which exceeds conventional line of sight). FK is
     // at least 40' tall and should have no trouble seeing to the end
     // of his cavern. 
-    ReallyForceSpell(StrongestOf,RED_DRAGON_BREATH)
+    ForceSpell(StrongestOf,RED_DRAGON_BREATH)
     ReallyForceSpell(StrongestOf,RED_DRAGON_HIT)
 END
 

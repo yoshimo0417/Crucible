@@ -7,7 +7,7 @@
 BACKUP ~crucible/backup~
 AUTHOR ~Acifer and morpheus562~
 
-VERSION ~v0.1-alpha~
+VERSION ~v1.0~
 README ~crucible/readme.%LANGUAGE%.html~ ~crucible/readme.html~
 AUTO_EVAL_STRINGS
 
