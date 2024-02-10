@@ -15,6 +15,10 @@ Crucible features a continuation of the story once the player closes their pocke
 
 This mod is compatible with Ascension and mods that add IWD spells into Baldur's Gate. In both instances, Crucible needs to be installed after these mods.
 
+## Emerging Technology
+
+This mod uses ai voice acting for net new characters courtesy of Replica Studios and ElevenLabs.io. Any characters with prior voice work, such as NPCs, do NOT have voice acting for any new lines of dialog.
+
 ## Special Thanks
 
 - Lava, thank you for the numerous bam files and feedback
