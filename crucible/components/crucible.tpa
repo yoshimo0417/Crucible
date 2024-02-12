@@ -25,7 +25,7 @@ COPY ~crucible/mos/mobhatx1.mos~ ~override~  // Intro cutscene
 
 COPY_EXISTING ~mobhatx1.2DA~ ~override~
 REPLACE ~mobhadef1~ @5014
-REPLACE ~mobhadef2~ @5013
+REPLACE ~mobhadef2~ @5019
 PRETTY_PRINT_2DA
 
 //-------------------------------------------------------------------------

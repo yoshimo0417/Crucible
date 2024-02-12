@@ -25,6 +25,11 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @5016 = ~You sense a great feeling of unease and danger. Something is not right.~
 @5017 = ~You feel eyes upon you and know you are not welcome.~
 @5018 = ~The runes at your feet are preventing you from progressing further. You will need to find a way to bypass them.~
+@5019 = ~Stepping out from your pocket plane, you see a vast and desolate landscape. The air is thick with ash and smoke, and the sky above is blacked out. Peering forward, you see a rugged mountainscape blanketed in a red glowing mist conveying an eerie beauty.
+
+Suddenly, the realization hits you. You are standing at the edges of Bhaal's kingdom, in another plane of existence. You feel something tugging you forward as if Bhaal's essence within you knows where you are.
+
+Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in the distance you can faintly identify a giant skull, and the essence within you confirms this is your destination. You feel an urging time is short, and you sense your essence stirring in the distance as Amelyssan prepares to ascend as the new Lord of Murder.~ [mobha276]
 
 // Deathstalker Initial Convo (Eleven Labs)
 @5100 = ~I see you decided to finally arrive, <CHARNAME>. The hour is late and Amelyssan will ascend as the new lord of murder.~ [mobha000]
