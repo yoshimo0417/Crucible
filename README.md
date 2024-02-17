@@ -5,7 +5,7 @@
 
 [A Gibberlings Three Mod](https://www.gibberlings3.net/)
 
-**Author**: acifer and [morpheus562](https://www.gibberlings3.net/profile/11591-morpheus562/)
+**Author**: [acifer](https://github.com/AciferBG) and [morpheus562](https://www.gibberlings3.net/profile/11591-morpheus562/)
 
 ## Introduction
 
