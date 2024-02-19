@@ -335,7 +335,7 @@ COPY ~crucible/spl/mobha23a.spl~ ~override~  // +10 HP, +5% Physical DR
 COPY ~crucible/spl/mobha23b.spl~ ~override~  // +20 HP
 
 //-------------------------------------------------------------------------
-// Galgomach (Death Knight)
+// Galgomach (Demon Knight)
 COPY ~crucible/cre/mobha24.cre~  ~override/mobha24.cre~
   SAY NAME1 @2014
   SAY NAME2 @2014
