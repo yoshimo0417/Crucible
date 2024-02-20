@@ -7,6 +7,8 @@
 
 **Author**: [acifer](https://github.com/AciferBG) and [morpheus562](https://www.gibberlings3.net/profile/11591-morpheus562/)
 
+**On the Web**: [Discussion Topic](https://www.gibberlings3.net/forums/forum/237-the-crucible/)
+
 ## Introduction
 
 Crucible features a continuation of the story once the player closes their pocket plane in ToB. Instead of immediately beginning the final fight at the Throne of Blood, the player will find themself in Gehenna outside of Bhaal's kingdom. From here, the player will need to assault Bhaal's kingdom and fight to the Throne. This mod includes about a dozen new areas, created by Acifer, and delves into the lore surrounding Bhaal while offering many new and challenging opponents and tactical encounters. The player should expect the mod to add about 1 to 3 hours to the game.
