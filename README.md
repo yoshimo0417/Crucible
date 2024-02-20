@@ -9,7 +9,7 @@
 
 **Author**: [acifer](https://github.com/AciferBG) and [morpheus562](https://www.gibberlings3.net/profile/11591-morpheus562/)
 
-**On the Web**: [Discussion Topic](https://www.gibberlings3.net/forums/forum/237-the-crucible/)
+**On the Web**: [Home Page](https://www.gibberlings3.net/mods/quests/crucible/) and [Discussion Topic](https://www.gibberlings3.net/forums/forum/237-the-crucible/)
 
 ## Introduction
 
