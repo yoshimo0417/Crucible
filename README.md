@@ -1,5 +1,7 @@
 # Crucible
 
+[![Latest Release](https://img.shields.io/github/v/release/gibberlings3/crucible?include_prereleases)](https://github.com/Gibberlings3/crucible/releases/latest)
+[![Github downloads (all releases)](https://img.shields.io/github/downloads/gibberlings3/crucible/total.svg?color=informational)](https://github.com/gibberlings3/crucible/releases)
 ![Language](https://img.shields.io/static/v1?label=language&message=english&color=informational)
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20macos%20%7C%20linux&color=informational)
 
