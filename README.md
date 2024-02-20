@@ -20,7 +20,7 @@ Difficulty for this mod is heavily tied to the difficulty slider to include the 
 
 ## Compatibility
 
-This mod is compatible with Ascension and mods that add IWD spells into Baldur's Gate. In both instances, Crucible needs to be installed after these mods.
+This mod is for Enhanced Edition ONLY and is compatible with Ascension and mods that add IWD spells into Baldur's Gate. In both instances, Crucible needs to be installed after these mods.
 
 ## Emerging Technology
 
