@@ -17,7 +17,7 @@ ALWAYS
 	INCLUDE ~crucible/lib/always.tph~
 END
 
-AUTO_TRA ~crucible/languages/%s~
+AUTO_TRA ~crucible/languages/%LANGUAGE%/%s~
 LANGUAGE ~English~
          ~english~
          ~crucible/languages/english/creatures.tra~
@@ -40,7 +40,7 @@ BEGIN @2 DESIGNATED 1 SUBCOMPONENT @1 LABEL Crucible-FinalAssaultAI
 
 REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
 
-LOAD_TRA ~crucible/languages/%s\dialogai.tra~
+LOAD_TRA ~crucible/languages/%LANGUAGE%/dialogai.tra~
 INCLUDE ~crucible/components/crucible.tpa~
 
 ////////////////////////////////////////////////////
@@ -48,5 +48,5 @@ BEGIN @3 DESIGNATED 3 SUBCOMPONENT @1 LABEL Crucible-FinalAssault
 
 REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
 
-LOAD_TRA ~crucible/languages/%s\dialog.tra~
+LOAD_TRA ~crucible/languages/%LANGUAGE%/dialog.tra~
 INCLUDE ~crucible/components/crucible.tpa~
