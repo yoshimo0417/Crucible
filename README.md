@@ -28,7 +28,7 @@ This mod uses ai voice acting for net new characters courtesy of Replica Studios
 
 ## Special Thanks
 
-- Lava, thank you for the numerous bam files and feedback
+- Lava, thank you for the numerous bam files, item outlines/descriptions, and feedback
 - lowman02, thank you for the testing and feedback
 - Cam for all of your help and assistance. The reasons are many, thank you.
 - All those who assisted in testing and providing feedback! I appreciate every single one of you for all that you do!
