@@ -7,7 +7,7 @@
 BACKUP ~crucible/backup~
 AUTHOR ~Acifer and morpheus562~
 
-VERSION ~v1.0~
+VERSION ~v1.1~
 README ~crucible/readme.%LANGUAGE%.html~ ~crucible/readme.html~
 AUTO_EVAL_STRINGS
 
@@ -44,7 +44,7 @@ LOAD_TRA ~crucible/languages/%s\dialogai.tra~
 INCLUDE ~crucible/components/crucible.tpa~
 
 ////////////////////////////////////////////////////
-BEGIN @3 DESIGNATED 1 SUBCOMPONENT 1 LABEL Crucible-FinalAssault
+BEGIN @3 DESIGNATED 3 SUBCOMPONENT 1 LABEL Crucible-FinalAssault
 
 REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
 
