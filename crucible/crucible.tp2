@@ -21,7 +21,7 @@ AUTO_TRA ~crucible/languages/%s~
 LANGUAGE ~English~
          ~english~
          ~crucible/languages/english/creatures.tra~
-         ~crucible/languages/english/dialog.tra~
+         //~crucible/languages/english/dialog.tra~
          ~crucible/languages/english/items.tra~
          ~crucible/languages/english/journal.tra~
          ~crucible/languages/english/setup.tra~
@@ -36,9 +36,17 @@ LANGUAGE ~English~
 ///////////////////////////////////////////////////////////////////////////
 // Add the Final Assault                                                 //
 ///////////////////////////////////////////////////////////////////////////
-BEGIN @1 DESIGNATED 1 LABEL Crucible-FinalAssault
+BEGIN @2 DESIGNATED 1 SUBCOMPONENT 1 LABEL Crucible-FinalAssaultAI
 
 REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
 
+LOAD_TRA ~crucible/languages/%s\dialogai.tra~
 INCLUDE ~crucible/components/crucible.tpa~
 
+////////////////////////////////////////////////////
+BEGIN @3 DESIGNATED 1 SUBCOMPONENT 1 LABEL Crucible-FinalAssault
+
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3000
+
+LOAD_TRA ~crucible/languages/%s\dialog.tra~
+INCLUDE ~crucible/components/crucible.tpa~

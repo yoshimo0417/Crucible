@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 1.1
+
+February 23, 2024
+
+### Changed
+
+- Created subcomponents so players can choose if they want NPCs to be fully voiced by AI or not.
+- Corrected out of date YAML file, so Crucible will now work with Project Infinity.
+
 ## Version 1.0
 
 February 20, 2024
