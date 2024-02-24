@@ -15,6 +15,9 @@
 
 Crucible features a continuation of the story once the player closes their pocket plane in ToB. Instead of immediately beginning the final fight at the Throne of Blood, the player will find themself in Gehenna outside of Bhaal's kingdom. From here, the player will need to assault Bhaal's kingdom and fight to the Throne. This mod includes about a dozen new areas, created by Acifer, and delves into the lore surrounding Bhaal while offering many new and challenging opponents and tactical encounters. The player should expect the mod to add about 1 to 3 hours to the game.
 
+## Components
+The player has the option to install the mod with it without ai generated voices for the NPCs. Please note: even if the player chooses to install without ai for npcs, the opening scrawl will still be voiced by ai.
+
 ## Difficulty
 Difficulty for this mod is heavily tied to the difficulty slider to include the numbers and types of enemies encountered along with the abilities they choose to use. Insane and LoB difficulties are going to be in line with Tactics/Ascension level difficulty while anything less will be much more approachable to users who avoid difficulty increasing mods. 
 
