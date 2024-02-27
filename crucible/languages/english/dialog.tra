@@ -192,7 +192,7 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 @6226 = ~You exceeded the expectations I've set for you and must be killed.~ //[mobha161]
 @6227 = ~I even collected one of your siblings to see what all the fascination with your kind was about. The chaos surrounding Saradush allowed my Planetar to swoop in unnoticed and collect your brother.~ //[mobha162]
 @6228 = ~Tell me Viekang, should I worry about your brother?~ //[mobha163]
-@6229 = ~He must've defeated Yaga-Shura and his army to make it here. If he could survive that, then he can kill you!~   ////[mobha179] // Viekang
+@6229 = ~<PRO_HESHE> must've defeated Yaga-Shura and his army to make it here. If <PRO_HESHE> could survive that, then <PRO_HESHE> can kill you!~   ////[mobha179] // Viekang
 @6230 = ~A false equivalency. There is a vast difference between thinking one has power, like Yaga-Shura did, and actually having power.~ //[mobha164]
 @6231 = ~Looking at your siblings, Viekang, you hold a marginal amount of Bhaal's essence. So little I don't think Amelyssan will notice it missing as she completes her ritual to ascend.~ //[mobha165]
 @6232 = ~I have not been impressed by the amount and power of the essence within you.~

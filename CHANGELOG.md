@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 1.2
+
+March xx, 2024
+
+### Changed
+
+- Update link @6228 and update voiced dialog for Malchediel
+
 ## Version 1.1
 
 February 23, 2024
