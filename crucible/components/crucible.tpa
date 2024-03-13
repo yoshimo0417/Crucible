@@ -201,6 +201,10 @@ COPY ~crucible/itm/mobha09b.itm~ ~override~  // Bite
 //-------------------------------------------------------------------------
 // Balor w/ heart
 COPY ~crucible/itm/mobha10a.itm~ ~override~  // Demon Heart
+  SAY NAME1 @10018
+  SAY NAME2 @10018
+  SAY UNIDENTIFIED_DESC @10019
+  SAY DESC @10019
 COPY ~crucible/cre/mobha09.cre~  ~override/mobha10.cre~
   SAY NAME1 @2008
   SAY NAME2 @2008
@@ -222,6 +226,10 @@ COPY ~crucible/cre/mobha12.cre~  ~override/mobha12.cre~
 //-------------------------------------------------------------------------
 // Fallen Planetar w/ Feather
 COPY ~crucible/itm/mobha13a.itm~ ~override~  // Angel Feather
+  SAY NAME1 @10020
+  SAY NAME2 @10020
+  SAY UNIDENTIFIED_DESC @10021
+  SAY DESC @10021
 COPY ~crucible/itm/mobha13b.itm~ ~override~  // 2h Sword
 COPY ~crucible/cre/mobha12.cre~  ~override/mobha13.cre~
   SAY NAME1 @2009
