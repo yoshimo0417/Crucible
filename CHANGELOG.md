@@ -1,12 +1,20 @@
 # Changelog
 
-## Version 1.2
+## Version 1.3
 
-March xx, 2024
+Month xx, 2024
 
 ### Changed
 
 - Update link @6228 and update voiced dialog for Malchediel
+
+## Version 1.2
+
+March 12, 2024
+
+### Changed
+
+- Added Brazilian Portuguese translation courtesy of DarthNihilus530.
 
 ## Version 1.1
 

@@ -1,0 +1,539 @@
+// The Crucible, Portuguese (Brazilian) Dialog/Text
+
+// Environmental
+@5000 = ~Ondas de enxofre e carniça enchem o ar e ao longe você pode ouvir o portão da Torre do Demônio se abrindo.~
+@5001 = ~Você sente os olhos da ira divina sobre você e ouve o bater de asas. Ao longe você pode ouvir a entrada da Guarnição Planetar abrindo.~
+@5002 = ~Você sente um formigamento, como o despertar de um novo aspecto em seu sangue, ao entrar nesta torre. Seja o que for, você sabe que está conectado com o que o espera.~
+@5003 = ~A tigela de sangue está cheia com o sangue de Malchediel.~
+@5004 = ~A tigela de sangue está cheia com o sangue Belchaad o Juggernaut.~
+@5005 = ~O crânio de Bhaal está preenchido e o caminho para o reino de Bhaal está aberto.~
+@5006 = ~Você vê o que parece ser um compartimento selado no crânio de Bhaal. No momento, não há nada que você possa fazer para operá-lo.~
+@5007 = ~Proeminentemente exibida perto do trono de Bhaal está e uma alavanca de tendões, sangue e ossos. Parece que você pode puxar esta alavanca.~
+@5008 = ~Você puxa a alavanca e ouve o som de engrenagens antigas girando juntas. Ao longe você pode ouvir uma porta se abrindo.~
+@5009 = ~Diante de você está a entrada para o Trono de Sangue. Uma última luta o aguarda antes do seu confronto com Amelyssan.~
+@5010 = ~Com Mayithra derrotado, você sente que os olhos estão fora de você e os ataques contra você em Khalas diminuirão.~
+@5011 = ~Você não pode usar isso durante o combate.~
+@5012 = ~Pode ter passado um tempo desde que vi esse amuleto. Por mais irritante que possa ser, devemos guardá-lo. Ele pode acabar sendo bastante útil afinal... Especialmente aqui.~
+// Eleven Labs
+@5013 = ~Saindo do seu plano astral, você vê uma paisagem vasta e desolada. O ar está denso com cinzas e fumaça, e o céu acima está escuro. Olhando para frente, você vê uma paisagem montanhosa acidentada coberta por uma névoa vermelha brilhante transmitindo uma beleza misteriosa.
+
+De repente, a compreensão atinge você. Este não é o reino de Bhaal, mas sim outro plano de existência. De alguma forma, seu plano astral foi movido de onde foi criado. Você sente algo te puxando para frente, como se a essência de Bhaal dentro de você soubesse onde você está.
+
+Diante de você está um símbolo de Bhaal, tranquilizando-o sobre o que está ao seu redor. Ao longe, você pode identificar vagamente uma caveira gigante, e a essência dentro de você confirma que este é o seu destino. Você sente que o tempo de urgência é curto e sente sua essência se agitando à distância enquanto Amelyssan se prepara para ascender como o novo Senhor do Assassinato.~ //[mobha178]
+@5014 = ~Cadinho~
+@5015 = ~A estátua entoa: Qualquer um que ousar cruzar a barreira rúnica será derrubado.~
+@5016 = ~Você sente uma grande sensação de desconforto e perigo. Algo não está certo.~
+@5017 = ~Você sente olhos sobre você e sabe que não é bem-vindo.~
+@5018 = ~As runas a seus pés estão impedindo você de progredir ainda mais. Você precisará encontrar uma maneira de contorná-los.~
+@5019 = ~Saindo do seu plano astral, você vê uma paisagem vasta e desolada. O ar está denso com cinzas e fumaça, e o céu acima está escuro. Olhando para frente, você vê uma paisagem montanhosa acidentada coberta por uma névoa vermelha brilhante transmitindo uma beleza misteriosa.
+
+De repente, a compreensão atinge você. Você está nos limites do reino de Bhaal, em outro plano de existência. De alguma forma, seu plano astral foi movido de onde foi criado. Você sente algo te puxando para frente, como se a essência de Bhaal dentro de você soubesse onde você está.
+
+Diante de você está um símbolo de Bhaal, tranquilizando-o sobre o que está ao seu redor. Ao longe, você pode identificar vagamente uma caveira gigante, e a essência dentro de você confirma que este é o seu destino. Você sente que o tempo de urgência é curto e sente sua essência se agitando à distância enquanto Amelyssan se prepara para ascender como o novo Senhor do Assassinato.~ //[mobha276]
+
+// Deathstalker Initial Convo (Eleven Labs)
+@5100 = ~Finalmente você chegou, <CHARNAME>, mas agora é tarde demais. Amelyssan ascenderá como a nova senhora do assassinato.~ //[mobha000]
+@5101 = ~Onde estou?~  // Player
+@5102 = ~Este é Khalas, não é?~  // Player
+@5103 = ~Quem é você?~  // Player
+@5104 = ~Então o tempo é essencial, puxe a espada!~  // Player
+@5105 = ~Você cairá como todos caíram antes de você. Prepare-se para morrer!~  // Player
+
+@5110 = ~Como você chegou até aqui com tão pouco conhecimento é uma questão para os sábios. Você está em Khalas, a camada superior de Gehenna.~ //[mobha001]
+@5111 = ~Muito astuto da sua parte. Sim, esta é a camada superior da Gehenna conhecida como Khalas.~ //[mobha002]
+@5112 = ~Meu plano astral não deveria estar conectado ao Reino de Bhaal?~  // Player
+@5113 = ~Amelyssan suspeitou que você tivesse tal plano astral quando chegou em Saradush. Grande esforço foi feito para encontrar e então cortar a conexão do seu plano com o Reino maior de Bhaal.~ //[mobha003]
+@5114 = ~Os laços são fortes entre o seu plano astral e o reino de Bhaal, então só pudemos separá-los até certo ponto. Desde então, esperamos para ver se você tentaria passar.~ //[mobha004]
+@5115 = ~Vamos acabar com isso.~  // Player
+@5116 = ~Estou cansado dessas perguntas, é hora de você morrer.~  // Player
+
+@5120 = ~Eu sou um Deathstalker. Anteriormente um serva de Bhaal, desde então prometi meu serviço a Amelyssan, que se tornará a nova e legítima Senhora do Assassinato.~ //[mobha005]
+@5121 = ~Por que você serve Amelyssan em vez de trabalhar para ajudar no retorno de Bhaal?~  // Player
+@5122 = ~Eu fui um dos muitos Deathstalkers de Bhaal. Um zeloso, mas desvalorizada. Eu sirvo Amelyssan, pois me tornarei um dos seus mais favorecidos e devo colher a recompensa de sua ascensão.~ //[mobha006]
+
+@5130 = ~Não, eu irei prosseguir para selar o caminho para o reino de Bhaal e impedir seu avanço. Matem o Bhaalspawn!~ //[mobha007]
+//@5130 = ~Apresse-se, <CHARNAME>, antes que eu feche o reino de Bhaal e interrompa seu avanço. Até logo.~
+
+// Deathstalker Second Convo (Eleven Labs)
+@5200 = ~Você chegou tarde demais o caminho está fechado. Amelyssan se tornará uma deusa, e eu serei recompensado por trazer sua cabeça para ela.~ //[mobha008]
+@5201 = ~Você assume muito, vamos acabar logo com isso.~  // Player
+@5202 = ~Minha cabeça ficará presa ao meu pescoço. A sua... não digo o mesmo.~  // Player
+@5203 = ~Morra, puta!~  // Player
+@5210 = ~Ataquem o Bhaalspawn, e traga-me <PRO_HISHER> sua cabeça! ~ //[mobha009]
+
+// Planetar (Nick - Authoritative)
+@5300 = ~Pare! Foi decretado parar o seu avanço e acabar com a sua existência. Prepare-se para morrer!~ //[mobha010]
+@5301 = ~Dêem o alarme, estamos sob ataque do Bhaalspawn!~ //[mobha080]
+
+// Demon (Axorian - Hatred)
+@5400 = ~Vou arrancar a carne dos seus ossos, filho de bhaal!~ //[mobha011]
+
+// Statue (Asmodeus - Scheming)
+@5500 = ~Seu sangue divino domina aqui.~ //[mobha212]
+@5501 = ~Eu sou um observador de pedra esculpida pelo próprio Bhaal. Que perguntas você tem?~ //[mobha213]
+@5502 = ~Como faço para entrar no reino de Bhaal?~  // Player 1
+@5503 = ~Como faço para inserir as estruturas que você mencionou?~  // Player 1
+@5504 = ~Não tenho mais perguntas.~  // Player 1
+@5510 = ~Para entrar no palácio de Bhaal, sacrifícios de sangue devem ser feitos.~ //[mobha214]
+@5511 = ~Você precisará derrotar e tirar o sangue dos mestres das Torres do Leste e do Oeste.~ //[mobha215]
+@5512 = ~As tigelas antes da ponte precisam ser preenchidas com o sangue deles. A etapa final será sacrificar seu próprio sangue.~ //[mobha216]
+@5513 = ~Isso exigirá uma quantia substancial, então é melhor se preparar para que o processo não o mate.~ //[mobha217]
+@5520 = ~Um coração do mais cruel ódio deve ser colocado dentro da pilha de crânios do Leste, enquanto uma pena de alguém caído em desgraça precisa ser colocada dentro da pilha de crânios do Ocidente.~ //[mobha218]
+//@5521 = ~A Pena de um Planetar Caído deve ser colocada na pilha de crânios ocidentais.~
+@5522 = ~Cuidado! Estas ações irão alertar os habitantes que habitam estes locais e trazer rápida condenação. Prepare-se adequadamente.~ //[mobha219]
+@5530 = ~Estarei esperando se você voltar buscando mais orientação.~ //[mobha220]
+
+// Sapphira (Lilith - Angry)
+@5600 = ~Você ousa violar nosso santuário?!~ //[mobha021]
+@5601 = ~Espere... você é o Bhaalspawn.~ //[mobha023]
+@5602 = ~Você tem a menor ideia do verdadeiro poder escondido em seu sangue?~ //[mobha024]
+@5603 = ~Senti outra coisa quando entrei neste lugar. O que mais existiria além de Bhaal?~  // Player1
+@5604 = ~A essência de Bhaal, claro.~  // Player1
+@5605 = ~Chega de conversa, demônio. Hora de morrer.~  // Player1
+
+@5610 = ~Interessante, você sente isso. Talvez resida mais forte em você do que em seus parentes.~ //[mobha025]
+@5611 = ~Você é arrogante e ingênuo.~ //[mobha026]
+@5612 = ~Bhaal nasceu mortal. Como você acha que ele se tornou um deus?~ //[mobha027]
+@5613 = ~Bhaal, junto com Bane e Myrkul eram conhecidos como os Três Sombrios. Juntos, eles atacaram o Castelo dos Ossos e confrontaram o deus Jergal, que voluntariamente se afastou. Bane se tornou o deus do ódio da discórdia e da tirania, Myrkul assumiu o reinado sobre os mortos e Bhaal se tornou o Senhor do Assassinato.~  // Player 1
+@5614 = ~Ele não pegou de Jergal?~  // Player1
+// Enough chatter, demon. Time to die.
+
+@5620 = ~Muito perspicaz da sua parte, mas isso é apenas uma fração.~ //[mobha028]
+@5621 = ~Sim, os Três Sombrios, formados por Bane, Myrkul e seu pai Bhaal, firmaram um pacto para alcançar a divindade ou morrer tentando. Com o pacto, eles voltaram seu foco para Jergal, Senhor do Fim de Tudo.~ //[mobha029]
+@5622 = ~Depois de muitos conflitos, seus esforços valeram a pena e Jergal voluntariamente se afastou e concedeu seus poderes ao trio.~ //[mobha030]
+@5623 = ~Antes de confrontar Jergal, os Três Sombrios primeiro caçaram primordiais para roubar suas essências divinas para si.~ //[mobha031]
+@5624 = ~Conhecidos como os Sete Deuses Perdidos, um após o outro eles caíram diante do poder combinado dos Três Sombrios.~ //[mobha032]
+@5625 = ~Cinco dos sete tornaram-se servos de Bane, e um foi supostamente morto.~ //[mobha033]
+@5626 = ~O sétimo tornou-se servo de Bhaal e é o mestre desta torre. É a essência dele que você está sentindo, e ele com certeza a quer de volta.~ //[mobha034]
+@5627 = ~Sua essência permanecerá minha.~  // Player1
+@5628 = ~Um deus enfraquecido não me assusta.~  // Player1
+// Enough chatter, demon. Time to die.
+@5630 = ~Mortal tolo. Apenas a morte espera por você aqui.~ //[mobha022]
+@5631 = ~Vou me alimentar de sua alma!~
+@5632 = ~Aguente! Enfraqueça conforme eu me fortaleço!~
+
+// Belchaad the Juggernaut (Axorian - Menacing)
+@5700 = ~Você chegou.~ //[mobha035]
+@5701 = ~Embora Bhaal tivesse tido muitos filhos, você deve ser o primeiro entre eles. Qualquer coisa menos e você não estaria aqui.~ //[mobha036]
+@5702 = ~O que você e?~  // Player 1
+@5703 = ~Eu não tenho medo de um deus derrotado.~  // Player 1
+@5704 = ~Farei o que meu pai falhou em fazer, acabar com sua existência!~  // Player 1
+@5710 = ~Como sua espécie escolheria me rotular não é da minha conta.~ //[mobha037]
+@5711 = ~Eu era um divino. Até sua derrota nas mãos de Cyric, eu era um servo de seu pai.~ //[mobha038]
+@5712 = ~Você, como seu pai antes de você, derrotou muitos oponentes fortes antes de me enfrentar.~ //[mobha039]
+@5713 = ~Bhaal estava com seus companheiros, Bane e Myrkul, quando nos conhecemos. Ao contrário de você, eles tinham um exército atrás deles e já haviam consumido a divindade de seis pessoas como eu.~ //[mobha040]
+@5714 = ~Desde a morte de Bhaal, alinhei-me com Amelyssan. Acabar com a linhagem de Bhaal junto com qualquer chance de sua ressurreição saciará minha vingança pela humilhação de minha derrota.~ //[mobha041]
+@5715 = ~Agora mortal, recuperarei minha essência divina dentro de você!~ //[mobha042]
+
+@5720 = ~Eu me rendo!~ //[mobha043]
+@5721 = ~Você é mais forte do que seu pai era no dia em que me derrotou.~ //[mobha044]
+@5722 = ~Como você deseja acabar com isso?~ //[mobha045]
+@5723 = ~Farei a mesma escolha que meu pai. Tomarei um pouco da sua divindade e você me servirá como serviu a ele.~  // Player 1
+@5724 = ~Consumirei o restante de sua essência divina e acabarei com sua existência.~  // Player 1
+@5725 = ~Eu escolho acabar com sua existência.~  // Player 1
+@5726 = ~Fuja deste lugar e saiba que você é novamente um ser derrotado.~  // Player 1
+@5730 = ~Que assim seja. Vou me despedir, meu senhor.~ //[mobha046]
+@5731 = ~Então, é assim que termina.~ //[mobha047]
+@5732 = ~Eu não sei quais jogos você joga, mortal. Eu vou me retirar.~ //[mobha048]
+@5740 = ~Você recebeu +10 em seus Pontos de Vida e +5% de Resistência a Dano Físico.~
+@5741 = ~Você recebeu +20 em seus Pontos de Vida.~
+
+// Left Blood Bowl
+@5800 = ~Diante de você está uma tigela vazia com descrições representando seres divinos alados.~
+@5801 = ~Despeje o sangue de Malchediel na tigela.~
+@5802 = ~Deixe a tigela.~
+@5803 = ~A tigela está cheia com o sangue de Malchediel e aceita sua oferenda.~
+@5804 = ~Você se afasta da tigela.~
+
+// Right Blood Bowl
+@5900 = ~Diante de você está uma tigela vazia com descrições representando entidades vis, demoníacas e torturas.~
+@5901 = ~Despeje o sangue de Belchaad o Juggernaut, na tigela.~
+@5902 = ~Deixe a tigela.~
+@5903 = ~A tigela está cheia com o sangue de Belchaad o Juggernaut, e aceita sua oferenda.~
+@5904 = ~Você se afasta da tigela.~
+
+// Floor Symbol of Bhaal
+@6000 = ~Você vê um pedestal aparecer diante de você com um lugar para colocar sua mão. Instintivamente, você sabe que ao colocar a mão na abertura, seu sangue será drenado para preencher o crânio restante de Bhaal a seus pés. Vendo os requisitos de sangue para Belchaad o Juggernaut e Malchediel, você sabe que isso terá um grande impacto sobre você e você pode não sobreviver ao processo.~
+@6001 = ~Você coloca sua mão na abertura.~
+@6002 = ~Deixe o pedestal.~
+@6003 = ~Você pode sentir seu sangue fluindo através de você em torrentes e o selo de Bhaal a seus pés começa a se encher.~
+@6004 = ~Você se afasta do pedestal.~
+
+// Throne of Blood Transition
+@6100 = ~Seu destino está quase completo.~
+@6101 = ~Estou pronto. É hora do fim.~
+@6102 = ~Não desejo partir neste momento.~
+@6103 = ~Você dá um passo à frente e abraça seu destino.~
+@6104 = ~Você dá um passo para trás para se preparar melhor.~
+
+// Malchediel (Rusty - Hatred)
+@6200 = ~Isso é um diálogo de preenchimento.~
+@6201 = ~Aqui está o meu sangue para ajudar nos testes. Eu enfrentarei você em um momento posterior, assim que me for fornecido uma sequência de luta apropriada e um roteiro.~
+
+@6210 = ~Impressionante. Independentemente das probabilidades, você insiste em seguir sempre em frente.~ //[mobha081]
+@6211 = ~Não tenho escolha a não ser seguir em frente.~ // Player
+@6212 = ~pouco me importam as probabilidades.~ // Player
+@6213 = ~Nada vai me impedir do meu destino.~ // Player
+@6214 = ~Eu esmagarei qualquer um que estiver no meu caminho.~ // Player
+@6215 = ~No entanto, você faz isso cegamente.~ //[mobha082]
+@6216 = ~Este é o grande arsenal de Bhaal, conhecido por abrigar armas grandes e terríveis. Nos anos que se seguiram à sua morte, o arsenal caiu em desuso, então Amelyssan nos designou para devolvê-lo à sua antiga glória.~ //[mobha083]
+@6217 = ~Desde então, muita coisa foi saqueada e espalhada pelos Reinos, mas alguns artefatos permanecem. Algumas das armas mais potentes não são feitas de aço, mas sim de carne e osso.~ //[mobha084]
+@6218 = ~Desperte, encharcado de sangue. É hora de levantar e servir o seu mestre.~ //[mobha085]
+// Cutscene summoning Uthaedeol
+
+// Top of the Planetar Garrison
+@6219 = ~Eu não serei derrotado por você! Vinde a mim, meus servos!~ //[mobha157]
+@6220 = ~Perdoe-me Jergal, pois falhei!~ //[mobha158]
+@6221 = ~Você derrotou o Uthaedeol?!~ //[mobha159]
+@6222 = ~Ele representou um desafio, mas não foi páreo para mim.~  // Player 1
+@6223 = ~Tolo, ele se juntou a mim e me ajudará a derrotar Amelyssan.~  // Player 1
+@6224 = ~Chega de conversa, estou aqui pelo seu sangue!~  // Player 1
+@6225 = ~Entendi. Ele era um verdadeiro seguidor de Bhaal eu cudarei dele assim que eu terminar com você.~ //[mobha160]
+@6226 = ~Você superou as expectativas que estabeleci para você e deve ser morto.~ //[mobha161]
+@6227 = ~Até reuni um de seus irmãos para ver o motivo de todo o fascínio por sua espécie. O caos em torno de Saradush permitiu que meu Planetario passasse despercebido e  sequestrasse seu irmão.~ //[mobha162]
+@6228 = ~Diga-me, Viekang, devo me preocupar com seu irmão?~ //[mobha163]
+@6229 = ~Ele deve ter derrotado Yaga-Shura e seu exército para chegar aqui. se ele pôde sobreviver a isso, então ele poderia matar você!~   ////[mobha179] // Viekang
+@6230 = ~Uma falsa equivalência. Existe uma grande diferença entre pensar que se tem poder, como Yaga-Shura pensava, e realmente ter poder.~ //[mobha164]
+@6231 = ~Olhando para seus irmãos, Viekang, você possui uma pequena quantidade da essência de Bhaal. Tão pouco que não acho que Amelyssan notará sua falta enquanto completa seu ritual para ascender.~ //[mobha165]
+@6232 = ~Não fiquei impressionado com a quantidade e o poder da essência dentro de você.~
+@6233 = ~<CHARNAME>, você acha que sua essência seria algo digno de nota em comparação com a do seu irmão aqui?~ //[mobha166]
+@6234 = ~Poder ou não, não quero a mácula de Bhaal dentro de mim.~  // Player 1
+@6235 = ~Eu superei muita coisa e me levantei mais forte por isso. Não sei quanto pode ser atribuído a Bhaal e quanto vem de mim mesmo.~  // Player 1
+@6236 = ~A quantidade da essência de Bhaal que me foi concedida é grande e sou o primeiro dos meus parentes.~  // Player 1
+@6237 = ~Então deixe-nos testar sua essência e ver quanto poder você realmente exerce.~ //[mobha167]
+@6238 = ~Espere. O que Uthaedeol quis dizer quando disse que você afirma falsamente servir a um mestre?~  // Player 1
+@6239 = ~Eu suponho que não há razão para nos conversarmos e que devemos partir logo para o combate.~  // Player 1
+@6240 = ~Você não sabe nada sobre o verdadeiro poder.~  // Player 1
+@6241 = ~De bom grado, eu estava pronto para a luta assim que te vi.~  // Player 1
+@6242 = ~Que tua lâmina lasque e se estilhace!~ //[mobha168]
+@6243 = ~Fui designado para servir a Bhaal pouco depois que ele assumiu o portfólio do assassinato de Jergal. Jergal, com razão, viu Bhaal como o mais sedento de sangue e imprudente dos Três Sombrios que o substituíram.~ //[mobha169]
+@6244 = ~Jergal me orientou a servir Bhaal e manter seu portfólio sob controle. Todas as coisas precisam do equilíbrio adequado, o que não é algo com que Bhaal escolheu se preocupar.~ //[mobha170]
+@6245 = ~Jergal disse para você servir Bhaal?~  // Player 1
+@6246 = ~Você serviu Bhaal ou Jergal?~  // Player 1
+@6247 = ~Prossiga.~  // Player 1
+@6248 = ~Somente divindades poderosas podem comandar Solar, como eu. Jergal é antigos, mais velho que a maioria dos seres em todos os Reinos. Ele ordenou e eu obedeci.~ //[mobha171]
+@6249 = ~Eu sinto uma aura ao seu redor de alguém do meu tipo. Poderosa, por sinal.~ //[mobha172]
+@6250 = ~Quem você acha que comandou o Solar para guiá-lo de dentro do seu plano astral? Existem muito poucos que podem dar tal comando, e a Solar não oferece ajuda a menos que seja dirigida por um ser superior.~ //[mobha173]
+@6251 = ~Não sei quem o comandaria.~  // Player 1
+@6252 = ~Como eu descobriria quem comandou o Solar?~  // Player 1
+@6253 = ~Não importa quem dirigiu o Solar.~  // Player 1
+@6254 = ~O Solar foi tão inútil para mim quanto você deve ter sido para Bhaal.~  // Player 1
+@6255 = ~Simples. Pergunte ao seu Solar e espere uma resposta honesta ou espere para ver se a divindade se aproxima de você.~ //[mobha174]
+@6256 = ~Estou cansado desses atrasos e desejo relatar sua derrota a Amelyssan.~ //[mobha175]
+
+// Deathbringer (Nick - Authoritative)
+@6300 = ~O pupilo de Gorion invadiu o reino de Bhaal! Às armas, meus irmãos!~ //[mobha049]
+
+// Culdus Aghurath (Deckard - Fury)
+@6400 = ~<CHARNAME>, o primeiro entre os filhos de Bhaal .~ //[mobha071]
+@6401 = ~Ou talvez sua irmã Imoen tenha essa distinção?~ //[mobha072]
+@6402 = ~Não, amigo! <CHARNAME> pode ser o primeiro.~
+@6403 = ~Há muito tempo que eu e os outros estamos observando você. Honestamente, pensei que iríamos recolher a sua essência após o seu confronto com Sarevok e novamente durante a sua provação com Irenicus. No entanto, aqui está você. Você tem uma grande propensão para a sobrevivência.~ //[mobha073]
+@6404 = ~Falando em sobrevivência. No início não acreditei nos relatos de que você estava viajando com Sarevok, mas aqui está ele. Como você conseguiu fazer isso?~ //[mobha074]
+@6405 = ~Isso exigiu uma determinação inabalável que duvido que você seja capaz de entender.~
+@6406 = ~Diz o homem que morreu e é uma sombra do que um dia já foi.~ //[mobha075]
+@6407 = ~Atrás de mim fica a entrada da Forja de Mana, onde Amelyssan está reunindo as essências coletadas de Bhaal. Não permitiremos que você perturbe os planos dela.~ //[mobha201]
+@6408 = ~Afaste-se e você poderá me servir quando eu me tornar o novo Senhor do Assassinato.~  // Player
+@6409 = ~Eu esmaguei todos que me desafiaram antes. Afaste-se e poupe-se.~  // Player
+@6410 = ~Você acha que é capaz de me impedir?~  // Player
+@6411 = ~Chega de conversa, meu destino me espera!~  // Player
+@6412 = ~Vamos terminar isso. Por Amelyssan!~ //[mobha077]
+@6413 = ~Você deve ser um tolo se acha que eu serviria você em vez de Amelyssan!~ //[mobha078]
+@6414 = ~Mesmo que eu acabe sendo derrotado por você, não importa, pois estou ganhando tempo para que Amelyssan termine seus preparativos. Não há chances de vitória para você aqui.~ //[mobha079]
+
+// Horkos (Dying Deathbringer) (Ranger - Bitterness Voice)
+@6500 = ~Que pena quando finalmente encontro você e quando estou nesse estado.~ //[mobha050]
+@6501 = ~Eu usaria meu último suspiro para matar você, <CHARNAME>, no entanto, ele poderia ser melhor aproveitado, já que agora você tem a melhor chance de matar aquela vadia traidora da Amelyssan.~ //[mobha051]
+@6502 = ~Que perguntas você tem sobre mim antes de eu sucumbir a esses ferimentos?~ //[mobha052]
+@6503 = ~Vejo que seu tempo chegou ao fim.~ //player
+@6504 = ~Vou acabar com a sua existência!~ //player
+@6505 = ~Posso ajudá-lo?~ //player
+@6506 = ~Quem é você?~ //player
+@6507 = ~Há corpos por toda parte, o que aconteceu aqui?~ //player
+@6508 = ~Onde fica o reino de Bhaal e como entro nele?~ //player
+@6509 = ~Que ameaças enfrento aqui?~ //player
+@6510 = ~já é tarde demais para isso, Bhaalspawn.~ //[mobha053]
+@6511 = ~O abismo olha de volta...~ //[mobha054]
+@6512 = ~Meu tempo é curto. Que perguntas você tem sobre mim antes de eu sucumbir a esses ferimentos?~ //[mobha055]
+@6520 = ~Estou mortalmente ferido, e Amelyssan garantiu para que nenhum dos fiéis a Bhaal pudesse se recuperar.~ //[mobha056]
+@6521 = ~Não importa como isso termine entre você e Amelyssan, meu senhor Bhaal permanecerá morto. Não me resta mais nada agora, exceto enfrentar o abismo.~ //[mobha057]
+@6530 = ~Sou o primeiro entre os Deathbringer de Bhaal e seu servo mais leal.~ //[mobha058]
+@6531 = ~Um colega Deathbringer caminha entre vocês. Vejo isso em seus olhos, Sarevok, você esteve onde eu irei em breve.~ //[mobha059]
+@6532 = ~Não é um lugar que eu esperaria ansiosamente para voltar.~ //sarevok
+@6533 = ~Comandei uma seita mais militarista dentro do reino de Bhaal. Bhaal nos formou durante o Tempo das Perturbações para lidar com igrejas rivais, mas nossa força foi severamente enfraquecida quando Bane matou muitos de nós para que pudesse aumentar seu poder para desafiar Torm.~ //[mobha060]
+@6534 = ~Após a morte de Bhaal, nossa missão e foco mudaram. Nos anos que se seguiram, temos reconstruído lentamente os nossos números para não chamar a atenção para nós mesmos.~ //[mobha061]
+@6535 = ~Nós seríamos a ponta da lança de Bhaal para retomar seu portfólio de Cyric. Isso agora foi despedaçado.~ //[mobha062]
+@6540 = ~Houve um golpe com Amelyssan se proclamando o novo Senhor do Assassinato.~ //[mobha063]
+@6541 = ~Suas forças atacaram rapidamente, sem aviso nem piedade. No caos da batalha, reuni quem pude daqueles ainda leais a Bhaal e fugi de seu reino.~ //[mobha064]
+@6542 = ~Fomos caçados. Você pode ver as consequências ao seu redor da nossa última resistência.~ //[mobha065]
+@6550 = ~O reino dele está ao longo do caminho para o oeste, mas é provável que a entrada esteja selada. Há uma estátua perto da entrada que o próprio Bhaal esculpiu, que pode ajudar a abrir o caminho.~ //[mobha066]
+@6560 = ~Phiuhls são habitantes nativos deste plano. Não se sabe muito sobre eles, mas são criaturas violentas que atacam qualquer um que se aproxime deles.~ //[mobha067]
+@6561 = ~A Deathstalker Mayithra e suas forças patrulham esta área de Khalas e normalmente viajam com pouca bagagem para permitir que se movam rapidamente e ataquem de surpresa. Foram eles que nos pegaram em uma emboscada aqui.~ //[mobha068]
+@6562 = ~Há uma torre a leste do reino de Bhaal cheia de demônios e outros horrores desconhecidos. Dizem que eles seguem uma entidade poderosa.~ //[mobha069]
+@6563 = ~A oeste do reino de Bhaal fica o antigo arsenal de Bhaal. Foi assumido pelo Planetário Caído, alinhado com Amelyssan e convertido em uma guarnição improvisada. As armas mais perigosas de Bhaal foram criadas e mantidas lá.~ //[mobha070]
+
+// Uthaedeol the Blood-drenched (Viktor)
+@6600 = ~Quem é você para me acordar, Solar? Onde está meu senhor, Bhaal?~  //[mobha089] // Uthaedeol
+@6601 = ~Morto. Amelyssan ordena que você desperte e detenha os intrusos.~  //[mobha086] // Malchediel
+@6602 = ~Morto?! A profecia de Alaundo ainda não se cumpriu? Espere, você é o Bhaalspawn! Eu vejo a mancha do meu senhor em você.~  //[mobha090] // Uthaedeol
+@6603 = ~Desapareça, Solar, volte ao mestre ao qual você falsamente afirma servir.~  //[mobha091] // Uthaedeol
+@6604 = ~Cuidado com a língua, cachorro. Você é uma ferramenta de assassinato, nada mais e nada menos. Se não fosse por ordem de Amelyssan, eu teria mantido você preso no sono e eu mesmo teria lidado com o Bhaalspawn.~ //[mobha087] // Malchediel
+@6605 = ~Informe-me quando a escritura estiver concluída. Se você tiver sorte e tiver um bom desempenho, poderá testemunhar o ritual antes de colocá-lo de volta em êxtase.~ //[mobha088] // Malchediel
+// Cutscene with Malchediel leaving
+@6606 = ~Diga-me, como se sente?~ //[mobha092] 
+@6607 = ~Com licença?~  // Player
+@6608 = ~Como me sinto?~  // Player
+@6609 = ~Você sentirá minha lâmina!~  // Player
+@6610 = ~O sangue do senhor Bhaal, é claro!~ //[mobha093] 
+@6611 = ~Você sente a raiva, a fúria, a fome? Não se contenha, como é?~ //[mobha094]
+@6612 = ~É horrível e eu gostaria de poder me livrar desse mal.~  // Player
+@6613 = ~Eu mantenho isso sob controle e encontrei uma maneira de suprimir os impulsos sombrios.~  // Player
+@6614 = ~Aprendi a coexistir com ele e mantê-lo sob controle.~  // Player
+@6615 = ~Eu aprecio o poder que isso me traz!~  // Player
+@6616 = ~Pare de tagarelar, peão. Eu tenho um Solar para matar.~  // Player
+@6617 = ~Estou ansioso para derramar seu sangue!~ //[mobha095]
+@6618 = ~Ingrato! Fraco! Como você ousa não considerar sagrada a honra de ter o sangue dele fluindo através de você!~ //[mobha096]
+@6619 = ~Apenas se eu fosse tão sortudo para sentir a sua sombria graça fluindo dentro das minhas veias.~ //[mobha097]
+@6620 = ~Sinto que dormi muito desta última vez. O que aconteceu para trazê-lo aqui?~ //[mobha098]
+@6621 = ~O que você quer dizer com dormiu muito?~  // Player
+@6622 = ~Amelyssan vai usar a essência divina de Bhaal para que ela possa ascender como deusa.~  // Player
+@6623 = ~Eu vou me tornar o novo Senhor do Assassinato.~  // Player
+@6624 = ~Não tenho tempo para lhe dar uma aula de história. Prepare-se para morrer!~  // Player
+@6625 = ~Eu sou o assassino favorito de Bhaal.~ //[mobha099]
+@6626 = ~Ao longo dos séculos em seu serviço, fui chamado por Bhaal para realizar a mais importante das missões. Depois de concluído, ele me fez entrar em um descanso eterno até que fosse necessário me acorda novamente.~ //[mobha100]
+@6627 = ~Ainda me lembro daquele rei Tethyriano dançando até a morte enquanto o sangue escorria de cada um dos cortes que infligi a ele.~ //[mobha101]
+@6628 = ~O que aconteceu durante meu último descanso?~ //[mobha102]
+@6629 = ~NÃO! Você deve esta mentindo!~ //[mobha103]
+@6630 = ~Amelyssan era apenas uma Deathdealer recentemente nomeada na igreja quando a encontrei pela última vez.~ //[mobha104]
+@6631 = ~Ambiciosa e teimosa, sim. Mas tentar usurpar do nosso Senhor?!~ //[mobha105]
+@6632 = ~Eu duvido disso. Sua essência será coletada e Bhaal ressuscitará.~ //[mobha106]
+@6633 = ~Que tal você se juntar a mim e podemos derrotá-la juntos?~  // Player
+@6634 = ~Com sua patente de sumo sacerdote, Bhaal confiou a ela o ritual de sua ressurreição. Ela pretende usar o mesmo ritual para si mesma.~  // Player
+@6635 = ~Pretendo impedi-la, mas primeiro preciso acabar com você!~  // Player
+@6636 = ~Tal traição não deve ficar impune! Eu vou matá-la depois de lidar com você!~ //[mobha107]
+@6637 = ~Vamos acabar com isso!~  // Player
+@6638 = ~Você planeja substituir seu pai como o novo Senhor do Assassinato?~ //[mobha108]
+@6639 = ~Sim, eu subirei em seu lugar!~  // Player
+@6640 = ~Não, pretendo trilhar meu próprio caminho de destruição no plano mortal.~  // Player
+@6641 = ~Eu não tenho tempo para isso. Prepare-se para morrer!~  // Player
+@6642 = ~Posso detestar ver meu senhor permanecer morto, mas prefiro ver um de seus descendentes ascender sobre um ganancioso Deathstalker. Eu me juntarei a você em sua batalha final.~ //[mobha109]
+@6643 = ~Insensato! Prefiro enfrentar Amelyssan sozinho e me tornar um deus!~ //[mobha110]
+
+// Gaohan Ralahr (Balthazar - Cheerful)
+@6700 = ~Saudações! O Solar acaba de me informar que você poderia vir e estou ansioso pela sua ajuda!~ //[mobha116]
+@6701 = ~Isso não é nada legal! Estou fora daqui!~ //[mobha117]
+@6702 = ~Com licença?~  // Player
+@6703 = ~De que assistência você precisa?~  // Player
+@6704 = ~Eu não estou aqui para ajudá-lo.~  // Player
+@6705 = ~Eu só vou ajudá-lo acabando com sua existência!~  // Player
+@6706 = ~Provavelmente não é a resposta que você espera, mas não tenho intenção de brigar ou atrapalhar você nem um pouco.~ //[mobha118]
+@6707 = ~Eu tenho vários monstros especialmente modificados, mutantes, atormentados e aprimorados que pretendo testar.~ //[mobha119]
+@6708 = ~O que diz você? Você está interessado em colocar sua coragem à prova?~ //[mobha120]
+@6709 = ~Claro, vou lutar contra alguns monstros por você.~  // Player
+@6710 = ~Que tipos de monstros você criou?~  // Player
+@6711 = ~Por que você está fazendo todos esses monstros?~  // Player
+@6712 = ~Quem é você? você e um lich não e?~  // Player
+@6713 = ~Desculpe, mas tenho assuntos mais urgentes que requerem minha atenção.~  // Player
+@6714 = ~Que pena. Bem, por favor, volte se mudar de ideia.~ //[mobha121]
+@6715 = ~Monstros poderosos. Monstros perigosos. Eu pego alguns dos mais fortes dos Reinos e os transformo em algo ainda maior.~ //[mobha122]
+@6716 = ~Isso foi ordenado. Com Bhaal prestes a renascer, ele deveria ter entidades poderosas ao seu lado para dissuadir outras divindades de interferir ou atacá-lo abertamente enquanto ele estivesse em um estado tão enfraquecido.~ //[mobha123]
+@6717 = ~Eu também suspeito que estas sejam as tropas de choque necessárias para Bhaal atacar o reino de Cyric e recuperar parte de seu portfólio.~ //[mobha124]
+@6718 = ~Você não ouviu? Amelyssan está tentando ascender como o novo Senhor do Assassinato.~  // Player
+@6719 = ~Isso explicaria a comoção. Todos nós jogamos jogos sombrios e prefiro me concentrar no meu trabalho.~ //[mobha125]
+@6720 = ~Você realmente não pode dizer que eu sou um lich?!~ //[mobha126]
+@6721 = ~Que tal isso? Se você lutar com meus monstros Para melhorar a oferta, eu te contarei da vez que eu conheci seu pai quando ele era um mortal.~ //[mobha127]
+@6722 = ~Perfeito! Vou te teletransportar para o poço de testes onde sua primeira luta o aguarda.~ //[mobha128]
+@6723 = ~Boa sorte!~ //[mobha129]
+@6724 = ~Esse primeiro monstro não se saiu tão bem quanto eu esperava. Ou você é realmente poderoso ou estou me saindo muito mal com minhas criações. O que você acha de uma segunda luta?~ //[mobha130]
+@6725 = ~Deixe-me teletransportar você de volta para o poço de testes para sua próxima luta.~ //[mobha131]
+@6726 = ~Vamos ver como você se sai neste próximo desafio!~ //[mobha132]
+@6727 = ~"Eu" calculei mal?! Minhas criações estão tão mal feitas assim?~ //[mobha133]
+@6728 = ~Mais testes são necessários. Você está pronto?~ //[mobha134]
+@6729 = ~De volta ao campo de batalha, você vai!~ //[mobha135]
+@6730 = ~Vamos ver como você se sai com os pés no fogo!~ //[mobha136]
+@6731 = ~Aparentemente, mal se notam sinais de queimaduras da última luta.~ //[mobha137]
+@6732 = ~Bem, eu tenho mais um jogo, mas é uma coisa desagradável.~ //[mobha138]
+@6733 = ~Ou você é corajoso ou estúpido para desafiar esse monstro. Estou ansioso para ver os resultados.~ //[mobha139]
+@6734 = ~E assim, minha criação mais poderosa cai.~ //[mobha140]
+@6735 = ~Você fez o que eu pedi, o que eu aprecio. Pegue este colar.~ //[mobha141]
+@6736 = ~Você prevaleceu contra minhas criações, e eu sou deixado como um lich humilhado.~ //[mobha142]
+@6737 = ~Isso foi uma perda de tempo e vou te matar por isso!~  // Player
+@6738 = ~Sim, sou um lich, mas antes de abraçar os mortos-vivos eu era um grande feiticeiro de Nethereses.~ //[mobha143]
+@6739 = ~Nessa época, eu era um dos Feiticeiros da Coroa de Rdiuz. Seu pai, era um mortal conhecido como Arabhal, foi nosso principal assassino e espião. Ele estava entre os melhores espiões do império e nenhum, mesmo sendo mortal, se comparava à sua sede de sangue.~ //[mobha144]
+@6740 = ~Nós, os Feiticeiros da Coroa, éramos tão poderosos quanto qualquer outro dentro do império, no entanto, as notícias trazidas por Arabhal sobre o Avatar de Karsus foram alarmantes. Nós forçamos os limites mágicos dentro de Rdiuz, talvez até longe demais, mas até nós vimos os perigos na arrogância de Karsus.~ //[mobha145]
+@6741 = ~A decisão foi tomada. Arabhal e eu nos escondemos enquanto planejávamos assassinar Karsus antes que ele pudesse concretizar seu feitiço. Relatórios indicaram que Karsus poderia usar seu feitiço para tirar a divindade de um dos deuses, mas foi para nosso horror que ele escolheu Mystryl como alvo.~ //[mobha146]
+@6742 = ~O que aconteceu depois?~  // Player
+@6743 = ~Por favor continue.~  // Player
+@6744 = ~Isso não fez com que Mystryl se sacrificasse e cessasse toda a magia que resultou na queda de suas cidades do céu?~  // Player
+@6745 = ~Chega de aulas de história, tenho coisas mais importantes para fazer.~  // Player
+@6746 = ~Sim, está correto.~ //[mobha147]
+@6747 = ~Mystryl fez o que Karsus não pôde prever, sacrificando-se para proteger a Teia. Toda a magia cessou e nossas cidades caíram dos céus.~ //[mobha148]
+@6748 = ~Arabhal e eu assistimos horrorizados enquanto nossa casa desabava no chão. Em apenas um instante, nosso império chegou ao fim.~ //[mobha149]
+@6749 = ~Depois de ver nossa cidade, nossa nação, nosso império desmoronar diante de nossos olhos, nos separamos para buscar a imortalidade em nossos próprios termos. Arabhal juntou-se a Bane e Myrkul enquanto eu perseguia o lichdom. No final, nós dois encontramos o que procurávamos.~ //[mobha150]
+@6750 = ~Uma história interessante.~  // Player
+@6751 = ~O que o trouxe de volta aqui e ao serviço de Bhaal?~  // Player
+@6752 = ~Bhaal me encontrou. Ele era uma nova divindade e eu era um novo lich. Ele sabia que precisava de proteção tendo assumido o cargo de Senhor do Assassinato e me procurou por minha experiência em criar itens mágicos e armas de poder terrível.~ //[mobha151]
+@6753 = ~Esta torre foi erguida junto com o resto do seu reino. Cespenar, um ser criado por Bhaal, foi encarregado da tarefa mais mundana de reunir itens de poder com base em antigas receitas que criei. Meu foco e esforços estavam em criaturas como aquelas com as quais você lutou.~ //[mobha152]
+@6754 = ~Bhaal sabia do Tempo das Perturbações. Em vez de me preparar para evitar a sua morte, que ele sabia ser inevitável, ele queria que eu me concentrasse na preparação para o seu regresso. Ele queria forças prontas para mantê-lo seguro enquanto ele estivesse vulnerável.~ //[mobha153]
+@6755 = ~Não foram os resultados que eu queria, mas obrigado por testar minhas criações.~ //[mobha154]
+@6756 = ~Você não sairá de mãos vazias se decidir se testar em minhas criações e será recompensado com um item de poder habilmente elaborado.~ //[mobha155]
+@6757 = ~Eu sou velho. Conheço seu pai há mais tempo do que a maioria dos Reinos. Se você ajudar com meus testes, posso discutir nossa história.~ //[mobha156]
+
+@6799 = ~Ainda estou construindo isso. Por favor, continue subindo a torre para progredir.~
+
+/*  This plays into mobha46x.d that was replaced with the above.
+@6706 = ~Não há necessidade de se preocupar, bem, talvez um pouco. Vou jogar você naquela arena de batalha para a primeira rodada de testes.~
+@6707 = ~Isso não correu tão bem como eu esperava. Ou você é realmente poderoso ou estou indo muito mal com minhas criações.~
+@6708 = ~Talvez outro teste para confirmar a hipótese seja necessário. Você está pronto? Não? Bem, você vai voltar para a arena de qualquer maneira.~
+@6709 = ~Ainda estou construindo isso. Por favor, continue subindo a torre para progredir.~
+@6710 = ~Boa sorte!~
+@6711 = ~Vamos manter os pés no fogo!~
+@6712 = ~Aparentemente, você mal se queimou!~
+@6713 = ~"Eu" calculei mal?! Minhas criações estão tão mal feitas assim?~
+@6714 = ~Vamos ver como você se sai neste próximo desafio!~
+@6715 = ~Eu acho que você é tão poderoso quanto os rumores sugerem.~
+@6716 = ~~
+*/
+
+// Cespenar
+@6800 = ~Divertido esbarrar em você aqui.~
+@6801 = ~Por que você está aqui?~  // Player
+@6802 = ~Eu não esperava ver você novamente.~  // Player
+@6803 = ~Eu vejo que você está servindo ao inimigo agora.~  // Player
+@6804 = ~De volta para casa e de volta ao trabalho por lá. Veja, eu tenho minha bancada de trabalho!~
+@6805 = ~Oh, são escamas piroclásticas de dragão. Dói tocar! Eu faço uma boa armadura de placas... ai... preciso ter cuidado. 10.000 gp... você quer? ~
+@6806 = ~Estou feliz por você ter dito não... aquelas escamas doem so de tocar!~
+
+// Uthaedeol & Culdus 
+@6900 = ~Traidor! Você deveria sofrer mil mortes por trair Bhaal.~ //[mobha112] 
+@6901 = ~Encharcado de sangue?! Você deveria estar em êxtase!~  //[mobha111] // Culdus
+@6902 = ~Você teve tanta sorte. Estou bem acordado e vingarei meu senhor Bhaal. Morra como o verme patético que você é.~ //[mobha113] 
+@6903 = ~Com eles fora do caminho, somos apenas nós e Amelyssan. Infelizmente, meu senhor Bhaal permanece morto, independentemente do que aconteça a seguir.~ //[mobha114] 
+@6904 = ~Suas habilidades são impressionantes, mas eu prefiro tentar alcançar a divindade por mim mesmo.~ //[mobha115] 
+@6905 = ~Reconsidere, posso prometer grandes recompensas assim que completarmos isso.~  // Player
+@6906 = ~Eu deveria ter esperado isso de um servo de Bhaal.~  // Player
+@6907 = ~Bom, eu estava ansioso para estripar você!~  // Player
+
+// Viekang (Sal - Pleading)
+@7000 = ~Dada a sua reputação, preferiria ficar com o Solar.~ ////[mobha180] 
+@7001 = ~Você é um colírio para os meus olhos. Você não poderia ter chegado mais rápido.~ ////[mobha181] 
+@7002 = ~Enquanto eu estava escapando de Saradush, o Planetar deve ter me sentido. Eles surgiram do nada e rapidamente desapareceram na escuridão.~ ////[mobha182] 
+@7003 = ~Não sei quanto tempo fiquei fora, mas acordei aqui para ser torturado e experimentado por este Solar caido. Ele até me prendeu a correntes que me impedem de me teletransportar.~ ////[mobha183]
+@7004 = ~Por favor, eu imploro, liberte-me deste lugar. Quase não tenho nada da essência de Bhaal para importar.~ ////[mobha184]
+@7005 = ~Eu vou te libertar imediatamente, fuja deste lugar.~  // Player 1
+@7006 = ~Faça um juramento para mim de nunca tentar se levantar e assumir o manto do nosso pai. Neste lugar um juramento terá poder, como um geas. Eu então lhe darei sua liberdade.~  // Player 1
+@7007 = ~Pouco ou não, não posso deixar pontas soltas por aí. Não é nada pessoal, mas você tem que morrer.~  // Player 1
+@7008 = ~Morra como o animal preso que você é.~  // Player 1
+@7009 = ~Preciso de um momento para pensar sobre isso.~  // Player 1
+@7010 = ~Por favor, não pense nisso por muito tempo!~ ////[mobha185]
+@7011 = ~Covarde! Espero que Amelyssan mate você!~ ////[mobha186]
+@7012 = ~Juro. Eu vou jurar aqui. Você tem meu juramento de que não tentarei me tornar o Senhor do Assassinato.~ ////[mobha187]
+@7013 = ~Sem ofensa, mas espero que esta seja a última vez que te vejo. Boa sorte contra Amelyssan.~ ////[mobha188]
+@7014 = ~Eu não posso arriscar. Morra, idiota!~  // Player 1
+
+// Jambi (Eleven Labs Giovanni) - OLD (Jean-Pierre - Arrogant)
+@7100 = ~Por favor, veja o que tenho a oferecer.~ //[mobha232]////[mobha200]
+@7101 = ~Sim~
+@7102 = ~Não~
+@7103 = ~Bom dia e obrigado pela visita.~ //[mobha233]////[mobha193]
+
+@7110 = ~Bem-vindo! Não é todo dia que vemos um Prime entrando em nosso santuário.~ //[mobha231]////[mobha192]
+@7111 = ~Somos um estranho acompanhamento de seres diversos, mas todos são bem-vindos.~ //[mobha234]////[mobha196]
+@7112 = ~O que é este lugar?~  // Player1
+@7113 = ~Quem é você?~  // Player 1
+@7114 = ~Por que o seu santuário está aqui?~  // Player 1
+@7115 = ~Não estou com vontade de falar com você.~  // Player 1
+@7116 = ~Claro! Sou um comerciante e estalajadeiro, então sinta-se à vontade para falar comigo se precisar dos meus serviços.~ //[mobha235]////[mobha194]
+@7117 = ~Você se referiria à minha espécie como "Mercano". Como a maioria do meu povo, sou um comerciante e fico feliz em negociar e fazer negócios com você.~ //[mobha236]////[mobha195]
+@7118 = ~Eu também administro uma pousada. Não é muito, mas será um lugar seguro para você descansar.~ //[mobha237]////[mobha197]
+@7119 = ~Existe algum serviço do seu interesse?~ //[mobha238]////[mobha198]
+@7120 = ~Boa pergunta! Eu encaminharia você para Malik para melhor ajudá-lo. Não temos aqui um líder, mas ele é o nosso representante no tratamento dos assuntos da comunidade.~ //[mobha239]////[mobha199]
+@7121 = ~Eu preciso de um lugar seguro para descansar minha cabeça.~  // Player 1
+@7122 = ~Deixe-me ver sua loja.~  // Player 1
+@7123 = ~Estou bem por enquanto.~  // Player 1
+
+// Kirinhale (Lilith - Seductive)
+@7200 = ~Quem é você para estar em um lugar como este?~ //[mobha253]
+@7201 = ~Espere, você parece familiar. Já nos cruzamos antes?~ //[mobha254]
+@7202 = ~Eu te libertei na Torre de Durlag.~  // Player 1
+@7203 = ~Nós conhecemos na Torre de Durlag eu deixei você apodrecer.~  // Player 1
+@7204 = ~Eu matei você na Torre de Durlag.~  // Player 1
+@7205 = ~Não, acredito que não temos.~  // Player 1
+@7206 = ~A ironia. Quando nos separamos eu disse que seu tipo está destinado a conhecer o meu, mas aqui estamos novamente, cara a cara.~ //[mobha255]
+@7207 = ~Você tem poucos motivos para confiar em mim, pois já falhei em honrar os acordos anteriores que fizemos, mas me escute.~ //[mobha256]
+@7208 = ~Isso mesmo, eu me lembro de você. Para minha sorte, outro grupo de aventureiros idiotas apareceu logo depois que você saiu da Torre. Eles aceitaram meu acordo e eu consegui escapar.~ //[mobha257]
+@7209 = ~Foi muito lamentável, mas no final me concedeu minha liberdade. Estou disposto a deixar isso para trás se você me ouvir.~ //[mobha258]
+@7210 = ~Talvez eu esteja no Abismo por muito tempo, mas não costumo confundir um rosto.~ //[mobha259]
+@7211 = ~Como punição pela minha ausência devido à prisão de Durlag, devo compensar fornecendo muitas almas ao meu mestre.~ //[mobha260]
+@7212 = ~Qual lugar melhor para colher almas do que aquelas pertencentes a um deus morto e abandonado~ //[mobha261]
+@7213 = ~Sinto um véu fino aqui onde eles estarão maduros para serem capturados. No entanto, apesar de estar morto, Bhaal promulgou medidas de segurança para manter suas almas protegidas de ladrões, como eu.~ //[mobha262]
+@7214 = ~Está ao meu alcance dar-lhe delícias sobrenaturais se você me ajudar dessa maneira.~  //[mobha263]// MALE PC
+@7215 = ~Se você quiser ajudar uma companheira megera a expiar, eu poderia usar sua ajuda.~  //[mobha264]// FEMALE PC
+@7216 = ~Não sei por que, mas suspeito que você esteja tentando entrar no reino de Bhaal. Não tenho muito tempo, então vou até te dar esse medalhão que encontrei de um de seus seguidores. Deve permitir que você passe pela proteção.~ //[mobha265]
+@7217 = ~Vejo que não tenho escolha no assunto. Eu ajudarei você.~  // Player 1
+@7218 = ~Como as almas são de natureza suja, eu irei ajudá-lo.~  // Player 1
+@7219 = ~Para que você planeja usar as almas?~  // Player 1
+@7220 = ~Almas más ou não, não posso permitir que façam isso.~  // Player 1
+@7221 = ~Planejo me tornar o novo Senhor do Assassinato e não permitirei que você me roube preventivamente.~  // Player 1
+@7222 = ~O mesmo que qualquer um faria no Abismo. Tanto diabos quanto demônios colhem almas como ainda mais alimento para a eterna guerra de sangue.~ //[mobha266]
+@7223 = ~Mortal inútil! Irei a outro lugar para caçar almas.~ //[mobha267]
+@7224 = ~Esplêndido! Prepare-se, suspeito que seremos atacados assim que eu começar.~ //[mobha268]
+@7225 = ~Com esse incômodo fora do caminho, rapidamente perfurarei o vale para recolher minhas almas e retornarei em pouco tempo.~ //[mobha269]
+@7226 = ~E está feito! Como prometido, aqui está o medalhão de Bhaal.~ //[mobha270]
+@7227 = ~Quanto às delícias sobrenaturais, não tenho intenção de honrar esse acordo. Tenho lugares para estar, homem, e não perderei mais tempo neste Plano.~ //[mobha271]
+@7228 = ~Tenho lugares para estar e almas para entregar. Talvez nossos caminhos se cruzem novamente.~ //[mobha272]
+
+// Jambi - Rescue (Eleven Labs Giovanni) 
+@7300 = ~Bênçãos para você! Você me salvou do dragão!~ //[mobha245]
+@7301 = ~Eu estava viajando pela área e fui assolado por aquela criatura. Sem a sua intervenção, temo que minha morte teria sido lenta e dolorosa.~ //[mobha246]
+@7302 = ~Quem é você?~  // Player 1
+@7303 = ~O que é este lugar?~  // Player 1
+@7304 = ~Não tenho vontade de falar com você.~  // Player 1
+@7305 = ~Claro! Por favor, aceite este colar como um sinal de meu agradecimento. Eu sou um comerciante, então sinta-se à vontade para falar comigo se estiver interessado em comércio.~ //[mobha247]
+@7306 = ~Bom dia e obrigado pela visita.~ //[mobha233]
+@7307 = ~Estamos em Khalas, que é a primeira camada do Plano Externo conhecida como Gehenna.~ //[mobha249]
+@7308 = ~Você se referiria à minha espécie como "Mercano". Como a maioria do meu povo, sou um comerciante e fico feliz em negociar e fazer negócios com você.~ //[mobha236]
+@7309 = ~Você deseja negociar?~ //[mobha248]
+@7310 = ~Por favor, veja o que tenho a oferecer.~ //[mobha232]
+@7311 = ~Deixe-me ver sua loja.~  // Player 1
+@7312 = ~Estou bem por enquanto.~  // Player 1
+@7313 = ~Por favor, aceite este colar como um sinal de meu agradecimento.~ //[mobha250]
+@7314 = ~Claro! Eu sou um comerciante, então sinta-se à vontade para falar comigo quando estiver interessado em comércio.~ //[mobha251]
+@7315 = ~Saudações! Eu sou Jambi, um comerciante viajante que atravessa este Plano inóspito.~ //[mobha252]
+@7316 = ~Um comerciante viajante? Eu gostaria de ver seus produtos.~  // Player 1
+@7317 = ~Por que você está viajando para cá? Não imagino que você encontre muitos clientes por aqui.~  // Player 1
+@7318 = ~Você certamente está correto, e não gosto de passar mais tempo aqui do que o necessário.~ //[mobha273]
+@7319 = ~Khalas é um caminho necessário, pois é a única camada da Gehenna que toca o plano astral e tem conexões com os planos de Hades, Baator e a Oposição Concordante.~ //[mobha274]
+@7320 = ~Como um comerciante neutro, posso exercer meu comércio entre os habitantes desses reinos.~ //[mobha275]
+
+// Noober (Elevenlabs Callum) - OLD (Atlas - Light-hearted)
+@7400 = ~Olá, meu nome é Noober. Lugar legal, hein?~
+@7401 = ~O que...~  // Player 1
+@7402 = ~Como...~  // Player 1
+@7403 = ~Quem...~  // Player 1
+@7404 = ~É hora de revelar minha verdadeira face.~
+@7405 = ~Saudações. Eu sou Ao, o Superpai.~ //[mobha221]////[mobha202]
+@7406 = ~Você parece surpreso? Cyric estava correto em sua reunião sobre você, e tenho observado seu progresso com interesse. Noober, e seus vários desdobramentos, eram um disfarce que me permitia observar e interagir com você em sua jornada, sem chamar atenção desnecessária para mim.~ //[mobha222]////[mobha203]
+@7407 = ~você pôde me ajudar?~  // Player 1
+@7408 = ~Por que você não manifestou sua presença?~  // Player 1
+@7409 = ~E roubar de você a chance de provar seu valor?~ //[mobha223]////[mobha205]
+@7410 = ~Esta jornada é a sua provação. Assim como o aço é forjado sob as chamas mais intensas, você também foi fortalecido pelas adversidades que enfrentou. O que teria feito na ausência de tais desafios? Continuado sua existência em Candlekeep? Você teria desperdiçado sua vida e nunca teria se desenvolvido na pessoa que é hoje.~ //[mobha224]////[mobha204]
+@7411 = ~Tymora, A Dama da Sorte, se interessou por você e forneceu ajuda no início de sua jornada. Coisas como diamantes em árvores, anéis mágicos em pedras e assim por diante. Depois da placa ankheg em Nashkel, tive que intervir. Você despertou meu interesse e Noober nasceu.~ //[mobha225]////[mobha206]
+@7412 = ~Por que você está revelando isso pra mim agora?~  // Player 1
+@7413 = ~Esta foi uma série de eventos muito interessantes, e poucos assuntos mortais chamaram minha atenção como este. Claro que eu queria a oportunidade de me apresentar no final.~ //[mobha226]////[mobha207]
+@7414 = ~Você vai me ajudar a derrotar Amelyssan?~  // Player 1
+@7415 = ~Minha vida não é um brinquedo para seres superiores.~  // Player 1
+@7416 = ~Eu não quero isso. Remova meu sangue divino e me torne um mortal, para que eu possa me afastar disso.~  // Player 1
+@7417 = ~Você tem o poder, faça de mim um deus aqui e agora. Esmagarei Amelyssan!~  // Player 1
+@7418 = ~Não. O que vem a seguir é para você enfrentar.~ //[mobha227]////[mobha208]
+@7419 = ~Não fornecerei apoio nem me oporei à sua ascensão. Você deve ter sucesso por seu próprio mérito, habilidade e habilidade. O panteão dos deuses é diverso e abrange o bem e o mal. Todos têm seu lugar e propósito.~ //[mobha228]////[mobha209]
+@7420 = ~Vou deixar você com isso, o trono de Bhaal contém uma alavanca que abrirá o caminho para a Forja de Mana. É dentro da Forja de mana onde a essência de Bhaal é coletada e onde Amelyssan espera por você. A quem quer que se levante como vencedor, concederei a divindade, se assim o desejarem.~ //[mobha229]////[mobha210]
+@7421 = ~O resto está em suas mãos, estou ansioso pelo final.~ //[mobha230]////[mobha211]
+
+// Nekri (Casey - Lit)
+@7500 = ~Pare o viajante!~ //[mobha242]
+@7501 = ~Somos um posto avançado neutro e todos vocês são bem-vindos a o entrar. A violência não será tolerada.~ //[mobha244]
+@7502 = ~Você parece capaz. Por favor, procure Malik, pois precisamos de sua ajuda.~ //[mobha243]
+
+// Malik
+@7600 = ~Esta é a caixa de diálogo de espaço reservado.~

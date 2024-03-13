@@ -1,0 +1,122 @@
+// The Crucible, Portuguese (Brazilian) 
+
+@10000 = ~Sangue de Belchaad, o Juggernaut~
+@10001 = ~Este é um frasco de sangue retirado de Belchaad, o Juggernaut. O sangue é extraordinariamente pesado e emana maldade.
+
+ESTATISTICAS:
+
+Peso: 25~
+
+@10002 = ~Sangue de Malchediel~
+@10003 = ~Este é um frasco com sangue retirado de Malchediel. O sangue é extraordinariamente pesado e brilha com uma aparência quase dourada.
+
+ESTATISTICAS:
+
+Peso: 25~
+
+@10004 = ~Aljava da Abundância +3~
+@10005 = ~Esta Aljava da Abundância fornece ao usuário um suprimento ilimitado de +3 flechas.
+
+ESTATISTICAS:
+
+Habilidades equipadas:
+– +3 setas ilimitadas
+
+Peso: 0~
+
+@10006 = ~Mangual do Sofrimento~
+@10007 = ~Raiva fervilhante e malícia emana deste mangual, e você pode ouvir vagamente os sons de lamentos e gritos enquanto ele é balançado no ar. Somente o tipo mais imundo de indivíduo ousaria portar uma arma tão vil e maligna.
+
+ESTATISTICAS:
+
+Habilidades de combate:
+– O alvo atingido sofre 2 pontos de dano de sangramento adicional por segundo durante 15 segundos.
+– Qualquer morte causada por esta arma drena a alma da vítima e cura 20 pontos de vida do usuário. Isso não irá curar além do máximo do usuário.
+
+THAC0: +5
+Dano: 1d6+6
+Tipo de dano: Crushing
+Fator de velocidade: 2
+Tipo de proficiência: Mangual/Maça-estrela
+Tipo: Uma mão
+Requer:
+ 13 Força
+
+Peso: 8~
+
+@10008 = ~Assassinato em Espiral~
+@10009 = ~Embora possa ser difícil dizer se a lâmina recebeu o nome de um grupo de corvos ou do domínio de Bhaal, o Assassinato em Espiral é uma adaga verdadeiramente poderosa que visa matar rapidamente aqueles que têm fé. Considerando o poder da lâmina, não é surpresa onde a lâmina foi encontrada. 
+
+Pode ser a arma certa para usar contra todos os clérigos, paladinos e guardas negros. 
+
+ESTATISTICAS:
+
+Habilidades de carga: 
+– Invisibilidade duas vezes por dia
+  Duração: 12 horas
+  Área de Efeito: O usuário
+
+Habilidades equipadas:
+– Salvaguarda contra a Morte: +2
+
+Habilidades de combate:
+– Quando um alvo é morto com esta lâmina, o usuário recupera 10 Pontos de Vida
+– Se um Clérigo ou Paladino for atingido por esta arma, ele sofre -1 de penalidade em Sabedoria por 3 rodadas
+
+THAC0: +5
+Dano: 1d4+5, +5 extras contra clérigos e paladinos
+Tipo de dano: (Perfuração)
+Fator de velocidade : 0
+Proficiency Type: Adaga
+Tipo: Uma mão
+Requer:
+ 3 Força
+
+Peso: 0~
+
+@10010 = ~O Último Arrependimento do Mago de Sangue~
+@10011 = ~Este amuleto foi inventado por um mago que usava rituais de sangue para vencer sua batalha contra Belhifet. Diz-se que seu amuleto, O último arrependimento, o ajudou a ferir verdadeiramente o diabo; entretanto, o inimigo do mago era muito mais poderoso do que o lançador poderia ter previsto. Ele falhou e morreu naquele dia. O amuleto se perdeu no mesmo momento, provavelmente levado por uma das criaturas diabólicas menores após a batalha. 
+
+ESTATISTICAS:
+
+Habilidades equipadas: 
+– Constituição: -1
+– Nível de lançador: +3
+– Classe de Armadura: +2 contra demônios e diabos 
+– Testes de resistência: +2 contra demônios e diabos 
+– Só pode ser removido com um feitiço Remove Curse 
+
+Habilidades de carga:
+– Sacrifique permanentemente 20% dos pontos de vida máximos do usuário e recupere todos os feitiços perdidos
+  Área de Efeito: O usuário
+
+Peso: 0~
+
+@10012 = ~Medalhão de Bhaal~
+@10013 = ~Este medalhão, usado pelos seguidores de Bhaal, permite entrar em seu Reino.
+
+ESTATISTICAS:
+
+Peso: 1~
+
+@10014 = ~Escama Piroclástica de Dragão~
+@10015 = ~Várias escamas foram recuperadas do dragão piroclástico. Diz a lenda que eles podem ser forjados magicamente em armaduras poderosas.
+
+ESTATISTICAS:
+
+Peso: 15~
+
+@10016 = ~Placa Piroclástica do Dragão~
+@10017 = ~As escamas duráveis do dragão piroclástico proporcionam excelente proteção contra armas e fogo.
+
+ESTATISTICAS:
+
+Habilidades equipadas:
+– Fire Resistance: +40%
+– 2 pontos de dano de fogo para qualquer um que acerte o usuário
+
+Classe de Armadura: -2 (-5 vs. cortante, -3 vs. perfurante e míssil)
+Requer:
+ 15 Força 
+
+Peso: 40~
