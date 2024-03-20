@@ -1,0 +1,136 @@
+// The Crucible, Spanish
+
+@10000 = ~Sangre de Belchaad el Gigante~
+@10001 = ~Este es un frasco de sangre extraída de Belchaad the Juggernaut. La sangre es inusualmente pesada y emana maldad.
+
+ESTADÍSTICAS:
+
+Peso: 25~
+
+@10002 = ~Sangre de Malchediel~
+@10003 = ~Este es un frasco de sangre extraída de Malchediel. La sangre es inusualmente espesa y brilla con una apariencia casi dorada.
+
+ESTADÍSTICAS:
+
+Peso: 25~
+
+@10004 = ~Carcaj de la abundancia +3~
+@10005 = ~Este Quiver of Plenty proporciona al usuario un suministro ilimitado de +3 flechas.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Ilimitado +3 flechas
+
+Peso: 0~
+
+@10006 = ~Azote del sufrimiento~
+@10007 = ~Rabia y malicia hirvientes emanan de este mayal, y puedes escuchar débilmente los sonidos de lamentos y gritos mientras se balancea en el aire. Sólo el individuo más asqueroso se atrevería a empuñar un arma tan vil y malvada.
+
+ESTADÍSTICAS:
+
+Habilidades de combate:
+– El objetivo golpeado sufre 2 puntos de daño de sangrado adicional por segundo durante 15 segundos.
+– Cualquier muerte causada por esta arma drena el alma de la víctima y cura al portador 20 puntos de vida. Esto no curará más allá del máximo del portador.
+
+THAC0: +5
+Daño: 1d6+6
+Tipo de daño: Aplastamiento
+Factor de velocidad: 2
+Tipo de arma: mayal/estrella de la mañana
+Tipo: Una mano
+Requiere:
+ 13 fuerza
+
+Peso: 8~
+
+@10008 = ~Asesinato en espiral~
+@10009 = ~Aunque puede ser difícil decir si la espada lleva el nombre de un grupo de cuervos o del dominio de Bhaal, el Asesinato en Espiral es una daga verdaderamente poderosa destinada a matar rápidamente a aquellos de fe. Teniendo en cuenta el poder de la espada, no sorprende dónde se ha encontrado.
+
+Puede que sea el arma adecuada para usar contra todos los clérigos, paladines y canallas.
+
+ESTADÍSTICAS:
+
+Habilidades de carga:
+– Invisibilidad dos veces al día.
+  Duración: 12 horas
+  Área de efecto: el usuario
+
+Habilidades equipadas:
+– Salvación contra Muerte: +2
+
+Habilidades de combate:
+– Cuando un objetivo muere con esta espada, el portador cura 10 puntos de vida.
+– Si un Clérigo o Paladín es golpeado con esta arma, sufre una penalización de -1 a Sabiduría durante 3 rondas.
+
+THAC0: +5
+Daño: 1d4+5, +5 extra contra clérigos y paladines
+Tipo de daño: Perforante
+Factor de velocidad: 0
+Tipo de arma: Daga
+Tipo: Una mano
+Requiere:
+ 3 fuerza
+
+Peso: 0~
+
+@10010 = ~El último arrepentimiento del mago de sangre~
+@10011 = ~Este amuleto fue inventado por un mago que usó rituales de sangre para ganar su batalla con Belhifet. Se dice que su amuleto, El último arrepentimiento, le ayudó a herir verdaderamente al diablo; sin embargo, el enemigo del mago era mucho más poderoso de lo que el taumaturgo podría haber anticipado. Fracasó y murió ese día. El amuleto se perdió en el mismo momento, probablemente tomado por una de las criaturas menos diabólicas después de la batalla.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Constitución: -1
+– Nivel de lanzador: +3
+– Clase de armadura: +2 contra demonios y diablos
+– Tiros de salvación: +2 contra demonios y diablos
+– Sólo se puede eliminar con un hechizo Quitar Maldición.
+
+Habilidades de carga:
+– Sacrifica permanentemente el 20% de los puntos de vida máximos del usuario y recupera todos los hechizos perdidos.
+  Área de efecto: el usuario
+
+Peso: 0~
+
+@10012 = ~Medallón de Bhaal~
+@10013 = ~Este medallón, usado por los seguidores de Bhaal, permite entrar en su Reino.
+
+ESTADÍSTICAS:
+
+Peso: 1~
+
+@10014 = ~Escama de dragón piroclástico~
+@10015 = ~Se rescataron varias escamas del dragón piroclástico. La leyenda dice que se pueden forjar mágicamente para convertirlos en poderosas armaduras.
+
+ESTADÍSTICAS:
+
+Peso: 15~
+
+@10016 = ~Placa de dragón piroclástica~
+@10017 = ~Las duraderas escamas del dragón piroclástico brindan una excelente protección contra armas y fuego.
+
+ESTADÍSTICAS:
+
+Habilidades equipadas:
+– Resistencia al fuego: +40%
+– 2 puntos de daño por fuego a cualquiera que dañe al portador
+
+Clase de armadura: -2 (-5 contra corte, -3 contra perforación y misil)
+Requiere:
+ 15 fuerza
+
+Peso: 40~
+
+@10018 = ~Corazón de demonio~
+@10019 = ~Nadie dijo que los corazones de demonio debieran ser bonitos, pero no os esperabais esta blandengue bolsa carnosa de maldad. El corazón aún late, pesado y húmedo; incluso oculto entre vuestras pertenencias podéis oír el terrible "bum, bum". De vez en cuando tenéis que echar un vistazo a vuestra mochila para aseguraros que no ha salido botando.
+
+CARACTERÍSTICAS:
+
+Peso: 25 lbs~
+
+@10020 = ~Pluma del ala de una planotáreo~
+@10021 = ~Esta pluma hallada en los aposentos de la Alada parece normal hasta que se examina de cerca. Solo entonces resulta evidente la luz trémula y sobrenatural que desprende. Aquellos que tratan con artefactos extraños pagarían una buena suma por un objeto así. Un mago hábil también podría usarla como componente para un hechizo.
+
+CARACTERÍSTICAS:
+
+Peso: 0 lbs~

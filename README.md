@@ -2,7 +2,7 @@
 
 [![Latest Release](https://img.shields.io/github/v/release/gibberlings3/crucible?include_prereleases)](https://github.com/Gibberlings3/crucible/releases/latest)
 [![Github downloads (all releases)](https://img.shields.io/github/downloads/gibberlings3/crucible/total.svg?color=informational)](https://github.com/gibberlings3/crucible/releases)
-![Language](https://img.shields.io/static/v1?label=language&message=english%20%7C%20brazilian_portuguese&color=informational)
+![Language](https://img.shields.io/static/v1?label=language&message=english%20%7C%20brazilian_portuguese%20%7C%20spanish&color=informational)
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20macos%20%7C%20linux&color=informational)
 
 [A Gibberlings Three Mod](https://www.gibberlings3.net/)
@@ -35,4 +35,6 @@ This mod uses ai voice acting for net new characters courtesy of Replica Studios
 - lowman02, thank you for the testing and feedback
 - Cam for all of your help and assistance. The reasons are many, thank you.
 - DarthNihilus530 for providing the Brazilian Portuguese translation.
+- loViVo for providing the Spanish translation.
+- alaisFcZ for coordinating and assisting with Spanish translation.
 - All those who assisted in testing and providing feedback! I appreciate every single one of you for all that you do!
