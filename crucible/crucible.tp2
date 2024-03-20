@@ -38,6 +38,18 @@ LANGUAGE ~Brazilian Portuguese~
          ~crucible/languages/portuguese/journal.tra~
          ~crucible/languages/portuguese/setup.tra~
          ~crucible/languages/portuguese/spells.tra~
+LANGUAGE ~Spanish~
+         ~spanish~
+         ~crucible/languages/english/creatures.tra~
+         ~crucible/languages/english/items.tra~
+         ~crucible/languages/english/journal.tra~
+         ~crucible/languages/english/setup.tra~
+         ~crucible/languages/english/spells.tra~
+         ~crucible/languages/spanish/creatures.tra~
+         ~crucible/languages/spanish/items.tra~
+         ~crucible/languages/spanish/journal.tra~
+         ~crucible/languages/spanish/setup.tra~
+         ~crucible/languages/spanish/spells.tra~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
