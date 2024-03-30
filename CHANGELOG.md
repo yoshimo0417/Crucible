@@ -1,12 +1,20 @@
 # Changelog
 
-## Version 1.4
+## Version 1.5
 
 Month xx, 2024
 
 ### Changed
 
 - Update link @6228 and update voiced dialog for Malchediel
+
+## Version 1.4
+
+March 30, 2024
+
+### Changed
+
+- Added Chinese translation courtesy of yoshimo0417.
 
 ## Version 1.3
 
