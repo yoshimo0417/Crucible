@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 1.5
+## Version 2.0
 
 Month xx, 2024
 
@@ -8,6 +8,8 @@ Month xx, 2024
 
 - Update link @6228 and update voiced dialog for Malchediel.
 - Corrected Phiuhls to no longer be undead.
+- Corrected attack scripts.
+- Created new bone fiend creature instead of using the existing cre.
 
 ## Version 1.4
 
