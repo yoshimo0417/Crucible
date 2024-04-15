@@ -18,8 +18,8 @@ IF
   DifficultyGT(HARD)
 THEN
   RESPONSE #100
-    CreateCreatureEffect("MELSUM02","SPRAISED",[863.1519],S)  // Bone Fiend
-    CreateCreatureEffect("MELSUM02","SPRAISED",[927.1495],S)  // Bone Fiend
+    CreateCreatureEffect("mobha62","SPRAISED",[863.1519],S)  // Bone Fiend
+    CreateCreatureEffect("mobha62","SPRAISED",[927.1495],S)  // Bone Fiend
     ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
     ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)
     ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
@@ -3183,11 +3183,14 @@ IF
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
 THEN
-  RESPONSE #100
+  RESPONSE #25
     AttackOneRound(NearestEnemyOf(Myself))
+  RESPONSE #75
+    Continue()
 END
 
 IF
@@ -3202,11 +3205,14 @@ IF
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
 THEN
-  RESPONSE #100
+  RESPONSE #25
     AttackOneRound(SecondNearestEnemyOf(Myself))
+  RESPONSE #75
+    Continue()
 END
 
 IF
@@ -3221,11 +3227,14 @@ IF
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
 THEN
-  RESPONSE #100
+  RESPONSE #25
     AttackOneRound(ThirdNearestEnemyOf(Myself))
+  RESPONSE #75
+    Continue()
 END
 
 IF
@@ -3240,11 +3249,14 @@ IF
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
 THEN
-  RESPONSE #100
+  RESPONSE #25
     AttackOneRound(FourthNearestEnemyOf(Myself))
+  RESPONSE #75
+    Continue()
 END
 
 IF
@@ -3259,11 +3271,14 @@ IF
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
 THEN
-  RESPONSE #100
+  RESPONSE #25
     AttackOneRound(FifthNearestEnemyOf(Myself))
+  RESPONSE #75
+    Continue()
 END
 
 IF
@@ -3278,11 +3293,14 @@ IF
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   CheckStatLT(LastSeenBy(Myself),60,RESISTMISSILE)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
 THEN
-  RESPONSE #100
+  RESPONSE #25
     AttackOneRound(SixthNearestEnemyOf(Myself))
+  RESPONSE #75
+    Continue()
 END
 
 IF

@@ -3415,11 +3415,14 @@ IF
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
   WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
 THEN
-  RESPONSE #100
+  RESPONSE #25
     AttackOneRound(LastSeenBy(Myself))
+  RESPONSE #75
+    Continue()
 END
 
 IF
@@ -3431,11 +3434,14 @@ IF
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(LastSeenBy(Myself),MAINHAND)
   WeaponCanDamage(LastSeenBy(Myself),MAINHAND)
 THEN
-  RESPONSE #100
+  RESPONSE #25
     AttackOneRound(LastSeenBy(Myself))
+  RESPONSE #75
+    Continue()
 END
 
 IF
@@ -3448,11 +3454,14 @@ IF
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
 THEN
-  RESPONSE #100
+  RESPONSE #25
     AttackOneRound(NearestEnemyOf(Myself))
+  RESPONSE #75
+    Continue()
 END
 
 IF
@@ -3465,11 +3474,14 @@ IF
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
 THEN
-  RESPONSE #100
+  RESPONSE #25
     AttackOneRound(SecondNearestEnemyOf(Myself))
+  RESPONSE #75
+    Continue()
 END
 
 IF
@@ -3482,11 +3494,14 @@ IF
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
 THEN
-  RESPONSE #100
+  RESPONSE #25
     AttackOneRound(ThirdNearestEnemyOf(Myself))
+  RESPONSE #75
+    Continue()
 END
 
 IF
@@ -3499,6 +3514,7 @@ IF
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
 THEN
@@ -3516,11 +3532,14 @@ IF
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
 THEN
-  RESPONSE #100
+  RESPONSE #25
     AttackOneRound(FifthNearestEnemyOf(Myself))
+  RESPONSE #75
+    Continue()
 END
 
 IF
@@ -3533,11 +3552,14 @@ IF
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
   CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
+  Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
   WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
 THEN
-  RESPONSE #100
+  RESPONSE #25
     AttackOneRound(SixthNearestEnemyOf(Myself))
+  RESPONSE #75
+    Continue()
 END
 
 IF

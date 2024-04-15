@@ -38,7 +38,7 @@ COPY ~crucible/baf/mobha28.baf~ ~crucible/baf/mobha28.baf~
 THEN
   RESPONSE #80
     SetGlobal("MO_SpellCast","LOCALS",1)
-    SetGlobalTimer("MO_LathanderTimer","LOCALS",12)
+    SetGlobalTimer("MO_LathanderTimer","LOCALS",30)
     SetInterrupt(FALSE)
     ReallyForceSpell(Myself,CLERIC_GREATER_SHIELD_OF_LATHANDER)
     SetInterrupt(TRUE)

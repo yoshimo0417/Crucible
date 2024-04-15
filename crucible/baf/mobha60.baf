@@ -130,6 +130,7 @@ THEN
     AttackOneRound(SixthNearestEnemyOf(Myself))
 END
 
+/*
 IF
   ActionListEmpty()
   DifficultyGT(HARD)
@@ -231,6 +232,7 @@ THEN
   RESPONSE #100
     AttackOneRound(SixthNearestEnemyOf(Myself))
 END
+*/
 
 IF
   ActionListEmpty()

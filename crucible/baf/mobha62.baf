@@ -1,26 +1,12 @@
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
-//            Hellfire Werewolf
+//            Magical Sword
 /////////////////////////////////////////////////////////////////////
 //        Version 1
-// Hellfire Werewolf, 14th level Werewolf
+// Magical Sword, 10th level Sword
 //
 //
 /////////////////////////////////////////////////////////////////////
-
-/////////////////////////////////////////////////////////////////////
-// Initial Set-Up
-/////////////////////////////////////////////////////////////////////
-IF
-  See([GOODCUTOFF])
-  Global("Prep","LOCALS",0)
-  Allegiance(Myself,ENEMY)
-THEN
-  RESPONSE #100
-    SetGlobal("Prep","LOCALS",1)
-    ApplySpell(Myself,BERSERKER_RAGE)
-    Continue()
-END
 
 /////////////////////////////////////////////////////////////////////
 // Attack
@@ -28,12 +14,10 @@ END
 IF
   ActionListEmpty()
   See(NearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
@@ -48,12 +32,10 @@ END
 IF
   ActionListEmpty()
   See(SecondNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
@@ -68,12 +50,10 @@ END
 IF
   ActionListEmpty()
   See(ThirdNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
@@ -88,12 +68,10 @@ END
 IF
   ActionListEmpty()
   See(FourthNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
@@ -108,12 +86,10 @@ END
 IF
   ActionListEmpty()
   See(FifthNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
@@ -128,12 +104,10 @@ END
 IF
   ActionListEmpty()
   See(SixthNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   CheckStatLT(LastSeenBy(Myself),1,STONESKINS)
   CheckStatGT(LastSeenBy(Myself),-20,ARMORCLASS)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTSLASHING)
-  CheckStatLT(LastSeenBy(Myself),60,RESISTPIERCING)
+  CheckStatLT(LastSeenBy(Myself),60,RESISTCRUSHING)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   Range(LastSeenBy(Myself),5)
   WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
@@ -148,7 +122,6 @@ END
 IF
   ActionListEmpty()
   See(NearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
@@ -161,7 +134,6 @@ END
 IF
   ActionListEmpty()
   See(SecondNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
@@ -174,7 +146,6 @@ END
 IF
   ActionListEmpty()
   See(ThirdNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
@@ -187,7 +158,6 @@ END
 IF
   ActionListEmpty()
   See(FourthNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
@@ -200,7 +170,6 @@ END
 IF
   ActionListEmpty()
   See(FifthNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
@@ -213,7 +182,6 @@ END
 IF
   ActionListEmpty()
   See(SixthNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
   !Allegiance(LastSeenBy(Myself),ENEMY)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
   WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
@@ -223,74 +191,13 @@ THEN
     AttackOneRound(SixthNearestEnemyOf(Myself))
 END
 
+/////////////////////////////////////////////////////////////////////
+// Find them!
+/////////////////////////////////////////////////////////////////////
 IF
-  ActionListEmpty()
-  See(NearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
-THEN 
+  Heard([ENEMY],125)
+  !Detect([GOODCUTOFF])
+THEN
   RESPONSE #100
-    AttackOneRound(NearestEnemyOf(Myself))
-END
-
-IF
-  ActionListEmpty()
-  See(SecondNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
-THEN 
-  RESPONSE #100
-    AttackOneRound(SecondNearestEnemyOf(Myself))
-END
-
-IF
-  ActionListEmpty()
-  See(ThirdNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
-THEN 
-  RESPONSE #100
-    AttackOneRound(ThirdNearestEnemyOf(Myself))
-END
-
-IF
-  ActionListEmpty()
-  See(FourthNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
-THEN 
-  RESPONSE #100
-    AttackOneRound(FourthNearestEnemyOf(Myself))
-END
-
-IF
-  ActionListEmpty()
-  See(FifthNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
-THEN 
-  RESPONSE #100
-    AttackOneRound(FifthNearestEnemyOf(Myself))
-END
-
-IF
-  ActionListEmpty()
-  See(SixthNearestEnemyOf(Myself))
-  Allegiance(Myself,ENEMY)
-  !Allegiance(LastSeenBy(Myself),ENEMY)
-  !StateCheck(LastSeenBy(Myself),STATE_NOT_APPROACHABLE)
-  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
-THEN 
-  RESPONSE #100
-    AttackOneRound(SixthNearestEnemyOf(Myself))
+    MoveToObject(LastHeardBy(Myself))
 END

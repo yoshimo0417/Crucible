@@ -111,12 +111,13 @@ END
 IF 
   !GlobalTimerNotExpired("MO_SpawnTimer","LOCALS")
   !GlobalTimerNotExpired("MO_TimeStopTimer","LOCALS")
+  NumCreatureLT("mobha62",6)
 THEN 
   RESPONSE #100
     SetGlobalTimer("MO_SpawnTimer","LOCALS",18)
-    CreateCreatureEffect("MELSUM02","SPRAISED",[1036.801],NW)  // Bone Fiend
-    CreateCreatureEffect("MELSUM02","SPRAISED",[671.1001],N)  // Bone Fiend
-    //CreateCreatureEffect("MELSUM02","SPRAISED",[497.588],SE)  // Bone Fiend
+    CreateCreatureEffect("mobha62","SPRAISED",[1036.801],NW)  // Bone Fiend
+    CreateCreatureEffect("mobha62","SPRAISED",[671.1001],N)  // Bone Fiend
+    //CreateCreatureEffect("mobha62","SPRAISED",[497.588],SE)  // Bone Fiend
     Continue()
 END
 

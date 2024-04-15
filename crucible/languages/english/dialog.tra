@@ -486,7 +486,7 @@ Before you lies a symbol of Bhaal, reassuring you of your surroundings. Off in t
 // Jambi - Rescue (Eleven Labs Giovanni) 
 @7300 = ~Blessings to you! You saved me from the dragon!~ //[mobha245]
 @7301 = ~I was traveling through the area and was beset by that creature. Without your intervention, I fear my demise would have been most swift and painful.~ //[mobha246]
-@7302 = ~Who are you?~  // Player 1
+@7302 = ~What are you?~  // Player 1
 @7303 = ~What is this place?~  // Player 1
 @7304 = ~I have no desire to speak with you.~  // Player 1
 @7305 = ~Of course! Please take this necklace as a token of my appreciation. I am a merchant, so feel free to speak with me if you are interested in trade.~ //[mobha247]
