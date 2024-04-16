@@ -28,7 +28,8 @@
 //
 //  3 finger of death (7)
 //  2 mordenkainen's sword (7)
-//  3 spell turning (7)
+//  2 spell turning (7)
+//  1 khelben's warding whip (7)
 //
 //  5 abi-dalzim's horrid wilting (8)
 //  1 pierce shield (8)
@@ -94,9 +95,10 @@ THEN
     SetGlobal("MO_TrueSight","LOCALS",4)
     SetGlobal("MO_FingerDeath","LOCALS",3)
     SetGlobal("MO_Mordenkainens","LOCALS",2)
-    SetGlobal("MO_SpellTurning","LOCALS",3)
-    //SetGlobal("MO_PierceShield","LOCALS",1)
-    SetGlobal("MO_AbiDalzims","LOCALS",6)
+    SetGlobal("MO_SpellTurning","LOCALS",2)
+    SetGlobal("MO_Khelben","LOCALS",2)
+    SetGlobal("MO_PierceShield","LOCALS",1)
+    SetGlobal("MO_AbiDalzims","LOCALS",5)
     SetGlobal("MO_ImprovedAlacrity","LOCALS",1)
     SetGlobal("MO_Timestop","LOCALS",1)
     SetGlobal("MO_DragonsBreath","LOCALS",1)
@@ -122,132 +124,140 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
-// Contingency
-/////////////////////////////////////////////////////////////////////
-IF
-  Global("Contingency","LOCALS",0)
-  TookDamage()
-THEN
-  RESPONSE #100
-    ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
-    ApplySpell(Myself,WIZARD_MISLEAD)  // SPWI607.SPL (Mislead)
-    ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
-    SetGlobal("Contingency","LOCALS",1)
-END
-
-/////////////////////////////////////////////////////////////////////
 // Spell Trigger
 /////////////////////////////////////////////////////////////////////
 IF
-  See(NearestEnemyOf(Myself))
   Global("MO_SpTrig","LOCALS",0)
-  !HasBounceEffects(LastSeenBy(Myself))
+  TookDamage()
 THEN
   RESPONSE #100
     DisplayString(Myself,39968)  // Spell Trigger—Fired
+    ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+    ApplySpell(Myself,WIZARD_MISLEAD)  // SPWI607.SPL (Mislead)
+    ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
+    SetGlobal("MO_SpTrig","LOCALS",1)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Contingency
+/////////////////////////////////////////////////////////////////////
+IF
+  See(NearestEnemyOf(Myself))
+  Global("Contingency","LOCALS",0)
+  !HasBounceEffects(LastSeenBy(Myself))
+THEN
+  RESPONSE #100
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
     DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
     ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 IF
   See(SecondNearestEnemyOf(Myself))
-  Global("MO_SpTrig","LOCALS",0)
+  Global("Contingency","LOCALS",0)
   !HasBounceEffects(LastSeenBy(Myself))
 THEN
   RESPONSE #100
-    DisplayString(Myself,39968)  // Spell Trigger—Fired
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
+    DisplayString(Myself,25939)  // Chain Lightning
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 IF
   See(ThirdNearestEnemyOf(Myself))
-  Global("MO_SpTrig","LOCALS",0)
+  Global("Contingency","LOCALS",0)
   !HasBounceEffects(LastSeenBy(Myself))
 THEN
   RESPONSE #100
-    DisplayString(Myself,39968)  // Spell Trigger—Fired
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
+    DisplayString(Myself,25939)  // Chain Lightning
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 IF
   See(FourthNearestEnemyOf(Myself))
-  Global("MO_SpTrig","LOCALS",0)
+  Global("Contingency","LOCALS",0)
   !HasBounceEffects(LastSeenBy(Myself))
 THEN
   RESPONSE #100
-    DisplayString(Myself,39968)  // Spell Trigger—Fired
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
+    DisplayString(Myself,25939)  // Chain Lightning
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 IF
   See(FifthNearestEnemyOf(Myself))
-  Global("MO_SpTrig","LOCALS",0)
+  Global("Contingency","LOCALS",0)
   !HasBounceEffects(LastSeenBy(Myself))
 THEN
   RESPONSE #100
-    DisplayString(Myself,39968)  // Spell Trigger—Fired
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
+    DisplayString(Myself,25939)  // Chain Lightning
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 IF
   See(SixthNearestEnemyOf(Myself))
-  Global("MO_SpTrig","LOCALS",0)
+  Global("Contingency","LOCALS",0)
   !HasBounceEffects(LastSeenBy(Myself))
 THEN
   RESPONSE #100
-    DisplayString(Myself,39968)  // Spell Trigger—Fired
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
+    DisplayString(Myself,25939)  // Chain Lightning
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 IF
   See(TenthNearestEnemyOf(Myself))
-  Global("MO_SpTrig","LOCALS",0)
+  Global("Contingency","LOCALS",0)
   !HasBounceEffects(LastSeenBy(Myself))
 THEN
   RESPONSE #100
-    DisplayString(Myself,39968)  // Spell Trigger—Fired
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
+    DisplayString(Myself,25939)  // Chain Lightning
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 /////////////////////////////////////////////////////////////////////
@@ -785,7 +795,214 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
-// Strip Spell Protections
+// Spell: Khelben's Warding Whip
+/////////////////////////////////////////////////////////////////////
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  See(NearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_Khelben","LOCALS",0)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !ImmuneToSpellLevel(LastSeenBy(Myself),7)
+  OR(8)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+    CheckStatGT(LastSeenBy(Myself),0,SHIELDGLOBE)
+  !CheckSpellState(LastSeenBy(Myself),SCROLL_OF_PROTECTION_FROM_MAGIC)
+  CheckStatLT(LastSeenBy(Myself),1,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_KHELBENS_WARDING_WHIP)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_Khelben","LOCALS",-1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_WARDING_WHIP)  // SPWI705.SPL (Khelben's Warding Whip)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  See(SecondNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_Khelben","LOCALS",0)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !ImmuneToSpellLevel(LastSeenBy(Myself),7)
+  OR(8)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+    CheckStatGT(LastSeenBy(Myself),0,SHIELDGLOBE)
+  !CheckSpellState(LastSeenBy(Myself),SCROLL_OF_PROTECTION_FROM_MAGIC)
+  CheckStatLT(LastSeenBy(Myself),1,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_KHELBENS_WARDING_WHIP)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_Khelben","LOCALS",-1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_WARDING_WHIP)  // SPWI705.SPL (Khelben's Warding Whip)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  See(ThirdNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_Khelben","LOCALS",0)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !ImmuneToSpellLevel(LastSeenBy(Myself),7)
+  OR(8)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+    CheckStatGT(LastSeenBy(Myself),0,SHIELDGLOBE)
+  !CheckSpellState(LastSeenBy(Myself),SCROLL_OF_PROTECTION_FROM_MAGIC)
+  CheckStatLT(LastSeenBy(Myself),1,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_KHELBENS_WARDING_WHIP)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_Khelben","LOCALS",-1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_WARDING_WHIP)  // SPWI705.SPL (Khelben's Warding Whip)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  See(FourthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_Khelben","LOCALS",0)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !ImmuneToSpellLevel(LastSeenBy(Myself),7)
+  OR(8)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+    CheckStatGT(LastSeenBy(Myself),0,SHIELDGLOBE)
+  !CheckSpellState(LastSeenBy(Myself),SCROLL_OF_PROTECTION_FROM_MAGIC)
+  CheckStatLT(LastSeenBy(Myself),1,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_KHELBENS_WARDING_WHIP)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_Khelben","LOCALS",-1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_WARDING_WHIP)  // SPWI705.SPL (Khelben's Warding Whip)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  See(FifthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_Khelben","LOCALS",0)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !ImmuneToSpellLevel(LastSeenBy(Myself),7)
+  OR(8)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+    CheckStatGT(LastSeenBy(Myself),0,SHIELDGLOBE)
+  !CheckSpellState(LastSeenBy(Myself),SCROLL_OF_PROTECTION_FROM_MAGIC)
+  CheckStatLT(LastSeenBy(Myself),1,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_KHELBENS_WARDING_WHIP)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_Khelben","LOCALS",-1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_WARDING_WHIP)  // SPWI705.SPL (Khelben's Warding Whip)
+    SetInterrupt(TRUE)
+END
+
+IF
+  OR(2)
+    !GlobalTimerNotExpired("MO_SpellCastTimer","LOCALS")
+    CheckStatGT(Myself,0,AURACLEANSING)
+  See(SixthNearestEnemyOf(Myself))
+  !Allegiance(LastSeenBy(Myself),ENEMY)
+  GlobalGT("MO_Khelben","LOCALS",0)
+  !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+  !ImmuneToSpellLevel(LastSeenBy(Myself),7)
+  OR(8)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
+    CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+    CheckStat(LastSeenBy(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+    CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+    CheckStatGT(LastSeenBy(Myself),0,SHIELDGLOBE)
+  !CheckSpellState(LastSeenBy(Myself),SCROLL_OF_PROTECTION_FROM_MAGIC)
+  CheckStatLT(LastSeenBy(Myself),1,SANCTUARY)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_KHELBENS_WARDING_WHIP)
+  CheckStatLT(LastSeenBy(Myself),1,WIZARD_SPELL_TRAP)
+  CheckStatLT(Myself,20,SPELLFAILUREMAGE)
+  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+  !StateCheck(Myself,STATE_POISONED)
+  !StateCheck(Myself,STATE_SILENCED)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MO_Khelben","LOCALS",-1)
+    SetGlobalTimer("MO_SpellCastTimer","LOCALS",6)
+    SetInterrupt(FALSE)
+    Spell(LastSeenBy(Myself),WIZARD_WARDING_WHIP)  // SPWI705.SPL (Khelben's Warding Whip)
+    SetInterrupt(TRUE)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Spell: Pierce Shield
 /////////////////////////////////////////////////////////////////////
 IF
   OR(2)
@@ -796,7 +1013,8 @@ IF
   GlobalGT("MO_PierceShield","LOCALS",0)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !ImmuneToSpellLevel(LastSeenBy(Myself),8)
-  OR(7)
+  OR(8)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
     CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
     CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
     CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
@@ -826,7 +1044,8 @@ IF
   GlobalGT("MO_PierceShield","LOCALS",0)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !ImmuneToSpellLevel(LastSeenBy(Myself),8)
-  OR(7)
+  OR(8)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
     CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
     CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
     CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
@@ -856,7 +1075,8 @@ IF
   GlobalGT("MO_PierceShield","LOCALS",0)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !ImmuneToSpellLevel(LastSeenBy(Myself),8)
-  OR(7)
+  OR(8)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
     CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
     CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
     CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
@@ -886,7 +1106,8 @@ IF
   GlobalGT("MO_PierceShield","LOCALS",0)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !ImmuneToSpellLevel(LastSeenBy(Myself),8)
-  OR(7)
+  OR(8)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
     CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
     CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
     CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
@@ -916,7 +1137,8 @@ IF
   GlobalGT("MO_PierceShield","LOCALS",0)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !ImmuneToSpellLevel(LastSeenBy(Myself),8)
-  OR(7)
+  OR(8)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
     CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
     CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
     CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
@@ -946,7 +1168,8 @@ IF
   GlobalGT("MO_PierceShield","LOCALS",0)
   !StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
   !ImmuneToSpellLevel(LastSeenBy(Myself),8)
-  OR(7)
+  OR(8)
+    CheckSpellState(LastSeenBy(Myself),SPELL_SHIELD)
     CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
     CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
     CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)

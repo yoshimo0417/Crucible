@@ -155,139 +155,140 @@ THEN
 END
 
 /////////////////////////////////////////////////////////////////////
-// Contingency
-/////////////////////////////////////////////////////////////////////
-IF
-  Global("Contingency","LOCALS",0)
-  TookDamage()
-THEN
-  RESPONSE #100
-    ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
-    ApplySpell(Myself,WIZARD_MISLEAD)  // SPWI607.SPL (Mislead)
-    ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
-    SetGlobal("Contingency","LOCALS",1)
-END
-
-/////////////////////////////////////////////////////////////////////
 // Spell Trigger
 /////////////////////////////////////////////////////////////////////
 IF
-  See(NearestEnemyOf(Myself))
   Global("MO_SpTrig","LOCALS",0)
-  !HasBounceEffects(LastSeenBy(Myself))
-  DifficultyGT(HARD)
+  TookDamage()
 THEN
   RESPONSE #100
     DisplayString(Myself,39968)  // Spell Trigger—Fired
+    ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+    ApplySpell(Myself,WIZARD_MISLEAD)  // SPWI607.SPL (Mislead)
+    ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection From Magical Weapons)
+    SetGlobal("MO_SpTrig","LOCALS",1)
+END
+
+/////////////////////////////////////////////////////////////////////
+// Contingency
+/////////////////////////////////////////////////////////////////////
+IF
+  See(NearestEnemyOf(Myself))
+  Global("Contingency","LOCALS",0)
+  !HasBounceEffects(LastSeenBy(Myself))
+THEN
+  RESPONSE #100
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
     DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
     ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 IF
   See(SecondNearestEnemyOf(Myself))
-  Global("MO_SpTrig","LOCALS",0)
+  Global("Contingency","LOCALS",0)
   !HasBounceEffects(LastSeenBy(Myself))
-  DifficultyGT(HARD)
 THEN
   RESPONSE #100
-    DisplayString(Myself,39968)  // Spell Trigger—Fired
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
+    DisplayString(Myself,25939)  // Chain Lightning
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 IF
   See(ThirdNearestEnemyOf(Myself))
-  Global("MO_SpTrig","LOCALS",0)
+  Global("Contingency","LOCALS",0)
   !HasBounceEffects(LastSeenBy(Myself))
-  DifficultyGT(HARD)
 THEN
   RESPONSE #100
-    DisplayString(Myself,39968)  // Spell Trigger—Fired
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
+    DisplayString(Myself,25939)  // Chain Lightning
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 IF
   See(FourthNearestEnemyOf(Myself))
-  Global("MO_SpTrig","LOCALS",0)
+  Global("Contingency","LOCALS",0)
   !HasBounceEffects(LastSeenBy(Myself))
-  DifficultyGT(HARD)
 THEN
   RESPONSE #100
-    DisplayString(Myself,39968)  // Spell Trigger—Fired
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
+    DisplayString(Myself,25939)  // Chain Lightning
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 IF
   See(FifthNearestEnemyOf(Myself))
-  Global("MO_SpTrig","LOCALS",0)
+  Global("Contingency","LOCALS",0)
   !HasBounceEffects(LastSeenBy(Myself))
-  DifficultyGT(HARD)
 THEN
   RESPONSE #100
-    DisplayString(Myself,39968)  // Spell Trigger—Fired
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
+    DisplayString(Myself,25939)  // Chain Lightning
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 IF
   See(SixthNearestEnemyOf(Myself))
-  Global("MO_SpTrig","LOCALS",0)
+  Global("Contingency","LOCALS",0)
   !HasBounceEffects(LastSeenBy(Myself))
-  DifficultyGT(HARD)
 THEN
   RESPONSE #100
-    DisplayString(Myself,39968)  // Spell Trigger—Fired
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
+    DisplayString(Myself,25939)  // Chain Lightning
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 IF
   See(TenthNearestEnemyOf(Myself))
-  Global("MO_SpTrig","LOCALS",0)
+  Global("Contingency","LOCALS",0)
   !HasBounceEffects(LastSeenBy(Myself))
-  DifficultyGT(HARD)
 THEN
   RESPONSE #100
-    DisplayString(Myself,39968)  // Spell Trigger—Fired
+    //DisplayString(Myself,39968)  // Spell Trigger—Fired
+    DisplayString(Myself,36936)  // ~A contingency spell has been triggered~
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    DisplayString(Myself,363)  // Spell Trigger—Chain Lightning
+    DisplayString(Myself,25939)  // Chain Lightning
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Chain Lightning)
     DisplayString(Myself,34622)  // Abi-Dalzim's Horrid Wilting
     ReallyForceSpell(LastSeenBy(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
-    SetGlobal("MO_SpTrig","LOCALS",1)
+    SetGlobal("Contingency","LOCALS",1)
 END
 
 /////////////////////////////////////////////////////////////////////
