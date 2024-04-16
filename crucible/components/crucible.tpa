@@ -541,6 +541,7 @@ COPY ~crucible/itm/mobha44a.itm~ ~override~  // Spiraling Murder (Dagger)
 COPY ~crucible/eff/mobha44a.eff~ ~override~ // Damage EFF for dagger
 COPY ~crucible/eff/mobha44b.eff~ ~override~ // Wisdom Loss EFF for dagger
 COPY ~crucible/spl/mobha44a.spl~ ~override~ // Heal on kill
+COPY ~crucible/spl/mobha44b.spl~ ~override~ // Wisdom Loss spl for dagger
 
 //-------------------------------------------------------------------------
 // Uthaedeol the Blood-drenched (F(13)->Mage(20))
