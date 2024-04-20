@@ -38,4 +38,5 @@ This mod uses ai voice acting for net new characters courtesy of Replica Studios
 - loViVo for providing the Spanish translation.
 - alaisFcZ for coordinating and assisting with Spanish translation.
 - yoshimo0417 for providing the Chinese translation.
+- boof for live streaming your first attempt at Crucible. It was enjoyable to watch and much was learned.
 - All those who assisted in testing and providing feedback! I appreciate every single one of you for all that you do!
