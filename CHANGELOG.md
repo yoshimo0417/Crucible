@@ -1,14 +1,21 @@
 # Changelog
 
-## Version 2.0
+## Version 3.0
 
 Month xx, 2024
 
 ### Changed
 
 - Update link @6228 and update voiced dialog for Malchediel.
+
+## Version 2.0
+
+April 19, 2024
+
+### Changed
+
+- Corrected attack scripts (only noticeable on Insane difficulty).
 - Corrected Phiuhls to no longer be undead.
-- Corrected attack scripts.
 - Created new bone fiend creature instead of using the existing cre.
 
 ## Version 1.4
