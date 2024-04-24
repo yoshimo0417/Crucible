@@ -51,7 +51,7 @@ LANGUAGE ~Spanish~
          ~crucible/languages/spanish/setup.tra~
          ~crucible/languages/spanish/spells.tra~
 LANGUAGE ~Chinese~
-         ~chinese~
+         ~schinese~
          ~crucible/languages/english/creatures.tra~
          ~crucible/languages/english/items.tra~
          ~crucible/languages/english/journal.tra~
@@ -60,7 +60,7 @@ LANGUAGE ~Chinese~
          ~crucible/languages/schinese/creatures.tra~
          ~crucible/languages/schinese/items.tra~
          ~crucible/languages/schinese/journal.tra~
-         //~crucible/languages/schinese/setup.tra~
+         ~crucible/languages/schinese/setup.tra~
          ~crucible/languages/schinese/spells.tra~
 
 
